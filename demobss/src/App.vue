@@ -1,17 +1,10 @@
 <template>
-<<<<<<< Updated upstream
-  <nav>
-    <router-link to="/"></router-link>
-=======
 <nav>
   <Header/>
->>>>>>> Stashed changes
   </nav>
   <Section/>
 </template>
 
-<<<<<<< Updated upstream
-=======
 <script>
 // import { defineComponent } from '@vue/composition-api'
 // import { component } from 'vue/types/umd';
@@ -36,5 +29,4 @@ export default {
   text-align: center;
   color: #2c3e50;
 }
->>>>>>> Stashed changes
-
+</style>
