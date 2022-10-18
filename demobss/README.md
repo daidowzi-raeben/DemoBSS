@@ -1,5 +1,8 @@
 # demobss
 
+## 참고 레퍼런스
+- 폴더 구조 : https://joshua1988.github.io/web-development/vuejs/vue-structure/ 
+
 ## Project setup
 ```
 npm install
