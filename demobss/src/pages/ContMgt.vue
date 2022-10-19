@@ -1,6 +1,6 @@
 <template>
 <div class="layout" style="margin-left:20px;">
-  <section>
+  <div class="section0">
     <h1>계약 상세</h1>
   <div class="cusInfo0">
     <table style=" width: 100%;">
@@ -205,19 +205,57 @@
     <button style="height:30px; margin-right:5px;" > 청구계정변경</button>
     </div>
     </div>
-    <div class="feeInfo" >요금정보</div>
+    <div class="feeInfo" style="margin: 10px ;" >
+      <span style="font-size:20px; height:40px; display:inline-block; margin-right:20px;">▶요금정보 </span>
+      <div style="height:100%; width:100%;">
+          <ag-grid-component
+              :rowData="rowData1"
+              :columnDefs="columnDefs1"
+              :isWidthFit="false"
+          />
+          </div>
+    </div>
     
 
-  </section>
+  </div>
 </div>
 
 </template>
 
 <script>
-import Section from "@/components/Section";
+import AgGridComponent from "@/components/common/AgGridComponent";
+// import Section from "@/components/Section";
 export default {
-  name: "ChageInfoRetv",
-  components: {Section}
+  name: "ContMgt",
+  components: {AgGridComponent},
+  data() {
+    return{
+      gridOptions : null,
+      columnDefs1: [
+        {
+          headerName: "청구계정",
+          field: "model0",
+          cellStyle: {
+            "border-left": "0px",
+          },
+          headerClass: "ag-header-first-child",
+        },
+        { headerName: "청구년월", field: "model1" },
+        { headerName: "청구통화", field: "model2" },
+        { headerName: "원화당월요금", field: "model3" },
+        { headerName: "원화잔액", field: "model4" },
+        { headerName: "외화당월요금", field: "model5" },
+        { headerName: "외화납부요금", field: "model6" },
+        { headerName: "외화잔액", field: "model7" },
+        { headerName: "환율", field: "price" },
+      ],
+      rowData1: [
+        { model0: "00100004023", model1: "2022-10",model2:"KRW", model3 :"20,225,214",model4:"0", model5:"0",model6:"0", model7:"0", price: "1.434.8"},
+        { model0: "00100004000", model1: "2022-9",model2:"KRW", model3 :"20,225,000",model4:"0", model5:"0",model6:"0", model7:"0", price: "1.434.8"},
+        { model0: "00100004021", model1: "2022-2",model2:"KRW", model3 :"20,005,214",model4:"0", model5:"0",model6:"0", model7:"0", price: "1.434.8"},
+      ],
+    }
+  }
 }
 </script>
 
@@ -228,7 +266,7 @@ div.layout{
   position: absolute;
   overflow-y: scroll;
 }
-section {
+div.section0 {
   position: relative;
   /* top: 177px; border: #F00 solid 1px; */
   min-height: calc(100% - 297px);
@@ -236,7 +274,7 @@ section {
   box-sizing: border-box;
 }
 
-section > div.cusInfo0 {
+div.section0 > div.cusInfo0 {
   float: left;
   width: 90vw;
   margin: 10px;
@@ -251,7 +289,7 @@ section > div.cusInfo0 {
   background-color: antiquewhite;
 }
 
-section > div.cusInfo {
+div.section0 > div.cusInfo {
   float: left;
   height: auto;
   width: 90vw;
@@ -268,7 +306,7 @@ section > div.cusInfo {
   width: 250px;
 }
 
-/* section > div.cusSearch {
+/* div.section0 > div.cusSearch {
   float: left;
   background-color: rgba(23, 202, 101, 0.862);
   width: 98%;
@@ -277,7 +315,7 @@ section > div.cusInfo {
   
   height: 100px;
 } */
-/*section > div.cusInfo {
+/*div.section0 > div.cusInfo {
   float: left;
   background-color: antiquewhite;
   width: 98%;
@@ -286,7 +324,7 @@ section > div.cusInfo {
   height: 100px;
 } */
 
-section > div.cmProducts{
+div.section0 > div.cmProducts{
   float: left;
   width: 45vw;
   /* background-color: aquamarine; */
@@ -295,7 +333,7 @@ section > div.cmProducts{
   height: 450px;
   border: groove;
 }
-section > div.ContMemInfo {
+div.section0 > div.ContMemInfo {
   display: inline-block;
   float: left;
   width: 45vw;
@@ -322,7 +360,7 @@ section > div.ContMemInfo {
   font-size: 20px;
 }
 
-section > div.CommonInfo{
+div.section0 > div.CommonInfo{
   
   display:inline-block;
   width: 44vw;
@@ -355,7 +393,7 @@ section > div.CommonInfo{
   font-size: 20px;
 }
 
-section > div.shipInfo{
+div.section0 > div.shipInfo{
   float: left;
   width: 44vw;
   /* background-color: rgba(8, 149, 149, 0.423); */
@@ -383,7 +421,7 @@ section > div.shipInfo{
 } 
 
 
-section > div.svOrgInfo{
+div.section0 > div.svOrgInfo{
   float: left;
   width: 44vw;
   /* background-color: rgba(8, 149, 149, 0.423); */
@@ -413,10 +451,11 @@ section > div.svOrgInfo{
 }
 
 
-section > div.feeInfo{
+div.section0 > div.feeInfo{
   float: left;
   width: 44vw;
-  background-color: rgba(52, 186, 186, 0.214);
+  /* border: solid; */
+  /* background-color: rgba(52, 186, 186, 0.214); */
   margin: 0 auto auto 15px;
   padding:0 0 10px auto;
   height: 350px;
