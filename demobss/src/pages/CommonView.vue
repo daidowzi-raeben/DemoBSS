@@ -1,4 +1,5 @@
 <template>
+<div>
   <div style="width: 500px; height: 360px; margin: 10px">
     <ag-grid-component
       :rowData="rowData1"
@@ -10,6 +11,7 @@
   <div style="width: 50%; height: 360px; margin: 30px">
     <ag-grid-component :rowData="rowData2" :columnDefs="columnDefs2" />
   </div>
+</div>
 </template>
 
 <script>

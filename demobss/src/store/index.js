@@ -1,14 +1,15 @@
-import { createStore } from 'vuex'
+import { createStore } from "vuex";
 
 export default createStore({
   state: {
+    navOn: false,
   },
-  getters: {
-  },
+  getters: {},
   mutations: {
+    setNavOn(state, value) {
+      state.navOn = value;
+    },
   },
-  actions: {
-  },
-  modules: {
-  }
-})
+  actions: {},
+  modules: {},
+});
