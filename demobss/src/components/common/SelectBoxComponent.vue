@@ -5,16 +5,17 @@
     v-model="value"
     :input="updateValue(value)"
   >
-    <option v-if="defaultValue != '' && defaultValue !=null" :value="''">{{ placeholder }}</option>
-    <option v-else :value="''">{{ placeholder }}</option>
-    <option v-for="items in options" :value="items.key" :key="items.key">
-      {{ items.value }}
+    <option v-if="defaultValue != null" :value="''">
+      {{ defaultValue }}
+    </option>
+    <option v-for="(option, idx) in options" :key="idx" :value="option.cdId">
+      {{ option.cdNm }}
     </option>
   </select>
 </template>
 
 <script>
-import select from "../../../../../PortalSolution/PortalSolution/vue-cli/src/assets/select.json";
+import select from "../../../public/selectBoxOption.json";
 
 export default {
   name: "SelectBoxComponent",
@@ -27,29 +28,21 @@ export default {
   props: {
     cdGroup: String,
     width: Number,
-    pValue: null,
-    placeholder: String,
     selectClass: null,
-    defaultNum: {
-      type: Number,
-      default: 0,
-    },
+    defaultNum: null,
     defaultValue: String,
   },
-  async beforeMount() {
-    this.options = select.selectbox[this.cdGroup];
-    if (this.pValue != null) {
-      this.value = this.pValue;
-      return;
+  beforeMount() {
+    this.options = select[this.cdGroup];
+
+    if (this.defaultNum != null) {
+      this.value = this.options[this.defaultNum].cdId;
     }
   },
-  watch: {
-    pValue(val) {
-      this.value = val;
-    },
-  },
+  watch: {},
   methods: {
     updateValue(value) {
+      // console.log(value, this.value);
       this.$emit("input", value);
     },
   },

@@ -1,0 +1,147 @@
+{
+  "optionsSearchDiv": [
+    {
+      "cdNm": "명의고객명",
+      "cdId": "01",
+      "show": false
+    },
+    {
+      "cdNm": "납부고객명",
+      "cdId": "02",
+      "show": false
+    },
+    {
+      "cdNm": "계약 ID",
+      "cdId": "03"
+    },
+    {
+      "cdNm": "청구계정 ID",
+      "cdId": "04"
+    },
+    {
+      "cdNm": "선박/항공/육상 ID",
+      "cdId": "05"
+    },
+    {
+      "cdNm": "선박명",
+      "cdId": "06"
+    },
+    {
+      "cdNm": "MSISDN,IMN",
+      "cdId": "07"
+    },
+    {
+      "cdNm": "IMSI",
+      "cdId": "08"
+    },
+    {
+      "cdNm": "IMEI",
+      "cdId": "09"
+    },
+    {
+      "cdNm": "시리얼번호",
+      "cdId": "10"
+    },
+    {
+      "cdNm": "ICC ID",
+      "cdId": "11"
+    },
+    {
+      "cdNm": "Gateway Account",
+      "cdId": "12",
+      "show": false
+    },
+    {
+      "cdNm": "SP ID",
+      "cdId": "13",
+      "show": false
+    },
+    {
+      "cdNm": "서비스오더번호",
+      "cdId": "14",
+      "show": false
+    }
+  ],
+  "optionsEngtMons": [
+    {
+      "cdNm": "전체",
+      "cdId": ""
+    },
+    {
+      "cdNm": "약정종료 1개월전",
+      "cdId": "01"
+    },
+    {
+      "cdNm": "약정종료 2개월전",
+      "cdId": "02"
+    },
+    {
+      "cdNm": "약정종료 3개월전",
+      "cdId": "03"
+    },
+    {
+      "cdNm": "약정종료 4개월전",
+      "cdId": "04"
+    },
+    {
+      "cdNm": "약정종료 5개월전",
+      "cdId": "05"
+    },
+    {
+      "cdNm": "약정종료 6개월전",
+      "cdId": "06"
+    },
+    {
+      "cdNm": "약정만료",
+      "cdId": "07"
+    }
+  ],
+  "optionsOrdrType": [
+    {
+      "cdNm": "신청일",
+      "cdId": "ordrDt"
+    },
+    {
+      "cdNm": "발행일",
+      "cdId": "ofwDt"
+    }
+  ],
+  "optionsRepl": [
+    {
+      "cdNm": "댓글여부",
+      "cdId": ""
+    },
+    {
+      "cdNm": "Y",
+      "cdId": true
+    },
+    {
+      "cdNm": "N",
+      "cdId": false
+    }
+  ],
+  "optionsDel": [
+    {
+      "cdNm": "전체",
+      "cdId": ""
+    },
+    {
+      "cdNm": "삭제",
+      "cdId": true
+    },
+    {
+      "cdNm": "미삭제",
+      "cdId": false
+    }
+  ],
+  "optionsIifhl": [
+    {
+      "cdNm": "2022년 08월 04일 (현재)",
+      "cdId": "20220804"
+    },
+    {
+      "cdNm": "2022년 07월 25일 (이전)",
+      "cdId": "20220725"
+    }
+  ]
+}
