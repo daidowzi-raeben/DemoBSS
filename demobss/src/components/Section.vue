@@ -2,8 +2,10 @@
   <section>
     <Nav v-show="navOn" />
     <div class="wrap">
-      <button :class="{'test':this.comp ==='ChageInfoRetv','test2':this.comp==='ContMgt'}" @click="ChageComponent('ChageInfoRetv')">청구관리</button>
-      <button :class="{'test':this.comp ==='ContMgt','test2':this.comp==='ChageInfoRetv'}" @click="ChageComponent('ContMgt')">계약관리</button>
+      <div style="display: inline-flex" v-for="(item,index) in compm" v-bind:key="index">
+          <div  :class="{'test':this.comp ===item.file,'test2':this.comp!==item.file}" @click="ChageComponent(item.file,index)">{{item.value}}</div>
+          <button @click="Com_delete(index)">X</button>
+      </div>
       <keep-alive>
       <component v-bind:is="comp"></component>
       </keep-alive>
@@ -14,14 +16,21 @@
 <script>
 import Nav from "./Nav.vue";
 import ChageInfoRetv from "../pages/ChageInfoRetv.vue";
-import ContMgt from "../pages/ContMgt";
-
+import ContMgt from "../pages/ContMgt.vue";
+import dummy from "../pages/dummy.vue";
+import CommonView from "../pages/CommonView.vue";
 export default {
   name: "Section",
-  components: { Nav, ChageInfoRetv, ContMgt },
+  components: { Nav, ChageInfoRetv, ContMgt,dummy, CommonView },
   data() {
     return {
       comp : 'ChageInfoRetv',
+      cur_num:0,
+      compm : [{file:'ChageInfoRetv',value:'청구관리'},
+        {file:'ContMgt',value:'계약관리'},
+        {file:'dummy',value:'더미'},
+        {file:'CommonView',value:'공통'},
+      ],
       test : 'ChageInfoRetv'
     };
   },
@@ -31,9 +40,19 @@ export default {
     },
   },
   methods:{
-    ChageComponent: function (componentName){
+    ChageComponent: function (componentName,index){
       this.comp = componentName;
-    }
+      this.cur_num = index;
+    },
+    Com_delete: function (index){
+      if(index!=0) {
+        this.compm.splice(index, 1);
+        if(index==this.cur_num) {
+          this.comp = this.compm[index - 1].file;
+          this.cur_num = index-1;
+        }
+      }
+    },
   }
 };
 </script>
