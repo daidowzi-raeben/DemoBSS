@@ -103,7 +103,6 @@ body {
   overflow-y: scroll;
 }
 #wrap > header {
-  position: absolute;
   position: relative;
   width: 100%;
   z-index: 20;
