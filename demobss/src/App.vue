@@ -1,10 +1,6 @@
 <template>
   <div id="wrap">
     <Header />
-    <div style="
-         position: absolute;
-         top: 80px;
-         " v-show="check==0"><Menu /></div>
     <Section />
   </div>
 </template>
