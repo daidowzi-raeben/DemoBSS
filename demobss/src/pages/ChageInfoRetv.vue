@@ -1,4 +1,4 @@
-<template xmlns="http://www.w3.org/1999/html">
+<template>
   <div class="ch_area">
     <span><label style="background-color: #2dbdb6; border-radius: 3px; color: #ffffff">★</label> 청구 > 청구요금관리 > <label style="font-weight: bold">청구요금정보관리 [BILL_01_001]</label></span>
     <span style="margin: 3px; padding: 4px; font-size:10px;  border: solid thin">홈화면설정</span>
@@ -7,7 +7,7 @@
   <div class="cusInfo">
     <label style="background-color: #2dbdb6; border-radius: 3px; color: #ffffff">▶</label><label style="font-weight: bold" >고객정보</label>
     <table style=" width: 100%;">
-      <tr style="height: 40px; ">
+      <tr style="height: 40px;">
         <td style="folat:left; width:95%; border: solid 2px slategrey; padding-left: 10px;"><label>고객조회</label> <select style="width: 100px; height: 21.5px;"><option selected>전체</option></select>&nbsp;<input style="background-color: white;" type="text"></td>
         <td style="background-color: #bdbdce; text-align: center; border: solid 2px slategrey; margin: 100px 0px;"><img src="../img/icon_big_search.png">&nbsp;검색</td>
       </tr>
@@ -194,7 +194,9 @@ td > label {
   font-weight: bold;
 }
 .ch_area{
-  top: 177px; /*border: #F00 solid 1px;*/
+  position: relative;
+  left: 30px;
+  /*border: #F00 solid 1px;*/
   min-height: calc(100% - 180px);
   padding: 100px 0 143px;
   box-sizing: border-box;
