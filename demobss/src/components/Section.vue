@@ -4,7 +4,9 @@
     <div class="wrap">
       <button :class="{'test':this.comp ==='ChageInfoRetv','test2':this.comp==='ContMgt'}" @click="ChageComponent('ChageInfoRetv')">청구관리</button>
       <button :class="{'test':this.comp ==='ContMgt','test2':this.comp==='ChageInfoRetv'}" @click="ChageComponent('ContMgt')">계약관리</button>
+      <keep-alive>
       <component v-bind:is="comp"></component>
+      </keep-alive>
     </div>
   </section>
 </template>
