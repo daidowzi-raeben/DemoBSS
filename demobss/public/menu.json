@@ -1,0 +1,68 @@
+{
+    "menuCont": {
+        "menuNm": "계약",
+        "subMenuList": [
+            {
+                "menuId": "cont001",
+                "menuNm": "계약상세"
+            },
+            {
+                "menuId": "cont002",
+                "menuNm": "계약관리"
+            },
+            {
+                "menuId": "cont003",
+                "menuNm": "계약 신청관리"
+            },
+            {
+                "menuId": "cont004",
+                "menuNm": "TVRO 정시 스케줄관리"
+            },
+            {
+                "menuId": "cont005",
+                "menuNm": "위성서비스실적관리"
+            },
+            {
+                "menuId": "cont006",
+                "menuNm": "청약정보통보대상관리"
+            },
+            {
+                "menuId": "cont007",
+                "menuNm": "KTSAT BSS Rate Plan 체크"
+            },
+            {
+                "menuId": "cont008",
+                "menuNm": "팀장승인관리"
+            }
+        ]
+    },
+    "menuBill": {
+        "menuNm": "청구",
+        "subMenuList": [
+            {
+                "menuId": "bill001",
+                "menuNm": "청구요금정보조회"
+            },
+            {
+                "menuId": "bill002",
+                "menuNm": "일일통화내역"
+            },
+            {
+                "menuId": "bill003",
+                "menuNm": "FleetOne 통화내역"
+            },
+            {
+                "menuId": "bill004",
+                "menuNm": "청구내역조회"
+            },
+            {
+                "menuId": "bill005",
+                "menuNm": "청구내역갱신"
+            },
+            {
+                "menuId": "bill006",
+                "menuNm": "청구서안내문관리"
+            }
+        ]
+    }
+}

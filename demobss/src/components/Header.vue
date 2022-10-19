@@ -8,27 +8,38 @@
       <div class="area">
         <ul>
           <li>
-            <span @click="setMenuId(1)" :class="[menuId == 1 ? 'clicked' : '']">
+            <span
+              @click="setMenuId(1, 'menuCont')"
+              :class="[menuId == 1 ? 'clicked' : '']"
+            >
               계약
             </span>
           </li>
           <li>
-            <span @click="setMenuId(2)" :class="[menuId == 2 ? 'clicked' : '']"
+            <span
+              @click="setMenuId(2, 'menuCont')"
+              :class="[menuId == 2 ? 'clicked' : '']"
               >고객</span
             >
           </li>
           <li>
-            <span @click="setMenuId(3)" :class="[menuId == 3 ? 'clicked' : '']"
+            <span
+              @click="setMenuId(3, 'menuBill')"
+              :class="[menuId == 3 ? 'clicked' : '']"
               >청구</span
             >
           </li>
           <li>
-            <span @click="setMenuId(4)" :class="[menuId == 4 ? 'clicked' : '']"
+            <span
+              @click="setMenuId(4, 'menuCont')"
+              :class="[menuId == 4 ? 'clicked' : '']"
               >영업관리</span
             >
           </li>
           <li>
-            <span @click="setMenuId(5)" :class="[menuId == 5 ? 'clicked' : '']"
+            <span
+              @click="setMenuId(5, 'menuCont')"
+              :class="[menuId == 5 ? 'clicked' : '']"
               >정산관리</span
             >
           </li>
@@ -49,8 +60,9 @@ export default {
     openNav() {
       this.$store.commit("setNavOn", !this.$store.state.navOn);
     },
-    setMenuId(val) {
+    setMenuId(val, menuNm) {
       this.menuId = val;
+      this.$store.commit("setMenuId", menuNm);
       if (!this.$store.state.navOn) this.$store.commit("setNavOn", true);
     },
   },

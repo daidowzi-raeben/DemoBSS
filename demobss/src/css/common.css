@@ -175,8 +175,32 @@ body {
   border-right: #afafaf solid 1px;
 }
 
+#nav >.tab{
+  background-color: #343434;
+  color:#ffffff;
+  height:30px;
+}
+
 #nav > .area{
   width: 245px;
+  padding:10px 10px 0 10px ;
+}
+
+#nav > .area > #navTitle{
+  font-size: 20px;
+  padding: 10px 15px;
+
+}
+
+#nav > .area  >  ul  {
+  display: grid;
+}
+
+#nav > .area  >  ul > li {
+  float: left;
+  padding: 10px 15px;
+  color: #000000;
+  cursor: pointer;
 }
 
 section {
