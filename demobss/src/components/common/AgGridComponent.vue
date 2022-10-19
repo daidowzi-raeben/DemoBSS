@@ -4,11 +4,12 @@
     @grid-ready="onGridReady"
     @rowClicked="rowClicked"
     @first-data-rendered="onFirstDataRendered"
+    :grid-options="gridOptions"
     :rowClassRules="rowClassRules"
     :suppressMovableColumns="true"
     :suppressRowTransform="true"
     :suppressHorizontalScroll="isWidthFit"
-    :rowHeight="39"
+    :rowHeight="37"
     :columnDefs="columnDefs"
     :rowData="rowData"
     :overlayNoRowsTemplate="overlayNoRowsTemplate"
@@ -40,6 +41,7 @@ export default {
   props: {
     rowData: null,
     columnDefs: null,
+    gridOptions: null,
     rowClicked: {
       //행 클릭 이벤트
       type: Function,
@@ -72,7 +74,6 @@ export default {
       // console.log("onGridReady");
       this.gridApi = params.api;
       this.gridColumnApi = params.columnApi;
-
       if (this.isAutoHeight) this.gridApi.setDomLayout("autoHeight");
       else {
         this.gridApi.setDomLayout("normal"); //정해진 만큼만 보이도록(+스크롤)
@@ -99,10 +100,10 @@ export default {
         this.gridColumnApi.getColumns().forEach((column) => {
           allColumnIds.push(column.colId);
         });
-        this.gridColumnApi.autoSizeColumns(allColumnIds, false);
+        this.gridColumnApi.api.autoSizeColumns(allColumnIds, false);
         // this.gridApi.gridBodyCtrl.eBodyViewport.style = "border-bottom:0px;"; //안쪽
       } else {
-        this.gridApi.sizeColumnsToFit(); //끝까지 맞춤
+        this.gridApi.api.sizeColumnsToFit(); //끝까지 맞춤
         // console.log("끝까지 맞춤 ");
       }
     },

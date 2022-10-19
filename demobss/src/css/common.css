@@ -167,7 +167,7 @@ body {
 }
 
 #menu {
-  background-color: #f2f2f2;
+  background-color: #2dbdb6;
   border-top: #cfcfcf solid 1px;
   height: 54px;
 }
@@ -184,10 +184,11 @@ body {
   float: left;
   padding: 0 50px 0 15px;
   font-size: 20px;
-  color: #363636;
+  color: #ffffff;
   font-weight: 600;
   line-height: 54px;
   cursor: pointer;
+
 }
 #menu > .area > ul > li:hover {
   color: #ed1c24;
@@ -1083,7 +1084,7 @@ span.red {
 /* ----------------------------------헤더 */
 
 .ag-grid .ag-cell {
-  /* border-bottom: #e4e4e4 solid 1px; */
+  border-bottom: #efefef solid 1px;
   border-left: #e4e4e4 solid 1px;
   font-family: 맑은 고딕;
   font-size: 14px;
