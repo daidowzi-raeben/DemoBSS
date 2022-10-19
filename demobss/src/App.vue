@@ -1,12 +1,6 @@
 <template>
   <div id="wrap">
-    <button style="
-    position: absolute;
-    top: 10px;
-    left: 30px; z-index: 3"
-            v-on:click="check_num"><img style="width: 20px; height: 20px; object-fit: fill;" src="@/img/icon_list.png"></button>
-    <div style="position: absolute; top: 10px; left: 80px; z-index:3"><img style=" width: 70px; height: 30px; object-fit: fill;" src="@/images/logo_main.png"></div>
-    <Header style="z-index: 2"/>
+    <Header />
     <div style="
          position: absolute;
          top: 80px;
