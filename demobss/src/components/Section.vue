@@ -13,7 +13,7 @@
             @click="ChageComponent(item.file, index)"
           >
             {{ item.value }}
-            <span class="tab_x" @click="Com_delete(index)">x</span>
+            <span class="tab_x" @click.prevent.stop="Com_delete(index)">x</span>
           </div>
         </div>
       </div>
@@ -59,14 +59,11 @@ export default {
     ChageComponent: function (componentName, index) {
       this.comp = componentName;
       this.cur_num = index;
-      console.log(this.cur_num);
     },
     Com_delete: function (index) {
       if (index != 0) {
         this.compm.splice(index, 1);
         if (index == this.cur_num || (index < this.cur_num && index <= this.compm.length)) {
-          console.log(index);
-          console.log(this.cur_num);
           this.cur_num = this.cur_num  - 1;
         }
 
