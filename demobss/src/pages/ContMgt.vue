@@ -1,6 +1,5 @@
 <template>
   <div class="layout" style="margin-left:20px;">
-
     <div class="section0">
       <label style="background-color: #2dbdb6; border-radius: 3px; color: #ffffff">★</label> 계약 > 계약정보 > <label style="font-weight: bold">계약상세 [CONT_01_001]</label>
       <h1>계약 상세</h1>
@@ -145,16 +144,13 @@
           </table>
         </div>
         </div>
-      </div>
 
       <div class="svOrgInfo">
-
-
         <div style="margin: 10px ;">
           <span style="font-size:15px;"><label
               style="background-color: #2dbdb6; border-radius: 3px; color: #ffffff">▶</label><label
               style="font-weight: bold">영업조직 정보</label></span>
-          <table style="border: groove; width: 100%;">
+          <table style="border: groove;">
             <tr>
               <td><label> 영업조직</label> <input type="text" value="해양고객팀(C11116666)" disabled></td>
               <td><label> 영업담당자</label> <input type="text" value="김해양" disabled></td>
@@ -241,7 +237,6 @@
 
     </div>
   </div>
-
 </template>
 
 <script>
@@ -256,59 +251,27 @@ export default {
     },
   data() {
     return {
+      treeData,
       gridOptions: null,
       columnDefs1: [
-        {
-          headerName: "청구계정",
-          field: "model0",
-          cellStyle: {
-            "border-left": "0px",
-          },
-          headerClass: "ag-header-first-child",
-        },
-        {headerName: "청구년월", field: "model1"},
-        {headerName: "청구통화", field: "model2"},
-        {headerName: "원화당월요금", field: "model3"},
-        {headerName: "원화잔액", field: "model4"},
-        {headerName: "외화당월요금", field: "model5"},
-        {headerName: "외화납부요금", field: "model6"},
-        {headerName: "외화잔액", field: "model7"},
-        {headerName: "환율", field: "price"},
+        { headerName: "결제통화",field: "model0",headerClass: "ag-header-first-child",},
+        { headerName: "요금항목명", field: "model1" },
+        { headerName: "요금항목구분명", field: "model2" },
+        { headerName: "협정금액", field:      "model3" },
+        { headerName: "협정할인금액", field:  "model4" },
+        { headerName: "협정청구금액", field:  "model5" },
+        { headerName: "유효시작일", field:    "StartDate" },
+        { headerName: "유효종료일", field:    "EndDate" },
       ],
       rowData1: [
-        {
-          model0: "00100004023",
-          model1: "2022-10",
-          model2: "KRW",
-          model3: "20,225,214",
-          model4: "0",
-          model5: "0",
-          model6: "0",
-          model7: "0",
-          price: "1.434.8"
-        },
-        {
-          model0: "00100004000",
-          model1: "2022-9",
-          model2: "KRW",
-          model3: "20,225,000",
-          model4: "0",
-          model5: "0",
-          model6: "0",
-          model7: "0",
-          price: "1.434.8"
-        },
-        {
-          model0: "00100004021",
-          model1: "2022-2",
-          model2: "KRW",
-          model3: "20,005,214",
-          model4: "0",
-          model5: "0",
-          model6: "0",
-          model7: "0",
-          price: "1.434.8"
-        },
+        {model0:"KRW",model1:"기본료",  model2:"정액요금", model3 :"133,500,000",model4:"1,500,000", model5:"132,000,000",model6:"0", model7:"0", StartDate: "2021-10-19", EndDate:"2023-12-31"},
+        {model0:"KRW",model1:"프리미엄요금",model2:"정액요금", model3 :"220,225,000",model4:"225,000", model5:"220,000,000",model6:"0", model7:"0", StartDate: "2022-05-31", EndDate:"2024-07-31"},
+        {model0:"KRW",model1:"설치비", model2:"정액요금", model3 :9200000000,model4:3000000, model5: 66665222  ,model6:"0", model7:"0", StartDate: "2022-10-19", EndDate:"2025-09-31"},        {model0:"KRW",model1:"기본료",  model2:"정액요금", model3 :"133,500,000",model4:"1,500,000", model5:"132,000,000",model6:"0", model7:"0", StartDate: "2021-10-19", EndDate:"2023-12-31"},
+        {model0:"KRW",model1:"프리미엄요금",model2:"정액요금", model3 :"220,225,000",model4:"225,000", model5:"220,000,000",model6:"0", model7:"0", StartDate: "2022-05-31", EndDate:"2024-07-31"},
+        {model0:"KRW",model1:"설치비", model2:"정액요금", model3 :9200000000,model4:3000000, model5: 66665222  ,model6:"0", model7:"0", StartDate: "2022-10-19", EndDate:"2025-09-31"},
+        {model0:"KRW",model1:"기본료",  model2:"정액요금", model3 :"133,500,000",model4:"1,500,000", model5:"132,000,000",model6:"0", model7:"0", StartDate: "2021-10-19", EndDate:"2023-12-31"},
+        {model0:"KRW",model1:"프리미엄요금",model2:"정액요금", model3 :"220,225,000",model4:"225,000", model5:"220,000,000",model6:"0", model7:"0", StartDate: "2022-05-31", EndDate:"2024-07-31"},
+        {model0:"KRW",model1:"설치비", model2:"정액요금", model3 :9200000000,model4:3000000, model5: 66665222  ,model6:"0", model7:"0", StartDate: "2022-10-19", EndDate:"2025-09-31"},
       ],
     }
   },
@@ -358,7 +321,7 @@ div.section0 {
 div.section0 > div.cusInfo0 {
   display: inline-block;
   float: left;
-  width: 81%;
+  width: 87%;
   margin: 10px;
   height: auto;
 }
@@ -378,7 +341,7 @@ div.section0 > div.cusInfo {
   display: inline-block;
   float: left;
   height: auto;
-  width: 80%;
+  width: 86%;
   margin: 10px;
 }
 
