@@ -6,9 +6,9 @@
         <div v-for="(item, index) in compm" v-bind:key="index">
           <div
             :class="{
-              'tabon': this.comp === item.file,
-              'taboff': this.comp !== item.file,
-              'menu_tab' : true
+              tabon: this.comp === item.file,
+              taboff: this.comp !== item.file,
+              menu_tab: true,
             }"
             @click="ChageComponent(item.file, index)"
           >
@@ -16,9 +16,20 @@
             <span class="tab_x" @click.prevent.stop="Com_delete(index)">x</span>
           </div>
         </div>
+
+        <div class="menu_close">x</div>
       </div>
-      <button @click="com_add">추가</button>
-      <keep-alive>
+      <!-- <button @click="com_add">추가</button> -->
+
+      <div class="title_area">
+        <div class="icon"></div>
+        <h1>메뉴 > 메뉴2 ></h1>
+        <span> {{ menuNm }} [BILL_01_001]</span>
+        <div class="view_reset">화면초기화</div>
+        <div class="home_menu">홈화면 설정</div>
+      </div>
+
+      <keep-alive class="view_wrap">
         <component v-bind:is="comp"></component>
       </keep-alive>
     </div>
@@ -36,23 +47,27 @@ export default {
   components: { Nav, ChageInfoRetv, ContMgt, dummy, CommonView },
   data() {
     return {
-      comp : 'ChageInfoRetv',
-      cur_num:0,
-      compm : [{file:'ChageInfoRetv',value:'청구관리'},
-        {file:'ContMgt',value:'계약관리'},
-        {file:'CommonView',value:'공통'},
+      comp: "ChageInfoRetv",
+      cur_num: 0,
+      compm: [
+        { file: "ChageInfoRetv", value: "청구관리" },
+        { file: "ContMgt", value: "계약관리" },
+        { file: "CommonView", value: "공통" },
       ],
       test: "ChageInfoRetv",
     };
   },
-  watch : {
-    cur_num :function (newVal, oldVal){
+  watch: {
+    cur_num: function (newVal, oldVal) {
       this.comp = this.compm[newVal].file;
     },
   },
   computed: {
     navOn() {
       return this.$store.state.navOn;
+    },
+    menuNm() {
+      return this.compm[this.cur_num].value;
     },
   },
   methods: {
@@ -63,17 +78,18 @@ export default {
     Com_delete: function (index) {
       if (index != 0) {
         this.compm.splice(index, 1);
-        if (index == this.cur_num || (index < this.cur_num && index <= this.compm.length)) {
-          this.cur_num = this.cur_num  - 1;
+        if (
+          index == this.cur_num ||
+          (index < this.cur_num && index <= this.compm.length)
+        ) {
+          this.cur_num = this.cur_num - 1;
         }
-
-
       }
     },
-    com_add: function (){
-      this.compm.push({file:'dummy',value:'더미'});
-    }
-  }
+    com_add: function () {
+      this.compm.push({ file: "dummy", value: "더미" });
+    },
+  },
 };
 </script>
 

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div style="margin: 100px">
+    <div>
       조회조건
       <select-box-component
         :selectClass="'select_input'"
@@ -35,7 +35,7 @@
       : {{ searchDiv2 }}
     </div>
 
-    <div style="width: 500px; height: 360px; margin: 10px">
+    <div style="width: 1500px; height: 360px; margin: 10px">
       <ag-grid-component
         :rowData="rowData1"
         :columnDefs="columnDefs1"

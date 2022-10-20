@@ -100,7 +100,6 @@ body {
   width: 100%;
   height: 100%;
   position: absolute;
-  overflow-y: scroll;
 }
 #wrap > header {
   position: relative;
@@ -248,6 +247,13 @@ section > div.wrap {
   flex: 1;
 }
 
+section > div.wrap > .view_wrap {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  overflow: scroll;
+}
+
 .menu_tab_line {
   height: 30px;
   background-color: #5ad3cd;
@@ -263,9 +269,10 @@ section > div.wrap {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  cursor: pointer;
 }
 
-button.tab_x {
+.tab_x {
   color: #aeaeae;
   font-size: 20px;
   float: right;
@@ -284,50 +291,55 @@ div.taboff {
   border-right: #343434 solid 1px;
 }
 
-section > div > .title_area {
-  overflow: hidden;
-  border-bottom: #d6d6d6 solid 1px;
-}
-section > div > .user_area {
-  padding: 25px 15px 0 15px;
-}
-section > div > .user_area > h2 {
-  float: left;
-  font-weight: 600;
-  font-size: 16px;
-  line-height: 30px;
-  background: url(../img/icon_profile.png) no-repeat;
-  margin: 0 15px 18px 15px;
-}
-section > div > .user_area > h2 > strong {
+.menu_tab_line .menu_close {
+  float: right;
+  color: #ffffff;
+  padding: 0 10px;
   font-size: 20px;
-  color: #04a3bb;
-  padding-left: 41px;
+  cursor: pointer;
 }
 
-section > div > .user_area > div.masking {
-  float: right;
-  margin: 0 15px;
+section > div > .title_area {
+  overflow: hidden;
+  background-color: #ffffff;
+  height: 30px;
+  margin: 20px 0 10px 0;
+  font-size: 20px;
+  padding: 0 10px;
 }
-section > div > .user_area > .btn_area {
-  text-align: center;
-  margin: 22px 0 7px 0;
+
+section > div > .title_area > .icon {
+  float: left;
+  width: 20px;
+  height: 20px;
+  background-color: #707070;
+  border-radius: 30px;
+  margin: 5px;
 }
 
 section > div > .title_area h1 {
   float: left;
-  margin-left: 15px;
   margin-bottom: 20px;
   display: inline-block;
-  font-size: 24px;
-  font-weight: 600;
+  color: #949494;
 }
 section > div > .title_area span {
-  float: right;
-  margin-right: 15px;
-  font-size: 12px;
   color: #444444;
-  margin-top: 19px;
+}
+
+section > div > .title_area .home_menu {
+  float: right;
+  padding: 5px;
+  margin-right: 10px;
+  background-color: #707070;
+  color: #aeaeae;
+}
+
+section > div > .title_area .view_reset {
+  float: right;
+  padding: 5px;
+  background-color: #707070;
+  color: #aeaeae;
 }
 
 section > div > .title_area > .right {
