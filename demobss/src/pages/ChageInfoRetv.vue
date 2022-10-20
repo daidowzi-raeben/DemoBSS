@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="section0">
     <!-- <label style="background-color: #2dbdb6; border-radius: 3px; color: #ffffff"
       >★</label
     >
@@ -408,6 +408,16 @@ div.layout {
   position: absolute;
   overflow-y: scroll;
 }
+
+div.section0 {
+  display: inline-block;
+  position: relative;
+  /* top: 177px; border: #F00 solid 1px; */
+  min-height: calc(100% - 297px);
+  padding: 20px 0 143px;
+  box-sizing: border-box;
+}
+
 div.cusInfo {
   float: left;
   width: 89vw;
