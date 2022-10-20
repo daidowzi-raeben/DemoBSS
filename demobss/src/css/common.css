@@ -125,8 +125,8 @@ body {
 #brand > #ham {
   float: left;
   font-size: 30px;
-  line-height: 54px;
-  padding: 0 10px;
+  line-height: 50px;
+  padding: 0 15px;
   color: #ffffff;
   cursor: pointer;
 }
@@ -152,7 +152,6 @@ body {
   font-weight: 500;
   line-height: 54px;
   cursor: pointer;
-
 }
 
 #menu > .area > ul > li > span {
@@ -171,50 +170,120 @@ body {
   margin: -1px;
 }
 
+/* nav */
+
 #nav {
   border-right: #afafaf solid 1px;
 }
 
-#nav >.tab{
-  background-color: #343434;
-  color:#ffffff;
-  height:30px;
+#nav > .tab {
+  text-align: center;
+  font-size: 20px;
+  font-weight: 600;
 }
 
-#nav > .area{
+#nav > .tab > #nav_tab1 {
+  width: 122px;
+  height: 30px;
+  float: left;
+}
+
+#nav > .tab > #nav_tab2 {
+  width: 122px;
+  height: 30px;
+  float: left;
+}
+
+#nav > .tab .tabon {
+  /* 탭 선택되었을 때 */
+  background-color: #ffffff;
+  color: #444444;
+}
+
+#nav > .tab .taboff {
+  /* 탭 선택x */
+  background-color: #444444;
+  color: #aeaeae;
+}
+
+#nav > .area {
   width: 245px;
-  padding:10px 10px 0 10px ;
+  padding: 70px 0 0 0;
 }
 
-#nav > .area > #navTitle{
+#nav > .area > #navTitle {
   font-size: 20px;
   padding: 10px 15px;
-
+  font-weight: 600;
 }
 
-#nav > .area  >  ul  {
+#nav > .area > ul {
   display: grid;
 }
 
-#nav > .area  >  ul > li {
+#nav > .area > ul > li {
   float: left;
   padding: 10px 15px;
-  color: #000000;
+  font-weight: 600;
+  color: #949494;
   cursor: pointer;
 }
+
+#nav > .area > ul > li:hover {
+  color: #000000;
+  background-color: #c8c8c8;
+}
+
+/* section */
 
 section {
   position: absolute;
   min-height: calc(100% - 180px);
   box-sizing: border-box;
   display: flex;
+  width: 100%;
 }
 
 section > div.wrap {
-  /* width: 1323px; */
-  /* margin: 0 auto; */
-  /* padding-bottom: 10px; */
+  flex: 1;
 }
+
+.menu_tab_line {
+  height: 30px;
+  background-color: #5ad3cd;
+  /* overflow-x: scroll; */
+}
+
+.menu_tab {
+  float: left;
+  height: 30px;
+  width: 140px;
+  padding: 0 10px;
+  line-height: 30px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+span.tab_x {
+  color: #aeaeae;
+  font-size: 20px;
+  float: right;
+}
+
+div.tabon {
+  /* 탭 선택되었을 때 */
+  background-color: #ffffff;
+  color: #444444;
+}
+
+div.taboff {
+  /* 탭 선택x */
+  background-color: #707070;
+  color: #aeaeae;
+  border-right: #343434 solid 1px;
+}
+
 section > div > .title_area {
   overflow: hidden;
   border-bottom: #d6d6d6 solid 1px;

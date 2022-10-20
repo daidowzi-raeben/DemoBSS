@@ -1,7 +1,7 @@
 <template>
   <header>
     <div id="brand">
-      <div id="ham" @click="openNav">=</div>
+      <div id="ham" @click="openNav">≡</div>
       <div class="brand_name">ktds 영업전산시스템</div>
     </div>
     <div id="menu">

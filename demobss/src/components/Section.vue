@@ -2,12 +2,23 @@
   <section>
     <Nav v-show="navOn" />
     <div class="wrap">
-      <div style="display: inline-flex" v-for="(item,index) in compm" v-bind:key="index">
-          <div  :class="{'test':this.comp ===item.file,'test2':this.comp!==item.file}" @click="ChageComponent(item.file,index)">{{item.value}}</div>
-          <button @click="Com_delete(index)">X</button>
+      <div class="menu_tab_line">
+        <div v-for="(item, index) in compm" v-bind:key="index">
+          <div
+            class="menu_tab"
+            :class="{
+              tabon: this.comp === item.file,
+              taboff: this.comp !== item.file,
+            }"
+            @click="ChageComponent(item.file, index)"
+          >
+            {{ item.value }}
+            <span class="tab_x" @click="Com_delete(index)">x</span>
+          </div>
+        </div>
       </div>
       <keep-alive>
-      <component v-bind:is="comp"></component>
+        <component v-bind:is="comp"></component>
       </keep-alive>
     </div>
   </section>
@@ -21,17 +32,18 @@ import dummy from "../pages/dummy.vue";
 import CommonView from "../pages/CommonView.vue";
 export default {
   name: "Section",
-  components: { Nav, ChageInfoRetv, ContMgt,dummy, CommonView },
+  components: { Nav, ChageInfoRetv, ContMgt, dummy, CommonView },
   data() {
     return {
-      comp : 'ChageInfoRetv',
-      cur_num:0,
-      compm : [{file:'ChageInfoRetv',value:'청구관리'},
-        {file:'ContMgt',value:'계약관리'},
-        {file:'dummy',value:'더미'},
-        {file:'CommonView',value:'공통'},
+      comp: "ChageInfoRetv",
+      cur_num: 0,
+      compm: [
+        { file: "ChageInfoRetv", value: "청구관리" },
+        { file: "ContMgt", value: "계약관리" },
+        { file: "dummy", value: "더미" },
+        { file: "CommonView", value: "공통" },
       ],
-      test : 'ChageInfoRetv'
+      test: "ChageInfoRetv",
     };
   },
   computed: {
@@ -39,35 +51,23 @@ export default {
       return this.$store.state.navOn;
     },
   },
-  methods:{
-    ChageComponent: function (componentName,index){
+  methods: {
+    ChageComponent: function (componentName, index) {
       this.comp = componentName;
       this.cur_num = index;
     },
-    Com_delete: function (index){
-      if(index!=0) {
+    Com_delete: function (index) {
+      if (index != 0) {
         this.compm.splice(index, 1);
-        if(index==this.cur_num) {
+        if (index == this.cur_num) {
           this.comp = this.compm[index - 1].file;
-          this.cur_num = index-1;
+          this.cur_num = index - 1;
         }
       }
     },
-  }
+  },
 };
 </script>
 
 <style scoped>
-.test2{
-  width: 100px;
-  height: 30px;
-  background-color: #444444;
-  color: #ffffff;
-}
-.test{
-  width: 100px;
-  height: 30px;
-  background-color: #ffffff;
-  color: #444444;
-}
 </style>

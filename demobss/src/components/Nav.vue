@@ -1,7 +1,22 @@
 <template>
   <div id="nav">
-    <div class="tab">tab</div>
-    <div class="area">
+    <div class="tab">
+      <div
+        id="nav_tab1"
+        :class="[tabIndex == 0 ? 'tabon' : 'taboff']"
+        @click="tabIndex = 0"
+      >
+        . . .
+      </div>
+      <div
+        id="nav_tab2"
+        :class="[tabIndex == 1 ? 'tabon' : 'taboff']"
+        @click="tabIndex = 1"
+      >
+        ★
+      </div>
+    </div>
+    <div class="area" v-if="tabIndex == 0">
       <div id="navTitle">{{ menuNm }}</div>
       <ul>
         <li v-for="(menu, idx) in menuList" :key="idx" :value="menu.menuId">
@@ -9,6 +24,7 @@
         </li>
       </ul>
     </div>
+    <div class="area" v-else></div>
   </div>
 </template>
 
@@ -22,6 +38,7 @@ export default {
       menuNm: "",
       menuList: [],
       selectedMenu: "",
+      tabIndex: 0,
     };
   },
   computed: {
