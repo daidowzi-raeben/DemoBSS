@@ -17,6 +17,7 @@
           </div>
         </div>
       </div>
+      <button @click="com_add">추가</button>
       <keep-alive>
         <component v-bind:is="comp"></component>
       </keep-alive>
@@ -35,13 +36,11 @@ export default {
   components: { Nav, ChageInfoRetv, ContMgt, dummy, CommonView },
   data() {
     return {
-      comp: "ChageInfoRetv",
-      cur_num: 0,
-      compm: [
-        { file: "ChageInfoRetv", value: "청구관리" },
-        { file: "ContMgt", value: "계약관리" },
-        { file: "dummy", value: "더미" },
-        { file: "CommonView", value: "공통" },
+      comp : 'ChageInfoRetv',
+      cur_num:0,
+      compm : [{file:'ChageInfoRetv',value:'청구관리'},
+        {file:'ContMgt',value:'계약관리'},
+        {file:'CommonView',value:'공통'},
       ],
       test: "ChageInfoRetv",
     };
@@ -65,7 +64,10 @@ export default {
         }
       }
     },
-  },
+    com_add: function (){
+      this.compm.push({file:'dummy',value:'더미'});
+    }
+  }
 };
 </script>
 

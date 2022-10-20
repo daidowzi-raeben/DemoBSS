@@ -1,10 +1,10 @@
 <template>
   <div class="ch_area">
-    <span><label style="background-color: #2dbdb6; border-radius: 3px; color: #ffffff">★</label> 청구 > 청구요금관리 > <label style="font-weight: bold">청구요금정보관리 [BILL_01_001]</label></span>
-    <span style="margin: 3px; padding: 4px; font-size:10px;  border: solid thin">홈화면설정</span>
-    <span style="margin: 3px 3px 0px 3px; padding: 4px; font-size:10px; border: solid thin">홈화면초기화</span>
+    <label style="background-color: #2dbdb6; border-radius: 3px; color: #ffffff">★</label> 청구 > 청구요금관리 > <label style="font-weight: bold">청구요금정보관리 [BILL_01_001]</label>
 
   <div class="cusInfo">
+    <span style="float:right; margin: 3px; padding: 4px; font-size:10px;  border: solid thin">홈화면설정</span>
+    <span style="float:right; margin: 3px; padding: 4px; font-size:10px; border: solid thin">홈화면초기화</span>
     <label style="background-color: #2dbdb6; border-radius: 3px; color: #ffffff">▶</label><label style="font-weight: bold" >고객정보</label>
     <table style=" width: 100%;">
       <tr style="height: 40px;">
@@ -50,7 +50,7 @@
       <span><label style="background-color: #2dbdb6; border-radius: 3px; color: #ffffff">▶</label><label style="font-weight: bold">서비스 계약목록</label></span>
       <span style="float: right; margin: 3px; padding: 4px; font-size:10px; border: solid thin; font-weight: bold" >전체접기</span>
       <span style="float: right; margin: 3px 3px 0px 3px; padding: 4px; font-size:10px; border: solid thin; font-weight: bold" >전체펼치기</span>
-      <div  style="margin:10px; width: 100%; height: 100%; border: solid; border-top-color: #2dbdb6"></div>
+      <div  style="margin:10px; width: 100%; height: 100%; border: groove; border-top-color: #2dbdb6"></div>
     </div>
     <div style="left :30%;">
     <div>
@@ -61,7 +61,7 @@
           <option selected>6개월</option>
         </select></span>
         <span style="float: right; margin: 3px; font-weight: bold">최근 개월 수</span>
-        <div style="margin:10px; width: 100%; height: 100%; border: solid; border-top-color: #2dbdb6">
+        <div style="margin:10px; width: 100%; height: 100%; border: groove; border-top-color: #2dbdb6">
           <ag-grid-component
               :rowData="rowData1"
               :columnDefs="columnDefs1"
@@ -73,7 +73,7 @@
         <div class="feeSear" >
           <span><label style="background-color: #2dbdb6; border-radius: 3px; color: #ffffff">▶</label><label style="font-weight: bold">요금항목별 조회</label> (<label style="font-weight: bold">18</label>건)</span>
           <span style="float: right; margin: 3px; padding: 4px; font-size:10px; border: solid thin; font-weight: bold">엑셀다운</span>
-          <div style="margin:10px; width: 100%; height: 100%; border: solid; border-top-color: #2dbdb6">
+          <div style="margin:10px; width: 100%; height: 100%; border: groove; border-top-color: #2dbdb6">
             <ag-grid-component
                 :rowData="rowData1"
                 :columnDefs="columnDefs1"
@@ -93,7 +93,7 @@
             <select style="width: 100px; height: 21.5px;">
               <option selected>전체</option>
             </select></span>
-          <div style="margin:10px; width: 100%; height: 100%; border: solid; border-top-color: #2dbdb6">
+          <div style="margin:10px; width: 100%; height: 100%; border: groove; border-top-color: #2dbdb6">
                 <ag-grid-component
                     :rowData="rowData1"
                     :columnDefs="columnDefs1"
@@ -198,7 +198,7 @@ td > label {
   left: 30px;
   /*border: #F00 solid 1px;*/
   min-height: calc(100% - 180px);
-  padding: 100px 0 143px;
+  padding: 20px 0 143px;
   box-sizing: border-box;
 }
 .sevSear{
