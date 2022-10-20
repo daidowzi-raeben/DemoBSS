@@ -1,5 +1,6 @@
 <template>
-  <div class="ch_area">
+  <div class="layout">
+  <div class="ch_area" >
     <label style="background-color: #2dbdb6; border-radius: 3px; color: #ffffff">★</label> 청구 > 청구요금관리 > <label style="font-weight: bold">청구요금정보관리 [BILL_01_001]</label>
 
   <div class="cusInfo">
@@ -107,7 +108,7 @@
 
     </div>
   </div>
-
+  </div>
 </template>
 
 <script>
@@ -157,6 +158,12 @@ export default {
 </script>
 
 <style scoped>
+div.layout {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  overflow-y: scroll;
+}
 div.cusInfo {
   float: left;
   width: 89vw;

@@ -265,7 +265,7 @@ section > div.wrap {
   white-space: nowrap;
 }
 
-span.tab_x {
+button.tab_x {
   color: #aeaeae;
   font-size: 20px;
   float: right;

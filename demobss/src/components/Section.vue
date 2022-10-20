@@ -5,10 +5,10 @@
       <div class="menu_tab_line">
         <div v-for="(item, index) in compm" v-bind:key="index">
           <div
-            class="menu_tab"
             :class="{
-              tabon: this.comp === item.file,
-              taboff: this.comp !== item.file,
+              'tabon': this.comp === item.file,
+              'taboff': this.comp !== item.file,
+              'menu_tab' : true
             }"
             @click="ChageComponent(item.file, index)"
           >
@@ -45,6 +45,11 @@ export default {
       test: "ChageInfoRetv",
     };
   },
+  watch : {
+    cur_num :function (newVal, oldVal){
+      this.comp = this.compm[newVal].file;
+    },
+  },
   computed: {
     navOn() {
       return this.$store.state.navOn;
@@ -54,14 +59,18 @@ export default {
     ChageComponent: function (componentName, index) {
       this.comp = componentName;
       this.cur_num = index;
+      console.log(this.cur_num);
     },
     Com_delete: function (index) {
       if (index != 0) {
         this.compm.splice(index, 1);
-        if (index == this.cur_num) {
-          this.comp = this.compm[index - 1].file;
-          this.cur_num = index - 1;
+        if (index == this.cur_num || (index < this.cur_num && index <= this.compm.length)) {
+          console.log(index);
+          console.log(this.cur_num);
+          this.cur_num = this.cur_num  - 1;
         }
+
+
       }
     },
     com_add: function (){
