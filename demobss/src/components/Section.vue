@@ -21,14 +21,7 @@
       </div>
       <!-- <button @click="com_add">추가</button> -->
 
-      <div class="title_area">
-        <div class="icon"></div>
-        <h1>메뉴 > 메뉴2 ></h1>
-        <span> {{ menuNm }} [BILL_01_001]</span>
-        <div class="view_reset">화면초기화</div>
-        <div class="home_menu">홈화면 설정</div>
-      </div>
-
+      <title-area :menuNm="menuNm" />
       <keep-alive class="view_wrap">
         <component v-bind:is="comp"></component>
       </keep-alive>
@@ -37,6 +30,7 @@
 </template>
 
 <script>
+import TitleArea from "./common/TitleArea.vue";
 import Nav from "./Nav.vue";
 import ChageInfoRetv from "../pages/ChageInfoRetv.vue";
 import ContMgt from "../pages/ContMgt.vue";
@@ -44,7 +38,7 @@ import dummy from "../pages/dummy.vue";
 import CommonView from "../pages/CommonView.vue";
 export default {
   name: "Section",
-  components: { Nav, ChageInfoRetv, ContMgt, dummy, CommonView },
+  components: { TitleArea, Nav, ChageInfoRetv, ContMgt, dummy, CommonView },
   data() {
     return {
       comp: "ChageInfoRetv",
