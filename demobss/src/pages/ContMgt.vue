@@ -88,7 +88,7 @@
       <div class="cmProducts">보유 상품</div>
 
       <div class="CommonInfo">
-        <div style="margin: 10px">
+        <div>
           <span style="font-size: 15px"
             ><label
               style="
@@ -99,13 +99,12 @@
               >▶</label
             ><label style="font-weight: bold">기본정보</label></span
           >
-          <span style="float: right; margin-right: 70px">
+          <span style="float: right;  ">
             <table class="selectSearch">
               <tr>
                 <td>
                   <label>BM</label>
                   <select
-                    style="width: 100px; height: 25px; margin-right: 10px"
                   >
                     <option selected disabled value="">선택</option>
                     <option value="D">고객ID</option>
@@ -117,7 +116,6 @@
                 <td>
                   <label><h2>Service</h2></label>
                   <select
-                    style="width: 150px; height: 25px; margin-right: 10px"
                   >
                     <option selected disabled value="">선택</option>
                     <option value="D">고객ID</option>
@@ -131,6 +129,7 @@
             </table>
           </span>
         </div>
+        <div style="border:groove; margin-top:15px;" >
         <table>
           <tr>
             <td>
@@ -138,15 +137,13 @@
               <input type="text" value="S00000002710" disabled />
             </td>
             <td>
-              <label> BM</label> <input type="text" value="MVSAT" disabled />
+              <label>BM</label> <input type="text" value="MVSAT" disabled />
             </td>
             <td>
               <label> 계약상태</label>
               <input type="text" value="사용중" disabled />
             </td>
           </tr>
-        </table>
-        <table>
           <tr>
             <td>
               <label> 개통일시</label>
@@ -158,7 +155,7 @@
             </td>
             <td>
               <label> 서비스오더ID</label>
-              <input type="text" value="  " disabled />
+              <input type="text" value=" ㄴㅇㅁㄹㄴㅇㄹ " disabled />
             </td>
           </tr>
         </table>
@@ -167,7 +164,7 @@
             <td>
               <label> 상품</label>
               <input
-                style="width: 500px"
+                style="width: 503px"
                 type="text"
                 value="Regional MVSAT"
                 disabled
@@ -186,13 +183,14 @@
               <input
                 style="width: 800px"
                 type="text"
-                value="오늘 점심 메뉴는 무엇일까요"
+                value="계약 부가정보 입력해주세요."
                 disabled
               />
             </td>
             <!-- <td><label> 약정종료일</label> <input type="text" value="2022-12-01" disabled> </td> -->
           </tr>
         </table>
+        </div>
       </div>
 
       <div class="shipInfo">
@@ -257,10 +255,11 @@
           </table>
         </div>
       </div>
+
       <div class="ContMemInfo">
         <div style="margin: 10px">
           <div>
-            <span style="font-size: 15px"
+            <span style="font-size: 15px; "
               ><label
                 style="
                   background-color: #2dbdb6;
@@ -268,14 +267,14 @@
                   color: #ffffff;
                 "
                 >▶</label
-              ><label style="font-weight: bold">청구계정 정보</label></span
+              ><label style="font-weight: bold; ">청구계정 정보</label></span
             >
             <span>
               <table style="display: inline-block">
                 <tr>
                   <td>
                     <select
-                      style="width: 100px; height: 25px; margin-right: 10px"
+                      style="width: 100px; height: 25px; margin-left:10px;"
                     >
                       <option selected disabled value="">선택</option>
                       <option value="A">고객ID</option>
@@ -286,11 +285,10 @@
                     <input
                       style="
                         display: inline-block;
-                        background-color: #f9f9f9;
                         border-style: groove;
-                        width: 75px;
-                        height: 20px;
-                        font-size: 12px;
+                        width: 150px;
+                        height: 18px;
+                        font-size: 15px;
                         text-align: center;
                       "
                       type="text"
@@ -310,7 +308,6 @@
               <td>
                 <label> 수신인</label>
                 <input
-                  style="width: 320px"
                   type="text"
                   value="MVSAT"
                   disabled
@@ -325,7 +322,6 @@
               <td>
                 <label> 납부방법</label>
                 <input
-                  style="width: 320px"
                   type="text"
                   value="36개월 약정"
                   disabled
@@ -340,7 +336,6 @@
               <td>
                 <label> 납부일자</label>
                 <input
-                  style="width: 320px"
                   type="text"
                   value="2022-12-01"
                   disabled
@@ -351,7 +346,6 @@
               <td rowspan="2">
                 <label> 청구서표기명</label>
                 <input
-                  style="width: 340px"
                   type="text"
                   value="엘토스커뮤니케이션(주)"
                   disabled
@@ -362,9 +356,8 @@
               <td rowspan="2">
                 <label> 주소</label>
                 <input
-                  style="width: 340px"
                   type="text"
-                  value="서울특별시 서초구 효령로 1476 ktds"
+                  value="서울특별시sss 서초구 효령로 1476 ktds"
                   disabled
                 />
               </td>
@@ -418,17 +411,14 @@
 
 <script>
 import AgGridComponent from "@/components/common/AgGridComponent";
-import TreeItem from "@/components/common/TreeItem.vue";
 // import Section from "@/components/Section";
 export default {
   name: "ContMgt",
   components: {
     AgGridComponent,
-    TreeItem,
   },
   data() {
     return {
-      treeData,
       gridOptions: null,
       columnDefs1: [
         {
@@ -557,29 +547,6 @@ export default {
     };
   },
 };
-
-const treeData = {
-  name: "My Tree",
-  children: [
-    { name: "hello" },
-    { name: "wat" },
-    {
-      name: "child folder",
-      children: [
-        {
-          name: "child folder",
-          children: [{ name: "hello" }, { name: "wat" }],
-        },
-        { name: "hello" },
-        { name: "wat" },
-        {
-          name: "child folder",
-          children: [{ name: "hello" }, { name: "wat" }],
-        },
-      ],
-    },
-  ],
-};
 </script>
 
 <style scoped>
@@ -688,24 +655,23 @@ div.section0 > div.ContMemInfo {
 
 .ContMemInfo table.accountInfo tr > td > input {
   background-color: #f9f9f9;
-  width: 260px;
+  width: 355px;
   height: 20px;
   font-size: 12px;
 }
 
-div.section0 > div.CommonInfo {
+.CommonInfo {
   display: inline-block;
-  width: 900px;
-  margin: 0 auto auto 15px;
+  width: 920px;
+  margin: 0 auto auto 13px;
   height: 180px;
-  border: groove;
 }
 
 .CommonInfo table tr > td > label {
   display: inline-block;
   background-color: #f9f9f9;
   border-style: groove;
-  width: 75px;
+  width: 80px;
   height: 20px;
   font-size: 12px;
   font-weight: bold;
@@ -718,20 +684,37 @@ div.section0 > div.CommonInfo {
   height: 20px;
   font-size: 12px;
 }
+/* 
+.CommonInfo table.selectSearch{  
+display: inline-block;
+width: 150px; 
+height: 25px; 
+margin-right: 10px;
+
+} */
+
 
 .CommonInfo table.selectSearch tr > td > label {
   display: inline-block;
-  background-color: #f9f9f9;
-  width: 70px;
+  background-color: ;
+  width: 80px;
   height: 20px;
   font-weight: bold;
   font-size: 14px;
 }
 
-div.section0 > div.shipInfo {
+.CommonInfo table.selectSearch tr > td > select {
   display: inline-block;
-  width: 925px;
-  /* background-color: rgba(8, 149, 149, 0.423); */
+  background-color: #f9f9f9;
+  width: 150px;
+  height: 25px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.shipInfo {
+  display: inline-block;
+  width: 940px;
   margin: 0 auto auto 5px;
   height: 80px;
 }
@@ -739,46 +722,49 @@ div.section0 > div.shipInfo {
 .shipInfo table tr > td > label {
   display: inline-block;
   background-color: #f9f9f9;
-  width: 95px;
+  border-style: groove;
+  width: 80px;
   height: 20px;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: bold;
   text-align: center;
 }
 
 .shipInfo table tr > td > input {
   background-color: #f9f9f9;
-  width: 180px;
+  width: 200px;
   height: 20px;
   font-size: 12px;
 }
 
-div.section0 > div.svOrgInfo {
+.svOrgInfo {
   display: inline-block;
-  width: 925px;
-  /* background-color: rgba(8, 149, 149, 0.423); */
+  width: 940px;
   margin: 0 auto auto 5px;
   height: 80px;
 }
-
+.svOrgInfo table {
+  width:100%;
+}
 .svOrgInfo table tr > td > label {
   display: inline-block;
   background-color: #f9f9f9;
-  width: 95px;
+  border-style: groove;
+  width: 80px;
   height: 20px;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: bold;
   text-align: center;
 }
 
 .svOrgInfo table tr > td > input {
   background-color: #f9f9f9;
-  width: 180px;
+  width: 200px;
   height: 20px;
   font-size: 12px;
 }
 
-div.section0 > div.feeInfo {
+.feeInfo {
   display: inline-block;
   width: 905px;
   /* background-color: rgba(8, 149, 149, 0.423); */

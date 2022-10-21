@@ -2,7 +2,7 @@
   <header>
     <div id="brand">
       <div id="ham" @click="openNav">≡</div>
-      <div class="brand_name">ktds 영업전산시스템</div>
+      <div class="brand_name" @click="GoHome"> ktds 영업전산시스템</div>
     </div>
     <div id="menu">
       <div class="area">
@@ -57,6 +57,9 @@ export default {
   },
   computed: {},
   methods: {
+    GoHome(){
+      this.$router.push('/')
+    },
     openNav() {
       this.$store.commit("setNavOn", !this.$store.state.navOn);
     },

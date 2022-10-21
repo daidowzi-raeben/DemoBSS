@@ -119,6 +119,7 @@ body {
   font-size: 20px;
   color: #ffffff;
   line-height: 54px;
+  cursor: pointer;
 }
 
 #brand > #ham {
