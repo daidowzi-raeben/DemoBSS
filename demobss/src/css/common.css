@@ -559,50 +559,55 @@ section > div > .btn_area > div.r_btn {
 }
 
 /* ----------- 공통 bbs ------------- */
-#bbs_write table tr td div > div.attach {
+div > span.txt02 {
+  font-size: 12px;
+  color: #878787;
+}
+
+div.attach {
   overflow: hidden;
 }
-#bbs_write table tr td div > div.attach > .input {
+div.attach > .input {
   float: left;
   width: 90%;
 }
-#bbs_write table tr td div > div.attach > .btn {
+div.attach > .btn {
   float: right;
 }
 
-#bbs_write table tr td div > div.attach_txt {
+div.attach_txt {
   overflow: hidden;
 }
 
-#bbs_write table tr td div > div.attach_txt ul {
+div.attach_txt ul {
   float: left;
   margin-right: 12px;
 }
-#bbs_write table tr td div > div.attach_txt ul li.attach_bbs {
+div.attach_txt ul li.attach_bbs {
   float: left;
   /* 첨부파일 일렬로... */
 }
-#bbs_write table tr td div > div.attach_txt ul li {
+div.attach_txt ul li {
   /* 첨부파일 일렬로... */
 }
-#bbs_write table tr td div > div.attach_txt ul li a {
+div.attach_txt ul li a {
   cursor: pointer;
 }
-#bbs_write table tr td div > div.attach_txt ul li:last-child {
+div.attach_txt ul li:last-child {
   margin-right: 0;
 }
 
-#bbs_write table tr td div > div.attach_txt ul li > strong.txt {
+div.attach_txt ul li > strong.txt {
   font-size: 12px;
   color: #b87678;
   padding-right: 13px;
 }
-#bbs_write table tr td div > div.attach_txt ul li > span.number {
+div.attach_txt ul li > span.number {
   border-left: #ccc solid 1px;
   padding-left: 13px;
   font-size: 12px;
 }
-#bbs_write table tr td div > div.attach_txt ul li > a.delete {
+div.attach_txt ul li > a.delete {
   color: #ed1820;
   font-size: 14px;
   font-family: Arial;

@@ -86,6 +86,24 @@
       </div>
     </div>
 
+    <h1 style="font-size: 30px">file input</h1>
+    <div style="border-top: solid black 1px; margin: 10px; padding: 10px">
+      <div style="width: 70%">
+        <file-input-component
+          :atcNoti="'첨부파일은 최대 10MB 이내로 첨부 가능합니다.'"
+        />
+      </div>
+
+      <div style="width: 70%; margin: 10px 0">
+        <button @click="fileDisable">file input disable</button>
+        {{ pDisable }}
+        <file-input-component
+          :atcNoti="'버튼을 눌러 파일업로드 비활성화 가능'"
+          :pDisable="pDisable"
+        />
+      </div>
+    </div>
+
     <h1 style="font-size: 30px">ag grid</h1>
     <div
       style="
@@ -111,12 +129,14 @@
 </template>
 
 <script>
+import FileInputComponent from "../components/common/FileInputComponent.vue";
 import DatePickerComponent from "../components/common/DatePickerComponent.vue";
 import AgGridComponent from "../components/common/AgGridComponent.vue";
 import SelectBoxComponent from "../components/common/SelectBoxComponent.vue";
 export default {
   name: "CommonView",
   components: {
+    FileInputComponent,
     DatePickerComponent,
     AgGridComponent,
     SelectBoxComponent,
@@ -127,6 +147,7 @@ export default {
       searchDiv2: null,
       date1: new Date(2021, 9, 5),
       date2: new Date(),
+      pDisable: true,
       columnDefs1: [
         {
           headerName: "Make",
@@ -173,6 +194,11 @@ export default {
   },
   created() {
     // this.rowData2 = [];
+  },
+  methods: {
+    fileDisable() {
+      this.pDisable = !this.pDisable;
+    },
   },
 };
 </script>
