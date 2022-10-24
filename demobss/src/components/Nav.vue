@@ -21,7 +21,7 @@
       <ul id="depth2_list">
         <li v-for="(menu2, idx) in menuDepth2" :key="idx" :value="menu2.menuId">
           <div id="depth2" @click="setMenu2(menu2.menuId)">
-            {{ selectedMenuId == menu2.menuId ? "+" : "- " }}
+            {{ selectedMenuId == menu2.menuId ? "- " : "+" }}
             {{ menu2.menuNm }}
           </div>
           <ul id="depth3_list" v-if="selectedMenuId == menu2.menuId">
