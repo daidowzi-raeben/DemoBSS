@@ -217,21 +217,37 @@ body {
   font-weight: 600;
 }
 
-#nav > .area > ul {
+#nav > .area > ul#depth2_list {
   display: grid;
 }
 
-#nav > .area > ul > li {
-  float: left;
+#nav > .area > ul#depth2_list > li #depth2 {
   padding: 10px 15px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #606060;
+  cursor: pointer;
+}
+
+#nav > .area > ul > li #depth2:hover {
+  color: #2dbdb6 !important;
+}
+
+#nav > .area > ul#depth2_list > li > ul#depth3_list {
+  display: grid;
+}
+
+#nav > .area > ul#depth2_list > li > ul#depth3_list > li#depth3 {
+  float: left;
+  padding: 10px 15px 10px 40px;
   font-weight: 600;
   color: #949494;
   cursor: pointer;
 }
 
-#nav > .area > ul > li:hover {
+#nav > .area > ul#depth2_list > li > ul#depth3_list > li#depth3:hover {
   color: #000000;
-  background-color: #c8c8c8;
+  background-color: #dcdcdc;
 }
 
 /* section */

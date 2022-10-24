@@ -2,46 +2,18 @@
   <header>
     <div id="brand">
       <div id="ham" @click="openNav">≡</div>
-      <div class="brand_name" @click="GoHome"> ktds 영업전산시스템</div>
+      <div class="brand_name" @click="GoHome">ktds 영업전산시스템</div>
     </div>
     <div id="menu">
       <div class="area">
         <ul>
-          <li>
+          <li v-for="(menu, idx) in menuDepth1" :key="idx">
             <span
-              @click="setMenuId(1, 'menuCont')"
-              :class="[menuId == 1 ? 'clicked' : '']"
+              @click="setMenuId(menu.menuId)"
+              :class="[menuId == menu.menuId ? 'clicked' : '']"
             >
-              계약
+              {{ menu.menuNm }}
             </span>
-          </li>
-          <li>
-            <span
-              @click="setMenuId(2, 'menuCont')"
-              :class="[menuId == 2 ? 'clicked' : '']"
-              >고객</span
-            >
-          </li>
-          <li>
-            <span
-              @click="setMenuId(3, 'menuBill')"
-              :class="[menuId == 3 ? 'clicked' : '']"
-              >청구</span
-            >
-          </li>
-          <li>
-            <span
-              @click="setMenuId(4, 'menuCont')"
-              :class="[menuId == 4 ? 'clicked' : '']"
-              >영업관리</span
-            >
-          </li>
-          <li>
-            <span
-              @click="setMenuId(5, 'menuCont')"
-              :class="[menuId == 5 ? 'clicked' : '']"
-              >정산관리</span
-            >
           </li>
         </ul>
       </div>
@@ -50,22 +22,28 @@
 </template>
 
 <script>
+import menu from "../../public/menu.json";
 export default {
   name: "Header",
   data() {
-    return { menuId: 1 };
+    return { menuId: "cont_01", menuDepth1: [] };
   },
   computed: {},
+  created() {
+    this.menuDepth1 = menu.menu.filter((menu) => {
+      return menu.upMenuId == null;
+    });
+  },
   methods: {
-    GoHome(){
-      this.$router.push('/')
+    GoHome() {
+      this.$router.push("/");
     },
     openNav() {
       this.$store.commit("setNavOn", !this.$store.state.navOn);
     },
-    setMenuId(val, menuNm) {
+    setMenuId(val) {
       this.menuId = val;
-      this.$store.commit("setMenuId", menuNm);
+      this.$store.commit("setMenuId", this.menuId);
       if (!this.$store.state.navOn) this.$store.commit("setNavOn", true);
     },
   },
