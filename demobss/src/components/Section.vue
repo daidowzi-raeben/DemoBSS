@@ -19,7 +19,6 @@
 
         <div class="menu_close">x</div>
       </div>
-      <!-- <button @click="com_add">추가</button> -->
 
       <title-area :menuNm="menuNm" />
       <keep-alive class="view_wrap">

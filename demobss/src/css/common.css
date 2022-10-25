@@ -1500,3 +1500,29 @@ input[type="checkbox"]:checked + label {
   background-color: dodgerblue;
   color: white;
 }
+
+
+/* -----------components > common > ButtonComponents ---------- */
+
+.btnClass1{
+  float: left;
+  padding: 5px;
+  margin-right: 10px;
+  background-color: #707070;
+  color: #aeaeae;
+  cursor: pointer;
+}
+.btnClass2{
+  float: left;
+  padding: 5px;
+  margin-right: 10px;
+  background-color: #707070;
+  color: #aeaeae;
+  cursor: pointer;
+}
+.btnClass3{
+  height: 30px; 
+  font-weight: bold; 
+  margin-right: 5px
+}
+

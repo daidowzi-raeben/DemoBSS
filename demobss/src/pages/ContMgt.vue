@@ -124,8 +124,12 @@
                     <option value="C">청구계정ID</option>
                   </select>
                 </td>
-                <td><button>신규등록</button></td>
-              </tr>
+                <td>
+                  <ButtonComponent
+                  :btnClass="'btnClass3'"
+                  :btnName="'신규등록'"
+                  /></td>
+                            </tr>
             </table>
           </span>
         </div>
@@ -224,7 +228,6 @@
           </table>
         </div>
       </div>
-
       <div class="svOrgInfo">
         <div style="margin: 10px">
           <span style="font-size: 15px"
@@ -364,20 +367,11 @@
             </tr>
           </table>
         </div>
-
         <div style="float: right; margin-right: 70px">
-          <button style="height: 30px; font-weight: bold; margin-right: 5px">
-            수시청구계정등록
-          </button>
-          <button style="height: 30px; font-weight: bold; margin-right: 5px">
-            청구계정등록
-          </button>
-          <button style="height: 30px; font-weight: bold; margin-right: 5px">
-            청구계정조회/수정
-          </button>
-          <button style="height: 30px; font-weight: bold; margin-right: 5px">
-            청구계정변경
-          </button>
+          <ButtonComponent :btnClass="'btnClass3'" :btnName="'수시청구계정등록'" />
+          <ButtonComponent :btnClass="'btnClass3'" :btnName="'청구계정등록'" />
+          <ButtonComponent :btnClass="'btnClass3'" :btnName="'청구계정조회/수정'" />
+          <ButtonComponent :btnClass="'btnClass3'" :btnName="'청구계정변경'" />
         </div>
       </div>
       <div class="feeInfo">
@@ -405,17 +399,64 @@
           />
         </div>
       </div>
+
+
+<div>
+  <form name="LoginForm" action="thispage"  >
+    <fieldset style="width:920px;" >
+        <legend>기본정보 제목</legend>
+        <ul >
+            <li>
+                <label for="UserName">계약ID </label>
+                <input id="UserName" name="S00000002710" type="text" />
+                <label for="UserName">BM </label>
+                <input id="UserName" name="MVSAT" type="text" />
+                <label for="UserName">계약상태 </label>
+                <input id="UserName" name="사용중" type="text" />
+            </li>
+            
+            <li>
+                <label for="UserName">계약ID </label>
+                <input id="UserName" name="S00000002710" type="text" />
+                <label for="UserName">BM </label>
+                <input id="UserName" name="MVSAT" type="text" />
+                <label for="UserName">계약상태 </label>
+                <input id="UserName" name="사용중" type="text" />
+            </li>
+            
+            <li>
+                <label for="UserName">계약ID </label>
+                <input id="UserName" name="S00000002710" type="text" />
+                <label for="UserName">BM </label>
+                <input id="UserName" name="MVSAT" type="text" />
+                <label for="UserName">계약상태 </label>
+                <input id="UserName" name="사용중" type="text" />
+            </li>
+            
+            <li>
+                <label for="UserName">계약ID </label>
+                <input id="UserName" name="S00000002710" type="text" />
+                <label for="UserName">BM </label>
+                <input id="UserName" name="MVSAT" type="text" />
+            </li>
+        </ul>
+    </fieldset>
+</form>
+</div>
+
+
     </div>
   </div>
 </template>
 
 <script>
 import AgGridComponent from "@/components/common/AgGridComponent";
+import ButtonComponent from "@/components/common/ButtonComponent.vue";
 // import Section from "@/components/Section";
 export default {
   name: "ContMgt",
   components: {
-    AgGridComponent,
+    AgGridComponent, ButtonComponent
   },
   data() {
     return {
@@ -696,7 +737,6 @@ margin-right: 10px;
 
 .CommonInfo table.selectSearch tr > td > label {
   display: inline-block;
-  background-color: ;
   width: 80px;
   height: 20px;
   font-weight: bold;

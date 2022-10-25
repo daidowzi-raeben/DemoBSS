@@ -4,14 +4,17 @@
     <h1>메뉴 > 메뉴2 ></h1>
     <span> {{ menuNm }} [BILL_01_001]</span>
     <div class="right">
-      <div class="home_menu">홈화면 설정</div>
-      <div class="view_reset">화면초기화</div>
+      <button-component :btnClass="'btnClass1'" :btnName="'홈화면설정'"></button-component>
+      <button-component :btnClass="'btnClass1'" :btnName="'화면초기화'" ></button-component>
     </div>
   </div>
 </template>
 
 <script>
-export default {
+import ButtonComponent from "./ButtonComponent.vue";
+
+export default{
+  components: { ButtonComponent }, 
   name: "TitleArea",
   data() {
     return {};
