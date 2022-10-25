@@ -40,6 +40,7 @@
     </div>
     <div class="area" v-else></div>
   </div>
+
 </template>
 
 <script>
@@ -95,6 +96,9 @@ export default {
     setCmpn(val) {
       console.log(val);
     },
+    moveToComponent(param){
+      this.$emit('input',param);
+    }
   },
 };
 </script>
