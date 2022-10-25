@@ -30,7 +30,7 @@
               v-for="(menu3, idx) in menuDepth3"
               :key="idx"
               :value="menu3.menuId"
-              @click="setCmpn(menu3.cmpnId)"
+              @click="setCmpn(menu3)"
             >
               {{ menu3.menuNm }}
             </li>
@@ -95,10 +95,8 @@ export default {
     },
     setCmpn(val) {
       console.log(val);
+      this.$emit('input',val);
     },
-    moveToComponent(param){
-      this.$emit('input',param);
-    }
   },
 };
 </script>

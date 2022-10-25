@@ -8,13 +8,13 @@
         <div v-for="(item, index) in compm" v-bind:key="index">
           <div
             :class="{
-              tabon: this.comp === item.file,
-              taboff: this.comp !== item.file,
+              tabon: this.comp === item.cmpnId,
+              taboff: this.comp !== item.cmpnId,
               menu_tab: true,
             }"
-            @click="ChageComponent(item.file, index)"
+            @click="ChageComponent(item.cmpnId, index)"
           >
-            {{ item.value }}
+            {{ item.menuNm }}
             <span class="tab_x" @click.prevent.stop="DeleteComponent(index)">x</span>
           </div>
         </div>
@@ -45,9 +45,9 @@ export default {
       comp: "ChageInfoRetv",
       cur_num: 0,
       compm: [
-        { file: "ChageInfoRetv", value: "청구관리" },
-        { file: "ContMgt", value: "계약관리" },
-        { file: "CommonView", value: "공통" },
+        { cmpnId: "ChageInfoRetv", menuNm: "청구관리" },
+        { cmpnId: "ContMgt", menuNm: "계약관리" },
+        { cmpnId: "CommonView", menuNm: "공통" },
       ],
       compm2:[],
       test: "ChageInfoRetv",
@@ -55,7 +55,7 @@ export default {
   },
   watch: {
     cur_num: function (newVal, oldVal) {
-      this.comp = this.compm[newVal].file;
+      this.comp = this.compm[newVal].cmpnId;
     },
   },
   computed: {
@@ -63,7 +63,7 @@ export default {
       return this.$store.state.navOn;
     },
     menuNm() {
-      return this.compm[this.cur_num].value;
+      return this.compm[this.cur_num].menuNm;
     },
   },
   methods: {
@@ -80,14 +80,14 @@ export default {
       }
     },
     AddComponent: function (param) {
-      if(param.file!=null) {
-        const st = this.compm.find(element => element.file === param.file);
+      if(param.cmpnId!="" && param.cmpnId != null) {
+        const st = this.compm.find(element => element.cmpnId === param.cmpnId);
         if (st != null) {
           var i = this.compm.indexOf(st);
           this.cur_num = i;
         } else {
           if (this.compm.length <= 10) {
-            this.compm.push({file: param.file, value: param.menuNm});
+            this.compm.push({cmpnId: param.cmpnId, menuNm: param.menuNm});
             this.cur_num = this.compm.length - 1;
           } else {
             console.log("10개를 넘었습니다.");
