@@ -44,7 +44,19 @@
             <label>고객조회</label>
             <select style="width: 100px; height: 21.5px">
               <option selected>전체</option></select
-            >&nbsp;<input style="background-color: white" type="text" />
+            >&nbsp;
+            <input-component
+              :type="'search'"
+              :height="'20'"
+              :widht="'50'"
+              v-model="searchValue"
+              @input="
+                (value) => {
+                  searchValue = value;
+                }
+              "
+              />
+
           </td>
           <td
             style="
@@ -331,13 +343,15 @@
 
 <script>
 import AgGridComponent from "@/components/common/AgGridComponent";
+import InputComponent from "@/components/common/InputComponent";
 
 export default {
   name: "ChageInfoRetv",
-  components: { AgGridComponent },
+  components: { AgGridComponent, InputComponent },
   data() {
     return {
       gridOptions: null,
+      searchValue:null,
       columnDefs1: [
         {
           headerName: "청구계정",

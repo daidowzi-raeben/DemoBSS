@@ -4,11 +4,13 @@
         "subMenuList": [
             {
                 "menuId": "cont001",
-                "menuNm": "계약상세"
+                "menuNm": "계약상세",
+                "file" : "dummy"
             },
             {
                 "menuId": "cont002",
-                "menuNm": "계약관리"
+                "menuNm": "계약관리",
+                "file" : "ContMgt"
             },
             {
                 "menuId": "cont003",

@@ -19,13 +19,14 @@
     <div class="area" v-if="tabIndex == 0">
       <div id="navTitle">{{ menuNm }}</div>
       <ul>
-        <li v-for="(menu, idx) in menuList" :key="idx" :value="menu.menuId">
+        <li v-for="(menu, idx) in menuList" :key="idx" :value="menu.menuId" @click="moveToComponent(menu)" >
           {{ menu.menuNm }}
         </li>
       </ul>
     </div>
     <div class="area" v-else></div>
   </div>
+
 </template>
 
 <script>
@@ -56,7 +57,11 @@ export default {
       this.menuList = menu[this.$store.state.menuId].subMenuList;
     },
   },
-  methods: {},
+  methods: {
+    moveToComponent(param){
+      this.$emit('input',param);
+    }
+  },
 };
 </script>
 

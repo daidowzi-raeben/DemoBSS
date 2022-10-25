@@ -1,6 +1,8 @@
 <template>
   <section>
-    <Nav v-show="navOn" />
+    <Nav v-show="navOn"
+         @input="AddComponent"
+    />
     <div class="wrap">
       <div class="menu_tab_line">
         <div v-for="(item, index) in compm" v-bind:key="index">
@@ -13,16 +15,15 @@
             @click="ChageComponent(item.file, index)"
           >
             {{ item.value }}
-            <span class="tab_x" @click.prevent.stop="Com_delete(index)">x</span>
+            <span class="tab_x" @click.prevent.stop="DeleteComponent(index)">x</span>
           </div>
         </div>
 
         <div class="menu_close">x</div>
       </div>
-      <!-- <button @click="com_add">추가</button> -->
 
       <title-area :menuNm="menuNm" />
-      <keep-alive class="view_wrap">
+      <keep-alive class="view_wrap" :max="10" >
         <component v-bind:is="comp"></component>
       </keep-alive>
     </div>
@@ -48,6 +49,7 @@ export default {
         { file: "ContMgt", value: "계약관리" },
         { file: "CommonView", value: "공통" },
       ],
+      compm2:[],
       test: "ChageInfoRetv",
     };
   },
@@ -69,19 +71,29 @@ export default {
       this.comp = componentName;
       this.cur_num = index;
     },
-    Com_delete: function (index) {
+    DeleteComponent: function (index) {
       if (index != 0) {
         this.compm.splice(index, 1);
-        if (
-          index == this.cur_num ||
-          (index < this.cur_num && index <= this.compm.length)
-        ) {
+        if (index == this.cur_num || (index < this.cur_num && index <= this.compm.length)) {
           this.cur_num = this.cur_num - 1;
         }
       }
     },
-    com_add: function () {
-      this.compm.push({ file: "dummy", value: "더미" });
+    AddComponent: function (param) {
+      if(param.file!=null) {
+        const st = this.compm.find(element => element.file === param.file);
+        if (st != null) {
+          var i = this.compm.indexOf(st);
+          this.cur_num = i;
+        } else {
+          if (this.compm.length <= 10) {
+            this.compm.push({file: param.file, value: param.menuNm});
+            this.cur_num = this.compm.length - 1;
+          } else {
+            console.log("10개를 넘었습니다.");
+          }
+        }
+      }
     },
   },
 };
