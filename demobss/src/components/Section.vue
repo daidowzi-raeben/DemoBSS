@@ -39,7 +39,7 @@ import Nav from "./Nav.vue";
 // import ContMgt from "../pages/ContMgt.vue";
 // import dummy from "../pages/dummy.vue";
 // import CommonView from "../pages/CommonView.vue";
-import { defineAsyncComponent } from "vue";
+import { defineAsyncComponent, markRaw } from "vue";
 
 export default {
   name: "Section",
@@ -74,18 +74,19 @@ export default {
       ],
       compm2: [],
       test: "ChageInfoRetv",
-      component: defineAsyncComponent(() =>
-        import("../pages/ChageInfoRetv.vue")
+      component: markRaw(
+        defineAsyncComponent(() => import("../pages/ChageInfoRetv.vue"))
       ),
     };
   },
   watch: {
     cur_num: function (newVal, oldVal) {
       this.comp = this.compm[newVal].menuId;
-      this.component = defineAsyncComponent(() =>
-        import("../pages/" + this.compm[newVal].cmpnId + ".vue")
-      );
+      this.component = this.compm2[this.cur_num];
     },
+  },
+  created() {
+    this.compm2.push(this.component);
   },
   computed: {
     navOn() {
@@ -103,6 +104,7 @@ export default {
     DeleteComponent: function (index) {
       if (index != 0) {
         this.compm.splice(index, 1);
+        this.compm2.splice(index, 1);
         if (
           index == this.cur_num ||
           (index < this.cur_num && index <= this.compm.length)
@@ -112,12 +114,10 @@ export default {
       }
     },
     AddComponent: function (param) {
-      console.log(param);
       if (param.menuId != "" && param.menuId != null) {
         const st = this.compm.find(
           (element) => element.menuId === param.menuId
         );
-        console.log(st);
         if (st != null) {
           var i = this.compm.indexOf(st);
           this.cur_num = i;
@@ -125,6 +125,12 @@ export default {
           if (this.compm.length <= 10) {
             this.compm.push(param);
             this.cur_num = this.compm.length - 1;
+            this.component = markRaw(
+              defineAsyncComponent(() =>
+                import("../pages/" + this.compm[this.cur_num].cmpnId + ".vue")
+              )
+            );
+            this.compm2.push(this.component);
           } else {
             console.log("10개를 넘었습니다.");
           }
@@ -135,5 +141,4 @@ export default {
 };
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>
