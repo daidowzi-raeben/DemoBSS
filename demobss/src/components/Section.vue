@@ -25,9 +25,11 @@
       </div>
 
       <title-area :currentMenu="currentMenu" />
-      <keep-alive class="view_wrap" :max="10">
-        <component v-bind:is="component"></component>
-      </keep-alive>
+
+        <div v-for="(item, index) in compm2" :key="item">
+          <component v-bind:is="this.compm2[index]" v-show="index===this.cur_num" ></component>
+        </div>
+
     </div>
   </section>
 </template>
