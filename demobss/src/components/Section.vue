@@ -39,10 +39,6 @@
 <script>
 import TitleArea from "./common/TitleArea.vue";
 import Nav from "./Nav.vue";
-// import ChageInfoRetv from "../pages/ChageInfoRetv.vue";
-// import ContMgt from "../pages/ContMgt.vue";
-// import dummy from "../pages/dummy.vue";
-// import CommonView from "../pages/CommonView.vue";
 import { defineAsyncComponent, markRaw } from "vue";
 
 export default {
@@ -50,7 +46,6 @@ export default {
   components: {
     TitleArea,
     Nav,
-    // , ChageInfoRetv, ContMgt, dummy, CommonView
   },
   data() {
     return {
@@ -63,18 +58,6 @@ export default {
           menuNm: "청구요금정보조회",
           upMenuId: "bill_01_01",
         },
-        // {
-        //   cmpnId: "ContMgt",
-        //   menuId: "cont_01_01_02",
-        //   menuNm: "계약관리",
-        //   upMenuId: "cont_01_01",
-        // },
-        // {
-        //   cmpnId: "CommonView",
-        //   menuId: "comn_01_01_01",
-        //   menuNm: "공통화면참고",
-        //   upMenuId: "comn_01_01",
-        // },
       ],
       compm2: [],
       test: "ChageInfoRetv",
@@ -132,7 +115,7 @@ export default {
           var i = this.compm.indexOf(st);
           this.cur_num = i;
         } else {
-          if (this.compm.length <= 10) {
+          if (this.compm.length < 10) {
             this.compm.push(param);
             this.cur_num = this.compm.length - 1;
             this.component = markRaw(
