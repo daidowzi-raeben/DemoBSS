@@ -34,7 +34,7 @@
             "menuId": "cont_01_01_04",
             "menuNm": "TVRO 정시 스케줄관리",
             "upMenuId": "cont_01_01",
-            "cmpnId": ""
+            "cmpnId": "ContMgt"
         },
         {
             "menuId": "cont_01_01_05",
@@ -148,7 +148,7 @@
             "menuId": "comn_01_01_01",
             "menuNm": "공통화면참고",
             "upMenuId": "comn_01_01",
-            "cmpnId": "Common"
+            "cmpnId": "CommonView"
         },
         {
             "menuId": "cust_01",
