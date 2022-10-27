@@ -4,6 +4,7 @@
   :class ="inputClass"
   :style="{width: width+'px', height: height + 'px'}"
   v-model="value"
+  :placeholder="placeholder"
   :input="updateValue(value)"
 
 >
@@ -19,6 +20,7 @@ export default {
     };
   },
   props:{
+    placeholder : String,
     type: String,
     widht : Number,
     height: Number,

@@ -43,13 +43,19 @@
           >
             <label>고객조회</label>
             <select style="width: 100px; height: 21.5px">
-              <option selected>전체</option></select
-            >&nbsp;
+              <option value="A">전체</option>
+              <option value="B">고객ID</option>
+              <option value="C">계약ID</option>
+              <option value="D">선박ID</option>
+              <option value="E">청구계정ID</option>
+            </select>
+            &nbsp;
             <input-component
               :type="'search'"
               :height="'20'"
               :widht="'50'"
               v-model="searchValue"
+              :placeholder="''"
               @input="
                 (value) => {
                   searchValue = value;
@@ -181,7 +187,10 @@
           >
           <span style="float: right; margin: 3px"
             ><select style="width: 100px; height: 21.5px">
+              <option >1개월</option>
+              <option >3개월</option>
               <option selected>6개월</option>
+              <option >12개월</option>
             </select></span
           >
           <span style="float: right; margin: 3px; font-weight: bold"
@@ -316,6 +325,9 @@
             <span style="float: right; margin: 3px">
               <select style="width: 100px; height: 21.5px">
                 <option selected>전체</option>
+                <option>최신순</option>
+                <option>최근 1개월 이내</option>
+
               </select></span
             >
             <div

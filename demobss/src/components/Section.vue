@@ -21,7 +21,7 @@
           </div>
         </div>
 
-        <div class="menu_close">x</div>
+        <div class="menu_close" @click="AllDeleteComponent">x</div>
       </div>
 
       <title-area :currentMenu="currentMenu" />
@@ -102,6 +102,12 @@ export default {
     ChageComponent: function (componentName, index) {
       this.comp = componentName;
       this.cur_num = index;
+    },
+    AllDeleteComponent() {
+      var component_length = this.compm.length;
+      this.compm.splice(1,component_length-1);
+      this.compm2.splice(1,component_length-1);
+      this.cur_num = 0;
     },
     DeleteComponent: function (index) {
       if (index != 0) {

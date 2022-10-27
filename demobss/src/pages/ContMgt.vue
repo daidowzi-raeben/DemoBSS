@@ -22,9 +22,17 @@
                 <option value="C">선박ID</option>
                 <option value="D">청구계정ID</option>
               </select>
-              <input
-                style="background-color: white; width: 380px"
-                type="text"
+              <input-component
+                  :type="'search'"
+                  :height="'20'"
+                  :widht="'50'"
+                  v-model="searchValue"
+                  :placeholder="''"
+                  @input="
+                (value) => {
+                  searchValue = value;
+                }
+              "
               />
             </td>
           </tr>
@@ -406,14 +414,16 @@
 <script>
 import AgGridComponent from "@/components/common/AgGridComponent";
 import ButtonComponent from "@/components/common/ButtonComponent.vue";
+import InputComponent from "@/components/common/InputComponent";
 // import Section from "@/components/Section";
 export default {
   name: "ContMgt",
   components: {
-    AgGridComponent, ButtonComponent
+    AgGridComponent, ButtonComponent, InputComponent
   },
   data() {
     return {
+      searchValue:null,
       gridOptions: null,
       columnDefs1: [
         {
