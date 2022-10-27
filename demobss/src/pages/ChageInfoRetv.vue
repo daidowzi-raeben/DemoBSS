@@ -52,8 +52,8 @@
             &nbsp;
             <input-component
               :type="'search'"
-              :height="'20'"
-              :widht="'50'"
+              :height="20"
+              :width="150"
               v-model="searchValue"
               :placeholder="''"
               @input="
@@ -61,8 +61,7 @@
                   searchValue = value;
                 }
               "
-              />
-
+            />
           </td>
           <td
             style="
@@ -187,10 +186,10 @@
           >
           <span style="float: right; margin: 3px"
             ><select style="width: 100px; height: 21.5px">
-              <option >1개월</option>
-              <option >3개월</option>
+              <option>1개월</option>
+              <option>3개월</option>
               <option selected>6개월</option>
-              <option >12개월</option>
+              <option>12개월</option>
             </select></span
           >
           <span style="float: right; margin: 3px; font-weight: bold"
@@ -327,7 +326,6 @@
                 <option selected>전체</option>
                 <option>최신순</option>
                 <option>최근 1개월 이내</option>
-
               </select></span
             >
             <div
@@ -363,7 +361,7 @@ export default {
   data() {
     return {
       gridOptions: null,
-      searchValue:null,
+      searchValue: null,
       columnDefs1: [
         {
           headerName: "청구계정",

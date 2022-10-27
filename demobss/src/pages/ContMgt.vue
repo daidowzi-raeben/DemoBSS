@@ -23,16 +23,16 @@
                 <option value="D">청구계정ID</option>
               </select>
               <input-component
-                  :type="'search'"
-                  :height="'20'"
-                  :widht="'50'"
-                  v-model="searchValue"
-                  :placeholder="''"
-                  @input="
-                (value) => {
-                  searchValue = value;
-                }
-              "
+                :type="'search'"
+                :height="20"
+                :width="150"
+                v-model="searchValue"
+                :placeholder="''"
+                @input="
+                  (value) => {
+                    searchValue = value;
+                  }
+                "
               />
             </td>
           </tr>
@@ -107,107 +107,108 @@
               >▶</label
             ><label style="font-weight: bold">기본정보</label></span
           >
-          <span style="float: right;  ">
+          <span style="float: right">
             <table class="selectSearch">
               <tr>
                 <td>
                   <label>BM</label>
                   <SelectBoxComponent
-                  :selectClass="'select_input2'"
-                  :cdGroup="'optionsSearchDiv'"
-                  :defaultValue="'선택'"
-                  v-model="searchDiv1"
-                  @input="
-                    (value) => {
-                      searchDiv1 = value;
-                    }
-                  "
+                    :selectClass="'select_input2'"
+                    :cdGroup="'optionsSearchDiv'"
+                    :defaultValue="'선택'"
+                    v-model="searchDiv1"
+                    @input="
+                      (value) => {
+                        searchDiv1 = value;
+                      }
+                    "
                   />
                 </td>
                 <td>
                   <label><h2>Service</h2></label>
                   <SelectBoxComponent
-                  :selectClass="'select_input2'"
-                  :cdGroup="'optionsSearchDiv'"
-                  :defaultValue="'선택'"
-                  v-model="searchDiv1"
-                  @input="
-                    (value) => {
-                      searchDiv1 = value;
-                    }
-                  "
+                    :selectClass="'select_input2'"
+                    :cdGroup="'optionsSearchDiv'"
+                    :defaultValue="'선택'"
+                    v-model="searchDiv1"
+                    @input="
+                      (value) => {
+                        searchDiv1 = value;
+                      }
+                    "
                   />
                 </td>
                 <td>
                   <ButtonComponent
-                  :btnClass="'btnClass3'"
-                  :btnName="'신규등록'"
-                  /></td>
-                            </tr>
+                    :btnClass="'btnClass3'"
+                    :btnName="'신규등록'"
+                  />
+                </td>
+              </tr>
             </table>
           </span>
         </div>
-        <div style="border:groove; margin-top:15px;" >
-        <table>
-          <tr>
-            <td>
-              <label> 계약ID</label>
-              <input type="text" value="S00000002710" disabled />
-            </td>
-            <td>
-              <label>BM</label> <input type="text" value="MVSAT" disabled />
-            </td>
-            <td>
-              <label> 계약상태</label>
-              <input type="text" value="사용중" disabled />
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <label> 개통일시</label>
-              <input type="text" value="2022-10-19 09:59:31 " disabled />
-            </td>
-            <td>
-              <label> 약정기간</label>
-              <input type="text" value="36개월 약정" disabled />
-            </td>
-            <td>
-              <label> 서비스오더ID</label>
-              <input type="text" value=" ㄴㅇㅁㄹㄴㅇㄹ " disabled />
-            </td>
-          </tr>
-        </table>
-        <table>
-          <tr>
-            <td>
-              <label> 상품</label>
-              <input
-                style="width: 503px"
-                type="text"
-                value="Regional MVSAT"
-                disabled
-              />
-            </td>
-            <td>
-              <label> 약정종료일</label>
-              <input type="text" value="2022-12-01" disabled />
-            </td>
-          </tr>
-        </table>
-        <table>
-          <tr>
-            <td>
-              <label> 부가정보</label>
-              <input
-                style="width: 800px"
-                type="text"
-                value="계약 부가정보 입력해주세요."
-                disabled
-              />
-            </td>
-            <!-- <td><label> 약정종료일</label> <input type="text" value="2022-12-01" disabled> </td> -->
-          </tr>
-        </table>
+        <div style="border: groove; margin-top: 15px">
+          <table>
+            <tr>
+              <td>
+                <label> 계약ID</label>
+                <input type="text" value="S00000002710" disabled />
+              </td>
+              <td>
+                <label>BM</label> <input type="text" value="MVSAT" disabled />
+              </td>
+              <td>
+                <label> 계약상태</label>
+                <input type="text" value="사용중" disabled />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label> 개통일시</label>
+                <input type="text" value="2022-10-19 09:59:31 " disabled />
+              </td>
+              <td>
+                <label> 약정기간</label>
+                <input type="text" value="36개월 약정" disabled />
+              </td>
+              <td>
+                <label> 서비스오더ID</label>
+                <input type="text" value=" ㄴㅇㅁㄹㄴㅇㄹ " disabled />
+              </td>
+            </tr>
+          </table>
+          <table>
+            <tr>
+              <td>
+                <label> 상품</label>
+                <input
+                  style="width: 503px"
+                  type="text"
+                  value="Regional MVSAT"
+                  disabled
+                />
+              </td>
+              <td>
+                <label> 약정종료일</label>
+                <input type="text" value="2022-12-01" disabled />
+              </td>
+            </tr>
+          </table>
+          <table>
+            <tr>
+              <td>
+                <label> 부가정보</label>
+                <input
+                  style="width: 800px"
+                  type="text"
+                  value="계약 부가정보 입력해주세요."
+                  disabled
+                />
+              </td>
+              <!-- <td><label> 약정종료일</label> <input type="text" value="2022-12-01" disabled> </td> -->
+            </tr>
+          </table>
         </div>
       </div>
 
@@ -276,7 +277,7 @@
       <div class="ContMemInfo">
         <div style="margin: 10px">
           <div>
-            <span style="font-size: 15px; "
+            <span style="font-size: 15px"
               ><label
                 style="
                   background-color: #2dbdb6;
@@ -284,23 +285,23 @@
                   color: #ffffff;
                 "
                 >▶</label
-              ><label style="font-weight: bold; ">청구계정 정보</label></span
+              ><label style="font-weight: bold">청구계정 정보</label></span
             >
             <span>
               <table style="display: inline-block">
                 <tr>
                   <td>
-                  <SelectBoxComponent
-                  :selectClass="'select_input3'"
-                  :cdGroup="'optionsSearchDiv'"
-                  :defaultValue="'선택'"
-                  v-model="searchDiv1"
-                  @input="
-                    (value) => {
-                      searchDiv1 = value;
-                    }
-                  "
-                  />
+                    <SelectBoxComponent
+                      :selectClass="'select_input3'"
+                      :cdGroup="'optionsSearchDiv'"
+                      :defaultValue="'선택'"
+                      v-model="searchDiv1"
+                      @input="
+                        (value) => {
+                          searchDiv1 = value;
+                        }
+                      "
+                    />
                     <input
                       style="
                         display: inline-block;
@@ -326,11 +327,7 @@
               </td>
               <td>
                 <label> 수신인</label>
-                <input
-                  type="text"
-                  value="MVSAT"
-                  disabled
-                />
+                <input type="text" value="MVSAT" disabled />
               </td>
             </tr>
             <tr>
@@ -340,11 +337,7 @@
               </td>
               <td>
                 <label> 납부방법</label>
-                <input
-                  type="text"
-                  value="36개월 약정"
-                  disabled
-                />
+                <input type="text" value="36개월 약정" disabled />
               </td>
             </tr>
             <tr>
@@ -354,21 +347,13 @@
               </td>
               <td>
                 <label> 납부일자</label>
-                <input
-                  type="text"
-                  value="2022-12-01"
-                  disabled
-                />
+                <input type="text" value="2022-12-01" disabled />
               </td>
             </tr>
             <tr>
               <td rowspan="2">
                 <label> 청구서표기명</label>
-                <input
-                  type="text"
-                  value="엘토스커뮤니케이션(주)"
-                  disabled
-                />
+                <input type="text" value="엘토스커뮤니케이션(주)" disabled />
               </td>
             </tr>
             <tr>
@@ -384,9 +369,15 @@
           </table>
         </div>
         <div style="float: right; margin-right: 70px">
-          <ButtonComponent :btnClass="'btnClass3'" :btnName="'수시청구계정등록'" />
+          <ButtonComponent
+            :btnClass="'btnClass3'"
+            :btnName="'수시청구계정등록'"
+          />
           <ButtonComponent :btnClass="'btnClass3'" :btnName="'청구계정등록'" />
-          <ButtonComponent :btnClass="'btnClass3'" :btnName="'청구계정조회/수정'" />
+          <ButtonComponent
+            :btnClass="'btnClass3'"
+            :btnName="'청구계정조회/수정'"
+          />
           <ButtonComponent :btnClass="'btnClass3'" :btnName="'청구계정변경'" />
         </div>
       </div>
@@ -428,13 +419,16 @@ import SelectBoxComponent from "../components/common/SelectBoxComponent.vue";
 export default {
   name: "ContMgt",
   components: {
-    AgGridComponent, ButtonComponent, InputComponent, SelectBoxComponent
+    AgGridComponent,
+    ButtonComponent,
+    InputComponent,
+    SelectBoxComponent,
   },
   data() {
     return {
-      searchValue:null,
+      searchValue: null,
       gridOptions: null,
-      searchDiv1:'',
+      searchDiv1: "",
       columnDefs1: [
         {
           headerName: "결제통화",
@@ -708,7 +702,6 @@ margin-right: 10px;
 
 } */
 
-
 .CommonInfo table.selectSearch tr > td > label {
   display: inline-block;
   width: 80px;
@@ -758,7 +751,7 @@ margin-right: 10px;
   height: 80px;
 }
 .svOrgInfo table {
-  width:100%;
+  width: 100%;
 }
 .svOrgInfo table tr > td > label {
   display: inline-block;

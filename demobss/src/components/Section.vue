@@ -26,10 +26,12 @@
 
       <title-area :currentMenu="currentMenu" />
 
-        <div v-for="(item, index) in compm2" :key="item">
-          <component v-bind:is="this.compm2[index]" v-show="index===this.cur_num" ></component>
-        </div>
-
+      <div v-for="(item, index) in compm2" :key="item" class="view_wrap">
+        <component
+          v-bind:is="this.compm2[index]"
+          v-show="index === this.cur_num"
+        ></component>
+      </div>
     </div>
   </section>
 </template>
@@ -105,8 +107,8 @@ export default {
     },
     AllDeleteComponent() {
       var component_length = this.compm.length;
-      this.compm.splice(1,component_length-1);
-      this.compm2.splice(1,component_length-1);
+      this.compm.splice(1, component_length - 1);
+      this.compm2.splice(1, component_length - 1);
       this.cur_num = 0;
     },
     DeleteComponent: function (index) {
