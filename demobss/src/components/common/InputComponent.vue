@@ -6,9 +6,7 @@
   v-model="value"
   :placeholder="placeholder"
   :input="updateValue(value)"
-
 >
-
 </template>
 
 <script>
