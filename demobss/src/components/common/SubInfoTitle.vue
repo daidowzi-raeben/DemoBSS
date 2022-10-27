@@ -1,0 +1,48 @@
+<template>
+<div style="display:inline-block;">
+  <label :class="subInfoTitleMarkClass"  
+  :style="{height:markHeight, width: markWidth }" ></label>
+  <label 
+  :class="subInfoTitleClass" 
+  :style="{fontSize:fontSize, }">{{subInfoTitleNm}}</label>
+</div>  
+</template>
+
+<script>
+export default {
+  data(){
+    return{
+      subInfoTitleMarkClass: "subInfoTitleMark",
+      subInfoTitleClass: "subInfoTitle",
+    }
+  },
+  props:{
+    subInfoTitleNm: String, // 부정보 제목명
+    
+    subInfoTitleMark: String, // 마크 클래스 지정
+    subInfoTitle: String,     // 제목 클래스 지정
+    
+    fontSize : String,        // 제목 글자 크기
+    markHeight: String,       // 마크 높이, 넓이
+    markWidth: String,
+  },
+  beforeMount(){
+    // 클래스가 선언되지 않으면 default 클래스 사용
+    if (this.subInfoTitleMark != null) {
+      this.subInfoTitleMarkClass = this.subInfoTitleMark;
+    }
+    if (this.subInfoTitle != null) {
+      this.subInfoTitleClass = this.subInfoTitle;
+    }
+
+  }
+
+}
+</script>
+
+
+
+<style>
+
+
+</style>

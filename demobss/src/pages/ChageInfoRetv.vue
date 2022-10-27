@@ -1,36 +1,9 @@
 <template>
   <div class="section0">
-    <!-- <label style="background-color: #2dbdb6; border-radius: 3px; color: #ffffff"
-      >★</label
-    >
-    청구 > 청구요금관리 >
-    <label style="font-weight: bold">청구요금정보관리 [BILL_01_001]</label> -->
-
     <div class="cusInfo">
-      <!-- <span
-        style="
-          float: right;
-          margin: 3px;
-          padding: 4px;
-          font-size: 10px;
-          border: solid thin;
-        "
-        >홈화면설정</span
-      >
-      <span
-        style="
-          float: right;
-          margin: 3px;
-          padding: 4px;
-          font-size: 10px;
-          border: solid thin;
-        "
-        >홈화면초기화</span
-      > -->
-      <label
-        style="background-color: #2dbdb6; border-radius: 3px; color: #ffffff"
-        >▶</label
-      ><label style="font-weight: bold">고객정보</label>
+      <SubInfoTitle
+          :subInfoTitleNm="'고객정보'"
+          />
       <table style="width: 100%">
         <tr style="height: 40px">
           <td
@@ -119,34 +92,20 @@
       </table>
     </div>
     <div class="contList">
-      <span
-        ><label
-          style="background-color: #2dbdb6; border-radius: 3px; color: #ffffff"
-          >▶</label
-        ><label style="font-weight: bold">서비스 계약목록</label></span
+      <div>
+      <SubInfoTitle
+          :subInfoTitleNm="'서비스 계약목록'"
+          />
       >
-      <span
-        style="
-          float: right;
-          margin: 3px;
-          padding: 4px;
-          font-size: 10px;
-          border: solid thin;
-          font-weight: bold;
-        "
-        >전체접기</span
-      >
-      <span
-        style="
-          float: right;
-          margin: 3px 3px 0px 3px;
-          padding: 4px;
-          font-size: 10px;
-          border: solid thin;
-          font-weight: bold;
-        "
-        >전체펼치기</span
-      >
+      <ButtonComponent
+        :btnClass="'btnClass4'"
+        :btnName="'전체펼치기'"
+      />
+      <ButtonComponent
+        :btnClass="'btnClass4'"
+        :btnName="'전체접기'"
+      />
+      </div>
       <div
         style="
           margin: 10px;
@@ -161,28 +120,18 @@
       <div>
         <div class="clList">
           <span
-            ><label
-              style="
-                background-color: #2dbdb6;
-                border-radius: 3px;
-                color: #ffffff;
-              "
-              >▶</label
-            ><label style="font-weight: bold">청구목록</label> (<label
+            >
+        <SubInfoTitle
+          :subInfoTitleNm="'청구목록'"
+          /> (<label
               style="font-weight: bold"
               >6</label
             >건)</span
           >
-          <span
-            style="
-              float: right;
-              margin: 3px;
-              padding: 4px;
-              font-size: 10px;
-              border: solid thin;
-              font-weight: bold;
-            "
-            >엑셀다운</span
+          <ButtonComponent
+          :btnClass="'btnClass4'"
+          :btnName="'엑셀다운'"
+          />
           >
           <span style="float: right; margin: 3px"
             ><select style="width: 100px; height: 21.5px">
@@ -214,29 +163,18 @@
         <div style="width: 100%">
           <div class="feeSear">
             <span
-              ><label
-                style="
-                  background-color: #2dbdb6;
-                  border-radius: 3px;
-                  color: #ffffff;
-                "
-                >▶</label
-              ><label style="font-weight: bold">요금항목별 조회</label> (<label
+              >
+        <SubInfoTitle
+          :subInfoTitleNm="'요금항목별 조회'"
+          /> (<label
                 style="font-weight: bold"
                 >18</label
               >건)</span
             >
-            <span
-              style="
-                float: right;
-                margin: 3px;
-                padding: 4px;
-                font-size: 10px;
-                border: solid thin;
-                font-weight: bold;
-              "
-              >엑셀다운</span
-            >
+            <ButtonComponent
+            :btnClass="'btnClass4'"
+            :btnName="'엑셀다운'"
+            />
             <div
               style="
                 margin: 10px;
@@ -255,72 +193,31 @@
             </div>
           </div>
           <span class="sevSear">
-            <span
-              ><label
-                style="
-                  background-color: #2dbdb6;
-                  border-radius: 3px;
-                  color: #ffffff;
-                "
-                >▶</label
-              ><label style="font-weight: bold">서비스계정별 조회</label>
-              (<label style="font-weight: bold">62</label>건)</span
+            <span>
+        <SubInfoTitle
+          :subInfoTitleNm="'서비스계정별 조회'"
+          />(<label style="font-weight: bold">62</label>건)</span
             >
-            <span
-              style="
-                float: right;
-                margin: 3px;
-                padding: 4px;
-                font-size: 10px;
-                border: solid thin;
-                font-weight: bold;
-              "
-              >선박별 요약</span
-            >
-            <span
-              style="
-                float: right;
-                margin: 3px;
-                padding: 4px;
-                font-size: 10px;
-                border: solid thin;
-                font-weight: bold;
-              "
-              >선박별 상세</span
-            >
-            <span
-              style="
-                float: right;
-                margin: 3px;
-                padding: 4px;
-                font-size: 10px;
-                border: solid thin;
-                font-weight: bold;
-              "
-              >선박파일</span
-            >
-            <span
-              style="
-                float: right;
-                margin: 3px;
-                padding: 4px;
-                font-size: 10px;
-                border: solid thin;
-                font-weight: bold;
-              "
-              >선박파일</span
-            >
-            <span
-              style="
-                float: right;
-                margin: 3px;
-                padding: 4px;
-                font-size: 10px;
-                border: solid thin;
-                font-weight: bold;
-              "
-              >선박발송</span
-            >
+          <ButtonComponent
+          :btnClass="'btnClass4'"
+          :btnName="'엑셀다운'"
+          />
+          <ButtonComponent
+          :btnClass="'btnClass4'"
+          :btnName="'선박발송'"
+          />
+          <ButtonComponent
+          :btnClass="'btnClass4'"
+          :btnName="'선박파일'"
+          />
+          <ButtonComponent
+          :btnClass="'btnClass4'"
+          :btnName="'선박별 상세'"
+          />
+          <ButtonComponent
+          :btnClass="'btnClass4'"
+          :btnName="'선박별 요약'"
+          />
             <span style="float: right; margin: 3px">
               <select style="width: 100px; height: 21.5px">
                 <option selected>전체</option>
@@ -354,10 +251,12 @@
 <script>
 import AgGridComponent from "@/components/common/AgGridComponent";
 import InputComponent from "@/components/common/InputComponent";
+import ButtonComponent from "@/components/common/ButtonComponent.vue";
+import SubInfoTitle from "@/components/common/SubInfoTitle.vue";
 
 export default {
   name: "ChageInfoRetv",
-  components: { AgGridComponent, InputComponent },
+  components: { AgGridComponent, InputComponent, ButtonComponent, SubInfoTitle },
   data() {
     return {
       gridOptions: null,

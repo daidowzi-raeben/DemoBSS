@@ -1,9 +1,10 @@
 <template>
   <div>
     <div class="section0">
-      <!-- <label style="background-color: #2dbdb6; border-radius: 3px; color: #ffffff">★</label> 계약 > 계약정보 > <label style="font-weight: bold">계약상세 [CONT_01_001]</label> -->
-      <h1>계약 상세</h1>
       <div class="cusInfo0">
+        <SubInfoTitle
+          :subInfoTitleNm="'계약상세'"
+          />
         <table style="width: 100%">
           <tr style="height: 50px">
             <td
@@ -40,10 +41,11 @@
       </div>
 
       <div class="cusInfo">
-        <label
-          style="background-color: #2dbdb6; border-radius: 3px; color: #ffffff"
-          >▶</label
-        ><label style="font-weight: bold">고객정보</label>
+        <div>
+          <SubInfoTitle
+          :subInfoTitleNm="'고객정보'"
+          />
+        </div>
         <div style="width: 98%; border: groove 1px; padding: 10px 0 10px 50px">
           <table>
             <tr>
@@ -93,22 +95,18 @@
           </table>
         </div>
       </div>
-      <div class="cmProducts">보유 상품</div>
-
+      
+      <div class="cmProducts">
+          <SubInfoTitle
+          :subInfoTitleNm="'보유 상품'"
+          /> </div>
+      
       <div class="CommonInfo">
         <div>
-          <span style="font-size: 15px"
-            ><label
-              style="
-                background-color: #2dbdb6;
-                border-radius: 3px;
-                color: #ffffff;
-              "
-              >▶</label
-            ><label style="font-weight: bold">기본정보</label></span
-          >
-          <span style="float: right">
-            <table class="selectSearch">
+          <SubInfoTitle
+          :subInfoTitleNm="'기본정보'"
+          />
+            <table class="selectSearch" style="float: right">
               <tr>
                 <td>
                   <label>BM</label>
@@ -146,7 +144,6 @@
                 </td>
               </tr>
             </table>
-          </span>
         </div>
         <div style="border:groove; margin-top:15px;" >
         <table>
@@ -213,16 +210,9 @@
 
       <div class="shipInfo">
         <div style="margin: 10px">
-          <span style="font-size: 15px"
-            ><label
-              style="
-                background-color: #2dbdb6;
-                border-radius: 3px;
-                color: #ffffff;
-              "
-              >▶</label
-            ><label style="font-weight: bold">선박 정보</label></span
-          >
+          <SubInfoTitle
+          :subInfoTitleNm="'선박정보'"
+          />
 
           <table style="border: groove; width: 100%">
             <tr>
@@ -244,16 +234,9 @@
       </div>
       <div class="svOrgInfo">
         <div style="margin: 10px">
-          <span style="font-size: 15px"
-            ><label
-              style="
-                background-color: #2dbdb6;
-                border-radius: 3px;
-                color: #ffffff;
-              "
-              >▶</label
-            ><label style="font-weight: bold">영업조직 정보</label></span
-          >
+          <SubInfoTitle
+          :subInfoTitleNm="'영업조직정보'"
+          />
           <table style="border: groove">
             <tr>
               <td>
@@ -275,19 +258,11 @@
 
       <div class="ContMemInfo">
         <div style="margin: 10px">
-          <div>
-            <span style="font-size: 15px"
-              ><label
-                style="
-                  background-color: #2dbdb6;
-                  border-radius: 3px;
-                  color: #ffffff;
-                "
-                >▶</label
-              ><label style="font-weight: bold">청구계정 정보</label></span
-            >
-            <span>
-              <table style="display: inline-block">
+        <div>
+        <SubInfoTitle
+          :subInfoTitleNm="'청구계정 정보'"
+          />
+          <table style="display: inline-block">
                 <tr>
                   <td>
                   <SelectBoxComponent
@@ -315,8 +290,7 @@
                   </td>
                 </tr>
               </table>
-            </span>
-          </div>
+    </div>
 
           <table class="accountInfo" style="border: groove">
             <tr>
@@ -381,22 +355,9 @@
         </div>
       </div>
       <div class="feeInfo">
-        <span
-          style="
-            font-size: 15px;
-            height: 40px;
-            display: inline-block;
-            margin-right: 20px;
-          "
-          ><label
-            style="
-              background-color: #2dbdb6;
-              border-radius: 3px;
-              color: #ffffff;
-            "
-            >▶</label
-          ><label style="font-weight: bold">요금정보</label></span
-        >
+        <SubInfoTitle
+          :subInfoTitleNm="'요금정보'"
+          />
         <div style="height: 100%; width: 100%">
           <ag-grid-component
             :rowData="rowData1"
@@ -414,7 +375,7 @@ import AgGridComponent from "@/components/common/AgGridComponent";
 import ButtonComponent from "@/components/common/ButtonComponent.vue";
 import InputComponent from "@/components/common/InputComponent";
 import SelectBoxComponent from "../components/common/SelectBoxComponent.vue";
-// import Section from "@/components/Section";
+import SubInfoTitle from "@/components/common/SubInfoTitle.vue";
 export default {
   name: "ContMgt",
   components: {
@@ -422,6 +383,7 @@ export default {
     ButtonComponent,
     InputComponent,
     SelectBoxComponent,
+    SubInfoTitle,
   },
   data() {
     return {
