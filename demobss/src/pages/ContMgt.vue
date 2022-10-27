@@ -148,67 +148,66 @@
             </table>
           </span>
         </div>
-        <div style="border: groove; margin-top: 15px">
-          <table>
-            <tr>
-              <td>
-                <label> 계약ID</label>
-                <input type="text" value="S00000002710" disabled />
-              </td>
-              <td>
-                <label>BM</label> <input type="text" value="MVSAT" disabled />
-              </td>
-              <td>
-                <label> 계약상태</label>
-                <input type="text" value="사용중" disabled />
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <label> 개통일시</label>
-                <input type="text" value="2022-10-19 09:59:31 " disabled />
-              </td>
-              <td>
-                <label> 약정기간</label>
-                <input type="text" value="36개월 약정" disabled />
-              </td>
-              <td>
-                <label> 서비스오더ID</label>
-                <input type="text" value=" ㄴㅇㅁㄹㄴㅇㄹ " disabled />
-              </td>
-            </tr>
-          </table>
-          <table>
-            <tr>
-              <td>
-                <label> 상품</label>
-                <input
-                  style="width: 503px"
-                  type="text"
-                  value="Regional MVSAT"
-                  disabled
-                />
-              </td>
-              <td>
-                <label> 약정종료일</label>
-                <input type="text" value="2022-12-01" disabled />
-              </td>
-            </tr>
-          </table>
-          <table>
-            <tr>
-              <td>
-                <label> 부가정보</label>
-                <input
-                  style="width: 800px"
-                  type="text"
-                  value="계약 부가정보 입력해주세요."
-                  disabled
-                />
-              </td>
-              <!-- <td><label> 약정종료일</label> <input type="text" value="2022-12-01" disabled> </td> -->
-            </tr>
-          </table>
+        <div style="border:groove; margin-top:15px;" >
+        <table>
+          <tr>
+            <td>
+              <label> 계약ID</label>
+              <input type="text" value="S00000002710" disabled />
+            </td>
+            <td>
+              <label>BM</label> <input type="text" value="MVSAT" disabled />
+            </td>
+            <td>
+              <label> 계약상태</label>
+              <input type="text" value="사용중" disabled />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label> 개통일시</label>
+              <input type="text" value="2022-10-19 09:59:31 " disabled />
+            </td>
+            <td>
+              <label> 약정기간</label>
+              <input type="text" value="36개월 약정" disabled />
+            </td>
+            <td>
+              <label> 서비스오더ID</label>
+              <input type="text" value=" ㄴㅇㅁㄹㄴㅇㄹ " disabled />
+            </td>
+          </tr>
+        </table>
+        <table>
+          <tr>
+            <td>
+              <label> 상품</label>
+              <input
+                style="width: 503px"
+                type="text"
+                value="Regional MVSAT"
+                disabled
+              />
+            </td>
+            <td>
+              <label> 약정종료일</label>
+              <input type="text" value="2022-12-01" disabled />
+            </td>
+          </tr>
+        </table>
+        <table>
+          <tr>
+            <td>
+              <label> 부가정보</label>
+              <input
+                style="width: 800px"
+                type="text"
+                value="계약 부가정보 입력해주세요."
+                disabled
+              />
+            </td>
+          </tr>
+        </table>
         </div>
       </div>
 
@@ -291,28 +290,28 @@
               <table style="display: inline-block">
                 <tr>
                   <td>
-                    <SelectBoxComponent
-                      :selectClass="'select_input3'"
-                      :cdGroup="'optionsSearchDiv'"
-                      :defaultValue="'선택'"
-                      v-model="searchDiv1"
-                      @input="
-                        (value) => {
-                          searchDiv1 = value;
-                        }
-                      "
-                    />
-                    <input
-                      style="
-                        display: inline-block;
-                        border-style: groove;
-                        width: 150px;
-                        height: 18px;
-                        font-size: 15px;
-                        text-align: center;
-                      "
-                      type="text"
-                    />
+                  <SelectBoxComponent
+                  :selectClass="'select_input3'"
+                  :cdGroup="'optionsSearchDiv'"
+                  :defaultValue="'선택'"
+                  v-model="searchDiv1"
+                  @input="
+                    (value) => {
+                      searchDiv1 = value;
+                    }
+                  "
+                  />
+              <InputComponent
+                  :type="'text'"
+                  :inputClass="'ContMemInfo_inputbox'"
+                  v-model="searchValue2"
+                  :placeholder="''"
+                  @input="
+                (value) => {
+                  searchValue2 = value;
+                }
+              "
+              />
                   </td>
                 </tr>
               </table>
@@ -428,7 +427,8 @@ export default {
     return {
       searchValue: null,
       gridOptions: null,
-      searchDiv1: "",
+      searchDiv1:'',
+      searchValue2:'',
       columnDefs1: [
         {
           headerName: "결제통화",
