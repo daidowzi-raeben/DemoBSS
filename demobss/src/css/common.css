@@ -187,12 +187,15 @@ body {
   width: 122px;
   height: 30px;
   float: left;
+  cursor: pointer;
+  
 }
 
 #nav > .tab > #nav_tab2 {
   width: 122px;
   height: 30px;
   float: left;
+  cursor: pointer;
 }
 
 #nav > .tab .tabon {
