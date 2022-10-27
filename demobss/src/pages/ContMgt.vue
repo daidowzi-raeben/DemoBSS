@@ -399,52 +399,6 @@
           />
         </div>
       </div>
-
-
-<div>
-  <form name="LoginForm" action="thispage"  >
-    <fieldset style="width:920px;" >
-        <legend>기본정보 제목</legend>
-        <ul >
-            <li>
-                <label for="UserName">계약ID </label>
-                <input id="UserName" name="S00000002710" type="text" />
-                <label for="UserName">BM </label>
-                <input id="UserName" name="MVSAT" type="text" />
-                <label for="UserName">계약상태 </label>
-                <input id="UserName" name="사용중" type="text" />
-            </li>
-            
-            <li>
-                <label for="UserName">계약ID </label>
-                <input id="UserName" name="S00000002710" type="text" />
-                <label for="UserName">BM </label>
-                <input id="UserName" name="MVSAT" type="text" />
-                <label for="UserName">계약상태 </label>
-                <input id="UserName" name="사용중" type="text" />
-            </li>
-            
-            <li>
-                <label for="UserName">계약ID </label>
-                <input id="UserName" name="S00000002710" type="text" />
-                <label for="UserName">BM </label>
-                <input id="UserName" name="MVSAT" type="text" />
-                <label for="UserName">계약상태 </label>
-                <input id="UserName" name="사용중" type="text" />
-            </li>
-            
-            <li>
-                <label for="UserName">계약ID </label>
-                <input id="UserName" name="S00000002710" type="text" />
-                <label for="UserName">BM </label>
-                <input id="UserName" name="MVSAT" type="text" />
-            </li>
-        </ul>
-    </fieldset>
-</form>
-</div>
-
-
     </div>
   </div>
 </template>
