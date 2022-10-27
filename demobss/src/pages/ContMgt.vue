@@ -197,7 +197,6 @@
                 disabled
               />
             </td>
-            <!-- <td><label> 약정종료일</label> <input type="text" value="2022-12-01" disabled> </td> -->
           </tr>
         </table>
         </div>
@@ -293,17 +292,17 @@
                     }
                   "
                   />
-                    <input
-                      style="
-                        display: inline-block;
-                        border-style: groove;
-                        width: 150px;
-                        height: 18px;
-                        font-size: 15px;
-                        text-align: center;
-                      "
-                      type="text"
-                    />
+              <InputComponent
+                  :type="'text'"
+                  :inputClass="'ContMemInfo_inputbox'"
+                  v-model="searchValue2"
+                  :placeholder="''"
+                  @input="
+                (value) => {
+                  searchValue2 = value;
+                }
+              "
+              />
                   </td>
                 </tr>
               </table>
@@ -425,6 +424,7 @@ export default {
     return {
       gridOptions: null,
       searchDiv1:'',
+      searchValue2:'',
       columnDefs1: [
         {
           headerName: "결제통화",

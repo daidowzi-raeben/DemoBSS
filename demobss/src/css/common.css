@@ -949,6 +949,17 @@ div.attach_txt ul li > a.delete {
   -webkit-appearance: none;
   -moz-appearance: none;
 }
+
+.ContMemInfo_inputbox{
+  display: inline-block;
+  border-style: groove;
+  width: 120px;
+  height: 18px;
+  font-size: 15px;
+  text-align: center;
+}
+
+
 .calender_input {
   border: #b6b6b6 solid 1px;
   font-size: 13px;
@@ -1029,6 +1040,7 @@ div.attach_txt ul li > a.delete {
 .input_right {
   text-align: right;
 }
+
 .text_input_search {
   border: #b6b6b6 solid 1px;
   background: #f6f6f6 url(../img/icon_form_search.png) no-repeat right;

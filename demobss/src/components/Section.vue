@@ -24,8 +24,9 @@
         <div class="menu_close">x</div>
       </div>
 
+      <!-- 상세 화면 주소  -->
       <title-area :currentMenu="currentMenu" />
-
+        <!-- 상세화면 -->
         <div v-for="(item, index) in compm2" :key="item">
           <component v-bind:is="this.compm2[index]" v-show="index===this.cur_num" ></component>
         </div>
