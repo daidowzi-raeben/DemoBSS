@@ -24,6 +24,7 @@
         <div class="menu_close" @click="AllDeleteComponent">x</div>
       </div>
 
+      <!-- 상세 화면 주소  -->
       <title-area :currentMenu="currentMenu" />
 
       <div v-for="(item, index) in compm2" :key="item" class="view_wrap">
