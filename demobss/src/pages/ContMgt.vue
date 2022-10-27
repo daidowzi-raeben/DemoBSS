@@ -104,25 +104,31 @@
               <tr>
                 <td>
                   <label>BM</label>
-                  <select
-                  >
-                    <option selected disabled value="">선택</option>
-                    <option value="D">고객ID</option>
-                    <option value="A">계약ID</option>
-                    <option value="B">선박ID</option>
-                    <option value="C">청구계정ID</option>
-                  </select>
+                  <SelectBoxComponent
+                  :selectClass="'select_input2'"
+                  :cdGroup="'optionsSearchDiv'"
+                  :defaultValue="'선택'"
+                  v-model="searchDiv1"
+                  @input="
+                    (value) => {
+                      searchDiv1 = value;
+                    }
+                  "
+                  />
                 </td>
                 <td>
                   <label><h2>Service</h2></label>
-                  <select
-                  >
-                    <option selected disabled value="">선택</option>
-                    <option value="D">고객ID</option>
-                    <option value="A">계약ID</option>
-                    <option value="B">선박ID</option>
-                    <option value="C">청구계정ID</option>
-                  </select>
+                  <SelectBoxComponent
+                  :selectClass="'select_input2'"
+                  :cdGroup="'optionsSearchDiv'"
+                  :defaultValue="'선택'"
+                  v-model="searchDiv1"
+                  @input="
+                    (value) => {
+                      searchDiv1 = value;
+                    }
+                  "
+                  />
                 </td>
                 <td>
                   <ButtonComponent
@@ -276,15 +282,17 @@
               <table style="display: inline-block">
                 <tr>
                   <td>
-                    <select
-                      style="width: 100px; height: 25px; margin-left:10px;"
-                    >
-                      <option selected disabled value="">선택</option>
-                      <option value="A">고객ID</option>
-                      <option value="B">계약ID</option>
-                      <option value="C">선박ID</option>
-                      <option value="D">청구계정ID</option>
-                    </select>
+                  <SelectBoxComponent
+                  :selectClass="'select_input3'"
+                  :cdGroup="'optionsSearchDiv'"
+                  :defaultValue="'선택'"
+                  v-model="searchDiv1"
+                  @input="
+                    (value) => {
+                      searchDiv1 = value;
+                    }
+                  "
+                  />
                     <input
                       style="
                         display: inline-block;
@@ -406,15 +414,17 @@
 <script>
 import AgGridComponent from "@/components/common/AgGridComponent";
 import ButtonComponent from "@/components/common/ButtonComponent.vue";
+import SelectBoxComponent from "../components/common/SelectBoxComponent.vue";
 // import Section from "@/components/Section";
 export default {
   name: "ContMgt",
   components: {
-    AgGridComponent, ButtonComponent
+    AgGridComponent, ButtonComponent, SelectBoxComponent
   },
   data() {
     return {
       gridOptions: null,
+      searchDiv1:'',
       columnDefs1: [
         {
           headerName: "결제통화",

@@ -5,9 +5,7 @@
   :style="{width: width+'px', height: height + 'px'}"
   v-model="value"
   :input="updateValue(value)"
-
 >
-
 </template>
 
 <script>

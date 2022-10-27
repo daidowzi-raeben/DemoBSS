@@ -184,7 +184,7 @@ body {
 }
 
 #nav > .tab > #nav_tab1 {
-  width: 122px;
+  width: 49.7%;
   height: 30px;
   float: left;
   cursor: pointer;
@@ -192,7 +192,7 @@ body {
 }
 
 #nav > .tab > #nav_tab2 {
-  width: 122px;
+  width: 49.7%;
   height: 30px;
   float: left;
   cursor: pointer;
@@ -211,7 +211,7 @@ body {
 }
 
 #nav > .area {
-  width: 245.5px;
+  width: 245px;
   padding: 70px 0 0 0;
 }
 
@@ -920,6 +920,35 @@ div.attach_txt ul li > a.delete {
   -moz-appearance: none;
 }
 
+
+.select_input2 {
+  border: 1px solid #c1c1c1;
+  font-size: 13px;
+  height: 36px;
+  width: 50px;
+  color: #000000;
+  padding: 1px 22px 0 9px;
+  background: #fff url(../img/icon_form_arrow_02.png) no-repeat;
+  background-position: right 11px bottom 6px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.select_input3 {
+  width: 120px; 
+  height: 25px; 
+  margin-left:10px;
+  border: 1px solid #c1c1c1;
+  font-size: 13px;
+  /* height: 36px; */
+  /* width: 50px; */
+  color: #000000;
+  padding: 1px 22px 0 9px;
+  background: #fff url(../img/icon_form_arrow_02.png) no-repeat;
+  background-position: right 11px bottom 6px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
 .calender_input {
   border: #b6b6b6 solid 1px;
   font-size: 13px;
