@@ -23,13 +23,11 @@
           </div>
         </div>
         </div>
-        <div class="menu_button_line">
-          <div class="menu_button" @click="moveScrollLeft">◀</div>
-          <div class="menu_button" @click="moveScrollRight">▶</div>
-          <div class="menu_button" @click="AllDeleteComponent">x</div>
-        </div>
-      </div>
-      <!-- 상세 화면 주소  -->
+        <div class="menu_tab_buttons">
+          <ButtonComponent :btnClass="'btnLeftImgClass'" @click="moveScrollLeft"/>
+          <ButtonComponent :btnClass="'btnRightImgClass'" @click="moveScrollRight"/>
+          <ButtonComponent :btnClass="'btnDeleteImgClass'" @click="AllDeleteComponent"/> </div>
+          </div>
       <title-area :currentMenu="currentMenu" />
 
       <div v-for="(item, index) in compm2" :key="item" class="view_wrap">
@@ -45,14 +43,16 @@
 <script>
 import TitleArea from "./common/TitleArea.vue";
 import Nav from "./Nav.vue";
-import $ from 'jquery';
+// import $ from 'jquery';
 import { defineAsyncComponent, markRaw } from "vue";
+import ButtonComponent from "@/components/common/ButtonComponent.vue";
 
 export default {
   name: "Section",
   components: {
     TitleArea,
     Nav,
+    ButtonComponent
   },
   data() {
     return {
@@ -92,24 +92,28 @@ export default {
   },
   methods: {
     moveScrollRight:function (){
-      if(this.navOn===true) {
-        var _scrollX = $('.menu_tab_line_detail_on').scrollLeft();
-        $('.menu_tab_line_detail_on').scrollLeft(_scrollX + 100);
-      }
-      else{
-        var _scrollX_2 = $('.menu_tab_line_detail').scrollLeft();
-        $('.menu_tab_line_detail').scrollLeft(_scrollX_2 + 100);
-      }
+      // if(this.navOn===true) {
+      //   var _scrollX = $('.menu_tab_line_detail_on').scrollLeft();
+      //   $('.menu_tab_line_detail_on').scrollLeft(_scrollX + 100);
+      // }
+      // else{
+      //   var _scrollX_2 = $('.menu_tab_line_detail').scrollLeft();
+      //   $('.menu_tab_line_detail').scrollLeft(_scrollX_2 + 100);
+      // }
+      let menuTabScroll = document.querySelector(".menu_tab_line_detail_on");
+      menuTabScroll.scrollLeft += 100;
     },
     moveScrollLeft:function () {
-      if(this.navOn===true) {
-        var _scrollX = $('.menu_tab_line_detail_on').scrollLeft();
-        $('.menu_tab_line_detail_on').scrollLeft(_scrollX - 100);
-      }
-      else{
-        var _scrollX_2 = $('.menu_tab_line_detail').scrollLeft();
-        $('.menu_tab_line_detail').scrollLeft(_scrollX_2 - 100);
-      }
+      // if(this.navOn===true) {
+      //   var _scrollX = $('.menu_tab_line_detail_on').scrollLeft();
+      //   $('.menu_tab_line_detail_on').scrollLeft(_scrollX - 100);
+      // }
+      // else{
+      //   var _scrollX_2 = $('.menu_tab_line_detail').scrollLeft();
+      //   $('.menu_tab_line_detail').scrollLeft(_scrollX_2 - 100);
+      // }
+      let menuTabScroll = document.querySelector(".menu_tab_line_detail_on");
+      menuTabScroll.scrollLeft -= 100;
     },
     ChageComponent: function (componentName, index) {
       this.comp = componentName;
