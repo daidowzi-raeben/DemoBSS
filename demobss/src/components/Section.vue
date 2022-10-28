@@ -3,7 +3,8 @@
     <Nav v-show="navOn" @input="AddComponent" />
     <div class="wrap">
       <div class="menu_tab_line">
-        <div v-for="(item, index) in compm" v-bind:key="index">
+        <div class="menu2" style="width: 80vw; overflow:hidden; white-space: nowrap; display: flex">
+        <div v-for="(item, index) in compm" v-bind:key="index" style="display: inline-block">
           <div
             :class="{
               tabon: this.comp === item.menuId,
@@ -15,15 +16,17 @@
             <span id="tab_nm">
               {{ item.menuNm }}
             </span>
-            <span class="tab_x" @click.prevent.stop="DeleteComponent(index)"
-              >x</span
-            >
+            <span class="tab_x" @click.prevent.stop="DeleteComponent(index)">x</span>
           </div>
         </div>
+        </div>
+        <div style="width: 5vw; float: right; display: flex">
+          <div class="menu_close" @click="moveScrollLeft">◀</div>
+          <div class="menu_close" @click="moveScrollRight">▶</div>
+         <div class="menu_close" @click="AllDeleteComponent">x</div>
 
-        <div class="menu_close" @click="AllDeleteComponent">x</div>
+        </div>
       </div>
-
       <!-- 상세 화면 주소  -->
       <title-area :currentMenu="currentMenu" />
 
@@ -40,6 +43,7 @@
 <script>
 import TitleArea from "./common/TitleArea.vue";
 import Nav from "./Nav.vue";
+import $ from 'jquery';
 import { defineAsyncComponent, markRaw } from "vue";
 
 export default {
@@ -85,6 +89,14 @@ export default {
     },
   },
   methods: {
+    moveScrollRight:function (){
+      var _scrollX = $('.menu2').scrollLeft();
+      $('.menu2').scrollLeft(_scrollX+100);
+    },
+    moveScrollLeft:function () {
+      var _scrollX = $('.menu2').scrollLeft();
+      $('.menu2').scrollLeft(_scrollX-100);
+    },
     ChageComponent: function (componentName, index) {
       this.comp = componentName;
       this.cur_num = index;
