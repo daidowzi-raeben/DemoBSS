@@ -104,6 +104,29 @@
       </div>
     </div>
 
+    <h1 style="font-size: 30px">paging</h1>
+    <div style="border-top: solid black 1px; margin: 10px; padding: 10px">
+      page size 10 페이징 데이터 {{ pageableData1 }} 현재페이지 : {{ page1 }}
+      <paging-area
+        :pageableData="pageableData1"
+        @input="
+          (value) => {
+            page1 = value;
+          }
+        "
+      />
+      page size 5 페이징 데이터 {{ pageableData2 }} 현재페이지 : {{ page2 }}
+      <paging-area
+        :pageableData="pageableData2"
+        :pageSize="5"
+        @input="
+          (value) => {
+            page2 = value;
+          }
+        "
+      />
+    </div>
+
     <h1 style="font-size: 30px">ag grid</h1>
     <div
       style="
@@ -129,6 +152,7 @@
 </template>
 
 <script>
+import PagingArea from "../components/common/PagingArea.vue";
 import FileInputComponent from "../components/common/FileInputComponent.vue";
 import DatePickerComponent from "../components/common/DatePickerComponent.vue";
 import AgGridComponent from "../components/common/AgGridComponent.vue";
@@ -136,6 +160,7 @@ import SelectBoxComponent from "../components/common/SelectBoxComponent.vue";
 export default {
   name: "CommonView",
   components: {
+    PagingArea,
     FileInputComponent,
     DatePickerComponent,
     AgGridComponent,
@@ -148,6 +173,20 @@ export default {
       date1: new Date(2021, 9, 5),
       date2: new Date(),
       pDisable: true,
+      pageableData1: {
+        pageNumber: 1,
+        currentMinPage: 1,
+        currentMaxPage: 10,
+        totalPages: 12,
+      },
+      pageableData2: {
+        pageNumber: 1,
+        currentMinPage: 1,
+        currentMaxPage: 5,
+        totalPages: 11,
+      },
+      page1: 1,
+      page2: 1,
       columnDefs1: [
         {
           headerName: "Make",

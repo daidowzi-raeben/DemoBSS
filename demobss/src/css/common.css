@@ -188,7 +188,6 @@ body {
   height: 30px;
   float: left;
   cursor: pointer;
-  
 }
 
 #nav > .tab > #nav_tab2 {
@@ -278,7 +277,7 @@ section > div.wrap > .view_wrap {
 .menu_tab_line {
   height: 30px;
   display: inline-flex;
-  width: 100vw;
+  width: 100%;
   background-color: #5ad3cd;
   /* overflow-x: scroll; */
 }
@@ -319,17 +318,17 @@ div.taboff {
   color: #aeaeae;
   border-right: #343434 solid 1px;
 }
-.menu_tab_line .menu_tab_line_detail{
+.menu_tab_line .menu_tab_line_detail {
   width: 94vw;
-  overflow:hidden;
+  overflow: hidden;
   white-space: nowrap;
-  display: flex
+  display: flex;
 }
-.menu_tab_line .menu_tab_line_detail_on{
+.menu_tab_line .menu_tab_line_detail_on {
   width: 81vw;
-  overflow:hidden;
+  overflow: hidden;
   white-space: nowrap;
-  display: flex
+  display: flex;
 }
 .menu_tab_line .menu_tab_buttons {
   width: 5vw;
@@ -344,7 +343,7 @@ div.taboff {
   font-size: 20px;
   cursor: pointer;
   width: 5vw;
-  display: flex
+  display: flex;
 }
 
 section > div > .title_area {
@@ -941,7 +940,6 @@ div.attach_txt ul li > a.delete {
   -moz-appearance: none;
 }
 
-
 .select_input2 {
   border: 1px solid #c1c1c1;
   font-size: 13px;
@@ -956,9 +954,9 @@ div.attach_txt ul li > a.delete {
 }
 
 .select_input3 {
-  width: 120px; 
-  height: 25px; 
-  margin-left:10px;
+  width: 120px;
+  height: 25px;
+  margin-left: 10px;
   border: 1px solid #c1c1c1;
   font-size: 13px;
   /* height: 36px; */
@@ -971,7 +969,7 @@ div.attach_txt ul li > a.delete {
   -moz-appearance: none;
 }
 
-.ContMemInfo_inputbox{
+.ContMemInfo_inputbox {
   display: inline-block;
   border-style: groove;
   width: 120px;
@@ -979,7 +977,6 @@ div.attach_txt ul li > a.delete {
   font-size: 15px;
   text-align: center;
 }
-
 
 .calender_input {
   border: #b6b6b6 solid 1px;
@@ -1609,43 +1606,43 @@ input[type="checkbox"]:checked + label {
   margin: 3px 3px 0px 3px;
   background-color: rgb(255, 255, 255);
 }
-.btnLeftImgClass{
-  background-color: #5ad3cd ;
+.btnLeftImgClass {
+  background-color: #5ad3cd;
   border: none;
   cursor: pointer;
   background-position: top 10px;
   width: 25px;
   height: 25px;
   display: flex;
-  content : url(../img/icon_form_left.png)
+  content: url(../img/icon_form_left.png);
 }
-.btnRightImgClass{
-  background-color:#5ad3cd;
+.btnRightImgClass {
+  background-color: #5ad3cd;
   border: none;
   cursor: pointer;
   width: 25px;
   height: 25px;
   display: flex;
-  content : url(../img/icon_form_right.png)
+  content: url(../img/icon_form_right.png);
 }
-.btnDeleteImgClass{
-  background-color:#5ad3cd;
+.btnDeleteImgClass {
+  background-color: #5ad3cd;
   border: none;
   cursor: pointer;
   width: 35px;
   height: 25px;
   display: flex;
-  content : url(../img/icon_delete.png)
+  content: url(../img/icon_delete.png);
 }
-.subInfoTitleMark{
-  background-color: #2dbdb6; 
-  border-radius: 3px; 
+.subInfoTitleMark {
+  background-color: #2dbdb6;
+  border-radius: 3px;
   color: #ffffff;
   height: 20px;
   width: 15px;
-  content:url(../img/icon_form_arrow.png);
+  content: url(../img/icon_form_arrow.png);
 }
-.subInfoTitle{
-  font-size:20px;
+.subInfoTitle {
+  font-size: 20px;
   font-weight: bold;
 }
