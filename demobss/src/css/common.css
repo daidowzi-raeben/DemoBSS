@@ -278,7 +278,9 @@ section > div.wrap > .view_wrap {
 .menu_tab_line {
   height: 30px;
   background-color: #5ad3cd;
-  /* overflow-x: scroll; */
+  overflow: hidden;
+  /* overflow-y: hidden; */
+  /* display: inline-flex; */
 }
 
 .menu_tab {
@@ -304,26 +306,32 @@ section > div.wrap > .view_wrap {
   font-size: 20px;
   float: right;
 }
-
 div.tabon {
   /* 탭 선택되었을 때 */
   background-color: #ffffff;
   color: #444444;
 }
-
 div.taboff {
   /* 탭 선택x */
   background-color: #707070;
   color: #aeaeae;
   border-right: #343434 solid 1px;
 }
+.pleaseWrap{
+  width: 87%;
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+}
 
 .menu_tab_line .menu_close {
+  width: 10%;
   float: right;
   color: #ffffff;
   padding: 0 10px;
   font-size: 20px;
   cursor: pointer;
+  background-color: darkblue;
 }
 
 section > div > .title_area {

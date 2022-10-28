@@ -3,6 +3,7 @@
     <Nav v-show="navOn" @input="AddComponent" />
     <div class="wrap">
       <div class="menu_tab_line">
+        <div class="pleaseWrap">
         <div v-for="(item, index) in compm" v-bind:key="index">
           <div
             :class="{
@@ -19,6 +20,7 @@
               >x</span
             >
           </div>
+        </div>
         </div>
 
         <div class="menu_close" @click="AllDeleteComponent">x</div>
