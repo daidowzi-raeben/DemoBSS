@@ -189,4 +189,84 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+div > span.txt02 {
+  font-size: 12px;
+  color: #878787;
+}
+div.attach {
+  overflow: hidden;
+}
+div.attach > .input {
+  float: left;
+  width: 90%;
+}
+div.attach > .btn {
+  float: right;
+}
+
+div.attach_txt {
+  overflow: hidden;
+}
+
+div.attach_txt ul {
+  float: left;
+  margin-right: 12px;
+}
+div.attach_txt ul li.attach_bbs {
+  float: left;
+  /* 첨부파일 일렬로... */
+}
+div.attach_txt ul li {
+  /* 첨부파일 일렬로... */
+}
+div.attach_txt ul li a {
+  cursor: pointer;
+}
+div.attach_txt ul li:last-child {
+  margin-right: 0;
+}
+
+div.attach_txt ul li > strong.txt {
+  font-size: 12px;
+  color: #b87678;
+  padding-right: 13px;
+}
+div.attach_txt ul li > span.number {
+  border-left: #ccc solid 1px;
+  padding-left: 13px;
+  font-size: 12px;
+}
+div.attach_txt ul li > a.delete {
+  color: #ed1820;
+  font-size: 14px;
+  font-family: Arial;
+  padding-right: 15px;
+  margin-left: -6px;
+  vertical-align: bottom;
+  cursor: pointer;
+}
+.text_input_bbs02 {
+  border: #b6b6b6 solid 1px;
+  font-size: 13px;
+  height: 28px;
+  line-height: 29px;
+  color: #343434;
+  padding: 0 10px 0 9px;
+  border-radius: 3px;
+}
+.button_06 {
+  font-family: 맑은 고딕;
+  display: inline-block;
+  color: #343434;
+  padding: 0 13px;
+  height: 28px;
+  line-height: 26px;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 12px;
+  cursor: pointer;
+  background-color: #eaeaea;
+  border: #afafaf solid 1px;
+}
+</style>

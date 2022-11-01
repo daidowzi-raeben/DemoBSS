@@ -101,4 +101,85 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+
+#nav {
+  border-right: #afafaf solid 1px;
+}
+
+#nav > .tab {
+  text-align: center;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+#nav > .tab > #nav_tab1 {
+  width: 49.7%;
+  height: 30px;
+  float: left;
+  cursor: pointer;
+}
+
+#nav > .tab > #nav_tab2 {
+  width: 49.7%;
+  height: 30px;
+  float: left;
+  cursor: pointer;
+}
+
+#nav > .tab .tabon {
+  /* 탭 선택되었을 때 */
+  background-color: #ffffff;
+  color: #444444;
+}
+
+#nav > .tab .taboff {
+  /* 탭 선택x */
+  background-color: #444444;
+  color: #aeaeae;
+}
+
+#nav > .area {
+  width: 245px;
+  padding: 70px 0 0 0;
+}
+
+#nav > .area > #navTitle {
+  font-size: 20px;
+  padding: 10px 15px;
+  font-weight: 600;
+}
+
+#nav > .area > ul#depth2_list {
+  display: grid;
+}
+
+#nav > .area > ul#depth2_list > li #depth2 {
+  padding: 10px 15px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #606060;
+  cursor: pointer;
+}
+
+#nav > .area > ul > li #depth2:hover {
+  color: #2dbdb6 !important;
+}
+
+#nav > .area > ul#depth2_list > li > ul#depth3_list {
+  display: grid;
+}
+
+#nav > .area > ul#depth2_list > li > ul#depth3_list > li#depth3 {
+  float: left;
+  padding: 10px 15px 10px 40px;
+  font-weight: 600;
+  color: #949494;
+  cursor: pointer;
+}
+
+#nav > .area > ul#depth2_list > li > ul#depth3_list > li#depth3:hover {
+  color: #000000;
+  background-color: #dcdcdc;
+}
+</style>

@@ -43,6 +43,17 @@ export default {
 
 
 <style>
-
+.subInfoTitleMark {
+  background-color: #2dbdb6;
+  border-radius: 3px;
+  color: #ffffff;
+  height: 20px;
+  width: 15px;
+  content: url(../../img/icon_form_arrow.png);
+}
+.subInfoTitle {
+  font-size: 20px;
+  font-weight: bold;
+}
 
 </style>

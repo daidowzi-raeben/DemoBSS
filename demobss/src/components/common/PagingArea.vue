@@ -127,3 +127,50 @@ export default {
   },
 };
 </script>
+<style>
+#paging_area {
+  position: relative;
+  padding: 20px 0px 25px 0px;
+}
+#paging_area > .page_navi {
+  position: relative;
+  text-align: center;
+}
+
+#paging_area > .page_navi > a {
+  margin: 0 2px;
+}
+
+#paging_area > .page_navi > a,
+.page_navi > strong {
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  border: 1px solid #d7d7d7;
+  border-radius: 4px;
+  line-height: 22px;
+  font-size: 11px;
+  vertical-align: middle;
+  cursor: pointer;
+}
+#paging_area > .page_navi .first {
+  background: url(../../img/icon_board_firstPage.png) no-repeat 50%;
+}
+#paging_area > .page_navi .next_link {
+  background: url(../../img/icon_board_nextPage.png) no-repeat 50%;
+}
+#paging_area > .page_navi .prev_link {
+  background: url(../../img/icon_board_prevPage.png) no-repeat 50%;
+}
+#paging_area > .page_navi .last {
+  background: url(../../img/icon_board_lastPage.png) no-repeat 50%;
+}
+#paging_area > .page_navi .current {
+  background: #5e5e5e;
+  color: #fff;
+}
+#paging_area .txt-hidden {
+  font-size: 0;
+  text-indent: -1000em;
+}
+</style>
