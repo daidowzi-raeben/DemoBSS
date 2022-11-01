@@ -1,95 +1,8 @@
 <template>
   <div class="section0">
     <div class="cusInfo">
-      <SubInfoTitle
-          :subInfoTitleNm="'고객정보'"
-          />
-      <table style="width: 100%">
-        <tr style="height: 40px">
-          <td
-            style="
-              folat: left;
-              width: 95%;
-              border: solid 2px slategrey;
-              padding-left: 10px;
-            "
-          >
-            <label>고객조회</label>
-            <select style="width: 100px; height: 21.5px">
-              <option value="A">전체</option>
-              <option value="B">고객ID</option>
-              <option value="C">계약ID</option>
-              <option value="D">선박ID</option>
-              <option value="E">청구계정ID</option>
-            </select>
-            &nbsp;
-            <input-component
-              :type="'search'"
-              :height="20"
-              :width="150"
-              v-model="searchValue"
-              :placeholder="''"
-              @input="
-                (value) => {
-                  searchValue = value;
-                }
-              "
-            />
-          </td>
-          <td
-            style="
-              background-color: #bdbdce;
-              text-align: center;
-              border: solid 2px slategrey;
-              margin: 100px 0px;
-            "
-          >
-            <img src="../img/icon_big_search.png" />&nbsp;검색
-          </td>
-        </tr>
-      </table>
-      <table style="width: 100%; border: groove 1px">
-        <tr>
-          <td>
-            <label>고객ID</label>
-            <input type="text" value="CC10001046" disabled />
-          </td>
-          <td>
-            <label>고객명</label>
-            <input type="text" value="주식회사 시너샛코리아" disabled />
-          </td>
-          <td>
-            <label>고객유형</label> <input type="text" value="" disabled />
-          </td>
-          <td><label>국가</label> <input type="text" value="" disabled /></td>
-          <td>
-            <label style="width: 130px">사업자등록번호</label>
-            <input type="text" value="6268700031" disabled />
-          </td>
-        </tr>
-        <tr style="padding-left: 10px">
-          <td>
-            <label>고객구분</label>
-            <input type="text" value="영리법인" disabled />
-          </td>
-          <td>
-            <label>전화번호</label>
-            <input type="text" value="01012341234" disabled />
-          </td>
-          <td>
-            <label>내외구분</label> <input type="text" value="" disabled />
-          </td>
-          <td>
-            <label>주소</label>
-            <input
-              style="width: 50px"
-              type="text"
-              value=""
-              disabled
-            />&nbsp;<input type="text" value="" disabled />
-          </td>
-        </tr>
-      </table>
+      <CustomerInqComponent />
+      <CusomerInfoComponent />
     </div>
     <div class="contList">
       <div>
@@ -254,10 +167,12 @@ import AgGridComponent from "@/components/common/AgGridComponent";
 import InputComponent from "@/components/common/InputComponent";
 import ButtonComponent from "@/components/common/ButtonComponent.vue";
 import SubInfoTitle from "@/components/common/SubInfoTitle.vue";
+import CusomerInfoComponent from "@/components/common/CusomerInfoComponent";
+import CustomerInqComponent from "@/components/common/CustomerInqComponent";
 
 export default {
   name: "ChageInfoRetv",
-  components: { AgGridComponent, InputComponent, ButtonComponent, SubInfoTitle },
+  components: { AgGridComponent, InputComponent, ButtonComponent, SubInfoTitle, CusomerInfoComponent, CustomerInqComponent },
   data() {
     return {
       gridOptions: null,
@@ -348,15 +263,12 @@ div.cusInfo {
   margin: 10px;
   height: 120px;
 }
-td > input {
-  background-color: #f9f9f9;
-  border-radius: 2px;
-}
 div.contList {
   float: left;
   width: 15vw;
   margin: 10px;
   padding-bottom: 10px;
+  padding-top :20px;
   height: 680px;
 }
 .clList {
@@ -364,6 +276,7 @@ div.contList {
   float: left;
   margin: 10px;
   padding-bottom: 25px;
+  padding-top :20px;
   height: 410px;
 }
 .feeSear {
@@ -371,12 +284,6 @@ div.contList {
   width: 25vw;
   height: 225px;
   margin: 10px;
-}
-td > label {
-  display: inline-block;
-  width: 60px;
-  padding-left: 10px;
-  font-weight: bold;
 }
 .sevSear {
   float: left;
