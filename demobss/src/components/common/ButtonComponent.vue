@@ -32,14 +32,10 @@ export default {
   cursor: pointer;
   border: none;
 }
-.btnClass3 {
-  height: 30px;
-  font-weight: bold;
-  margin-right: 5px;
-  cursor: pointer;
+.btnClass1:hover{
+  background-color: #70707098;
 }
-
-.btnClass4 {
+.btnclass2 {
   float: right;
   padding: 4px;
   font-size: 10px;
@@ -49,7 +45,18 @@ export default {
   margin: 3px 3px 0px 3px;
   background-color: rgb(255, 255, 255);
 }
-
+.btnclass2:hover{
+  background-color: rgba(188, 213, 62, 0.842);
+}
+.btnClass3 {
+  height: 30px;
+  font-weight: bold;
+  margin-right: 5px;
+  cursor: pointer;
+}
+.btnClass3:hover{
+  background-color: #70707077;
+}
 .btnLeftImgClass {
   background-color: #5ad3cd;
   border: none;
@@ -60,6 +67,9 @@ export default {
   display: flex;
   content: url(../../img/icon_form_left.png);
 }
+.btnLeftImgClass:hover{
+background-color: #5ad3cd91;
+}
 .btnRightImgClass {
   background-color: #5ad3cd;
   border: none;
@@ -69,6 +79,9 @@ export default {
   display: flex;
   content: url(../../img/icon_form_right.png);
 }
+.btnRightImgClass:hover{
+background-color: #5ad3cd91;
+}
 .btnDeleteImgClass {
   background-color: #5ad3cd;
   border: none;
@@ -77,5 +90,8 @@ export default {
   height: 25px;
   display: flex;
   content: url(../../img/icon_delete.png);
+}
+.btnDeleteImgClass:hover{
+background-color: #5ad3cd91;
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div style="overflow:scroll;">
     <h1 style="font-size: 30px">select box</h1>
     <div style="border-top: solid black 1px; margin: 10px; padding: 10px">
       조회조건
@@ -148,6 +148,59 @@
         <ag-grid-component :rowData="rowData2" :columnDefs="columnDefs2" />
       </div>
     </div>
+
+    <h1 style="font-size: 30px">ButtonComponent</h1>
+    <span>각 버튼의 클래스 이름</span>
+    <div
+      style="
+        display: flex;
+        border-top: solid black 1px;
+        margin: 10px;
+        padding: 10px;
+      "
+    >
+    <ButtonComponent
+      :btnClass="'btnClass1'"
+      :btnName="'btnClass1'"
+    />
+    <ButtonComponent
+      :btnClass="'btnclass2'"
+      :btnName="'btnClass2'"
+    />
+    <ButtonComponent
+      :btnClass="'btnClass3'"
+      :btnName="'btnClass3'"
+    />
+    <ButtonComponent 
+      :btnClass="'btnLeftImgClass'"/>btnLeftImgClass &nbsp; 
+    <ButtonComponent 
+      :btnClass="'btnRightImgClass'"/> btnRightImgClass&nbsp;
+    <ButtonComponent 
+      :btnClass="'btnDeleteImgClass'"/> btnDeleteImgClass &nbsp;
+    </div>
+    <br><br>
+
+    <h1 style="font-size: 30px">subInfoTitle</h1>
+    <span></span>
+    <div
+      style="
+        display: flex;
+        border-top: solid black 1px;
+        margin: 10px;
+        padding: 10px;
+      "
+    >
+    <SubInfoTitle
+      :subInfoTitleNm="'고객정보'"
+    /> &emsp;
+    <SubInfoTitle
+      :subInfoTitleNm="'요금정보'"
+    />
+
+    </div>
+
+  <br><br><br><br><br>
+
   </div>
 </template>
 
@@ -157,6 +210,8 @@ import FileInputComponent from "../components/common/FileInputComponent.vue";
 import DatePickerComponent from "../components/common/DatePickerComponent.vue";
 import AgGridComponent from "../components/common/AgGridComponent.vue";
 import SelectBoxComponent from "../components/common/SelectBoxComponent.vue";
+import ButtonComponent from "@/components/common/ButtonComponent.vue";
+import SubInfoTitle from "@/components/common/SubInfoTitle.vue";
 export default {
   name: "CommonView",
   components: {
@@ -165,6 +220,9 @@ export default {
     DatePickerComponent,
     AgGridComponent,
     SelectBoxComponent,
+    ButtonComponent,
+    SubInfoTitle,
+
   },
   data() {
     return {

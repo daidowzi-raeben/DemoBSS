@@ -354,6 +354,8 @@
           <ButtonComponent :btnClass="'btnClass3'" :btnName="'청구계정변경'" />
         </div>
       </div>
+
+      
       <div class="feeInfo">
         <SubInfoTitle
           :subInfoTitleNm="'요금정보'"

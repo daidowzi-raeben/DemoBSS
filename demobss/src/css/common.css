@@ -1570,7 +1570,7 @@ input[type="checkbox"]:checked + label {
 }
 
 /* -----------components > common > ButtonComponents ---------- */
-/* 
+/*
 .btnClass1 {
   float: left;
   padding: 5px;
@@ -1596,7 +1596,7 @@ input[type="checkbox"]:checked + label {
   cursor: pointer;
 }
 
-.btnClass4 {
+.btnclass2 {
   float: right;
   padding: 4px;
   font-size: 10px;

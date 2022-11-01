@@ -1,7 +1,7 @@
 <template>
   <section>
     <Nav v-show="navOn" @input="AddComponent" />
-    <div class="wrap">
+    <div class="wrap" >
       <div class="menu_tab_line">
         <div :class="{
         menu_tab_line_detail : navOn === false,

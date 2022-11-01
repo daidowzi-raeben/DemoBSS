@@ -98,11 +98,11 @@
           />
       >
       <ButtonComponent
-        :btnClass="'btnClass4'"
+        :btnClass="'btnclass2'"
         :btnName="'전체펼치기'"
       />
       <ButtonComponent
-        :btnClass="'btnClass4'"
+        :btnClass="'btnclass2'"
         :btnName="'전체접기'"
       />
       </div>
@@ -129,7 +129,7 @@
             >건)</span
           >
           <ButtonComponent
-          :btnClass="'btnClass4'"
+          :btnClass="'btnclass2'"
           :btnName="'엑셀다운'"
           />
           >
@@ -172,7 +172,7 @@
               >건)</span
             >
             <ButtonComponent
-            :btnClass="'btnClass4'"
+            :btnClass="'btnclass2'"
             :btnName="'엑셀다운'"
             />
             <div
@@ -199,23 +199,23 @@
           />(<label style="font-weight: bold">62</label>건)</span
             >
           <ButtonComponent
-          :btnClass="'btnClass4'"
+          :btnClass="'btnclass2'"
           :btnName="'엑셀다운'"
           />
           <ButtonComponent
-          :btnClass="'btnClass4'"
+          :btnClass="'btnclass2'"
           :btnName="'선박발송'"
           />
           <ButtonComponent
-          :btnClass="'btnClass4'"
+          :btnClass="'btnclass2'"
           :btnName="'선박파일'"
           />
           <ButtonComponent
-          :btnClass="'btnClass4'"
+          :btnClass="'btnclass2'"
           :btnName="'선박별 상세'"
           />
           <ButtonComponent
-          :btnClass="'btnClass4'"
+          :btnClass="'btnclass2'"
           :btnName="'선박별 요약'"
           />
             <span style="float: right; margin: 3px">
