@@ -92,26 +92,10 @@ export default {
   },
   methods: {
     moveScrollRight:function (){
-      // if(this.navOn===true) {
-      //   var _scrollX = $('.menu_tab_line_detail_on').scrollLeft();
-      //   $('.menu_tab_line_detail_on').scrollLeft(_scrollX + 100);
-      // }
-      // else{
-      //   var _scrollX_2 = $('.menu_tab_line_detail').scrollLeft();
-      //   $('.menu_tab_line_detail').scrollLeft(_scrollX_2 + 100);
-      // }
       let menuTabScroll = document.querySelector(".menu_tab_line_detail_on");
       menuTabScroll.scrollLeft += 100;
     },
     moveScrollLeft:function () {
-      // if(this.navOn===true) {
-      //   var _scrollX = $('.menu_tab_line_detail_on').scrollLeft();
-      //   $('.menu_tab_line_detail_on').scrollLeft(_scrollX - 100);
-      // }
-      // else{
-      //   var _scrollX_2 = $('.menu_tab_line_detail').scrollLeft();
-      //   $('.menu_tab_line_detail').scrollLeft(_scrollX_2 - 100);
-      // }
       let menuTabScroll = document.querySelector(".menu_tab_line_detail_on");
       menuTabScroll.scrollLeft -= 100;
     },

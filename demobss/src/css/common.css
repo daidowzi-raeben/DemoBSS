@@ -1570,7 +1570,7 @@ input[type="checkbox"]:checked + label {
 }
 
 /* -----------components > common > ButtonComponents ---------- */
-
+/* 
 .btnClass1 {
   float: left;
   padding: 5px;
@@ -1605,8 +1605,8 @@ input[type="checkbox"]:checked + label {
   cursor: pointer;
   margin: 3px 3px 0px 3px;
   background-color: rgb(255, 255, 255);
-}
-.btnLeftImgClass {
+} */
+/* .btnLeftImgClass {
   background-color: #5ad3cd;
   border: none;
   cursor: pointer;
@@ -1633,8 +1633,8 @@ input[type="checkbox"]:checked + label {
   height: 25px;
   display: flex;
   content: url(../img/icon_delete.png);
-}
-.subInfoTitleMark {
+} */
+/* .subInfoTitleMark {
   background-color: #2dbdb6;
   border-radius: 3px;
   color: #ffffff;
@@ -1645,4 +1645,4 @@ input[type="checkbox"]:checked + label {
 .subInfoTitle {
   font-size: 20px;
   font-weight: bold;
-}
+} */
