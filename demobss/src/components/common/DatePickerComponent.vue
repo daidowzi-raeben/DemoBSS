@@ -79,5 +79,30 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
+.calender_input {
+  border: #b6b6b6 solid 1px;
+  font-size: 13px;
+  height: 34px;
+  color: #494949;
+  padding: 0 22px 0 9px;
+  background: url(../../img/icon_form_calender.png) no-repeat;
+  background-position: right 9px center;
+  cursor: pointer;
+}
+
+.v3dp__datepicker {
+  /* datepicker 상세 스타일 */
+  --vdp-hover-bg-color: #434343;
+  --vdp-selected-bg-color: #2dbdb6;
+  box-sizing: border-box;
+}
+
+.datepicker_class_in {
+  height: 34px;
+  width: 85%;
+  border: 0;
+  line-height: 34px;
+  background-color: transparent;
+}
 </style>

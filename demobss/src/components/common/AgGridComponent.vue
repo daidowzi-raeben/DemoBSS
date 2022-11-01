@@ -142,7 +142,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 .ag-grid {
   width: 100%;
   height: 100%;
@@ -235,6 +235,95 @@ export default {
   background-color: #f8f8f8;
   box-sizing: border-box;
   border-bottom: 0;
+}
+.ag-grid .ag-cell {
+  border-bottom: #efefef solid 1px;
+  border-left: #e4e4e4 solid 1px;
+  font-family: 맑은 고딕;
+  font-size: 14px;
+  color: #343434;
+
+  line-height: 39px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.ag-grid .ag-cell-wrapper {
+  color: inherit;
+}
+
+.ag-grid .ag-cell-label-container {
+  width: auto;
+}
+
+.ag-grid .ag-cell-left {
+  /* 왼쪽 정렬 */
+  box-sizing: border-box;
+  padding: 0 0 0 10px;
+  text-align: left;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.ag-grid .ag-cell-right {
+  /* 오른쪽 정렬 */
+  box-sizing: border-box;
+  padding: 0 10px 0 0;
+  text-align: right;
+  justify-content: flex-end;
+}
+
+.ag-grid .ag-cell-red {
+  color: #ed1820 !important;
+}
+
+.ag-grid .ag-ellipsis {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ag-grid .ag-piacard {
+  /* 다국어처리 칸.. */
+  word-break: break-all;
+  line-height: 100%;
+}
+
+.ag-grid .ag-cell-subtotal {
+  background-color: rgb(255, 255, 151);
+  /* border-bottom: #e4e4e4 solid 1px; */
+  /* border-top: #e4e4e4 solid 1px; */
+  z-index: 1;
+}
+
+.ag-grid .ag-cell-subtotal2 {
+  background-color: rgb(252, 203, 210);
+  /* border-bottom: #e4e4e4 solid 1px; */
+  /* border-top: #e4e4e4 solid 1px; */
+  z-index: 1;
+}
+
+.ag-grid .ag-cell-total {
+  background-color: lightblue;
+  /* border-bottom: #e4e4e4 solid 1px; */
+  /* border-top: #e4e4e4 solid 1px; */
+  z-index: 1;
+}
+
+.ag-overlay-loading-center {
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  text-align: center;
+  display: flex;
+  background-color: #f8f8f8cc;
+  align-items: center;
+  font-weight: 600;
 }
 .ag-grid .ag-cell {
   border-bottom: #efefef solid 1px;
