@@ -1,39 +1,40 @@
 <template>
   <section>
-    <Nav v-show="navOn" @input="AddComponent" />
-    <div class="wrap" >
+    <Nav v-show="navOn" @input="AddComponent"/>
+    <div class="wrap">
       <div class="menu_tab_line">
         <div :class="{
         menu_tab_line_detail : navOn === false,
         menu_tab_line_detail_on : navOn === true,
         }">
-        <div v-for="(item, index) in compm" v-bind:key="index" >
-          <div
-            :class="{
+          <div v-for="(item, index) in compm" v-bind:key="index">
+            <div
+                :class="{
               tabon: this.comp === item.menuId,
               taboff: this.comp !== item.menuId,
               menu_tab: true,
             }"
-            @click="ChageComponent(item.menuId, index)"
-          >
+                @click="ChageComponent(item.menuId, index)"
+            >
             <span id="tab_nm">
               {{ item.menuNm }}
             </span>
-            <span class="tab_x" @click.prevent.stop="DeleteComponent(index)">x</span>
+              <span class="tab_x" @click.prevent.stop="DeleteComponent(index)">x</span>
+            </div>
           </div>
-        </div>
         </div>
         <div class="menu_tab_buttons">
           <ButtonComponent :btnClass="'btnLeftImgClass'" @click="moveScrollLeft"/>
           <ButtonComponent :btnClass="'btnRightImgClass'" @click="moveScrollRight"/>
-          <ButtonComponent :btnClass="'btnDeleteImgClass'" @click="AllDeleteComponent"/> </div>
-          </div>
-      <title-area :currentMenu="currentMenu" />
+          <ButtonComponent :btnClass="'btnDeleteImgClass'" @click="AllDeleteComponent"/>
+        </div>
+      </div>
+      <title-area :currentMenu="currentMenu"/>
 
       <div v-for="(item, index) in compm2" :key="item" class="view_wrap">
         <component
-          v-bind:is="this.compm2[index]"
-          v-show="index === this.cur_num"
+            v-bind:is="this.compm2[index]"
+            v-show="index === this.cur_num"
         ></component>
       </div>
     </div>
@@ -43,7 +44,7 @@
 <script>
 import TitleArea from "./common/TitleArea.vue";
 import Nav from "./Nav.vue";
-import { defineAsyncComponent, markRaw } from "vue";
+import {defineAsyncComponent, markRaw} from "vue";
 import ButtonComponent from "@/components/common/ButtonComponent.vue";
 
 export default {
@@ -68,7 +69,7 @@ export default {
       compm2: [],
       test: "ChageInfoRetv",
       component: markRaw(
-        defineAsyncComponent(() => import("../pages/ChageInfoRetv.vue"))
+          defineAsyncComponent(() => import("../pages/ChageInfoRetv.vue"))
       ),
     };
   },
@@ -90,11 +91,11 @@ export default {
     },
   },
   methods: {
-    moveScrollRight:function (){
+    moveScrollRight: function () {
       let menuTabScroll = document.querySelector(".menu_tab_line_detail_on");
       menuTabScroll.scrollLeft += 100;
     },
-    moveScrollLeft:function () {
+    moveScrollLeft: function () {
       let menuTabScroll = document.querySelector(".menu_tab_line_detail_on");
       menuTabScroll.scrollLeft -= 100;
     },
@@ -113,8 +114,8 @@ export default {
         this.compm.splice(index, 1);
         this.compm2.splice(index, 1);
         if (
-          index == this.cur_num ||
-          (index < this.cur_num && index <= this.compm.length)
+            index == this.cur_num ||
+            (index < this.cur_num && index <= this.compm.length)
         ) {
           this.cur_num = this.cur_num - 1;
         }
@@ -123,7 +124,7 @@ export default {
     AddComponent: function (param) {
       if (param.menuId != "" && param.menuId != null) {
         const st = this.compm.find(
-          (element) => element.menuId === param.menuId
+            (element) => element.menuId === param.menuId
         );
         if (st != null) {
           var i = this.compm.indexOf(st);
@@ -133,9 +134,9 @@ export default {
             this.compm.push(param);
             this.cur_num = this.compm.length - 1;
             this.component = markRaw(
-              defineAsyncComponent(() =>
-                import("../pages/" + this.compm[this.cur_num].cmpnId + ".vue")
-              )
+                defineAsyncComponent(() =>
+                    import("../pages/" + this.compm[this.cur_num].cmpnId + ".vue")
+                )
             );
             this.compm2.push(this.component);
           } else {
@@ -155,12 +156,14 @@ export default {
   white-space: nowrap;
   display: flex;
 }
+
 .menu_tab_line .menu_tab_line_detail_on {
   width: 81vw;
   overflow: hidden;
   white-space: nowrap;
   display: flex;
 }
+
 div.tabon {
   /* 탭 선택되었을 때 */
   background-color: #ffffff;
@@ -173,6 +176,7 @@ div.taboff {
   color: #aeaeae;
   border-right: #343434 solid 1px;
 }
+
 .menu_tab_line {
   height: 30px;
   display: inline-flex;
@@ -180,6 +184,7 @@ div.taboff {
   background-color: #5ad3cd;
   /* overflow-x: scroll; */
 }
+
 .menu_tab {
   float: left;
   width: 160px;
@@ -188,6 +193,7 @@ div.taboff {
   line-height: 30px;
   cursor: pointer;
 }
+
 .menu_tab > span#tab_nm {
   display: block;
   float: left;
@@ -202,12 +208,14 @@ div.taboff {
   font-size: 20px;
   float: right;
 }
+
 .menu_tab_line .menu_tab_buttons {
   width: 5vw;
   padding-top: 2px;
   float: right;
   display: flex;
 }
+
 .menu_tab_line .menu_button {
   float: right;
   color: #ffffff;

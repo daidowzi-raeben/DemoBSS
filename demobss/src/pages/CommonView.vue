@@ -199,7 +199,46 @@
 
     </div>
 
-  <br><br><br><br><br>
+  <br><br>
+    <h1 style="font-size: 30px">InputComponent</h1>
+    <span></span>
+    <div
+        style="
+        display: flex;
+        border-top: solid black 1px;
+        margin: 10px;
+        padding: 10px;
+      "
+    >
+    <input-component
+        :type="'search'"
+        :height="20"
+        :width="150"
+        v-model="searchValue"
+        :placeholder="'입력'"
+        @input="
+                (value) => {
+                  searchValue = value;
+                }
+              "
+    />
+    </div>
+    <br><br><br>
+
+    <h1 style="font-size: 30px">TitleAreaComponent</h1>
+    <span></span>
+    <div
+        style="
+        display: flex;
+        border-top: solid black 1px;
+        margin: 10px;
+        padding: 10px;
+        width:1960px;
+      "
+    >
+      <title-area :currentMenu="currentMenu" />
+    </div>
+    <br><br><br>
 
   </div>
 </template>
@@ -212,6 +251,8 @@ import AgGridComponent from "../components/common/AgGridComponent.vue";
 import SelectBoxComponent from "../components/common/SelectBoxComponent.vue";
 import ButtonComponent from "@/components/common/ButtonComponent.vue";
 import SubInfoTitle from "@/components/common/SubInfoTitle.vue";
+import InputComponent from "@/components/common/InputComponent";
+import TitleArea from "@/components/common/TitleArea";
 export default {
   name: "CommonView",
   components: {
@@ -222,15 +263,24 @@ export default {
     SelectBoxComponent,
     ButtonComponent,
     SubInfoTitle,
-
+    InputComponent,
+    TitleArea,
   },
   data() {
     return {
       searchDiv1: null,
       searchDiv2: null,
+      searchValue :null,
       date1: new Date(2021, 9, 5),
       date2: new Date(),
       pDisable: true,
+      currentMenu:
+        {
+          cmpnId: "ChageInfoRetv",
+          menuId: "bill_01_01_01",
+          menuNm: "청구요금정보조회",
+          upMenuId: "bill_01_01",
+        },
       pageableData1: {
         pageNumber: 1,
         currentMinPage: 1,
