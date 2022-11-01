@@ -34,4 +34,9 @@ export default {
 </script>
 
 <style scoped>
+input {
+  font-family: 맑은 고딕;
+  font-size: 14px;
+  color: #343434;
+}
 </style>

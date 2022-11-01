@@ -270,7 +270,7 @@ export default {
           },
           headerClass: "ag-header-first-child",
         },
-        { headerName: "청구년월aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", field: "model1" },
+        { headerName: "청구년월", field: "model1" },
         { headerName: "청구통화", field: "model2" },
         { headerName: "원화당월요금", field: "model3" },
         { headerName: "원화잔액", field: "model4" },
@@ -281,7 +281,7 @@ export default {
       ],
       rowData1: [
         {
-          model0: "00100004023aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          model0: "00100004023",
           model1: "2022-10",
           model2: "KRW",
           model3: "20,225,214",
@@ -376,14 +376,6 @@ td > label {
   width: 60px;
   padding-left: 10px;
   font-weight: bold;
-}
-.ch_area {
-  position: relative;
-  left: 30px;
-  /*border: #F00 solid 1px;*/
-  min-height: calc(100% - 180px);
-  padding: 20px 0 143px;
-  box-sizing: border-box;
 }
 .sevSear {
   float: left;

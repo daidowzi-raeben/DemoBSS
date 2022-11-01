@@ -1,11 +1,11 @@
 <template>
 <div style="display:inline-block;">
-  <label :class="subInfoTitleMarkClass"  
+  <label :class="subInfoTitleMarkClass"
   :style="{height:markHeight, width: markWidth }" ></label>
-  <label 
-  :class="subInfoTitleClass" 
+  <label
+  :class="subInfoTitleClass"
   :style="{fontSize:fontSize, }">{{subInfoTitleNm}}</label>
-</div>  
+</div>
 </template>
 
 <script>
@@ -18,10 +18,10 @@ export default {
   },
   props:{
     subInfoTitleNm: String, // 부정보 제목명
-    
+
     subInfoTitleMark: String, // 마크 클래스 지정
     subInfoTitle: String,     // 제목 클래스 지정
-    
+
     fontSize : String,        // 제목 글자 크기
     markHeight: String,       // 마크 높이, 넓이
     markWidth: String,

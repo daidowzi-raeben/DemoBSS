@@ -43,7 +43,6 @@
 <script>
 import TitleArea from "./common/TitleArea.vue";
 import Nav from "./Nav.vue";
-// import $ from 'jquery';
 import { defineAsyncComponent, markRaw } from "vue";
 import ButtonComponent from "@/components/common/ButtonComponent.vue";
 
@@ -149,4 +148,73 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+.menu_tab_line .menu_tab_line_detail {
+  width: 94vw;
+  overflow: hidden;
+  white-space: nowrap;
+  display: flex;
+}
+.menu_tab_line .menu_tab_line_detail_on {
+  width: 81vw;
+  overflow: hidden;
+  white-space: nowrap;
+  display: flex;
+}
+div.tabon {
+  /* 탭 선택되었을 때 */
+  background-color: #ffffff;
+  color: #444444;
+}
+
+div.taboff {
+  /* 탭 선택x */
+  background-color: #707070;
+  color: #aeaeae;
+  border-right: #343434 solid 1px;
+}
+.menu_tab_line {
+  height: 30px;
+  display: inline-flex;
+  width: 100%;
+  background-color: #5ad3cd;
+  /* overflow-x: scroll; */
+}
+.menu_tab {
+  float: left;
+  width: 160px;
+  height: 30px;
+  padding: 0 10px;
+  line-height: 30px;
+  cursor: pointer;
+}
+.menu_tab > span#tab_nm {
+  display: block;
+  float: left;
+  width: 140px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.menu_tab > span.tab_x {
+  color: #aeaeae;
+  font-size: 20px;
+  float: right;
+}
+.menu_tab_line .menu_tab_buttons {
+  width: 5vw;
+  padding-top: 2px;
+  float: right;
+  display: flex;
+}
+.menu_tab_line .menu_button {
+  float: right;
+  color: #ffffff;
+  padding: 0 10px;
+  font-size: 20px;
+  cursor: pointer;
+  width: 5vw;
+  display: flex;
+}
+</style>

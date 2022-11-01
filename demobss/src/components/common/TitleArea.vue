@@ -58,4 +58,54 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+ .title_area {
+  overflow: hidden;
+  background-color: #ffffff;
+  height: 30px;
+  margin: 20px 0 10px 0;
+  font-size: 20px;
+  padding: 0 10px;
+}
+
+.title_area > .icon {
+  float: left;
+  width: 20px;
+  height: 20px;
+  background-color: #707070;
+  border-radius: 30px;
+  margin: 5px;
+}
+
+.title_area h1 {
+  float: left;
+  margin-bottom: 20px;
+  display: inline-block;
+  color: #949494;
+}
+ .title_area span {
+  color: #444444;
+}
+
+ .title_area > .right {
+  float: right;
+  margin: 0 15px;
+}
+
+ .title_area > .right .home_menu {
+  float: left;
+  padding: 5px;
+  margin-right: 10px;
+  background-color: #707070;
+  color: #aeaeae;
+  cursor: pointer;
+}
+
+ .title_area > .right .view_reset {
+  float: right;
+  padding: 5px;
+  background-color: #707070;
+  color: #aeaeae;
+  cursor: pointer;
+}
+</style>
