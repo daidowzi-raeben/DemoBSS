@@ -202,7 +202,7 @@
 
 
 
-    <h1 style="font-size: 30px">공통 팝업</h1>
+    <h1 style="font-size: 30px">PopupComponent</h1>
     <div
       style="
         display: flex;
