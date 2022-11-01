@@ -196,10 +196,35 @@
     <SubInfoTitle
       :subInfoTitleNm="'요금정보'"
     />
+    <br><br><br>
+    </div>
 
+
+
+
+    <h1 style="font-size: 30px">공통 팝업</h1>
+    <div
+      style="
+        display: flex;
+        border-top: solid black 1px;
+        margin: 10px;
+        padding: 10px;
+      "
+    >
+    <button @click="popup">팝업 보이기 </button>
+    <PopupComponent
+      v-if="isModalShow"
+      @popup="isModalShow = false"
+      @AGREE = "''"
+      :popupmsg="'데이터바인딩: isModalShow,  함수 : popup() '"
+    />
     </div>
 
   <br><br><br><br><br>
+
+
+
+
 
   </div>
 </template>
@@ -212,6 +237,7 @@ import AgGridComponent from "../components/common/AgGridComponent.vue";
 import SelectBoxComponent from "../components/common/SelectBoxComponent.vue";
 import ButtonComponent from "@/components/common/ButtonComponent.vue";
 import SubInfoTitle from "@/components/common/SubInfoTitle.vue";
+import PopupComponent  from  "@/components/common/PopupComponent.vue";
 export default {
   name: "CommonView",
   components: {
@@ -222,6 +248,7 @@ export default {
     SelectBoxComponent,
     ButtonComponent,
     SubInfoTitle,
+    PopupComponent,
 
   },
   data() {
@@ -287,6 +314,8 @@ export default {
         { make: "Ford", model: "Mondeo", price: 32000 },
         { make: "Porsche", model: "Boxster", price: 72000 },
       ],
+      
+      isModalShow: false, // popup 조건
     };
   },
   created() {
@@ -295,6 +324,11 @@ export default {
   methods: {
     fileDisable() {
       this.pDisable = !this.pDisable;
+    },
+    
+    popup(){
+      if (this.isModalShow == false) this.isModalShow= true
+      else this.isModalShow = false
     },
   },
 };
