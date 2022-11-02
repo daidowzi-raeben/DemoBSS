@@ -199,6 +199,27 @@
     <br><br><br>
     </div>
 
+    <h1 style="font-size: 30px">FormDataComponent</h1>
+    <span></span>
+    <div
+      style="
+        border-top: solid black 1px;
+        margin: 10px;
+        padding: 10px;
+      "
+    >
+    <FormDataComponent
+    :FormDataclass="'InfoOfAccount'"
+    :subInfoTitleNm="'청구계정 정보'"
+    />
+
+    <br>
+
+      <FormDataComponent
+    :FormDataclass="'InfoOfOrg'"
+    :subInfoTitleNm="'영업조직정보'"
+    />
+    </div>
 
 
 
@@ -332,6 +353,8 @@ import PopupComponent  from  "@/components/common/PopupComponent.vue";
 import CustomerInfoComponent from "@/components/common/CustomerInfoComponent";
 import CustomerSearchComponent from "@/components/common/CustomerSearchComponent";
 import BoxComponent from "@/components/common/BoxComponent";
+import FormDataComponent  from  "@/components/common/FormDataComponent.vue";
+
 export default {
   name: "CommonView",
   components: {
@@ -348,6 +371,7 @@ export default {
     CustomerInfoComponent,
     CustomerSearchComponent,
     BoxComponent,
+    FormDataComponent,
   },
   data() {
     return {
