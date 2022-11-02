@@ -41,4 +41,16 @@ input {
   font-size: 14px;
   color: #343434;
 }
+.class1 {
+  background-color: #dcdcdc;
+  border-radius: 2px;
+  font-weight: bold;
+}
+.class2 {
+  background-color: black;
+  font-weight: bold;
+  color: red;
+}
+
+
 </style>

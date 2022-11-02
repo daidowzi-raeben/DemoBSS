@@ -9,9 +9,8 @@
         <select-box-component
             :selectClass="'select_input3'"
             :width="200"
-            :cdGroup="'optionsSearchDiv'"
+            :cdGroup="cdGroup"
             :defaultValue="'선택'"
-            :defaultNum="3"
             v-model="searchDiv"
             @input="
           (value) => {
@@ -53,11 +52,12 @@ export default {
   components:{SubInfoTitle, SelectBoxComponent, InputComponent,ButtonComponent},
   data(){
     return{
-      searchDiv:null,
+      searchDiv :null,
+      searchValue:null,
     }
   },
   props:{
-    searchDiv2:null,
+    cdGroup:null,
   }
 }
 </script>

@@ -10,7 +10,8 @@
             :type="'text'"
             :height="15"
             :width="150"
-            :placeholder="'CC10001042'"
+            :input-class="'class1'"
+            :placeholder="customerInfo.customerId"
             disabled="true"
         />
       </td>
@@ -20,7 +21,8 @@
             :type="'text'"
             :height="15"
             :width="150"
-            :placeholder="'주식회사 시너샛코리아'"
+            :input-class="'class1'"
+            :placeholder="customerInfo.customerName"
             disabled="true"
         />
       </td>
@@ -30,7 +32,8 @@
             :type="'text'"
             :height="15"
             :width="150"
-            :placeholder="''"
+            :input-class="'class1'"
+            :placeholder="customerInfo.customerType"
             disabled="true"
         />
       </td>
@@ -39,7 +42,8 @@
             :type="'text'"
             :height="15"
             :width="150"
-            :placeholder="''"
+            :input-class="'class1'"
+            :placeholder="customerInfo.country"
             disabled="true"
         />
       </td>
@@ -49,7 +53,8 @@
             :type="'text'"
             :height="15"
             :width="150"
-            :placeholder="'6268700031'"
+            :input-class="'class1'"
+            :placeholder="customerInfo.businessNumber"
             disabled="true"
         />
       </td>
@@ -61,7 +66,8 @@
             :type="'text'"
             :height="15"
             :width="150"
-            :placeholder="'영리법인'"
+            :input-class="'class1'"
+            :placeholder="customerInfo.customerType"
             disabled="true"
         />
       </td>
@@ -71,7 +77,8 @@
             :type="'text'"
             :height="15"
             :width="150"
-            :placeholder="'01012341234'"
+            :input-class="'class1'"
+            :placeholder="customerInfo.phoneNumber"
             disabled="true"
         />
       </td>
@@ -81,6 +88,7 @@
             :type="'text'"
             :height="15"
             :width="150"
+            :input-class="'class1'"
             :placeholder="''"
             disabled="true"
         />
@@ -91,12 +99,14 @@
             :type="'text'"
             :height="15"
             :width="50"
+            :input-class="'class1'"
             :placeholder="''"
             disabled="true"
         />&nbsp;
         <input-component
           :type="'text'"
           :height="15"
+          :input-class="'class1'"
           :width="200"
           :placeholder="''"
           disabled="true"
@@ -112,6 +122,14 @@ import SubInfoTitle from "@/components/common/SubInfoTitle";
 export default {
   name: "CustomerInfoComponent",
   components :{inputComponent, SubInfoTitle},
+  data(){
+    return{
+
+    }
+  },
+  props : {
+    customerInfo:null,
+  }
 
 }
 </script>
@@ -120,10 +138,6 @@ export default {
 table {
   width: 100%;
   border: groove 1px
-}
-td > input {
-  background-color: #f9f9f9;
-  border-radius: 2px;
 }
 td > label {
   display: inline-block;

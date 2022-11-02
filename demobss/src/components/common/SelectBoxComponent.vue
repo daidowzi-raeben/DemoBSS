@@ -34,7 +34,6 @@ export default {
   },
   beforeMount() {
     this.options = select[this.cdGroup];
-
     if (this.defaultNum != null) {
       this.value = this.options[this.defaultNum].cdId;
     }
