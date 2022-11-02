@@ -1,8 +1,12 @@
 <template>
   <div class="section0">
     <div class="cusInfo">
-      <CustomerSeachComponent/>
-      <CusomerInfoComponent/>
+      <CustomerSeachComponent
+          :cdGroup="'optionsSearchDiv'"
+      />
+      <CusomerInfoComponent
+          :customer-info="customerInfo"
+      />
     </div>
     <div class="contList">
       <div>
@@ -28,32 +32,25 @@
               :sub-info-title-nm="'청구목록'"
               :grid-options="gridOptions"
               :column-defs="columnDefs1"
+              :select-box-show="true"
+              :total="'3'"
               :row-data="rowData1"
+              :cdGroup="'optionsEngtMons'"
+              :btnName="'엑셀다운'"
           />
         </div>
         <div style="width: 100%">
           <div class="feeSear">
-            <span
-            >
-        <SubInfoTitle
-            :subInfoTitleNm="'요금항목별 조회'"
-        /> (<label
-                style="font-weight: bold"
-            >18</label
-            >건)</span
-            >
-            <ButtonComponent
-                :btnClass="'btnclass2'"
+            <BoxComponent
+                :sub-info-title-nm="'요금항목별 조회'"
+                :grid-options="gridOptions"
+                :column-defs="columnDefs1"
+                :select-box-show="false"
+                :total="'10'"
+                :row-data="rowData1"
+                :cdGroup="'optionsSearchDiv'"
                 :btnName="'엑셀다운'"
             />
-            <div class="ag_grid_sp">
-              <ag-grid-component
-                  :rowData="rowData1"
-                  :columnDefs="columnDefs1"
-                  :grid-options="gridOptions"
-                  :isWidthFit="false"
-              />
-            </div>
           </div>
           <span class="sevSear">
             <span>
@@ -135,6 +132,15 @@ export default {
     return {
       gridOptions: null,
       searchValue: null,
+      customerInfo : {
+        customerId : "CC10001042",
+        customerName : "주식회사 시너샛코리아",
+        customerType : "일반",
+        country : "한국",
+        businessNumber: "6268700321",
+        customerClass : "영리법인",
+        phoneNumber: "01012345678"
+      },
       columnDefs1: [
         {
           headerName: "청구계정",

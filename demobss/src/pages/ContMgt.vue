@@ -2,11 +2,15 @@
   <div>
     <div class="section0">
       <div class="cusInfo0">
-        <CustomerSearchComponent />
+        <CustomerSearchComponent
+            :cdGroup="'optionsSearchDiv'"
+        />
       </div>
 
       <div class="cusInfo">
-        <CusomerInfoComponent />
+        <CusomerInfoComponent
+            :customer-info="customerInfo"
+        />
       </div>
       
       <div class="cmProducts">
@@ -23,10 +27,11 @@
               <tr>
                 <td>
                   <label>BM</label>
-                  <SelectBoxComponent
+                  <Select-Box-Component
                     :selectClass="'select_input2'"
                     :cdGroup="'optionsSearchDiv'"
                     :defaultValue="'선택'"
+                    :default-num="'2'"
                     v-model="searchDiv1"
                     @input="
                       (value) => {
@@ -37,7 +42,7 @@
                 </td>
                 <td>
                   <label><h2>Service</h2></label>
-                  <SelectBoxComponent
+                  <Select-Box-Component
                     :selectClass="'select_input2'"
                     :cdGroup="'optionsSearchDiv'"
                     :defaultValue="'선택'"
@@ -178,7 +183,7 @@
           <table style="float:right; display: inline-block">
                 <tr>
                   <td>
-                  <SelectBoxComponent
+                  <Select-Box-Component
                   :selectClass="'select_input3'"
                   :cdGroup="'optionsSearchDiv'"
                   :defaultValue="'선택'"
@@ -271,6 +276,10 @@
           :sub-info-title-nm="'요금정보'"
           :row-data="rowData1"
           :column-defs="columnDefs1"
+          :select-box-show="false"
+          :total="'10'"
+          :cdGroup="'optionsSearchDiv'"
+          :btnName="'엑셀다운'"
           />
       </div>
     </div>
@@ -303,6 +312,15 @@ export default {
       gridOptions: null,
       searchDiv1:'',
       searchValue2:'',
+      customerInfo : {
+        customerId : "CC10001042",
+        customerName : "주식회사 시너샛코리아",
+        customerType : "일반",
+        country : "한국",
+        businessNumber: "6268700321",
+        customerClass : "영리법인",
+        phoneNumber: "01012345678"
+      },
       columnDefs1: [
         {
           headerName: "결제통화",

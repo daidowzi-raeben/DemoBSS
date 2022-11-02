@@ -256,6 +256,7 @@
         :type="'search'"
         :height="20"
         :width="150"
+        :input-class="'class2'"
         v-model="searchValue"
         :placeholder="'입력'"
         @input="
@@ -264,6 +265,19 @@
                 }
               "
     />
+      <input-component
+          :type="'search'"
+          :height="20"
+          :width="150"
+          :input-class="'class1'"
+          v-model="searchValue"
+          :placeholder="'입력'"
+          @input="
+                (value) => {
+                  searchValue = value;
+                }
+              "
+      />
     </div>
     <br><br><br>
 
@@ -280,7 +294,9 @@
         margin: 10px;
       "
     >
-      <CustomerInfoComponent />
+      <CustomerInfoComponent
+          :customer-info="customerInfo"
+      />
     </div>
     <br><br><br>
 
@@ -297,7 +313,9 @@
         margin: 10px;
       "
     >
-      <CustomerSearchComponent />
+      <CustomerSearchComponent
+          :cdGroup="'optionsSearchDiv'"
+      />
     </div>
     <br><br><br>
 
@@ -332,6 +350,10 @@
           :sub-info-title-nm="'청구목록'"
           :column-defs="columnDefs1"
           :row-data="rowData1"
+          :select-box-show="true"
+          :total="'3'"
+          :cdGroup="'optionsSearchDiv'"
+          :btnName="'엑셀다운'"
       />
     </div>
     <br><br><br>
@@ -381,6 +403,15 @@ export default {
       date1: new Date(2021, 9, 5),
       date2: new Date(),
       pDisable: true,
+      customerInfo : {
+        customerId : "CC10001042",
+        customerName : "주식회사 시너샛코리아",
+        customerType : "일반",
+        country : "한국",
+        businessNumber: "6268700321",
+        customerClass : "영리법인",
+        phoneNumber: "01012345678"
+      },
       currentMenu:
         {
           cmpnId: "ChageInfoRetv",

@@ -1,17 +1,18 @@
 <template>
   <SubInfoTitle :subInfoTitleNm="subInfoTitleNm"/>
-    (<label style="font-weight: bold">6</label>건)
+    (<label style="font-weight: bold">{{total}}</label>건)
   <ButtonComponent
       :btnClass="'btnclass2'"
-      :btnName="'엑셀다운'"/>
+      :btnName="btnName"/>
   <span style="float: right; margin: 3px">
      <select-box-component
          :selectClass="'select_input3'"
          :width="200"
-         :cdGroup="'optionsSearchDiv'"
+         :cdGroup="cdGroup"
          :defaultValue="'선택'"
          :defaultNum="3"
          v-model="month"
+         v-show="selectBoxShow"
          @input="
           (value) => {
             month = value;
@@ -19,7 +20,6 @@
         "
      />
   </span>
-  <span style="float: right; margin: 3px; font-weight: bold">최근 개월 수</span>
   <div class="ag-grid_sp">
     <ag-grid-component
         :rowData="rowData"
@@ -50,9 +50,13 @@ export default {
   },
   props: {
     subInfoTitleNm:null,
+    selectBoxShow:null,
     rowData: null,
     columnDefs: null,
     gridOptions: null,
+    cdGroup: null,
+    btnName : null,
+    total:null,
   },
 }
 </script>
