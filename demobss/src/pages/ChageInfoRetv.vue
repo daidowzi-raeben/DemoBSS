@@ -22,7 +22,7 @@
         />
       </div>
       <div class="tree_sp">
-        트리
+        <TreeComponent />
       </div>
     </div>
     <div style="left: 30%">
@@ -116,6 +116,7 @@ import SubInfoTitle from "@/components/common/SubInfoTitle.vue";
 import CusomerInfoComponent from "@/components/common/CustomerInfoComponent";
 import BoxComponent from "@/components/common/BoxComponent";
 import CustomerSeachComponent from "@/components/common/CustomerSearchComponent";
+import TreeComponent from "@/components/common/TreeComponent";
 
 export default {
   name: "ChageInfoRetv",
@@ -126,7 +127,8 @@ export default {
     CusomerInfoComponent,
     CustomerSeachComponent,
     BoxComponent,
-    SelectBoxComponent
+    SelectBoxComponent,
+    TreeComponent
   },
   data() {
     return {

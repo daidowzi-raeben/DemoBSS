@@ -357,6 +357,21 @@
       />
     </div>
     <br><br><br>
+    <h1 style="font-size: 30px">TreeComponent</h1>
+    <span></span>
+    <div
+        style="
+        width: 80vw;
+        margin: 10px;
+        padding: 10px;
+        height: 300px;
+        display: inline-block;
+        border-top: solid black 1px;
+      "
+    >
+      <TreeComponent />
+    </div>
+    <br><br><br>
 
   </div>
 </template>
@@ -376,6 +391,7 @@ import CustomerInfoComponent from "@/components/common/CustomerInfoComponent";
 import CustomerSearchComponent from "@/components/common/CustomerSearchComponent";
 import BoxComponent from "@/components/common/BoxComponent";
 import FormDataComponent  from  "@/components/common/FormDataComponent.vue";
+import TreeComponent from "@/components/common/TreeComponent";
 
 export default {
   name: "CommonView",
@@ -394,6 +410,7 @@ export default {
     CustomerSearchComponent,
     BoxComponent,
     FormDataComponent,
+    TreeComponent
   },
   data() {
     return {

@@ -15,8 +15,10 @@
       
       <div class="cmProducts">
           <SubInfoTitle
-          :subInfoTitleNm="'보유 상품'"
-          /> </div>
+          :subInfoTitleNm="'보유 상품'"/>
+        <br>
+          <TreeComponent />
+      </div>
       
       <div class="CommonInfo">
         <div>
@@ -294,10 +296,12 @@ import SelectBoxComponent from "../components/common/SelectBoxComponent.vue";
 import SubInfoTitle from "@/components/common/SubInfoTitle.vue";
 import CusomerInfoComponent from "@/components/common/CustomerInfoComponent";
 import BoxComponent from "@/components/common/BoxComponent";
+import TreeComponent from "@/components/common/TreeComponent";
 
 export default {
   name: "ContMgt",
   components: {
+    TreeComponent,
     BoxComponent,
     CusomerInfoComponent,
     CustomerSearchComponent,
