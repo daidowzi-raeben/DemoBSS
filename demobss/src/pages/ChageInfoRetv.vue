@@ -1,158 +1,107 @@
 <template>
   <div class="section0">
     <div class="cusInfo">
-      <CustomerInqComponent />
-      <CusomerInfoComponent />
+      <CustomerSeachComponent/>
+      <CusomerInfoComponent/>
     </div>
     <div class="contList">
       <div>
-      <SubInfoTitle
-          :subInfoTitleNm="'서비스 계약목록'"
-          />
-      >
-      <ButtonComponent
-        :btnClass="'btnclass2'"
-        :btnName="'전체펼치기'"
-      />
-      <ButtonComponent
-        :btnClass="'btnclass2'"
-        :btnName="'전체접기'"
-      />
+        <SubInfoTitle :subInfoTitleNm="'서비스 계약목록'"/>
+
+        <ButtonComponent
+            :btnClass="'btnclass2'"
+            :btnName="'전체펼치기'"
+        />
+        <ButtonComponent
+            :btnClass="'btnclass2'"
+            :btnName="'전체접기'"
+        />
       </div>
-      <div
-        style="
-          margin: 10px;
-          width: 100%;
-          height: 100%;
-          border: groove;
-          border-top-color: #2dbdb6;
-        "
-      ></div>
+      <div class="tree_sp">
+        트리
+      </div>
     </div>
     <div style="left: 30%">
       <div>
         <div class="clList">
-          <span
-            >
-        <SubInfoTitle
-          :subInfoTitleNm="'청구목록'"
-          /> (<label
-              style="font-weight: bold"
-              >6</label
-            >건)</span
-          >
-          <ButtonComponent
-          :btnClass="'btnclass2'"
-          :btnName="'엑셀다운'"
-          />
-          >
-          <span style="float: right; margin: 3px"
-            ><select style="width: 100px; height: 21.5px">
-              <option>1개월</option>
-              <option>3개월</option>
-              <option selected>6개월</option>
-              <option>12개월</option>
-            </select></span
-          >
-          <span style="float: right; margin: 3px; font-weight: bold"
-            >최근 개월 수</span
-          >
-          <div
-            style="
-              margin: 10px;
-              width: 100%;
-              height: 100%;
-              border: groove;
-              border-top-color: #2dbdb6;
-            "
-          >
-            <ag-grid-component
-              :rowData="rowData1"
-              :columnDefs="columnDefs1"
+          <BoxComponent
+              :sub-info-title-nm="'청구목록'"
               :grid-options="gridOptions"
-            />
-          </div>
+              :column-defs="columnDefs1"
+              :row-data="rowData1"
+          />
         </div>
         <div style="width: 100%">
           <div class="feeSear">
             <span
-              >
+            >
         <SubInfoTitle
-          :subInfoTitleNm="'요금항목별 조회'"
-          /> (<label
+            :subInfoTitleNm="'요금항목별 조회'"
+        /> (<label
                 style="font-weight: bold"
-                >18</label
-              >건)</span
+            >18</label
+            >건)</span
             >
             <ButtonComponent
-            :btnClass="'btnclass2'"
-            :btnName="'엑셀다운'"
+                :btnClass="'btnclass2'"
+                :btnName="'엑셀다운'"
             />
-            <div
-              style="
-                margin: 10px;
-                width: 100%;
-                height: 100%;
-
-                border: groove;
-                border-top-color: #2dbdb6;
-              "
-            >
+            <div class="ag_grid_sp">
               <ag-grid-component
-                :rowData="rowData1"
-                :columnDefs="columnDefs1"
-                :grid-options="gridOptions"
-                :isWidthFit="false"
+                  :rowData="rowData1"
+                  :columnDefs="columnDefs1"
+                  :grid-options="gridOptions"
+                  :isWidthFit="false"
               />
             </div>
           </div>
           <span class="sevSear">
             <span>
         <SubInfoTitle
-          :subInfoTitleNm="'서비스계정별 조회'"
-          />(<label style="font-weight: bold">62</label>건)</span
+            :subInfoTitleNm="'서비스계정별 조회'"
+        />(<label style="font-weight: bold">62</label>건)</span
             >
           <ButtonComponent
-          :btnClass="'btnclass2'"
-          :btnName="'엑셀다운'"
+              :btnClass="'btnclass2'"
+              :btnName="'엑셀다운'"
           />
           <ButtonComponent
-          :btnClass="'btnclass2'"
-          :btnName="'선박발송'"
+              :btnClass="'btnclass2'"
+              :btnName="'선박발송'"
           />
           <ButtonComponent
-          :btnClass="'btnclass2'"
-          :btnName="'선박파일'"
+              :btnClass="'btnclass2'"
+              :btnName="'선박파일'"
           />
           <ButtonComponent
-          :btnClass="'btnclass2'"
-          :btnName="'선박별 상세'"
+              :btnClass="'btnclass2'"
+              :btnName="'선박별 상세'"
           />
           <ButtonComponent
-          :btnClass="'btnclass2'"
-          :btnName="'선박별 요약'"
+              :btnClass="'btnclass2'"
+              :btnName="'선박별 요약'"
           />
             <span style="float: right; margin: 3px">
-              <select style="width: 100px; height: 21.5px">
-                <option selected>전체</option>
-                <option>최신순</option>
-                <option>최근 1개월 이내</option>
-              </select></span
+              <select-box-component
+                  :selectClass="'select_input3'"
+                  :width="200"
+                  :cdGroup="'optionsSearchDiv'"
+                  :defaultValue="'선택'"
+                  :defaultNum="3"
+                  v-model="searchDiv"
+                  @input="(value) => {
+                    searchDiv = value;
+                  }
+                  "
+              />
+            </span
             >
-            <div
-              style="
-                margin: 10px;
-                width: 100%;
-                height: 100%;
-                border: groove;
-                border-top-color: #2dbdb6;
-              "
-            >
+            <div class="ag_grid_sp">
               <ag-grid-component
-                :rowData="rowData1"
-                :columnDefs="columnDefs1"
-                :grid-options="gridOptions"
-                :isWidthFit="false"
+                  :rowData="rowData1"
+                  :columnDefs="columnDefs1"
+                  :grid-options="gridOptions"
+                  :isWidthFit="false"
               />
             </div>
           </span>
@@ -164,15 +113,24 @@
 
 <script>
 import AgGridComponent from "@/components/common/AgGridComponent";
-import InputComponent from "@/components/common/InputComponent";
 import ButtonComponent from "@/components/common/ButtonComponent.vue";
+import SelectBoxComponent from "@/components/common/SelectBoxComponent";
 import SubInfoTitle from "@/components/common/SubInfoTitle.vue";
-import CusomerInfoComponent from "@/components/common/CusomerInfoComponent";
-import CustomerInqComponent from "@/components/common/CustomerInqComponent";
+import CusomerInfoComponent from "@/components/common/CustomerInfoComponent";
+import BoxComponent from "@/components/common/BoxComponent";
+import CustomerSeachComponent from "@/components/common/CustomerSearchComponent";
 
 export default {
   name: "ChageInfoRetv",
-  components: { AgGridComponent, InputComponent, ButtonComponent, SubInfoTitle, CusomerInfoComponent, CustomerInqComponent },
+  components: {
+    AgGridComponent,
+    ButtonComponent,
+    SubInfoTitle,
+    CusomerInfoComponent,
+    CustomerSeachComponent,
+    BoxComponent,
+    SelectBoxComponent
+  },
   data() {
     return {
       gridOptions: null,
@@ -186,14 +144,14 @@ export default {
           },
           headerClass: "ag-header-first-child",
         },
-        { headerName: "청구년월", field: "model1" },
-        { headerName: "청구통화", field: "model2" },
-        { headerName: "원화당월요금", field: "model3" },
-        { headerName: "원화잔액", field: "model4" },
-        { headerName: "외화당월요금", field: "model5" },
-        { headerName: "외화납부요금", field: "model6" },
-        { headerName: "외화잔액", field: "model7" },
-        { headerName: "환율", field: "price" },
+        {headerName: "청구년월", field: "model1"},
+        {headerName: "청구통화", field: "model2"},
+        {headerName: "원화당월요금", field: "model3"},
+        {headerName: "원화잔액", field: "model4"},
+        {headerName: "외화당월요금", field: "model5"},
+        {headerName: "외화납부요금", field: "model6"},
+        {headerName: "외화잔액", field: "model7"},
+        {headerName: "환율", field: "price"},
       ],
       rowData1: [
         {
@@ -234,7 +192,7 @@ export default {
   },
   beforeMount() {
     this.gridOptions = {
-      pinnedBottomRowData: [{ model0: "합계", model1: null, price: 0 }],
+      pinnedBottomRowData: [{model0: "합계", model1: null, price: 0}],
     };
   },
 };
@@ -263,28 +221,46 @@ div.cusInfo {
   margin: 10px;
   height: 120px;
 }
+
 div.contList {
   float: left;
   width: 15vw;
   margin: 10px;
   padding-bottom: 10px;
-  padding-top :20px;
+  padding-top: 20px;
   height: 680px;
 }
+
 .clList {
   width: 73vw;
   float: left;
   margin: 10px;
   padding-bottom: 25px;
-  padding-top :20px;
+  padding-top: 20px;
   height: 410px;
 }
+.ag_grid_sp{
+  margin: 10px;
+  width: 100%;
+  height: 100%;
+  border: groove;
+  border-top-color: #2dbdb6;
+}
+.tree_sp {
+  margin: 10px;
+  width: 100%;
+  height: 100%;
+  border: groove;
+  border-top-color: #2dbdb6;
+}
+
 .feeSear {
   float: left;
   width: 25vw;
   height: 225px;
   margin: 10px;
 }
+
 .sevSear {
   float: left;
   margin: 10px;

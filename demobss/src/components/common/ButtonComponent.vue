@@ -57,6 +57,22 @@ export default {
 .btnClass3:hover{
   background-color: #70707077;
 }
+.btnSearchImgClass{
+  float: left;
+  padding: 5px;
+  margin-right: 10px;
+  width: 100%;
+  height: 100%;
+  background-color: #707070;
+  font-weight: bold;
+  font-size: 20px;
+  color: #ffffff;
+  cursor: pointer;
+  border: none;
+}
+.btnSearchImgClass:hover{
+  background-color: rgba(114, 99, 99, 0.47);
+}
 .btnLeftImgClass {
   background-color: #5ad3cd;
   border: none;

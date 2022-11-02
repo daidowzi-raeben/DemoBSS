@@ -5,6 +5,7 @@
     :style="{ width: width + 'px', height: height + 'px' }"
     v-model="value"
     :placeholder="placeholder"
+    :disabled="disabled"
     :input="updateValue(value)"
   />
 </template>
@@ -23,6 +24,7 @@ export default {
     width: Number,
     height: Number,
     inputClass: null,
+    disabled:null,
   },
 
   methods: {

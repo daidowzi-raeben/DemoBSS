@@ -246,6 +246,40 @@
     </div>
     <br><br><br>
 
+    <h1 style="font-size: 30px">CustomerInfoComponent</h1>
+    <span></span>
+    <div
+        style="
+         display: inline-block;
+        border-top: solid black 1px;
+        margin: 10px;
+        padding: 10px;
+        height: auto;
+        width: 86%;
+        margin: 10px;
+      "
+    >
+      <CustomerInfoComponent />
+    </div>
+    <br><br><br>
+
+    <h1 style="font-size: 30px">CustomerSearchComponent</h1>
+    <span></span>
+    <div
+        style="
+        display: inline-block;
+        border-top: solid black 1px;
+        margin: 10px;
+        padding: 10px;
+        height: auto;
+        width: 86%;
+        margin: 10px;
+      "
+    >
+      <CustomerSearchComponent />
+    </div>
+    <br><br><br>
+
     <h1 style="font-size: 30px">TitleAreaComponent</h1>
     <span></span>
     <div
@@ -261,9 +295,25 @@
     </div>
     <br><br><br>
 
-
-
-
+    <h1 style="font-size: 30px">BoxComponent</h1>
+    <span></span>
+    <div
+        style="
+        width: 80vw;
+        margin: 10px;
+        padding: 10px;
+        height: 300px;
+        display: inline-block;
+        border-top: solid black 1px;
+      "
+    >
+      <BoxComponent
+          :sub-info-title-nm="'청구목록'"
+          :column-defs="columnDefs1"
+          :row-data="rowData1"
+      />
+    </div>
+    <br><br><br>
 
   </div>
 </template>
@@ -279,6 +329,9 @@ import SubInfoTitle from "@/components/common/SubInfoTitle.vue";
 import InputComponent from "@/components/common/InputComponent";
 import TitleArea from "@/components/common/TitleArea";
 import PopupComponent  from  "@/components/common/PopupComponent.vue";
+import CustomerInfoComponent from "@/components/common/CustomerInfoComponent";
+import CustomerSearchComponent from "@/components/common/CustomerSearchComponent";
+import BoxComponent from "@/components/common/BoxComponent";
 export default {
   name: "CommonView",
   components: {
@@ -292,6 +345,9 @@ export default {
     InputComponent,
     TitleArea,
     PopupComponent,
+    CustomerInfoComponent,
+    CustomerSearchComponent,
+    BoxComponent,
   },
   data() {
     return {

@@ -2,98 +2,11 @@
   <div>
     <div class="section0">
       <div class="cusInfo0">
-        <SubInfoTitle
-          :subInfoTitleNm="'계약상세'"
-          />
-        <table style="width: 100%">
-          <tr style="height: 50px">
-            <td
-              style="
-                folat: left;
-                width: 80%;
-                border: solid 2px;
-                padding-left: 10px;
-              "
-            >
-              <label><h2>고객조회</h2></label>
-              <select style="width: 100px; height: 25px; margin-right: 10px">
-                <option selected disabled value="">선택</option>
-                <option value="A">고객ID</option>
-                <option value="B">계약ID</option>
-                <option value="C">선박ID</option>
-                <option value="D">청구계정ID</option>
-              </select>
-              <input-component
-                :type="'search'"
-                :height="20"
-                :width="150"
-                v-model="searchValue"
-                :placeholder="''"
-                @input="
-                  (value) => {
-                    searchValue = value;
-                  }
-                "
-              />
-            </td>
-          </tr>
-        </table>
+        <CustomerSearchComponent />
       </div>
 
       <div class="cusInfo">
-        <div>
-          <SubInfoTitle
-          :subInfoTitleNm="'고객정보'"
-          />
-        </div>
-        <div style="width: 98%; border: groove 1px; padding: 10px 0 10px 50px">
-          <table>
-            <tr>
-              <td>
-                <label>고객ID</label>
-                <input type="text" value="CC10001046" disabled />
-              </td>
-              <td>
-                <label>고객명</label>
-                <input type="text" value="주식회사 시너샛코리아" disabled />
-              </td>
-              <td>
-                <label>고객유형</label> <input type="text" value="" disabled />
-              </td>
-              <td>
-                <label>국가</label> <input type="text" value="" disabled />
-              </td>
-              <td>
-                <label style="width: 130px">사업자등록번호</label>
-                <input type="text" value="6268700031" disabled />
-              </td>
-            </tr>
-          </table>
-          <table>
-            <tr>
-              <td>
-                <label>고객구분</label>
-                <input type="text" value="영리법인" disabled />
-              </td>
-              <td>
-                <label>전화번호</label>
-                <input type="text" value="01012341234" disabled />
-              </td>
-              <td>
-                <label>내외구분</label> <input type="text" value="" disabled />
-              </td>
-              <td>
-                <label>주소</label>
-                <input
-                  style="width: 80px; margin-right: 20px"
-                  type="text"
-                  value=""
-                />
-                <input style="width: 570px" type="text" value="" disabled />
-              </td>
-            </tr>
-          </table>
-        </div>
+        <CusomerInfoComponent />
       </div>
       
       <div class="cmProducts">
@@ -357,31 +270,31 @@
 
       
       <div class="feeInfo">
-        <SubInfoTitle
-          :subInfoTitleNm="'요금정보'"
+        <BoxComponent
+          :sub-info-title-nm="'요금정보'"
+          :row-data="rowData1"
+          :column-defs="columnDefs1"
           />
-        <div style="height: 100%; width: 100%">
-          <ag-grid-component
-            :rowData="rowData1"
-            :columnDefs="columnDefs1"
-            :isWidthFit="false"
-          />
-        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import AgGridComponent from "@/components/common/AgGridComponent";
+import CustomerSearchComponent from "@/components/common/CustomerSearchComponent";
 import ButtonComponent from "@/components/common/ButtonComponent.vue";
 import InputComponent from "@/components/common/InputComponent";
 import SelectBoxComponent from "../components/common/SelectBoxComponent.vue";
 import SubInfoTitle from "@/components/common/SubInfoTitle.vue";
+import CusomerInfoComponent from "@/components/common/CustomerInfoComponent";
+import BoxComponent from "@/components/common/BoxComponent";
+
 export default {
   name: "ContMgt",
   components: {
-    AgGridComponent,
+    BoxComponent,
+    CusomerInfoComponent,
+    CustomerSearchComponent,
     ButtonComponent,
     InputComponent,
     SelectBoxComponent,
