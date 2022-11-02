@@ -199,6 +199,27 @@
     <br><br><br>
     </div>
 
+    <h1 style="font-size: 30px">FormDataComponent</h1>
+    <span></span>
+    <div
+      style="
+        border-top: solid black 1px;
+        margin: 10px;
+        padding: 10px;
+      "
+    >
+    <FormDataComponent
+    :FormDataclass="'InfoOfAccount'"
+    :subInfoTitleNm="'청구계정 정보'"
+    />
+    
+    <br>
+
+      <FormDataComponent
+    :FormDataclass="'InfoOfOrg'"
+    :subInfoTitleNm="'영업조직정보'"
+    />
+    </div> 
 
 
 
@@ -279,6 +300,8 @@ import SubInfoTitle from "@/components/common/SubInfoTitle.vue";
 import InputComponent from "@/components/common/InputComponent";
 import TitleArea from "@/components/common/TitleArea";
 import PopupComponent  from  "@/components/common/PopupComponent.vue";
+import FormDataComponent  from  "@/components/common/FormDataComponent.vue";
+
 export default {
   name: "CommonView",
   components: {
@@ -292,6 +315,7 @@ export default {
     InputComponent,
     TitleArea,
     PopupComponent,
+    FormDataComponent,
   },
   data() {
     return {

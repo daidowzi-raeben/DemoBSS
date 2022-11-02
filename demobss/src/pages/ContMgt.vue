@@ -262,7 +262,7 @@
         <SubInfoTitle
           :subInfoTitleNm="'청구계정 정보'"
           />
-          <table style="display: inline-block">
+          <table style="float:right; display: inline-block">
                 <tr>
                   <td>
                   <SelectBoxComponent
@@ -283,10 +283,7 @@
                   :placeholder="''"
                   @input="
                 (value) => {
-                  searchValue2 = value;
-                }
-              "
-              />
+                  searchValue2 = value;}"/>
                   </td>
                 </tr>
               </table>
@@ -607,7 +604,7 @@ div.section0 > div.cmProducts {
   border: groove;
 }
 
-div.section0 > div.ContMemInfo {
+.ContMemInfo {
   display: inline-block;
   width: 934px;
   /* background-color: rgba(8, 149, 149, 0.423); */
