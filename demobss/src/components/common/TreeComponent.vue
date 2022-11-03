@@ -27,73 +27,81 @@ export default {
     const data = ref([
       {
         id: 1,
-        label: "Animal",
+        label: "00100004779 주식회사 시너샛코리아",
         nodes: [
           {
             id: 2,
-            label: "Dog",
+            label: "P1000021363",
           },
           {
             id: 3,
-            label: "Cat",
-            nodes: [
-              {
-                id: 4,
-                label: "Egyptian Mau Cat",
-                nodes: [
-                  {
-                    id: 4,
-                    label: "Egyptian Mau Cat",
-                  },
-                  {
-                    id: 5,
-                    label: "Japanese Bobtail Cat",
-                  },
-                ],
-              },
-              {
-                id: 5,
-                label: "Japanese Bobtail Cat",
-              },
-            ],
+            label: "P1000020999",
           },
-        ],
-      },
-      {
-        id: 6,
-        label: "People",
-        nodes: [
           {
             id: 4,
-            label: "Egyptian Mau Cat",
-          },
-          {
-            id: 5,
-            label: "Japanese Bobtail Cat",
+            label: "P1000021471",
           },
         ],
       },
       {
-        id: 7,
-        label: "People",
-      },
-      {
-        id: 8,
-        label: "People",
+        id: 5,
+        label: "00100004777 주식회사 시너샛코리아",
         nodes: [
           {
-            id: 4,
-            label: "Egyptian Mau Cat",
+            id: 6,
+            label: "P1000021363",
           },
           {
-            id: 5,
-            label: "Japanese Bobtail Cat",
+            id: 7,
+            label: "P1000020999",
+          },
+          {
+            id: 8,
+            label: "P1000021471",
+          },
+          {
+            id: 9,
+            label: "P1000021363",
+          },
+          {
+            id: 10,
+            label: "P1000020999",
+          },
+          {
+            id: 11,
+            label: "P1000021471",
+          },
+          {
+            id: 12,
+            label: "P1000021363",
+          },
+          {
+            id: 13,
+            label: "P1000020999",
+          },
+          {
+            id: 14,
+            label: "P1000021471",
           },
         ],
       },
       {
-        id: 9,
-        label: "People",
+        id: 15,
+        label: "00100004722 주식회사 시너샛코리아",
+        nodes: [
+          {
+            id: 16,
+            label: "P1000021363",
+          },
+          {
+            id: 17,
+            label: "P1000020999",
+          },
+          {
+            id: 18,
+            label: "P1000021471",
+          },
+        ],
       },
     ]);
     const searchText = ref("");
@@ -133,7 +141,7 @@ export default {
 <style scoped>
 .tree {
   width: 100%;
-  height: 85%;
+  height: 95%;
   overflow: auto;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
   Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;

@@ -17,7 +17,7 @@
           <SubInfoTitle
           :subInfoTitleNm="'보유 상품'"/>
         <br>
-          <TreeComponent />
+          <TreeGridComponent />
       </div>
       
       <div class="CommonInfo">
@@ -296,12 +296,12 @@ import SelectBoxComponent from "../components/common/SelectBoxComponent.vue";
 import SubInfoTitle from "@/components/common/SubInfoTitle.vue";
 import CusomerInfoComponent from "@/components/common/CustomerInfoComponent";
 import BoxComponent from "@/components/common/BoxComponent";
-import TreeComponent from "@/components/common/TreeComponent";
+import TreeGridComponent from "@/components/common/TreeGridComponent";
 
 export default {
   name: "ContMgt",
   components: {
-    TreeComponent,
+    TreeGridComponent,
     BoxComponent,
     CusomerInfoComponent,
     CustomerSearchComponent,
@@ -537,6 +537,7 @@ div.section0 > div.cmProducts {
   padding: 0 0 10px auto;
   height: 330px;
   border: groove;
+  overflow: auto;
 }
 
 .ContMemInfo {
@@ -674,7 +675,6 @@ margin-right: 10px;
   margin: 0 auto auto 5px;
   height: 300px;
 }
-
 /* #cont table {
   border-top: #e4e4e4 solid 1px;
   margin-bottom: 10px;
