@@ -17,7 +17,10 @@
           <SubInfoTitle
           :subInfoTitleNm="'보유 상품'"/>
         <br>
-          <TreeGridComponent />
+          <TreeGridComponent
+              :tableData="tableData"
+              :columns="columns"
+          />
       </div>
       
       <div class="CommonInfo">
@@ -325,6 +328,25 @@ export default {
         customerClass : "영리법인",
         phoneNumber: "01012345678"
       },
+      tableData: [
+        {
+          name: '인말새트 C국내협력점', id: 'P10001257',state:'사용중', children: [
+            {name: 'Regional MVSAT 128/256 요금(80cm 안테나용) 3년약정 [YC CLOVER]', id: 'P10000012679', state:'사용중'}
+          ]
+        },
+        {
+          name: '인말새트 C국내협력점', id: 'P10001257',state:'사용중', children: [
+            {name: 'Regional MVSAT 128/256 요금(80cm 안테나용) 3년약정 [YC CLOVER]', id: 'P10000012679', state:'사용중'}
+          ]
+        },
+        {
+          name: '인말새트 C국내협력점', id: 'P10001257',state:'사용중', children: [
+            {name: 'Regional MVSAT 128/256 요금(80cm 안테나용) 3년약정 [YC CLOVER]', id: 'P10000012679', state:'사용중',
+              children: [{name: 'Regional MVSAT 128/256 요금(80cm 안테나용) 3년약정 [YC CLOVER]', id: 'P10000012679', state:'사용중'}]}
+          ]
+        },
+      ],
+      columns: [{label: '상품명', id: 'name'}, {label: '상품ID', id: 'id'}, {label: '상태', id: 'state'}],
       columnDefs1: [
         {
           headerName: "결제통화",

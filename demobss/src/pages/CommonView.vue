@@ -357,22 +357,6 @@
       />
     </div>
     <br><br><br>
-    <h1 style="font-size: 30px">TreeComponent</h1>
-    <span></span>
-    <div
-        style="
-        width: 80vw;
-        margin: 10px;
-        padding: 10px;
-        height: 300px;
-        display: inline-block;
-        border-top: solid black 1px;
-      "
-    >
-      <TreeComponent />
-    </div>
-    <br><br><br>
-
     <h1 style="font-size: 30px">TreeGridComponent</h1>
     <span></span>
     <div
@@ -385,7 +369,10 @@
         border-top: solid black 1px;
       "
     >
-      <TreeGridComponent />
+      <TreeGridComponent
+          :tableData="tableData"
+          :columns="columns"
+      />
     </div>
     <br><br><br>
 
@@ -407,7 +394,6 @@ import CustomerInfoComponent from "@/components/common/CustomerInfoComponent";
 import CustomerSearchComponent from "@/components/common/CustomerSearchComponent";
 import BoxComponent from "@/components/common/BoxComponent";
 import FormDataComponent  from  "@/components/common/FormDataComponent.vue";
-import TreeComponent from "@/components/common/TreeComponent";
 import TreeGridComponent from "@/components/common/TreeGridComponent";
 
 export default {
@@ -428,7 +414,6 @@ export default {
     CustomerSearchComponent,
     BoxComponent,
     FormDataComponent,
-    TreeComponent
   },
   data() {
     return {
@@ -438,6 +423,25 @@ export default {
       date1: new Date(2021, 9, 5),
       date2: new Date(),
       pDisable: true,
+      tableData: [
+        {
+          name: '인말새트 C국내협력점', id: 'P10001257',state:'사용중', children: [
+            {name: 'Regional MVSAT 128/256 요금(80cm 안테나용) 3년약정 [YC CLOVER]', id: 'P10000012679', state:'사용중'}
+          ]
+        },
+        {
+          name: '인말새트 C국내협력점', id: 'P10001257',state:'사용중', children: [
+            {name: 'Regional MVSAT 128/256 요금(80cm 안테나용) 3년약정 [YC CLOVER]', id: 'P10000012679', state:'사용중'}
+          ]
+        },
+        {
+          name: '인말새트 C국내협력점', id: 'P10001257',state:'사용중', children: [
+            {name: 'Regional MVSAT 128/256 요금(80cm 안테나용) 3년약정 [YC CLOVER]', id: 'P10000012679', state:'사용중',
+              children: [{name: 'Regional MVSAT 128/256 요금(80cm 안테나용) 3년약정 [YC CLOVER]', id: 'P10000012679', state:'사용중'}]}
+          ]
+        },
+      ],
+      columns: [{label: '상품명', id: 'name'}, {label: '상품ID', id: 'id'}, {label: '상태', id: 'state'}],
       customerInfo : {
         customerId : "CC10001042",
         customerName : "주식회사 시너샛코리아",
