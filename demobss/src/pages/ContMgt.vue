@@ -14,21 +14,23 @@
         />
       </div>
       </div>
-
       <div class="testdiv">
         <div class="col-5" >
           <div class="col-5 cmProducts" >
               <SubInfoTitle
               :subInfoTitleNm="'보유 상품'"/>
-            
-              <TreeGridComponent />
+
+              <TreeGridComponent
+                  :tableData="tableData"
+                  :columns="columns"
+              />
           </div>
-          
+
           <div class="col-5">
             <form-data-component
             :FormDataclass="'InfoOfAccount'"
             :subInfoTitleNm="'청구계정 정보'"
-            />  
+            />
             <div style="float: right; margin-right: 70px">
               <ButtonComponent
                 :btnClass="'btnClass3'"
@@ -44,12 +46,12 @@
           </div>
         </div>
 ``
-        <div class="col-6" > 
+        <div class="col-6" >
             <div>
               <form-data-component
             :FormDataclass="'InfoOfBasic'"
             :subInfoTitleNm="'기본정보'"
-            />  
+            />
           </div>
           <div>
             <FormDataComponent
@@ -120,6 +122,25 @@ export default {
         customerClass : "영리법인",
         phoneNumber: "01012345678"
       },
+      tableData: [
+        {
+          name: '인말새트 C국내협력점', id: 'P10001257',state:'사용중', children: [
+            {name: 'Regional MVSAT 128/256 요금(80cm 안테나용) 3년약정 [YC CLOVER]', id: 'P10000012679', state:'사용중'}
+          ]
+        },
+        {
+          name: '인말새트 C국내협력점', id: 'P10001257',state:'사용중', children: [
+            {name: 'Regional MVSAT 128/256 요금(80cm 안테나용) 3년약정 [YC CLOVER]', id: 'P10000012679', state:'사용중'}
+          ]
+        },
+        {
+          name: '인말새트 C국내협력점', id: 'P10001257',state:'사용중', children: [
+            {name: 'Regional MVSAT 128/256 요금(80cm 안테나용) 3년약정 [YC CLOVER]', id: 'P10000012679', state:'사용중',
+              children: [{name: 'Regional MVSAT 128/256 요금(80cm 안테나용) 3년약정 [YC CLOVER]', id: 'P10000012679', state:'사용중'}]}
+          ]
+        },
+      ],
+      columns: [{label: '상품명', id: 'name'}, {label: '상품ID', id: 'id'}, {label: '상태', id: 'state'}],
       columnDefs1: [
         {
           headerName: "결제통화",
@@ -252,7 +273,7 @@ export default {
 <style scoped>
 
 div.layout {
-  
+
   height: 100vh;
   position: absolute;
   overflow-y: scroll;
@@ -277,7 +298,7 @@ div.section0 > div.cusInfo0 {
 
 .cusInfo0 table tr > td > label {
   display: inline-block;
-  
+
   font-weight: bold;
   padding-left: 10px;
 }
@@ -290,13 +311,13 @@ div.section0 > div.cusInfo {
   display: inline-block;
   float: left;
   height: auto;
-  
+
   margin: 10px;
 }
 
 .cusInfo table tr > td > label {
   display: inline-block;
-  
+
   padding-left: 30px;
   font-size: 17px;
   font-weight: bold;
@@ -304,13 +325,13 @@ div.section0 > div.cusInfo {
 
 .cusInfo table tr > td > input {
   background-color: #f9f9f9;
-  
+
 }
 
 /* div.section0 > div.cusSearch {
   float: left;
   background-color: rgba(23, 202, 101, 0.862);
-  
+
   margin: 0 auto;
   padding-bottom:10px;
 
@@ -319,7 +340,7 @@ div.section0 > div.cusInfo {
 /*div.section0 > div.cusInfo {
   float: left;
   background-color: antiquewhite;
-  
+
   margin: 0 auto;
   padding-bottom:10px;
   height: 100px;
@@ -340,7 +361,7 @@ div.section0 > div.cusInfo {
 
 .ContMemInfo {
   display: inline-block;
-  
+
   /* background-color: rgba(8, 149, 149, 0.423); */
   margin: 0 auto auto 5px;
   height: 270px;
@@ -350,7 +371,7 @@ div.section0 > div.cusInfo {
   display: inline-block;
   background-color: #f9f9f9;
   border-style: groove;
-  
+
   height: 20px;
   font-size: 12px;
   font-weight: bold;
@@ -359,7 +380,7 @@ div.section0 > div.cusInfo {
 
 .ContMemInfo table.accountInfo tr > td > input {
   background-color: #f9f9f9;
-  
+
   height: 20px;
   font-size: 12px;
 }
@@ -374,7 +395,7 @@ div.section0 > div.cusInfo {
   display: inline-block;
   background-color: #f9f9f9;
   border-style: groove;
-  
+
   height: 20px;
   font-size: 12px;
   font-weight: bold;
@@ -383,7 +404,7 @@ div.section0 > div.cusInfo {
 
 .CommonInfo table tr > td > input {
   background-color: #f9f9f9;
-  
+
   height: 20px;
   font-size: 12px;
 }
@@ -398,7 +419,7 @@ margin-right: 10px;
 
 .CommonInfo table.selectSearch tr > td > label {
   display: inline-block;
-  
+
   height: 20px;
   font-weight: bold;
   font-size: 14px;
@@ -407,7 +428,7 @@ margin-right: 10px;
 .CommonInfo table.selectSearch tr > td > select {
   display: inline-block;
   background-color: #f9f9f9;
-  
+
   height: 25px;
   font-weight: bold;
   font-size: 14px;
@@ -415,7 +436,7 @@ margin-right: 10px;
 
 .shipInfo {
   display: inline-block;
-  
+
   margin: 0 auto auto 5px;
   height: 80px;
 }
@@ -424,7 +445,7 @@ margin-right: 10px;
   display: inline-block;
   background-color: #f9f9f9;
   border-style: groove;
-  
+
   height: 20px;
   font-size: 12px;
   font-weight: bold;
@@ -433,25 +454,25 @@ margin-right: 10px;
 
 .shipInfo table tr > td > input {
   background-color: #f9f9f9;
-  
+
   height: 20px;
   font-size: 12px;
 }
 
 .svOrgInfo {
   display: inline-block;
-  
+
   margin: 0 auto auto 5px;
   height: 80px;
 }
 .svOrgInfo table {
-  
+
 }
 .svOrgInfo table tr > td > label {
   display: inline-block;
   background-color: #f9f9f9;
   border-style: groove;
-  
+
   height: 20px;
   font-size: 12px;
   font-weight: bold;
@@ -460,7 +481,7 @@ margin-right: 10px;
 
 .svOrgInfo table tr > td > input {
   background-color: #f9f9f9;
-  
+
   height: 20px;
   font-size: 12px;
 }

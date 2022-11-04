@@ -22,7 +22,10 @@
         />
       </div>
       <div class="tree_sp">
-        <TreeComponent />
+        <TreeGridComponent
+            :tableData="tableData"
+            :columns="columns"
+        />
       </div>
     </div>
     <div style="left: 30%">
@@ -116,12 +119,13 @@ import SubInfoTitle from "@/components/common/SubInfoTitle.vue";
 import CusomerInfoComponent from "@/components/common/CustomerInfoComponent";
 import BoxComponent from "@/components/common/BoxComponent";
 import CustomerSeachComponent from "@/components/common/CustomerSearchComponent";
-import TreeComponent from "@/components/common/TreeComponent";
+import TreeGridComponent from "@/components/common/TreeGridComponent";
 
 
 export default {
   name: "ChageInfoRetv",
   components: {
+    TreeGridComponent,
     AgGridComponent,
     ButtonComponent,
     SubInfoTitle,
@@ -129,11 +133,35 @@ export default {
     CustomerSeachComponent,
     BoxComponent,
     SelectBoxComponent,
-    TreeComponent
   },
   data() {
     return {
       gridOptions: null,
+      tableData: [
+        {
+          name: '00100004779 주식회사 시너샛코리아', children: [
+            {name: 'P1000021363'},
+            {name: 'P1000021363'},
+            {name: 'P1000021363'}
+          ]
+        },
+        {
+          name: '00100004779 주식회사 시너샛코리아', children: [
+            {name: 'P1000021363'},
+            {name: 'P1000021363'},
+            {name: 'P1000021363'},
+          ]
+        },
+        {
+          name: '00100004779 주식회사 시너샛코리아', children: [
+            {name: 'P1000021363'},
+            {name: 'P1000021363'},
+            {name: 'P1000021363'},
+          ]
+        },
+      ],
+      columns: [{label:'상품명', id: 'name'}]
+      ,
       searchValue: null,
       customerInfo : {
         customerId : "CC10001042",
@@ -208,32 +236,32 @@ export default {
 </script>
 
 <style scoped>
-div.layout {
-  width: 100vw;
-  height: 100vh;
-  position: absolute;
-  overflow-y: scroll;
-}
+
 
 div.section0 {
   display: inline-block;
   position: relative;
   /* top: 177px; border: #F00 solid 1px; */
-  min-height: calc(100% - 297px);
+  height: 900px;
+  width: 1670px;
   padding: 20px 0 143px;
   box-sizing: border-box;
+  overflow: scroll;
+  white-space: nowrap;
 }
 
 div.cusInfo {
+  display: inline-block;
   float: left;
-  width: 89vw;
+  width: 100%;
   margin: 10px;
   height: 120px;
 }
 
 div.contList {
+  display: inline-block;
   float: left;
-  width: 15vw;
+  width: 18%;
   margin: 10px;
   padding-bottom: 10px;
   padding-top: 20px;
@@ -241,7 +269,8 @@ div.contList {
 }
 
 .clList {
-  width: 73vw;
+  display: inline-block;
+  width: 79%;
   float: left;
   margin: 10px;
   padding-bottom: 25px;
@@ -264,16 +293,18 @@ div.contList {
 }
 
 .feeSear {
+  display: inline-block;
   float: left;
-  width: 25vw;
+  width: 30%;
   height: 225px;
   margin: 10px;
 }
 
 .sevSear {
-  float: left;
+  display: inline-block;
+  float: right;
   margin: 10px;
-  width: 47vw;
+  width: 47%;
   height: 225px;
 }
 </style>
