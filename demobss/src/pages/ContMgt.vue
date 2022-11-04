@@ -1,279 +1,69 @@
 <template>
   <div>
     <div class="section0">
-      <div class="cusInfo0">
+      <div>
+      <div class="col-12 cusInfo0" style="min-width:800px;">
         <CustomerSearchComponent
             :cdGroup="'optionsSearchDiv'"
         />
       </div>
 
-      <div class="cusInfo">
+      <div class="col-12 cusInfo" style="min-width:1200px;">
         <CusomerInfoComponent
             :customer-info="customerInfo"
         />
       </div>
-      
-      <div class="cmProducts">
-          <SubInfoTitle
-          :subInfoTitleNm="'보유 상품'"/>
-        <br>
-          <TreeGridComponent />
       </div>
-      
-      <div class="CommonInfo">
-        <div>
-          <SubInfoTitle
-          :subInfoTitleNm="'기본정보'"
-          />
-            <table class="selectSearch" style="float: right">
-              <tr>
-                <td>
-                  <label>BM</label>
-                  <Select-Box-Component
-                    :selectClass="'select_input2'"
-                    :cdGroup="'optionsSearchDiv'"
-                    :defaultValue="'선택'"
-                    :default-num="'2'"
-                    v-model="searchDiv1"
-                    @input="
-                      (value) => {
-                        searchDiv1 = value;
-                      }
-                    "
-                  />
-                </td>
-                <td>
-                  <label><h2>Service</h2></label>
-                  <Select-Box-Component
-                    :selectClass="'select_input2'"
-                    :cdGroup="'optionsSearchDiv'"
-                    :defaultValue="'선택'"
-                    v-model="searchDiv1"
-                    @input="
-                      (value) => {
-                        searchDiv1 = value;
-                      }
-                    "
-                  />
-                </td>
-                <td>
-                  <ButtonComponent
-                    :btnClass="'btnClass3'"
-                    :btnName="'신규등록'"
-                  />
-                </td>
-              </tr>
-            </table>
-        </div>
-        <div style="border:groove; margin-top:15px;" >
-        <table>
-          <tr>
-            <td>
-              <label> 계약ID</label>
-              <input type="text" value="S00000002710" disabled />
-            </td>
-            <td>
-              <label>BM</label> <input type="text" value="MVSAT" disabled />
-            </td>
-            <td>
-              <label> 계약상태</label>
-              <input type="text" value="사용중" disabled />
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <label> 개통일시</label>
-              <input type="text" value="2022-10-19 09:59:31 " disabled />
-            </td>
-            <td>
-              <label> 약정기간</label>
-              <input type="text" value="36개월 약정" disabled />
-            </td>
-            <td>
-              <label> 서비스오더ID</label>
-              <input type="text" value=" ㄴㅇㅁㄹㄴㅇㄹ " disabled />
-            </td>
-          </tr>
-        </table>
-        <table>
-          <tr>
-            <td>
-              <label> 상품</label>
-              <input
-                style="width: 503px"
-                type="text"
-                value="Regional MVSAT"
-                disabled
+
+      <div class="testdiv">
+        <div class="col-5" >
+          <div class="col-5 cmProducts" >
+              <SubInfoTitle
+              :subInfoTitleNm="'보유 상품'"/>
+            
+              <TreeGridComponent />
+          </div>
+          
+          <div class="col-5">
+            <form-data-component
+            :FormDataclass="'InfoOfAccount'"
+            :subInfoTitleNm="'청구계정 정보'"
+            />  
+            <div style="float: right; margin-right: 70px">
+              <ButtonComponent
+                :btnClass="'btnClass3'"
+                :btnName="'수시청구계정등록'"
               />
-            </td>
-            <td>
-              <label> 약정종료일</label>
-              <input type="text" value="2022-12-01" disabled />
-            </td>
-          </tr>
-        </table>
-        <table>
-          <tr>
-            <td>
-              <label> 부가정보</label>
-              <input
-                style="width: 800px"
-                type="text"
-                value="계약 부가정보 입력해주세요."
-                disabled
+              <ButtonComponent :btnClass="'btnClass3'" :btnName="'청구계정등록'" />
+              <ButtonComponent
+                :btnClass="'btnClass3'"
+                :btnName="'청구계정조회/수정'"
               />
-            </td>
-          </tr>
-        </table>
+              <ButtonComponent :btnClass="'btnClass3'" :btnName="'청구계정변경'" />
+            </div>
+          </div>
         </div>
-      </div>
-
-      <div class="shipInfo">
-        <div style="margin: 10px">
-          <SubInfoTitle
-          :subInfoTitleNm="'선박정보'"
-          />
-
-          <table style="border: groove; width: 100%">
-            <tr>
-              <td>
-                <label> 선박ID</label>
-                <input type="text" value="Going Merry" disabled />
-              </td>
-              <td>
-                <label> 선박명</label>
-                <input type="text" value="고잉메리호" disabled />
-              </td>
-              <td>
-                <label> IMO Number</label>
-                <input type="text" value="  " disabled />
-              </td>
-            </tr>
-          </table>
-        </div>
-      </div>
-      <div class="svOrgInfo">
-        <div style="margin: 10px">
-          <SubInfoTitle
-          :subInfoTitleNm="'영업조직정보'"
-          />
-          <table style="border: groove">
-            <tr>
-              <td>
-                <label> 영업조직</label>
-                <input type="text" value="해양고객팀(C11116666)" disabled />
-              </td>
-              <td>
-                <label> 영업담당자</label>
-                <input type="text" value="김해양" disabled />
-              </td>
-              <td>
-                <label> 승인상태</label>
-                <input type="text" value="승인" disabled />
-              </td>
-            </tr>
-          </table>
-        </div>
-      </div>
-
-      <div class="ContMemInfo">
-        <div style="margin: 10px">
-        <div>
-        <SubInfoTitle
-          :subInfoTitleNm="'청구계정 정보'"
-          />
-          <table style="float:right; display: inline-block">
-                <tr>
-                  <td>
-                  <Select-Box-Component
-                  :selectClass="'select_input3'"
-                  :cdGroup="'optionsSearchDiv'"
-                  :defaultValue="'선택'"
-                  v-model="searchDiv1"
-                  @input="
-                    (value) => {
-                      searchDiv1 = value;
-                    }
-                  "
-                  />
-              <InputComponent
-                  :type="'text'"
-                  :inputClass="'ContMemInfo_inputbox'"
-                  v-model="searchValue2"
-                  :placeholder="''"
-                  @input="
-                (value) => {
-                  searchValue2 = value;}"/>
-                  </td>
-                </tr>
-              </table>
-    </div>
-
-          <table class="accountInfo" style="border: groove">
-            <tr>
-              <td>
-                <label> 청구계정ID</label>
-                <input type="text" value="S00000002710" disabled />
-              </td>
-              <td>
-                <label> 수신인</label>
-                <input type="text" value="MVSAT" disabled />
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <label> 결제통화</label>
-                <input type="text" value="2022-10-19 09:59:31 " disabled />
-              </td>
-              <td>
-                <label> 납부방법</label>
-                <input type="text" value="36개월 약정" disabled />
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <label> 수신 E-Mail</label>
-                <input type="text" value="Regional MVSAT" disabled />
-              </td>
-              <td>
-                <label> 납부일자</label>
-                <input type="text" value="2022-12-01" disabled />
-              </td>
-            </tr>
-            <tr>
-              <td rowspan="2">
-                <label> 청구서표기명</label>
-                <input type="text" value="엘토스커뮤니케이션(주)" disabled />
-              </td>
-            </tr>
-            <tr>
-              <td rowspan="2">
-                <label> 주소</label>
-                <input
-                  type="text"
-                  value="서울특별시sss 서초구 효령로 1476 ktds"
-                  disabled
-                />
-              </td>
-            </tr>
-          </table>
-        </div>
-        <div style="float: right; margin-right: 70px">
-          <ButtonComponent
-            :btnClass="'btnClass3'"
-            :btnName="'수시청구계정등록'"
-          />
-          <ButtonComponent :btnClass="'btnClass3'" :btnName="'청구계정등록'" />
-          <ButtonComponent
-            :btnClass="'btnClass3'"
-            :btnName="'청구계정조회/수정'"
-          />
-          <ButtonComponent :btnClass="'btnClass3'" :btnName="'청구계정변경'" />
-        </div>
-      </div>
-
-      
-      <div class="feeInfo">
+``
+        <div class="col-6" > 
+            <div>
+              <form-data-component
+            :FormDataclass="'InfoOfBasic'"
+            :subInfoTitleNm="'기본정보'"
+            />  
+          </div>
+          <div>
+            <FormDataComponent
+            :FormDataclass="'InfoOfShip'"
+            :subInfoTitleNm="'선박정보'"
+            />
+            </div>
+            <div>
+              <FormDataComponent
+              :FormDataclass="'InfoOfOrg'"
+              :subInfoTitleNm="'영업조직정보'"
+              />
+            </div>
+          <div class="feeInfo">
         <BoxComponent
           :sub-info-title-nm="'요금정보'"
           :row-data="rowData1"
@@ -284,6 +74,9 @@
           :btnName="'엑셀다운'"
           />
       </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </template>
@@ -297,6 +90,7 @@ import SubInfoTitle from "@/components/common/SubInfoTitle.vue";
 import CusomerInfoComponent from "@/components/common/CustomerInfoComponent";
 import BoxComponent from "@/components/common/BoxComponent";
 import TreeGridComponent from "@/components/common/TreeGridComponent";
+import FormDataComponent from '@/components/common/FormDataComponent.vue';
 
 export default {
   name: "ContMgt",
@@ -309,6 +103,7 @@ export default {
     InputComponent,
     SelectBoxComponent,
     SubInfoTitle,
+    FormDataComponent,
   },
   data() {
     return {
@@ -455,33 +250,34 @@ export default {
 </script>
 
 <style scoped>
+
 div.layout {
-  width: 100vw;
+  
   height: 100vh;
   position: absolute;
   overflow-y: scroll;
 }
 
 div.section0 {
-  display: inline-block;
+  display: grid;
   position: relative;
   /* top: 177px; border: #F00 solid 1px; */
   min-height: calc(100% - 297px);
   padding: 20px 0 143px;
   box-sizing: border-box;
+  min-width: 800px;
 }
 
 div.section0 > div.cusInfo0 {
   display: inline-block;
   float: left;
-  width: 87%;
   margin: 10px;
   height: auto;
 }
 
 .cusInfo0 table tr > td > label {
   display: inline-block;
-  width: 70px;
+  
   font-weight: bold;
   padding-left: 10px;
 }
@@ -494,13 +290,13 @@ div.section0 > div.cusInfo {
   display: inline-block;
   float: left;
   height: auto;
-  width: 86%;
+  
   margin: 10px;
 }
 
 .cusInfo table tr > td > label {
   display: inline-block;
-  width: 70px;
+  
   padding-left: 30px;
   font-size: 17px;
   font-weight: bold;
@@ -508,13 +304,13 @@ div.section0 > div.cusInfo {
 
 .cusInfo table tr > td > input {
   background-color: #f9f9f9;
-  width: 150px;
+  
 }
 
 /* div.section0 > div.cusSearch {
   float: left;
   background-color: rgba(23, 202, 101, 0.862);
-  width: 98%;
+  
   margin: 0 auto;
   padding-bottom:10px;
 
@@ -523,26 +319,28 @@ div.section0 > div.cusInfo {
 /*div.section0 > div.cusInfo {
   float: left;
   background-color: antiquewhite;
-  width: 98%;
+  
   margin: 0 auto;
   padding-bottom:10px;
   height: 100px;
 } */
 
-div.section0 > div.cmProducts {
+.cmProducts {
   float: left;
-  width: 900px;
   /* background-color: aquamarine; */
-  margin: 0 10px auto;
-  padding: 0 0 10px auto;
+  margin:  auto;
+  padding: auto;
+  position: relative;
   height: 330px;
+  /* width: 100%; */
+  min-width: 600px;
   border: groove;
-  overflow: auto;
+  overflow: scroll;
 }
 
 .ContMemInfo {
   display: inline-block;
-  width: 934px;
+  
   /* background-color: rgba(8, 149, 149, 0.423); */
   margin: 0 auto auto 5px;
   height: 270px;
@@ -552,7 +350,7 @@ div.section0 > div.cmProducts {
   display: inline-block;
   background-color: #f9f9f9;
   border-style: groove;
-  width: 75px;
+  
   height: 20px;
   font-size: 12px;
   font-weight: bold;
@@ -561,14 +359,13 @@ div.section0 > div.cmProducts {
 
 .ContMemInfo table.accountInfo tr > td > input {
   background-color: #f9f9f9;
-  width: 355px;
+  
   height: 20px;
   font-size: 12px;
 }
 
 .CommonInfo {
   display: inline-block;
-  width: 920px;
   margin: 0 auto auto 13px;
   height: 180px;
 }
@@ -577,7 +374,7 @@ div.section0 > div.cmProducts {
   display: inline-block;
   background-color: #f9f9f9;
   border-style: groove;
-  width: 80px;
+  
   height: 20px;
   font-size: 12px;
   font-weight: bold;
@@ -586,14 +383,14 @@ div.section0 > div.cmProducts {
 
 .CommonInfo table tr > td > input {
   background-color: #f9f9f9;
-  width: 200px;
+  
   height: 20px;
   font-size: 12px;
 }
 /*
 .CommonInfo table.selectSearch{
 display: inline-block;
-width: 150px;
+
 height: 25px;
 margin-right: 10px;
 
@@ -601,7 +398,7 @@ margin-right: 10px;
 
 .CommonInfo table.selectSearch tr > td > label {
   display: inline-block;
-  width: 80px;
+  
   height: 20px;
   font-weight: bold;
   font-size: 14px;
@@ -610,7 +407,7 @@ margin-right: 10px;
 .CommonInfo table.selectSearch tr > td > select {
   display: inline-block;
   background-color: #f9f9f9;
-  width: 150px;
+  
   height: 25px;
   font-weight: bold;
   font-size: 14px;
@@ -618,7 +415,7 @@ margin-right: 10px;
 
 .shipInfo {
   display: inline-block;
-  width: 940px;
+  
   margin: 0 auto auto 5px;
   height: 80px;
 }
@@ -627,7 +424,7 @@ margin-right: 10px;
   display: inline-block;
   background-color: #f9f9f9;
   border-style: groove;
-  width: 80px;
+  
   height: 20px;
   font-size: 12px;
   font-weight: bold;
@@ -636,25 +433,25 @@ margin-right: 10px;
 
 .shipInfo table tr > td > input {
   background-color: #f9f9f9;
-  width: 200px;
+  
   height: 20px;
   font-size: 12px;
 }
 
 .svOrgInfo {
   display: inline-block;
-  width: 940px;
+  
   margin: 0 auto auto 5px;
   height: 80px;
 }
 .svOrgInfo table {
-  width: 100%;
+  
 }
 .svOrgInfo table tr > td > label {
   display: inline-block;
   background-color: #f9f9f9;
   border-style: groove;
-  width: 80px;
+  
   height: 20px;
   font-size: 12px;
   font-weight: bold;
@@ -663,16 +460,15 @@ margin-right: 10px;
 
 .svOrgInfo table tr > td > input {
   background-color: #f9f9f9;
-  width: 200px;
+  
   height: 20px;
   font-size: 12px;
 }
 
 .feeInfo {
-  display: inline-block;
-  width: 905px;
+  /* display: inline-block; */
   /* background-color: rgba(8, 149, 149, 0.423); */
-  margin: 0 auto auto 5px;
+  /* margin: 0 auto auto 5px; */
   height: 300px;
 }
 /* #cont table {
@@ -696,4 +492,49 @@ margin-right: 10px;
   background-color: #d1f2ff;
   text-align: center;
 } */
+
+
+* {
+  box-sizing: border-box;
+}
+
+[class*="col-"] {
+  float: left;
+  padding: 10px;
+  margin:5px;
+}
+
+/* .col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;} */
+
+.col-1 {width: 160px;}
+.col-2 {width: 320px;}
+.col-3 {width: 480px;}
+.col-4 {width: 640px;}
+.col-5 {width: 800px;}
+.col-6 {width: 960px;}
+.col-7 {width: 1120px;}
+.col-8 {width: 1280px;}
+.col-9 {width: 1440px;}
+.col-10 {width: 1600px;}
+.col-11 {width: 1720px;}
+.col-12 {width: 1840px;}
+
+
+.testdiv::after {
+  /* border: 2px solid black;  */
+  content: "";
+  clear: both;
+  display: block;
+}
 </style>
