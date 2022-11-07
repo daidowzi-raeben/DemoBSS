@@ -16,7 +16,7 @@
             "menuId": "cont_01_01_01",
             "menuNm": "계약상세",
             "upMenuId": "cont_01_01",
-            "cmpnId": "ContMgt"
+            "cmpnId": "ContSection"
         },
         {
             "menuId": "cont_01_01_02",

@@ -2,9 +2,11 @@
   <div>
     <div class="section0">
       <div>
+        
       <div class="col-12 cusInfo0" style="min-width:800px;">
         <CustomerSearchComponent
             :cdGroup="'optionsSearchDiv'"
+            :titleShow="false"
         />
       </div>
 
@@ -36,12 +38,12 @@
                 :btnClass="'btnClass3'"
                 :btnName="'수시청구계정등록'"
               />
-              <ButtonComponent :btnClass="'btnClass3'" :btnName="'청구계정등록'" />
+              <ButtonComponent :btnClass="'btnClass3'" :btnName="'청구계정등록'"/>
               <ButtonComponent
                 :btnClass="'btnClass3'"
                 :btnName="'청구계정조회/수정'"
               />
-              <ButtonComponent :btnClass="'btnClass3'" :btnName="'청구계정변경'" />
+              <ButtonComponent :btnClass="'btnClass3'" :btnName="'청구계정변경'"  :menu="'bill_01_01_01'" @input="addComp"/>
             </div>
           </div>
         </div>
@@ -267,6 +269,11 @@ export default {
       ],
     };
   },
+  methods:{
+    addComp(param){
+      this.$emit('input',param);
+    }
+  }
 };
 </script>
 
@@ -284,7 +291,7 @@ div.section0 {
   position: relative;
   /* top: 177px; border: #F00 solid 1px; */
   min-height: calc(100% - 297px);
-  padding: 20px 0 143px;
+  padding: 0px 0 143px;
   box-sizing: border-box;
   min-width: 800px;
 }

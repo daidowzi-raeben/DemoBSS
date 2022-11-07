@@ -1,6 +1,7 @@
 <template>
   <SubInfoTitle
       :subInfoTitleNm="'고객조회'"
+      v-show="titleShow"
   />
   <table>
     <tr>
@@ -58,6 +59,7 @@ export default {
   },
   props:{
     cdGroup:null,
+    titleShow:null,
   }
 }
 </script>

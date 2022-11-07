@@ -3,6 +3,7 @@
     <div class="cusInfo">
       <CustomerSeachComponent
           :cdGroup="'optionsSearchDiv'"
+          :title-show="true"
       />
       <CusomerInfoComponent
           :customer-info="customerInfo"
@@ -120,9 +121,10 @@ import CusomerInfoComponent from "@/components/common/CustomerInfoComponent";
 import BoxComponent from "@/components/common/BoxComponent";
 import CustomerSeachComponent from "@/components/common/CustomerSearchComponent";
 import TreeGridComponent from "@/components/common/TreeGridComponent";
-
+import ApiMixin from "@/service/common.js";
 
 export default {
+  mixins:[ApiMixin],
   name: "ChageInfoRetv",
   components: {
     TreeGridComponent,
@@ -163,15 +165,7 @@ export default {
       columns: [{label:'상품명', id: 'name'}]
       ,
       searchValue: null,
-      customerInfo : {
-        customerId : "CC10001042",
-        customerName : "주식회사 시너샛코리아",
-        customerType : "일반",
-        country : "한국",
-        businessNumber: "6268700321",
-        customerClass : "영리법인",
-        phoneNumber: "01012345678"
-      },
+      customerInfo : [],
       columnDefs1: [
         {
           headerName: "청구계정",
@@ -227,10 +221,12 @@ export default {
       ],
     };
   },
-  beforeMount() {
+  async beforeMount() {
     this.gridOptions = {
       pinnedBottomRowData: [{model0: "합계", model1: null, price: 0}],
     };
+    const res = await this.$connect('application/json','/info.json','get','');
+    this.customerInfo = res.info[0];
   },
 };
 </script>

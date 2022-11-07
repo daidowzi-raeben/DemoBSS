@@ -315,6 +315,7 @@
     >
       <CustomerSearchComponent
           :cdGroup="'optionsSearchDiv'"
+          :title-show="true"
       />
     </div>
     <br><br><br>
@@ -375,7 +376,10 @@
       />
     </div>
     <br><br><br>
-
+    <form class="form-floating">
+      <input type="email" class="form-control" id="floatingInputValue" placeholder="name@example.com" value="test@example.com">
+      <label for="floatingInputValue">Input with value</label>
+    </form>
   </div>
 </template>
 
@@ -534,4 +538,6 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+
+</style>
