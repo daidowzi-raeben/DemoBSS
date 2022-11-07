@@ -355,32 +355,12 @@ div.section0 > div.cusInfo {
   background-color: #f9f9f9;
 }
 
-/* div.section0 > div.cusSearch {
-  float: left;
-  background-color: rgba(23, 202, 101, 0.862);
-
-  margin: 0 auto;
-  padding-bottom:10px;
-
-  height: 100px;
-} */
-/*div.section0 > div.cusInfo {
-  float: left;
-  background-color: antiquewhite;
-
-  margin: 0 auto;
-  padding-bottom:10px;
-  height: 100px;
-} */
-
 .cmProducts {
   float: left;
-  /* background-color: aquamarine; */
-  margin: auto;
+  margin:  auto;
   padding: auto;
   position: relative;
   height: 330px;
-  /* width: 100%; */
   min-width: 600px;
   border: groove;
   overflow: scroll;
@@ -388,8 +368,6 @@ div.section0 > div.cusInfo {
 
 .ContMemInfo {
   display: inline-block;
-
-  /* background-color: rgba(8, 149, 149, 0.423); */
   margin: 0 auto auto 5px;
   height: 270px;
 }
@@ -398,7 +376,6 @@ div.section0 > div.cusInfo {
   display: inline-block;
   background-color: #f9f9f9;
   border-style: groove;
-
   height: 20px;
   font-size: 12px;
   font-weight: bold;
@@ -407,7 +384,6 @@ div.section0 > div.cusInfo {
 
 .ContMemInfo table.accountInfo tr > td > input {
   background-color: #f9f9f9;
-
   height: 20px;
   font-size: 12px;
 }
@@ -435,18 +411,9 @@ div.section0 > div.cusInfo {
   height: 20px;
   font-size: 12px;
 }
-/*
-.CommonInfo table.selectSearch{
-display: inline-block;
-
-height: 25px;
-margin-right: 10px;
-
-} */
 
 .CommonInfo table.selectSearch tr > td > label {
   display: inline-block;
-
   height: 20px;
   font-weight: bold;
   font-size: 14px;
@@ -455,7 +422,6 @@ margin-right: 10px;
 .CommonInfo table.selectSearch tr > td > select {
   display: inline-block;
   background-color: #f9f9f9;
-
   height: 25px;
   font-weight: bold;
   font-size: 14px;
@@ -463,7 +429,6 @@ margin-right: 10px;
 
 .shipInfo {
   display: inline-block;
-
   margin: 0 auto auto 5px;
   height: 80px;
 }
@@ -472,7 +437,6 @@ margin-right: 10px;
   display: inline-block;
   background-color: #f9f9f9;
   border-style: groove;
-
   height: 20px;
   font-size: 12px;
   font-weight: bold;
@@ -481,24 +445,20 @@ margin-right: 10px;
 
 .shipInfo table tr > td > input {
   background-color: #f9f9f9;
-
   height: 20px;
   font-size: 12px;
 }
 
 .svOrgInfo {
   display: inline-block;
-
   margin: 0 auto auto 5px;
   height: 80px;
 }
-.svOrgInfo table {
-}
+
 .svOrgInfo table tr > td > label {
   display: inline-block;
   background-color: #f9f9f9;
   border-style: groove;
-
   height: 20px;
   font-size: 12px;
   font-weight: bold;
@@ -507,38 +467,13 @@ margin-right: 10px;
 
 .svOrgInfo table tr > td > input {
   background-color: #f9f9f9;
-
   height: 20px;
   font-size: 12px;
 }
 
 .feeInfo {
-  /* display: inline-block; */
-  /* background-color: rgba(8, 149, 149, 0.423); */
-  /* margin: 0 auto auto 5px; */
   height: 300px;
 }
-/* #cont table {
-  border-top: #e4e4e4 solid 1px;
-  margin-bottom: 10px;
-  margin-top:10px;
-}
-#cont table tr td {
-  border-bottom: #e4e4e4 solid 1px;
-  border-left: #e4e4e4 solid 1px;
-  font-size: 14px;
-  padding: 5px 10px 5px 10px;
-  height: 30px;
-  line-height: 22px;
-}
-#cont table tr td {
-  border-right: #e4e4e4 solid 1px;
-}
-#cont table tr > td.tit {
-  font-weight: 600;
-  background-color: #d1f2ff;
-  text-align: center;
-} */
 
 * {
   box-sizing: border-box;
@@ -563,47 +498,16 @@ margin-right: 10px;
 .col-11 {width: 91.66%;}
 .col-12 {width: 100%;} */
 
-.col-1 {
-  width: 160px;
-}
-.col-2 {
-  width: 320px;
-}
-.col-3 {
-  width: 480px;
-}
-.col-4 {
-  width: 640px;
-}
-.col-5 {
-  width: 800px;
-}
-.col-6 {
-  width: 960px;
-}
-.col-7 {
-  width: 1120px;
-}
-.col-8 {
-  width: 1280px;
-}
-.col-9 {
-  width: 1440px;
-}
-.col-10 {
-  width: 1600px;
-}
-.col-11 {
-  width: 1720px;
-}
-.col-12 {
-  width: 1840px;
-}
-
-.testdiv::after {
-  /* border: 2px solid black;  */
-  content: "";
-  clear: both;
-  display: block;
-}
+.col-1 {width: 160px;}
+.col-2 {width: 320px;}
+.col-3 {width: 480px;}
+.col-4 {width: 640px;}
+.col-5 {width: 800px;}
+.col-6 {width: 960px;}
+.col-7 {width: 1120px;}
+.col-8 {width: 1280px;}
+.col-9 {width: 1440px;}
+.col-10 {width: 1600px;}
+.col-11 {width: 1720px;}
+.col-12 {width: 1840px;}
 </style>

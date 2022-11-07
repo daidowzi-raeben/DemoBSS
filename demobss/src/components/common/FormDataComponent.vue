@@ -1,4 +1,5 @@
 <template>  
+<div>
   <div 
   v-show="FormDataclass=='InfoOfOrg'"
   class="InfoOfOrg">
@@ -161,7 +162,7 @@
       </table>
     </div>
   </div>
-
+</div>
 </template>
 
 <script>
