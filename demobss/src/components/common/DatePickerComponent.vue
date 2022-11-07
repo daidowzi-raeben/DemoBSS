@@ -1,19 +1,18 @@
 <template>
-  <div :class="classWrapper" :style="{ width: width + 'px' }">
-    <datepicker
-      v-model="date"
-      :class="classInput"
-      :locale="lang"
-      :minimumView="type"
-      :inputFormat="dateFormat"
-      :typeable="true"
-      :placeholder="pPlaceholder"
-      :input="updateDate(date)"
-      :clearable="true"
-      ref="datepicker"
-    >
-    </datepicker>
-  </div>
+  <datepicker
+    v-model="date"
+    :style="{ width: width + 'px' }"
+    :class="classWrapper"
+    :locale="lang"
+    :minimumView="type"
+    :inputFormat="dateFormat"
+    :typeable="true"
+    :placeholder="pPlaceholder"
+    :input="updateDate(date)"
+    :clearable="true"
+    ref="datepicker"
+  >
+  </datepicker>
 </template>
 
 <script>
@@ -32,7 +31,6 @@ export default {
     pDate: null,
     width: Number,
     classWrapper: null,
-    classInput: null,
     type: {
       //일력 월력
       type: String,
@@ -81,6 +79,8 @@ export default {
 
 <style>
 .calender_input {
+  box-sizing: border-box;
+  min-width: 130px;
   border: #b6b6b6 solid 1px;
   font-size: 13px;
   height: 34px;
@@ -97,12 +97,10 @@ export default {
   --vdp-selected-bg-color: #2dbdb6;
   box-sizing: border-box;
 }
-
-.datepicker_class_in {
-  height: 34px;
-  width: 85%;
-  border: 0;
-  line-height: 34px;
-  background-color: transparent;
+.v3dp__clearable {
+  position: absolute;
+  right: 45px;
+  margin: 5px 0;
+  left: unset;
 }
 </style>

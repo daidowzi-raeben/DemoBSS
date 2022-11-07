@@ -46,7 +46,7 @@
         >https://icehaunter.github.io/vue3-datepicker/examples.html
       </a>
       <br />
-      겉 css : classWrapper 속 css : classInput
+      css : classWrapper *수정*
       <br />
       <br />
       <br />
@@ -55,7 +55,6 @@
           <span style="padding: 5px 10px">일력</span>
           <date-picker-component
             :classWrapper="'calender_input'"
-            :classInput="'datepicker_class_in'"
             :width="200"
             :pPlaceholder="'2022.01.01'"
             :pDate="date1"
@@ -70,8 +69,7 @@
           <span style="padding: 5px 10px">월력</span>
           <date-picker-component
             :classWrapper="'calender_input'"
-            :classInput="'datepicker_class_in'"
-            :width="100"
+            :width="150"
             :type="'month'"
             :dateFormat="'yyyy-MM'"
             :pDate="date2"
@@ -82,7 +80,9 @@
             "
           />
         </div>
-        <div style="width: 420px">{{ date1 }} <br />{{ date2 }}</div>
+      </div>
+      <div style="width: 420px; height: 50px">
+        {{ date1 }} <br />{{ date2 }}
       </div>
     </div>
 
