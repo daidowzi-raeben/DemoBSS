@@ -1,19 +1,36 @@
 <template>
-  <button :class="btnClass" type="button">
-    {{ btnName }}
+  <button
+  :class="btnClass"
+  type="button"
+  @click="setCmpn(comp)"
+  >
+  {{btnName}}
   </button>
 </template>
 
 <script>
+import menu from "../../../public/menu.json";
 export default {
-  data() {
-    return {
-      buttonValue: "",
-    };
+  data(){
+    return{
+    buttonValue: "",
+      comp:"",
+    }
   },
   props: {
     btnClass: null,
     btnName: String,
+    menu : null,
+  },
+  created(){
+    this.comp = menu.menu.filter((menu)=>{
+      return menu.menuId == this.menu;
+    });
+  },
+  methods:{
+    setCmpn(param){
+      this.$emit('input',param[0]);
+    }
   },
 };
 </script>

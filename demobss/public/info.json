@@ -1,0 +1,13 @@
+{
+  "info": [
+    {
+      "customerId" : "CC10001042",
+      "customerName" : "주식회사 시너샛코리아",
+      "customerType" : "일반공통",
+      "country" : "공통함수",
+      "businessNumber": "6268700321",
+      "customerClass" : "영리법인",
+      "phoneNumber": "01012345678"
+    }
+  ]
+}

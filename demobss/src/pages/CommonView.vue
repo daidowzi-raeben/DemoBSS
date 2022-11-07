@@ -271,7 +271,10 @@
         margin: 10px;
       "
     >
-      <CustomerInfoComponent :customer-info="customerInfo" />
+      <CustomerSearchComponent
+          :cdGroup="'optionsSearchDiv'"
+          :title-show="true"
+      />
     </div>
     <br /><br /><br />
 
@@ -532,4 +535,6 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+
+</style>
