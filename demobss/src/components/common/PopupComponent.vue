@@ -1,9 +1,11 @@
 <template>
   <div>
-    <!-- start : popup영역 -->
+    <!-- popup이외 영역 , 팝업 이외 영역 클릭 시, 팝업 닫음 -->
     <transition name="fade" appear>
       <div class="cm_popup_overlay" @click="$emit(closeFunc)"></div>
     </transition>
+    
+    <!-- start : popup영역 출력 -->
     <transition name="modal" appear>
       <div class="popup360">
         <h1>알림</h1>
