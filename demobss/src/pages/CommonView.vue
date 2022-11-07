@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1 style="font-size: 30px">select box</h1>
-    <div class="commondiv">
+    <div class="commondiv0">
       조회조건
       <select-box-component
         :selectClass="'select_input'"
@@ -38,7 +38,7 @@
     </div>
 
     <h1 style="font-size: 30px">date picker</h1>
-    <div class="commondiv">
+    <div class="commondiv0">
       <a
         href="https://icehaunter.github.io/vue3-datepicker/examples.html"
         style="width: 100%"
@@ -87,7 +87,7 @@
     </div>
 
     <h1 style="font-size: 30px">file input</h1>
-    <div class="commondiv">
+    <div class="commondiv0">
       <div style="width: 70%">
         <file-input-component
           :atcNoti="'첨부파일은 최대 10MB 이내로 첨부 가능합니다.'"
@@ -105,7 +105,7 @@
     </div>
 
     <h1 style="font-size: 30px">paging</h1>
-    <div class="commondiv">
+    <div class="commondiv0">
       page size 10 페이징 데이터 {{ pageableData1 }} 현재페이지 : {{ page1 }}
       <paging-area
         :pageableData="pageableData1"
@@ -128,7 +128,7 @@
     </div>
 
     <h1 style="font-size: 30px">ag grid</h1>
-    <div class="separator">
+    <div class="commondiv1">
       <div style="width: 60%; height: 360px; margin: 10px">
         <ag-grid-component
           :rowData="rowData1"
@@ -144,7 +144,7 @@
 
     <h1 style="font-size: 30px">ButtonComponent</h1>
     <span>각 버튼의 클래스 이름</span>
-    <div class="separator">
+    <div class="commondiv1">
     <ButtonComponent :btnClass="'btnClass1'" :btnName="'btnClass1'" />
     <ButtonComponent :btnClass="'btnclass2'" :btnName="'btnClass2'" />
     <ButtonComponent :btnClass="'btnClass3'" :btnName="'btnClass3'"   />
@@ -156,7 +156,7 @@
 
     <h1 style="font-size: 30px">subInfoTitle</h1>
     <span></span>
-    <div class="separator">
+    <div class="commondiv1">
       <SubInfoTitle :subInfoTitleNm="'고객정보'" /> &emsp;
       <SubInfoTitle :subInfoTitleNm="'요금정보'" />
       <br /><br /><br />
@@ -179,7 +179,7 @@
     </div>
 
     <h1 style="font-size: 30px">PopupComponent</h1>
-    <div class="separator">
+    <div class="commondiv1">
     <button @click="popup">공통 PopUp</button>
     <PopupComponent
       v-if="isModalShow"
@@ -190,7 +190,7 @@
 
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-    <form-data-popup-component
+    <FormDataPopupComponent
       v-if="isFormModalShow"
       ref="form-data-popup-component"
       @FormPopup="isFormModalShow = false"
@@ -202,21 +202,22 @@
 
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-    <button @click="FormPopup2">입력 PopUp </button>
-    <form-data-popup-component
-
+    <FormDataPopupComponent
+      ref="form-data-popup-component"
       v-if="isFormModalShow2"
       @FormPopup="isFormModalShow2 = false"
       @AGREE = "''"
       :popupmsg="' '"
       :reqtype="'2'"
     />
+    <button @click="FormPopup2">입력 PopUp </button>
+    
     </div>
 
     <br /><br />
     <h1 style="font-size: 30px">InputComponent</h1>
     <span></span>
-    <div class="separator" >
+    <div class="commondiv1" >
     <input-component
         :type="'search'"
         :height="20"
@@ -285,7 +286,7 @@
 
     <h1 style="font-size: 30px">TitleAreaComponent</h1>
     <span></span>
-    <div class="separator" style="width:1960px;" >
+    <div class="commondiv1" style="width:1960px;" >
       <title-area :currentMenu="currentMenu" />
     </div>
     <br /><br /><br />
@@ -501,6 +502,8 @@ export default {
       isModalShow: false, // popup 조건
       isFormModalShow: false, // Form Data popup 조건
       isFormModalShow2: false, // Form Data popup 조건
+      OutputFormData : [],
+      SubmitFormData : [],
     };
   },
   created() {
@@ -517,24 +520,25 @@ export default {
     FormPopup1(){
       if (this.isFormModalShow == false) this.isFormModalShow = true
       else this.isFormModalShow = false
-      // this.$refs.form-data-popup-component.func1("abcd")
+      this.$refs.form-data-popup-component.GetOutputFormData()
     },
     FormPopup2(){
       if (this.isFormModalShow2 == false) this.isFormModalShow2 = true
       else this.isFormModalShow2 = false
+      this.$refs.form-data-popup-component.GetSubmitFormData()
     },
   },
 };
 </script>
 
 <style scoped>
-.commondiv{
+.commondiv0{
   border-top: solid black 1px;
   margin: 10px;
   padding: 10px
 }
 
-.separator{
+.commondiv1{
   display: flex;
   border-top: solid black 1px;
   margin: 10px;
