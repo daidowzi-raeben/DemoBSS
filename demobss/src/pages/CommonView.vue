@@ -367,7 +367,6 @@ export default {
     CustomerSearchComponent,
     BoxComponent,
     FormDataComponent,
-    TreeComponent,
     FormDataPopupComponent,
   },
   data() {
