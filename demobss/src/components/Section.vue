@@ -90,7 +90,7 @@ export default {
       compm2: [],
       test: "ChageInfoRetv",
       component: markRaw(
-          defineAsyncComponent(() => import("./common/ContSection.vue"))
+          defineAsyncComponent(() => import("../pages/ChageInfoRetv.vue"))
       ),
     };
   },

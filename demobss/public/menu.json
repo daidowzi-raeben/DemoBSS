@@ -22,43 +22,43 @@
             "menuId": "cont_01_01_02",
             "menuNm": "계약관리",
             "upMenuId": "cont_01_01",
-            "cmpnId": "ContMgt"
+            "cmpnId": "ContSection"
         },
         {
             "menuId": "cont_01_01_03",
             "menuNm": "계약 신청관리",
             "upMenuId": "cont_01_01",
-            "cmpnId": "ContMgt"
+            "cmpnId": "ContSection"
         },
         {
             "menuId": "cont_01_01_04",
             "menuNm": "TVRO 정시 스케줄관리",
             "upMenuId": "cont_01_01",
-            "cmpnId": "ContMgt"
+            "cmpnId": "ContSection"
         },
         {
             "menuId": "cont_01_01_05",
             "menuNm": "위성서비스실적관리",
             "upMenuId": "cont_01_01",
-            "cmpnId": "ContMgt"
+            "cmpnId": "ContSection"
         },
         {
             "menuId": "cont_01_01_06",
             "menuNm": "청약정보통보대상관리",
             "upMenuId": "cont_01_01",
-            "cmpnId": "ContMgt"
+            "cmpnId": "ContSection"
         },
         {
             "menuId": "cont_01_01_07",
             "menuNm": "KTSAT BSS Rate Plan 체크",
             "upMenuId": "cont_01_01",
-            "cmpnId": "ContMgt"
+            "cmpnId": "ContSection"
         },
         {
             "menuId": "cont_01_01_08",
             "menuNm": "팀장승인관리",
             "upMenuId": "cont_01_01",
-            "cmpnId": "ContMgt"
+            "cmpnId": "ContSection"
         },
         {
             "menuId": "bill_01",

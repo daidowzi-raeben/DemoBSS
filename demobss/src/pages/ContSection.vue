@@ -48,7 +48,7 @@ export default {
       compm2: [],
       test: "ChageInfoRetv",
       component: markRaw(
-          defineAsyncComponent(() => import("../../pages/ContMgt.vue")),
+          defineAsyncComponent(() => import("../components/Cont/ContMgt.vue")),
       ),
     };
   },
@@ -60,7 +60,6 @@ export default {
   },
   created() {
     this.compm2.push(this.component);
-    this.compm2.push(markRaw(defineAsyncComponent(() => import("../../pages/ChageInfoRetv.vue"))));
   },
   computed: {
     navOn() {
@@ -110,7 +109,7 @@ export default {
             this.cur_num = this.compm.length - 1;
             this.component = markRaw(
                 defineAsyncComponent(() =>
-                    import("../../pages/" + this.compm[this.cur_num].cmpnId + ".vue")
+                    import("../pages/" + this.compm[this.cur_num].cmpnId + ".vue")
                 )
             );
             this.compm2.push(this.component);

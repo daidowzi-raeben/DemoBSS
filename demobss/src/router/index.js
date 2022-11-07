@@ -2,10 +2,10 @@ import { createRouter, createWebHistory } from "vue-router";
 
 const routes = [
   {
-    path: "/ContMgt",
-    name: "ContMgt",
+    path: "/ContSection",
+    name: "ContSection",
     component: () =>
-      import(/* webpackChunkName: "about" */ "../pages/ContMgt.vue"),
+      import(/* webpackChunkName: "about" */ "../pages/ContSection.vue"),
   },
   {
     path: "/",
