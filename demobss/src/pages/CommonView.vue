@@ -1,5 +1,5 @@
 <template>
-  <div style="overflow:scroll;">
+  <div>
     <h1 style="font-size: 30px">select box</h1>
     <div style="border-top: solid black 1px; margin: 10px; padding: 10px">
       조회조건
@@ -136,7 +136,7 @@
         padding: 10px;
       "
     >
-      <div style="width: 1500px; height: 360px; margin: 10px">
+      <div style="width: 60%; height: 360px; margin: 10px">
         <ag-grid-component
           :rowData="rowData1"
           :columnDefs="columnDefs1"
@@ -144,7 +144,7 @@
         />
       </div>
 
-      <div style="width: 50%; height: 360px; margin: 10px">
+      <div style="width: 30%; height: 360px; margin: 10px">
         <ag-grid-component :rowData="rowData2" :columnDefs="columnDefs2" />
       </div>
     </div>
@@ -159,26 +159,15 @@
         padding: 10px;
       "
     >
-    <ButtonComponent
-      :btnClass="'btnClass1'"
-      :btnName="'btnClass1'"
-    />
-    <ButtonComponent
-      :btnClass="'btnclass2'"
-      :btnName="'btnClass2'"
-    />
-    <ButtonComponent
-      :btnClass="'btnClass3'"
-      :btnName="'btnClass3'"
-    />
-    <ButtonComponent
-      :btnClass="'btnLeftImgClass'"/>btnLeftImgClass &nbsp;
-    <ButtonComponent
-      :btnClass="'btnRightImgClass'"/> btnRightImgClass&nbsp;
-    <ButtonComponent
-      :btnClass="'btnDeleteImgClass'"/> btnDeleteImgClass &nbsp;
+      <ButtonComponent :btnClass="'btnClass1'" :btnName="'btnClass1'" />
+      <ButtonComponent :btnClass="'btnclass2'" :btnName="'btnClass2'" />
+      <ButtonComponent :btnClass="'btnClass3'" :btnName="'btnClass3'" />
+      <ButtonComponent :btnClass="'btnLeftImgClass'" />btnLeftImgClass &nbsp;
+      <ButtonComponent :btnClass="'btnRightImgClass'" /> btnRightImgClass&nbsp;
+      <ButtonComponent :btnClass="'btnDeleteImgClass'" /> btnDeleteImgClass
+      &nbsp;
     </div>
-    <br><br>
+    <br /><br />
 
     <h1 style="font-size: 30px">subInfoTitle</h1>
     <span></span>
@@ -190,38 +179,26 @@
         padding: 10px;
       "
     >
-    <SubInfoTitle
-      :subInfoTitleNm="'고객정보'"
-    /> &emsp;
-    <SubInfoTitle
-      :subInfoTitleNm="'요금정보'"
-    />
-    <br><br><br>
+      <SubInfoTitle :subInfoTitleNm="'고객정보'" /> &emsp;
+      <SubInfoTitle :subInfoTitleNm="'요금정보'" />
+      <br /><br /><br />
     </div>
 
     <h1 style="font-size: 30px">FormDataComponent</h1>
     <span></span>
-    <div
-      style="
-        border-top: solid black 1px;
-        margin: 10px;
-        padding: 10px;
-      "
-    >
-    <FormDataComponent
-    :FormDataclass="'InfoOfAccount'"
-    :subInfoTitleNm="'청구계정 정보'"
-    />
+    <div style="border-top: solid black 1px; margin: 10px; padding: 10px">
+      <FormDataComponent
+        :FormDataclass="'InfoOfAccount'"
+        :subInfoTitleNm="'청구계정 정보'"
+      />
 
-    <br>
+      <br />
 
       <FormDataComponent
-    :FormDataclass="'InfoOfOrg'"
-    :subInfoTitleNm="'영업조직정보'"
-    />
+        :FormDataclass="'InfoOfOrg'"
+        :subInfoTitleNm="'영업조직정보'"
+      />
     </div>
-
-
 
     <h1 style="font-size: 30px">PopupComponent</h1>
     <div
@@ -232,27 +209,27 @@
         padding: 10px;
       "
     >
-    <button @click="popup">팝업 보이기 </button>
-    <PopupComponent
-      v-if="isModalShow"
-      @popup="isModalShow = false"
-      @AGREE = "''"
-      :popupmsg="'데이터바인딩: isModalShow,  함수 : popup() '"
-    />
+      <button @click="popup">팝업 보이기</button>
+      <PopupComponent
+        v-if="isModalShow"
+        @popup="isModalShow = false"
+        @AGREE=""
+        :popupmsg="'데이터바인딩: isModalShow,  함수 : popup() '"
+      />
     </div>
 
-  <br><br>
+    <br /><br />
     <h1 style="font-size: 30px">InputComponent</h1>
     <span></span>
     <div
-        style="
+      style="
         display: flex;
         border-top: solid black 1px;
         margin: 10px;
         padding: 10px;
       "
     >
-    <input-component
+      <input-component
         :type="'search'"
         :height="20"
         :width="150"
@@ -260,50 +237,31 @@
         v-model="searchValue"
         :placeholder="'입력'"
         @input="
-                (value) => {
-                  searchValue = value;
-                }
-              "
-    />
+          (value) => {
+            searchValue = value;
+          }
+        "
+      />
       <input-component
-          :type="'search'"
-          :height="20"
-          :width="150"
-          :input-class="'class1'"
-          v-model="searchValue"
-          :placeholder="'입력'"
-          @input="
-                (value) => {
-                  searchValue = value;
-                }
-              "
+        :type="'search'"
+        :height="20"
+        :width="150"
+        :input-class="'class1'"
+        v-model="searchValue"
+        :placeholder="'입력'"
+        @input="
+          (value) => {
+            searchValue = value;
+          }
+        "
       />
     </div>
-    <br><br><br>
+    <br /><br /><br />
 
     <h1 style="font-size: 30px">CustomerInfoComponent</h1>
     <span></span>
     <div
-        style="
-         display: inline-block;
-        border-top: solid black 1px;
-        margin: 10px;
-        padding: 10px;
-        height: auto;
-        width: 86%;
-        margin: 10px;
-      "
-    >
-      <CustomerInfoComponent
-          :customer-info="customerInfo"
-      />
-    </div>
-    <br><br><br>
-
-    <h1 style="font-size: 30px">CustomerSearchComponent</h1>
-    <span></span>
-    <div
-        style="
+      style="
         display: inline-block;
         border-top: solid black 1px;
         margin: 10px;
@@ -313,31 +271,45 @@
         margin: 10px;
       "
     >
-      <CustomerSearchComponent
-          :cdGroup="'optionsSearchDiv'"
-      />
+      <CustomerInfoComponent :customer-info="customerInfo" />
     </div>
-    <br><br><br>
+    <br /><br /><br />
+
+    <h1 style="font-size: 30px">CustomerSearchComponent</h1>
+    <span></span>
+    <div
+      style="
+        display: inline-block;
+        border-top: solid black 1px;
+        margin: 10px;
+        padding: 10px;
+        height: auto;
+        width: 86%;
+        margin: 10px;
+      "
+    >
+      <CustomerSearchComponent :cdGroup="'optionsSearchDiv'" />
+    </div>
+    <br /><br /><br />
 
     <h1 style="font-size: 30px">TitleAreaComponent</h1>
     <span></span>
     <div
-        style="
+      style="
         display: flex;
         border-top: solid black 1px;
         margin: 10px;
         padding: 10px;
-        width:1960px;
       "
     >
       <title-area :currentMenu="currentMenu" />
     </div>
-    <br><br><br>
+    <br /><br /><br />
 
     <h1 style="font-size: 30px">BoxComponent</h1>
     <span></span>
     <div
-        style="
+      style="
         width: 80vw;
         margin: 10px;
         padding: 10px;
@@ -347,20 +319,20 @@
       "
     >
       <BoxComponent
-          :sub-info-title-nm="'청구목록'"
-          :column-defs="columnDefs1"
-          :row-data="rowData1"
-          :select-box-show="true"
-          :total="'3'"
-          :cdGroup="'optionsSearchDiv'"
-          :btnName="'엑셀다운'"
+        :sub-info-title-nm="'청구목록'"
+        :column-defs="columnDefs1"
+        :row-data="rowData1"
+        :select-box-show="true"
+        :total="'3'"
+        :cdGroup="'optionsSearchDiv'"
+        :btnName="'엑셀다운'"
       />
     </div>
-    <br><br><br>
+    <br /><br /><br />
     <h1 style="font-size: 30px">TreeGridComponent</h1>
     <span></span>
     <div
-        style="
+      style="
         width: 80vw;
         margin: 10px;
         padding: 10px;
@@ -369,13 +341,9 @@
         border-top: solid black 1px;
       "
     >
-      <TreeGridComponent
-          :tableData="tableData"
-          :columns="columns"
-      />
+      <TreeGridComponent :tableData="tableData" :columns="columns" />
     </div>
-    <br><br><br>
-
+    <br /><br /><br />
   </div>
 </template>
 
@@ -389,11 +357,11 @@ import ButtonComponent from "@/components/common/ButtonComponent.vue";
 import SubInfoTitle from "@/components/common/SubInfoTitle.vue";
 import InputComponent from "@/components/common/InputComponent";
 import TitleArea from "@/components/common/TitleArea";
-import PopupComponent  from  "@/components/common/PopupComponent.vue";
+import PopupComponent from "@/components/common/PopupComponent.vue";
 import CustomerInfoComponent from "@/components/common/CustomerInfoComponent";
 import CustomerSearchComponent from "@/components/common/CustomerSearchComponent";
 import BoxComponent from "@/components/common/BoxComponent";
-import FormDataComponent  from  "@/components/common/FormDataComponent.vue";
+import FormDataComponent from "@/components/common/FormDataComponent.vue";
 import TreeGridComponent from "@/components/common/TreeGridComponent";
 
 export default {
@@ -419,45 +387,75 @@ export default {
     return {
       searchDiv1: null,
       searchDiv2: null,
-      searchValue :null,
+      searchValue: null,
       date1: new Date(2021, 9, 5),
       date2: new Date(),
       pDisable: true,
       tableData: [
         {
-          name: '인말새트 C국내협력점', id: 'P10001257',state:'사용중', children: [
-            {name: 'Regional MVSAT 128/256 요금(80cm 안테나용) 3년약정 [YC CLOVER]', id: 'P10000012679', state:'사용중'}
-          ]
+          name: "인말새트 C국내협력점",
+          id: "P10001257",
+          state: "사용중",
+          children: [
+            {
+              name: "Regional MVSAT 128/256 요금(80cm 안테나용) 3년약정 [YC CLOVER]",
+              id: "P10000012679",
+              state: "사용중",
+            },
+          ],
         },
         {
-          name: '인말새트 C국내협력점', id: 'P10001257',state:'사용중', children: [
-            {name: 'Regional MVSAT 128/256 요금(80cm 안테나용) 3년약정 [YC CLOVER]', id: 'P10000012679', state:'사용중'}
-          ]
+          name: "인말새트 C국내협력점",
+          id: "P10001257",
+          state: "사용중",
+          children: [
+            {
+              name: "Regional MVSAT 128/256 요금(80cm 안테나용) 3년약정 [YC CLOVER]",
+              id: "P10000012679",
+              state: "사용중",
+            },
+          ],
         },
         {
-          name: '인말새트 C국내협력점', id: 'P10001257',state:'사용중', children: [
-            {name: 'Regional MVSAT 128/256 요금(80cm 안테나용) 3년약정 [YC CLOVER]', id: 'P10000012679', state:'사용중',
-              children: [{name: 'Regional MVSAT 128/256 요금(80cm 안테나용) 3년약정 [YC CLOVER]', id: 'P10000012679', state:'사용중'}]}
-          ]
+          name: "인말새트 C국내협력점",
+          id: "P10001257",
+          state: "사용중",
+          children: [
+            {
+              name: "Regional MVSAT 128/256 요금(80cm 안테나용) 3년약정 [YC CLOVER]",
+              id: "P10000012679",
+              state: "사용중",
+              children: [
+                {
+                  name: "Regional MVSAT 128/256 요금(80cm 안테나용) 3년약정 [YC CLOVER]",
+                  id: "P10000012679",
+                  state: "사용중",
+                },
+              ],
+            },
+          ],
         },
       ],
-      columns: [{label: '상품명', id: 'name'}, {label: '상품ID', id: 'id'}, {label: '상태', id: 'state'}],
-      customerInfo : {
-        customerId : "CC10001042",
-        customerName : "주식회사 시너샛코리아",
-        customerType : "일반",
-        country : "한국",
+      columns: [
+        { label: "상품명", id: "name" },
+        { label: "상품ID", id: "id" },
+        { label: "상태", id: "state" },
+      ],
+      customerInfo: {
+        customerId: "CC10001042",
+        customerName: "주식회사 시너샛코리아",
+        customerType: "일반",
+        country: "한국",
         businessNumber: "6268700321",
-        customerClass : "영리법인",
-        phoneNumber: "01012345678"
+        customerClass: "영리법인",
+        phoneNumber: "01012345678",
       },
-      currentMenu:
-        {
-          cmpnId: "ChageInfoRetv",
-          menuId: "bill_01_01_01",
-          menuNm: "청구요금정보조회",
-          upMenuId: "bill_01_01",
-        },
+      currentMenu: {
+        cmpnId: "ChageInfoRetv",
+        menuId: "bill_01_01_01",
+        menuNm: "청구요금정보조회",
+        upMenuId: "bill_01_01",
+      },
       pageableData1: {
         pageNumber: 1,
         currentMinPage: 1,
@@ -526,9 +524,9 @@ export default {
       this.pDisable = !this.pDisable;
     },
 
-    popup(){
-      if (this.isModalShow == false) this.isModalShow= true
-      else this.isModalShow = false
+    popup() {
+      if (this.isModalShow == false) this.isModalShow = true;
+      else this.isModalShow = false;
     },
   },
 };

@@ -1,107 +1,80 @@
 <template>
   <div class="section0">
     <div class="cusInfo">
-      <CustomerSeachComponent
-          :cdGroup="'optionsSearchDiv'"
-      />
-      <CusomerInfoComponent
-          :customer-info="customerInfo"
-      />
+      <CustomerSeachComponent :cdGroup="'optionsSearchDiv'" />
+      <CusomerInfoComponent :customer-info="customerInfo" />
     </div>
     <div class="contList">
       <div>
-        <SubInfoTitle :subInfoTitleNm="'서비스 계약목록'"/>
+        <SubInfoTitle :subInfoTitleNm="'서비스 계약목록'" />
 
-        <ButtonComponent
-            :btnClass="'btnclass2'"
-            :btnName="'전체펼치기'"
-        />
-        <ButtonComponent
-            :btnClass="'btnclass2'"
-            :btnName="'전체접기'"
-        />
+        <ButtonComponent :btnClass="'btnclass2'" :btnName="'전체펼치기'" />
+        <ButtonComponent :btnClass="'btnclass2'" :btnName="'전체접기'" />
       </div>
       <div class="tree_sp">
-        <TreeGridComponent
-            :tableData="tableData"
-            :columns="columns"
-        />
+        <TreeGridComponent :tableData="tableData" :columns="columns" />
       </div>
     </div>
     <div style="left: 30%">
       <div>
         <div class="clList">
           <BoxComponent
-              :sub-info-title-nm="'청구목록'"
-              :grid-options="gridOptions"
-              :column-defs="columnDefs1"
-              :select-box-show="true"
-              :total="'3'"
-              :row-data="rowData1"
-              :cdGroup="'optionsEngtMons'"
-              :btnName="'엑셀다운'"
+            :sub-info-title-nm="'청구목록'"
+            :grid-options="gridOptions"
+            :column-defs="columnDefs1"
+            :select-box-show="true"
+            :total="'3'"
+            :row-data="rowData1"
+            :cdGroup="'optionsEngtMons'"
+            :btnName="'엑셀다운'"
           />
         </div>
         <div style="width: 100%">
           <div class="feeSear">
             <BoxComponent
-                :sub-info-title-nm="'요금항목별 조회'"
-                :grid-options="gridOptions"
-                :column-defs="columnDefs1"
-                :select-box-show="false"
-                :total="'10'"
-                :row-data="rowData1"
-                :cdGroup="'optionsSearchDiv'"
-                :btnName="'엑셀다운'"
+              :sub-info-title-nm="'요금항목별 조회'"
+              :grid-options="gridOptions"
+              :column-defs="columnDefs1"
+              :select-box-show="false"
+              :total="'10'"
+              :row-data="rowData1"
+              :cdGroup="'optionsSearchDiv'"
+              :btnName="'엑셀다운'"
             />
           </div>
           <span class="sevSear">
             <span>
-        <SubInfoTitle
-            :subInfoTitleNm="'서비스계정별 조회'"
-        />(<label style="font-weight: bold">62</label>건)</span
+              <SubInfoTitle :subInfoTitleNm="'서비스계정별 조회'" />(<label
+                style="font-weight: bold"
+                >62</label
+              >건)</span
             >
-          <ButtonComponent
-              :btnClass="'btnclass2'"
-              :btnName="'엑셀다운'"
-          />
-          <ButtonComponent
-              :btnClass="'btnclass2'"
-              :btnName="'선박발송'"
-          />
-          <ButtonComponent
-              :btnClass="'btnclass2'"
-              :btnName="'선박파일'"
-          />
-          <ButtonComponent
-              :btnClass="'btnclass2'"
-              :btnName="'선박별 상세'"
-          />
-          <ButtonComponent
-              :btnClass="'btnclass2'"
-              :btnName="'선박별 요약'"
-          />
+            <ButtonComponent :btnClass="'btnclass2'" :btnName="'엑셀다운'" />
+            <ButtonComponent :btnClass="'btnclass2'" :btnName="'선박발송'" />
+            <ButtonComponent :btnClass="'btnclass2'" :btnName="'선박파일'" />
+            <ButtonComponent :btnClass="'btnclass2'" :btnName="'선박별 상세'" />
+            <ButtonComponent :btnClass="'btnclass2'" :btnName="'선박별 요약'" />
             <span style="float: right; margin: 3px">
               <select-box-component
-                  :selectClass="'select_input3'"
-                  :width="200"
-                  :cdGroup="'optionsSearchDiv'"
-                  :defaultValue="'선택'"
-                  :defaultNum="3"
-                  v-model="searchDiv"
-                  @input="(value) => {
+                :selectClass="'select_input3'"
+                :width="200"
+                :cdGroup="'optionsSearchDiv'"
+                :defaultValue="'선택'"
+                :defaultNum="3"
+                v-model="searchDiv"
+                @input="
+                  (value) => {
                     searchDiv = value;
                   }
-                  "
+                "
               />
-            </span
-            >
+            </span>
             <div class="ag_grid_sp">
               <ag-grid-component
-                  :rowData="rowData1"
-                  :columnDefs="columnDefs1"
-                  :grid-options="gridOptions"
-                  :isWidthFit="false"
+                :rowData="rowData1"
+                :columnDefs="columnDefs1"
+                :grid-options="gridOptions"
+                :isWidthFit="false"
               />
             </div>
           </span>
@@ -121,7 +94,6 @@ import BoxComponent from "@/components/common/BoxComponent";
 import CustomerSeachComponent from "@/components/common/CustomerSearchComponent";
 import TreeGridComponent from "@/components/common/TreeGridComponent";
 
-
 export default {
   name: "ChageInfoRetv",
   components: {
@@ -139,38 +111,40 @@ export default {
       gridOptions: null,
       tableData: [
         {
-          name: '00100004779 주식회사 시너샛코리아', children: [
-            {name: 'P1000021363'},
-            {name: 'P1000021363'},
-            {name: 'P1000021363'}
-          ]
+          name: "00100004779 주식회사 시너샛코리아",
+          children: [
+            { name: "P1000021363" },
+            { name: "P1000021363" },
+            { name: "P1000021363" },
+          ],
         },
         {
-          name: '00100004779 주식회사 시너샛코리아', children: [
-            {name: 'P1000021363'},
-            {name: 'P1000021363'},
-            {name: 'P1000021363'},
-          ]
+          name: "00100004779 주식회사 시너샛코리아",
+          children: [
+            { name: "P1000021363" },
+            { name: "P1000021363" },
+            { name: "P1000021363" },
+          ],
         },
         {
-          name: '00100004779 주식회사 시너샛코리아', children: [
-            {name: 'P1000021363'},
-            {name: 'P1000021363'},
-            {name: 'P1000021363'},
-          ]
+          name: "00100004779 주식회사 시너샛코리아",
+          children: [
+            { name: "P1000021363" },
+            { name: "P1000021363" },
+            { name: "P1000021363" },
+          ],
         },
       ],
-      columns: [{label:'상품명', id: 'name'}]
-      ,
+      columns: [{ label: "상품명", id: "name" }],
       searchValue: null,
-      customerInfo : {
-        customerId : "CC10001042",
-        customerName : "주식회사 시너샛코리아",
-        customerType : "일반",
-        country : "한국",
+      customerInfo: {
+        customerId: "CC10001042",
+        customerName: "주식회사 시너샛코리아",
+        customerType: "일반",
+        country: "한국",
         businessNumber: "6268700321",
-        customerClass : "영리법인",
-        phoneNumber: "01012345678"
+        customerClass: "영리법인",
+        phoneNumber: "01012345678",
       },
       columnDefs1: [
         {
@@ -181,14 +155,14 @@ export default {
           },
           headerClass: "ag-header-first-child",
         },
-        {headerName: "청구년월", field: "model1"},
-        {headerName: "청구통화", field: "model2"},
-        {headerName: "원화당월요금", field: "model3"},
-        {headerName: "원화잔액", field: "model4"},
-        {headerName: "외화당월요금", field: "model5"},
-        {headerName: "외화납부요금", field: "model6"},
-        {headerName: "외화잔액", field: "model7"},
-        {headerName: "환율", field: "price"},
+        { headerName: "청구년월", field: "model1" },
+        { headerName: "청구통화", field: "model2" },
+        { headerName: "원화당월요금", field: "model3" },
+        { headerName: "원화잔액", field: "model4" },
+        { headerName: "외화당월요금", field: "model5" },
+        { headerName: "외화납부요금", field: "model6" },
+        { headerName: "외화잔액", field: "model7" },
+        { headerName: "환율", field: "price" },
       ],
       rowData1: [
         {
@@ -229,24 +203,18 @@ export default {
   },
   beforeMount() {
     this.gridOptions = {
-      pinnedBottomRowData: [{model0: "합계", model1: null, price: 0}],
+      pinnedBottomRowData: [{ model0: "합계", model1: null, price: 0 }],
     };
   },
 };
 </script>
 
 <style scoped>
-
-
 div.section0 {
   display: inline-block;
   position: relative;
-  /* top: 177px; border: #F00 solid 1px; */
-  height: 900px;
-  width: 1670px;
   padding: 20px 0 143px;
   box-sizing: border-box;
-  overflow: scroll;
   white-space: nowrap;
 }
 
@@ -277,7 +245,7 @@ div.contList {
   padding-top: 20px;
   height: 410px;
 }
-.ag_grid_sp{
+.ag_grid_sp {
   margin: 10px;
   width: 100%;
   height: 100%;

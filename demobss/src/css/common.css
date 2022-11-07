@@ -38,7 +38,7 @@ a:hover {
 /*select,*/
 td,
 tr,
-div{
+div {
   font-family: 맑은 고딕;
   font-size: 14px;
   color: #343434;
@@ -99,7 +99,7 @@ body {
   width: 100vw;
   height: 100vh;
   position: absolute;
-  overflow: auto;
+  /* overflow: auto; */
   /* overflow: scroll; */
 }
 #wrap > header {
@@ -186,8 +186,18 @@ section > div.wrap {
 }
 
 section > div.wrap > .view_wrap {
-  width: 100vw;
-  max-height: calc(100vh - 90px);
-  position: absolute;
-  overflow-y: scroll;
+  /* width: 100%; */
+  /* min-width: 1674px; */
+  max-height: calc(100vh - 145px);
+  position: relative;
+  /* overflow-y: scroll; */
+  overflow: auto;
+}
+
+.view_wrap_on {
+  max-width: calc(100vw - 246px);
+}
+
+.view_wrap_off {
+  max-width: calc(100vw);
 }

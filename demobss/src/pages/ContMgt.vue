@@ -2,83 +2,79 @@
   <div>
     <div class="section0">
       <div>
-      <div class="col-12 cusInfo0" style="min-width:800px;">
-        <CustomerSearchComponent
-            :cdGroup="'optionsSearchDiv'"
-        />
-      </div>
+        <div class="col-12 cusInfo0" style="min-width: 800px">
+          <CustomerSearchComponent :cdGroup="'optionsSearchDiv'" />
+        </div>
 
-      <div class="col-12 cusInfo" style="min-width:1200px;">
-        <CusomerInfoComponent
-            :customer-info="customerInfo"
-        />
-      </div>
+        <div class="col-12 cusInfo" style="min-width: 1200px">
+          <CusomerInfoComponent :customer-info="customerInfo" />
+        </div>
       </div>
       <div class="testdiv">
-        <div class="col-5" >
-          <div class="col-5 cmProducts" >
-              <SubInfoTitle
-              :subInfoTitleNm="'보유 상품'"/>
+        <div class="col-5">
+          <div class="col-5 cmProducts">
+            <SubInfoTitle :subInfoTitleNm="'보유 상품'" />
 
-              <TreeGridComponent
-                  :tableData="tableData"
-                  :columns="columns"
-              />
+            <TreeGridComponent :tableData="tableData" :columns="columns" />
           </div>
 
           <div class="col-5">
             <form-data-component
-            :FormDataclass="'InfoOfAccount'"
-            :subInfoTitleNm="'청구계정 정보'"
+              :FormDataclass="'InfoOfAccount'"
+              :subInfoTitleNm="'청구계정 정보'"
             />
             <div style="float: right; margin-right: 70px">
               <ButtonComponent
                 :btnClass="'btnClass3'"
                 :btnName="'수시청구계정등록'"
               />
-              <ButtonComponent :btnClass="'btnClass3'" :btnName="'청구계정등록'" />
+              <ButtonComponent
+                :btnClass="'btnClass3'"
+                :btnName="'청구계정등록'"
+              />
               <ButtonComponent
                 :btnClass="'btnClass3'"
                 :btnName="'청구계정조회/수정'"
               />
-              <ButtonComponent :btnClass="'btnClass3'" :btnName="'청구계정변경'" />
+              <ButtonComponent
+                :btnClass="'btnClass3'"
+                :btnName="'청구계정변경'"
+              />
             </div>
           </div>
         </div>
-``
-        <div class="col-6" >
-            <div>
-              <form-data-component
-            :FormDataclass="'InfoOfBasic'"
-            :subInfoTitleNm="'기본정보'"
+        <div class="col-6">
+          <div>
+            <form-data-component
+              :FormDataclass="'InfoOfBasic'"
+              :subInfoTitleNm="'기본정보'"
             />
           </div>
           <div>
             <FormDataComponent
-            :FormDataclass="'InfoOfShip'"
-            :subInfoTitleNm="'선박정보'"
+              :FormDataclass="'InfoOfShip'"
+              :subInfoTitleNm="'선박정보'"
             />
-            </div>
-            <div>
-              <FormDataComponent
+          </div>
+          <div>
+            <FormDataComponent
               :FormDataclass="'InfoOfOrg'"
               :subInfoTitleNm="'영업조직정보'"
-              />
-            </div>
+            />
+          </div>
           <div class="feeInfo">
-        <BoxComponent
-          :sub-info-title-nm="'요금정보'"
-          :row-data="rowData1"
-          :column-defs="columnDefs1"
-          :select-box-show="false"
-          :total="'10'"
-          :cdGroup="'optionsSearchDiv'"
-          :btnName="'엑셀다운'"
-          />
-      </div>
+            <BoxComponent
+              :sub-info-title-nm="'요금정보'"
+              :row-data="rowData1"
+              :column-defs="columnDefs1"
+              :select-box-show="false"
+              :total="'10'"
+              :cdGroup="'optionsSearchDiv'"
+              :btnName="'엑셀다운'"
+            />
+          </div>
         </div>
       </div>
-
     </div>
   </div>
 </template>
@@ -92,7 +88,7 @@ import SubInfoTitle from "@/components/common/SubInfoTitle.vue";
 import CusomerInfoComponent from "@/components/common/CustomerInfoComponent";
 import BoxComponent from "@/components/common/BoxComponent";
 import TreeGridComponent from "@/components/common/TreeGridComponent";
-import FormDataComponent from '@/components/common/FormDataComponent.vue';
+import FormDataComponent from "@/components/common/FormDataComponent.vue";
 
 export default {
   name: "ContMgt",
@@ -111,36 +107,67 @@ export default {
     return {
       searchValue: null,
       gridOptions: null,
-      searchDiv1:'',
-      searchValue2:'',
-      customerInfo : {
-        customerId : "CC10001042",
-        customerName : "주식회사 시너샛코리아",
-        customerType : "일반",
-        country : "한국",
+      searchDiv1: "",
+      searchValue2: "",
+      customerInfo: {
+        customerId: "CC10001042",
+        customerName: "주식회사 시너샛코리아",
+        customerType: "일반",
+        country: "한국",
         businessNumber: "6268700321",
-        customerClass : "영리법인",
-        phoneNumber: "01012345678"
+        customerClass: "영리법인",
+        phoneNumber: "01012345678",
       },
       tableData: [
         {
-          name: '인말새트 C국내협력점', id: 'P10001257',state:'사용중', children: [
-            {name: 'Regional MVSAT 128/256 요금(80cm 안테나용) 3년약정 [YC CLOVER]', id: 'P10000012679', state:'사용중'}
-          ]
+          name: "인말새트 C국내협력점",
+          id: "P10001257",
+          state: "사용중",
+          children: [
+            {
+              name: "Regional MVSAT 128/256 요금(80cm 안테나용) 3년약정 [YC CLOVER]",
+              id: "P10000012679",
+              state: "사용중",
+            },
+          ],
         },
         {
-          name: '인말새트 C국내협력점', id: 'P10001257',state:'사용중', children: [
-            {name: 'Regional MVSAT 128/256 요금(80cm 안테나용) 3년약정 [YC CLOVER]', id: 'P10000012679', state:'사용중'}
-          ]
+          name: "인말새트 C국내협력점",
+          id: "P10001257",
+          state: "사용중",
+          children: [
+            {
+              name: "Regional MVSAT 128/256 요금(80cm 안테나용) 3년약정 [YC CLOVER]",
+              id: "P10000012679",
+              state: "사용중",
+            },
+          ],
         },
         {
-          name: '인말새트 C국내협력점', id: 'P10001257',state:'사용중', children: [
-            {name: 'Regional MVSAT 128/256 요금(80cm 안테나용) 3년약정 [YC CLOVER]', id: 'P10000012679', state:'사용중',
-              children: [{name: 'Regional MVSAT 128/256 요금(80cm 안테나용) 3년약정 [YC CLOVER]', id: 'P10000012679', state:'사용중'}]}
-          ]
+          name: "인말새트 C국내협력점",
+          id: "P10001257",
+          state: "사용중",
+          children: [
+            {
+              name: "Regional MVSAT 128/256 요금(80cm 안테나용) 3년약정 [YC CLOVER]",
+              id: "P10000012679",
+              state: "사용중",
+              children: [
+                {
+                  name: "Regional MVSAT 128/256 요금(80cm 안테나용) 3년약정 [YC CLOVER]",
+                  id: "P10000012679",
+                  state: "사용중",
+                },
+              ],
+            },
+          ],
         },
       ],
-      columns: [{label: '상품명', id: 'name'}, {label: '상품ID', id: 'id'}, {label: '상태', id: 'state'}],
+      columns: [
+        { label: "상품명", id: "name" },
+        { label: "상품ID", id: "id" },
+        { label: "상태", id: "state" },
+      ],
       columnDefs1: [
         {
           headerName: "결제통화",
@@ -271,9 +298,7 @@ export default {
 </script>
 
 <style scoped>
-
 div.layout {
-
   height: 100vh;
   position: absolute;
   overflow-y: scroll;
@@ -282,8 +307,6 @@ div.layout {
 div.section0 {
   display: grid;
   position: relative;
-  /* top: 177px; border: #F00 solid 1px; */
-  min-height: calc(100% - 297px);
   padding: 20px 0 143px;
   box-sizing: border-box;
   min-width: 800px;
@@ -325,7 +348,6 @@ div.section0 > div.cusInfo {
 
 .cusInfo table tr > td > input {
   background-color: #f9f9f9;
-
 }
 
 /* div.section0 > div.cusSearch {
@@ -349,7 +371,7 @@ div.section0 > div.cusInfo {
 .cmProducts {
   float: left;
   /* background-color: aquamarine; */
-  margin:  auto;
+  margin: auto;
   padding: auto;
   position: relative;
   height: 330px;
@@ -466,7 +488,6 @@ margin-right: 10px;
   height: 80px;
 }
 .svOrgInfo table {
-
 }
 .svOrgInfo table tr > td > label {
   display: inline-block;
@@ -514,7 +535,6 @@ margin-right: 10px;
   text-align: center;
 } */
 
-
 * {
   box-sizing: border-box;
 }
@@ -522,7 +542,7 @@ margin-right: 10px;
 [class*="col-"] {
   float: left;
   padding: 10px;
-  margin:5px;
+  margin: 5px;
 }
 
 /* .col-1 {width: 8.33%;}
@@ -538,19 +558,42 @@ margin-right: 10px;
 .col-11 {width: 91.66%;}
 .col-12 {width: 100%;} */
 
-.col-1 {width: 160px;}
-.col-2 {width: 320px;}
-.col-3 {width: 480px;}
-.col-4 {width: 640px;}
-.col-5 {width: 800px;}
-.col-6 {width: 960px;}
-.col-7 {width: 1120px;}
-.col-8 {width: 1280px;}
-.col-9 {width: 1440px;}
-.col-10 {width: 1600px;}
-.col-11 {width: 1720px;}
-.col-12 {width: 1840px;}
-
+.col-1 {
+  width: 160px;
+}
+.col-2 {
+  width: 320px;
+}
+.col-3 {
+  width: 480px;
+}
+.col-4 {
+  width: 640px;
+}
+.col-5 {
+  width: 800px;
+}
+.col-6 {
+  width: 960px;
+}
+.col-7 {
+  width: 1120px;
+}
+.col-8 {
+  width: 1280px;
+}
+.col-9 {
+  width: 1440px;
+}
+.col-10 {
+  width: 1600px;
+}
+.col-11 {
+  width: 1720px;
+}
+.col-12 {
+  width: 1840px;
+}
 
 .testdiv::after {
   /* border: 2px solid black;  */

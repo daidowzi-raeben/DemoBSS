@@ -1,28 +1,24 @@
 <template>
-  <button
-  :class="btnClass"
-  type="button">
-  {{btnName}}
+  <button :class="btnClass" type="button">
+    {{ btnName }}
   </button>
 </template>
 
 <script>
 export default {
-  data(){
-    return{
-    buttonValue: "",
-    }
+  data() {
+    return {
+      buttonValue: "",
+    };
   },
-  props:{
-    btnClass : null,
+  props: {
+    btnClass: null,
     btnName: String,
   },
-}
+};
 </script>
 
 <style scoped>
-
-
 .btnClass1 {
   float: left;
   padding: 5px;
@@ -32,7 +28,7 @@ export default {
   cursor: pointer;
   border: none;
 }
-.btnClass1:hover{
+.btnClass1:hover {
   background-color: #70707098;
 }
 .btnclass2 {
@@ -45,7 +41,7 @@ export default {
   margin: 3px 3px 0px 3px;
   background-color: rgb(255, 255, 255);
 }
-.btnclass2:hover{
+.btnclass2:hover {
   background-color: rgba(188, 213, 62, 0.842);
 }
 .btnClass3 {
@@ -54,10 +50,10 @@ export default {
   margin-right: 5px;
   cursor: pointer;
 }
-.btnClass3:hover{
+.btnClass3:hover {
   background-color: #70707077;
 }
-.btnSearchImgClass{
+.btnSearchImgClass {
   float: left;
   padding: 5px;
   margin-right: 10px;
@@ -70,11 +66,11 @@ export default {
   cursor: pointer;
   border: none;
 }
-.btnSearchImgClass:hover{
+.btnSearchImgClass:hover {
   background-color: rgba(114, 99, 99, 0.47);
 }
 .btnLeftImgClass {
-  background-color: #5ad3cd;
+  background-color: transparent;
   border: none;
   cursor: pointer;
   background-position: top 10px;
@@ -83,11 +79,9 @@ export default {
   display: flex;
   content: url(../../img/icon_form_left.png);
 }
-.btnLeftImgClass:hover{
-background-color: #5ad3cd91;
-}
 .btnRightImgClass {
-  background-color: #5ad3cd;
+  /* background-color: #5ad3cd; */
+  background-color: transparent;
   border: none;
   cursor: pointer;
   width: 25px;
@@ -95,19 +89,13 @@ background-color: #5ad3cd91;
   display: flex;
   content: url(../../img/icon_form_right.png);
 }
-.btnRightImgClass:hover{
-background-color: #5ad3cd91;
-}
 .btnDeleteImgClass {
-  background-color: #5ad3cd;
+  background-color: transparent;
   border: none;
   cursor: pointer;
   width: 35px;
   height: 25px;
   display: flex;
   content: url(../../img/icon_delete.png);
-}
-.btnDeleteImgClass:hover{
-background-color: #5ad3cd91;
 }
 </style>
