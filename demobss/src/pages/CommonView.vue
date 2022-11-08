@@ -270,7 +270,6 @@
     </div>
     <br><br><br>
 
-    <h1 style="font-size: 30px">CustomerInfoComponent</h1>
 
     <h1 style="font-size: 30px">RangeComponent</h1>
     <span></span>
@@ -278,6 +277,20 @@
     <RangeComponent />
     </div>
     <br /><br /><br />
+
+    <h1 style="font-size: 30px">CheckBoxComponent</h1>
+    <div class="commondiv1" >
+    <CheckBoxComponent :CheckOptions='["체크옵션1","체크옵션2","체크옵션3","체크옵션4","체크옵션5",]' />
+    </div>
+    <br /><br /><br />
+
+    <h1 style="font-size: 30px">RadioComponent</h1>
+    <div class="commondiv1" >
+    <RadioComponent :RadioOptions='["radio1","radio2","radio3","radio4","radio5",]' />
+    </div>
+    <br /><br /><br />
+
+    <h1 style="font-size: 30px">CustomerInfoComponent</h1>
     <div
         style="
          display: inline-block;
@@ -397,6 +410,9 @@ import FormDataComponent  from  "@/components/common/FormDataComponent.vue";
 import TreeComponent from "@/components/common/TreeComponent";
 import TreeGridComponent from "@/components/common/TreeGridComponent";
 import FormDataPopupComponent from '../components/common/FormDataPopupComponent.vue';
+import RangeComponent from "../components/common/RangeComponent.vue"
+import CheckBoxComponent from '../components/common/CheckBoxComponent.vue';
+import RadioComponent from '../components/common/RadioComponent.vue'
 
 export default {
   name: "CommonView",
@@ -418,6 +434,9 @@ export default {
     FormDataComponent,
     TreeComponent,
     FormDataPopupComponent,
+    RangeComponent,
+    CheckBoxComponent,
+    RadioComponent,
   },
   data() {
     return {
