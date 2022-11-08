@@ -6,7 +6,10 @@
     <div>
     <transition appear>
       <div class="formDataPopupFrame" v-if="reqtype=='1'">
-        <h1 >정보 출력 PopUp</h1>
+        <h1 >정보 출력 PopUp 
+        <ButtonComponent @click="GetOutputFormData" :btnClass="'btnclass2'" :btnName="'데이터 출력'" style="width:75px; float:right;"/>
+        </h1> 
+
         <!-- 팝업 메세지 내용 -->
         <article>
           <div class="formDataBind">
@@ -51,7 +54,9 @@
 
     <transition appear>
       <div class="formDataPopupFrame" v-if="reqtype=='2'">
-        <h1>정보 입력 PopUp</h1>
+        <h1>정보 입력 PopUp
+          <ButtonComponent @click="GetSubmitFormData" :btnClass="'btnclass2'" :btnName="'입력 형식 출력'" style=" float:right;"/>
+        </h1>
         <!-- 팝업 메세지 내용 -->
         <article>
           <div class="formDataBind">
@@ -62,7 +67,7 @@
                     {{item.title}}
                   </th>
                   <td>
-                    <input class="input2" type="text" placeholder=" 입력해주세요" >
+                    <input class="input2" type="text" placeholder=" 입력해주세요">
                     </td>
                 </tr>
               </table>
@@ -98,7 +103,9 @@
 </template>
 
 <script>
+import ButtonComponent from './ButtonComponent.vue';
 export default {
+  components: { ButtonComponent },
   name: "CommonPopup",
   data() {
     return {
@@ -121,31 +128,28 @@ export default {
   props: {
     reqtype:String,
     popupmsg : String,
-    popup: Object,
-    closeFunc: {
-      type: String,
-      default: "popup",
-    },
-    isCancel: {
-      //취소버튼 유무
-      type: Boolean,
-      default: false,
-    },
   },
   computed: {
   },
-  async beforeMount(){
-    await this.axios.get('/submit.json').then((response) => {
-        this.OutputFormData = response.data.OutputFormData
-      })
-    await this.axios.get('/submit.json').then((response) => {
-        this.SubmitFormData = response.data.SubmitFormData
-      })
+  beforeMount(){
+    // await this.axios.get('/submit.json').then((response) => {
+    //     this.OutputFormData = response.data.OutputFormData
+    //   })
+    // await this.axios.get('/submit.json').then((response) => {
+    //     this.SubmitFormData = response.data.SubmitFormData
+    //   })
   },
   methods: {
-    meme(){
-      conosle.log("sdasdfsdf")
+    async GetOutputFormData(){
+      await this.axios.get('/submit.json').then((response) => {
+        this.OutputFormData = response.data.OutputFormData
+      })
     },
+    async GetSubmitFormData(){
+      await this.axios.get('/submit.json').then((response) => {
+        this.SubmitFormData = response.data.SubmitFormData
+      })
+    }
   },
 };
 </script>
