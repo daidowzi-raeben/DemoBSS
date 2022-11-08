@@ -68,7 +68,7 @@ export default {
   methods: {
     loading() {
       // console.log("loading");
-      if (this.gridApi != null) this.gridApi.showLoadingOverlay();
+      // if (this.gridApi != null) this.gridApi.showLoadingOverlay();
     },
     onGridReady(params) {
       // console.log("onGridReady");

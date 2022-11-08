@@ -6,11 +6,11 @@ export default {
             return (
                 await axios({
                     headers: {
-                        "Content-Type": contentType,
+                        "Content-Type": 'application/json',
                     },
                     url: url,
                     method: method,
-                    data: data
+                    data: data,
                 }).catch((e) => {
                     console.log(e);
                 })

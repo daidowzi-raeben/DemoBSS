@@ -25,11 +25,10 @@
         <div class="clList">
           <BoxComponent
             :sub-info-title-nm="'청구목록'"
-            :grid-options="gridOptions"
-            :column-defs="columnDefs1"
+            :rowData="rowData"
+            :columnDefs="columnDefs"
             :select-box-show="true"
             :total="'3'"
-            :row-data="rowData1"
             :cdGroup="'optionsEngtMons'"
             :btnName="'엑셀다운'"
           />
@@ -38,11 +37,10 @@
           <div class="feeSear">
             <BoxComponent
               :sub-info-title-nm="'요금항목별 조회'"
-              :grid-options="gridOptions"
-              :column-defs="columnDefs1"
+              :rowData="rowData"
+              :columnDefs="columnDefs"
               :select-box-show="false"
               :total="'10'"
-              :row-data="rowData1"
               :cdGroup="'optionsSearchDiv'"
               :btnName="'엑셀다운'"
             />
@@ -76,9 +74,8 @@
             </span>
             <div class="ag_grid_sp">
               <ag-grid-component
-                :rowData="rowData1"
-                :columnDefs="columnDefs1"
-                :grid-options="gridOptions"
+                :rowData="rowData"
+                :columnDefs="columnDefs"
                 :isWidthFit="false"
               />
             </div>
@@ -116,6 +113,130 @@ export default {
   data() {
     return {
       gridOptions: null,
+      columnDefs1: [
+        {
+          headerName: "결제통화",
+          field: "model0",
+          headerClass: "ag-header-first-child",
+        },
+        { headerName: "요금항목명", field: "model1" },
+        { headerName: "요금항목구분명", field: "model2" },
+        { headerName: "협정금액", field: "model3" },
+        { headerName: "협정할인금액", field: "model4" },
+        { headerName: "협정청구금액", field: "model5" },
+        { headerName: "유효시작일", field: "StartDate" },
+        { headerName: "유효종료일", field: "EndDate" },
+      ],
+      rowData1: [
+        {
+          model0: "KRW",
+          model1: "기본료",
+          model2: "정액요금",
+          model3: "133,500,000",
+          model4: "1,500,000",
+          model5: "132,000,000",
+          model6: "0",
+          model7: "0",
+          StartDate: "2021-10-19",
+          EndDate: "2023-12-31",
+        },
+        {
+          model0: "KRW",
+          model1: "프리미엄요금",
+          model2: "정액요금",
+          model3: "220,225,000",
+          model4: "225,000",
+          model5: "220,000,000",
+          model6: "0",
+          model7: "0",
+          StartDate: "2022-05-31",
+          EndDate: "2024-07-31",
+        },
+        {
+          model0: "KRW",
+          model1: "설치비",
+          model2: "정액요금",
+          model3: 9200000000,
+          model4: 3000000,
+          model5: 66665222,
+          model6: "0",
+          model7: "0",
+          StartDate: "2022-10-19",
+          EndDate: "2025-09-31",
+        },
+        {
+          model0: "KRW",
+          model1: "기본료",
+          model2: "정액요금",
+          model3: "133,500,000",
+          model4: "1,500,000",
+          model5: "132,000,000",
+          model6: "0",
+          model7: "0",
+          StartDate: "2021-10-19",
+          EndDate: "2023-12-31",
+        },
+        {
+          model0: "KRW",
+          model1: "프리미엄요금",
+          model2: "정액요금",
+          model3: "220,225,000",
+          model4: "225,000",
+          model5: "220,000,000",
+          model6: "0",
+          model7: "0",
+          StartDate: "2022-05-31",
+          EndDate: "2024-07-31",
+        },
+        {
+          model0: "KRW",
+          model1: "설치비",
+          model2: "정액요금",
+          model3: 9200000000,
+          model4: 3000000,
+          model5: 66665222,
+          model6: "0",
+          model7: "0",
+          StartDate: "2022-10-19",
+          EndDate: "2025-09-31",
+        },
+        {
+          model0: "KRW",
+          model1: "기본료",
+          model2: "정액요금",
+          model3: "133,500,000",
+          model4: "1,500,000",
+          model5: "132,000,000",
+          model6: "0",
+          model7: "0",
+          StartDate: "2021-10-19",
+          EndDate: "2023-12-31",
+        },
+        {
+          model0: "KRW",
+          model1: "프리미엄요금",
+          model2: "정액요금",
+          model3: "220,225,000",
+          model4: "225,000",
+          model5: "220,000,000",
+          model6: "0",
+          model7: "0",
+          StartDate: "2022-05-31",
+          EndDate: "2024-07-31",
+        },
+        {
+          model0: "KRW",
+          model1: "설치비",
+          model2: "정액요금",
+          model3: 9200000000,
+          model4: 3000000,
+          model5: 66665222,
+          model6: "0",
+          model7: "0",
+          StartDate: "2022-10-19",
+          EndDate: "2025-09-31",
+        },
+      ],
       tableData: [
         {
           name: "00100004779 주식회사 시너샛코리아",
@@ -145,67 +266,19 @@ export default {
       columns: [{ label: "상품명", id: "name" }],
       searchValue: null,
       customerInfo : [],
-      columnDefs1: [
-        {
-          headerName: "청구계정",
-          field: "model0",
-          cellStyle: {
-            "border-left": "0px",
-          },
-          headerClass: "ag-header-first-child",
-        },
-        { headerName: "청구년월", field: "model1" },
-        { headerName: "청구통화", field: "model2" },
-        { headerName: "원화당월요금", field: "model3" },
-        { headerName: "원화잔액", field: "model4" },
-        { headerName: "외화당월요금", field: "model5" },
-        { headerName: "외화납부요금", field: "model6" },
-        { headerName: "외화잔액", field: "model7" },
-        { headerName: "환율", field: "price" },
-      ],
-      rowData1: [
-        {
-          model0: "00100004023",
-          model1: "2022-10",
-          model2: "KRW",
-          model3: "20,225,214",
-          model4: "0",
-          model5: "0",
-          model6: "0",
-          model7: "0",
-          price: "1.434.8",
-        },
-        {
-          model0: "00100004000",
-          model1: "2022-9",
-          model2: "KRW",
-          model3: "20,225,000",
-          model4: "0",
-          model5: "0",
-          model6: "0",
-          model7: "0",
-          price: "1.434.8",
-        },
-        {
-          model0: "00100004021",
-          model1: "2022-2",
-          model2: "KRW",
-          model3: "20,005,214",
-          model4: "0",
-          model5: "0",
-          model6: "0",
-          model7: "0",
-          price: "1.434.8",
-        },
-      ],
+      columnDefs: null,
+      rowData:null,
     };
   },
   async beforeMount() {
-    this.gridOptions = {
-      pinnedBottomRowData: [{ model0: "합계", model1: null, price: 0 }],
-    };
+    // this.gridOptions = {
+    //   pinnedBottomRowData: [{ model0: "합계", model1: null, model4: 0 }],
+    // };
     const res = await this.$connect('application/json','/info.json','get','');
     this.customerInfo = res.info[0];
+    this.columnDefs =res.columnDefs;
+    this.rowData = res.rowData;
+
   },
 };
 </script>

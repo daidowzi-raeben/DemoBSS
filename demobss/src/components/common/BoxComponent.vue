@@ -22,9 +22,10 @@
   </span>
   <div class="ag-grid_sp">
     <ag-grid-component
-        :rowData="rowData"
-        :columnDefs="columnDefs"
-        :grid-options="gridOptions"
+        :rowData="this.rowData"
+        :columnDefs="this.columnDefs"
+        :gridOptions="gridOptions"
+        :isWidthFit="false"
     />
   </div>
 </template>
@@ -34,8 +35,10 @@ import SelectBoxComponent from "@/components/common/SelectBoxComponent";
 import ButtonComponent from "@/components/common/ButtonComponent";
 import AgGridComponent from "@/components/common/AgGridComponent";
 import SubInfoTitle from "@/components/common/SubInfoTitle";
+import ApiMixin from "@/service/common";
 
 export default {
+  mixins:[ApiMixin],
   name: "BoxComponent",
   components:{
     SelectBoxComponent,
@@ -49,15 +52,16 @@ export default {
     }
   },
   props: {
+    columnDefs:null,
+    rowData: null,
     subInfoTitleNm:null,
     selectBoxShow:null,
-    rowData: null,
-    columnDefs: null,
     gridOptions: null,
     cdGroup: null,
     btnName : null,
     total:null,
   },
+
 }
 </script>
 
