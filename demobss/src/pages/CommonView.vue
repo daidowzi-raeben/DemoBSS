@@ -271,7 +271,13 @@
     <br><br><br>
 
     <h1 style="font-size: 30px">CustomerInfoComponent</h1>
+
+    <h1 style="font-size: 30px">RangeComponent</h1>
     <span></span>
+    <div class="commondiv1" >
+    <RangeComponent />
+    </div>
+    <br /><br /><br />
     <div
         style="
          display: inline-block;
