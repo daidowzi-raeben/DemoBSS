@@ -328,6 +328,21 @@
       <TreeGridComponent :tableData="tableData" :columns="columns" />
     </div>
     <br /><br /><br />
+    <h1 style="font-size: 30px">ValidateExampleComponent</h1>
+    <span></span>
+    <div
+        style="
+        width: 80vw;
+        margin: 10px;
+        padding: 10px;
+        height: 300px;
+        display: inline-block;
+        border-top: solid black 1px;
+      "
+    >
+      <validate-example-component/>
+    </div>
+    <br /><br /><br />
   </div>
 </template>
 
@@ -348,10 +363,12 @@ import BoxComponent from "@/components/common/BoxComponent";
 import FormDataComponent from "@/components/common/FormDataComponent.vue";
 import TreeGridComponent from "@/components/common/TreeGridComponent";
 import FormDataPopupComponent from '../components/common/FormDataPopupComponent.vue';
+import ValidateExampleComponent from "@/components/common/ValidateExampleComponent";
 
 export default {
   name: "CommonView",
   components: {
+    ValidateExampleComponent,
     TreeGridComponent,
     PagingArea,
     FileInputComponent,
