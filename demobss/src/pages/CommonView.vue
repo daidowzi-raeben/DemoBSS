@@ -256,13 +256,12 @@
         margin: 10px;
         padding: 10px;
         height: auto;
-        width: 86%;
+        width: 100%;
         margin: 10px;
       "
     >
-      <CustomerSearchComponent
-          :cdGroup="'optionsSearchDiv'"
-          :title-show="true"
+      <CustomerInfoComponent
+          :customer-info="customerInfo"
       />
     </div>
     <br /><br /><br />

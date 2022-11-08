@@ -63,8 +63,8 @@
           <div class="feeInfo">
             <BoxComponent
               :sub-info-title-nm="'요금정보'"
-              :row-data="rowData1"
-              :column-defs="columnDefs1"
+              :row-data="rowData"
+              :column-defs="columnDefs"
               :select-box-show="false"
               :total="'10'"
               :cdGroup="'optionsSearchDiv'"
@@ -87,8 +87,10 @@ import CusomerInfoComponent from "@/components/common/CustomerInfoComponent";
 import BoxComponent from "@/components/common/BoxComponent";
 import TreeGridComponent from "@/components/common/TreeGridComponent";
 import FormDataComponent from "@/components/common/FormDataComponent.vue";
+import ApiMixin from "@/service/common";
 
 export default {
+  mixins:[ApiMixin],
   name: "ContMgt",
   components: {
     TreeGridComponent,
@@ -107,15 +109,6 @@ export default {
       gridOptions: null,
       searchDiv1: "",
       searchValue2: "",
-      customerInfo: {
-        customerId: "CC10001042",
-        customerName: "주식회사 시너샛코리아",
-        customerType: "일반",
-        country: "한국",
-        businessNumber: "6268700321",
-        customerClass: "영리법인",
-        phoneNumber: "01012345678",
-      },
       tableData: [
         {
           name: "인말새트 C국내협력점",
@@ -166,131 +159,16 @@ export default {
         { label: "상품ID", id: "id" },
         { label: "상태", id: "state" },
       ],
-      columnDefs1: [
-        {
-          headerName: "결제통화",
-          field: "model0",
-          headerClass: "ag-header-first-child",
-        },
-        { headerName: "요금항목명", field: "model1" },
-        { headerName: "요금항목구분명", field: "model2" },
-        { headerName: "협정금액", field: "model3" },
-        { headerName: "협정할인금액", field: "model4" },
-        { headerName: "협정청구금액", field: "model5" },
-        { headerName: "유효시작일", field: "StartDate" },
-        { headerName: "유효종료일", field: "EndDate" },
-      ],
-      rowData1: [
-        {
-          model0: "KRW",
-          model1: "기본료",
-          model2: "정액요금",
-          model3: "133,500,000",
-          model4: "1,500,000",
-          model5: "132,000,000",
-          model6: "0",
-          model7: "0",
-          StartDate: "2021-10-19",
-          EndDate: "2023-12-31",
-        },
-        {
-          model0: "KRW",
-          model1: "프리미엄요금",
-          model2: "정액요금",
-          model3: "220,225,000",
-          model4: "225,000",
-          model5: "220,000,000",
-          model6: "0",
-          model7: "0",
-          StartDate: "2022-05-31",
-          EndDate: "2024-07-31",
-        },
-        {
-          model0: "KRW",
-          model1: "설치비",
-          model2: "정액요금",
-          model3: 9200000000,
-          model4: 3000000,
-          model5: 66665222,
-          model6: "0",
-          model7: "0",
-          StartDate: "2022-10-19",
-          EndDate: "2025-09-31",
-        },
-        {
-          model0: "KRW",
-          model1: "기본료",
-          model2: "정액요금",
-          model3: "133,500,000",
-          model4: "1,500,000",
-          model5: "132,000,000",
-          model6: "0",
-          model7: "0",
-          StartDate: "2021-10-19",
-          EndDate: "2023-12-31",
-        },
-        {
-          model0: "KRW",
-          model1: "프리미엄요금",
-          model2: "정액요금",
-          model3: "220,225,000",
-          model4: "225,000",
-          model5: "220,000,000",
-          model6: "0",
-          model7: "0",
-          StartDate: "2022-05-31",
-          EndDate: "2024-07-31",
-        },
-        {
-          model0: "KRW",
-          model1: "설치비",
-          model2: "정액요금",
-          model3: 9200000000,
-          model4: 3000000,
-          model5: 66665222,
-          model6: "0",
-          model7: "0",
-          StartDate: "2022-10-19",
-          EndDate: "2025-09-31",
-        },
-        {
-          model0: "KRW",
-          model1: "기본료",
-          model2: "정액요금",
-          model3: "133,500,000",
-          model4: "1,500,000",
-          model5: "132,000,000",
-          model6: "0",
-          model7: "0",
-          StartDate: "2021-10-19",
-          EndDate: "2023-12-31",
-        },
-        {
-          model0: "KRW",
-          model1: "프리미엄요금",
-          model2: "정액요금",
-          model3: "220,225,000",
-          model4: "225,000",
-          model5: "220,000,000",
-          model6: "0",
-          model7: "0",
-          StartDate: "2022-05-31",
-          EndDate: "2024-07-31",
-        },
-        {
-          model0: "KRW",
-          model1: "설치비",
-          model2: "정액요금",
-          model3: 9200000000,
-          model4: 3000000,
-          model5: 66665222,
-          model6: "0",
-          model7: "0",
-          StartDate: "2022-10-19",
-          EndDate: "2025-09-31",
-        },
-      ],
+      customerInfo : [],
+      columnDefs: [],
+      rowData: [],
     };
+  },
+  async beforeMount() {
+    const res = await this.$connect('application/json','/info.json','get','');
+    this.customerInfo = res.info[0];
+    this.columnDefs =res.columnDefs;
+    this.rowData = res.rowData;
   },
   methods:{
     addComp(param){
