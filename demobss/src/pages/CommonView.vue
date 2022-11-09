@@ -362,6 +362,25 @@
       <validate-example-component/>
     </div>
     <br /><br /><br />
+    <h1 style="font-size: 30px">FloatingLabelsComponentComponent</h1>
+    <span></span>
+    <div
+        style="
+        width: 80vw;
+        margin: 10px;
+        padding: 10px;
+        height: 300px;
+        display: inline-block;
+        border-top: solid black 1px;
+      "
+    >
+      <FloatingLabelsComponent>
+        <input  type="text" placeholder="Label">
+      </FloatingLabelsComponent>
+      <br>
+      <FloatingLabelsComponent_2 />
+    </div>
+    <br /><br /><br />
   </div>
 </template>
 
@@ -386,9 +405,13 @@ import RangeComponent from "../components/common/RangeComponent.vue"
 import CheckBoxComponent from '../components/common/CheckBoxComponent.vue';
 import RadioComponent from '../components/common/RadioComponent.vue'
 import ValidateExampleComponent from "@/components/common/ValidateExampleComponent";
+import FloatingLabelsComponent from "@/components/common/FloatingLabelsComponent";
+import FloatingLabelsComponent_2 from "@/components/common/FloatingLabelsComponent_2";
 export default {
   name: "CommonView",
   components: {
+    FloatingLabelsComponent_2,
+    FloatingLabelsComponent,
     ValidateExampleComponent,
     TreeGridComponent,
     PagingArea,

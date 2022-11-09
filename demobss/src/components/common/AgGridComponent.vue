@@ -8,6 +8,7 @@
     :rowClassRules="rowClassRules"
     :suppressMovableColumns="true"
     :suppressRowTransform="true"
+    :pinnedBottomRowData="pinnedBottomRowData"
     :suppressHorizontalScroll="isWidthFit"
     :rowHeight="37"
     :columnDefs="columnDefs"
@@ -36,6 +37,7 @@ export default {
       gridColumnApi: null,
       rowClassRules: null,
       overlayLoadingTemplate: `<div class="ag-overlay-loading-center"> Loading... </div>`,
+      pinnedBottomRowData: null,
     };
   },
   props: {
@@ -64,6 +66,11 @@ export default {
   },
   components: {
     AgGridVue,
+  },
+  created() {
+    this.pinnedBottomRowData = [{
+
+    }]
   },
   methods: {
     loading() {
