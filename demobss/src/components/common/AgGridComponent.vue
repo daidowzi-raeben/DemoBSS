@@ -33,9 +33,11 @@ export default {
   name: "AgGridComponent",
   data() {
     return {
+      windowWidth :window.innerWidth,
       gridApi: null,
       gridColumnApi: null,
       rowClassRules: null,
+      allColumnIds:[],
       overlayLoadingTemplate: `<div class="ag-overlay-loading-center"> Loading... </div>`,
       pinnedBottomRowData: null,
     };
@@ -66,6 +68,16 @@ export default {
   },
   components: {
     AgGridVue,
+  },
+  watch:{
+    windowWidth(){
+      this.gridApi.sizeColumnsToFit(this.allColumnIds);
+    }
+  },
+  mounted() {
+    window.addEventListener('resize', () => {
+      this.windowWidth = window.innerWidth
+    })
   },
   created() {
     this.pinnedBottomRowData = [{
@@ -103,16 +115,16 @@ export default {
     makeAutoWidth() {
       if (!this.isWidthFit) {
         //가로 스크롤 = autosize
-        const allColumnIds = [];
+         this.allColumnIds = [];
         this.gridColumnApi.getColumns().forEach((column) => {
-          allColumnIds.push(column.colId);
+          this.allColumnIds.push(column.colId);
         });
 
         // 여기 조율 필요합니다~~
-        this.gridColumnApi.autoSizeColumn(allColumnIds);            // 컬럼, data 전부 생략, 간격 맞춤  (스크롤바)
-        // this.gridColumnApi.autoSizeAllColumns(allColumnIds);        // 컬럼은 생략됨 / data 전부 다 표시   (스크롤바)
+        //this.gridColumnApi.autoSizeColumn(allColumnIds);            // 컬럼, data 전부 생략, 간격 맞춤  (스크롤바)
+        //this.gridColumnApi.autoSizeAllColumns(allColumnIds);        // 컬럼은 생략됨 / data 전부 다 표시   (스크롤바)
         // this.gridColumnApi.autoSizeColumns(allColumnIds,false);     // 컬럼, data 전부 표시, 간격 맞춤 (스크롤바)
-        // this.gridApi.sizeColumnsToFit(allColumnIds);                  // 컬럼, data 전부 생략, 간격 맞추고 테이블 크기 맞춤 (NO 스크롤)
+         this.gridApi.sizeColumnsToFit(this.allColumnIds);                  // 컬럼, data 전부 생략, 간격 맞추고 테이블 크기 맞춤 (NO 스크롤)
         // this.gridApi.gridBodyCtrl.eBodyViewport.style = "border-bottom:0px;"; //안쪽
       } else {
         this.gridApi.sizeColumnsToFit(); //끝까지 맞춤

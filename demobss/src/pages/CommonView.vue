@@ -362,7 +362,7 @@
       <validate-example-component/>
     </div>
     <br /><br /><br />
-    <h1 style="font-size: 30px">FloatingLabelsComponentComponent</h1>
+    <h1 style="font-size: 30px">FloatingLabelsComponent</h1>
     <span></span>
     <div
         style="
@@ -379,6 +379,31 @@
       </FloatingLabelsComponent>
       <br>
       <FloatingLabelsComponent_2 />
+    </div>
+    <br /><br /><br />
+    <h1 style="font-size: 30px">ToastComponent</h1>
+    <span></span>
+    <div
+        style="
+        width: 80vw;
+        margin: 10px;
+        padding: 10px;
+        height: 300px;
+        display: inline-block;
+        border-top: solid black 1px;
+      "
+    >
+      <ButtonComponent @click="chk=true" :btnClass="'btnClass1'" :btnName="'btnClass1'" />
+      <ToastComponent
+          v-if="chk"
+          :message="'hello'"
+          :vertical-position="'bottom'"
+          :horizontal-position="'right'"
+          :class-name="'wk-info'"
+          :closeable="true"
+          :duration="2000"
+          :transition="'slide-right'"
+      />
     </div>
     <br /><br /><br />
   </div>
@@ -407,9 +432,11 @@ import RadioComponent from '../components/common/RadioComponent.vue'
 import ValidateExampleComponent from "@/components/common/ValidateExampleComponent";
 import FloatingLabelsComponent from "@/components/common/FloatingLabelsComponent";
 import FloatingLabelsComponent_2 from "@/components/common/FloatingLabelsComponent_2";
+import ToastComponent from "@/components/common/ToastComponent";
 export default {
   name: "CommonView",
   components: {
+    ToastComponent,
     FloatingLabelsComponent_2,
     FloatingLabelsComponent,
     ValidateExampleComponent,
@@ -435,6 +462,7 @@ export default {
   },
   data() {
     return {
+      chk:false,
       searchDiv1: null,
       searchDiv2: null,
       searchValue: null,

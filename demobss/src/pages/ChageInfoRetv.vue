@@ -1,15 +1,17 @@
 <template>
-  <div class="section0">
-    <div class="cusInfo">
+  <div class="container">
+    <div class="item">
       <CustomerSeachComponent
           :cdGroup="'optionsSearchDiv'"
           :title-show="true"
       />
+    </div>
+    <div class="item">
       <CusomerInfoComponent
           :customer-info="customerInfo"
       />
     </div>
-    <div class="contList">
+    <div class="item">
       <div>
         <SubInfoTitle :subInfoTitleNm="'서비스 계약목록'" />
 
@@ -20,9 +22,7 @@
         <TreeGridComponent :tableData="tableData" :columns="columns" />
       </div>
     </div>
-    <div style="left: 30%">
-      <div>
-        <div class="clList">
+    <div class="item">
           <BoxComponent
             :sub-info-title-nm="'청구목록'"
             :rowData="rowData"
@@ -32,10 +32,9 @@
             :cdGroup="'optionsEngtMons'"
             :btnName="'엑셀다운'"
           />
-        </div>
-        <div style="width: 100%">
-          <div class="feeSear">
-            <BoxComponent
+    </div>
+    <div class="item" style="margin-top: 50px">
+      <BoxComponent
               :sub-info-title-nm="'요금항목별 조회'"
               :rowData="rowData"
               :columnDefs="columnDefs"
@@ -44,20 +43,21 @@
               :cdGroup="'optionsSearchDiv'"
               :btnName="'엑셀다운'"
             />
-          </div>
-          <span class="sevSear">
-            <span>
+    </div>
+    <div class="item" style="margin-top: 50px">
+            <div style="float: left; display: inline-block">
               <SubInfoTitle :subInfoTitleNm="'서비스계정별 조회'" />(<label
                 style="font-weight: bold"
                 >62</label
-              >건)</span
+              >건)</div
             >
+            <div style="float: right; margin: 3px; display: inline-block">
             <ButtonComponent :btnClass="'btnclass2'" :btnName="'엑셀다운'" />
             <ButtonComponent :btnClass="'btnclass2'" :btnName="'선박발송'" />
             <ButtonComponent :btnClass="'btnclass2'" :btnName="'선박파일'" />
             <ButtonComponent :btnClass="'btnclass2'" :btnName="'선박별 상세'" />
             <ButtonComponent :btnClass="'btnclass2'" :btnName="'선박별 요약'" />
-            <span style="float: right; margin: 3px">
+
               <select-box-component
                 :selectClass="'select_input3'"
                 :width="200"
@@ -71,7 +71,7 @@
                   }
                 "
               />
-            </span>
+            </div>
             <div class="ag_grid_sp">
               <ag-grid-component
                 :rowData="rowData"
@@ -79,10 +79,7 @@
                 :isWidthFit="false"
               />
             </div>
-          </span>
-        </div>
-      </div>
-    </div>
+          </div>
   </div>
 </template>
 
@@ -284,6 +281,43 @@ export default {
 </script>
 
 <style scoped>
+.container{
+  display:grid;
+  grid-template-columns:450px 500px minmax(650px,1fr);
+  grid-template-rows: 70px 100px 300px 400px;
+  gap: 10px 10px;
+}
+.item{
+  display: flex;
+  flex-wrap: wrap;
+}
+.item:nth-child(1){
+  grid-column: 1/4;
+  grid-row:1/2;
+}
+.item:nth-child(2){
+  grid-column: 1/4;
+  grid-row:2/3;
+}
+.item:nth-child(3){
+  grid-column: 1/2;
+  grid-row:3/5;
+}
+.item:nth-child(4){
+  grid-column: 2/4;
+  grid-row:3/4;
+}
+.item:nth-child(5){
+  grid-column: 2/3;
+  grid-row:4/5;
+}
+.item:nth-child(6){
+  grid-column: 3/4;
+  grid-row:4/5;
+}
+
+
+
 div.section0 {
   display: inline-block;
   position: relative;
