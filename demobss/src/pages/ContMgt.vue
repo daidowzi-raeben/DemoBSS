@@ -1,79 +1,71 @@
 <template>
   <div>
-    <div class="section0">
-      <div>
-      <div class="col-12 cusInfo0" style="min-width:800px;">
+    <div class="container">
+      <div class="item" >
         <CustomerSearchComponent
             :cdGroup="'optionsSearchDiv'"
         />
       </div>
 
-      <div class="col-12 cusInfo" style="min-width:1200px;">
-        <CusomerInfoComponent
-            :customer-info="customerInfo"
+      <div class="item"> 
+        <CusomerInfoComponent :customer-info="customerInfo"/>
+      </div>
+
+      <div class="item ">
+        <SubInfoTitle :subInfoTitleNm="'보유 상품'" />
+        <div class="cmProducts">
+        <TreeGridComponent :tableData="tableData" :columns="columns" style="min-width: 600px;"/>
+        </div>
+      </div>
+
+      <div class="item">   
+        <form-data-component
+          :FormDataclass="'InfoOfBasic'"
+          :subInfoTitleNm="'기본정보'"
+        />
+        </div>
+      <div class="item"> 
+        <FormDataComponent
+          :FormDataclass="'InfoOfShip'"
+          :subInfoTitleNm="'선박정보'"
         />
       </div>
+      <div class="item"> 
+        <FormDataComponent
+          :FormDataclass="'InfoOfOrg'"
+          :subInfoTitleNm="'영업조직정보'"
+        />
       </div>
-
-      <div class="testdiv">
-        <div class="col-5" >
-          <div class="col-5 cmProducts" >
-              <SubInfoTitle
-              :subInfoTitleNm="'보유 상품'"/>
-              <TreeGridComponent />
-          </div>
-          
-          <div class="col-5">
-            <form-data-component
-            :FormDataclass="'InfoOfAccount'"
-            :subInfoTitleNm="'청구계정 정보'"
-            />  
-            <div style="float: right; margin-right: 70px">
-              <ButtonComponent
-                :btnClass="'btnClass3'"
-                :btnName="'수시청구계정등록'"
-              />
-              <ButtonComponent :btnClass="'btnClass3'" :btnName="'청구계정등록'" />
-              <ButtonComponent
-                :btnClass="'btnClass3'"
-                :btnName="'청구계정조회/수정'"
-              />
-              <ButtonComponent :btnClass="'btnClass3'" :btnName="'청구계정변경'" />
-            </div>
-          </div>
-        </div>
-
-        <div class="col-6" > 
-            <div>
-              <form-data-component
-            :FormDataclass="'InfoOfBasic'"
-            :subInfoTitleNm="'기본정보'"
-            />  
-          </div>
-          <div>
-            <FormDataComponent
-            :FormDataclass="'InfoOfShip'"
-            :subInfoTitleNm="'선박정보'"
-            />
-            </div>
-            <div>
-              <FormDataComponent
-              :FormDataclass="'InfoOfOrg'"
-              :subInfoTitleNm="'영업조직정보'"
-              />
-            </div>
-          <div class="feeInfo">
+      <div class="item">
+        <form-data-component
+          :FormDataclass="'InfoOfAccount'"
+          :subInfoTitleNm="'청구계정 정보'"
+          @input="addComp"
+        />
+        <!-- <div style="float: right; display:flex;"> 
+          <ButtonComponent
+            :btnClass="'btnClass3'"
+            :btnName="'수시청구계정등록'"
+          />
+          <ButtonComponent :btnClass="'btnClass3'" :btnName="'청구계정등록'"/>
+          <ButtonComponent
+            :btnClass="'btnClass3'"
+            :btnName="'청구계정조회/수정'"
+          />
+          <ButtonComponent :btnClass="'btnClass3'" :btnName="'청구계정변경'"  :menu="'bill_01_01_01'" @input="addComp"/>
+        </div> -->
+      </div>
+    
+      <div class="item feeInfo">
         <BoxComponent
           :sub-info-title-nm="'요금정보'"
-          :row-data="rowData1"
-          :column-defs="columnDefs1"
+          :row-data="rowData"
+          :column-defs="columnDefs"
           :select-box-show="false"
           :total="'10'"
           :cdGroup="'optionsSearchDiv'"
           :btnName="'엑셀다운'"
-          />
-      </div>
-        </div>
+        />
       </div>
 
     </div>
@@ -249,191 +241,179 @@ export default {
 </script>
 
 <style scoped>
+.container{
+  display:grid;
+  grid-template-columns:700px minmax(850px,1fr);
+  grid-template-rows: 70px 100px 160px 70px 90px 200px inmax(200px,1fr);
+  gap: 10px 30px;
+}
+.item{
+  display: flex;
+  flex-wrap: wrap;
+}
+.item:nth-child(1){
+  grid-column: 1/3;
+  grid-row:1/2;
+}
+.item:nth-child(2){
+  grid-column: 1/3;
+  grid-row:2/3;
+}
+.item:nth-child(3){
+  grid-column: 1/2;
+  grid-row: 3/6;
+}
+.item:nth-child(4){
+  grid-column: 2/2;
+  grid-row:3/4;
+}
+.item:nth-child(5){
+  grid-column: 2/3;
+  grid-row: 4/5;
+}
+.item:nth-child(6){
+  grid-column: 2/3;
+  grid-row: 5/6;
+}
+.item:nth-child(7){
+  grid-column: 1/2;
+  grid-row:6/7;
+}
+.item:nth-child(8){
+  grid-column: 2/4;
+  grid-row:6/7;
+}
+
 
 div.layout {
   
   height: 100vh;
   position: absolute;
   overflow-y: scroll;
+  
 }
 
-div.section0 {
+/* div.section0 {
   display: grid;
   position: relative;
-  /* top: 177px; border: #F00 solid 1px; */
+  top: 177px; border: #F00 solid 1px;
   min-height: calc(100% - 297px);
   padding: 20px 0 143px;
   box-sizing: border-box;
   min-width: 800px;
-}
+} */
 
-div.section0 > div.cusInfo0 {
+/* div.section0 > div.cusInfo0 {
   display: inline-block;
   float: left;
-  margin: 10px;
-  height: auto;
-}
-
-.cusInfo0 table tr > td > label {
-  display: inline-block;
+  margin: 100px;
   
+  background-color: blue;
+  color: red;
+  height: auto;
+} */
+
+/* .cusInfo0 table tr > td > label {
+  display: inline-block;
   font-weight: bold;
+  background-color: blue;
+  color: red;
   padding-left: 10px;
-}
+} */
 
-.cusInfo0 table tr > td > input {
+/* .cusInfo0 table tr > td > input {
   background-color: antiquewhite;
-}
+  
+  background-color: blue;
+  color: red; 
+}*/
 
-div.section0 > div.cusInfo {
+/* div.section0 > div.cusInfo {
   display: inline-block;
   float: left;
   height: auto;
-  
-  margin: 10px;
-}
 
-.cusInfo table tr > td > label {
+  background-color: blue;
+  color: red;
+  margin: 10px;
+} */
+
+/* .cusInfo table tr > td > label {
   display: inline-block;
-  
   padding-left: 30px;
   font-size: 17px;
   font-weight: bold;
-}
+  
+  background-color: blue;
+  color: red;
+} */
 
-.cusInfo table tr > td > input {
-  background-color: #f9f9f9; 
-}
+/* .cusInfo table tr > td > input {
+  background-color: #f9f9f9;
+  
+  background-color: blue;
+  color: red;
+} */
 
 .cmProducts {
   float: left;
   margin:  auto;
   padding: auto;
   position: relative;
-  height: 330px;
-  min-width: 600px;
+  height: 310px;
+  min-width: 700px;
   border: groove;
   overflow: scroll;
 }
-
+/* 
 .ContMemInfo {
   display: inline-block;
   margin: 0 auto auto 5px;
   height: 270px;
-}
+} */
 
-.ContMemInfo table.accountInfo tr > td > label {
-  display: inline-block;
-  background-color: #f9f9f9;
-  border-style: groove;
-  height: 20px;
-  font-size: 12px;
-  font-weight: bold;
-  text-align: center;
-}
-
-.ContMemInfo table.accountInfo tr > td > input {
-  background-color: #f9f9f9;
-  height: 20px;
-  font-size: 12px;
-}
-
-.CommonInfo {
+/* .CommonInfo {
   display: inline-block;
   margin: 0 auto auto 13px;
   height: 180px;
-}
-
-.CommonInfo table tr > td > label {
-  display: inline-block;
-  background-color: #f9f9f9;
-  border-style: groove;
   
-  height: 20px;
-  font-size: 12px;
-  font-weight: bold;
-  text-align: center;
-}
+  background-color: blue;
+  color: red;
+} */
 
-.CommonInfo table tr > td > input {
-  background-color: #f9f9f9;
-
-  height: 20px;
-  font-size: 12px;
-}
-
-.CommonInfo table.selectSearch tr > td > label {
-  display: inline-block;
-  height: 20px;
-  font-weight: bold;
-  font-size: 14px;
-}
-
-.CommonInfo table.selectSearch tr > td > select {
-  display: inline-block;
-  background-color: #f9f9f9;
-  height: 25px;
-  font-weight: bold;
-  font-size: 14px;
-}
-
-.shipInfo {
+/* .shipInfo {
   display: inline-block;
   margin: 0 auto auto 5px;
   height: 80px;
-}
+  
+  background-color: blue;
+  color: red;
+} */
 
-.shipInfo table tr > td > label {
-  display: inline-block;
-  background-color: #f9f9f9;
-  border-style: groove;
-  height: 20px;
-  font-size: 12px;
-  font-weight: bold;
-  text-align: center;
-}
 
-.shipInfo table tr > td > input {
-  background-color: #f9f9f9;
-  height: 20px;
-  font-size: 12px;
-}
-
-.svOrgInfo {
+/* .svOrgInfo {
   display: inline-block;
   margin: 0 auto auto 5px;
   height: 80px;
-}
+  
+  background-color: blue;
+  color: red;
+} */
 
-.svOrgInfo table tr > td > label {
-  display: inline-block;
-  background-color: #f9f9f9;
-  border-style: groove;
-  height: 20px;
-  font-size: 12px;
-  font-weight: bold;
-  text-align: center;
-}
-
-.svOrgInfo table tr > td > input {
-  background-color: #f9f9f9;
-  height: 20px;
-  font-size: 12px;
-}
 
 .feeInfo {
   height: 300px;
 }
 
-* {
+/* * {
   box-sizing: border-box;
-}
+} */
 
-[class*="col-"] {
+/* [class*="col-"] {
   float: left;
   padding: 10px;
-  margin:5px;
-}
+  margin: 5px;
+} */
 
 /* .col-1 {width: 8.33%;}
 .col-2 {width: 16.66%;}

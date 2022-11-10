@@ -1,5 +1,4 @@
 <template>  
-<div>
   <div 
   v-show="FormDataclass=='InfoOfOrg'"
   class="InfoOfOrg">
@@ -121,7 +120,7 @@
 
   
   <div 
-  v-show="FormDataclass=='InfoOfAccount'"
+  v-if="FormDataclass=='InfoOfAccount'"
   class="InfoOfAccount">
     <div>
       <SubInfoTitle
@@ -161,8 +160,20 @@
         </tr>
       </table>
     </div>
+        <div style="float: right;"> 
+          <ButtonComponent
+            :btnClass="'btnClass3'"
+            :btnName="'수시청구계정등록'"
+          />
+          <ButtonComponent :btnClass="'btnClass3'" :btnName="'청구계정등록'"/>
+          <ButtonComponent
+            :btnClass="'btnClass3'"
+            :btnName="'청구계정조회/수정'"
+          />
+          <ButtonComponent :btnClass="'btnClass3'" :btnName="'청구계정변경'"  :menu="'bill_01_01_01'" @input="addComp"/>
+        </div>
   </div>
-</div>
+
 </template>
 
 <script>
@@ -237,6 +248,11 @@ export default {
   props:{
     subInfoTitleNm:String,
     FormDataclass:String,
+  },
+  methods:{
+    addComp(param){
+      this.$emit('input',param);
+    }
   }
 }
 </script>
@@ -271,7 +287,7 @@ export default {
 
 
 .InfoOfShip {
-  width: 100%px;
+  width: 100%;
   margin: 0 auto auto 5px;
   height: 80px;
 }
@@ -325,8 +341,8 @@ export default {
 
 .InfoOfAccount {
   /* display: inline-block; */
-  width: 100%;
-  margin: 0 auto auto 5px;
+  min-width: 100%;
+  /* margin: 0 auto auto 5px; */
 }
 
 
