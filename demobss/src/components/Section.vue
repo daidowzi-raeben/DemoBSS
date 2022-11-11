@@ -161,6 +161,7 @@ export default {
               )
             );
             this.compm2.push(this.component);
+            console.log(this.component);
           } else {
             console.log("10개를 넘었습니다.");
           }

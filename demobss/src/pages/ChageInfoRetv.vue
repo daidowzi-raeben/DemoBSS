@@ -12,9 +12,8 @@
       />
     </div>
     <div class="item">
-      <div>
+      <div style="width: 95%">
         <SubInfoTitle :subInfoTitleNm="'서비스 계약목록'" />
-
         <ButtonComponent :btnClass="'btnclass2'" :btnName="'전체펼치기'" />
         <ButtonComponent :btnClass="'btnclass2'" :btnName="'전체접기'" />
       </div>
@@ -45,13 +44,12 @@
             />
     </div>
     <div class="item" style="margin-top: 50px">
-            <div style="float: left; display: inline-block">
+            <div style="width: 100%">
               <SubInfoTitle :subInfoTitleNm="'서비스계정별 조회'" />(<label
                 style="font-weight: bold"
                 >62</label
-              >건)</div
-            >
-            <div style="float: right; margin: 3px; display: inline-block">
+              >건)
+            <span style="float: right">
             <ButtonComponent :btnClass="'btnclass2'" :btnName="'엑셀다운'" />
             <ButtonComponent :btnClass="'btnclass2'" :btnName="'선박발송'" />
             <ButtonComponent :btnClass="'btnclass2'" :btnName="'선박파일'" />
@@ -71,7 +69,7 @@
                   }
                 "
               />
-            </div>
+            </span>
             <div class="ag_grid_sp">
               <ag-grid-component
                 :rowData="rowData"
@@ -80,6 +78,7 @@
               />
             </div>
           </div>
+    </div>
   </div>
 </template>
 

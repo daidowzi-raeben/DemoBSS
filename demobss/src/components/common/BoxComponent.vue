@@ -1,10 +1,11 @@
 <template>
+  <div style="width: 100%">
   <SubInfoTitle :subInfoTitleNm="subInfoTitleNm"/>
     (<label style="font-weight: bold">{{total}}</label>건)
+    <span style="float: right">
   <ButtonComponent
       :btnClass="'btnclass2'"
       :btnName="btnName"/>
-  <span style="float: right; margin: 3px">
      <select-box-component
          :selectClass="'select_input3'"
          :width="200"
@@ -19,7 +20,8 @@
           }
         "
      />
-  </span>
+      </span>
+  </div>
   <div class="ag-grid_sp">
     <ag-grid-component
         :rowData="this.rowData"

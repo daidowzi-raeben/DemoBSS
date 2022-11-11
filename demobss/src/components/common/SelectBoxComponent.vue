@@ -1,7 +1,7 @@
 <template>
   <select
     :class="selectClass"
-    :style="{ width: width + 'px' }"
+    :style="{ width: width + 'px', float:'right' }"
     v-model="value"
     :input="updateValue(value)"
   >

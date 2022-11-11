@@ -1,6 +1,6 @@
 <template>
 <div>
-  <label class="container" v-for="checkOpt in CheckOptions" :key="checkOpt" >
+  <label class="container" v-for="(checkOpt,index) in CheckOptions" :key="index" >
     <input type="checkbox" :id="checkOpt" :value="checkOpt" v-model="checkedValues">
     {{checkOpt}}
     <span class="checkmark" ></span>
@@ -25,7 +25,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 
 
 /* The container */
