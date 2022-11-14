@@ -70,6 +70,7 @@
                 "
               />
             </span>
+            </div>
             <div class="ag_grid_sp">
               <ag-grid-component
                 :rowData="rowData"
@@ -78,7 +79,6 @@
               />
             </div>
           </div>
-    </div>
   </div>
 </template>
 

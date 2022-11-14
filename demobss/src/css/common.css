@@ -97,7 +97,7 @@ body {
   width: 100vw;
   height: 100vh;
   position: absolute;
-  /* overflow: auto; */
+   overflow: auto;
   /* overflow: scroll; */
 }
 #wrap > header {
@@ -185,13 +185,12 @@ section > div.wrap {
 
 section > div.wrap > .view_wrap {
   /* width: 100%; */
-  /* min-width: 1674px; */
+  max-width: calc(100vw - 100px);
   max-height: calc(100vh - 100px);
   position: relative;
   /* overflow-y: scroll; */
   overflow: auto;
 }
-
 .view_wrap_on {
   max-width: calc(100vw - 246px);
 }

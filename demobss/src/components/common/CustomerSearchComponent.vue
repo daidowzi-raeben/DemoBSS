@@ -6,32 +6,34 @@
   <table>
     <tr>
       <td class="seach_sp">
+        <div style="float: left ">
         <label>고객조회</label>&nbsp;&nbsp;
-        <select-box-component
-            :selectClass="'select_input3'"
-            :width="200"
-            :cdGroup="cdGroup"
-            :defaultValue="'선택'"
-            v-model="searchDiv"
-            @input="
+          <select-box-component
+              :selectClass="'select_input3'"
+              :width="200"
+              :cdGroup="cdGroup"
+              :defaultValue="'선택'"
+              v-model="searchDiv"
+              @input="
           (value) => {
             searchDiv = value;
           }
         "
-        />
-        &nbsp;
-        <input-component
-            :type="'search'"
-            :height="20"
-            :width="150"
-            v-model="searchValue"
-            :placeholder="''"
-            @input="
+          />
+          <input-component
+              :type="'search'"
+              :height="20"
+              :width="150"
+              v-model="searchValue"
+              :placeholder="''"
+              @input="
                 (value) => {
                   searchValue = value;
                 }
               "
-        />
+          />
+
+        </div>
       </td>
       <td class="search_btn">
         <ButtonComponent
@@ -72,7 +74,6 @@ table > tr {
   height: 40px
 }
 .seach_sp{
-  folat: left;
   width: 95%;
   border: solid 2px slategrey;
   padding-left: 10px;
