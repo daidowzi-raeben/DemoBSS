@@ -6,7 +6,7 @@
       <SubInfoTitle
       :subInfoTitleNm='subInfoTitleNm'
       />
-      <table id="selectSearch" >
+      <table id="selectSearch">
         <tr>
           <th> BM </th>
           <td> 
@@ -30,7 +30,6 @@
             <ButtonComponent
             :btnClass="'btnClass3'"
             :btnName="'조회'"
-            style="height:15px;"
 
             />
           </td>
@@ -78,35 +77,31 @@
   v-show="FormDataclass=='InfoOfBasic'"
   class="InfoForm">
     <div>
+      <div>
       <SubInfoTitle
       :subInfoTitleNm='subInfoTitleNm'
       />
-      <table style=" display: inline-block; float: right;">
-        <tr>
-          <td>
-            <SelectBoxComponent
-            :selectClass="'select_input3'"
-            :cdGroup="'optionsSearchDiv'"
-            :defaultValue="'선택'"
-            v-model="searchDiv1"
-            @input=" (value) => { searchDiv1 = value;}"
-            />
-            
-            <InputComponent
-            :type="'text'"
-            :inputClass="'ContMemInfo_inputbox'"
-            v-model="searchValue2"
-            :placeholder="'내용 입력'"
-            @input=" (value) => { searchValue2 = value;}"
-            />
-            <ButtonComponent
-            :btnClass="'btnClass3'"
-            :btnName="'조회 버튼'"
-            style="height:25px;"
+        <div style="float: right;">
+          <SelectBoxComponent
+          :selectClass="'select_input3'"
+          :cdGroup="'optionsSearchDiv'"
+          :defaultValue="'선택'"
+          v-model="searchDiv1"
+          @input=" (value) => { searchDiv1 = value;}"
           />
-          </td>
-        </tr>
-      </table>
+          <InputComponent
+          :type="'text'"
+          :inputClass="'ContMemInfo_inputbox'"
+          v-model="searchValue2"
+          :placeholder="'내용 입력'"
+          @input=" (value) => { searchValue2 = value;}"
+          />
+          <ButtonComponent
+          :btnClass="'btnClass3'"
+          :btnName="'조회'"
+          />
+        </div>
+      </div>
       <table class="formDataTable">
           <tr v-for="item in DataOfBasic" :key="item" >
             <th > {{item.thId}} </th>
@@ -119,40 +114,38 @@
       </table>
     </div>
   </div>
-
-  
   <div 
   v-if="FormDataclass=='InfoOfAccount'"
   class="InfoForm">
     <div>
+      <div>
       <SubInfoTitle
       :subInfoTitleNm='subInfoTitleNm'
       />
-      <table style=" display: inline-block; float: right;">
-        <tr>
-          <td>
-            <SelectBoxComponent
-            :selectClass="'select_input3'"
-            :cdGroup="'optionsSearchDiv'"
-            :defaultValue="'선택'"
-            v-model="searchDiv1"
-            @input=" (value) => { searchDiv1 = value;}"
-            />
-            <InputComponent
-            :type="'text'"
-            :inputClass="'ContMemInfo_inputbox'"
-            v-model="searchValue2"
-            :placeholder="'내용 입력'"
-            @input=" (value) => { searchValue2 = value;}"
-            />
-            <ButtonComponent
-            :btnClass="'btnClass3'"
-            :btnName="'조회 버튼'"
-            style="height:25px;"
+        <div style="display:inline-block;">
+          <SelectBoxComponent
+          :selectClass="'select_input3'"
+          :cdGroup="'optionsSearchDiv'"
+          :defaultValue="'선택'"
+          v-model="searchDiv1"
+          @input=" (value) => { searchDiv1 = value;}"
+          style="width:70px;"
           />
-          </td>
-        </tr>
-      </table>
+          <InputComponent
+          :type="'text'"
+          :inputClass="'ContMemInfo_inputbox'"
+          v-model="searchValue2"
+          :placeholder="'내용 입력'"
+          @input=" (value) => { searchValue2 = value;}"
+          style="width:50px;"
+          />
+          <ButtonComponent
+          :btnClass="'btnClass3'"
+          :btnName="'조회'"
+          />
+        </div>
+      </div>
+
       <table class="formDataTable" id="account">
           <tr v-for="item in DataOfAccount" :key="item" >
             <th > {{item.thId}} </th>
@@ -172,7 +165,8 @@
             :btnClass="'btnClass3'"
             :btnName="'청구계정조회/수정'"
           />
-          <ButtonComponent :btnClass="'btnClass3'" :btnName="'청구계정변경'"  :menu="'bill_01_01_01'" @input="addComp"/>
+          <ButtonComponent :btnClass="'btnClass3'" :btnName="'청구계정변경'"  
+          :menu="'bill_01_01_01'" @input="addComp"/>
         </div>
   </div>
 
@@ -268,26 +262,25 @@ export default {
 #selectSearch{
   float: right;
 }
+
 #selectSearch tr > th {
   display: inline-block;
-  border:2px solid black;
-  width: 80px;
-  margin-top:2px;
-  height: 20px;
+  border: 1px solid black;
+  width: 40px;
+  /* margin-top:2px; */
+  height: 18px;
+  font-size: 10px;
   font-weight: bold;
-  font-size: 14px;
 }
+
 #selectSearch tr > td > select {
   display: inline-block;
   background-color: #f9f9f9;
   width: 150px;
-  height: 25px;
+  height: 20px;
   font-weight: bold;
-  font-size: 14px;
+  font-size: 10px;
 }
-
-
-
 
 .formDataTable {
   border: groove; 
