@@ -61,7 +61,7 @@ export default {
 <style scoped>
  .title_area {
   overflow: hidden;
-   width:98%;
+  width:91%;
   background-color: #ffffff;
   height: 30px;
   margin: 10px 0 5px 0;
@@ -79,16 +79,16 @@ export default {
 }
 
 .title_area h1 {
-  float: left;
   margin-bottom: 20px;
   display: inline-block;
   color: #949494;
 }
- .title_area span {
+
+.title_area span {
   color: #444444;
 }
 
- .title_area > .right {
+.title_area > .right {
   float: right;
   margin: 0 15px;
 }

@@ -82,9 +82,9 @@ table > tr {
 .search_btn {
   background-color: #bdbdce;
   text-align: center;
-  border: solid 2px slategrey;
-  height: 12px;
+  border: solid 1px slategrey;
+  /* height: 12px;
   width: 30px;
-  margin: 100px 0px;
+  margin: 100px 0px; */
 }
 </style>

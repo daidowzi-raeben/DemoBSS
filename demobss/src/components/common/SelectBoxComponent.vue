@@ -51,12 +51,12 @@ export default {
 <style scoped>
 select {
   font-family: 맑은 고딕;
-  font-size: 14px;
+  font-size: 12px;
   color: #343434;
 }
 .select_input {
   border: 1px solid #c1c1c1;
-  font-size: 13px;
+  font-size: 11px;
   height: 36px;
   color: #000000;
   padding: 1px 22px 0 9px;
@@ -81,10 +81,10 @@ select {
 
 .select_input3 {
   width: 120px;
-  height: 25px;
+  height: 20px;
   margin-left: 10px;
   border: 1px solid #c1c1c1;
-  font-size: 13px;
+  font-size: 10px;
   /* height: 36px; */
   /* width: 50px; */
   color: #000000;

@@ -62,9 +62,9 @@ export default {
   background-color: rgba(188, 213, 62, 0.842);
 }
 .btnClass3 {
-  height: 30px;
+  height: 20px;
+  font-size: 10px;
   font-weight: bold;
-  margin-right: 5px;
   cursor: pointer;
 }
 .btnClass3:hover {

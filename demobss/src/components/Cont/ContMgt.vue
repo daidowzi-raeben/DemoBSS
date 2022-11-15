@@ -7,7 +7,6 @@
             :titleShow="false"
             style="height:60px;"
         />
-
       </div>
 
       <div class="item" style="display:block;">
@@ -166,9 +165,9 @@ export default {
 <style scoped>
 .container{
   display:grid;
-  grid-template-columns:500px minmax(850px,1fr);
-  grid-template-rows: 40px 70px 130px 70px 70px 150px minmax(200px,1fr);
-  gap: 5px 10px;
+  grid-template-columns:500px minmax(860px, 1fr) ;
+  grid-template-rows: 40px 70px 130px 50px 60px 150px minmax(200px,1fr);
+  gap: 10px 10px;
 }
 
 .item{
@@ -192,16 +191,19 @@ export default {
 }
 
 .item:nth-child(4){
-  grid-column: 2/2;
+  width: 84%;
+  grid-column: 2/3;
   grid-row:3/4;
 }
 
 .item:nth-child(5){
+  width: 84%;
   grid-column: 2/3;
   grid-row: 4/5;
 }
 
 .item:nth-child(6){
+  width: 84%;
   grid-column: 2/3;
   grid-row: 5/6;
 }
@@ -212,7 +214,8 @@ export default {
 }
 
 .item:nth-child(8){
-  grid-column: 2/4;
+  width: 84%;
+  grid-column: 2/3;
   grid-row:6/7;
 }
 
@@ -227,7 +230,7 @@ div.layout {
   margin:  auto;
   padding: auto;
   position: relative;
-  height: 250px;
+  height: 230px;
   min-width: 500px;
   border: groove;
   overflow: scroll;
