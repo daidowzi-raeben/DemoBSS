@@ -4,7 +4,7 @@
       <div id="ham" @click="openNav">≡</div>
       <div class="brand_name" @click="GoHome">ktds 영업전산시스템</div>
     </div>
-    <div id="menu">
+    <div id="menu" :style=" !this.navOn ? 'width:100%;' : 'width: calc(100% + 97px );'">
       <div class="area">
         <ul>
           <li v-for="(menu, idx) in menuDepth1" :key="idx">
@@ -23,12 +23,15 @@
 
 <script>
 import menu from "../../public/menu.json";
+import {mapState} from 'vuex' 
 export default {
   name: "Header",
   data() {
     return { menuId: "cont_01", menuDepth1: [] };
   },
-  computed: {},
+  computed: {
+    ...mapState(["navOn"]),
+  },
   created() {
     this.menuDepth1 = menu.menu.filter((menu) => {
       return menu.upMenuId == null;

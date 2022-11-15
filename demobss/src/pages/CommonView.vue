@@ -313,7 +313,7 @@
     <span></span>
     <div
       style="
-        width: 80vw;
+        width: 80%;
         margin: 10px;
         padding: 10px;
         height: 300px;
@@ -336,7 +336,7 @@
     <span></span>
     <div
       style="
-        width: 80vw;
+        width: 80%;
         margin: 10px;
         padding: 10px;
         height: 300px;
@@ -351,7 +351,7 @@
     <span></span>
     <div
         style="
-        width: 80vw;
+        width: 80%;
         margin: 10px;
         padding: 10px;
         height: 300px;
@@ -366,7 +366,7 @@
     <span></span>
     <div
         style="
-        width: 80vw;
+        width: 80%;
         margin: 10px;
         padding: 10px;
         height: 300px;
@@ -385,7 +385,7 @@
     <span></span>
     <div
         style="
-        width: 80vw;
+        width: 80%;
         margin: 10px;
         padding: 10px;
         height: 300px;

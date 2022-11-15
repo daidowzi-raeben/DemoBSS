@@ -56,6 +56,8 @@
         <component
           v-bind:is="this.compm2[index]"
           v-show="index === this.cur_num"
+          :style=" navOn ? '' : 'margin-left:5%;' "
+          
         ></component>
       </div>
     </div>
@@ -174,14 +176,14 @@ export default {
 
 <style scoped>
 .menu_tab_line .menu_tab_line_detail {
-  width: 94vw;
+  width: 94%;
   overflow: hidden;
   white-space: nowrap;
   display: flex;
 }
 
 .menu_tab_line .menu_tab_line_detail_on {
-  width: 81vw;
+  width: 84%;
   overflow: hidden;
   white-space: nowrap;
   display: flex;
@@ -233,7 +235,7 @@ div.taboff {
 }
 
 .menu_tab_line .menu_tab_buttons {
-  width: 5vw;
+  width: 5%;
   padding-top: 2px;
   float: right;
   display: flex;
@@ -245,7 +247,7 @@ div.taboff {
   padding: 0 10px;
   font-size: 20px;
   cursor: pointer;
-  width: 5vw;
+  width: 5%;
   display: flex;
 }
 </style>

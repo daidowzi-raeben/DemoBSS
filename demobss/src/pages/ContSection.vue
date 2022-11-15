@@ -14,7 +14,7 @@
             <span id="tab_nm">
               {{ item.menuNm }}
             </span>
-            <span class="tab_x" @click.prevent.stop="DeleteComponent(index)">x</span>
+            <span class="tab_x" @click.prevent.stop="DeleteComponent(index)">X</span>
           </div>
         </div>
       </div>
@@ -125,14 +125,14 @@ export default {
 
 <style scoped>
 .menu_tab_line .menu_tab_line_detail {
-  width: 94vw;
+  width: 94%;
   overflow: hidden;
   white-space: nowrap;
   display: flex;
 }
 
 .menu_tab_line .menu_tab_line_detail_on {
-  width: 81vw;
+  width: 81%;
   overflow: hidden;
   white-space: nowrap;
   display: flex;
@@ -143,6 +143,7 @@ div.tabon {
   background-color: #ffffff;
   border-style: ridge;
   color: #444444;
+  font-weight: bold;
 }
 
 div.taboff {
@@ -154,17 +155,16 @@ div.taboff {
 }
 
 .menu_tab_line {
-  height: 30px;
+  height: 25px;
   display: inline-flex;
   width: 100%;
-  /* overflow-x: scroll; */
 }
 
 .menu_tab {
   float: left;
-  width: 160px;
-  height: 30px;
-  padding: 0 10px;
+  width: 120px;
+  height: inherit;
+  padding: 0px 5px;
   line-height: 30px;
   cursor: pointer;
 }
@@ -172,20 +172,21 @@ div.taboff {
 .menu_tab > span#tab_nm {
   display: block;
   float: left;
-  width: 140px;
+  width: calc(100% - 10px );
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  text-align: center;
 }
 
 .menu_tab > span.tab_x {
   color: #aeaeae;
-  font-size: 20px;
+  font-size: 15px;
   float: right;
 }
 
 .menu_tab_line .menu_tab_buttons {
-  width: 5vw;
+  width: 5%;
   padding-top: 2px;
   float: right;
   display: flex;
@@ -194,10 +195,10 @@ div.taboff {
 .menu_tab_line .menu_button {
   float: right;
   color: #ffffff;
-  padding: 0 10px;
+  /* padding: 0 10px; */
   font-size: 20px;
   cursor: pointer;
-  width: 5vw;
+  width: 5%;
   display: flex;
 }
 </style>
