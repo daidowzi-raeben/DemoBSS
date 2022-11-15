@@ -42,7 +42,7 @@
           />
         </div>
       </div>
-      <title-area :currentMenu="currentMenu" />
+      <title-area :currentMenu="currentMenu" :style=" !this.navOn ? 'margin-left:10%; width:82%;':'' "/>
 
       <div
         v-for="(item, index) in compm2"
@@ -56,7 +56,7 @@
         <component
           v-bind:is="this.compm2[index]"
           v-show="index === this.cur_num"
-          :style=" navOn ? '' : 'margin-left:5%;' "
+          :style=" navOn ? '' : 'margin-left:10%;' "
           
         ></component>
       </div>
