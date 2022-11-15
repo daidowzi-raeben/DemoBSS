@@ -1,12 +1,13 @@
 <template>
   <div class="container">
-    <div class="item">
+    <div class="item" style="display:block;">
       <CustomerSeachComponent
           :cdGroup="'optionsSearchDiv'"
           :title-show="true"
+          
       />
     </div>
-    <div class="item">
+    <div class="item" style="display:block;">
       <CusomerInfoComponent
           :customer-info="customerInfo"
       />

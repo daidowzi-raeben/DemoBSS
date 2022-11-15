@@ -69,7 +69,7 @@ export default {
 
 <style scoped>
 table {
-  width: 100%
+  width: 90%
 }
 table > tr {
   height: 12px

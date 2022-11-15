@@ -10,8 +10,8 @@
 
       </div>
 
-      <div class="item">
-        <CusomerInfoComponent :customer-info="customerInfo"/>
+      <div class="item" style="display:block;">
+        <CusomerInfoComponent :customer-info="customerInfo" />
       </div>
 
       <div class="item ">
@@ -167,7 +167,7 @@ export default {
 .container{
   display:grid;
   grid-template-columns:500px minmax(850px,1fr);
-  grid-template-rows: 40px 75px 130px 70px 70px 150px minmax(200px,1fr);
+  grid-template-rows: 40px 70px 130px 70px 70px 150px minmax(200px,1fr);
   gap: 5px 10px;
 }
 

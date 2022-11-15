@@ -138,7 +138,9 @@ export default {
 
 <style scoped>
 table {
-  width: 100%;
+  /* display: block; */
+  width: 90%;
+  min-width: 1235px;
   border: groove 1px
 }
 td > label {
