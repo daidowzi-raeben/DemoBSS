@@ -1,7 +1,7 @@
 <template>  
   <div 
   v-show="FormDataclass=='InfoOfOrg'"
-  class="InfoOfOrg">
+  class="InfoForm">
     <div>
       <SubInfoTitle
       :subInfoTitleNm='subInfoTitleNm'
@@ -53,7 +53,7 @@
 
 <div 
   v-show="FormDataclass=='InfoOfShip'"
-  class="InfoOfShip">
+  class="InfoForm">
     <div>
       <SubInfoTitle
       :subInfoTitleNm='subInfoTitleNm'
@@ -76,7 +76,7 @@
 
   <div 
   v-show="FormDataclass=='InfoOfBasic'"
-  class="InfoOfBasic">
+  class="InfoForm">
     <div>
       <SubInfoTitle
       :subInfoTitleNm='subInfoTitleNm'
@@ -123,7 +123,7 @@
   
   <div 
   v-if="FormDataclass=='InfoOfAccount'"
-  class="InfoOfAccount">
+  class="InfoForm">
     <div>
       <SubInfoTitle
       :subInfoTitleNm='subInfoTitleNm'
@@ -153,7 +153,7 @@
           </td>
         </tr>
       </table>
-      <table class="formDataTable">
+      <table class="formDataTable" id="account">
           <tr v-for="item in DataOfAccount" :key="item" >
             <th > {{item.thId}} </th>
             <td > <input type="text" :value='item.tdId' disabled /> </td>
@@ -260,60 +260,10 @@ export default {
 </script>
 
 <style>
-.InfoOfOrg {
+.InfoForm {
   width: 100%;
   margin: 0 auto auto 5px;
-  height: 80px;
 }
-.InfoOfOrg .formDataTable {
-  border: groove; 
-  width: 100%;
-}
-.InfoOfOrg .formDataTable tr > th  {
-  background-color: #f9f9f9;
-  border-style: groove;
-  width: 10%;
-  height: 20px;
-  font-size: 12px;
-  font-weight: bold;
-  text-align: center;
-}
-
-.InfoOfOrg .formDataTable tr > td > input {
-  background-color: #f9f9f9;
-  width: 90%;
-  height: 20px;
-  font-size: 12px;
-}
-
-
-
-.InfoOfShip {
-  width: 100%;
-  margin: 0 auto auto 5px;
-  height: 80px;
-}
-.InfoOfShip .formDataTable {
-  border: groove; 
-  width: 100%;
-}
-.InfoOfShip .formDataTable tr > th  {
-  background-color: #f9f9f9;
-  border-style: groove;
-  width: 80px;
-  height: 20px;
-  font-size: 12px;
-  font-weight: bold;
-  text-align: center;
-}
-
-.InfoOfShip .formDataTable tr > td > input {
-  background-color: #f9f9f9;
-  width: 200px;
-  height: 20px;
-  font-size: 12px;
-}
-
 
 #selectSearch{
   float: right;
@@ -327,7 +277,6 @@ export default {
   font-weight: bold;
   font-size: 14px;
 }
-
 #selectSearch tr > td > select {
   display: inline-block;
   background-color: #f9f9f9;
@@ -339,52 +288,13 @@ export default {
 
 
 
-/* Account */
 
-.InfoOfAccount {
-  /* display: inline-block; */
-  min-width: 100%;
-  /* margin: 0 auto auto 5px; */
-}
-
-
-.InfoOfAccount .formDataTable {
+.formDataTable {
   border: groove; 
   width: 100%;
 }
 
-.InfoOfAccount .formDataTable tr > th  {
-  /* display: inline-block; */
-  background-color: #f9f9f9;
-  border-style: groove;
-  width: 12%;
-  height: 20px;
-  font-size: 12px;
-  font-weight: bold;
-  text-align: center;
-}
-.InfoOfAccount .formDataTable tr > td > input {
-  background-color: #f9f9f9;
-  width: 97%;
-  height: 20px;
-  font-size: 15px;
-}
-
-
-.InfoOfBasic {
-  /* display: inline-block; */
-  width: 100%;
-  margin: 0 auto auto 5px;
-}
-
-
-.InfoOfBasic .formDataTable {
-  border: groove; 
-  width: 100%;
-}
-
-.InfoOfBasic .formDataTable tr > th  {
-  /* display: inline-block; */
+.formDataTable tr > th  {
   background-color: #f9f9f9;
   border-style: groove;
   width: 10%;
@@ -393,12 +303,17 @@ export default {
   font-weight: bold;
   text-align: center;
 }
-.InfoOfBasic .formDataTable tr > td > input {
+
+.InfoForm > div > #account > tr > th {
+  width: 15%;
+}
+.formDataTable tr > td > input {
   background-color: #f9f9f9;
   width: 95%;
-  height: 10px;
+  height: 15px;
   font-size: 10px;
 }
+
 
 /*  */
   
