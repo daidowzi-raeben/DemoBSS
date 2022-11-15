@@ -159,6 +159,7 @@
           <ButtonComponent
             :btnClass="'btnClass3'"
             :btnName="'수시청구계정등록'"
+            @click="modalShow"
           />
           <ButtonComponent :btnClass="'btnClass3'" :btnName="'청구계정등록'"/>
           <ButtonComponent
@@ -248,6 +249,9 @@ export default {
   methods:{
     addComp(param){
       this.$emit('input',param);
+    },
+    modalShow(){
+      this.$emit('modalShow',true);
     }
   }
 }

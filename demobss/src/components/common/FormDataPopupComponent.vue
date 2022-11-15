@@ -131,25 +131,25 @@ export default {
   },
   computed: {
   },
-  beforeMount(){
-    // await this.axios.get('/submit.json').then((response) => {
-    //     this.OutputFormData = response.data.OutputFormData
-    //   })
-    // await this.axios.get('/submit.json').then((response) => {
-    //     this.SubmitFormData = response.data.SubmitFormData
-    //   })
-  },
-  methods: {
-    async GetOutputFormData(){
-      await this.axios.get('/submit.json').then((response) => {
+  async beforeMount(){
+    await this.axios.get('/submit.json').then((response) => {
         this.OutputFormData = response.data.OutputFormData
       })
-    },
-    async GetSubmitFormData(){
-      await this.axios.get('/submit.json').then((response) => {
+    await this.axios.get('/submit.json').then((response) => {
         this.SubmitFormData = response.data.SubmitFormData
       })
-    }
+  },
+  methods: {
+    // async GetOutputFormData(){
+    //   await this.axios.get('/submit.json').then((response) => {
+    //     this.OutputFormData = response.data.OutputFormData
+    //   })
+    // },
+    // async GetSubmitFormData(){
+    //   await this.axios.get('/submit.json').then((response) => {
+    //     this.SubmitFormData = response.data.SubmitFormData
+    //   })
+    // }
   },
 };
 </script>

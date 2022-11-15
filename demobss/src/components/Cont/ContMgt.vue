@@ -43,8 +43,18 @@
           :FormDataclass="'InfoOfAccount'"
           :subInfoTitleNm="'청구계정 정보'"
           @input="addComp"
+          @modalShow="FormPopup"
         />
       </div>
+
+      <FormDataPopupComponent
+      ref="form-data-popup-component"
+      v-if="isFormModalShow"
+      @FormPopup="isFormModalShow = false"
+      @AGREE = "''"
+      :popupmsg="' '"
+      :reqtype="'2'"
+    />
 
       <div class="item feeInfo">
         <BoxComponent
@@ -72,6 +82,7 @@ import BoxComponent from "@/components/common/BoxComponent";
 import TreeGridComponent from "@/components/common/TreeGridComponent";
 import FormDataComponent from "@/components/common/FormDataComponent.vue";
 import ApiMixin from "@/service/common";
+import FormDataPopupComponent from "@/components/common/FormDataPopupComponent.vue";
 
 export default {
   mixins:[ApiMixin],
@@ -86,6 +97,7 @@ export default {
     SelectBoxComponent,
     SubInfoTitle,
     FormDataComponent,
+    FormDataPopupComponent,
   },
   data() {
     return {
@@ -146,6 +158,7 @@ export default {
       customerInfo : [],
       columnDefs: [],
       rowData: [],
+      isFormModalShow:false,
     };
   },
   async beforeMount() {
@@ -157,7 +170,13 @@ export default {
   methods:{
     addComp(param){
       this.$emit('input',param);
-    }
+    },
+    
+    FormPopup(){
+      if (this.isFormModalShow == false) this.isFormModalShow = true
+      else this.isFormModalShow = false
+      this.$refs.form-data-popup-component.GetSubmitFormData()
+    },
   }
 };
 </script>
