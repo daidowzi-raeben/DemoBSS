@@ -8,8 +8,8 @@
         <label>고객ID</label>
         <input-component
             :type="'text'"
-            :height="15"
-            :width="150"
+            :height='inputComponentHeight'
+            :width='inputComponentWidth'
             :input-class="'class1'"
             :placeholder="customerInfo.customerId"
             disabled="true"
@@ -19,8 +19,8 @@
         <label>고객명</label>
         <input-component
             :type="'text'"
-            :height="15"
-            :width="150"
+            :height="inputComponentHeight"
+            :width='inputComponentWidth'
             :input-class="'class1'"
             :placeholder="customerInfo.customerName"
             disabled="true"
@@ -30,8 +30,8 @@
         <label>고객유형</label>
         <input-component
             :type="'text'"
-            :height="15"
-            :width="150"
+            :height="inputComponentHeight"
+            :width='inputComponentWidth'
             :input-class="'class1'"
             :placeholder="customerInfo.customerType"
             disabled="true"
@@ -40,8 +40,8 @@
       <td><label>국가</label>
         <input-component
             :type="'text'"
-            :height="15"
-            :width="150"
+            :height="inputComponentHeight"
+            :width='inputComponentWidth'
             :input-class="'class1'"
             :placeholder="customerInfo.country"
             disabled="true"
@@ -51,8 +51,8 @@
         <label style="width: 130px">사업자등록번호</label>
         <input-component
             :type="'text'"
-            :height="15"
-            :width="150"
+            :height="inputComponentHeight"
+            :width='inputComponentWidth'
             :input-class="'class1'"
             :placeholder="customerInfo.businessNumber"
             disabled="true"
@@ -64,8 +64,8 @@
         <label>고객구분</label>
         <input-component
             :type="'text'"
-            :height="15"
-            :width="150"
+            :height="inputComponentHeight"
+            :width='inputComponentWidth'
             :input-class="'class1'"
             :placeholder="customerInfo.customerType"
             disabled="true"
@@ -75,8 +75,8 @@
         <label>전화번호</label>
         <input-component
             :type="'text'"
-            :height="15"
-            :width="150"
+            :height="inputComponentHeight"
+            :width='inputComponentWidth'
             :input-class="'class1'"
             :placeholder="customerInfo.phoneNumber"
             disabled="true"
@@ -86,8 +86,8 @@
         <label>내외구분</label>
         <input-component
             :type="'text'"
-            :height="15"
-            :width="150"
+            :height="inputComponentHeight"
+            :width='inputComponentWidth'
             :input-class="'class1'"
             :placeholder="''"
             disabled="true"
@@ -97,7 +97,7 @@
         <label>주소</label>
         <input-component
             :type="'text'"
-            :height="15"
+            :height="inputComponentHeight"
             :width="50"
             :input-class="'class1'"
             :placeholder="''"
@@ -105,7 +105,7 @@
         />&nbsp;
         <input-component
           :type="'text'"
-          :height="15"
+          :height="inputComponentHeight"
           :input-class="'class1'"
           :width="200"
           :placeholder="''"
@@ -124,6 +124,8 @@ export default {
   components :{inputComponent, SubInfoTitle},
   data(){
     return{
+      inputComponentHeight:12,
+      inputComponentWidth: 120,
 
     }
   },

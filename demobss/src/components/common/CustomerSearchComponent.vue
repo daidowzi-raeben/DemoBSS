@@ -19,14 +19,15 @@
             searchDiv = value;
           }
         "
-          />
-          <input-component
-              :type="'search'"
-              :height="20"
-              :width="150"
-              v-model="searchValue"
-              :placeholder="''"
-              @input="
+        />
+        &nbsp;
+        <input-component
+            :type="'search'"
+            :height="15"
+            :width="150"
+            v-model="searchValue"
+            :placeholder="''"
+            @input="
                 (value) => {
                   searchValue = value;
                 }
@@ -71,7 +72,7 @@ table {
   width: 100%
 }
 table > tr {
-  height: 40px
+  height: 12px
 }
 .seach_sp{
   width: 95%;
@@ -82,7 +83,7 @@ table > tr {
   background-color: #bdbdce;
   text-align: center;
   border: solid 2px slategrey;
-  height: 40px;
+  height: 12px;
   width: 30px;
   margin: 100px 0px;
 }

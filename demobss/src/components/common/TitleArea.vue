@@ -64,18 +64,18 @@ export default {
    width:98%;
   background-color: #ffffff;
   height: 30px;
-  margin: 20px 0 10px 0;
-  font-size: 20px;
+  margin: 10px 0 5px 0;
+  font-size: 15px;
   padding: 0 10px;
 }
 
 .title_area > .icon {
   float: left;
-  width: 20px;
-  height: 20px;
+  width: 15px;
+  height: 15px;
   background-color: #707070;
   border-radius: 30px;
-  margin: 5px;
+  margin: 3px;
 }
 
 .title_area h1 {

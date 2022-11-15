@@ -38,7 +38,7 @@ export default {
 <style scoped>
 input {
   font-family: 맑은 고딕;
-  font-size: 14px;
+  font-size: 11px;
   color: #343434;
 }
 .class1 {
