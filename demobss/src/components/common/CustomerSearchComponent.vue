@@ -22,7 +22,7 @@
         &nbsp;
         <input-component
             :type="'search'"
-            :height="20"
+            :height="15"
             :width="150"
             v-model="searchValue"
             :placeholder="''"
@@ -69,10 +69,10 @@ table {
   width: 100%
 }
 table > tr {
-  height: 40px
+  height: 12px
 }
 .seach_sp{
-  folat: left;
+  /* folat: left; */
   width: 95%;
   border: solid 2px slategrey;
   padding-left: 10px;
@@ -81,7 +81,7 @@ table > tr {
   background-color: #bdbdce;
   text-align: center;
   border: solid 2px slategrey;
-  height: 40px;
+  height: 12px;
   width: 30px;
   margin: 100px 0px;
 }

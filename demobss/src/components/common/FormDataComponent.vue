@@ -30,6 +30,8 @@
             <ButtonComponent
             :btnClass="'btnClass3'"
             :btnName="'조회'"
+            style="height:15px;"
+
             />
           </td>
         </tr>
@@ -386,19 +388,19 @@ export default {
   background-color: #f9f9f9;
   border-style: groove;
   width: 10%;
-  height: 20px;
-  font-size: 12px;
+  font-size: 10px;
+  height: 10px;
   font-weight: bold;
   text-align: center;
 }
 .InfoOfBasic .formDataTable tr > td > input {
   background-color: #f9f9f9;
   width: 95%;
-  height: 20px;
-  font-size: 12px;
+  height: 10px;
+  font-size: 10px;
 }
 
 /*  */
-
+  
 
 </style>

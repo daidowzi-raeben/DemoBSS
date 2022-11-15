@@ -5,6 +5,7 @@
         <CustomerSearchComponent
             :cdGroup="'optionsSearchDiv'"
             :titleShow="false"
+            style="height:60px;"
         />
 
       </div>
@@ -165,9 +166,9 @@ export default {
 <style scoped>
 .container{
   display:grid;
-  grid-template-columns:700px minmax(850px,1fr);
-  grid-template-rows: 70px 100px 160px 70px 90px 200px inmax(200px,1fr);
-  gap: 10px 30px;
+  grid-template-columns:500px minmax(850px,1fr);
+  grid-template-rows: 40px 75px 130px 70px 70px 150px minmax(200px,1fr);
+  gap: 5px 10px;
 }
 
 .item{
@@ -226,8 +227,8 @@ div.layout {
   margin:  auto;
   padding: auto;
   position: relative;
-  height: 310px;
-  min-width: 700px;
+  height: 250px;
+  min-width: 500px;
   border: groove;
   overflow: scroll;
 }
