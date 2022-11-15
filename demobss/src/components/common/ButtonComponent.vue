@@ -50,12 +50,12 @@ export default {
 }
 .btnclass2 {
   float: right;
-  padding: 4px;
+  padding: 2px;
   font-size: 10px;
   border: solid thin;
   font-weight: bold;
   cursor: pointer;
-  margin: 3px 3px 0px 3px;
+  margin: 0px 0px 0px 3px;
   background-color: rgb(255, 255, 255);
 }
 .btnclass2:hover {

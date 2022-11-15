@@ -1,7 +1,7 @@
 <template>
-  <SubInfoTitle
+  <!-- <SubInfoTitle
       :subInfoTitleNm="'고객정보'"
-  />
+  /> -->
   <table>
     <tr>
       <td>

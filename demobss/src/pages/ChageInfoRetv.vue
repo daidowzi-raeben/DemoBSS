@@ -2,22 +2,23 @@
   <div class="container">
     <div class="item" style="display:block;">
       <CustomerSeachComponent
-          :cdGroup="'optionsSearchDiv'"
-          :title-show="true"
-          
-      />
+        :cdGroup="'optionsSearchDiv'"
+        :title-show="true"
+        />
     </div>
     <div class="item" style="display:block;">
       <CusomerInfoComponent
-          :customer-info="customerInfo"
+      :customer-info="customerInfo"
       />
     </div>
     <div class="item">
-      <div style="width: 95%">
+      <div style="width:100%">
         <SubInfoTitle :subInfoTitleNm="'서비스 계약목록'" />
+        <div style="float:right" >
+
         <ButtonComponent :btnClass="'btnclass2'" :btnName="'전체펼치기'" />
         <ButtonComponent :btnClass="'btnclass2'" :btnName="'전체접기'" />
-      </div>
+      </div></div>
       <div class="tree_sp">
         <TreeGridComponent :tableData="tableData" :columns="columns" />
       </div>
@@ -33,33 +34,33 @@
             :btnName="'엑셀다운'"
           />
     </div>
-    <div class="item" style="margin-top: 50px">
+    <div class="item">
       <BoxComponent
               :sub-info-title-nm="'요금항목별 조회'"
-              :rowData="rowData"
-              :columnDefs="columnDefs"
+              :rowData="rowData2"
+              :columnDefs="columnDefs2"
               :select-box-show="false"
               :total="'10'"
               :cdGroup="'optionsSearchDiv'"
               :btnName="'엑셀다운'"
             />
     </div>
-    <div class="item" style="margin-top: 50px">
+    <div class="item" style=" display:block;">
             <div style="width: 100%">
               <SubInfoTitle :subInfoTitleNm="'서비스계정별 조회'" />(<label
                 style="font-weight: bold"
                 >62</label
               >건)
             <span style="float: right">
-            <ButtonComponent :btnClass="'btnclass2'" :btnName="'엑셀다운'" />
-            <ButtonComponent :btnClass="'btnclass2'" :btnName="'선박발송'" />
-            <ButtonComponent :btnClass="'btnclass2'" :btnName="'선박파일'" />
+            <ButtonComponent style="width:50px; " :btnClass="'btnclass2'" :btnName="'엑셀다운'" />
+            <ButtonComponent style="width:50px; " :btnClass="'btnclass2'" :btnName="'선박발송'" />
+            <!-- <ButtonComponent style="width:50px; " :btnClass="'btnclass2'" :btnName="'선박파일'" /> -->
             <ButtonComponent :btnClass="'btnclass2'" :btnName="'선박별 상세'" />
             <ButtonComponent :btnClass="'btnclass2'" :btnName="'선박별 요약'" />
 
               <select-box-component
                 :selectClass="'select_input3'"
-                :width="200"
+                :width="150"
                 :cdGroup="'optionsSearchDiv'"
                 :defaultValue="'선택'"
                 :defaultNum="3"
@@ -265,6 +266,8 @@ export default {
       customerInfo : [],
       columnDefs: null,
       rowData:null,
+      columnDefs2: null,
+      rowData2:null,
     };
   },
   async beforeMount() {
@@ -275,6 +278,10 @@ export default {
     this.customerInfo = res.info[0];
     this.columnDefs =res.columnDefs;
     this.rowData = res.rowData;
+    this.columnDefs2 =res.columnDefs2;
+    this.rowData2 = res.rowData2;   
+    
+    console.log(res.columnDefs,'\n',res.columnDefs2)
 
   },
 };
@@ -283,8 +290,8 @@ export default {
 <style scoped>
 .container{
   display:grid;
-  grid-template-columns:450px 500px minmax(650px,1fr);
-  grid-template-rows: 70px 100px 300px 400px;
+  grid-template-columns:300px 300px minmax(750px,1fr);
+  grid-template-rows: 80px 60px 300px 400px;
   gap: 10px 10px;
 }
 .item{
@@ -300,18 +307,22 @@ export default {
   grid-row:2/3;
 }
 .item:nth-child(3){
+  width: 95%;
   grid-column: 1/2;
   grid-row:3/5;
 }
 .item:nth-child(4){
+  width: 88%;
   grid-column: 2/4;
   grid-row:3/4;
+  margin-bottom: 30px;
 }
 .item:nth-child(5){
   grid-column: 2/3;
   grid-row:4/5;
 }
 .item:nth-child(6){
+  width: 81%;
   grid-column: 3/4;
   grid-row:4/5;
 }
@@ -328,7 +339,6 @@ div.section0 {
 
 div.cusInfo {
   display: inline-block;
-  float: left;
   width: 100%;
   margin: 10px;
   height: 120px;
@@ -336,7 +346,6 @@ div.cusInfo {
 
 div.contList {
   display: inline-block;
-  float: left;
   width: 18%;
   margin: 10px;
   padding-bottom: 10px;
@@ -347,7 +356,6 @@ div.contList {
 .clList {
   display: inline-block;
   width: 79%;
-  float: left;
   margin: 10px;
   padding-bottom: 25px;
   padding-top: 20px;
@@ -361,7 +369,7 @@ div.contList {
   border-top-color: #2dbdb6;
 }
 .tree_sp {
-  margin: 10px;
+  /* margin: 10px; */
   width: 100%;
   height: 100%;
   border: groove;
@@ -370,7 +378,6 @@ div.contList {
 
 .feeSear {
   display: inline-block;
-  float: left;
   width: 30%;
   height: 225px;
   margin: 10px;
@@ -378,7 +385,6 @@ div.contList {
 
 .sevSear {
   display: inline-block;
-  float: right;
   margin: 10px;
   width: 47%;
   height: 225px;

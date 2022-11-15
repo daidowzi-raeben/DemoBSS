@@ -1,6 +1,6 @@
 <template>
   <SubInfoTitle
-      :subInfoTitleNm="'고객조회'"
+      :subInfoTitleNm="'고객정보'"
       v-show="titleShow"
   />
   <table>

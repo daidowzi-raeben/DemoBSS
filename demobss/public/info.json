@@ -17,7 +17,7 @@
       "field": "model0"
     },
     { "headerName": "요금항목명", "field": "model1" },
-    { "headerName": "요금항목구분명", "field": "model2" },
+    { "headerName": "요금항목구분", "field": "model2" },
     { "headerName": "협정금액", "field": "model3" },
     { "headerName": "협정할인금액", "field": "model4" },
     { "headerName": "협정청구금액", "field": "model5" },
@@ -114,6 +114,44 @@
       "model5": "66665222",
       "StartDate": "2022-10-19",
       "EndDate": "2025-09-31"
+    }
+  ],
+  "columnDefs2": [
+    {"headerName": "결제통화", "field": "model0" },
+    { "headerName": "청구금액", "field": "model5" },
+    { "headerName": "유효시작일", "field": "StartDate" },
+    { "headerName": "유효종료일", "field": "EndDate" }
+  ],
+  "rowData2": [
+    {
+      "model0": "USD",
+      "model5": "132,000,000",
+      "StartDate": "2021-10-19",
+      "EndDate": "2023-12-31"
+    },
+    {
+      "model0": "KRW",
+      "model5": "220,000,000",
+      "StartDate": "2022-05-31",
+      "EndDate": "2024-07-31"
+    },
+    {
+      "model0": "USD",
+      "model5": "66665222",
+      "StartDate": "2022-10-19",
+      "EndDate": "2025-09-31"
+    },
+    {
+      "model0": "KRW",
+      "model5": "132,000,000",
+      "StartDate": "2021-10-19",
+      "EndDate": "2023-12-31"
+    },
+    {
+      "model0": "USD",
+      "model5": "220,000,000",
+      "StartDate": "2022-05-31",
+      "EndDate": "2024-07-31"
     }
   ]
 }
