@@ -1,11 +1,15 @@
 <template>
 <div>
-  <label class="container" v-for="(checkOpt,index) in CheckOptions" :key="index" >
-    <input type="checkbox" :id="checkOpt" :value="checkOpt" v-model="checkedValues">
-    {{checkOpt}}
+  <label class="container" 
+  v-for="(checkOpt,index) in CheckOptions" :key="index" >
+    <input type="checkbox" 
+    :id="checkOpt" 
+    :value="checkOpt" 
+    v-model="checkedValues">
+      {{checkOpt}}
     <span class="checkmark" ></span>
   </label>
-  <p style="font-size:20px;" v-show="checkedValues.length>0">선택 값 : {{checkedValues}}</p>
+  <p style="font-size:20px;" v-show="showCheckOpt && checkedValues.length>0">선택 값 :aa {{checkedValues}}</p>
 </div>
 </template>
 
@@ -15,11 +19,24 @@ export default {
     CheckOptions: {
       type:Array,
       default: ["default옵션","옵션6","옵션7","옵션8","옵션9","옵션10"]
-      }
+      },
+    showCheckOpt:{      // 체크 목록 출력 여부
+      type:Boolean,
+      default:true
+    },
+    checkTextSize: {
+      type:String,
+      default:'10pt'
+    },
+    checkBoxSize:{
+      type:String,
+      default:'50px'
+    }
   },
   data(){
     return{
       checkedValues:[],
+      
     }
   },
 }
@@ -35,7 +52,7 @@ export default {
   padding-left: 35px;
   margin-bottom: 12px;
   cursor: pointer;
-  font-size: 22px;
+  font-size: v-bind('checkTextSize');
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -56,8 +73,8 @@ export default {
   position: absolute;
   top: 0;
   left: 0;
-  height: 25px;
-  width: 25px;
+  height: v-bind('checkboxSize');
+  width: v-bind('checkboxSize');
   background-color: #eee;
 }
 
@@ -85,10 +102,10 @@ export default {
 
 /* Style the checkmark/indicator */
 .container .checkmark:after {
-  left: 9px;
-  top: 5px;
+  left: 6px;
+  top: 1px;
   width: 5px;
-  height: 10px;
+  height: 13px;
   border: solid white;
   border-width: 0 3px 3px 0;
   -webkit-transform: rotate(45deg);
