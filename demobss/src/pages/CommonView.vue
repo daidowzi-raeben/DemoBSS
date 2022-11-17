@@ -104,6 +104,9 @@
       </div>
     </div>
 
+
+
+
     <h1 style="font-size: 30px">paging</h1>
     <div class="commondiv0">
       page size 10 페이징 데이터 {{ pageableData1 }} 현재페이지 : {{ page1 }}
@@ -211,10 +214,9 @@
       :reqtype="'2'"
     />
     <button @click="FormPopup2">입력 PopUp </button>
-
     </div>
-
     <br /><br />
+    
     <h1 style="font-size: 30px">InputComponent</h1>
     <span></span>
     <div class="commondiv1" >
@@ -254,6 +256,17 @@
     <RangeComponent />
     </div>
     <br /><br /><br />
+
+  
+    <h1 style="font-size: 30px">linkComponent</h1>
+    <div class="commondiv1" >
+    <linkComponent 
+    :destination="'/'"
+    :linkName="'링크 컴포넌트(mounse over)'"  />
+    </div>
+    <br /><br /><br />
+
+
 
     <h1 style="font-size: 30px">CheckBoxComponent</h1>
     <div class="commondiv1" >
@@ -433,6 +446,8 @@ import ValidateExampleComponent from "@/components/common/ValidateExampleCompone
 import FloatingLabelsComponent from "@/components/common/FloatingLabelsComponent";
 import FloatingLabelsComponent_2 from "@/components/common/FloatingLabelsComponent_2";
 import ToastComponent from "@/components/common/ToastComponent";
+import linkComponent from '@/components/common/linkComponent.vue';
+
 export default {
   name: "CommonView",
   components: {
@@ -459,6 +474,7 @@ export default {
     RangeComponent,
     CheckBoxComponent,
     RadioComponent,
+    linkComponent,
   },
   data() {
     return {
