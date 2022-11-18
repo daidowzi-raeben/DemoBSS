@@ -80,6 +80,20 @@
             "
           />
         </div>
+        <div style="display: flex">
+          <span style="padding: 5px 10px">일력시분</span>
+          <date-picker-component
+              :classWrapper="'calender_input'"
+              :width="150"
+              :time-show=true
+              :pDate="date2"
+              @input="
+              (value) => {
+                date2 = value;
+              }
+            "
+          />
+        </div>
       </div>
       <div style="width: 420px; height: 50px">
         {{ date1 }} <br />{{ date2 }}

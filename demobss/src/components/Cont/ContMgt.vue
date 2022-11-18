@@ -47,15 +47,6 @@
         />
       </div>
 
-      <FormDataPopupComponent
-      ref="form-data-popup-component"
-      v-if="isFormModalShow"
-      @FormPopup="isFormModalShow = false"
-      @AGREE = "''"
-      :popupmsg="' '"
-      :reqtype="'2'"
-    />
-
       <div class="item feeInfo">
         <BoxComponent
           :sub-info-title-nm="'요금정보'"
@@ -67,6 +58,16 @@
           :btnName="'엑셀다운'"
         />
       </div>
+      
+      <FormDataPopupComponent
+      ref="form-data-popup-component"
+      v-if="isFormModalShow"
+      @FormPopup="isFormModalShow = false"
+      @AGREE = "''"
+      :popupmsg="' '"
+      :reqtype="'2'"
+    />
+
     </div>
   </div>
 </template>
