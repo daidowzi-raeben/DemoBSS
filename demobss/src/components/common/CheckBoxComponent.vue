@@ -9,7 +9,7 @@
       {{checkOpt}}
     <span class="checkmark" ></span>
   </label>
-  <p style="font-size:20px;" v-show="showCheckOpt && checkedValues.length>0">선택 값 :aa {{checkedValues}}</p>
+  <p v-show="showCheckOpt && checkedValues.length>0">선택 값 : {{checkedValues}}</p>
 </div>
 </template>
 
@@ -26,11 +26,11 @@ export default {
     },
     checkTextSize: {
       type:String,
-      default:'10pt'
+      default:'20pt'
     },
     checkBoxSize:{
       type:String,
-      default:'50px'
+      default:'30px'
     }
   },
   data(){
@@ -102,10 +102,9 @@ export default {
 
 /* Style the checkmark/indicator */
 .container .checkmark:after {
-  left: 6px;
-  top: 1px;
-  width: 5px;
-  height: 13px;
+  left: 28%;
+  width: 30%;
+  height: 70%;
   border: solid white;
   border-width: 0 3px 3px 0;
   -webkit-transform: rotate(45deg);
@@ -113,4 +112,7 @@ export default {
   transform: rotate(45deg);
 }
 
+div > p {
+  font-size:20px;
+}
 </style>

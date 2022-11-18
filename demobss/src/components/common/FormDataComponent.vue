@@ -93,6 +93,7 @@
           :type="'text'"
           :inputClass="'ContMemInfo_inputbox'"
           v-model="searchValue2"
+          :style="{height:'15px'}"
           :placeholder="'내용 입력'"
           @input=" (value) => { searchValue2 = value;}"
           />
@@ -134,6 +135,7 @@
           <InputComponent
           :type="'text'"
           :inputClass="'ContMemInfo_inputbox'"
+          :style="{ width: width + 'px', height: '15px' }"
           v-model="searchValue2"
           :placeholder="'내용 입력'"
           @input=" (value) => { searchValue2 = value;}"

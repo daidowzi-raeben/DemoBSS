@@ -21,6 +21,15 @@ export default {
     btnClass: null,
     btnName: String,
     menu : null,
+    btnwWidth: {
+      type:String,
+      default:'35px'
+      },
+
+    btnHeight: {
+      type:String,
+      default:'20px'
+      },
   },
   created(){
     this.comp = menu.menu.filter((menu)=>{
@@ -62,7 +71,7 @@ export default {
   background-color: rgba(188, 213, 62, 0.842);
 }
 .btnClass3 {
-  height: 20px;
+  height: v-bind('btnHeight');
   font-size: 10px;
   font-weight: bold;
   cursor: pointer;
@@ -91,8 +100,8 @@ export default {
   border: none;
   cursor: pointer;
   background-position: top 10px;
-  width: 25px;
-  height: 25px;
+  width: v-bind('btnWidth');
+  height: v-bind('btnHeight');
   display: flex;
   content: url(../../img/icon_form_left.png);
 }
@@ -101,8 +110,8 @@ export default {
   background-color: transparent;
   border: none;
   cursor: pointer;
-  width: 25px;
-  height: 25px;
+  width: v-bind('btnWidth');
+  height: v-bind('btnHeight');
   display: flex;
   content: url(../../img/icon_form_right.png);
 }
@@ -110,8 +119,8 @@ export default {
   background-color: transparent;
   border: none;
   cursor: pointer;
-  width: 35px;
-  height: 25px;
+  width: v-bind('btnWidth');
+  height: v-bind('btnHeight');
   display: flex;
   content: url(../../img/icon_delete.png);
 }

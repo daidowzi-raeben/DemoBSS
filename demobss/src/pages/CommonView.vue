@@ -85,8 +85,6 @@
           <date-picker-component
               :classWrapper="'calender_input'"
               :width="150"
-              :type="'month'"
-              :dateFormat="'yyyy-MM'"
               :time-show=true
               :pDate="date2"
               @input="
