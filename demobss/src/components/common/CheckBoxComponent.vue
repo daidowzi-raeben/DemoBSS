@@ -49,7 +49,7 @@ export default {
 .container {
   display: block;
   position: relative;
-  padding-left: 35px;
+  padding-left: v-bind('checkBoxSize');
   margin-bottom: 12px;
   cursor: pointer;
   font-size: v-bind('checkTextSize');
@@ -73,8 +73,8 @@ export default {
   position: absolute;
   top: 0;
   left: 0;
-  height: v-bind('checkboxSize');
-  width: v-bind('checkboxSize');
+  height: v-bind('checkBoxSize');
+  width: v-bind('checkBoxSize');
   background-color: #eee;
 }
 

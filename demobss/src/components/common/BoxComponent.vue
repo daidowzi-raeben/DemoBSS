@@ -6,20 +6,20 @@
   <ButtonComponent
       :btnClass="'btnclass2'"
       :btnName="btnName"/>
-     <select-box-component
-         :selectClass="'select_input3'"
-         :width="200"
-         :cdGroup="cdGroup"
-         :defaultValue="'선택'"
-         :defaultNum="3"
-         v-model="month"
-         v-show="selectBoxShow"
-         @input="
+    <select-box-component
+        :selectClass="'select_input3'"
+        :width="200"
+        :cdGroup="cdGroup"
+        :defaultValue="'선택'"
+        :defaultNum="3"
+        v-model="month"
+        v-show="selectBoxShow"
+        @input="
           (value) => {
             month = value;
           }
         "
-     />
+    />
       </span>
   </div>
   <div class="ag-grid_sp">
