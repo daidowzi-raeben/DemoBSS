@@ -162,10 +162,13 @@ export default {
     };
   },
   async beforeMount() {
-    const res = await this.$connect('application/json','/info.json','get','');
-    this.customerInfo = res.info[0];
-    this.columnDefs =res.columnDefs;
-    this.rowData = res.rowData;
+    await this.$connect('application/json','/info.json','get','').then((res)=>{
+      this.customerInfo = res.data.info[0];
+      this.columnDefs =res.data.columnDefs;
+      this.rowData = res.data.rowData;
+    }).catch((e)=>{
+      console.log(e);
+    });
   },
   methods:{
     addComp(param){

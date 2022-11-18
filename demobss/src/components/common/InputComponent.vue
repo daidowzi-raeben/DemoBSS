@@ -20,11 +20,26 @@ export default {
   },
   props: {
     placeholder: String,
-    type: String,
-    width: Number,
-    height: Number,
-    inputClass: null,
-    disabled:null,
+    type: {
+      type:String,
+      default:"text",
+    },
+    width: {
+      type:Number,
+      default:150,
+    },
+    height: {
+      type:Number,
+      default: 20,
+    },
+    inputClass: {
+      type:String,
+      default:"class1",
+    },
+    disabled:{
+      type:Boolean,
+      default:false,
+    },
   },
 
   methods: {

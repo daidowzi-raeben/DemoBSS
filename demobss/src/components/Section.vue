@@ -176,14 +176,14 @@ export default {
 
 <style scoped>
 .menu_tab_line .menu_tab_line_detail {
-  width: 94%;
+  width: calc(100% - 70px);
   overflow: hidden;
   white-space: nowrap;
   display: flex;
 }
 
 .menu_tab_line .menu_tab_line_detail_on {
-  width: 84%;
+  width: 80%;
   overflow: hidden;
   white-space: nowrap;
   display: flex;
@@ -212,7 +212,7 @@ div.taboff {
 
 .menu_tab {
   float: left;
-  width: 160px;
+  width: 140px;
   height: 30px;
   padding: 0 10px;
   line-height: 30px;
@@ -222,7 +222,7 @@ div.taboff {
 .menu_tab > span#tab_nm {
   display: block;
   float: left;
-  width: 140px;
+  width: 100px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
