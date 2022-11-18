@@ -1,5 +1,5 @@
 <template>
-  <div class="vfl-has-label">
+  <div class="vfl-has-label" >
     <label class="vfl-label" :class="classObject" :for="inputId">
       {{ floatLabel }}
     </label>
