@@ -13,6 +13,16 @@
     ref="datepicker"
   >
   </datepicker>
+  <select v-show="timeShow">
+    <option v-for="ho in hour()" :key="ho">
+      {{ho}}시
+    </option>
+  </select>
+  <select v-show="timeShow">
+    <option v-for="min in minutes()" :key="min">
+      {{min}}분
+    </option>
+  </select>
 </template>
 
 <script>
@@ -25,6 +35,16 @@ export default {
   data() {
     return {
       date: null,
+      hour: function (){
+        var hour=[];
+        for(var i = 1; i<=12;i+=1)hour.push(i);
+        return hour;
+      },
+      minutes: function (){
+        var minutes = [];
+        for(var i = 1; i<=59;i++)minutes.push(i);
+        return minutes;
+      },
     };
   },
   props: {
@@ -32,9 +52,13 @@ export default {
     width: Number,
     classWrapper: null,
     type: {
-      //일력 월력
+      //일력 월력 시분
       type: String,
       default: "day",
+    },
+    timeShow:{
+      type:Boolean,
+      default:false,
     },
     dateFormat: {
       type: String,
@@ -82,7 +106,7 @@ export default {
   box-sizing: border-box;
   min-width: 130px;
   border: #b6b6b6 solid 1px;
-  font-size: 13px;
+  font-size: 12px;
   height: 34px;
   color: #494949;
   padding: 0 22px 0 9px;
@@ -90,7 +114,11 @@ export default {
   background-position: right 9px center;
   cursor: pointer;
 }
-
+select{
+  border: #b6b6b6 solid 1px;
+  color: #494949;
+  font-size: 12px;
+}
 .v3dp__datepicker {
   /* datepicker 상세 스타일 */
   --vdp-hover-bg-color: #434343;

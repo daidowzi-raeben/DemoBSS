@@ -8,7 +8,7 @@
     <option v-if="defaultValue != null" :value="''">
       {{ defaultValue }}
     </option>
-    <option v-for="(option, idx) in options" :key="idx" :value="option.cdId">
+    <option  v-for="(option, idx) in options" :key="idx" :value="option.cdId">
       {{ option.cdNm }}
     </option>
   </select>
@@ -54,6 +54,9 @@ select {
   font-size: 12px;
   color: #343434;
 }
+select option:hover{
+  background-color: #2dbdb6;
+}
 .select_input {
   border: 1px solid #c1c1c1;
   font-size: 11px;
@@ -94,5 +97,6 @@ select {
   -webkit-appearance: none;
   -moz-appearance: none;
 }
+
 
 </style>

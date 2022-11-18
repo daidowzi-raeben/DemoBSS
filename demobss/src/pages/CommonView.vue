@@ -80,6 +80,22 @@
             "
           />
         </div>
+        <div style="display: flex">
+          <span style="padding: 5px 10px">일력시분</span>
+          <date-picker-component
+              :classWrapper="'calender_input'"
+              :width="150"
+              :type="'month'"
+              :dateFormat="'yyyy-MM'"
+              :time-show=true
+              :pDate="date2"
+              @input="
+              (value) => {
+                date2 = value;
+              }
+            "
+          />
+        </div>
       </div>
       <div style="width: 420px; height: 50px">
         {{ date1 }} <br />{{ date2 }}
@@ -216,7 +232,7 @@
     <button @click="FormPopup2">입력 PopUp </button>
     </div>
     <br /><br />
-    
+
     <h1 style="font-size: 30px">InputComponent</h1>
     <span></span>
     <div class="commondiv1" >
@@ -257,10 +273,10 @@
     </div>
     <br /><br /><br />
 
-  
+
     <h1 style="font-size: 30px">linkComponent</h1>
     <div class="commondiv1" >
-    <linkComponent 
+    <linkComponent
     :destination="'/'"
     :linkName="'링크 컴포넌트(mounse over)'"  />
     </div>
@@ -419,6 +435,36 @@
       />
     </div>
     <br /><br /><br />
+    <h1 style="font-size: 30px">AtcRegComponent</h1>
+    <span></span>
+    <div
+        style="
+        width: 80%;
+        margin: 10px;
+        padding: 10px;
+        height: 300px;
+        display: inline-block;
+        border-top: solid black 1px;
+      "
+    >
+      <AtcRegComponent/>
+    </div>
+    <br /><br /><br />
+    <h1 style="font-size: 30px">AtcListComponent</h1>
+    <span></span>
+    <div
+        style="
+        width: 80%;
+        margin: 10px;
+        padding: 10px;
+        height: 300px;
+        display: inline-block;
+        border-top: solid black 1px;
+      "
+    >
+      <AtcListComponent/>
+    </div>
+    <br /><br /><br />
   </div>
 </template>
 
@@ -447,10 +493,13 @@ import FloatingLabelsComponent from "@/components/common/FloatingLabelsComponent
 import FloatingLabelsComponent_2 from "@/components/common/FloatingLabelsComponent_2";
 import ToastComponent from "@/components/common/ToastComponent";
 import linkComponent from '@/components/common/linkComponent.vue';
-
+import AtcRegComponent from "@/components/common/AtcRegComponent";
+import AtcListComponent from "@/components/common/AtcListComponent";
 export default {
   name: "CommonView",
   components: {
+    AtcListComponent,
+    AtcRegComponent,
     ToastComponent,
     FloatingLabelsComponent_2,
     FloatingLabelsComponent,
