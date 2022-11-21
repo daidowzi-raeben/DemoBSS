@@ -275,15 +275,13 @@ export default {
     //   pinnedBottomRowData: [{ model0: "합계", model1: null, model4: 0 }],
     // };
     await this.$connect('application/json','/info.json','get','').then((res)=>{
-      this.customerInfo = res.data.info[0];
+      this.custInfo = res.data.info[0];
       this.columnDefs =res.data.columnDefs;
       this.rowData = res.data.rowData;
       this.columnDefs2 =res.data.columnDefs2;
       this.rowData2 = res.data.rowData2;
       console.log(res.data.columnDefs,'\n',res.data.columnDefs2)
-    }).catch((e)=>{
-      console.log(e);
-    });
+    })
 
 
   },

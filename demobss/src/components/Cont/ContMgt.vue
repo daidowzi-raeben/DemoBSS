@@ -155,7 +155,7 @@ export default {
   },
   async beforeMount() {
     await this.$connect('application/json','/info.json','get','').then((res)=>{
-      this.customerInfo = res.data.info[0];
+      this.custInfo = res.data.info[0];
       this.columnDefs =res.data.columnDefs;
       this.rowData = res.data.rowData;
     }).catch((e)=>{
@@ -242,7 +242,6 @@ div.layout {
 .cmProducts {
   float: left;
   margin:  auto;
-  padding: auto;
   position: relative;
   height: 230px;
   min-width: 500px;

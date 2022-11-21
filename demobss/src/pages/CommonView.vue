@@ -375,14 +375,14 @@
       <TreeGridComponent :tableData="tableData" :columns="columns" />
     </div>
     <br /><br /><br />
-    <h1 style="font-size: 30px">ValidateExampleComponent</h1>
+    <h1 style="font-size: 30px">ValdtnComponent</h1>
     <span></span>
     <div
         style="
         width: 80%;
         margin: 10px;
         padding: 10px;
-        height: 300px;
+        height: 100px;
         display: inline-block;
         border-top: solid black 1px;
       "
@@ -397,7 +397,7 @@
         width: 80%;
         margin: 10px;
         padding: 10px;
-        height: 300px;
+        height: 100px;
         display: inline-block;
         border-top: solid black 1px;
       "
@@ -416,7 +416,7 @@
         width: 80%;
         margin: 10px;
         padding: 10px;
-        height: 300px;
+        height: 100px;
         display: inline-block;
         border-top: solid black 1px;
       "
@@ -487,12 +487,37 @@
         width: 80%;
         margin: 10px;
         padding: 10px;
-        height: 300px;
+        height: 100px;
         display: inline-block;
         border-top: solid black 1px;
       "
     >
-      <TextAreaComponent/>
+      <TextAreaComponent
+          :rows="10"
+          :placeholder="'내용을 입력'"
+          :maxlength="10"
+      />
+    </div>
+    <br /><br /><br />
+    <h1 style="font-size: 30px">TabComponent</h1>
+    <span></span>
+    <div
+        style="
+        width: 1000px;
+        margin: 10px;
+        padding: 10px;
+        height: 300px;
+        display: inline-block;
+        border-top: solid black 1px;
+        overflow: auto;
+      "
+    >
+      <TabComponent
+          :menu-type="'Cont'"
+          :comp-array="compm"
+          :comp-name="comp"
+          :comp-value="component"
+        />
     </div>
     <br /><br /><br />
   </div>
@@ -526,9 +551,12 @@ import linkComponent from '@/components/common/linkComponent.vue';
 import AtcRegComponent from "@/components/common/AtcRegComponent";
 import AtcListComponent from "@/components/common/AtcListComponent";
 import TextAreaComponent from "@/components/common/TextAreaComponent";
+import {defineAsyncComponent, markRaw} from "vue";
+import TabComponent from "@/components/common/TabComponent";
 export default {
   name: "CommonView",
   components: {
+    TabComponent,
     TextAreaComponent,
     AtcListComponent,
     AtcRegComponent,
@@ -566,6 +594,18 @@ export default {
       date1: new Date(2021, 9, 5),
       date2: new Date(),
       pDisable: true,
+      comp: "cont_01_01_01",
+      compm: [
+        {
+          "menuId": "cont_01_01_01",
+          "menuNm": "계약상세",
+          "upMenuId": "cont_01_01",
+          "cmpnId": "ContMgt"
+        },
+      ],
+      component: markRaw(
+          defineAsyncComponent(() => import("../components/Cont/ContMgt.vue")),
+      ),
       tableData: [
         {
           name: "인말새트 C국내협력점",

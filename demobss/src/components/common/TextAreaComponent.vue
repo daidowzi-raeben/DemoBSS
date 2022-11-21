@@ -2,7 +2,7 @@
   <div class="textAreaDiv">
     <textarea
         id="contents"
-        rows=":5"
+        rows="5"
         placeholder="내용을 입력해주세요"
         v-model="contents"
       :maxlength="10"
@@ -17,6 +17,20 @@ export default {
   data(){
     return{
       contents:"",
+    }
+  },
+  props:{
+    rows:{
+      type:Number,
+      default:5,
+    },
+    placeholder:{
+      type:String,
+      default:"내용을 입력해주세요."
+    },
+    maxlength:{
+      type:Number,
+      default:100,
     }
   },
   computed:{

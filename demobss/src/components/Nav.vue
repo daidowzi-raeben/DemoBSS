@@ -106,7 +106,7 @@ export default {
 #nav {
   border-right: #afafaf solid 1px;
   position:fixed;
-  height: calc(100%-10px);
+  height: 100%;
   background-color: white;
   z-index: 1000;
 }

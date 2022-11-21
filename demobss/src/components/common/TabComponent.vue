@@ -1,67 +1,72 @@
 <template>
-  <div class="menu_tab_line">
-  <div :class="menu_tab_class">
-    <div v-for="(item, index) in compm" v-bind:key="index">
-      <div
-          :class="{
+  <div class="wrap">
+    <div class="menu_tab_line">
+      <div class="menu_tab_line_detail">
+        <div v-for="(item, index) in compm" v-bind:key="index">
+          <div
+              :class="{
               tabon: this.comp === item.menuId,
               taboff: this.comp !== item.menuId,
               menu_tab: true,
             }"
-          @click="ChageComponent(item.menuId, index)"
-      >
+              @click="ChageComponent(item.menuId, index)"
+          >
             <span id="tab_nm">
               {{ item.menuNm }}
             </span>
-        <span class="tab_x" @click.prevent.stop="DeleteComponent(index)">x</span>
+            <span class="tab_x" @click.prevent.stop="DeleteComponent(index)">X</span>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-  </div>
-  <div class="menu_tab_buttons">
-    <ButtonComponent :btnClass="'btnLeftImgClass'" @click="moveScrollLeft"/>
-    <ButtonComponent :btnClass="'btnRightImgClass'" @click="moveScrollRight"/>
-    <ButtonComponent :btnClass="'btnDeleteImgClass'" @click="AllDeleteComponent"/>
+    <div v-for="(item, index) in compm2" :key="item" class="view_wrap">
+      <component
+          v-bind:is="this.compm2[index]"
+          v-show="index === this.cur_num"
+          @input="AddComponent"
+      ></component>
+    </div>
   </div>
 </template>
 
 <script>
 import {defineAsyncComponent, markRaw} from "vue";
-import ButtonComponent from "@/components/common/ButtonComponent.vue";
 export default {
   name: "TabComponent",
-  components:{
-    ButtonComponent,
-  },
-  data(){
-    return{
-      comp: "bill_01_01_01",
+  data() {
+    return {
+      comp: "",     //컴포넌트 이름
       cur_num: 0,
-      component: markRaw(
-          defineAsyncComponent(() => import("../../pages/ChageInfoRetv.vue"))
-      ),
-    }
+      compm2:[],    //컴포넌트 주소를 넣는 배열
+      compm:[],     //컴포넌트 값를 넣는 배열
+      component:"", //컴포넌트 주소
+    };
   },
   props:{
-    menu_tab_class:null,
-    compm:[],
-    compm2:[],
+    menuType:{
+      type:String,
+      default:"Cont",
+    },
+    compArray:{     //컴포넌트배열
+      type:Array,
+      default:null,
+    },
+    compValue:null, //컴포넌트 주소
+    compName:{      //컴포넌트 값
+      type:String,
+      default:null,
+    }
   },
   watch: {
     cur_num: function (newVal, oldVal) {
       this.comp = this.compm[newVal].menuId;
       this.component = this.compm2[this.cur_num];
-      this.$emit('setComp',this.comp);
-      this.$emit('setCurNum',newVal);
-    },
-    compm:function(newVal,oldVal){
-      this.$emit('setCompm',newVal);
-    },
-    compm2:function(newVal,oldVal){
-      this.$emit('setCompm2',newVal);
     },
   },
   created() {
+    this.comp = this.compName;
+    this.component = this.compValue;
+    this.compm = this.compArray;
     this.compm2.push(this.component);
   },
   computed: {
@@ -73,28 +78,7 @@ export default {
     },
   },
   methods: {
-    moveScrollRight: function () {
-      let menuTabScroll = document.querySelector(".menu_tab_line_detail_on");
-      menuTabScroll.scrollLeft += 100;
-    },
-    moveScrollLeft: function () {
-      let menuTabScroll = document.querySelector(".menu_tab_line_detail_on");
-      menuTabScroll.scrollLeft -= 100;
-    },
-    setComp:function (param){
-      this.comp=param;
-    },
-    setCompm: function(param){
-      this.compm = param;
-    },
-    setCurNum:function (param){
-      this.cur_num = param;
-    },
-    setCompm2:function (param){
-      this.compm2 = param;
-    },
     ChageComponent: function (componentName, index) {
-      console.log(this.index);
       this.comp = componentName;
       this.cur_num = index;
     },
@@ -116,38 +100,79 @@ export default {
         }
       }
     },
-  }
-}
+    AddComponent: function (param) {
+      if (param.menuId != "" && param.menuId != null) {
+        const st = this.compm.find(
+            (element) => element.menuId === param.menuId
+        );
+        if (st != null) {
+          var i = this.compm.indexOf(st);
+          this.cur_num = i;
 
+
+        } else {
+          if (this.compm.length < 10) {
+            this.compm.push(param);
+            this.cur_num = this.compm.length - 1;
+            this.component = markRaw(
+                defineAsyncComponent(() =>
+                    import("../" +this.menuType +"/" + this.compm[this.cur_num].cmpnId + ".vue")
+                )
+            );
+            console.log("../" +this.menuType +"/" + this.compm[this.cur_num].cmpnId + ".vue");
+            this.compm2.push(this.component);
+          } else {
+            console.log("10개를 넘었습니다.");
+          }
+        }
+      }
+    },
+  },
+};
 </script>
 
-
-
 <style scoped>
-.menu_tab_line {
-  height: 30px;
-  display: inline-flex;
-  width: 100%;
-  background-color: #5ad3cd;
-  /* overflow-x: scroll; */
+.menu_tab_line .menu_tab_line_detail {
+  width: 94%;
+  overflow: hidden;
+  white-space: nowrap;
+  display: flex;
 }
+
+.menu_tab_line .menu_tab_line_detail_on {
+  width: 81%;
+  overflow: hidden;
+  white-space: nowrap;
+  display: flex;
+}
+
 div.tabon {
   /* 탭 선택되었을 때 */
   background-color: #ffffff;
+  border-style: ridge;
   color: #444444;
+  font-weight: bold;
 }
 
 div.taboff {
   /* 탭 선택x */
   background-color: #707070;
   color: #aeaeae;
+  border-style: ridge;
   border-right: #343434 solid 1px;
 }
+
+.menu_tab_line {
+  height: 25px;
+  display: inline-flex;
+  width: 100%;
+}
+
 .menu_tab {
   float: left;
-  width: 160px;
-  height: 30px;
-  padding: 0 10px;
+  width: 120px;
+  height: inherit;
+  padding: 0px 5px;
   line-height: 30px;
   cursor: pointer;
 }
@@ -155,22 +180,33 @@ div.taboff {
 .menu_tab > span#tab_nm {
   display: block;
   float: left;
-  width: 140px;
+  width: calc(100% - 10px );
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  text-align: center;
 }
 
 .menu_tab > span.tab_x {
   color: #aeaeae;
-  font-size: 20px;
+  font-size: 15px;
   float: right;
 }
 
 .menu_tab_line .menu_tab_buttons {
-  width: 5vw;
+  width: 5%;
   padding-top: 2px;
   float: right;
+  display: flex;
+}
+
+.menu_tab_line .menu_button {
+  float: right;
+  color: #ffffff;
+  /* padding: 0 10px; */
+  font-size: 20px;
+  cursor: pointer;
+  width: 5%;
   display: flex;
 }
 </style>
