@@ -96,18 +96,13 @@ body {
 #wrap {
   width: 100%;
   height: 100%;
+  top: 45px;
   position: absolute;
   /* overflow: auto; */
   overflow: scroll;
 }
-#wrap > header {
-  position: relative;
-  width: 100%;
-  z-index: 20;
-  background-color: #fff;
-}
 
-#brand {
+/* #brand {
   position: relative;
   float: left;
   width: 245px;
@@ -136,11 +131,12 @@ body {
   height: 45px;
 }
 #menu > .area {
-  width: 100vw;
+  width: 80%;
   margin: 0 auto;
 }
 #menu > .area > ul {
-  height: 30px;
+  height: 35px;
+  overflow: hidden;
 }
 
 #menu > .area > ul > li {
@@ -167,7 +163,7 @@ body {
   border: #ffffff solid 1px;
   border-radius: 50px;
   margin: -1px;
-}
+} */
 
 /* section */
 
@@ -176,7 +172,8 @@ section {
   min-height: calc(100% - 45px);
   box-sizing: border-box;
   display: flex;
-  width: 100%;
+  width: calc(100% + 45px);
+  
 }
 
 section > div.wrap {
