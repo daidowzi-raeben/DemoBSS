@@ -1,5 +1,6 @@
 <template>
-  <div>
+  
+  <div class="container">
     <h1 style="font-size: 30px">select box</h1>
     <div class="commondiv0">
       조회조건
@@ -686,6 +687,11 @@ export default {
 </script>
 
 <style scoped>
+.container{
+  display:grid;
+  grid-template-columns:minmax(860px, 1fr) ;
+}
+
 .commondiv0{
   border-top: solid black 1px;
   margin: 10px;
