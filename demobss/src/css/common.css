@@ -98,10 +98,10 @@ body {
   height: 100%;
   position: absolute;
   /* overflow: auto; */
-  overflow: scroll;
+  overflow: auto;
 }
 #wrap > header {
-  position: relative;
+  position: fixed;
   width: 100%;
   z-index: 20;
   background-color: #fff;
@@ -111,6 +111,7 @@ body {
   position: relative;
   float: left;
   width: 245px;
+  z-index: 1000;
 }
 
 #brand > .brand_name {
@@ -134,6 +135,7 @@ body {
   background-color: #2dbdb6;
   border-top: #cfcfcf solid 1px;
   height: 45px;
+  z-index: 1000;
 }
 #menu > .area {
   width: 100vw;
@@ -141,6 +143,7 @@ body {
 }
 #menu > .area > ul {
   height: 30px;
+  overflow: hidden;
 }
 
 #menu > .area > ul > li {
@@ -176,6 +179,7 @@ section {
   min-height: calc(100% - 45px);
   box-sizing: border-box;
   display: flex;
+  padding-top: 45px;
   width: 100%;
 }
 

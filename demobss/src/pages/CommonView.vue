@@ -271,9 +271,24 @@
     </div>
     <br /><br /><br />
 
+<<<<<<< Updated upstream
     <h1 style="font-size: 30px">CheckBoxComponent</h1>
+=======
+
+    <h1 style="font-size: 30px">linkComponent</h1>
     <div class="commondiv1" >
-    <CheckBoxComponent :CheckOptions='["체크옵션1","체크옵션2","체크옵션3","체크옵션4","체크옵션5",]' />
+    <linkComponent
+    :destination="'/'"
+    :linkName="'링크 컴포넌트(mounse over)'"  />
+    </div>
+    <br /><br /><br />
+
+
+
+    <h1 style="font-size: 30px">ChkBoxComponent</h1>
+>>>>>>> Stashed changes
+    <div class="commondiv1" >
+    <ChkBoxComponent :CheckOptions='["체크옵션1","체크옵션2","체크옵션3","체크옵션4","체크옵션5",]' />
     </div>
     <br /><br /><br />
 
@@ -283,7 +298,7 @@
     </div>
     <br /><br /><br />
 
-    <h1 style="font-size: 30px">CustomerInfoComponent</h1>
+    <h1 style="font-size: 30px">CustInfoComponent</h1>
     <div
       style="
         display: inline-block;
@@ -295,13 +310,13 @@
         margin: 10px;
       "
     >
-      <CustomerInfoComponent
-          :customer-info="customerInfo"
+      <CustInfoComponent
+          :custInfo="custInfo"
       />
     </div>
     <br /><br /><br />
 
-    <h1 style="font-size: 30px">CustomerSearchComponent</h1>
+    <h1 style="font-size: 30px">CustRetvComponent</h1>
     <span></span>
     <div
       style="
@@ -314,7 +329,7 @@
         margin: 10px;
       "
     >
-      <CustomerSearchComponent :cdGroup="'optionsSearchDiv'" />
+      <CustRetvComponent :cdGroup="'optionsSearchDiv'" />
     </div>
     <br /><br /><br />
 
@@ -325,7 +340,7 @@
     </div>
     <br /><br /><br />
 
-    <h1 style="font-size: 30px">BoxComponent</h1>
+    <h1 style="font-size: 30px">BlcComponent</h1>
     <span></span>
     <div
       style="
@@ -337,7 +352,7 @@
         border-top: solid black 1px;
       "
     >
-      <BoxComponent
+      <BlcComponent
         :sub-info-title-nm="'청구목록'"
         :column-defs="columnDefs1"
         :row-data="rowData1"
@@ -375,7 +390,7 @@
         border-top: solid black 1px;
       "
     >
-      <validate-example-component/>
+      <ValdtnComponent/>
     </div>
     <br /><br /><br />
     <h1 style="font-size: 30px">FloatingLabelsComponent</h1>
@@ -452,6 +467,37 @@
       <AtcListComponent/>
     </div>
     <br /><br /><br />
+
+    <h1 style="font-size: 30px">AtcRegComponent</h1>
+    <span></span>
+    <div
+        style="
+        width: 80%;
+        margin: 10px;
+        padding: 10px;
+        height: 300px;
+        display: inline-block;
+        border-top: solid black 1px;
+      "
+    >
+      <AtcRegComponent/>
+    </div>
+    <br /><br /><br />
+    <h1 style="font-size: 30px">TextAreaComponent</h1>
+    <span></span>
+    <div
+        style="
+        width: 80%;
+        margin: 10px;
+        padding: 10px;
+        height: 300px;
+        display: inline-block;
+        border-top: solid black 1px;
+      "
+    >
+      <TextAreaComponent/>
+    </div>
+    <br /><br /><br />
   </div>
 </template>
 
@@ -466,30 +512,32 @@ import SubInfoTitle from "@/components/common/SubInfoTitle.vue";
 import InputComponent from "@/components/common/InputComponent";
 import TitleArea from "@/components/common/TitleArea";
 import PopupComponent from "@/components/common/PopupComponent.vue";
-import CustomerInfoComponent from "@/components/common/CustomerInfoComponent";
-import CustomerSearchComponent from "@/components/common/CustomerSearchComponent";
-import BoxComponent from "@/components/common/BoxComponent";
+import CustInfoComponent from "@/components/common/CustInfoComponent";
+import CustRetvComponent from "@/components/common/CustRetvComponent";
+import BlcComponent from "@/components/common/BlcComponent";
 import FormDataComponent from "@/components/common/FormDataComponent.vue";
 import TreeGridComponent from "@/components/common/TreeGridComponent";
 import FormDataPopupComponent from '../components/common/FormDataPopupComponent.vue';
 import RangeComponent from "../components/common/RangeComponent.vue"
-import CheckBoxComponent from '../components/common/CheckBoxComponent.vue';
+import ChkBoxComponent from '../components/common/ChkBoxComponent.vue';
 import RadioComponent from '../components/common/RadioComponent.vue'
-import ValidateExampleComponent from "@/components/common/ValidateExampleComponent";
+import ValdtnComponent from "@/components/common/ValdtnComponent";
 import FloatingLabelsComponent from "@/components/common/FloatingLabelsComponent";
 import FloatingLabelsComponent_2 from "@/components/common/FloatingLabelsComponent_2";
 import ToastComponent from "@/components/common/ToastComponent";
 import AtcRegComponent from "@/components/common/AtcRegComponent";
 import AtcListComponent from "@/components/common/AtcListComponent";
+import TextAreaComponent from "@/components/common/TextAreaComponent";
 export default {
   name: "CommonView",
   components: {
+    TextAreaComponent,
     AtcListComponent,
     AtcRegComponent,
     ToastComponent,
     FloatingLabelsComponent_2,
     FloatingLabelsComponent,
-    ValidateExampleComponent,
+    ValdtnComponent,
     TreeGridComponent,
     PagingArea,
     FileInputComponent,
@@ -501,13 +549,13 @@ export default {
     InputComponent,
     TitleArea,
     PopupComponent,
-    CustomerInfoComponent,
-    CustomerSearchComponent,
-    BoxComponent,
+    CustInfoComponent,
+    CustRetvComponent,
+    BlcComponent,
     FormDataComponent,
     FormDataPopupComponent,
     RangeComponent,
-    CheckBoxComponent,
+    ChkBoxComponent,
     RadioComponent,
   },
   data() {
@@ -569,7 +617,7 @@ export default {
         { label: "상품ID", id: "id" },
         { label: "상태", id: "state" },
       ],
-      customerInfo: {
+      custInfo: {
         customerId: "CC10001042",
         customerName: "주식회사 시너샛코리아",
         customerType: "일반",

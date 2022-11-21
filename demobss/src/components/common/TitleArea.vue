@@ -61,7 +61,7 @@ export default {
 <style scoped>
  .title_area {
   overflow: hidden;
-  width:91%;
+  width:80%;
   background-color: #ffffff;
   height: 30px;
   margin: 10px 0 5px 0;

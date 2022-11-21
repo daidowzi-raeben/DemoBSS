@@ -1,14 +1,14 @@
 <template>
   <div class="container">
     <div class="item" style="display:block;">
-      <CustomerSeachComponent
+      <CustRetvComponent
         :cdGroup="'optionsSearchDiv'"
         :title-show="true"
         />
     </div>
     <div class="item" style="display:block;">
-      <CusomerInfoComponent
-      :customer-info="customerInfo"
+      <CustInfoComponent
+      :custInfo="custInfo"
       />
     </div>
     <div class="item">
@@ -24,7 +24,7 @@
       </div>
     </div>
     <div class="item">
-          <BoxComponent
+          <BlcComponent
             :sub-info-title-nm="'청구목록'"
             :rowData="rowData"
             :columnDefs="columnDefs"
@@ -35,7 +35,7 @@
           />
     </div>
     <div class="item">
-      <BoxComponent
+      <BlcComponent
               :sub-info-title-nm="'요금항목별 조회'"
               :rowData="rowData2"
               :columnDefs="columnDefs2"
@@ -89,9 +89,9 @@ import AgGridComponent from "@/components/common/AgGridComponent";
 import ButtonComponent from "@/components/common/ButtonComponent.vue";
 import SelectBoxComponent from "@/components/common/SelectBoxComponent";
 import SubInfoTitle from "@/components/common/SubInfoTitle.vue";
-import CusomerInfoComponent from "@/components/common/CustomerInfoComponent";
-import BoxComponent from "@/components/common/BoxComponent";
-import CustomerSeachComponent from "@/components/common/CustomerSearchComponent";
+import CustInfoComponent from "@/components/common/CustInfoComponent";
+import BlcComponent from "@/components/common/BlcComponent";
+import CustRetvComponent from "@/components/common/CustRetvComponent";
 import TreeGridComponent from "@/components/common/TreeGridComponent";
 import ApiMixin from "@/service/common.js";
 
@@ -103,9 +103,9 @@ export default {
     AgGridComponent,
     ButtonComponent,
     SubInfoTitle,
-    CusomerInfoComponent,
-    CustomerSeachComponent,
-    BoxComponent,
+    CustInfoComponent,
+    CustRetvComponent,
+    BlcComponent,
     SelectBoxComponent,
   },
   data() {
@@ -263,7 +263,7 @@ export default {
       ],
       columns: [{ label: "상품명", id: "name" }],
       searchValue: null,
-      customerInfo : [],
+      custInfo : [],
       columnDefs: null,
       rowData:null,
       columnDefs2: null,

@@ -3,6 +3,12 @@
 </template>
 
 <script>
+<<<<<<< Updated upstream
+=======
+import CheckBoxComponent from '@/components/common/ChkBoxComponent.vue'
+import linkComponent from '@/components/common/linkComponent.vue'
+import ButtonComponent from '@/components/common/ButtonComponent.vue'
+>>>>>>> Stashed changes
 import ApiMixin from "@/service/common.js";
 
 export default {

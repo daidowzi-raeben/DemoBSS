@@ -13,7 +13,6 @@ import menu from "../../../public/menu.json";
 export default {
   data(){
     return{
-    buttonValue: "",
       comp:"",
     }
   },
@@ -85,6 +84,7 @@ export default {
 }
 .btnSearchImgClass:hover {
   background-color: rgba(114, 99, 99, 0.47);
+  border:3px solid red; margin:-3px; border-radius:5px;
 }
 .btnLeftImgClass {
   background-color: transparent;

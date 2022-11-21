@@ -1,5 +1,5 @@
 <template>
-  <div class="atctitle">{{WorkName}} 첨부파일 목록</div>
+  <div class="atctitle">{{WrkjobNm}} 첨부파일 목록</div>
   <div class="tablediv">
     <table>
       <tr>
@@ -51,7 +51,7 @@ export default {
     }
   },
   props:{
-    WorkName:{
+    WrkjobNm:{
       type:String,
       default:"(업무명들어갈자리)"
     },

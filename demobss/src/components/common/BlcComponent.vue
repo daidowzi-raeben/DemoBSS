@@ -41,7 +41,7 @@ import ApiMixin from "@/service/common";
 
 export default {
   mixins:[ApiMixin],
-  name: "BoxComponent",
+  name: "BlcComponent",
   components:{
     SelectBoxComponent,
     ButtonComponent,

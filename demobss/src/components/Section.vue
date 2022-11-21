@@ -27,7 +27,12 @@
             </div>
           </div>
         </div>
-        <div class="menu_tab_buttons">
+        <div
+            :class="{
+            menuTabButtOff: navOn === false,
+            menuTabButtOn: navOn === true,
+          }"
+            class="menu_tab_buttons">
           <ButtonComponent
             :btnClass="'btnLeftImgClass'"
             @click="moveScrollLeft"
@@ -42,6 +47,12 @@
           />
         </div>
       </div>
+      <div
+          :class="{
+            contentNavOff: navOn === false,
+            contentNavOn: navOn === true,
+          }"
+          class="content">
       <title-area :currentMenu="currentMenu" :style=" !this.navOn ? 'margin-left:10%; width:82%;':'' "/>
 
       <div
@@ -60,12 +71,14 @@
           
         ></component>
       </div>
+      </div>
     </div>
   </section>
 </template>
 
 <script>
-import TitleArea from "./common/TitleArea.vue";
+import
+  TitleArea from "./common/TitleArea.vue";
 import Nav from "./Nav.vue";
 import { defineAsyncComponent, markRaw } from "vue";
 import ButtonComponent from "@/components/common/ButtonComponent.vue";
@@ -180,13 +193,18 @@ export default {
   overflow: hidden;
   white-space: nowrap;
   display: flex;
+  z-index: 900;
 }
 
 .menu_tab_line .menu_tab_line_detail_on {
-  width: 80%;
+  width: calc(100% - 400px);
   overflow: hidden;
+  padding-left: 245px;
+  position: fixed;
   white-space: nowrap;
+  flex-grow: 0;
   display: flex;
+  z-index: 900;
 }
 
 div.tabon {
@@ -207,6 +225,9 @@ div.taboff {
   display: inline-flex;
   width: 100%;
   background-color: #5ad3cd;
+  position: fixed;
+  overflow: hidden;
+  z-index: 800;
   /* overflow-x: scroll; */
 }
 
@@ -234,12 +255,24 @@ div.taboff {
   float: right;
 }
 
-.menu_tab_line .menu_tab_buttons {
+/*네비게이션 열렸을 때 탭 버튼*/
+.menu_tab_line .menuTabButtOn {
   width: 5%;
   padding-top: 2px;
+  padding-left: calc(100% - 120px);
+  position: fixed;
   float: right;
   display: flex;
 }
+/*네비게이션 닫혔을 때 탭 버튼*/
+.menu_tab_line .menuTabButtOff {
+  width: 5%;
+  padding-top: 2px;
+  padding-right: 50px;
+  float: right;
+  display: flex;
+}
+
 
 .menu_tab_line .menu_button {
   float: right;
@@ -249,5 +282,19 @@ div.taboff {
   cursor: pointer;
   width: 5%;
   display: flex;
+}
+
+/*네비게이션 열렸을 때 Component내용*/
+.contentNavOn{
+  overflow: hidden;
+  padding-left: 250px;
+  padding-top: 50px;
+  z-index: 800;
+}
+/*네비게이션 닫혔을 때 Component내용*/
+.contentNavOff{
+  overflow: hidden;
+  padding-top: 50px;
+  z-index: 800;
 }
 </style>
