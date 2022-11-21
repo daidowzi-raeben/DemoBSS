@@ -6,10 +6,13 @@
     <div>
     <transition appear>
       <div class="formDataPopupFrame" v-if="reqtype=='1'">
-        <h1 >정보 출력 PopUp 
-        <ButtonComponent @click="GetOutputFormData" :btnClass="'btnclass2'" :btnName="'데이터 출력'" style="width:75px; float:right;"/>
+        <h1 >{{ PopupTitleMsg }}
+        <ButtonComponent 
+        @click="GetOutputFormData" 
+        :btnClass="'btnclass2'" 
+        :btnName="'데이터 출력'" 
+        style="width:75px; float:right;"/>
         </h1> 
-
         <!-- 팝업 메세지 내용 -->
         <article>
           <div class="formDataBind">
@@ -21,7 +24,7 @@
                   </th>
                   <td>
                     <input v-if="item.value" class="input1" type="text" :value="item.value" disabled>
-                    <input v-else class="input2" type="text" placeholder=" 입력해주세요" >
+                    <input v-else class="formInput" type="text" placeholder=" 입력해주세요" >
                     </td>
                 </tr>
               </table>
@@ -29,7 +32,7 @@
           </div>
           <!-- 취소가 있는 팝업 -->
           <div class="btn_area" >
-            <div style="font-size:20px; margin-bottom:10px;">
+            <div>
               <!-- 팝업 메세지 -->
               {{popupmsg}}
               </div>
@@ -54,7 +57,7 @@
 
     <transition appear>
       <div class="formDataPopupFrame" v-if="reqtype=='2'">
-        <h1>정보 입력 PopUp
+        <h1>{{ PopupTitleMsg }} 
           <ButtonComponent @click="GetSubmitFormData" :btnClass="'btnclass2'" :btnName="'입력 형식 출력'" style=" float:right;"/>
         </h1>
         <!-- 팝업 메세지 내용 -->
@@ -67,7 +70,7 @@
                     {{item.title}}
                   </th>
                   <td>
-                    <input class="input2" type="text" placeholder=" 입력해주세요">
+                    <input class="formInput" type="text" placeholder=" 입력해주세요">
                     </td>
                 </tr>
               </table>
@@ -75,7 +78,7 @@
           </div>
           <!-- 취소가 있는 팝업 -->
           <div class="btn_area" >
-            <div style="font-size:20px; margin-bottom:10px;">
+            <div>
               <!-- 팝업 메세지 -->
               {{popupmsg}}
               </div>
@@ -97,6 +100,68 @@
         </article>
       </div>
     </transition>
+
+    
+    <transition appear>
+      <div class="formDataPopupFrame" v-if="reqtype=='login'">
+        <h1>{{ PopupTitleMsg }} 
+        </h1>
+        <!-- 팝업 메세지 내용 -->
+        <article>
+          <div class="formDataBind">
+            <form>
+              <table v-if="formtype=='id'">
+                <tr v-for="(item) in findIdFormData" :key="item">
+                  <th>
+                    {{item.title}}
+                  </th>
+                  <td>
+                    <input class="formInput" type="text" :placeholder="item.title+'을(를) 입력해주세요'">
+                    </td>
+                </tr>
+              </table>
+
+              <table v-if="formtype=='pw'">
+                <tr v-for="(item) in findPwFormData" :key="item">
+                  <th>
+                    {{item.title}}
+                  </th>
+                  <td>
+                    <input class="formInput" type="text" :placeholder="item.title+'을(를) 입력해주세요'">
+                    </td>
+                </tr>
+              </table>
+            </form>
+          </div>
+          <!-- 취소가 있는 팝업 -->
+          <div class="btn_area" >
+            <div>
+              <!-- 팝업 메세지 -->
+              {{popupmsg}}
+              </div>
+            <button
+              type="button"
+              class="button_05"
+              @click="[$emit('FormPopup', true), $emit('AGREE')]" 
+            >확인 
+            <!-- 확인을 누르면, emit으로 formpopup이라는 변수에다가 true라는 값을 전달하며, agree라는 함수도 호출 -->
+            </button>
+            &nbsp;&nbsp;
+            <button
+              type="button"
+              class="button_04"
+              @click="$emit('FormPopup')"
+            >취소
+            </button>
+          </div>
+        </article>
+      </div>
+    </transition>
+
+
+
+
+
     </div>
     <!-- end : popup영역 -->
   </div>
@@ -111,6 +176,8 @@ export default {
     return {
       OutputFormData:[],
       SubmitFormData:[],
+      findIdFormData:[],
+      findPwFormData:[],
       col_1 : '8.33%',
       col_2 : '16.66%',
       col_3 : '25%',
@@ -126,17 +193,36 @@ export default {
     };
   },
   props: {
+    formtype:String,
     reqtype:String,
     popupmsg : String,
+    PopupTitleMsg : {
+      type: String,
+      default : '팝업 입니다.'
+    },
+    formDataPopupFrameWidth:{
+      type:String,
+      default:'1000px'
+  },
+    formDataPopupFrameHeight:{
+      type:String,
+      default:'500px'
+  },
   },
   computed: {
   },
   async beforeMount(){
-    await this.axios.get('/submit.json').then((response) => {
+    await this.axios.get('/formDataFormat.json').then((response) => {
         this.OutputFormData = response.data.OutputFormData
       })
-    await this.axios.get('/submit.json').then((response) => {
+    await this.axios.get('/formDataFormat.json').then((response) => {
         this.SubmitFormData = response.data.SubmitFormData
+      })
+    await this.axios.get('/formDataFormat.json').then((response) => {
+        this.findIdFormData = response.data.findIdFormData
+      })
+    await this.axios.get('/formDataFormat.json').then((response) => {
+        this.findPwFormData = response.data.findPwFormData
       })
   },
   methods: {
@@ -174,7 +260,7 @@ export default {
 }
 
 .formDataPopupFrame {
-  width:1000px;
+  width: v-bind('formDataPopupFrameWidth');
   height:auto;
   background-color: #fff;
   border: 1px solid #656565;
@@ -224,7 +310,7 @@ export default {
   height: 32px;
   font-size: 12px;
 }
-.formDataBind tr > td > .input2 {
+.formDataBind tr > td > .formInput {
   border: groove; 
   background-color: blanchedalmond;
   width: v-bind(col_12);
@@ -232,7 +318,7 @@ export default {
   font-size: 12px;
 }
 
-.formDataBind tr > td > .input2:hover {
+.formDataBind tr > td > .formInput:hover {
   border: groove; 
   background-color: rgb(255, 205, 215);
   width: v-bind(col_12);
@@ -243,6 +329,11 @@ export default {
 .formDataPopupFrame .btn_area {
   text-align: center;
   margin: 20px 0 0 0;
+}
+
+.formDataPopupFrame .btn_area > div {
+  font-size:20px; 
+  margin-bottom:10px;
 }
 
 .button_04 {

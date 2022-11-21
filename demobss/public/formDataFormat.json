@@ -22,5 +22,17 @@
     {"title":"비고 사항3"},
     {"title":"비고 사항4"},
     {"title":"비고 5"}
+  ],
+  "findIdFormData":[
+    {"title":"이름"},
+    {"title":"휴대폰번호"},
+    {"title":"비고(수정)"}
+  ],
+  
+  "findPwFormData":[
+    {"title":"이름"},
+    {"title":"사번"},
+    {"title":"휴대폰번호"},
+    {"title":"비고(수정)"}
   ]
 }

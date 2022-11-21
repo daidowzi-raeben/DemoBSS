@@ -30,7 +30,6 @@
             <ButtonComponent
             :btnClass="'btnClass3'"
             :btnName="'조회'"
-
             />
           </td>
         </tr>
