@@ -255,9 +255,10 @@ export default {
   right: 0;
   top: 0;
   /* visibility: hidden; */
-  z-index: 5;
+  z-index: 6;
   transition: opacity 0.5s;
 }
+
 
 .formDataPopupFrame {
   width: v-bind('formDataPopupFrameWidth');

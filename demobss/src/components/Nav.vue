@@ -104,6 +104,7 @@ export default {
 <style scoped>
 
 #nav {
+  position: fixed;
   border-right: #afafaf solid 1px;
 }
 
@@ -141,7 +142,9 @@ export default {
 
 #nav > .area {
   width: 245px;
-  padding: 70px 0 0 0;
+  padding: 30px 0 0 0;
+  height: 80vh;
+  overflow: auto;
 }
 
 #nav > .area > #navTitle {

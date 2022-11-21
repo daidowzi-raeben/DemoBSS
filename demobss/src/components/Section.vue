@@ -1,7 +1,7 @@
 <template>
-  <section>
+  <section :style=" !this.navOn ? 'width:100%;' : 'width: calc(100% + 45px ); '" >
     <Nav v-show="navOn" @input="AddComponent" />
-    <div class="wrap">
+    <div class="wrap" :style=" navOn ? 'margin-left:245px;' : 'margin-left:10%;' ">
       <div class="menu_tab_line">
         <div
           :class="{
@@ -49,7 +49,7 @@
           />
         </div>
       </div>
-      <title-area :currentMenu="currentMenu" :style=" !this.navOn ? 'margin-left:10%; width:82%;':'' "/>
+      <title-area :currentMenu="currentMenu" :style=" !this.navOn ? 'width:91%;':'' "/>
 
       <div
         v-for="(item, index) in compm2"
@@ -60,11 +60,9 @@
           view_wrap: true,
         }"
       >
-        <component
+        <component style="top:40px;"
           v-bind:is="this.compm2[index]"
           v-show="index === this.cur_num"
-          :style=" navOn ? '' : 'margin-left:10%;' "
-          
         ></component>
       </div>
     </div>
@@ -182,6 +180,17 @@ export default {
 </script>
 
 <style scoped>
+
+.menu_tab_line {
+  height: 30px;
+  position: fixed;
+  display: inline-flex;
+  width: 100%;
+  background-color: #5ad3cd;
+  z-index: 1;
+  /* overflow-x: scroll; */
+}
+
 .menu_tab_line .menu_tab_line_detail {
   width: calc(100% - 70px);
   overflow: hidden;
@@ -209,13 +218,6 @@ div.taboff {
   border-right: #343434 solid 1px;
 }
 
-.menu_tab_line {
-  height: 30px;
-  display: inline-flex;
-  width: 100%;
-  background-color: #5ad3cd;
-  /* overflow-x: scroll; */
-}
 
 .menu_tab {
   float: left;
@@ -245,6 +247,8 @@ div.taboff {
   width: 5%;
   padding-top: 2px;
   float: right;
+  margin-right: 15%;
+  
   display: flex;
 }
 
