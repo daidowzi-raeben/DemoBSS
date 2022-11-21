@@ -29,7 +29,7 @@
         <div>
           <span>
             <check-box-component
-            :CheckOptions="['아이디기억']"
+            :CheckOptions="['아이디 저장']"
             :showCheckOpt="false"
             :checkTextSize="'10pt'"
             :checkBoxSize="'20px'"
@@ -145,7 +145,7 @@ export default {
     },
     
     async loginCheck(){
-      await this.$router.push('/contmgt')
+      await this.$router.push('/')
       window.location.reload()
     },
     check() {
