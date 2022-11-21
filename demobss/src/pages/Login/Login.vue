@@ -28,7 +28,7 @@
 
         <div>
           <span>
-            <check-box-component
+            <ChkBoxComponent
             :CheckOptions="['아이디기억']"
             :showCheckOpt="false"
             :checkTextSize="'10pt'"
@@ -88,7 +88,7 @@
 </template>
 
 <script>
-import CheckBoxComponent from '@/components/common/CheckBoxComponent.vue'
+import ChkBoxComponent from '@/components/common/ChkBoxComponent.vue'
 import linkComponent from '@/components/common/linkComponent.vue'
 import ButtonComponent from '@/components/common/ButtonComponent.vue'
 import FormDataPopupComponent from "@/components/common/FormDataPopupComponent.vue"
@@ -97,7 +97,7 @@ import ApiMixin from "@/service/common.js";
 
 export default {
   components:{
-    CheckBoxComponent,
+    ChkBoxComponent,
     linkComponent,
     ButtonComponent,
     FormDataPopupComponent,
