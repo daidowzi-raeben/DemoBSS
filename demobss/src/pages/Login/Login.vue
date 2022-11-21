@@ -16,7 +16,7 @@
         <div>
           <!-- <img src="../../img/login_word.png" alt="로그인 글자"> -->
           <span> 로그인 </span>
-        
+
           <img class="loginIcon" src="../../img/icon_login.png" alt="login icon">
         </div>
         <div>
@@ -143,7 +143,7 @@ export default {
     goLogin(){
       this.$router.push('/login')
     },
-    
+
     async loginCheck(){
       await this.$router.push('/contmgt')
       window.location.reload()

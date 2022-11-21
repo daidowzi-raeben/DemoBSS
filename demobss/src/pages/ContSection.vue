@@ -46,7 +46,6 @@ export default {
         },
       ],
       compm2: [],
-      test: "ChageInfoRetv",
       component: markRaw(
           defineAsyncComponent(() => import("../components/Cont/ContMgt.vue")),
       ),
@@ -93,7 +92,6 @@ export default {
       }
     },
     AddComponent: function (param) {
-      console.log(param);
       if (param.menuId != "" && param.menuId != null) {
         const st = this.compm.find(
             (element) => element.menuId === param.menuId

@@ -8,10 +8,10 @@
         <label>고객ID</label>
         <input-component
             :type="'text'"
-            :height='inputComponentHeight'
-            :width='inputComponentWidth'
+            :height='Height'
+            :width='Width'
             :input-class="'class1'"
-            :placeholder="customerInfo.customerId"
+            :placeholder="custInfo.customerId"
             disabled="true"
         />
       </td>
@@ -19,10 +19,10 @@
         <label>고객명</label>
         <input-component
             :type="'text'"
-            :height="inputComponentHeight"
-            :width='inputComponentWidth'
+            :height="Height"
+            :width='Width'
             :input-class="'class1'"
-            :placeholder="customerInfo.customerName"
+            :placeholder="custInfo.customerName"
             disabled="true"
         />
       </td>
@@ -30,20 +30,20 @@
         <label>고객유형</label>
         <input-component
             :type="'text'"
-            :height="inputComponentHeight"
-            :width='inputComponentWidth'
+            :height="Height"
+            :width='Width'
             :input-class="'class1'"
-            :placeholder="customerInfo.customerType"
+            :placeholder="custInfo.customerType"
             disabled="true"
         />
       </td>
       <td><label>국가</label>
         <input-component
             :type="'text'"
-            :height="inputComponentHeight"
-            :width='inputComponentWidth'
+            :height="Height"
+            :width='Width'
             :input-class="'class1'"
-            :placeholder="customerInfo.country"
+            :placeholder="custInfo.country"
             disabled="true"
         />
       </td>
@@ -51,10 +51,10 @@
         <label style="width: 130px">사업자등록번호</label>
         <input-component
             :type="'text'"
-            :height="inputComponentHeight"
-            :width='inputComponentWidth'
+            :height="Height"
+            :width='Width'
             :input-class="'class1'"
-            :placeholder="customerInfo.businessNumber"
+            :placeholder="custInfo.businessNumber"
             disabled="true"
         />
       </td>
@@ -64,10 +64,10 @@
         <label>고객구분</label>
         <input-component
             :type="'text'"
-            :height="inputComponentHeight"
-            :width='inputComponentWidth'
+            :height="Height"
+            :width='Width'
             :input-class="'class1'"
-            :placeholder="customerInfo.customerType"
+            :placeholder="custInfo.customerType"
             disabled="true"
         />
       </td>
@@ -75,10 +75,10 @@
         <label>전화번호</label>
         <input-component
             :type="'text'"
-            :height="inputComponentHeight"
-            :width='inputComponentWidth'
+            :height="Height"
+            :width='Width'
             :input-class="'class1'"
-            :placeholder="customerInfo.phoneNumber"
+            :placeholder="custInfo.phoneNumber"
             disabled="true"
         />
       </td>
@@ -86,8 +86,8 @@
         <label>내외구분</label>
         <input-component
             :type="'text'"
-            :height="inputComponentHeight"
-            :width='inputComponentWidth'
+            :height="Height"
+            :width='Width'
             :input-class="'class1'"
             :placeholder="''"
             disabled="true"
@@ -97,7 +97,7 @@
         <label>주소</label>
         <input-component
             :type="'text'"
-            :height="inputComponentHeight"
+            :height="Height"
             :width="50"
             :input-class="'class1'"
             :placeholder="''"
@@ -105,7 +105,7 @@
         />&nbsp;
         <input-component
           :type="'text'"
-          :height="inputComponentHeight"
+          :height="Height"
           :input-class="'class1'"
           :width="200"
           :placeholder="''"
@@ -124,13 +124,13 @@ export default {
   components :{inputComponent, SubInfoTitle},
   data(){
     return{
-      inputComponentHeight:12,
-      inputComponentWidth: 120,
+      Height:12,
+      Width: 120,
 
     }
   },
   props : {
-    customerInfo:null,
+    custInfo:null,
   }
 
 }

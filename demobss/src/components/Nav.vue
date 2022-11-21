@@ -105,6 +105,10 @@ export default {
 
 #nav {
   border-right: #afafaf solid 1px;
+  position:fixed;
+  height: calc(100%-10px);
+  background-color: white;
+  z-index: 1000;
 }
 
 #nav > .tab {
@@ -141,7 +145,9 @@ export default {
 
 #nav > .area {
   width: 245px;
-  padding: 70px 0 0 0;
+  padding: 30px 0 0 0;
+  height: 80vh;
+  overflow: auto;
 }
 
 #nav > .area > #navTitle {

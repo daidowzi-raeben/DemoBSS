@@ -51,7 +51,7 @@
 </template>
 
 <script>
-import CustomerSeachComponent from "@/components/common/CustomerSearchComponent";
+import CustomerSeachComponent from "@/components/common/CustRetvComponent";
 export default {
   name: "CommonPopup",
   components: {CustomerSeachComponent},

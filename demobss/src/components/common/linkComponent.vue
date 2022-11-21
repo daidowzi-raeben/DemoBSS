@@ -1,6 +1,6 @@
 <template>
   <div>
-    <a class="link" :href="destination" > {{ linkName }}</a>
+    <a class="link" :href="destination" > {{ linkNm }}</a>
   </div>
 </template>
 
@@ -8,9 +8,9 @@
 export default {
 props:{
   destination: String,
-  linkName:{
+  linkNm:{
     type:String,
-    default: "링크 이름" 
+    default: "링크 이름"
   },
   textsize: {
     type: String,

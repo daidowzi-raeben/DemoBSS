@@ -2,7 +2,7 @@
   <div>
     <div class="container">
       <div class="item" >
-        <CustomerSearchComponent
+        <CustRetvComponent
             :cdGroup="'optionsSearchDiv'"
             :titleShow="false"
             style="height:60px;"
@@ -10,7 +10,7 @@
       </div>
 
       <div class="item" style="display:block;">
-        <CusomerInfoComponent :customer-info="customerInfo" />
+        <CustInfoComponent :custInfo="custInfo" />
       </div>
 
       <div class="item ">
@@ -48,7 +48,7 @@
       </div>
 
       <div class="item feeInfo">
-        <BoxComponent
+        <BlcComponent
           :sub-info-title-nm="'요금정보'"
           :row-data="rowData"
           :column-defs="columnDefs"
@@ -73,13 +73,10 @@
 </template>
 
 <script>
-import CustomerSearchComponent from "@/components/common/CustomerSearchComponent";
-import ButtonComponent from "@/components/common/ButtonComponent.vue";
-import InputComponent from "@/components/common/InputComponent";
-import SelectBoxComponent from "../common/SelectBoxComponent.vue";
+import CustRetvComponent from "@/components/common/CustRetvComponent";
 import SubInfoTitle from "@/components/common/SubInfoTitle.vue";
-import CusomerInfoComponent from "@/components/common/CustomerInfoComponent";
-import BoxComponent from "@/components/common/BoxComponent";
+import CustInfoComponent from "@/components/common/CustInfoComponent";
+import BlcComponent from "@/components/common/BlcComponent";
 import TreeGridComponent from "@/components/common/TreeGridComponent";
 import FormDataComponent from "@/components/common/FormDataComponent.vue";
 import ApiMixin from "@/service/common";
@@ -90,22 +87,16 @@ export default {
   name: "ContMgt",
   components: {
     TreeGridComponent,
-    BoxComponent,
-    CusomerInfoComponent,
-    CustomerSearchComponent,
-    ButtonComponent,
-    InputComponent,
-    SelectBoxComponent,
+    BlcComponent,
+    CustInfoComponent,
+    CustRetvComponent,
     SubInfoTitle,
     FormDataComponent,
     FormDataPopupComponent,
   },
   data() {
     return {
-      searchValue: null,
       gridOptions: null,
-      searchDiv1: "",
-      searchValue2: "",
       tableData: [
         {
           name: "인말새트 C국내협력점",
@@ -156,7 +147,7 @@ export default {
         { label: "상품ID", id: "id" },
         { label: "상태", id: "state" },
       ],
-      customerInfo : [],
+      custInfo : [],
       columnDefs: [],
       rowData: [],
       isFormModalShow:false,
