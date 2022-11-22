@@ -391,16 +391,7 @@
 
     <h1 style="font-size: 30px">BlcComponent</h1>
     <span></span>
-    <div
-      style="
-        width: 80%;
-        margin: 10px;
-        padding: 10px;
-        height: 300px;
-        display: inline-block;
-        border-top: solid black 1px;
-      "
-    >
+    <div class="commondiv2">
       <BlcComponent
         :sub-info-title-nm="'청구목록'"
         :column-defs="columnDefs1"
@@ -414,46 +405,19 @@
     <br /><br /><br />
     <h1 style="font-size: 30px">TreeGridComponent</h1>
     <span></span>
-    <div
-      style="
-        width: 80%;
-        margin: 10px;
-        padding: 10px;
-        height: 300px;
-        display: inline-block;
-        border-top: solid black 1px;
-      "
-    >
+    <div class="commondiv2">
       <TreeGridComponent :tableData="tableData" :columns="columns" />
     </div>
     <br /><br /><br />
     <h1 style="font-size: 30px">ValidateExampleComponent</h1>
     <span></span>
-    <div
-        style="
-        width: 80%;
-        margin: 10px;
-        padding: 10px;
-        height: 300px;
-        display: inline-block;
-        border-top: solid black 1px;
-      "
-    >
+    <div class="commondiv2">
       <ValdtnComponent/>
     </div>
     <br /><br /><br />
     <h1 style="font-size: 30px">FloatingLabelsComponent</h1>
     <span></span>
-    <div
-        style="
-        width: 80%;
-        margin: 10px;
-        padding: 10px;
-        height: 300px;
-        display: inline-block;
-        border-top: solid black 1px;
-      "
-    >
+    <div class="commondiv2">
       <FloatingLabelsComponent>
         <input  type="text" placeholder="Label">
       </FloatingLabelsComponent>
@@ -463,16 +427,7 @@
     <br /><br /><br />
     <h1 style="font-size: 30px">ToastComponent</h1>
     <span></span>
-    <div
-        style="
-        width: 80%;
-        margin: 10px;
-        padding: 10px;
-        height: 300px;
-        display: inline-block;
-        border-top: solid black 1px;
-      "
-    >
+    <div class="commondiv2">
       <ButtonComponent @click="chk=true" :btnClass="'btnClass1'" :btnName="'btnClass1'" />
       <ToastComponent
           v-if="chk"
@@ -488,65 +443,35 @@
     <br /><br /><br />
     <h1 style="font-size: 30px">AtcRegComponent</h1>
     <span></span>
-    <div
-        style="
-        width: 80%;
-        margin: 10px;
-        padding: 10px;
-        height: 300px;
-        display: inline-block;
-        border-top: solid black 1px;
-      "
-    >
+    <div class="commondiv2">
       <AtcRegComponent/>
     </div>
     <br /><br /><br />
     <h1 style="font-size: 30px">AtcListComponent</h1>
     <span></span>
-    <div
-        style="
-        width: 80%;
-        margin: 10px;
-        padding: 10px;
-        height: 300px;
-        display: inline-block;
-        border-top: solid black 1px;
-      "
-    >
+    <div class="commondiv2">
       <AtcListComponent/>
     </div>
     <br /><br /><br />
 
     <h1 style="font-size: 30px">AtcRegComponent</h1>
     <span></span>
-    <div
-        style="
-        width: 80%;
-        margin: 10px;
-        padding: 10px;
-        height: 300px;
-        display: inline-block;
-        border-top: solid black 1px;
-      "
-    >
+    <div class="commondiv2">
       <AtcRegComponent/>
     </div>
     <br /><br /><br />
+
+
     <h1 style="font-size: 30px">TextAreaComponent</h1>
     <span></span>
-    <div
-        style="
-        width: 80%;
-        margin: 10px;
-        padding: 10px;
-        height: 300px;
-        display: inline-block;
-        border-top: solid black 1px;
-      "
-    >
+    <div class="commondiv2">
       <TextAreaComponent/>
     </div>
     <br /><br /><br />
+
+
+
+    
   </div>
 </template>
 
@@ -696,7 +621,7 @@ export default {
         pageNumber: 1,
         currentMinPage: 1,
         currentMaxPage: 5,
-        totalPages: 11,
+        totalPages: 16,
       },
       page1: 1,
       page2: 1,
@@ -804,5 +729,14 @@ export default {
   border-top: solid black 1px;
   margin: 10px;
   padding: 10px;
+}
+
+.commondiv2{
+  width: 80%;
+  margin: 10px;
+  padding: 10px;
+  height: 300px;
+  display: inline-block;
+  border-top: solid black 1px;
 }
 </style>
