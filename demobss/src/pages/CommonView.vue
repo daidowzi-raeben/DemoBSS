@@ -282,6 +282,58 @@
     <br /><br /><br />
 
 
+    <h1 style="font-size: 30px">PostCodeComponent</h1>
+    <span></span>
+    <div class="commondiv1">
+      <div>
+        <table >
+
+          <tr>
+            <th style="border:1px solid black;"> <h1> &nbsp;우편번호 </h1> </th>
+            <td> {{ postCodeObj.zipNo }} </td>
+          </tr>
+          <tr>
+            <th style="border:1px solid black;"> <h1> 도로명주소</h1> </th>
+            <td> {{ postCodeObj.roadAddr }} </td>
+          </tr>
+          <tr>
+            <th style="border:1px solid black;"> <h1> &nbsp;지번주소  </h1> </th>
+            <td> {{ postCodeObj.jibunAddr }} </td>
+          </tr>
+          <tr>
+            <th style="border:1px solid black;"> <h1> &nbsp;상세주소</h1> </th>
+            <td> {{ postCodeObj.detailPostAddress }} </td>
+          </tr>
+          <!-- <h1>우편번호  : <span>  {{ postCodeObj.zipNo }}           </span></h1>
+          <h1>도로명주소: <span>  {{ postCodeObj.roadAddr }}        </span></h1>
+          <h1>지번주소  : <span>  {{ postCodeObj.jibunAddr }}       </span></h1>
+          <h1>상세주소  : <span>  {{postCodeObj.detailPostAddress}} </span></h1> -->
+        </table>
+      </div>
+      </div><div>
+      <span> 주소 검색  </span>
+      <input-component
+      :inputClass="'class1'"
+      :width="'210'"
+      :height="'25'"
+      :placeholder="'주소를 입력해 주세요. (클릭 시 주소 팝업)'"
+      @click="postCodePopup"
+      />
+      <button @click="postCodePopup">주소출력 PopUp </button>
+
+      <PostCodeComponent
+      ref="PostCodeComponent"
+      v-if="isPostCodeModalShow"
+      @FormPopup="isPostCodeModalShow = false"
+      @AGREE = "''"
+      :PopupTitleMsg="'주소 검색'"
+      :formDataPopupFrameWidth="'800px'"
+      :reqtype="'searchPostCode'"
+      @selected-juso-data="selectedJuso"/>
+      <br /><br /><br />
+    </div>
+
+
 
     <h1 style="font-size: 30px">ChkBoxComponent</h1>
     <div class="commondiv1" >
@@ -339,16 +391,7 @@
 
     <h1 style="font-size: 30px">BlcComponent</h1>
     <span></span>
-    <div
-      style="
-        width: 80%;
-        margin: 10px;
-        padding: 10px;
-        height: 300px;
-        display: inline-block;
-        border-top: solid black 1px;
-      "
-    >
+    <div class="commondiv2">
       <BlcComponent
         :sub-info-title-nm="'청구목록'"
         :column-defs="columnDefs1"
@@ -362,46 +405,19 @@
     <br /><br /><br />
     <h1 style="font-size: 30px">TreeGridComponent</h1>
     <span></span>
-    <div
-      style="
-        width: 80%;
-        margin: 10px;
-        padding: 10px;
-        height: 300px;
-        display: inline-block;
-        border-top: solid black 1px;
-      "
-    >
+    <div class="commondiv2">
       <TreeGridComponent :tableData="tableData" :columns="columns" />
     </div>
     <br /><br /><br />
     <h1 style="font-size: 30px">ValdtnComponent</h1>
     <span></span>
-    <div
-        style="
-        width: 80%;
-        margin: 10px;
-        padding: 10px;
-        height: 100px;
-        display: inline-block;
-        border-top: solid black 1px;
-      "
-    >
+    <div class="commondiv2">
       <ValdtnComponent/>
     </div>
     <br /><br /><br />
     <h1 style="font-size: 30px">FloatingLabelsComponent</h1>
     <span></span>
-    <div
-        style="
-        width: 80%;
-        margin: 10px;
-        padding: 10px;
-        height: 100px;
-        display: inline-block;
-        border-top: solid black 1px;
-      "
-    >
+    <div class="commondiv2">
       <FloatingLabelsComponent>
         <input  type="text" placeholder="Label">
       </FloatingLabelsComponent>
@@ -411,16 +427,7 @@
     <br /><br /><br />
     <h1 style="font-size: 30px">ToastComponent</h1>
     <span></span>
-    <div
-        style="
-        width: 80%;
-        margin: 10px;
-        padding: 10px;
-        height: 100px;
-        display: inline-block;
-        border-top: solid black 1px;
-      "
-    >
+    <div class="commondiv2">
       <ButtonComponent @click="chk=true" :btnClass="'btnClass1'" :btnName="'btnClass1'" />
       <ToastComponent
           v-if="chk"
@@ -436,61 +443,30 @@
     <br /><br /><br />
     <h1 style="font-size: 30px">AtcRegComponent</h1>
     <span></span>
-    <div
-        style="
-        width: 80%;
-        margin: 10px;
-        padding: 10px;
-        height: 300px;
-        display: inline-block;
-        border-top: solid black 1px;
-      "
-    >
+    <div class="commondiv2">
       <AtcRegComponent/>
     </div>
     <br /><br /><br />
     <h1 style="font-size: 30px">AtcListComponent</h1>
     <span></span>
-    <div
-        style="
-        width: 80%;
-        margin: 10px;
-        padding: 10px;
-        height: 300px;
-        display: inline-block;
-        border-top: solid black 1px;
-      "
-    >
+    <div class="commondiv2">
       <AtcListComponent/>
     </div>
     <br /><br /><br />
 
     <h1 style="font-size: 30px">AtcRegComponent</h1>
     <span></span>
-    <div
-        style="
-        width: 80%;
-        margin: 10px;
-        padding: 10px;
-        height: 300px;
-        display: inline-block;
-        border-top: solid black 1px;
-      "
-    >
+    <div class="commondiv2">
       <AtcRegComponent/>
     </div>
     <br /><br /><br />
+
+
     <h1 style="font-size: 30px">TextAreaComponent</h1>
     <span></span>
     <div
-        style="
-        width: 80%;
-        margin: 10px;
-        padding: 10px;
-        height: 100px;
-        display: inline-block;
-        border-top: solid black 1px;
-      "
+    class="commondiv2"
+    style="height: 100px;  "
     >
       <TextAreaComponent
           :rows="10"
@@ -502,15 +478,8 @@
     <h1 style="font-size: 30px">TabComponent</h1>
     <span></span>
     <div
-        style="
-        width: 1000px;
-        margin: 10px;
-        padding: 10px;
-        height: 300px;
-        display: inline-block;
-        border-top: solid black 1px;
-        overflow: auto;
-      "
+    class="commondiv2"
+    style="width: 1000px; overflow: auto;"
     >
       <TabComponent
           :menu-type="'Cont'"
@@ -520,6 +489,10 @@
         />
     </div>
     <br /><br /><br />
+
+
+
+
   </div>
 </template>
 
@@ -553,9 +526,12 @@ import AtcListComponent from "@/components/common/AtcListComponent";
 import TextAreaComponent from "@/components/common/TextAreaComponent";
 import {defineAsyncComponent, markRaw} from "vue";
 import TabComponent from "@/components/common/TabComponent";
+import PostCodeComponent from '@/components/common/PostCodeComponent.vue';
+
 export default {
   name: "CommonView",
   components: {
+    PostCodeComponent,
     TabComponent,
     TextAreaComponent,
     AtcListComponent,
@@ -681,7 +657,7 @@ export default {
         pageNumber: 1,
         currentMinPage: 1,
         currentMaxPage: 5,
-        totalPages: 11,
+        totalPages: 16,
       },
       page1: 1,
       page2: 1,
@@ -730,8 +706,10 @@ export default {
       isModalShow: false, // popup 조건
       isFormModalShow: false, // Form Data popup 조건
       isFormModalShow2: false, // Form Data popup 조건
+      isPostCodeModalShow : false,
       OutputFormData : [],
       SubmitFormData : [],
+      postCodeObj : {},
     };
   },
   created() {
@@ -755,6 +733,17 @@ export default {
       else this.isFormModalShow2 = false
       this.$refs.form-data-popup-component.GetSubmitFormData()
     },
+    postCodePopup(){
+      if (this.isPostCodeModalShow == false) this.isPostCodeModalShow = true
+      else this.isPostCodeModalShow = false
+      // this.$refs.postCodePopup.GetSubmitFormData()
+    },
+    selectedJuso(postCodeData,detailPostAddress){
+      this.postCodeObj = postCodeData;
+      this.postCodeObj["detailPostAddress"] = detailPostAddress
+      this.isPostCodeModalShow = false;
+
+    }
   },
 };
 </script>
@@ -776,5 +765,14 @@ export default {
   border-top: solid black 1px;
   margin: 10px;
   padding: 10px;
+}
+
+.commondiv2{
+  width: 80%;
+  margin: 10px;
+  padding: 10px;
+  height: 300px;
+  display: inline-block;
+  border-top: solid black 1px;
 }
 </style>

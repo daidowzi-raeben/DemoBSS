@@ -20,14 +20,14 @@ export default {
     btnClass: null,
     btnName: String,
     menu : null,
-    btnwWidth: {
+    btnWidth: {
       type:String,
-      default:'35px'
+      default:'25px'
       },
 
     btnHeight: {
       type:String,
-      default:'20px'
+      default:'25px'
       },
   },
   created(){

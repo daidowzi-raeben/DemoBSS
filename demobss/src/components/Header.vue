@@ -4,7 +4,7 @@
       <div id="ham" @click="openNav">≡</div>
       <div class="brand_name" @click="GoHome">ktds 영업전산시스템</div>
     </div>
-    <div id="menu" :style=" !this.navOn ? 'width:100%;' : 'width: calc(100% + 97px ); '">
+    <div id="menu" >
       <div class="area">
         <ul>
           <li v-for="(menu, idx) in menuDepth1" :key="idx">

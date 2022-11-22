@@ -47,7 +47,6 @@
           />
           <ButtonComponent
             :btnClass="'btnDeleteImgClass'"
-            
             :btnHeight="'25px;'"
             :btnwWidth="'25px;'"
             @click="AllDeleteComponent"
@@ -60,7 +59,8 @@
             contentNavOn: navOn === true,
           }"
           class="content">
-      <title-area :currentMenu="currentMenu" :style=" !this.navOn ? 'margin-left:10%; width:82%;':'' "/>
+      <!-- <title-area :currentMenu="currentMenu" :style=" !this.navOn ? 'margin-left:10%; width:82%;':'' "/> -->
+      <title-area2 :currentMenu="currentMenu"/>
 
       <div
         v-for="(item, index) in compm2"
@@ -74,7 +74,7 @@
         <component
           v-bind:is="this.compm2[index]"
           v-show="index === this.cur_num"
-          :style=" navOn ? '' : 'margin-left:10%;' "
+          :style=" navOn ? '' : 'margin-left:2%;' "
           
         ></component>
       </div>
@@ -85,7 +85,8 @@
 
 <script>
 import
-  TitleArea from "./common/TitleArea.vue";
+  // TitleArea from "./common/TitleArea.vue";
+  TitleArea2 from "./common/TitleArea2.vue";
 import Nav from "./Nav.vue";
 import { defineAsyncComponent, markRaw } from "vue";
 import ButtonComponent from "@/components/common/ButtonComponent.vue";
@@ -93,7 +94,8 @@ import ButtonComponent from "@/components/common/ButtonComponent.vue";
 export default {
   name: "Section",
   components: {
-    TitleArea,
+    // TitleArea,
+    TitleArea2,
     Nav,
     ButtonComponent,
   },
@@ -195,6 +197,17 @@ export default {
 </script>
 
 <style scoped>
+
+.menu_tab_line {
+  height: 30px;
+  display: inline-flex;
+  width: 100%;
+  background-color: #5ad3cd;
+  position: fixed;
+  overflow: hidden;
+  z-index: 800;
+  /* overflow-x: scroll; */
+}
 .menu_tab_line .menu_tab_line_detail {
   width: calc(100% - 70px);
   overflow: hidden;
@@ -225,17 +238,6 @@ div.taboff {
   background-color: #707070;
   color: #aeaeae;
   border-right: #343434 solid 1px;
-}
-
-.menu_tab_line {
-  height: 30px;
-  display: inline-flex;
-  width: 100%;
-  background-color: #5ad3cd;
-  position: fixed;
-  overflow: hidden;
-  z-index: 800;
-  /* overflow-x: scroll; */
 }
 
 .menu_tab {
@@ -304,4 +306,14 @@ div.taboff {
   padding-top: 50px;
   z-index: 800;
 }
+
+
+/* .menu_tab_line .menu_tab_buttons {
+  width: 5%;
+  padding-top: 2px;
+  float: right;
+  margin-right: 15%;
+  
+  display: flex;
+} */
 </style>

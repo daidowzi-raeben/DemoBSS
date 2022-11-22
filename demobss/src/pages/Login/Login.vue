@@ -29,20 +29,20 @@
         <div>
           <span>
             <ChkBoxComponent
-            :CheckOptions="['아이디기억']"
+            :CheckOptions="['아이디 저장']"
             :showCheckOpt="false"
             :checkTextSize="'10pt'"
             :checkBoxSize="'20px'"
             />  </span>
           <span>
             <linkComponent
-            :linkName="'사번 찾기'"
+            :linkNm="'사번 찾기'"
             @click="findIdModal"
             />
           </span>
           <span>
             <linkComponent
-            :linkName="'비밀번호 찾기'"
+            :linkNm="'비밀번호 찾기'"
             @click="findPwModal" />
           </span>
         </div>
@@ -145,7 +145,7 @@ export default {
     },
 
     async loginCheck(){
-      await this.$router.push('/contmgt')
+      await this.$router.push('/')
       window.location.reload()
     },
     check() {
