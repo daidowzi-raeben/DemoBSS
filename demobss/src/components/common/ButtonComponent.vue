@@ -78,6 +78,19 @@ export default {
 .btnClass3:hover {
   background-color: #70707077;
 }
+.btnClass4 {
+  width: v-bind('btnWidth');
+  height: v-bind('btnHeight');
+  font-size: 10pt;
+  background-color: rgb(27,114,212);
+  font-weight: bold;
+  cursor: pointer;
+  color: white;
+  border: 0.5px solid grey;
+}
+.btnClass4:hover{
+  background-color: rgba(154, 42, 218, 0.967);
+}
 .btnSearchImgClass {
   float: left;
   padding: 5px;
@@ -89,7 +102,6 @@ export default {
   font-size: 20px;
   color: #ffffff;
   cursor: pointer;
-  border: none;
 }
 .btnSearchImgClass:hover {
   background-color: rgba(114, 99, 99, 0.47);

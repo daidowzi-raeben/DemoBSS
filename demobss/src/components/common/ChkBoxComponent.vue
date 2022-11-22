@@ -31,6 +31,10 @@ export default {
     checkBoxSize:{
       type:String,
       default:'30px'
+    },
+    chkBoxColor:{
+      type:String,
+      default:'#eee'
     }
   },
   data(){
@@ -75,7 +79,7 @@ export default {
   left: 0;
   height: v-bind('checkBoxSize');
   width: v-bind('checkBoxSize');
-  background-color: #eee;
+  background-color: v-bind('chkBoxColor');
 }
 
 /* On mouse-over, add a grey background color */

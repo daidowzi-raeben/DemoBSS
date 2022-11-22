@@ -8,7 +8,7 @@
       />
       <table id="selectSearch">
         <tr>
-          <th> BM </th>
+          <!-- <th> BM </th>
           <td> 
             <SelectBoxComponent
               :selectClass="'select_input2'"
@@ -25,11 +25,11 @@
               :defaultValue="'선택'"
               v-model="searchDiv1"
               @input="(value) => {searchDiv1 = value;}" />
-          </td>
+          </td> -->
           <td>
             <ButtonComponent
             :btnClass="'btnClass3'"
-            :btnName="'조회'"
+            :btnName="'이력보기'"
             />
           </td>
         </tr>
@@ -43,14 +43,14 @@
             <th > {{item.thBm}} </th>
             <td > <input type="text" :value='item.tdBm' disabled /> </td>
             <th > {{item.thP}} </th>
-            <td > <input type="text" :value='item.tdP'  disabled /></td>
+            <td v-if="item.tdP"> <input type="text" :value='item.tdP'  disabled /></td>
         </tr>
       </table>
     </div>
   </div>
 
 <div 
-  v-show="FormDataclass=='InfoOfShip'"
+  v-show="FormDataclass=='infoOfCus'"
   class="InfoForm">
     <div>
       <SubInfoTitle
@@ -60,11 +60,11 @@
 
       <!-- 정보 Data Form -->
       <table class="formDataTable">
-          <tr v-for="item in DataOfShip" :key="item" >
+          <tr v-for="item in dataOfCust" :key="item" >
             <th > {{item.thId}} </th>
             <td > <input type="text" :value='item.tdId' disabled /> </td>
-            <th > {{item.thBm}} </th>
-            <td > <input type="text" :value='item.tdBm' disabled /> </td>
+            <th > {{item.thEm}} </th>
+            <td > <input type="text" :value='item.tdEm' disabled /> </td>
             <th > {{item.thP}} </th>
             <td > <input type="text" :value='item.tdP'  disabled /></td>
         </tr>
@@ -150,7 +150,9 @@
       <table class="formDataTable" id="account">
           <tr v-for="item in DataOfAccount" :key="item" >
             <th > {{item.thId}} </th>
-            <td > <input type="text" :value='item.tdId' disabled /> </td>
+            <td > 
+              <input type="text" :value='item.tdId' disabled /> 
+            </td>
             <th > {{item.th0}} </th>
             <td > <input type="text" :value='item.td0' disabled /> </td>
         </tr>
@@ -195,12 +197,17 @@ export default {
           thBm:'영업담당자',  tdBm:"김영업", 
           thP:'승인상태',     tdP:"승인" 
         },
-      ],
-      DataOfShip: [
         { 
-          thId:'선박ID',    tdId:"EVGR0001", 
-          thBm:'선박명',  tdBm:"에버그린1호", 
-          thP:'IMO Number',     tdP:"AB000001" 
+          thId:'최근판매조직',    tdId:"AA고객팀", 
+          thBm:'최근판매자',  tdBm:"이영업", 
+
+        },
+      ],
+      dataOfCust: [
+        { 
+          thId:'신청자',    tdId:"99420024132", 
+          thEm:'E-mail',  tdEm:"exam@kt.com", 
+          thP:'연락처',     tdP:"010-0000-1111" 
         },
       ],
       DataOfAccount:[
@@ -288,32 +295,29 @@ export default {
 }
 
 .formDataTable {
-  border: groove; 
-  width: 100%;
+  padding: 8px;
+  border: 1px solid grey; 
+  width: calc(100% - 4px);
 }
 
 .formDataTable tr > th  {
-  background-color: #f9f9f9;
-  border-style: groove;
+  /* background-color: #f9f9f9; */
+  /* border-style: groove; */
   width: 10%;
   font-size: 10px;
-  height: 10px;
+  height: 20px;
   font-weight: bold;
   text-align: center;
+}
+.formDataTable tr > td > input {
+  /* background-color: #f9f9f9; */
+  width: 80%;
+  height: 20px;
+  font-size: 10px;
 }
 
 .InfoForm > div > #account > tr > th {
   width: 15%;
 }
-.formDataTable tr > td > input {
-  background-color: #f9f9f9;
-  width: 95%;
-  height: 15px;
-  font-size: 10px;
-}
-
-
-/*  */
-  
 
 </style>

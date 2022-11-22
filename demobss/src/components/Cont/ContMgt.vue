@@ -28,8 +28,8 @@
         </div>
       <div class="item">
         <FormDataComponent
-          :FormDataclass="'InfoOfShip'"
-          :subInfoTitleNm="'선박정보'"
+          :FormDataclass="'infoOfCus'"
+          :subInfoTitleNm="'고객정보'"
         />
       </div>
       <div class="item">

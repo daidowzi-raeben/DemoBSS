@@ -1,7 +1,7 @@
 <template>
 <div style="display:inline-block;">
-  <label :class="subInfoTitleMarkClass"
-  :style="{height:markHeight, width: markWidth }" ></label>
+  <!-- <label :class="subInfoTitleMarkClass"
+  :style="{height:markHeight, width: markWidth }" ></label> -->
   <label
   :class="subInfoTitleClass"
   :style="{fontSize:fontSize, }">{{subInfoTitleNm}}</label>

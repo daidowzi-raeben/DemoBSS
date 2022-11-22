@@ -66,6 +66,9 @@ input {
   font-weight: bold;
   color: red;
 }
+.class3 {
+  font-weight: bold;
+}
 
 
 </style>
