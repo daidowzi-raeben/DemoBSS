@@ -47,7 +47,6 @@
           />
           <ButtonComponent
             :btnClass="'btnDeleteImgClass'"
-            
             :btnHeight="'25px;'"
             :btnwWidth="'25px;'"
             @click="AllDeleteComponent"
@@ -195,6 +194,17 @@ export default {
 </script>
 
 <style scoped>
+
+.menu_tab_line {
+  height: 30px;
+  display: inline-flex;
+  width: 100%;
+  background-color: #5ad3cd;
+  position: fixed;
+  overflow: hidden;
+  z-index: 800;
+  /* overflow-x: scroll; */
+}
 .menu_tab_line .menu_tab_line_detail {
   width: calc(100% - 70px);
   overflow: hidden;
@@ -225,17 +235,6 @@ div.taboff {
   background-color: #707070;
   color: #aeaeae;
   border-right: #343434 solid 1px;
-}
-
-.menu_tab_line {
-  height: 30px;
-  display: inline-flex;
-  width: 100%;
-  background-color: #5ad3cd;
-  position: fixed;
-  overflow: hidden;
-  z-index: 800;
-  /* overflow-x: scroll; */
 }
 
 .menu_tab {
@@ -304,4 +303,14 @@ div.taboff {
   padding-top: 50px;
   z-index: 800;
 }
+
+
+/* .menu_tab_line .menu_tab_buttons {
+  width: 5%;
+  padding-top: 2px;
+  float: right;
+  margin-right: 15%;
+  
+  display: flex;
+} */
 </style>
