@@ -59,7 +59,8 @@
             contentNavOn: navOn === true,
           }"
           class="content">
-      <title-area :currentMenu="currentMenu" :style=" !this.navOn ? 'margin-left:10%; width:82%;':'' "/>
+      <!-- <title-area :currentMenu="currentMenu" :style=" !this.navOn ? 'margin-left:10%; width:82%;':'' "/> -->
+      <title-area2 :currentMenu="currentMenu"/>
 
       <div
         v-for="(item, index) in compm2"
@@ -73,7 +74,7 @@
         <component
           v-bind:is="this.compm2[index]"
           v-show="index === this.cur_num"
-          :style=" navOn ? '' : 'margin-left:10%;' "
+          :style=" navOn ? '' : 'margin-left:2%;' "
           
         ></component>
       </div>
@@ -84,7 +85,8 @@
 
 <script>
 import
-  TitleArea from "./common/TitleArea.vue";
+  // TitleArea from "./common/TitleArea.vue";
+  TitleArea2 from "./common/TitleArea2.vue";
 import Nav from "./Nav.vue";
 import { defineAsyncComponent, markRaw } from "vue";
 import ButtonComponent from "@/components/common/ButtonComponent.vue";
@@ -92,7 +94,8 @@ import ButtonComponent from "@/components/common/ButtonComponent.vue";
 export default {
   name: "Section",
   components: {
-    TitleArea,
+    // TitleArea,
+    TitleArea2,
     Nav,
     ButtonComponent,
   },
