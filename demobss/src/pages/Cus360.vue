@@ -1,6 +1,5 @@
 <template>
   <article class="cus360View">
-    
     <div class="item">   <!-- 1 -->
         <cust-retv-component 
         :cdGroup="'optionsSearchDiv'" />
@@ -13,7 +12,7 @@
 
     <div class="item"> <!-- 4 --> 
       <form-data-component
-      :FormDataclass="'InfoOfBasic'"
+      :FormDataclass="'InfoOfCont'"
       :subInfoTitleNm="'계약정보'"
       style="margin:auto;"
       />
@@ -26,13 +25,13 @@
           @input="addComp"
           @modalShow="FormPopup"
           style="height:500px;"
-        /></div>
+        />
+      </div>
 
     <div class="item"> <!-- 6 -->
       <form-data-component
       :FormDataclass="'infoOfCus'"
       :subInfoTitleNm="'고객정보'"
-      style="width:600px;"
       /> 
     </div>
 
