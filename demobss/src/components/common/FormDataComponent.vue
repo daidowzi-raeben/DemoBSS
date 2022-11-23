@@ -10,68 +10,70 @@
           <label-component
           :labelNm="'계약번호'"
           :labelClass="'class1'"/>
-          <input type="text" value='P100002214' disabled /> 
+          <input-component :input-class="'class5'" :disabled="true" :value="'P100002214' " /> 
           
+
+
           <label-component
           :labelNm="'서비스번호'"
           :labelClass="'class1'"/>
-          <input type="text" value='------' disabled /> 
+          <input-component :input-class="'class5'" :disabled="true" :value="'------' " /> 
           <label-component
           :labelNm="'상태'"
           :labelClass="'class1'"/>
-          <input type="text" value='이용중' disabled /> 
+          <input-component :input-class="'class5'" :disabled="true" :value="'이용중' " /> 
         </div>
         <div>
           
           <label-component
           :labelNm="'가입유형'"
           :labelClass="'class1'"/>
-          <input type="text" value='일반' disabled /> 
+          <input-component :input-class="'class5'" :disabled="true" :value="'일반' " /> 
           
           <label-component
           :labelNm="'상품'"
           :labelClass="'class1'"/>
-          <input class="input2" type="text" value='IDC' disabled /> 
-          <input class="input3" type="text" value="사용중인요금제명" disabled /> 
+          <input-component :input-class="'class5'" class="input2" type="text" :value="'IDC'" /> 
+          <input-component :input-class="'class5'" class="input3" type="text" :value="'사용중인요금제명'"  /> 
         </div>
         <div>
           
           <label-component
           :labelNm="'수용국'"
           :labelClass="'class1'"/>
-          <input type="text" value='김포지점' disabled /> 
+          <input-component :input-class="'class5'" :disabled="true" :value="'김포지점' " /> 
           
           <label-component
           :labelNm="'접수일자'"
           :labelClass="'class1'"/>
-          <input type="text" value='2022-10-12' disabled /> 
+          <input-component :input-class="'class5'" :disabled="true" :value="'2022-10-12' " /> 
           
           <label-component
           :labelNm="'개통일자'"
           :labelClass="'class1'"/>
-          <input type="text" value='2022-10-13' disabled /> 
+          <input-component :input-class="'class5'" :disabled="true" :value="'2022-10-13' " /> 
         </div>
         <div>
           <label-component
           :labelNm="'계약기간'"
           :labelClass="'class1'"/>
-          <input type="text" value='36개월' disabled /> 
+          <input-component :input-class="'class5'" :disabled="true" :value="'36개월' " /> 
 
           <label-component
           :labelNm="'사용기간'"
           :labelClass="'class1'"/>
-          <input type="text" value='1개월 7일' disabled /> 
+          <input-component :input-class="'class5'" :disabled="true" :value="'1개월 7일' " /> 
           
           <label-component
           :labelNm="'약정만료일'"
           :labelClass="'class1'"/>
-          <input type="text" value='2025-10-12' disabled /> 
+          <input-component :input-class="'class5'" :disabled="true" :value="'2025-10-12' " /> 
         </div>
         <div>
           <label-component
           :labelNm="'미납요금'"
           :labelClass="'class1'"/>
-          <input type="text" value='26,790원' disabled /> 
+          <input-component :input-class="'class5'" :disabled="true" :value="'26,790원' " /> 
         </div>
         <div class="btnComps"> 
           <span> <ButtonComponent :btnClass="'btnClass5'" :btnName="'이력보기'" @click="modalShow"/> </span>
@@ -136,36 +138,36 @@
       <!-- <table class="formDataTable">
           <tr v-for="item in DataOfOrg" :key="item" >
             <th > {{item.thId}} </th>
-            <td > <input type="text" :value='item.tdId' disabled /> </td>
+            <td > <input-component :input-class="'class5'" :disabled="true" :value="'item.tdId'  /> <"/td>
             <th > {{item.thBm}} </th>
-            <td > <input type="text" :value='item.tdBm' disabled /> </td>
+            <td > <input-component :input-class="'class5'" :disabled="true" :value="'item.tdBm'  /> <"/td>
             <th > {{item.thP}} </th>
-            <td v-if="item.tdP"> <input type="text" :value='item.tdP'  disabled /></td>
+            <td v-if="item.tdP"> <input-component :input-class="'class5'" :disabled="true" :value="'item.tdP'   /><"/td>
         </tr>
       </table> -->
         <div>
           <label-component
           :labelNm="'영업조직'"
           :labelClass="'class1'"/>
-          <input type="text" value='기업고객팀' disabled /> 
+          <input-component :input-class="'class5'" :disabled="true" :value="'기업고객팀'" /> 
           <label-component
           :labelNm="'영업담당자'"
           :labelClass="'class1'"/>
-          <input type="text" value='김영업' disabled /> 
+          <input-component :input-class="'class5'" :disabled="true" :value="'김영업'" /> 
           <label-component
           :labelNm="'승인상태'"
           :labelClass="'class1'"/>
-          <input type="text" value='승인' disabled /> 
+          <input-component :input-class="'class5'" :disabled="true" :value="'승인'" /> 
         </div>
         <div>
           <label-component
           :labelNm="'최근판매조직'"
           :labelClass="'class1'"/>
-          <input type="text" value='AA고객팀' disabled /> 
+          <input-component :input-class="'class5'" :disabled="true" :value="'AA고객팀'" /> 
           <label-component
           :labelNm="'최근판매자'"
           :labelClass="'class1'"/>
-          <input type="text" value='이영업' disabled /> 
+          <input-component :input-class="'class5'" :disabled="true" :value="'이영업'" /> 
         
         </div>
       </div>
@@ -183,11 +185,11 @@
       <table class="formDataTable">
           <tr v-for="item in dataOfCust" :key="item" >
             <th > {{item.thId}} </th>
-            <td > <input type="text" :value='item.tdId' disabled /> </td>
+            <td > <input-component :input-class="'class5'" :disabled="true" :value="'item.tdId'  /> <"/td>
             <th > {{item.thEm}} </th>
-            <td > <input type="text" :value='item.tdEm' disabled /> </td>
+            <td > <input-component :input-class="'class5'" :disabled="true" :value="'item.tdEm'  /> <"/td>
             <th > {{item.thP}} </th>
-            <td > <input type="text" :value='item.tdP'  disabled /></td>
+            <td > <input-component :input-class="'class5'" :disabled="true" :value="'item.tdP'   /><"/td>
         </tr>
       </table>
     </div>
@@ -202,17 +204,17 @@
           <label-component
           :labelNm="'신청자'"
           :labelClass="'class1'"/>
-          <input type="text" value='9900000221' disabled /> 
+          <input-component :input-class="'class5'" :disabled="true" :value="'9900000221' " /> 
           
           <label-component
           :labelNm="'E-mail'"
           :labelClass="'class1'"/>
-          <input type="text" value='clouer@kt.com' disabled /> 
+          <input-component :input-class="'class5'" :disabled="true" :value="'clouer@kt.com' " /> 
           
           <label-component
           :labelNm="'연락처'"
           :labelClass="'class1'"/>
-          <input type="text" value='010-1111-2222' disabled /> 
+          <input-component :input-class="'class5'" :disabled="true" :value="'010-1111-2222' " /> 
         </div>
       </div>
     </div>
@@ -252,11 +254,11 @@
       <table class="formDataTable">
           <tr v-for="item in DataOfBasic" :key="item" >
             <th > {{item.thId}} </th>
-            <td > <input type="text" :value='item.tdId' disabled /> </td>
+            <td > <input-component :input-class="'class5'" :disabled="true" :value="'item.tdId'"  /> </td>
             <th v-show="item.th0"> {{item.th0}} </th>
-            <td v-show="item.td0"> <input type="text" :value='item.td0' disabled /> </td>
+            <td v-show="item.td0"> <input-component :input-class="'class5'" :disabled="true" :value="'item.td0'"  /> </td>
             <th v-show="item.th1"> {{item.th1}} </th>
-            <td v-show="item.td1"> <input type="text" :value='item.td0' disabled /> </td>
+            <td v-show="item.td1"> <input-component :input-class="'class5'" :disabled="true" :value="'item.td0'"  /> </td>
         </tr>
       </table>
     </div>
@@ -303,37 +305,37 @@
           <label-component
           :labelNm="'청구계정ID'"
           :labelClass="'class1'"/>
-          <input type="text" value='999900005' disabled /> 
+          <input-component :input-class="'class5'" :disabled="true" :value="'999900005' " /> 
           <label-component
           :labelNm="'청구고객명'"
           :labelClass="'class1'"/>
-          <input type="text" value='이청구' disabled /> 
+          <input-component :input-class="'class5'" :disabled="true" :value="'이청구' " /> 
         </div>
         <div>
           <label-component
           :labelNm="'납부방법'"
           :labelClass="'class1'"/>
-          <input type="text" value='은행계좌이체' disabled /> 
-          <input class="input2" type="text" value='매월 25일' disabled /> 
+          <input-component :input-class="'class5'" :disabled="true" :value="'은행계좌이체' " /> 
+          <input-component :input-class="'class5'" class="input2" type="text" :value="'매월 25일' " /> 
         </div>
         <div>
           <label-component
           :labelNm="'계좌/카드'"
           :labelClass="'class1'"/>
-          <input class="input2"  type="text" value='카카오뱅크' disabled /> 
-          <input type="text" value='333306****' disabled /> 
-          <input type="text" value='ktds솔루션***' disabled /> 
+          <input-component :input-class="'class5'" class="input2"  type="text" :value="'카카오뱅크' " /> 
+          <input-component :input-class="'class5'" :disabled="true" :value="'333306****' " /> 
+          <input-component :input-class="'class5'" :disabled="true" :value="'ktds솔루션***' " /> 
         </div>
         <div>
           <label-component
           :labelNm="'청구유형'"
           :labelClass="'class1'"/>
-          <input type="text" value='우편(종이)' disabled /> 
+          <input-component :input-class="'class5'" :disabled="true" :value="'우편(종이)' " /> 
           <label-component
           :labelNm="'주소'"
           :labelClass="'class1'"/>
-          <input class="input2" type="text" value='06037' disabled /> 
-          <input class="input3" type="text" value='서울특별시 강남구 도산대로19길 10 (신사동, 현우빌딩)' disabled /> 
+          <input-component :input-class="'class5'" class="input2" type="text" :value="'06037' " /> 
+          <input-component :input-class="'class5'" class="input3" type="text" :value="'서울특별시 강남구 도산대로19길 10 (신사동, 현우빌딩)' " /> 
         </div>
         <div class="btnComps"> 
           <span> <ButtonComponent :btnClass="'btnClass5'" :btnName="'상세조회'" @click="modalShow"/> </span>
@@ -515,7 +517,7 @@ export default {
   margin-bottom: 8px;
 }
 
-.infoFlexTable > div > input{
+/* .infoFlexTable > div > input{
   width: 140px;
   font-size: 12pt;
   font-weight: normal;
@@ -524,7 +526,7 @@ export default {
   border: 1px solid #e4e4e4;
   margin-right: 3px;
   height: 28px;
-}
+} */
 .infoFlexTable > div > .input2{
   width: 90px;
 }

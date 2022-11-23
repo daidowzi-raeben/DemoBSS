@@ -1,6 +1,6 @@
 <template>
   <input
-    type="type"
+    :type="type"
     :class="inputClass"
     v-model="value"
     :placeholder="placeholder"
@@ -39,6 +39,9 @@ export default {
       type:Boolean,
       default:false,
     },
+    value:{
+      type:String,
+    }
   },
 
   methods: {
@@ -88,6 +91,17 @@ input {
   width:100%;
   height:100%;
   border:1px solid #bdbdbd;
+}
+
+.class5{
+  width: 140px;
+  font-size: 12pt;
+  font-weight: normal;
+  color: #000;
+  background-color: #f2f2f2;
+  border: 1px solid #e4e4e4;
+  margin-right: 3px;
+  height: 28px;
 }
 
 </style>
