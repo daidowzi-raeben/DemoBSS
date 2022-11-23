@@ -20,12 +20,12 @@
     </div>
 
     <div class="item"> <!-- 5 --> 
-    
         <form-data-component
           :FormDataclass="'InfoOfAccount'"
           :subInfoTitleNm="'청구계정 정보'"
           @input="addComp"
           @modalShow="FormPopup"
+          style="height:500px;"
         /></div>
 
     <div class="item"> <!-- 6 -->

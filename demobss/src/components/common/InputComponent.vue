@@ -52,7 +52,6 @@ export default {
 
 <style scoped>
 input {
-  font-family: 맑은 고딕;
   font-size: 10pt;
   color: #000;
 }

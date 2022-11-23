@@ -50,8 +50,7 @@ export default {
 
 <style scoped>
 select {
-  font-family: 맑은 고딕;
-  font-size: 12px;
+  font-size: 12pt;
   color: #343434;
 }
 select option:hover{
