@@ -7,7 +7,11 @@
     </div>
 
     <div class="item">
-      <div class="cust_box">고객정보</div>
+      <div class="cust_box">
+        <SubInfoTitle
+          :subInfoTitleNm="'고객정보'"
+      />
+      </div>
       <div class="cust_box_butt">
         <button-component
           :btn-name="'고객등록'"
@@ -18,7 +22,7 @@
         <button-component
             :btn-name="'청약이력보기'"
             :btn-class="'btnClass2'"
-            :btn-width="70"
+            :btn-width="75"
             :btn-height="24"
         />
         <button-component
@@ -32,7 +36,11 @@
     </div>
 
     <div class="item">
-      <div class="product_box">보유상품</div>
+      <div class="product_box">
+        <SubInfoTitle
+            :subInfoTitleNm="'보유상품'"
+        />
+      </div>
       <div class="product_box_butt">
         <button-component
             :btn-name="'청약등록'"
@@ -141,6 +149,7 @@ import CustInfoComponent from "@/components/common/CustInfoComponent";
 import SelectBoxComponent from "@/components/common/SelectBoxComponent";
 import InputComponent from "@/components/common/InputComponent";
 import TreeGridComponent from "@/components/common/TreeGridComponent";
+import SubInfoTitle from "@/components/common/SubInfoTitle";
 export default {
   data(){
     return{
@@ -200,6 +209,7 @@ export default {
   components: {
     InputComponent,
     SelectBoxComponent, CustInfoComponent, CustRetvComponent, FormDataComponent, ButtonComponent,
+    SubInfoTitle,
   TreeGridComponent},
 
 }
@@ -252,9 +262,6 @@ export default {
   float:left;
   height:20px;
   width:70%;
-  font-size: 12pt;
-  font-weight: bold;
-  color:#1b72d4;
 }
 .cust_box_butt{
   padding:5px 0;
@@ -266,9 +273,6 @@ export default {
   float:left;
   height:20px;
   width:70%;
-  font-size: 12pt;
-  font-weight: bold;
-  color:#1b72d4;
 }
 .product_box_butt{
   padding:5px 0;

@@ -48,7 +48,7 @@ export default {
 .btnClass1 {
   float: right;
   padding: 2px;
-  font-size: 8px;
+  font-size: 12px;
   border: rgb(231,231,231) 1px solod;
   color: #000;
   margin: 0px 0px 0px 3px;
@@ -57,9 +57,8 @@ export default {
 .btnClass2 {
   float: right;
   padding: 2px;
-  font-size: 8px;
+  font-size: 12px;
   border: rgb(231,231,231) 1px solid;
-  font-weight: bold;
   cursor: pointer;
   color: white;
   margin: 0px 0px 0px 3px;

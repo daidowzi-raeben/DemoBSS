@@ -547,6 +547,7 @@ import AtcListComponent from "@/components/common/AtcListComponent";
 import TextAreaComponent from "@/components/common/TextAreaComponent";
 import {defineAsyncComponent, markRaw} from "vue";
 import TabComponent from "@/components/common/TabComponent";
+import PostCodeComponent from "@/components/common/PostCodeComponent";
 import ApiMixin from "@/service/common.js";
 
 export default {
