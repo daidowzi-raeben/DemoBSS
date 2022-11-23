@@ -1,14 +1,103 @@
 <template>  
+
   <div 
-  v-show="FormDataclass=='InfoOfOrg'"
+  v-if="FormDataclass=='InfoOfCont'"
   class="InfoForm">
     <div>
+      <div> <SubInfoTitle :subInfoTitleNm='subInfoTitleNm'/> </div>
+      <div class="infoFlexTable" >
+        <div>
+          <label-component
+          :labelNm="'계약번호'"
+          :labelClass="'class1'"/>
+          <input type="text" value='P100002214' disabled /> 
+          
+          <label-component
+          :labelNm="'서비스번호'"
+          :labelClass="'class1'"/>
+          <input type="text" value='------' disabled /> 
+          <label-component
+          :labelNm="'상태'"
+          :labelClass="'class1'"/>
+          <input type="text" value='이용중' disabled /> 
+        </div>
+        <div>
+          
+          <label-component
+          :labelNm="'가입유형'"
+          :labelClass="'class1'"/>
+          <input type="text" value='일반' disabled /> 
+          
+          <label-component
+          :labelNm="'상품'"
+          :labelClass="'class1'"/>
+          <input class="input2" type="text" value='IDC' disabled /> 
+          <input class="input3" type="text" value="사용중인요금제명" disabled /> 
+        </div>
+        <div>
+          
+          <label-component
+          :labelNm="'수용국'"
+          :labelClass="'class1'"/>
+          <input type="text" value='김포지점' disabled /> 
+          
+          <label-component
+          :labelNm="'접수일자'"
+          :labelClass="'class1'"/>
+          <input type="text" value='2022-10-12' disabled /> 
+          
+          <label-component
+          :labelNm="'개통일자'"
+          :labelClass="'class1'"/>
+          <input type="text" value='2022-10-13' disabled /> 
+        </div>
+        <div>
+          <label-component
+          :labelNm="'계약기간'"
+          :labelClass="'class1'"/>
+          <input type="text" value='36개월' disabled /> 
+
+          <label-component
+          :labelNm="'사용기간'"
+          :labelClass="'class1'"/>
+          <input type="text" value='1개월 7일' disabled /> 
+          
+          <label-component
+          :labelNm="'약정만료일'"
+          :labelClass="'class1'"/>
+          <input type="text" value='2025-10-12' disabled /> 
+        </div>
+        <div>
+          <label-component
+          :labelNm="'미납요금'"
+          :labelClass="'class1'"/>
+          <input type="text" value='26,790원' disabled /> 
+        </div>
+        <div class="btnComps"> 
+          <span> <ButtonComponent :btnClass="'btnClass5'" :btnName="'이력보기'" @click="modalShow"/> </span>
+          <span> <ButtonComponent :btnClass="'btnClass5'" :btnName="'상세조회'"/>   </span>
+          <span> <ButtonComponent :btnClass="'btnClass5'" :btnName="'계약변경'"/>  </span>
+          <span> <ButtonComponent :btnClass="'btnClass5'" :btnName="'명의변경'"/>  </span>
+          <span> <ButtonComponent :btnClass="'btnClass5'" :btnName="'정지/부활'"/>  </span>
+          <span> <ButtonComponent :btnClass="'btnClass5'" :btnName="'해지'" :menu="'bill_01_01_01'" @input="addComp"/></span>
+        </div>
+        <br><br>
+      </div>
+    </div>
+  </div>
+
+  <div 
+  v-else-if="FormDataclass=='InfoOfOrg'"
+  class="InfoForm">
+    <div>
+      <div>
       <SubInfoTitle
       :subInfoTitleNm='subInfoTitleNm'
       />
-      <table id="selectSearch">
+
+      <!-- <table id="selectSearch">
         <tr>
-          <!-- <th> BM </th>
+          <th> BM </th>
           <td> 
             <SelectBoxComponent
               :selectClass="'select_input2'"
@@ -25,18 +114,26 @@
               :defaultValue="'선택'"
               v-model="searchDiv1"
               @input="(value) => {searchDiv1 = value;}" />
-          </td> -->
+          </td>
           <td>
             <ButtonComponent
             :btnClass="'btnClass3'"
             :btnName="'이력보기'"
+
             />
           </td>
         </tr>
-      </table>
-
+      </table> -->
+        <div style="display:inline-block; float:right;" >
+          <ButtonComponent
+          :btnClass="'btnClass3'"
+          :btnName="'이력보기'"
+          />
+          </div>
+      </div>
+      <div class="infoFlexTable">
       <!-- 정보 Data Form -->
-      <table class="formDataTable">
+      <!-- <table class="formDataTable">
           <tr v-for="item in DataOfOrg" :key="item" >
             <th > {{item.thId}} </th>
             <td > <input type="text" :value='item.tdId' disabled /> </td>
@@ -45,20 +142,42 @@
             <th > {{item.thP}} </th>
             <td v-if="item.tdP"> <input type="text" :value='item.tdP'  disabled /></td>
         </tr>
-      </table>
+      </table> -->
+        <div>
+          <label-component
+          :labelNm="'영업조직'"
+          :labelClass="'class1'"/>
+          <input type="text" value='기업고객팀' disabled /> 
+          <label-component
+          :labelNm="'영업담당자'"
+          :labelClass="'class1'"/>
+          <input type="text" value='김영업' disabled /> 
+          <label-component
+          :labelNm="'승인상태'"
+          :labelClass="'class1'"/>
+          <input type="text" value='승인' disabled /> 
+        </div>
+        <div>
+          <label-component
+          :labelNm="'최근판매조직'"
+          :labelClass="'class1'"/>
+          <input type="text" value='AA고객팀' disabled /> 
+          <label-component
+          :labelNm="'최근판매자'"
+          :labelClass="'class1'"/>
+          <input type="text" value='이영업' disabled /> 
+        </div>
+      </div>
     </div>
   </div>
 
-<div 
-  v-show="FormDataclass=='infoOfCus'"
+  <!-- <div 
+  v-else-if="FormDataclass=='infoOfCus'"
   class="InfoForm">
     <div>
       <sub-info-title
       :subInfoTitleNm='subInfoTitleNm'
       />
-      
-
-      <!-- 정보 Data Form -->
       <table class="formDataTable">
           <tr v-for="item in dataOfCust" :key="item" >
             <th > {{item.thId}} </th>
@@ -70,14 +189,40 @@
         </tr>
       </table>
     </div>
-  </div>
+  </div> -->
+  <div 
+  v-else-if="FormDataclass=='infoOfCus'"
+  class="InfoForm">
+    <div>
+      <div> <sub-info-title :subInfoTitleNm='subInfoTitleNm'/> </div>
+      <div class="infoFlexTable" >
+        <div>
+          <label-component
+          :labelNm="'신청자'"
+          :labelClass="'class1'"/>
+          <input type="text" value='9900000221' disabled /> 
+          
+          <label-component
+          :labelNm="'E-mail'"
+          :labelClass="'class1'"/>
+          <input type="text" value='clouer@kt.com' disabled /> 
+          
+          <label-component
+          :labelNm="'연락처'"
+          :labelClass="'class1'"/>
+          <input type="text" value='010-1111-2222' disabled /> 
+        </div>
+      </div>
+    </div>
+  </div> 
+
 
   <div 
-  v-show="FormDataclass=='InfoOfBasic'"
+  v-else-if="FormDataclass=='InfoOfBasic'"
   class="InfoForm">
     <div>
       <div>
-      <SubInfoTitle
+      <sub-info-title
       :subInfoTitleNm='subInfoTitleNm'
       />
         <div style="float: right;">
@@ -114,16 +259,17 @@
       </table>
     </div>
   </div>
+
   <div 
-  v-if="FormDataclass=='InfoOfAccount'"
+  v-else-if="FormDataclass=='InfoOfAccount'"
   class="InfoForm">
     <div>
       <div>
       <SubInfoTitle
       :subInfoTitleNm='subInfoTitleNm'
       />
-        <div style="display:inline-block;">
-          <SelectBoxComponent
+        <div style="display:inline-block; float:right;" >
+          <!-- <SelectBoxComponent
           :selectClass="'select_input3'"
           :cdGroup="'optionsSearchDiv'"
           :defaultValue="'선택'"
@@ -139,39 +285,64 @@
           :placeholder="'내용 입력'"
           @input=" (value) => { searchValue2 = value;}"
           style="width:50px;"
+          /> -->
+          <ButtonComponent
+          :btnClass="'btnClass3'"
+          :btnName="'이력보기'"
           />
           <ButtonComponent
           :btnClass="'btnClass3'"
-          :btnName="'조회'"
+          :btnName="'청구계정등록'"
           />
         </div>
       </div>
-
-      <table class="formDataTable" id="account">
-          <tr v-for="item in DataOfAccount" :key="item" >
-            <th > {{item.thId}} </th>
-            <td > 
-              <input type="text" :value='item.tdId' disabled /> 
-            </td>
-            <th > {{item.th0}} </th>
-            <td > <input type="text" :value='item.td0' disabled /> </td>
-        </tr>
-      </table>
-    </div>
-        <div style="float: right;"> 
-          <ButtonComponent
-            :btnClass="'btnClass3'"
-            :btnName="'수시청구계정등록'"
-            @click="modalShow"
-          />
-          <ButtonComponent :btnClass="'btnClass3'" :btnName="'청구계정등록'"/>
-          <ButtonComponent
-            :btnClass="'btnClass3'"
-            :btnName="'청구계정조회/수정'"
-          />
-          <ButtonComponent :btnClass="'btnClass3'" :btnName="'청구계정변경'"  
-          :menu="'bill_01_01_01'" @input="addComp"/>
+      <div class="infoFlexTable" >
+        <div>
+          <label-component
+          :labelNm="'청구계정ID'"
+          :labelClass="'class1'"/>
+          <input type="text" value='999900005' disabled /> 
+          <label-component
+          :labelNm="'청구고객명'"
+          :labelClass="'class1'"/>
+          <input type="text" value='이청구' disabled /> 
         </div>
+        <div>
+          <label-component
+          :labelNm="'납부방법'"
+          :labelClass="'class1'"/>
+          <input type="text" value='은행계좌이체' disabled /> 
+          <input class="input2" type="text" value='매월 25일' disabled /> 
+        </div>
+        <div>
+          <label-component
+          :labelNm="'계좌/카드'"
+          :labelClass="'class1'"/>
+          <input class="input2"  type="text" value='카카오뱅크' disabled /> 
+          <input type="text" value='333306****' disabled /> 
+          <input type="text" value='ktds솔루션***' disabled /> 
+        </div>
+        <div>
+          <label-component
+          :labelNm="'청구유형'"
+          :labelClass="'class1'"/>
+          <input type="text" value='우편(종이)' disabled /> 
+          <label-component
+          :labelNm="'주소'"
+          :labelClass="'class1'"/>
+          <input class="input2" type="text" value='06037' disabled /> 
+          <input class="input3" type="text" value='서울특별시 강남구 도산대로19길 10 (신사동, 현우빌딩)' disabled /> 
+        </div>
+        <div class="btnComps"> 
+          <span> <ButtonComponent :btnClass="'btnClass5'" :btnName="'상세조회'" @click="modalShow"/> </span>
+          <span> <ButtonComponent :btnClass="'btnClass5'" :btnName="'청구정보수정'"/>   </span>
+          <span> <ButtonComponent :btnClass="'btnClass5'" :btnName="'청구지변경'"/>  </span>
+          <span> <ButtonComponent :btnClass="'btnClass5'" :btnName="'청구분리'"/>  </span>
+          <span> <ButtonComponent :btnClass="'btnClass5'" :btnName="'청구통합'" :menu="'bill_01_01_01'" @input="addComp"/></span>
+        </div>
+        <br><br>
+      </div>
+    </div>
   </div>
 
 </template>
@@ -181,13 +352,15 @@ import SubInfoTitle from "@/components/common/SubInfoTitle.vue";
 import ButtonComponent from "@/components/common/ButtonComponent.vue";
 import InputComponent from "@/components/common/InputComponent.vue";
 import SelectBoxComponent from "@/components/common/SelectBoxComponent.vue";
+import LabelComponent from './LabelComponent.vue';
 
 export default {
   components:{
     SubInfoTitle,
     SelectBoxComponent,
     InputComponent,
-    ButtonComponent
+    ButtonComponent,
+    LabelComponent
     },
   data(){
     return{
@@ -265,11 +438,11 @@ export default {
 }
 </script>
 
-<style>
-.InfoForm {
+<style scoped>
+/* .InfoForm {
   width: 100%;
-  margin: 0 auto auto 5px;
-}
+  margin: 0 auto auto 0;
+} */
 
 #selectSearch{
   float: right;
@@ -295,29 +468,72 @@ export default {
 }
 
 .formDataTable {
-  padding: 8px;
-  border: 1px solid grey; 
+  padding: 8px; 
   width: calc(100% - 4px);
+  border: 1px solid #bdbdbd;
+  /* height: calc(100% - 25px); */
 }
 
 .formDataTable tr > th  {
   /* background-color: #f9f9f9; */
   /* border-style: groove; */
   width: 10%;
-  font-size: 10px;
+  /* font-size: 10px; */
   height: 20px;
+  font-size: 12pt;
   font-weight: bold;
-  text-align: center;
+  color: #000;
+  text-align: left;
 }
 .formDataTable tr > td > input {
-  /* background-color: #f9f9f9; */
-  width: 80%;
-  height: 20px;
-  font-size: 10px;
+  width: 140px;
+  height: 28px;
+  background-color: #f2f2f2;
+  border: solid #e4e4e4;
+  font-size: 12pt;
+  font-weight: normal;
+  color: #000;
+  text-align: left;
 }
 
-.InfoForm > div > #account > tr > th {
+/* .InfoForm > div > #account > tr > th {
   width: 15%;
+} */
+
+.infoFlexTable{
+  padding: 10px;
+  border: 1px solid #bdbdbd;
 }
 
+.infoFlexTable > div{
+  display:flex; 
+  flex-flow: row wrap; 
+  justify-content: flex-start;
+  align-content: center;
+  margin-bottom: 8px;
+}
+
+.infoFlexTable > div > input{
+  width: 130px;
+  font-size: 12pt;
+  font-weight: normal;
+  color: #000;
+  background-color: #f2f2f2;
+  border: 1px solid #e4e4e4;
+  margin-right: 3px;
+  height: 28px;
+}
+.infoFlexTable > div > .input2{
+  width: 90px;
+}
+.infoFlexTable > div > .input3{
+  width: 290px;
+}
+.infoFlexTable > .btnComps{
+  float: right; 
+  margin-top : 5px;
+}
+.infoFlexTable > .btnComps > span{
+  margin-right: 3px;
+}
 </style>
