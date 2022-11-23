@@ -6,7 +6,7 @@
         :class="[tabIndex == 0 ? 'tabon' : 'taboff']"
         @click="tabIndex = 0"
       >
-        . . .
+        ◀
       </div>
       <div
         id="nav_tab2"
@@ -21,7 +21,10 @@
       <ul id="depth2_list">
         <li v-for="(menu2, idx) in menuDepth2" :key="idx" :value="menu2.menuId">
           <div id="depth2" @click="setMenu2(menu2.menuId)">
-            {{ selectedMenuId == menu2.menuId ? "- " : "+" }}
+            <span v-if="selectedMenuId == menu2.menuId">
+              <img :src="menuIcon2" />
+            </span>
+            <span v-else><img :src="menuIcon3" /></span>
             {{ menu2.menuNm }}
           </div>
           <ul id="depth3_list" v-if="selectedMenuId == menu2.menuId">
@@ -55,6 +58,9 @@ export default {
       menuDepth3: [],
       selectedMenuId: "cont_01_01",
       tabIndex: 0,
+      menuIcon1:require('../img/menu_type_1.png'),
+      menuIcon2:require('../img/menu_type_2.png'),
+      menuIcon3:require('../img/menu_type_3.png'),
     };
   },
   computed: {
@@ -104,46 +110,56 @@ export default {
 <style scoped>
 
 #nav {
-  border-right: #afafaf solid 1px;
+
   position:fixed;
   height: 100%;
-  background-color: white;
-  z-index: 1000;
+  z-index: 6;
 }
-
+img{
+  width: 20px;
+  height: 20px;
+}
 #nav > .tab {
+  background-color: black;
+  width: 245px;
+  height: 30px;
   text-align: center;
   font-size: 20px;
   font-weight: 600;
 }
 
 #nav > .tab > #nav_tab1 {
-  width: 49.7%;
+  width: 50%;
   height: 30px;
   float: left;
+  line-height:30px;
   cursor: pointer;
+  border-radius: 10px 10px 0 0;
 }
 
 #nav > .tab > #nav_tab2 {
-  width: 49.7%;
+  width: 50%;
   height: 30px;
   float: left;
+  line-height:30px;
   cursor: pointer;
+  border-radius: 10px 10px 0 0;
 }
 
 #nav > .tab .tabon {
   /* 탭 선택되었을 때 */
-  background-color: #ffffff;
-  color: #444444;
+  background-color: rgb(231,231,231);
+  color: rgb(0,0,0);
 }
 
 #nav > .tab .taboff {
   /* 탭 선택x */
-  background-color: #444444;
-  color: #aeaeae;
+  background-color: rgb(72,87,104);
+  color: rgb(255,255,255);
 }
 
 #nav > .area {
+  border-right: rgb(229,231,234) solid 1px;
   width: 245px;
   padding: 30px 0 0 0;
   height: 80vh;
@@ -151,7 +167,7 @@ export default {
 }
 
 #nav > .area > #navTitle {
-  font-size: 20px;
+  font-size: 16px;
   padding: 10px 15px;
   font-weight: 600;
 }
@@ -162,14 +178,17 @@ export default {
 
 #nav > .area > ul#depth2_list > li #depth2 {
   padding: 10px 15px;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 600;
   color: #606060;
   cursor: pointer;
 }
 
 #nav > .area > ul > li #depth2:hover {
-  color: #2dbdb6 !important;
+  color: rgb(27,114,212) !important;
+}
+#nav > .area > ul > li #depth2:hover > img{
+  content:url("../img/menu_type_1.png");
 }
 
 #nav > .area > ul#depth2_list > li > ul#depth3_list {
@@ -185,7 +204,6 @@ export default {
 }
 
 #nav > .area > ul#depth2_list > li > ul#depth3_list > li#depth3:hover {
-  color: #000000;
-  background-color: #dcdcdc;
+  color: rgb(27,114,212);
 }
 </style>

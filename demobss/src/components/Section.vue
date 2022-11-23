@@ -22,7 +22,10 @@
                 {{ item.menuNm }}
               </span>
               <span class="tab_x" @click.prevent.stop="DeleteComponent(index)"
-                >x</span
+                >
+                <img v-if="this.comp === item.menuId" :src="iconDelBlack" />
+                <img v-else :src="iconDelWhite" />
+              </span
               >
             </div>
           </div>
@@ -114,6 +117,8 @@ export default {
       component: markRaw(
           defineAsyncComponent(() => import("../pages/ChageInfoRetv.vue"))
       ),
+      iconDelWhite:require("../img/icon_delete_white.png"),
+      iconDelBlack:require("../img/icon_delete_black.png"),
     };
   },
   watch: {
@@ -135,11 +140,23 @@ export default {
   },
   methods: {
     moveScrollRight: function () {
-      let menuTabScroll = document.querySelector(".menu_tab_line_detail_on");
+      let menuTabScroll
+      if(this.navOn===false){
+        menuTabScroll = document.querySelector(".menu_tab_line_detail");
+      }
+      else{
+        menuTabScroll = document.querySelector(".menu_tab_line_detail_on");
+      }
       menuTabScroll.scrollLeft += 100;
     },
     moveScrollLeft: function () {
-      let menuTabScroll = document.querySelector(".menu_tab_line_detail_on");
+      let menuTabScroll
+      if(this.navOn===false){
+        menuTabScroll = document.querySelector(".menu_tab_line_detail");
+      }
+      else{
+        menuTabScroll = document.querySelector(".menu_tab_line_detail_on");
+      }
       menuTabScroll.scrollLeft -= 100;
     },
     ChageComponent: function (componentName, index) {
@@ -200,30 +217,35 @@ export default {
   overflow: hidden;
   white-space: nowrap;
   display: flex;
-  z-index: 900;
+  z-index: 4;
 }
-
+img{
+  width: 15px;
+  height: 15px;
+}
 .menu_tab_line .menu_tab_line_detail_on {
   width: calc(100% - 400px);
   overflow: hidden;
-  padding-left: 245px;
+  padding-left: 247px;
   position: fixed;
   white-space: nowrap;
   flex-grow: 0;
   display: flex;
-  z-index: 900;
+  z-index: 4;
 }
 
 div.tabon {
   /* 탭 선택되었을 때 */
-  background-color: #ffffff;
-  color: #444444;
+  background-color: rgb(255,255,255);
+  border-radius: 10px 10px 0 0;
+  color: rgb(27,114,212);
 }
 
 div.taboff {
   /* 탭 선택x */
-  background-color: #707070;
-  color: #aeaeae;
+  background-color: rgb(27,114,212);
+  color: rgb(255,255,255);
+  border-radius: 10px 10px 0 0;
   border-right: #343434 solid 1px;
 }
 
@@ -231,10 +253,10 @@ div.taboff {
   height: 30px;
   display: inline-flex;
   width: 100%;
-  background-color: #5ad3cd;
+  background-color: rgb(8,22,38);
   position: fixed;
   overflow: hidden;
-  z-index: 800;
+  z-index: 3;
   /* overflow-x: scroll; */
 }
 
@@ -245,6 +267,7 @@ div.taboff {
   padding: 0 10px;
   line-height: 30px;
   cursor: pointer;
+  font-weight: bolder;
 }
 
 .menu_tab > span#tab_nm {
@@ -268,7 +291,6 @@ div.taboff {
   padding-top: 2px;
   padding-left: calc(100% - 120px);
   position: fixed;
-  float: right;
   display: flex;
 }
 /*네비게이션 닫혔을 때 탭 버튼*/
@@ -276,7 +298,6 @@ div.taboff {
   width: 5%;
   padding-top: 2px;
   padding-right: 50px;
-  float: right;
   display: flex;
 }
 
@@ -296,12 +317,12 @@ div.taboff {
   overflow: hidden;
   padding-left: 250px;
   padding-top: 50px;
-  z-index: 800;
+  z-index: 3;
 }
 /*네비게이션 닫혔을 때 Component내용*/
 .contentNavOff{
   overflow: hidden;
   padding-top: 50px;
-  z-index: 800;
+  z-index: 3;
 }
 </style>

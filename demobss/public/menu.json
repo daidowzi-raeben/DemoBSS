@@ -2,13 +2,13 @@
     "menu": [
         {
             "menuId": "cont_01",
-            "menuNm": "계약",
+            "menuNm": "고객/청약",
             "upMenuId": null,
             "cmpnId": ""
         },
         {
             "menuId": "cont_01_01",
-            "menuNm": "계약정보",
+            "menuNm": "고객 360 View",
             "upMenuId": "cont_01",
             "cmpnId": ""
         },
@@ -62,7 +62,7 @@
         },
         {
             "menuId": "bill_01",
-            "menuNm": "청구",
+            "menuNm": "요금/수납/미납",
             "upMenuId": null,
             "cmpnId": ""
         },
@@ -133,6 +133,30 @@
             "cmpnId": "ChageInfoRetv"
         },
         {
+            "menuId": "cust_01",
+            "menuNm": "청구/정산/매출",
+            "upMenuId": null,
+            "cmpnId": ""
+        },
+        {
+            "menuId": "sale_01",
+            "menuNm": "업무현황",
+            "upMenuId": null,
+            "cmpnId": ""
+        },
+        {
+            "menuId": "stat_01",
+            "menuNm": "업무지원",
+            "upMenuId": null,
+            "cmpnId": ""
+        },
+        {
+            "menuId": "prod_01",
+            "menuNm": "상품관리",
+            "upMenuId": null,
+            "cmpnId": ""
+        },
+        {
             "menuId": "comn_01",
             "menuNm": "공통",
             "upMenuId": null,
@@ -149,24 +173,6 @@
             "menuNm": "공통화면참고",
             "upMenuId": "comn_01_01",
             "cmpnId": "CommonView"
-        },
-        {
-            "menuId": "cust_01",
-            "menuNm": "고객",
-            "upMenuId": null,
-            "cmpnId": ""
-        },
-        {
-            "menuId": "sale_01",
-            "menuNm": "영업관리",
-            "upMenuId": null,
-            "cmpnId": ""
-        },
-        {
-            "menuId": "stat_01",
-            "menuNm": "정산관리",
-            "upMenuId": null,
-            "cmpnId": ""
         }
     ]
 }
