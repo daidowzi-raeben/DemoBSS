@@ -82,7 +82,7 @@ export default {
   min-width: 59px;
   margin-right: 5px;
   font-weight: bold;
-  font-size: 11pt;
+  font-size: 12pt;
 }
 .cusSearch > span:nth-child(2){
   width: 150px;

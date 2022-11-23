@@ -211,16 +211,32 @@
     <span></span>
     <div style="border-top: solid black 1px; margin: 10px; padding: 10px">
       <FormDataComponent
-        :FormDataclass="'InfoOfAccount'"
-        :subInfoTitleNm="'청구계정 정보'"
+        :FormDataclass="'InfoOfCont'"
+        :subInfoTitleNm="'계약정보'"
       />
-
       <br />
-
       <FormDataComponent
         :FormDataclass="'InfoOfOrg'"
         :subInfoTitleNm="'영업조직정보'"
       />
+      <br>
+      
+      <FormDataComponent
+        :FormDataclass="'infoOfCus'"
+        :subInfoTitleNm="'고객정보'"
+      />
+      <br>
+      <FormDataComponent
+        :FormDataclass="'InfoOfBasic'"
+        :subInfoTitleNm="'기본정보'"
+      />
+      <br>
+      <FormDataComponent
+        :FormDataclass="'InfoOfAccount'"
+        :subInfoTitleNm="'청구계정정보'"
+      />
+      <br>
+
     </div>
 
     <h1 style="font-size: 30px">PopupComponent</h1>
