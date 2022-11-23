@@ -7,8 +7,8 @@
     </div>
 
     <div class="item">
-      <div style="font-family: 'Noto Sans KR';padding:5px 0;float:left;height:20px; width:70%;font-size: 12pt; font-weight: bold; color:#1b72d4;">고객정보</div>
-      <div style="padding:5px 0;width: 30%;float: left">
+      <div class="cust_box">고객정보</div>
+      <div class="cust_box_butt">
         <button-component
           :btn-name="'고객등록'"
           :btn-class="'btnClass2'"
@@ -32,8 +32,8 @@
     </div>
 
     <div class="item">
-      <div style="font-family: 'Noto Sans KR';padding:5px 0;float:left;height:20px; width:70%;font-size: 12pt; font-weight: bold; color:#1b72d4;">보유상품</div>
-      <div style="padding:5px 0;width: 30%;float: left">
+      <div class="product_box">보유상품</div>
+      <div class="product_box_butt">
         <button-component
             :btn-name="'청약등록'"
             :btn-class="'btnClass2'"
@@ -41,7 +41,7 @@
             :btn-height="24"
         />
       </div>
-      <div style="border:1px solid #e4e4e4;padding:10px 20px;overflow: hidden; display: block;width: 720px; height: 40px; background-color: rgb(239,245,252)">
+      <div class="product_box_sel">
         <select-box-component
             :selectClass="'select_input'"
             :width="140"
@@ -88,11 +88,11 @@
             :input-class="'class4'"
             :placeholder="'서비스계약ID 입력'"
         />
-        <div style="float: right; padding-right:80px;  width: 30px; height: 30px;">
+        <div>
           <img :src="logo_search" />
         </div>
       </div>
-      <div style="width: 100%; height: 200px; overflow: auto; border: 1px solid #e4e4e4;">
+      <div class="product_box_tree">
         <TreeGridComponent :tableData="tableData" :columns="columns" />
       </div>
     </div>
@@ -247,6 +247,53 @@ export default {
   grid-row: 5;
   background-color: blanchedalmond;
 }
-
-
+.cust_box{
+  padding:5px 0;
+  float:left;
+  height:20px;
+  width:70%;
+  font-size: 12pt;
+  font-weight: bold;
+  color:#1b72d4;
+}
+.cust_box_butt{
+  padding:5px 0;
+  width: 30%;
+  float: left;
+}
+.product_box{
+  padding:5px 0;
+  float:left;
+  height:20px;
+  width:70%;
+  font-size: 12pt;
+  font-weight: bold;
+  color:#1b72d4;
+}
+.product_box_butt{
+  padding:5px 0;
+  width: 30%;
+  float: left;
+}
+.product_box_sel{
+  border:1px solid #e4e4e4;
+  padding:10px 20px;
+  overflow: hidden;
+  display: block;
+  width: 720px;
+  height: 40px;
+  background-color: rgb(239,245,252);
+}
+.product_box_sel div{
+  float: right;
+  padding-right:80px;
+  width: 30px;
+  height: 30px;
+}
+.product_box_tree{
+  width: 100%;
+  height: 200px;
+  overflow: auto;
+  border: 1px solid #e4e4e4;
+}
 </style>
