@@ -3,8 +3,7 @@
   <label :class="subInfoTitleMarkClass"
   :style="{height:markHeight, width: markWidth }" ></label>
   <label
-  :class="subInfoTitleClass"
-  :style="{fontSize:fontSize, }">{{subInfoTitleNm}}</label>
+  :class="subInfoTitleClass">{{subInfoTitleNm}}</label>
 </div>
 </template>
 
@@ -21,8 +20,6 @@ export default {
 
     subInfoTitleMark: String, // 마크 클래스 지정
     subInfoTitle: String,     // 제목 클래스 지정
-
-    fontSize : String,        // 제목 글자 크기
     markHeight: String,       // 마크 높이, 넓이
     markWidth: String,
   },
@@ -52,7 +49,8 @@ export default {
   content: url(../../img/icon_form_arrow.png);
 }
 .subInfoTitle {
-  font-size: 15px;
+  font-size: 14pt;
   font-weight: bold;
+  color: #1b72d4;
 }
 </style>

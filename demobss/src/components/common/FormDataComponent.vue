@@ -3,7 +3,7 @@
   v-show="FormDataclass=='InfoOfOrg'"
   class="InfoForm">
     <div>
-      <SubInfoTitle
+      <Sub-info-title
       :subInfoTitleNm='subInfoTitleNm'
       />
       <table id="selectSearch">

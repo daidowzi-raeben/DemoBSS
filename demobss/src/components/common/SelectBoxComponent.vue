@@ -86,10 +86,10 @@ select option:hover{
   width: 120px;
   height: 20px;
   margin-left: 10px;
-  border: 1px solid #c1c1c1;
+  border: 1px solid #bdbdbd;
   font-size: 10px;
-  /* height: 36px; */
-  /* width: 50px; */
+  height: 100%;
+  width: 100%;
   color: #000000;
   padding: 1px 22px 0 9px;
   background: #fff url(../../img/icon_form_arrow_02.png) no-repeat;

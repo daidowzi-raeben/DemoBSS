@@ -1,4 +1,5 @@
 <template>
+<<<<<<< Updated upstream
   <SubInfoTitle
       :subInfoTitleNm="'고객정보'"
       v-show="titleShow"
@@ -19,9 +20,23 @@
             searchDiv = value;
           }
         "
+=======
+    <div class="cusSearch">
+      <span>
+        고객검색
+      </span>
+      <span>
+        <select-box-component
+        :selectClass="'select_input3'"
+        :cdGroup="cdGroup"
+        :defaultValue="'선택'"
+        @input=" (value) => { searchDiv = value;}"
+        v-model="searchDiv"
+>>>>>>> Stashed changes
         />
         &nbsp;
         <input-component
+<<<<<<< Updated upstream
             :type="'search'"
             :height="15"
             :width="150"
@@ -32,6 +47,22 @@
                   searchValue = value;
                 }
               "
+=======
+        :type="'search'"
+        :inputClass="'class3'"
+        :placeholder="'검색어 입력'"
+        @input=" (value) => { searchValue = value;}"
+        v-model="searchValue"
+        style="width:100%; height:21px;"
+        />
+      </span>
+      <span>
+        <button-component
+          :btn-class="'btnClass4'"
+          :btn-name ="'검색'"
+          :btnHeight="'28px'"
+          :btnWidth ="'62px'"
+>>>>>>> Stashed changes
           />
 
         </div>
