@@ -58,12 +58,11 @@ input {
 /*정보 스타일*/
 .class1 {
   background-color: #f2f2f2;
-  border : #e4e4e4 1px;
+  border : #e4e4e4 1px solid;
   font-size: 10pt;
   font-weight: 400;
   align-items: center;
   color: #000;
-  font-family: Noto Sans KR;
 }
 .class2 {
   background-color: black;

@@ -49,23 +49,21 @@ export default {
   float: right;
   padding: 2px;
   font-size: 8px;
-  border: rgb(231,231,231) 3px;
+  border: rgb(231,231,231) 1px solod;
   color: #000;
   margin: 0px 0px 0px 3px;
   background-color: rgb(251, 251, 251);
-  font-family: Noto Sans KR;
 }
 .btnClass2 {
   float: right;
   padding: 2px;
   font-size: 8px;
-  border: rgb(231,231,231) 1px;
+  border: rgb(231,231,231) 1px solid;
   font-weight: bold;
   cursor: pointer;
   color: white;
   margin: 0px 0px 0px 3px;
   background-color: rgb(119, 146, 176);
-  font-family: Noto Sans KR;
 }
 .btnClass1:hover, .btnClass2:hover {
   background-color: rgb(27,114,212);
