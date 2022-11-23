@@ -139,6 +139,18 @@
             "cmpnId": ""
         },
         {
+            "menuId": "cust_01_01",
+            "menuNm": "고객 360 View",
+            "upMenuId": "cust_01",
+            "cmpnId": ""
+        },
+        {
+            "menuId": "cust_01_01_01",
+            "menuNm": "고객 360 View",
+            "upMenuId": "cust_01_01",
+            "cmpnId": "Cus360"
+        },
+        {
             "menuId": "sale_01",
             "menuNm": "업무현황",
             "upMenuId": null,

@@ -57,9 +57,11 @@ input {
   color: #343434;
 }
 .class1 {
-  background-color: #dcdcdc;
+  background-color: #f2f2f2;
+  border : #efefef 1px;
   border-radius: 2px;
-  font-weight: bold;
+  font-size: 12pt;
+  color: #000;
 }
 .class2 {
   background-color: black;
