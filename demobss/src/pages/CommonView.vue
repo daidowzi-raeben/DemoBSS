@@ -547,6 +547,7 @@ import AtcListComponent from "@/components/common/AtcListComponent";
 import TextAreaComponent from "@/components/common/TextAreaComponent";
 import {defineAsyncComponent, markRaw} from "vue";
 import TabComponent from "@/components/common/TabComponent";
+import PostCodeComponent from '@/components/common/PostCodeComponent.vue';
 import ApiMixin from "@/service/common.js";
 
 export default {
@@ -756,6 +757,16 @@ export default {
       if (this.isFormModalShow2 == false) this.isFormModalShow2 = true
       else this.isFormModalShow2 = false
       this.$refs.form-data-popup-component.GetSubmitFormData()
+    },
+    postCodePopup(){
+      if (this.isPostCodeModalShow == false) this.isPostCodeModalShow = true
+      else this.isPostCodeModalShow = false
+      // this.$refs.postCodePopup.GetSubmitFormData()
+    },
+    selectedJuso(postCodeData,detailPostAddress) {
+      this.postCodeObj = postCodeData;
+      this.postCodeObj["detailPostAddress"] = detailPostAddress
+      this.isPostCodeModalShow = false;
     },
     getDiffDate(st,fns){
       return this.diffDate(st,fns);
