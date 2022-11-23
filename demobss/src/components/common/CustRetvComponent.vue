@@ -10,25 +10,24 @@
         :defaultValue="'선택'"
         @input=" (value) => { searchDiv = value;}"
         v-model="searchDiv"
-        style="width:100%; height:100%"
         />
       </span>
       <span>
         <input-component
         :type="'search'"
-        :inputClass="'class3'"
+        :inputClass="'class4'"
         :placeholder="'검색어 입력'"
         @input=" (value) => { searchValue = value;}"
-        style="width:100%; height:100%"
         v-model="searchValue"
+        style="width:100%; height:100%"
         />
       </span>
       <span>
         <button-component
           :btn-class="'btnClass4'"
           :btn-name ="'검색'"
-          :btnHeight="'25px'"
-          :btnWidth ="'60px'"
+          :btnHeight="'28px'"
+          :btnWidth ="'62px'"
           />
       </span>
       <span>

@@ -3,8 +3,7 @@
   <!-- <label :class="subInfoTitleMarkClass"
   :style="{height:markHeight, width: markWidth }" ></label> -->
   <label
-  :class="subInfoTitleClass"
-  :style="{fontSize:fontSize, }">{{subInfoTitleNm}}</label>
+  :class="subInfoTitleClass">{{subInfoTitleNm}}</label>
 </div>
 </template>
 
@@ -52,7 +51,8 @@ export default {
   content: url(../../img/icon_form_arrow.png);
 }
 .subInfoTitle {
-  font-size: 15px;
+  font-size: 14pt;
   font-weight: bold;
+  color: #1b72d4;
 }
 </style>

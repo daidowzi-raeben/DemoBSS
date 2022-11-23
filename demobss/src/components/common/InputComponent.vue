@@ -53,8 +53,8 @@ export default {
 <style scoped>
 input {
   font-family: 맑은 고딕;
-  font-size: 11px;
-  color: #343434;
+  font-size: 10pt;
+  color: #000;
 }
 .class1 {
   background-color: #f2f2f2;
@@ -76,6 +76,12 @@ input {
   border: 0;
   font-weight: bold;
   color: white;
+}
+.class4 {
+  font-weight: bold;
+  width:100%;
+  height:100%;
+  border:1px solid #bdbdbd
 }
 
 </style>

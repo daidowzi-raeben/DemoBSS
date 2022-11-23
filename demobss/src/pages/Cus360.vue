@@ -7,161 +7,6 @@
     </div>
 
     <div class="item">
-      고객정보
-      <table>
-        <tr>
-          <td>
-            <label>고객ID</label>
-            <input-component
-              :type="'text'"
-              :height="28"
-              :width="140"
-              :input-class="'class1'"
-              :placeholder="'내용'"
-              :disabled="true"
-              />
-          </td>
-          <td>
-            <label>고객ID</label>
-            <input-component
-                :type="'text'"
-                :height="28"
-                :width="140"
-                :input-class="'class1'"
-                :placeholder="'내용'"
-                :disabled="true"
-            />
-          </td>
-          <td>
-            <label>고객ID</label>
-            <input-component
-                :type="'text'"
-                :height="28"
-                :width="140"
-                :input-class="'class1'"
-                :placeholder="'내용'"
-                :disabled="true"
-            />
-          </td>
-          <td>
-            <label>고객ID</label>
-            <input-component
-                :type="'text'"
-                :height="28"
-                :width="140"
-                :input-class="'class1'"
-                :placeholder="'내용'"
-                :disabled="true"
-            />
-          </td>
-          <td>
-            <label>고객ID</label>
-            <input-component
-                :type="'text'"
-                :height="28"
-                :width="140"
-                :input-class="'class1'"
-                :placeholder="'내용'"
-                :disabled="true"
-            />
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <label>고객ID</label>
-            <input-component
-                :type="'text'"
-                :height="28"
-                :width="140"
-                :input-class="'class1'"
-                :placeholder="'내용'"
-                :disabled="true"
-            />
-          </td>
-          <td>
-            <label>고객ID</label>
-            <input-component
-                :type="'text'"
-                :height="28"
-                :width="140"
-                :input-class="'class1'"
-                :placeholder="'내용'"
-                :disabled="true"
-            />
-          </td>
-          <td>
-            <label>고객ID</label>
-            <input-component
-                :type="'text'"
-                :height="28"
-                :width="140"
-                :input-class="'class1'"
-                :placeholder="'내용'"
-                :disabled="true"
-            />
-          </td>
-          <td>
-            <label>고객ID</label>
-            <input-component
-                :type="'text'"
-                :height="28"
-                :width="140"
-                :input-class="'class1'"
-                :placeholder="'내용'"
-                :disabled="true"
-            />
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <label>고객ID</label>
-            <input-component
-                :type="'text'"
-                :height="28"
-                :width="140"
-                :input-class="'class1'"
-                :placeholder="'내용'"
-                :disabled="true"
-            />
-          </td>
-          <td>
-            <label>고객ID</label>
-            <input-component
-                :type="'text'"
-                :height="28"
-                :width="140"
-                :input-class="'class1'"
-                :placeholder="'내용'"
-                :disabled="true"
-            />
-          </td>
-          <td colspan="2">
-            <label>고객ID</label>
-            <input-component
-                :type="'text'"
-                :height="28"
-                :width="140"
-                :input-class="'class1'"
-                :placeholder="'내용'"
-                :disabled="true"
-            />
-          </td>
-          <td>
-            <label>고객ID</label>
-            <input-component
-                :type="'text'"
-                :height="28"
-                :width="140"
-                :input-class="'class1'"
-                :placeholder="'내용'"
-                :disabled="true"
-            />
-          </td>
-          <td>
-            버튼
-          </td>
-        </tr>
-      </table>
     </div>
 
     <div class="item"> <!-- 3 --> </div>
@@ -169,7 +14,7 @@
     <div class="item"> <!-- 4 --> 
       <form-data-component
       :FormDataclass="'InfoOfBasic'"
-      :subInfoTitleNm="'계약정본'"
+      :subInfoTitleNm="'계약정보'"
       style="margin:auto;"
       />
     </div>
@@ -208,7 +53,6 @@ import FormDataComponent from '@/components/common/FormDataComponent.vue'
 import InputComponent from "@/components/common/InputComponent";
 export default {
   components: {InputComponent, CustRetvComponent, FormDataComponent },
-
 }
 </script>
 

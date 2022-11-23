@@ -46,10 +46,10 @@ export default {
 }
 
 .icon {
-  height: 20px;
-  width: 20px;
+  height: 25px;
+  width: 25px;
   content: url(../../img/star.png);
-  margin-right: 5px;
+  margin-right: 8px;
   cursor: pointer;
 }
 
@@ -60,8 +60,8 @@ export default {
 }
 
 .title_area label {
-  color: #444444;
-  font-size: 14pt;
+  color: #000;
+  font-size: 18pt;
   font-weight: bold;
 }
 /* 

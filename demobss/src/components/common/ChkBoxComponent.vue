@@ -6,7 +6,7 @@
     :id="checkOpt" 
     :value="checkOpt" 
     v-model="checkedValues">
-      {{checkOpt}}
+    <p id="checkopt"> {{checkOpt}} </p>
     <span class="checkmark" ></span>
   </label>
   <p v-show="showCheckOpt && checkedValues.length>0">선택 값 : {{checkedValues}}</p>
@@ -71,10 +71,13 @@ export default {
   height: 0;
   width: 0;
 }
-
+#checkopt {
+  margin-left:5px;
+}
 /* Create a custom checkbox */
 .checkmark {
   position: absolute;
+  border: 0.5px solid #bdbdbd;
   top: 0;
   left: 0;
   height: v-bind('checkBoxSize');
@@ -85,11 +88,12 @@ export default {
 /* On mouse-over, add a grey background color */
 .container:hover input ~ .checkmark {
   background-color: #ccc;
+  
 }
 
 /* When the checkbox is checked, add a blue background */
 .container input:checked ~ .checkmark {
-  background-color: #2196F3;
+  background-color: white;
 }
 
 /* Create the checkmark/indicator (hidden when not checked) */
@@ -109,7 +113,7 @@ export default {
   left: 28%;
   width: 30%;
   height: 70%;
-  border: solid white;
+  border: solid #2196F3;;
   border-width: 0 3px 3px 0;
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);

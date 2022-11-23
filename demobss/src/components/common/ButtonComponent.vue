@@ -86,7 +86,7 @@ export default {
   font-weight: bold;
   cursor: pointer;
   color: white;
-  border: 0.5px solid grey;
+  border: 0.5px solid #bdbdbd;
 }
 .btnClass4:hover{
   background-color: rgba(154, 42, 218, 0.967);

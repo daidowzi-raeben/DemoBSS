@@ -53,7 +53,7 @@
   v-show="FormDataclass=='infoOfCus'"
   class="InfoForm">
     <div>
-      <SubInfoTitle
+      <sub-info-title
       :subInfoTitleNm='subInfoTitleNm'
       />
       
