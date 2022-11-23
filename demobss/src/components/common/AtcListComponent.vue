@@ -65,7 +65,7 @@ export default {
 
 <style scoped>
 .tablediv{
-  width:1700px;
+  width:1200px;
   height:230px;
 }
 table{

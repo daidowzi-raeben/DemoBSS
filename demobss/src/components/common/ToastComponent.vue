@@ -35,6 +35,7 @@ export default defineComponent({
     closeable: Boolean,
   },
   setup(props) {
+    console.log(props.message);
     const options = props;
     let refNode = null;
     const state = reactive({

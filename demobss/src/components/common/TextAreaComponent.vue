@@ -2,10 +2,10 @@
   <div class="textAreaDiv">
     <textarea
         id="contents"
-        rows="5"
-        placeholder="내용을 입력해주세요"
+        :rows="rows"
+        :placeholder="placeholder"
         v-model="contents"
-      :maxlength="10"
+      :maxlength="maxlength"
     />
     <p v-if="!isContentsValid">글자수가 최대입니다.</p>
   </div>

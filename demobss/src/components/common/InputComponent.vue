@@ -66,9 +66,14 @@ input {
   font-weight: bold;
   color: red;
 }
-.class3 {
+.class3{
+  margin-top: 3px;
+  font-size: 12px;
+  vertical-align: top;
+  background-color: rgb(28,42,57);
+  border: 0;
   font-weight: bold;
+  color: white;
 }
-
 
 </style>

@@ -36,7 +36,7 @@ td,
 tr,
 div {
   font-family: 맑은 고딕;
-  font-size: 12px;
+  font-size: 10px;
   color: #343434;
 }
 textarea,
@@ -115,7 +115,7 @@ body {
 #wrap > header {
   position: fixed;
   width: 100%;
-  z-index: 20;
+  z-index: 6;
   background-color: #fff;
 }
 
@@ -123,7 +123,7 @@ body {
   position: relative;
   float: left;
   width: 245px;
-  z-index: 1000;
+  z-index: 6;
 }
 
 #brand > .brand_name {
@@ -144,10 +144,10 @@ body {
 }
 
 #menu {
-  background-color: #2dbdb6;
+  background-color: rgb(8,22,38);
   border-top: #cfcfcf solid 1px;
   height: 45px;
-  z-index: 1000;
+  z-index: 6;
 }
 #menu > .area {
   width: 100vw;
@@ -160,10 +160,9 @@ body {
 
 #menu > .area > ul > li {
   float: left;
-  padding: 0 15px;
   font-size: 13px;
-  color: #ffffff;
-  font-weight: 500;
+  color: rgb(101,110,121);
+  font-weight: bold;
   line-height: 40px;
   cursor: pointer;
 }
@@ -173,14 +172,12 @@ body {
 }
 
 #menu > .area > ul > li > span.clicked {
-  border: #ffffff solid 1px;
-  border-radius: 50px;
+  color: rgb(255,255,255);
   margin: -1px;
 }
 
 #menu > .area > ul > li > span:hover {
-  border: #ffffff solid 1px;
-  border-radius: 50px;
+  color: rgb(255,255,255);
   margin: -1px;
 }
 

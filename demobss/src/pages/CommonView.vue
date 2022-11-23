@@ -96,6 +96,33 @@
           />
         </div>
       </div>
+      <div style="display: flex">
+        <span style="padding: 5px 10px">날짜</span>
+        <date-picker-component
+            :classWrapper="'calender_input'"
+            :width="200"
+            :pPlaceholder="'2022.01.01'"
+            :pDate="date3"
+            @input="
+              (value) => {
+                date3 = value;
+              }
+            "
+        />
+        <span style="padding: 5px 10px">~</span>
+        <date-picker-component
+            :classWrapper="'calender_input'"
+            :width="200"
+            :pPlaceholder="'2022.01.01'"
+            :pDate="date4"
+            @input="
+              (value) => {
+                date4 = value;
+              }
+            "
+        />
+        <span>&nbsp;&nbsp;날짜간의 차이 일수 {{getDiffDate(date3,date4)}}</span>
+      </div>
       <div style="width: 420px; height: 50px">
         {{ date1 }} <br />{{ date2 }}
       </div>
@@ -229,6 +256,8 @@
       :reqtype="'2'"
     />
     <button @click="FormPopup2">입력 PopUp </button>
+      <br />
+      <p>화면 전체를 회색으로 감싸려면 z-index:7을 주면 적용</p>
     </div>
     <br /><br />
 
@@ -454,14 +483,6 @@
     </div>
     <br /><br /><br />
 
-    <h1 style="font-size: 30px">AtcRegComponent</h1>
-    <span></span>
-    <div class="commondiv2">
-      <AtcRegComponent/>
-    </div>
-    <br /><br /><br />
-
-
     <h1 style="font-size: 30px">TextAreaComponent</h1>
     <span></span>
     <div
@@ -526,9 +547,10 @@ import AtcListComponent from "@/components/common/AtcListComponent";
 import TextAreaComponent from "@/components/common/TextAreaComponent";
 import {defineAsyncComponent, markRaw} from "vue";
 import TabComponent from "@/components/common/TabComponent";
-import PostCodeComponent from '@/components/common/PostCodeComponent.vue';
+import ApiMixin from "@/service/common.js";
 
 export default {
+  mixins:[ApiMixin],
   name: "CommonView",
   components: {
     PostCodeComponent,
@@ -569,6 +591,8 @@ export default {
       searchValue: null,
       date1: new Date(2021, 9, 5),
       date2: new Date(),
+      date3: new Date(),
+      date4: new Date(),
       pDisable: true,
       comp: "cont_01_01_01",
       compm: [
@@ -733,16 +757,8 @@ export default {
       else this.isFormModalShow2 = false
       this.$refs.form-data-popup-component.GetSubmitFormData()
     },
-    postCodePopup(){
-      if (this.isPostCodeModalShow == false) this.isPostCodeModalShow = true
-      else this.isPostCodeModalShow = false
-      // this.$refs.postCodePopup.GetSubmitFormData()
-    },
-    selectedJuso(postCodeData,detailPostAddress){
-      this.postCodeObj = postCodeData;
-      this.postCodeObj["detailPostAddress"] = detailPostAddress
-      this.isPostCodeModalShow = false;
-
+    getDiffDate(st,fns){
+      return this.diffDate(st,fns);
     }
   },
 };
