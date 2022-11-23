@@ -1,7 +1,6 @@
 <template>
   <button
   :class="btnClass"
-  :style="'width:'+btnWidth+'px;height:'+btnHeight+'px;'"
   type="button"
   @click="setCmpn(comp)"
   >

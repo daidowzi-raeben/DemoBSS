@@ -90,10 +90,11 @@
         &nbsp;
         <input-component
             :type="'text'"
-            :height="28"
-            :width="140"
-            :input-class="'class4'"
+            :height="'28px'"
+            :width="'140px'"
+            :input-class="'class1'"
             :placeholder="'서비스계약ID 입력'"
+            style="background-color:white;"
         />
         <div>
           <img :src="logo_search" />
@@ -125,7 +126,7 @@
     <div class="item"> <!-- 6 -->
       <form-data-component
       :FormDataclass="'infoOfCus'"
-      :subInfoTitleNm="'고객정보'"
+      :subInfoTitleNm="'신청자 정보'"
       />
     </div>
 
@@ -219,10 +220,10 @@ export default {
   display: grid;
   /* grid-template-columns: 55% 55% 1fr; */
   grid-template-columns: 760px 760px 1fr;
-  grid-template-rows: 40px 160px 300px 90px 140px minmax(200px,1fr);
+  grid-template-rows: 40px 170px 300px 90px 140px minmax(200px,1fr);
   /* 10% 97px  */
   /* grid-template-rows: 10% 20% 30% 10% 15% 10% minmax(200px,1fr); */
-  gap: 10px 10px;
+  gap: 10px 20px;
 }
 .cus360View > .item:nth-child(1){
   grid-column: 1 / 3;
@@ -239,22 +240,18 @@ export default {
 .cus360View > .item:nth-child(4){
   grid-column: 2/3;
   grid-row: 3;
-  background-color: blanchedalmond;
 }
 .cus360View > .item:nth-child(5){
   grid-column: 1/2;
   grid-row: 4/6;
-  background-color: blanchedalmond;
 }
 .cus360View > .item:nth-child(6){
   grid-column: 2/3;
   grid-row: 4;
-  background-color: blanchedalmond;
 }
 .cus360View > .item:nth-child(7){
   grid-column: 2/3;
   grid-row: 5;
-  background-color: blanchedalmond;
 }
 .cust_box{
   padding:5px 0;

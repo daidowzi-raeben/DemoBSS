@@ -81,7 +81,7 @@
           <span> <ButtonComponent :btnClass="'btnClass5'" :btnName="'정지/부활'"/>  </span>
           <span> <ButtonComponent :btnClass="'btnClass5'" :btnName="'해지'" :menu="'bill_01_01_01'" @input="addComp"/></span>
         </div>
-        <br><br>
+        <br><br><br>
       </div>
     </div>
   </div>
@@ -166,9 +166,11 @@
           :labelNm="'최근판매자'"
           :labelClass="'class1'"/>
           <input type="text" value='이영업' disabled /> 
+        
         </div>
       </div>
     </div>
+    
   </div>
 
   <!-- <div 
@@ -514,7 +516,7 @@ export default {
 }
 
 .infoFlexTable > div > input{
-  width: 130px;
+  width: 140px;
   font-size: 12pt;
   font-weight: normal;
   color: #000;

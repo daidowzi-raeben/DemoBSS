@@ -2,7 +2,6 @@
   <input
     type="type"
     :class="inputClass"
-    :style="{ width: width + 'px', height: height + 'px' }"
     v-model="value"
     :placeholder="placeholder"
     :disabled="disabled"
@@ -25,12 +24,12 @@ export default {
       default:"text",
     },
     width: {
-      type:Number,
-      default:150,
+      type:String,
+      default:'150px',
     },
     height: {
-      type:Number,
-      default: 20,
+      type:String,
+      default: '20px',
     },
     inputClass: {
       type:String,
@@ -59,15 +58,20 @@ input {
 .class1 {
   background-color: #f2f2f2;
   border : #e4e4e4 1px solid;
-  font-size: 10pt;
+  font-size: 12pt;
   font-weight: 400;
   align-items: center;
+  text-align: left;
   color: #000;
+  width: v-bind('width');
+  height: v-bind('height');
 }
 .class2 {
   background-color: black;
   font-weight: bold;
   color: red;
+  width: v-bind('width');
+  height: v-bind('height');
 }
 /*상단 메뉴 스타일 */
 .class3{
@@ -83,7 +87,7 @@ input {
   font-weight: bold;
   width:100%;
   height:100%;
-  border:1px solid #bdbdbd
+  border:1px solid #bdbdbd;
 }
 
 </style>
