@@ -1,17 +1,103 @@
 <template>
   <article class="cus360View">
-    
+
     <div class="item">   <!-- 1 -->
-        <cust-retv-component 
+        <cust-retv-component
         :cdGroup="'optionsSearchDiv'" />
     </div>
 
     <div class="item">
+      <div style="font-family: 'Noto Sans KR';padding:5px 0;float:left;height:20px; width:70%;font-size: 12pt; font-weight: bold; color:#1b72d4;">고객정보</div>
+      <div style="padding:5px 0;width: 30%;float: left">
+        <button-component
+          :btn-name="'고객등록'"
+          :btn-class="'btnClass2'"
+          :btn-width="59"
+          :btn-height="24"
+          />
+        <button-component
+            :btn-name="'청약이력보기'"
+            :btn-class="'btnClass2'"
+            :btn-width="70"
+            :btn-height="24"
+        />
+        <button-component
+            :btn-name="'숨김해제'"
+            :btn-class="'btnClass2'"
+            :btn-width="59"
+            :btn-height="24"
+        />
+      </div>
+      <CustInfoComponent/>
     </div>
 
-    <div class="item"> <!-- 3 --> </div>
+    <div class="item">
+      <div style="font-family: 'Noto Sans KR';padding:5px 0;float:left;height:20px; width:70%;font-size: 12pt; font-weight: bold; color:#1b72d4;">보유상품</div>
+      <div style="padding:5px 0;width: 30%;float: left">
+        <button-component
+            :btn-name="'청약등록'"
+            :btn-class="'btnClass2'"
+            :btn-width="59"
+            :btn-height="24"
+        />
+      </div>
+      <div style="border:1px solid #e4e4e4;padding:10px 20px;overflow: hidden; display: block;width: 720px; height: 40px; background-color: rgb(239,245,252)">
+        <select-box-component
+            :selectClass="'select_input'"
+            :width="140"
+            :cdGroup="'optionsSearchDiv'"
+            :defaultValue="'선택'"
+            v-model="searchDiv1"
+            @input="
+          (value) => {
+            searchDiv1 = value;
+          }
+        "
+        />
+        &nbsp;
+        <select-box-component
+            :selectClass="'select_input'"
+            :width="140"
+            :cdGroup="'optionsSearchDiv'"
+            :defaultValue="'선택'"
+            v-model="searchDiv1"
+            @input="
+          (value) => {
+            searchDiv1 = value;
+          }
+        "
+        />
+        &nbsp;
+        <select-box-component
+            :selectClass="'select_input'"
+            :width="140"
+            :cdGroup="'optionsSearchDiv'"
+            :defaultValue="'선택'"
+            v-model="searchDiv1"
+            @input="
+          (value) => {
+            searchDiv1 = value;
+          }
+        "
+        />
+        &nbsp;
+        <input-component
+            :type="'text'"
+            :height="28"
+            :width="140"
+            :input-class="'class4'"
+            :placeholder="'서비스계약ID 입력'"
+        />
+        <div style="float: right; padding-right:80px;  width: 30px; height: 30px;">
+          <img :src="logo_search" />
+        </div>
+      </div>
+      <div style="width: 100%; height: 200px; overflow: auto; border: 1px solid #e4e4e4;">
+        <TreeGridComponent :tableData="tableData" :columns="columns" />
+      </div>
+    </div>
 
-    <div class="item"> <!-- 4 --> 
+    <div class="item"> <!-- 4 -->
       <form-data-component
       :FormDataclass="'InfoOfBasic'"
       :subInfoTitleNm="'계약정보'"
@@ -19,7 +105,7 @@
       />
     </div>
 
-    <div class="item"> <!-- 5 --> 
+    <div class="item"> <!-- 5 -->
         <form-data-component
           :FormDataclass="'InfoOfAccount'"
           :subInfoTitleNm="'청구계정 정보'"
@@ -33,10 +119,10 @@
       :FormDataclass="'infoOfCus'"
       :subInfoTitleNm="'고객정보'"
       style="width:600px;"
-      /> 
+      />
     </div>
 
-    <div class="item"> <!-- 7 --> 
+    <div class="item"> <!-- 7 -->
       <form-data-component
       :FormDataclass="'InfoOfOrg'"
       :subInfoTitleNm="'영업 조직정보'"
@@ -50,9 +136,72 @@
 <script>
 import CustRetvComponent from '@/components/common/CustRetvComponent.vue'
 import FormDataComponent from '@/components/common/FormDataComponent.vue'
+import ButtonComponent from "@/components/common/ButtonComponent";
+import CustInfoComponent from "@/components/common/CustInfoComponent";
+import SelectBoxComponent from "@/components/common/SelectBoxComponent";
 import InputComponent from "@/components/common/InputComponent";
+import TreeGridComponent from "@/components/common/TreeGridComponent";
 export default {
-  components: {InputComponent, CustRetvComponent, FormDataComponent },
+  data(){
+    return{
+      logo_search:require('../img/logo_search.png'),
+      tableData: [
+        {
+          name: "인말새트 C국내협력점",
+          id: "P10001257",
+          state: "사용중",
+          children: [
+            {
+              name: "Regional MVSAT 128/256 요금(80cm 안테나용) 3년약정 [YC CLOVER]",
+              id: "P10000012679",
+              state: "사용중",
+            },
+          ],
+        },
+        {
+          name: "인말새트 C국내협력점",
+          id: "P10001257",
+          state: "사용중",
+          children: [
+            {
+              name: "Regional MVSAT 128/256 요금(80cm 안테나용) 3년약정 [YC CLOVER]",
+              id: "P10000012679",
+              state: "사용중",
+            },
+          ],
+        },
+        {
+          name: "인말새트 C국내협력점",
+          id: "P10001257",
+          state: "사용중",
+          children: [
+            {
+              name: "Regional MVSAT 128/256 요금(80cm 안테나용) 3년약정 [YC CLOVER]",
+              id: "P10000012679",
+              state: "사용중",
+              children: [
+                {
+                  name: "Regional MVSAT 128/256 요금(80cm 안테나용) 3년약정 [YC CLOVER]",
+                  id: "P10000012679",
+                  state: "사용중",
+                },
+              ],
+            },
+          ],
+        },
+      ],
+      columns: [
+        { label: "상품명", id: "name" },
+        { label: "상품ID", id: "id" },
+        { label: "상태", id: "state" },
+      ],
+    }
+  },
+  components: {
+    InputComponent,
+    SelectBoxComponent, CustInfoComponent, CustRetvComponent, FormDataComponent, ButtonComponent,
+  TreeGridComponent},
+
 }
 </script>
 
@@ -61,7 +210,7 @@ export default {
   display: grid;
   /* grid-template-columns: 55% 55% 1fr; */
   grid-template-columns: 760px 760px 1fr;
-  grid-template-rows: 40px 140px 300px 90px 140px minmax(200px,1fr);
+  grid-template-rows: 40px 160px 300px 90px 140px minmax(200px,1fr);
   /* 10% 97px  */
   /* grid-template-rows: 10% 20% 30% 10% 15% 10% minmax(200px,1fr); */
   gap: 10px 10px;
@@ -73,12 +222,10 @@ export default {
 .cus360View > .item:nth-child(2){
   grid-column: 1 / 3;
   grid-row: 2;
-  background-color: blanchedalmond;
 }
 .cus360View > .item:nth-child(3){
   grid-column: 1 / 2;
   grid-row: 3;
-  background-color: blanchedalmond;
 }
 .cus360View > .item:nth-child(4){
   grid-column: 2/3;
@@ -101,19 +248,5 @@ export default {
   background-color: blanchedalmond;
 }
 
-table {
-  /* display: block; */
-  width: 100%;
-  min-width: 1235px;
-  border: groove 1px
-}
-td > label {
-  display: inline-block;
-  width: 60px;
-  padding-left: 10px;
-  font-size: 12pt;
-  color: #000;
-  font-weight: bold;
-}
 
 </style>

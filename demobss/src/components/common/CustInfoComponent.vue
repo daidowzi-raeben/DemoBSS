@@ -8,108 +8,164 @@
         <label>고객ID</label>
         <input-component
             :type="'text'"
-            :height='Height'
-            :width='Width'
+            :height="28"
+            :width="140"
             :input-class="'class1'"
-            :placeholder="custInfo.customerId"
-            disabled="true"
+            :placeholder="'CC10001671'"
+            :disabled="true"
         />
       </td>
       <td>
         <label>고객명</label>
         <input-component
             :type="'text'"
-            :height="Height"
-            :width='Width'
+            :height="28"
+            :width="140"
             :input-class="'class1'"
-            :placeholder="custInfo.customerName"
-            disabled="true"
+            :placeholder="'농협협단계합***'"
+            :disabled="true"
         />
       </td>
       <td>
         <label>고객유형</label>
         <input-component
             :type="'text'"
-            :height="Height"
-            :width='Width'
+            :height="28"
+            :width="140"
             :input-class="'class1'"
-            :placeholder="custInfo.customerType"
-            disabled="true"
+            :placeholder="'법인사업자'"
+            :disabled="true"
         />
       </td>
-      <td><label>국가</label>
-        <input-component
-            :type="'text'"
-            :height="Height"
-            :width='Width'
-            :input-class="'class1'"
-            :placeholder="custInfo.country"
-            disabled="true"
-        />
-      </td>
-      <td>
-        <label style="width: 130px">사업자등록번호</label>
-        <input-component
-            :type="'text'"
-            :height="Height"
-            :width='Width'
-            :input-class="'class1'"
-            :placeholder="custInfo.businessNumber"
-            disabled="true"
-        />
-      </td>
-    </tr>
-    <tr style="padding-left: 10px">
       <td>
         <label>고객구분</label>
         <input-component
             :type="'text'"
-            :height="Height"
-            :width='Width'
+            :height="28"
+            :width="140"
             :input-class="'class1'"
-            :placeholder="custInfo.customerType"
-            disabled="true"
-        />
-      </td>
-      <td>
-        <label>전화번호</label>
-        <input-component
-            :type="'text'"
-            :height="Height"
-            :width='Width'
-            :input-class="'class1'"
-            :placeholder="custInfo.phoneNumber"
-            disabled="true"
+            :placeholder="'Major Corporate'"
+            :disabled="true"
         />
       </td>
       <td>
         <label>내외구분</label>
         <input-component
             :type="'text'"
-            :height="Height"
-            :width='Width'
+            :height="28"
+            :width="140"
             :input-class="'class1'"
-            :placeholder="''"
-            disabled="true"
+            :placeholder="'국내'"
+            :disabled="true"
+        />
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <label>법인번호</label>
+        <input-component
+            :type="'text'"
+            :height="28"
+            :width="140"
+            :input-class="'class1'"
+            :placeholder="'110136-0027690'"
+            :disabled="true"
         />
       </td>
       <td>
+        <label>사업자번호</label>
+        <input-component
+            :type="'text'"
+            :height="28"
+            :width="140"
+            :input-class="'class1'"
+            :placeholder="'104-82-*****'"
+            :disabled="true"
+        />
+      </td>
+      <td>
+        <label>업종</label>
+        <input-component
+            :type="'text'"
+            :height="28"
+            :width="140"
+            :input-class="'class1'"
+            :placeholder="'협동조합'"
+            :disabled="true"
+        />
+      </td>
+      <td>
+        <label>업태</label>
+        <input-component
+            :type="'text'"
+            :height="28"
+            :width="140"
+            :input-class="'class1'"
+            :placeholder="'공공,개인'"
+            :disabled="true"
+        />
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <label>대표자</label>
+        <input-component
+            :type="'text'"
+            :height="28"
+            :width="140"
+            :input-class="'class1'"
+            :placeholder="'이배*'"
+            :disabled="true"
+        />
+      </td>
+      <td>
+        <label>대리인</label>
+        <input-component
+            :type="'text'"
+            :height="28"
+            :width="140"
+            :input-class="'class1'"
+            :placeholder="'이동*'"
+            :disabled="true"
+        />
+      </td>
+      <td colspan="2">
         <label>주소</label>
         <input-component
             :type="'text'"
-            :height="Height"
-            :width="50"
+            :height="28"
+            :width="80"
             :input-class="'class1'"
-            :placeholder="''"
-            disabled="true"
-        />&nbsp;
+            :placeholder="'12345'"
+            :disabled="true"
+        />
+        &nbsp;
         <input-component
-          :type="'text'"
-          :height="Height"
-          :input-class="'class1'"
-          :width="200"
-          :placeholder="''"
-          disabled="true"
+            :type="'text'"
+            :height="28"
+            :width="300"
+            :input-class="'class1'"
+            :placeholder="'서울시 강남구 학동로 1111'"
+            :disabled="true"
+        />
+      </td>
+      <td>
+        <label>연락처</label>
+        <input-component
+            :type="'text'"
+            :height="28"
+            :width="140"
+            :input-class="'class1'"
+            :placeholder="'010-11**-****'"
+            :disabled="true"
+        />
+      </td>
+      <td class="custinfo_btn">
+        <ButtonComponent
+            :btn-name="'고객정보수정'"
+            :btn-height="24"
+            :btn-width="80"
+            :btn-class="'btnClass1'"
         />
       </td>
     </tr>
@@ -118,15 +174,17 @@
 
 <script>
 import inputComponent from "@/components/common/InputComponent";
-import SubInfoTitle from "@/components/common/SubInfoTitle";
+import ButtonComponent from "@/components/common/ButtonComponent";
 export default {
-  name: "CustomerInfoComponent",
-  components :{inputComponent, SubInfoTitle},
+  name: "CustInfoComponent",
+  components :{
+    inputComponent,
+    ButtonComponent,
+  },
   data(){
     return{
       Height:12,
       Width: 120,
-
     }
   },
   props : {
@@ -139,14 +197,23 @@ export default {
 <style scoped>
 table {
   /* display: block; */
-  width: 90%;
+  width: 100%;
   min-width: 1235px;
   border: groove 1px
 }
+table td{
+  width: 15%;
+}
 td > label {
   display: inline-block;
-  width: 60px;
-  padding-left: 10px;
+  width: 70px;
+  padding: 10px 15px;
+  text-align: left;
+  font-size: 10pt;
+  color: #000;
   font-weight: bold;
+}
+.custinfo_btn{
+  padding: 0 20px 0 0;
 }
 </style>
