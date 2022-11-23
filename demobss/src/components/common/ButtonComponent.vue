@@ -71,12 +71,17 @@ export default {
 }
 .btnClass3 {
   height: v-bind('btnHeight');
+  color: white;
   font-size: 10px;
   font-weight: bold;
   cursor: pointer;
+  height: 24px;
+  background-color: rgb(114, 148, 187);
+  border: 0.5px solid #dbdbdb;
 }
 .btnClass3:hover {
-  background-color: #70707077;
+  /* background-color: #70707077; */
+  background-color: rgb(28, 113, 209);
 }
 .btnClass4 {
   width: v-bind('btnWidth');
@@ -91,6 +96,25 @@ export default {
 .btnClass4:hover{
   background-color: rgba(154, 42, 218, 0.967);
 }
+
+
+.btnClass5 {
+  height: v-bind('btnHeight');
+  color: grey;
+  font-size: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  height: 24px;
+  background-color: rgb(252,252,252);
+  border: 0.5px solid #dbdbdb;
+  box-shadow: 2px 2px 2px #dbdbdb;
+}
+.btnClass5:hover {
+  /* background-color: #70707077; */
+  background-color: rgb(28, 113, 209);
+  color: black;
+}
+
 .btnSearchImgClass {
   float: left;
   padding: 5px;
