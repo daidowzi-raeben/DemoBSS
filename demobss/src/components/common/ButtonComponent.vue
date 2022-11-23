@@ -19,16 +19,16 @@ export default {
   props: {
     btnClass: null,
     btnName: String,
-    menu : null,
+    menu: null,
     btnWidth: {
-      type:String,
-      default:'25'
-      },
+      type: String,
+      default: '25'
+    },
 
     btnHeight: {
-      type:String,
-      default:'25'
-      },
+      type: String,
+      default: '25'
+    },
   },
   created(){
     this.comp = menu.menu.filter((menu)=>{
@@ -48,7 +48,7 @@ export default {
   float: right;
   padding: 2px;
   font-size: 12px;
-  border: rgb(231,231,231) 1px solod;
+  border: rgb(231, 231, 231) 1px solod;
   color: #000;
   margin: 0px 0px 0px 3px;
   background-color: rgb(251, 251, 251);

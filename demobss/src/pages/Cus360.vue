@@ -220,7 +220,7 @@ export default {
   display: grid;
   /* grid-template-columns: 55% 55% 1fr; */
   grid-template-columns: 760px 760px 1fr;
-  grid-template-rows: 40px 170px 300px 90px 140px minmax(200px,1fr);
+  grid-template-rows: 40px 180px 300px 90px 140px minmax(200px,1fr);
   /* 10% 97px  */
   /* grid-template-rows: 10% 20% 30% 10% 15% 10% minmax(200px,1fr); */
   gap: 10px 20px;

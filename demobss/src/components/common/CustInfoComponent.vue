@@ -5,7 +5,9 @@
   <table>
     <tr>
       <td>
-        <label>고객ID</label>
+        <LabelComponent
+            label-nm="고객ID"
+        />
         <input-component
             :type="'text'"
             :height="'28px'"
@@ -16,7 +18,9 @@
         />
       </td>
       <td>
-        <label>고객명</label>
+        <LabelComponent
+            label-nm="고객명"
+        />
         <input-component
             :type="'text'"
             :height="'28px'"
@@ -27,7 +31,9 @@
         />
       </td>
       <td>
-        <label>고객유형</label>
+        <LabelComponent
+            label-nm="고객유형"
+        />
         <input-component
             :type="'text'"
             :height="'28px'"
@@ -38,7 +44,9 @@
         />
       </td>
       <td>
-        <label>고객구분</label>
+        <LabelComponent
+            label-nm="고객구분"
+        />
         <input-component
             :type="'text'"
             :height="'28px'"
@@ -49,7 +57,9 @@
         />
       </td>
       <td>
-        <label>내외구분</label>
+        <LabelComponent
+            label-nm="내외구분"
+        />
         <input-component
             :type="'text'"
             :height="'28px'"
@@ -62,7 +72,9 @@
     </tr>
     <tr>
       <td>
-        <label>법인번호</label>
+        <LabelComponent
+            label-nm="법인번호"
+        />
         <input-component
             :type="'text'"
             :height="'28px'"
@@ -73,7 +85,9 @@
         />
       </td>
       <td>
-        <label>사업자번호</label>
+        <LabelComponent
+            label-nm="사업자번호"
+        />
         <input-component
             :type="'text'"
             :height="'28px'"
@@ -84,7 +98,9 @@
         />
       </td>
       <td>
-        <label>업종</label>
+        <LabelComponent
+            label-nm="업종"
+        />
         <input-component
             :type="'text'"
             :height="'28px'"
@@ -95,7 +111,9 @@
         />
       </td>
       <td>
-        <label>업태</label>
+        <LabelComponent
+            label-nm="업태"
+        />
         <input-component
             :type="'text'"
             :height="'28px'"
@@ -108,7 +126,9 @@
     </tr>
     <tr>
       <td>
-        <label>대표자</label>
+        <LabelComponent
+            label-nm="대표자"
+        />
         <input-component
             :type="'text'"
             :height="'28px'"
@@ -119,7 +139,9 @@
         />
       </td>
       <td>
-        <label>대리인</label>
+        <LabelComponent
+            label-nm="대리인"
+        />
         <input-component
             :type="'text'"
             :height="'28px'"
@@ -130,7 +152,9 @@
         />
       </td>
       <td colspan="2">
-        <label>주소</label>
+        <LabelComponent
+            label-nm="주소"
+        />
         <input-component
             :type="'text'"
             :height="'28px'"
@@ -150,7 +174,9 @@
         />
       </td>
       <td>
-        <label>연락처</label>
+        <LabelComponent
+            label-nm="연락처"
+        />
         <input-component
             :type="'text'"
             :height="'28px'"
@@ -175,11 +201,13 @@
 <script>
 import inputComponent from "@/components/common/InputComponent";
 import ButtonComponent from "@/components/common/ButtonComponent";
+import LabelComponent from "@/components/common/LabelComponent";
 export default {
   name: "CustInfoComponent",
   components :{
     inputComponent,
     ButtonComponent,
+    LabelComponent
   },
   data(){
     return{
