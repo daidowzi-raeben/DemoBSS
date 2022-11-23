@@ -1,6 +1,7 @@
 <template>
   <button
   :class="btnClass"
+  :style="'width:'+btnWidth+'px;height:'+btnHeight+'px;'"
   type="button"
   @click="setCmpn(comp)"
   >
@@ -22,12 +23,12 @@ export default {
     menu : null,
     btnWidth: {
       type:String,
-      default:'25px'
+      default:'25'
       },
 
     btnHeight: {
       type:String,
-      default:'25px'
+      default:'25'
       },
   },
   created(){
@@ -45,29 +46,30 @@ export default {
 
 <style scoped>
 .btnClass1 {
-  float: left;
-  padding: 5px;
-  margin-right: 10px;
-  background-color: #707070;
-  color: #aeaeae;
-  cursor: pointer;
-  border: none;
-}
-.btnClass1:hover {
-  background-color: #70707098;
-}
-.btnclass2 {
   float: right;
   padding: 2px;
-  font-size: 10px;
-  border: solid thin;
+  font-size: 8px;
+  border: rgb(231,231,231) 3px;
+  color: #000;
+  margin: 0px 0px 0px 3px;
+  background-color: rgb(251, 251, 251);
+  font-family: Noto Sans KR;
+}
+.btnClass2 {
+  float: right;
+  padding: 2px;
+  font-size: 8px;
+  border: rgb(231,231,231) 1px;
   font-weight: bold;
   cursor: pointer;
+  color: white;
   margin: 0px 0px 0px 3px;
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(119, 146, 176);
+  font-family: Noto Sans KR;
 }
-.btnclass2:hover {
-  background-color: rgba(188, 213, 62, 0.842);
+.btnClass1:hover, .btnClass2:hover {
+  background-color: rgb(27,114,212);
+  color: white;
 }
 .btnClass3 {
   height: v-bind('btnHeight');

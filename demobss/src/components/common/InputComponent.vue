@@ -56,18 +56,22 @@ input {
   font-size: 11px;
   color: #343434;
 }
+/*정보 스타일*/
 .class1 {
   background-color: #f2f2f2;
-  border : #efefef 1px;
-  border-radius: 2px;
-  font-size: 12pt;
+  border : #e4e4e4 1px;
+  font-size: 10pt;
+  font-weight: 400;
+  align-items: center;
   color: #000;
+  font-family: Noto Sans KR;
 }
 .class2 {
   background-color: black;
   font-weight: bold;
   color: red;
 }
+/*상단 메뉴 스타일 */
 .class3{
   margin-top: 3px;
   font-size: 12px;
