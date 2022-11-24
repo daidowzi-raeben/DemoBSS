@@ -1,0 +1,112 @@
+/* icon 좌우 반전 */
+.x-rotate {-webkit-transform:scaleX(-1); transform:scaleX(-1);}
+
+/* icon 사용중,정상 / 사용정지,계정만료,오류 / 진행중 */
+.ico-use {width:12px; height:12px; margin:0 3px; background:#00b40b; vertical-align:-2px !important;}
+.ico-not-use {width:12px; height:12px; margin:0 3px; background:#ed1941; vertical-align:-2px !important;}
+.ico-ing {width:12px; height:12px; margin:0 3px; background:#2583bd; vertical-align:-2px !important;}
+
+/* icon serverity critical, major, minor, normal */
+.ico-critical {width:12px; height:12px; margin:0 3px; border-radius:50%; border:1px solid rgba(0,0,0,.15); background:#ed1941;vertical-align:-2px !important;}
+.ico-major {width:12px; height:12px; margin:0 3px; border-radius:50%; border:1px solid rgba(0,0,0,.15); background:#f3950f; vertical-align:-2px !important;}
+.ico-minor {width:12px; height:12px; margin:0 3px; border-radius:50%; border:1px solid rgba(0,0,0,.15); background:#ffe400; vertical-align:-2px !important;}
+.ico-normal {width:12px; height:12px; margin:0 3px; border-radius:50%; border:1px solid rgba(0,0,0,.15); background:#00b40b; vertical-align:-2px !important;}
+
+/* icon + text serverity critical, major, minor, normal */
+span[class^="count-"] {display:block; height:25px; line-height:23px; padding:0 3px; border-radius:2px; font-weight:700; text-align:center;}
+.count-critical {border:1px solid rgba(0,0,0,.15); background:#ed1941; color:#fff;}
+.count-major {border:1px solid rgba(0,0,0,.15); background:#f3950f; color:#fff;}
+.count-minor {border:1px solid rgba(0,0,0,.15); background:#ffe400; color:#333;}
+.count-normal {border:1px solid rgba(0,0,0,.15); background:#00b40b; color:#fff;}
+.inner-right span[class^="count-"]{display:inline-block;}
+
+/* 알람 아이콘 등급별 그룹핑 1/2/3개일때 critical, major, minor */
+.level-group {display:inline-table; border-collapse:separate; width:30px; height:15px; background:transparent; vertical-align:middle;}
+.level-group > i[class^="ico-"] {display:table-cell; min-width:10px; border-radius:2px;}
+.level-group > i[class^="ico-"]:not(:first-child):not(:last-child) {border-radius:0; border-left:none; border-right:none;}
+.level-group > i[class^="ico-"]:first-child:not(:last-child) {border-top-right-radius:0; border-bottom-right-radius:0; border-right:none;}
+.level-group > i[class^="ico-"]:last-child:not(:first-child) {border-top-left-radius:0; border-bottom-left-radius:0; border-left:none;}
+
+/* Vertical 그룹핑 1/2/3/4개일때 critical, major, minor, normal (장비기준 등급별) */
+.level-v-group {display:table; border-collapse:separate; border-spacing:0 3px; width:100%; height:100%; min-height:169px; padding:0 10px;}
+.level-v-group > li {display:table-row;}
+.level-v-group > li > span[class^="count-"] {display:table-cell; width:100%; height:auto; line-height:normal; padding:0; border:1px solid rgba(0,0,0,.15); color:#fff; font-size:14px; text-align:center; vertical-align:middle;}
+.level-v-group[class*="bg-"] {cursor:pointer;}/* 분류(알람 발생 시 알람 발생 영역) */
+span[class^="count-"]:only-of-type {margin:0 2px; border-color:#333;}/* 분류별 상세 */
+.level-v-group > li > .count-minor,
+.level-v-group > li > .count-none {color:#333 !important;}
+
+/* Horizontal 그룹핑 1/2/3개일때 critical, major, minor (알람기준 등급별) */
+.level-h-group {display:table; border-collapse:separate; width:100%; height:100%;}
+.level-h-group > li {display:table-cell; vertical-align:middle; border-left:1px solid #bfc3c7;}
+.level-h-group > li:first-child {border-left:none;}
+.level-h-group > li >* {display:block; font-weight:700; text-align:center; white-space:nowrap;}
+.level-h-group > li > [class^="count-"] {width:100%; border:none; background:transparent; font-size:19px;}
+.level-h-group > li > .count-critical {color:#ed1941;}
+.level-h-group > li > .count-major {color:#f3950f;}
+.level-h-group > li > .count-minor {color:#efd600;}
+.level-h-group.disabled > li >* {color:#333; opacity:.5;}
+
+/* treegrid icon */
+i[class*="ico-item"] {width:18px; height:18px; background-image:url(../img/icon_big_search.png);}
+.ico-item.i-data-center {background-position:0 0;}/* data center */
+.ico-item.i-non-rack-node {background-position:-18px 0;}/* 미지정 rack/node */
+.ico-item.i-room {background-position:-36px 0;}/* room */
+.ico-item.i-non-rack {background-position:-54px 0;}/* 미지정 rack */
+.ico-item.i-non-node {background-position:-72px 0;}/* 미지정 node */
+.ico-item.i-rack {background-position:-90px 0;}/* rack */
+.ico-item.i-bm-server {background-position:-108px 0;}/* bm server */
+.ico-item.i-blade-server {background-position:-126px 0;}/* blade server */
+.ico-item.i-switch {background-position:-144px 0;}/* switch */
+.ico-item.i-storage {background-position:-162px 0;}/* storage */
+.ico-item.i-enclouser {background-position:-180px 0;}/* enclouser */
+.ico-item.i-etc {background-position:-198px 0;}/* etc */
+.ico-item.i-pdu {background-position:-216px 0;}/* 분전반 */
+.ico-item.i-ups {background-position:-234px 0;}/* UPS */
+.ico-item.i-air {background-position:-252px 0;}/* 항온항습기 */
+.ico-item.i-use-room {background-position:-270px 0;}/* 사용면적 */
+.ico-item.i-reserve-room {background-position:-288px 0;}/* 예약면적 */
+.ico-item.i-disabled {background-position:-306px 0;}/* 사용불가 */
+.ico-item.i-bm-blade {background-position:-324px 0;}/* BM/Blade Server */
+.ico-item.i-floor {background-position:-342px 0;}/* floor */
+.ico-item.i-sk {background-position:-360px 0;}/* SK */
+.ico-item.i-category {background-position:-378px 0;}/* category */
+.ico-item.i-alarm {background-position:-396px 0;}/* alarm */
+.ico-item.i-service {background-position:-414px 0;}/* service */
+.ico-item.i-user-group {background-position:-432px 0;}/* 논리계층 사용자용 */
+.ico-item.i-non-group {background-position:-468px 0;}/* 미지정 그룹 */
+.ico-item.i-v-server {background-position:-486px 0;}/* 가상 server */
+.ico-item.i-sk-user {background-position:-504px 0;}/* user */
+.item.active > .i-sk {background-position:-450px 0;}/* SK active */
+
+
+/* treeitem */
+.tree-wrap {width:100%; height:100%; border: 1px #f2f2f2 solid}
+.tree-wrap .tree-list {overflow-y:auto; height:100% !important;  text-align:left;}
+.treeitem {padding:0; font-size:0; white-space:nowrap;}
+.treeitem div {display:inline-block; vertical-align:middle; font-size:12px; cursor:pointer;}
+.treeitem .item:hover {border-radius:3px; background-color:#e9ecff; color:#333;}
+.treeitem .item.active {border-radius:3px; background-color:#a9b7ff; color:#333;}/* 현재 경로 표시 */
+.treeitem .item.checked {border-radius:3px; background-color:#465fce; color:#fff; font-weight:700;}/* 선택된 최하위 단계 표시 */
+.treeitem .item.selected {opacity:.6;}
+.treeitem .item i {margin:1px;}
+.treeitem .item div {line-height:20px; padding:0 3px; white-space:pre;}
+.treeitem .item + span[class^="txt-"] {margin:0 5px 0 15px;}
+.treeitem .expanded,
+.treeitem .empty {width:20px; height:20px;}
+.treeitem .expanded.open {background:url(../img/icon_minus.png) no-repeat 50% 50%;}
+.treeitem .expanded.closed {background:url(../img/icon_plus.png) no-repeat 50% 50%;}
+.treeitem[class*="level-"] {}
+.treeitem.level-1 {padding-left:0;}
+.treeitem.level-2 {padding-left:20px;}
+.treeitem.level-3 {padding-left:40px;}
+.treeitem.level-4 {padding-left:60px;}
+.treeitem.level-5 {padding-left:80px;}
+.treeitem.level-6 {padding-left:100px;}
+.treeitem.level-7 {padding-left:120px;}
+
+/* Animation effect */
+.ani-ripple {animation:ani-ripple 1s ease-out;}
+.ani-spin {animation:ani-spin 2s infinite linear;}
+.ani-fadein-right {right:0; animation:ani-fadein-right 500ms; opacity:1;}
+.ani-fadeout-right {right:0; animation:ani-fadeout-right 500ms; opacity:0;}
