@@ -1,5 +1,5 @@
 <template>
-<div style="display:inline-block;">
+<div class="subInfoTitleContainer">
   <!-- <label :class="subInfoTitleMarkClass"
   :style="{height:markHeight, width: markWidth }" ></label> -->
   <label
@@ -42,6 +42,10 @@ export default {
 
 
 <style>
+.subInfoTitleContainer{
+  display:inline-block; 
+  margin-bottom: 8px;
+}
 .subInfoTitleMark {
   background-color: #2dbdb6;
   border-radius: 3px;

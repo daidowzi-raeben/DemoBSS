@@ -8,7 +8,7 @@
     <div class="item">
       <div class="cust_box">
         <SubInfoTitle
-          :subInfoTitleNm="'고객정보'"
+          :subInfoTitleNm="'고객 정보'"
       />
       </div>
       <div class="cust_box_butt">
@@ -108,20 +108,18 @@
     <div class="item"> <!-- 4 -->
       <form-data-component
       :FormDataclass="'InfoOfCont'"
-      :subInfoTitleNm="'계약정보'"
-      style="margin:auto;"
+      :subInfoTitleNm="'계약 정보'"
       />
     </div>
 
     <div class="item"> <!-- 5 -->
-        <form-data-component
-          :FormDataclass="'InfoOfAccount'"
-          :subInfoTitleNm="'청구계정 정보'"
-          @input="addComp"
-          @modalShow="FormPopup"
-          style="height:500px;"
-        />
-      </div>
+      <form-data-component
+      :FormDataclass="'InfoOfAccount'"
+      :subInfoTitleNm="'청구 계정 정보'"
+      @input="addComp"
+      @modalShow="FormPopup"
+      />
+    </div>
 
     <div class="item"> <!-- 6 -->
       <form-data-component
@@ -133,7 +131,7 @@
     <div class="item"> <!-- 7 -->
       <form-data-component
       :FormDataclass="'InfoOfOrg'"
-      :subInfoTitleNm="'영업 조직정보'"
+      :subInfoTitleNm="'영업 조직 정보'"
       />
     </div>
 
