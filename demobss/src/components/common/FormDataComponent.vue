@@ -33,8 +33,8 @@
           <label-component
           :labelNm="'상품'"
           :labelClass="'class1'"/>
-          <input-component :input-class="'class5'" class="input2" type="text" :value="'IDC'" /> 
-          <input-component :input-class="'class5'" class="input3" type="text" :value="'사용중인요금제명'"  /> 
+          <input-component :input-class="'class5 class5_short2'" type="text" :value="'IDC'" /> 
+          <input-component :input-class="'class5'" class="class5_long1" type="text" :value="'사용중인요금제명'"  /> 
         </div>
         <div>
           
@@ -73,7 +73,7 @@
           <label-component
           :labelNm="'미납요금'"
           :labelClass="'class1'"/>
-          <input-component :input-class="'class5'" :disabled="true" :value="'26,790원' " /> 
+          <input-component :input-class="'class5'" :disabled="true" :value="'26,790원'" style="text-align:right; margin-right:5px;" /> 
         </div>
         <div class="btnComps"> 
           <span> <ButtonComponent :btnClass="'btnClass5'" :btnName="'이력보기'" @click="modalShow"/> </span>
@@ -96,36 +96,6 @@
       <SubInfoTitle
       :subInfoTitleNm='subInfoTitleNm'
       />
-
-      <!-- <table id="selectSearch">
-        <tr>
-          <th> BM </th>
-          <td> 
-            <SelectBoxComponent
-              :selectClass="'select_input2'"
-              :cdGroup="'optionsSearchDiv'"
-              :defaultValue="'선택'"
-              v-model="searchDiv1"
-              @input="(value) => {searchDiv1 = value;}" />
-          </td>
-          <th> Service </th>
-          <td>
-            <SelectBoxComponent
-              :selectClass="'select_input2'"
-              :cdGroup="'optionsSearchDiv'"
-              :defaultValue="'선택'"
-              v-model="searchDiv1"
-              @input="(value) => {searchDiv1 = value;}" />
-          </td>
-          <td>
-            <ButtonComponent
-            :btnClass="'btnClass3'"
-            :btnName="'이력보기'"
-
-            />
-          </td>
-        </tr>
-      </table> -->
         <div style="display:inline-block; float:right;" >
           <ButtonComponent
           :btnClass="'btnClass3'"
@@ -134,17 +104,6 @@
           </div>
       </div>
       <div class="infoFlexTable">
-      <!-- 정보 Data Form -->
-      <!-- <table class="formDataTable">
-          <tr v-for="item in DataOfOrg" :key="item" >
-            <th > {{item.thId}} </th>
-            <td > <input-component :input-class="'class5'" :disabled="true" :value="'item.tdId'  /> <"/td>
-            <th > {{item.thBm}} </th>
-            <td > <input-component :input-class="'class5'" :disabled="true" :value="'item.tdBm'  /> <"/td>
-            <th > {{item.thP}} </th>
-            <td v-if="item.tdP"> <input-component :input-class="'class5'" :disabled="true" :value="'item.tdP'   /><"/td>
-        </tr>
-      </table> -->
         <div>
           <label-component
           :labelNm="'영업조직'"
@@ -174,33 +133,12 @@
     </div>
     
   </div>
-
-  <!-- <div 
-  v-else-if="FormDataclass=='infoOfCus'"
-  class="InfoForm">
-    <div>
-      <sub-info-title
-      :subInfoTitleNm='subInfoTitleNm'
-      />
-      <table class="formDataTable">
-          <tr v-for="item in dataOfCust" :key="item" >
-            <th > {{item.thId}} </th>
-            <td > <input-component :input-class="'class5'" :disabled="true" :value="'item.tdId'  /> <"/td>
-            <th > {{item.thEm}} </th>
-            <td > <input-component :input-class="'class5'" :disabled="true" :value="'item.tdEm'  /> <"/td>
-            <th > {{item.thP}} </th>
-            <td > <input-component :input-class="'class5'" :disabled="true" :value="'item.tdP'   /><"/td>
-        </tr>
-      </table>
-    </div>
-  </div> -->
   <div 
   v-else-if="FormDataclass=='infoOfCus'"
   class="InfoForm">
-    <div>
       <div> <sub-info-title :subInfoTitleNm='subInfoTitleNm'/> </div>
       <div class="infoFlexTable" >
-        <div>
+        <div class="infoOfCus" >
           <label-component
           :labelNm="'신청자'"
           :labelClass="'class1'"/>
@@ -217,7 +155,6 @@
           <input-component :input-class="'class5'" :disabled="true" :value="'010-1111-2222' " /> 
         </div>
       </div>
-    </div>
   </div> 
 
 
@@ -316,14 +253,14 @@
           :labelNm="'납부방법'"
           :labelClass="'class1'"/>
           <input-component :input-class="'class5'" :disabled="true" :value="'은행계좌이체' " /> 
-          <input-component :input-class="'class5'" class="input2" type="text" :value="'매월 25일' " /> 
+          <input-component :input-class="'class5 class5_short1'" type="text" :value="'매월 25일' " /> 
         </div>
         <div>
           <label-component
           :labelNm="'계좌/카드'"
           :labelClass="'class1'"/>
-          <input-component :input-class="'class5'" class="input2"  type="text" :value="'카카오뱅크' " /> 
-          <input-component :input-class="'class5'" :disabled="true" :value="'333306****' " /> 
+          <input-component :input-class="'class5 class5_short1'"  type="text" :value="'카카오뱅크' " /> 
+          <input-component :input-class="'class5'" :disabled="true" :value="'333306****' " style="margin-right:3px;"/> 
           <input-component :input-class="'class5'" :disabled="true" :value="'ktds솔루션***' " /> 
         </div>
         <div>
@@ -334,8 +271,8 @@
           <label-component
           :labelNm="'주소'"
           :labelClass="'class1'"/>
-          <input-component :input-class="'class5'" class="input2" type="text" :value="'06037' " /> 
-          <input-component :input-class="'class5'" class="input3" type="text" :value="'서울특별시 강남구 도산대로19길 10 (신사동, 현우빌딩)' " /> 
+          <input-component :input-class="'class5 class5_short2'" type="text" :value="'06037' " /> 
+          <input-component :input-class="'class5'" class="class5_long1" type="text" :value="'서울특별시 강남구 도산대로19길 10 (신사동, 현우빌딩)' " /> 
         </div>
         <div class="btnComps"> 
           <span> <ButtonComponent :btnClass="'btnClass5'" :btnName="'상세조회'" @click="modalShow"/> </span>
@@ -344,7 +281,7 @@
           <span> <ButtonComponent :btnClass="'btnClass5'" :btnName="'청구분리'"/>  </span>
           <span> <ButtonComponent :btnClass="'btnClass5'" :btnName="'청구통합'" :menu="'bill_01_01_01'" @input="addComp"/></span>
         </div>
-        <br><br>
+        <br><br><br>
       </div>
     </div>
   </div>
@@ -443,10 +380,9 @@ export default {
 </script>
 
 <style scoped>
-/* .InfoForm {
-  width: 100%;
-  margin: 0 auto auto 0;
-} */
+.InfoForm {
+  height: 100%;
+}
 
 #selectSearch{
   float: right;
@@ -505,7 +441,7 @@ export default {
 } */
 
 .infoFlexTable{
-  padding: 10px;
+  padding: 5px 0 5px 15px;
   border: 1px solid #bdbdbd;
   text-align: left;
 }
@@ -514,26 +450,10 @@ export default {
   display:flex; 
   flex-flow: row wrap; 
   justify-content: flex-start;
-  align-content: center;
-  margin-bottom: 8px;
+  align-items: center;
+  height: 40px;
 }
 
-/* .infoFlexTable > div > input{
-  width: 140px;
-  font-size: 12pt;
-  font-weight: normal;
-  color: #000;
-  background-color: #f2f2f2;
-  border: 1px solid #e4e4e4;
-  margin-right: 3px;
-  height: 28px;
-} */
-.infoFlexTable > div > .input2{
-  width: 90px;
-}
-.infoFlexTable > div > .input3{
-  width: 290px;
-}
 .infoFlexTable > .btnComps{
   float: right; 
   margin-top : 5px;
@@ -541,4 +461,5 @@ export default {
 .infoFlexTable > .btnComps > span{
   margin-right: 3px;
 }
+
 </style>

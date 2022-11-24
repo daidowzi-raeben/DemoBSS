@@ -100,8 +100,22 @@ input {
   color: #000;
   background-color: #f2f2f2;
   border: 1px solid #e4e4e4;
-  margin-right: 3px;
+  margin-right: 11px;
   height: 28px;
 }
 
+.class5_short1{
+  width: 80px;
+  margin-right: 3px;
+
+}
+
+.class5_short2{
+  width: 50px;
+  margin-right: 3px;
+}
+
+.class5_long1{
+  width: 325px;
+}
 </style>
