@@ -20,11 +20,11 @@
       <div id="navTitle">{{ menuDepth1Nm }}</div>
       <ul id="depth2_list">
         <li v-for="(menu2, idx) in menuDepth2" :key="idx" :value="menu2.menuId">
-          <div id="depth2" @click="setMenu2(menu2.menuId)">
+          <div id="depth2" @click="setMenu2(menu2.menuId)"  :style="[ selectedMenuId == menu2.menuId  ? { 'color': 'rgb(27,114,212)' } : '']" >
             <span v-if="selectedMenuId == menu2.menuId">
-              <img :src="menuIcon2" />
+              <img src="../img/menu_type_1.png" />
             </span>
-            <span v-else><img :src="menuIcon3" /></span>
+            <span v-else><img src="../img/menu_type_3.png" /></span>
             {{ menu2.menuNm }}
           </div>
           <ul id="depth3_list" v-if="selectedMenuId == menu2.menuId">
@@ -161,15 +161,15 @@ img{
 #nav > .area {
   border-right: rgb(229,231,234) solid 1px;
   width: 245px;
-  padding: 30px 0 0 0;
+  padding: 20px 0 0 10px;
   height: 80vh;
   overflow: auto;
 }
 
 #nav > .area > #navTitle {
-  font-size: 16px;
+  font-size: 16pt;
   padding: 10px 15px;
-  font-weight: 600;
+  font-weight: bold;
 }
 
 #nav > .area > ul#depth2_list {
@@ -178,9 +178,9 @@ img{
 
 #nav > .area > ul#depth2_list > li #depth2 {
   padding: 10px 15px;
-  font-size: 16px;
-  font-weight: 600;
-  color: #606060;
+  font-size: 14pt;
+  font-weight: bold;
+  color: #000;
   cursor: pointer;
 }
 
@@ -197,9 +197,9 @@ img{
 
 #nav > .area > ul#depth2_list > li > ul#depth3_list > li#depth3 {
   float: left;
-  padding: 10px 15px 10px 40px;
-  font-weight: 600;
-  color: #949494;
+  font-size: 10pt;
+  padding: 0 10px 10px 40px;
+  color: #000;
   cursor: pointer;
 }
 

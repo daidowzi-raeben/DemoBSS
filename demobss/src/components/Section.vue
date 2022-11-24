@@ -108,16 +108,16 @@ export default {
       cur_num: 0,
       compm: [
         {
-          cmpnId: "Cus360",
+          cmpnId: "ChageInfoRetv",
           menuId: "bill_01_01_01",
           menuNm: "청구요금정보조회",
           upMenuId: "bill_01_01",
         },
       ],
       compm2: [],
-      test: "Cus360",
+      test: "ChageInfoRetv",
       component: markRaw(
-          defineAsyncComponent(() => import("../pages/Cus360.vue"))
+          defineAsyncComponent(() => import("../pages/ChageInfoRetv.vue"))
       ),
       iconDelWhite:require("../img/icon_delete_white.png"),
       iconDelBlack:require("../img/icon_delete_black.png"),
@@ -223,7 +223,6 @@ export default {
   position: fixed;
   overflow: hidden;
   z-index: 800;
-  /* overflow-x: scroll; */
 }
 .menu_tab_line .menu_tab_line_detail {
   width: calc(100% - 70px);
@@ -250,7 +249,7 @@ img{
 div.tabon {
   /* 탭 선택되었을 때 */
   background-color: rgb(255,255,255);
-  border-radius: 10px 10px 0 0;
+  border-radius: 5px 5px 0 0;
   color: rgb(27,114,212);
 }
 
@@ -258,7 +257,7 @@ div.taboff {
   /* 탭 선택x */
   background-color: rgb(27,114,212);
   color: rgb(255,255,255);
-  border-radius: 10px 10px 0 0;
+  border-radius: 5px 5px 0 0;
   border-right: #343434 solid 1px;
 }
 
@@ -280,13 +279,13 @@ div.taboff {
   padding: 0 10px;
   line-height: 30px;
   cursor: pointer;
-  font-weight: bolder;
 }
 
 .menu_tab > span#tab_nm {
   display: block;
   float: left;
   width: 100px;
+  font-size: 10pt;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
