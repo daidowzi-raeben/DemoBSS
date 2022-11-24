@@ -101,7 +101,15 @@
         </div>
       </div>
       <div class="product_box_tree">
-        <TreeGridComponent :tableData="tableData" :columns="columns" />
+        <msf-tree :source="contentTree"
+                  :activeItem="activeItemObj"
+                  :selectedList="selectedItemList"
+                  id-field="directoryName"
+                  label-field="directoryName"
+                  ref="tree"
+                  @itemClick="treeItemClick"
+                  style="width:100%; height:100%;font-size: 12pt;"
+        ></msf-tree>
       </div>
     </div>
 
@@ -146,69 +154,40 @@ import ButtonComponent from "@/components/common/ButtonComponent";
 import CustInfoComponent from "@/components/common/CustInfoComponent";
 import SelectBoxComponent from "@/components/common/SelectBoxComponent";
 import InputComponent from "@/components/common/InputComponent";
-import TreeGridComponent from "@/components/common/TreeGridComponent";
+import msfTree from "@/components/common/Tree/msf-tree";
 import SubInfoTitle from "@/components/common/SubInfoTitle";
+import TreeView from "@/components/common/Tree/TreeView";
 export default {
   data(){
     return{
       logo_search:require('../img/logo_search.png'),
-      tableData: [
-        {
-          name: "인말새트 C국내협력점",
-          id: "P10001257",
-          state: "사용중",
-          children: [
-            {
-              name: "Regional MVSAT 128/256 요금(80cm 안테나용) 3년약정 [YC CLOVER]",
-              id: "P10000012679",
-              state: "사용중",
-            },
-          ],
-        },
-        {
-          name: "인말새트 C국내협력점",
-          id: "P10001257",
-          state: "사용중",
-          children: [
-            {
-              name: "Regional MVSAT 128/256 요금(80cm 안테나용) 3년약정 [YC CLOVER]",
-              id: "P10000012679",
-              state: "사용중",
-            },
-          ],
-        },
-        {
-          name: "인말새트 C국내협력점",
-          id: "P10001257",
-          state: "사용중",
-          children: [
-            {
-              name: "Regional MVSAT 128/256 요금(80cm 안테나용) 3년약정 [YC CLOVER]",
-              id: "P10000012679",
-              state: "사용중",
-              children: [
-                {
-                  name: "Regional MVSAT 128/256 요금(80cm 안테나용) 3년약정 [YC CLOVER]",
-                  id: "P10000012679",
-                  state: "사용중",
-                },
-              ],
-            },
-          ],
-        },
+      contentTree: [{
+        groupId: 0,
+        directoryName: '청구계정ID 홍길* 은행계좌자동이체',
+        children: [
+          {groupId: 1, directoryName: '요금제명(서비스계약id) 서울시 강남구 학동로 111', chk:true, chk2:false},
+          {groupId: 2,
+            directoryName: '요금제명(서비스계약id) 서울시 강남구 학동로 111', chk:false, chk2:false,},
+          {groupId: 3, directoryName: '요금제명(서비스계약id) 서울시 강남구 학동로 111',chk:false, chk2:true},
+          {groupId: 4, directoryName: '요금제명(서비스계약id) 서울시 강남구 학동로 111',chk:true, chk2:true}
+        ]
+      },
+        {groupId: 5, directoryName: '요금제명(서비스계약id) 서울시 강남구 학동로 111', children: [
+            {groupId: 3, directoryName: '요금제명(서비스계약id) 서울시 강남구 학동로 111',chk:false, chk2:true},
+            {groupId: 4, directoryName: '요금제명(서비스계약id) 서울시 강남구 학동로 111',chk:true, chk2:true}
+          ]},
+        {groupId: 6, directoryName: '요금제명(서비스계약id) 서울시 강남구 학동로 111'}
       ],
-      columns: [
-        { label: "상품명", id: "name" },
-        { label: "상품ID", id: "id" },
-        { label: "상태", id: "state" },
-      ],
+      activeItemObj: {}, // 활성화 시킬 객체
+      selectedItemList: [] // 선택시킬 객체
     }
   },
   components: {
+    msfTree,
     InputComponent,
     SelectBoxComponent, CustInfoComponent, CustRetvComponent, FormDataComponent, ButtonComponent,
     SubInfoTitle,
-  TreeGridComponent},
+  },
 
 }
 </script>

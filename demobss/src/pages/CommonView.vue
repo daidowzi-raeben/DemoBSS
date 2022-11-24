@@ -451,7 +451,8 @@
     <h1 style="font-size: 30px">TreeGridComponent</h1>
     <span></span>
     <div class="commondiv2">
-      <TreeGridComponent :tableData="tableData" :columns="columns" />
+<!--      <TreeGridComponent :tableData="tableData" :columns="columns" />-->
+      <TreeView/>
     </div>
     <br /><br /><br />
     <h1 style="font-size: 30px">ValdtnComponent</h1>
@@ -565,11 +566,13 @@ import {defineAsyncComponent, markRaw} from "vue";
 import TabComponent from "@/components/common/TabComponent";
 import PostCodeComponent from "@/components/common/PostCodeComponent";
 import ApiMixin from "@/service/common.js";
+import TreeView from "@/components/common/Tree/TreeView";
 
 export default {
   mixins:[ApiMixin],
   name: "CommonView",
   components: {
+    TreeView,
     PostCodeComponent,
     TabComponent,
     TextAreaComponent,
