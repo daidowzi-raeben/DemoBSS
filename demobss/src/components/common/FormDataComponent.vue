@@ -507,6 +507,7 @@ export default {
 .infoFlexTable{
   padding: 10px;
   border: 1px solid #bdbdbd;
+  text-align: left;
 }
 
 .infoFlexTable > div{

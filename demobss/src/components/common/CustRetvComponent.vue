@@ -92,9 +92,9 @@ export default {
 }
 .cusSearch > span:nth-child(3){
   width: 250px;
-  height: 19px;
+  height: 28px;
   margin-left: 10px;
-  margin-bottom: 6px;
+
 
 }
 .cusSearch > span:nth-child(4){
