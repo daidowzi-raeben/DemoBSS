@@ -179,8 +179,8 @@ export default {
 <style scoped>
 .container{
   display:grid;
-  grid-template-columns:500px minmax(860px, 1fr) ;
-  grid-template-rows: 40px 70px 130px 50px 60px 150px minmax(200px,1fr);
+  grid-template-columns:700px minmax(860px, 1fr) ;
+  grid-template-rows: 60px 180px 250px 130px 130px 200px minmax(250px,1fr);
   gap: 10px 10px;
 }
 

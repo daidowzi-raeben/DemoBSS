@@ -89,7 +89,7 @@ input {
 .class4 {
   font-weight: bold;
   width:100%;
-  height:100%;
+  height:28px;
   border:1px solid #bdbdbd;
 }
 

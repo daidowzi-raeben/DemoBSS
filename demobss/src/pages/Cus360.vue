@@ -223,7 +223,7 @@ export default {
   grid-template-rows: 40px 180px 300px 90px 140px minmax(200px,1fr);
   /* 10% 97px  */
   /* grid-template-rows: 10% 20% 30% 10% 15% 10% minmax(200px,1fr); */
-  gap: 10px 20px;
+  gap: 20px 40px;
 }
 .cus360View > .item:nth-child(1){
   grid-column: 1 / 3;
@@ -254,7 +254,7 @@ export default {
   grid-row: 5;
 }
 .cust_box{
-  padding:5px 0;
+  padding-bottom:15px;
   float:left;
   height:20px;
   width:70%;
@@ -265,7 +265,7 @@ export default {
   float: left;
 }
 .product_box{
-  padding:5px 0;
+  padding-bottom:15px;
   float:left;
   height:20px;
   width:70%;

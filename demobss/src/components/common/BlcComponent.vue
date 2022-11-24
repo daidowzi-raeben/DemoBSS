@@ -4,7 +4,7 @@
     (<label style="font-weight: bold">{{total}}</label>건)
     <span style="float: right">
   <ButtonComponent
-      :btnClass="'btnclass2'"
+      :btnClass="'btnclass1'"
       :btnName="btnName"/>
     <select-box-component
         :selectClass="'select_input3'"

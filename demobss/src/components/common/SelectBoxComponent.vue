@@ -59,7 +59,7 @@ select option:hover{
 .select_input {
   border: 1px solid #c1c1c1;
   font-size: 11px;
-  height: 36px;
+  height: 28px;
   color: #000000;
   padding: 1px 22px 0 9px;
   background: #fff url(../../img/icon_form_arrow_02.png) no-repeat;
@@ -82,8 +82,6 @@ select option:hover{
 }
 
 .select_input3 {
-  width: 120px;
-  height: 20px;
   margin-left: 10px;
   border: 1px solid #bdbdbd;
   font-size: 10px;
