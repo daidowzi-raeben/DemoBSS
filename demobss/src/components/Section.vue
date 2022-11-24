@@ -108,16 +108,16 @@ export default {
       cur_num: 0,
       compm: [
         {
-          cmpnId: "ChageInfoRetv",
+          cmpnId: "Cus360",
           menuId: "bill_01_01_01",
           menuNm: "청구요금정보조회",
           upMenuId: "bill_01_01",
         },
       ],
       compm2: [],
-      test: "ChageInfoRetv",
+      test: "Cus360",
       component: markRaw(
-          defineAsyncComponent(() => import("../pages/ChageInfoRetv.vue"))
+          defineAsyncComponent(() => import("../pages/Cus360.vue"))
       ),
       iconDelWhite:require("../img/icon_delete_white.png"),
       iconDelBlack:require("../img/icon_delete_black.png"),
