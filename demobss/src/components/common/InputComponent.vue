@@ -86,6 +86,9 @@ input {
   font-weight: bold;
   color: white;
 }
+.class3:focus{
+  outline:none;
+}
 .class4 {
   font-weight: bold;
   width:100%;
