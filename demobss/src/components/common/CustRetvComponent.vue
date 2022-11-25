@@ -27,7 +27,7 @@
           :btn-class="'btnClass4'"
           :btn-name ="'검색'"
           :btnHeight="'28px'"
-          :btnWidth ="'62px'"
+          :btnWidth ="'78px'"
           />
       </span>
       <span>
@@ -35,7 +35,7 @@
         :CheckOptions="['해지포함']"
         :showCheckOpt="false"
         :checkTextSize="'10pt'"
-        :checkBoxSize="'20px'"
+        :checkBoxSize="'16px'"
         :chkBoxColor="'white'"
         />  
       </span>
@@ -46,7 +46,7 @@
 <script>
 import SubInfoTitle from "@/components/common/SubInfoTitle";
 import InputComponent from "@/components/common/InputComponent";
-import SelectBoxComponent from "@/components/common/SelectBoxComponent";
+import SelectBoxComponent from "@/components/common/SelectBoxComponent.vue";
 import ButtonComponent from "@/components/common/ButtonComponent";
 import ChkBoxComponent from '@/components/common/ChkBoxComponent.vue';
 export default {
@@ -85,20 +85,20 @@ export default {
   font-size: 12pt;
 }
 .cusSearch > span:nth-child(2){
-  width: 150px;
-  height: 25px;
+  width: 120px;
+  height: 26px;
   margin-right: 5px;
 
 }
 .cusSearch > span:nth-child(3){
   width: 250px;
-  height: 28px;
+  height: 26px;
   margin-left: 10px;
 
 
 }
 .cusSearch > span:nth-child(4){
-  margin-left: 10px;
+  margin-left: 5px;
 }
 .cusSearch > span:nth-child(5){
   margin-left: 10px;

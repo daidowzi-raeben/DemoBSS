@@ -84,13 +84,14 @@ select option:hover{
 .select_input3 {
   margin-left: 10px;
   border: 1px solid #bdbdbd;
-  font-size: 10px;
+  font-size: 10pt;
   height: 100%;
   width: 100%;
-  color: #000000;
+  color: #000;
   padding: 1px 22px 0 9px;
-  background: #fff url(../../img/icon_form_arrow_02.png) no-repeat;
-  background-position: right 11px center;
+  background: #fff url(../../img/icon_form_arrow_black_02.png) no-repeat;
+  background-size: 12px;
+  background-position: right 7px center;
   -webkit-appearance: none;
   -moz-appearance: none;
 }
