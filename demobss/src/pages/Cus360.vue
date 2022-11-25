@@ -139,6 +139,7 @@ export default {
       contentTree: [{
         groupId: 0,
         directoryName: '청구계정ID 홍길* 은행계좌자동이체',
+        chk:true,
         children: [
           {groupId: 1, directoryName: '요금제명(서비스계약ID)2022-10-13~2022-10-15서울시 강남구 학동로 111', chk:true, chk2:false},
         ]
