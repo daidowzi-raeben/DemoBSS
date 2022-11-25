@@ -44,7 +44,7 @@ export default {
 <style>
 .subInfoTitleContainer{
   display:inline-block; 
-  margin-bottom: 8px;
+  margin-bottom: 4px;
 }
 .subInfoTitleMark {
   background-color: #2dbdb6;
@@ -55,7 +55,8 @@ export default {
   content: url(../../img/icon_form_arrow.png);
 }
 .subInfoTitle {
-  font-size: 14pt;
+  /* font-size: 14pt; */
+  font-size: 12pt;
   font-weight: bold;
   color: #1b72d4;
 }

@@ -1,51 +1,26 @@
 <template>
   <article class="cus360View">
     <div class="item">   <!-- 1 -->
-        <cust-retv-component
-        :cdGroup="'optionsSearchDiv'" />
+      <cust-retv-component
+      :cdGroup="'optionsSearchDiv'" />
     </div>
 
-    <div class="item">
-      <div class="cust_box">
-        <SubInfoTitle
-          :subInfoTitleNm="'고객 정보'"
+    <div class="item"> <!-- 2 -->
+      <form-data-component
+      :FormDataclass="'infoOfCust'"
+      :subInfoTitleNm="'고객 정보'"
       />
-      </div>
-      <div class="cust_box_butt">
-        <button-component
-          :btn-name="'고객등록'"
-          :btn-class="'btnClass2'"
-          :btn-width="59"
-          :btn-height="24"
-          />
-        <button-component
-            :btn-name="'청약이력보기'"
-            :btn-class="'btnClass2'"
-            :btn-width="75"
-            :btn-height="24"
-        />
-        <button-component
-            :btn-name="'숨김해제'"
-            :btn-class="'btnClass2'"
-            :btn-width="59"
-            :btn-height="24"
-        />
-      </div>
-      <CustInfoComponent/>
     </div>
 
-    <div class="item">
+    <div class="item"> <!-- 3 -->
       <div class="product_box">
         <SubInfoTitle
-            :subInfoTitleNm="'보유상품'"
+        :subInfoTitleNm="'보유상품'"
         />
-      </div>
-      <div class="product_box_butt">
         <button-component
-            :btn-name="'청약등록'"
-            :btn-class="'btnClass2'"
-            :btn-width="59"
-            :btn-height="24"
+        :btn-name="'청약등록'"
+        :btn-class="'btnClass3'"
+        style="float: right;"
         />
       </div>
       <div class="product_box_sel">
@@ -115,14 +90,14 @@
 
     <div class="item"> <!-- 4 -->
       <form-data-component
-      :FormDataclass="'InfoOfCont'"
+      :FormDataclass="'infoOfCont'"
       :subInfoTitleNm="'계약 정보'"
       />
     </div>
 
     <div class="item"> <!-- 5 -->
       <form-data-component
-      :FormDataclass="'InfoOfAccount'"
+      :FormDataclass="'infoOfAccount'"
       :subInfoTitleNm="'청구 계정 정보'"
       @input="addComp"
       @modalShow="FormPopup"
@@ -131,14 +106,14 @@
 
     <div class="item"> <!-- 6 -->
       <form-data-component
-      :FormDataclass="'infoOfCus'"
+      :FormDataclass="'infoOfSubs'"
       :subInfoTitleNm="'신청자 정보'"
       />
     </div>
 
     <div class="item"> <!-- 7 -->
       <form-data-component
-      :FormDataclass="'InfoOfOrg'"
+      :FormDataclass="'infoOfOrg'"
       :subInfoTitleNm="'영업 조직 정보'"
       />
     </div>
@@ -193,11 +168,11 @@ export default {
 .cus360View{
   display: grid;
   /* grid-template-columns: 55% 55% 1fr; */
-  grid-template-columns: 760px 760px 1fr;
-  grid-template-rows: 40px 180px 300px 90px 150px 20px;
+  grid-template-columns: 780px 780px 1fr;
+  grid-template-rows: 40px 150px 300px 70px 140px minmax(200px,1fr);
   /* 10% 97px  */
   /* grid-template-rows: 10% 20% 30% 10% 15% 10% minmax(200px,1fr); */
-  gap: 20px 40px;
+  gap: 20px 30px;
 }
 .cus360View > .item:nth-child(1){
   grid-column: 1 / 3;
@@ -239,22 +214,22 @@ export default {
   float: left;
 }
 .product_box{
-  padding-bottom:15px;
+  padding-bottom:8px;
   float:left;
   height:20px;
-  width:70%;
+  width:100%;
 }
-.product_box_butt{
+/* .product_box_butt{
   padding:5px 0;
   width: 30%;
-  float: left;
-}
+  float: right;
+} */
 .product_box_sel{
   border:1px solid #e4e4e4;
   padding:10px 20px;
   overflow: hidden;
   display: block;
-  width: 720px;
+  width: 740px;
   height: 40px;
   background-color: rgb(239,245,252);
 }

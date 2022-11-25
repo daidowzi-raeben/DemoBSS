@@ -163,6 +163,7 @@ img{
   width: 223px;
   padding: 33px 0 0 35px;
   height: 70vh;
+  background-color: white;
   overflow: auto;
 }
 
