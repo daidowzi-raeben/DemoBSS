@@ -9,17 +9,24 @@
       align-items: center;
       height: 20px;
       flex-direction: column;">
-      <div v-show="depth>0" style="display: flex;width: 10px; height: 10px; border-left: #000 1px solid;"></div>
+      <div v-show="depth>0" style="display: flex;width: 10px; height: 13px; border-left: #000 1px solid;"></div>
       <div v-show="depth>0 && !final" style="display: flex;width: 10px; height: 10px; border-top: #000 1px solid; border-left: #000 1px solid; "></div>
       <div v-show="depth>0 && final" style="display: flex;width: 10px; height: 10px; border-top: #000 1px solid; "></div>
     </div>
     <div class="item" :class="[isActive, isSelected, isOvered]" v-on:click="itemClick()" v-on:mouseover="treeItemOver()"
          v-on:mouseout="treeItemOut()" v-on:dblclick="itemDoubleClick()">
-      <div> {{ label }}</div>
+      <div :class="{
+              tree_label1: depth === 0,
+              tree_label2: depth !== 0
+            }"> {{ label }}</div>
     </div>
-    <div style="padding-left: 200px;" >
-      <div style="float:left; width: 30px; height: 15px;" v-show="chk1" class="tree_state1"/>
-      <div style="float:left; width: 30px; height: 15px;" v-show="chk2" class="tree_state2"/>
+    <div >
+<!--      <div v-show="chk1" class="tree_state1"/>-->
+<!--      <div v-show="chk2" class="tree_state2"/>-->
+      <div v-show="depth>0" style="float:left;font-size:8pt; text-align:center;width: 36px;height: 13px;padding-bottom: 2px; background-color: rgb(121,148,177);color:white">해지</div>
+      <div v-show="depth>0" style="float:left;font-size:8pt; text-align:center;width: 36px;height: 13px;padding-bottom: 2px; background-color: rgb(242,102,118);color:white">IDC</div>
+      <div v-show="depth>0" style="float:left;font-size:8pt; text-align:center;width: 36px;height: 13px;padding-bottom: 2px; background-color: rgb(110,181,90);color:white">사용중</div>
+      <div v-show="depth>0" style="float:left;font-size:8pt; text-align:center;width: 36px;height: 13px;padding-bottom: 2px; background-color: rgb(17,157,216);color:white">변경중</div>
     </div>
   </div>
   <div v-show="depth>0 && final" style="width: 100%; border: #f2f2f2 1px solid"></div>
@@ -179,7 +186,19 @@ export default {
 .checked {
   background-color: #00FF00
 }
-
+.tree_label1{
+  font-weight:bold;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  width: 550px;
+}
+.tree_label2{
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  width: 550px;
+}
 .halfchecked {
   background-color: #FFFF00
 }
@@ -189,9 +208,16 @@ export default {
   height: 20px;
 }
 .tree_state1{
+  float:left;
+  width: 30px;
+  height: 15px;
+  padding-bottom: 2px;
   content: url("../../../img/icon_tree_idl.png");
 }
 .tree_state2{
+  float:left;
+  width: 30px;
+  height: 15px;
   content: url("../../../img/icon_tree_cloud.png");
 }
 </style>
