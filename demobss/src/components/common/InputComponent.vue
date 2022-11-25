@@ -78,10 +78,10 @@ input {
 }
 /*상단 메뉴 스타일 */
 .class3{
-  margin-top: 3px;
+  margin-top: 7px;
   font-size: 12px;
   vertical-align: top;
-  background-color: rgb(28,42,57);
+  background-color: rgb(184,208,235);
   border: 0;
   font-weight: bold;
   color: white;
