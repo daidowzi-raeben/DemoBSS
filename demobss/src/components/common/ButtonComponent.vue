@@ -22,12 +22,12 @@ export default {
     menu: null,
     btnWidth: {
       type: String,
-      default: '25'
+      default: '25px'
     },
 
     btnHeight: {
       type: String,
-      default: '25'
+      default: '25px'
     },
   },
   created(){
@@ -47,38 +47,42 @@ export default {
 .btnClass1 {
   float: right;
   padding: 2px;
-  font-size: 12px;
+  font-size: 12pt;
   border: rgb(231, 231, 231) 1px solod;
+  border-radius: 3px;
   color: #000;
   margin: 0px 0px 0px 3px;
   background-color: rgb(251, 251, 251);
 }
 .btnClass2 {
-  float: right;
-  padding: 2px;
-  font-size: 12px;
-  border: rgb(231,231,231) 1px solid;
-  cursor: pointer;
-  color: white;
-  margin: 0px 0px 0px 3px;
   background-color: rgb(119, 146, 176);
+  border: rgb(231,231,231) 1px solid;
+  border-radius: 3px;
+  color: white;
+  cursor: pointer;
+  float: right;
+  font-size: 12pt;
+  margin: 0px 0px 0px 3px;
+  padding: 2px;
 }
 .btnClass1:hover, .btnClass2:hover {
   background-color: rgb(27,114,212);
   color: white;
 }
 .btnClass3 {
-  height: v-bind('btnHeight');
-  color: white;
-  font-size: 10px;
-  font-weight: bold;
-  cursor: pointer;
-  height: 24px;
   background-color: rgb(114, 148, 187);
+  border-radius: 3px;
   border: 0.5px solid #dbdbdb;
+  color: white;
+  cursor: pointer;
+  font-size: 9pt;
+  font-weight: normal;
+  height: v-bind('btnHeight');
 }
-.btnClass3:hover {
-  /* background-color: #70707077; */
+.btnClass3:hover{
+  background-color: rgb(28, 113, 209);
+}
+.btnClass3:focus {
   background-color: rgb(28, 113, 209);
 }
 .btnClass4 {
@@ -95,24 +99,30 @@ export default {
   background-color: rgba(154, 42, 218, 0.967);
 }
 
-
 .btnClass5 {
   height: v-bind('btnHeight');
-  color: grey;
-  font-size: 10px;
-  font-weight: bold;
+  font-size: 9pt;
+  color: black;
+  font-weight: normal;
   cursor: pointer;
   height: 24px;
-  background-color: rgb(252,252,252);
+  background: linear-gradient( to bottom, #ffffff, rgb(240, 240, 240) );
   border: 0.5px solid #dbdbdb;
-  box-shadow: 2px 2px 2px #dbdbdb;
+  border-radius: 3px;
+  /* box-shadow: 2px 2px 2px #dbdbdb; */
 }
 .btnClass5:hover {
   /* background-color: #70707077; */
-  background-color: rgb(28, 113, 209);
-  color: black;
+  /* background-color: rgb(28, 113, 209); */
+  color: grey;
 }
-
+.btnClass5:focus {
+  /* background-color: #70707077; */
+  /* background-color: rgb(28, 113, 209); */
+  color: grey;
+  -webkit-transform: scale(0.98);
+  transform: scale(0.98);
+}
 .btnSearchImgClass {
   float: left;
   padding: 5px;

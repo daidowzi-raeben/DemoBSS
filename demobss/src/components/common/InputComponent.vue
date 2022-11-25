@@ -25,7 +25,11 @@ export default {
     },
     width: {
       type:String,
-      default:'150px',
+      default:'150px'
+    },
+    longWidth :{
+      type: String,
+      default:'330px'
     },
     height: {
       type:String,
@@ -87,7 +91,6 @@ input {
   color: white;
 }
 .class4 {
-  font-weight: bold;
   width:100%;
   height:28px;
   border:1px solid #bdbdbd;
@@ -95,13 +98,14 @@ input {
 
 .class5{
   width: 140px;
-  font-size: 12pt;
+  /* font-size: 12pt; */
+  font-size: 10pt;
   font-weight: normal;
   color: #000;
-  background-color: #f2f2f2;
+  background-color: rgb(251, 253, 255);
   border: 1px solid #e4e4e4;
   margin-right: 11px;
-  height: 28px;
+  height: 24px;
 }
 
 .class5_short1{
@@ -111,11 +115,12 @@ input {
 }
 
 .class5_short2{
-  width: 50px;
+  width: 64px;
   margin-right: 3px;
+
 }
 
 .class5_long1{
-  width: 325px;
+  width: v-bind('longWidth');
 }
 </style>
