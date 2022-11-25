@@ -1,52 +1,26 @@
 <template>
   <div>
     <div class="container">
+
+      <!-- 1 고객 조회 -->
       <div class="item" >
         <CustRetvComponent
-            :cdGroup="'optionsSearchDiv'"
-            :titleShow="false"
-            style="height:60px;"
+        :cdGroup="'optionsSearchDiv'"
+        :titleShow="false"
+        style="height:60px;"
         />
       </div>
 
+      <!-- 2 고객 정보 -->
       <div class="item" style="display:block;">
-        <CustInfoComponent :custInfo="custInfo" />
-      </div>
-
-      <div class="item ">
-        <SubInfoTitle :subInfoTitleNm="'보유 상품'" />
-        <div class="cmProducts">
-        <TreeGridComponent :tableData="tableData" :columns="columns" style="min-width: 600px;"/>
-        </div>
-      </div>
-
-      <div class="item">
-        <form-data-component
-          :FormDataclass="'InfoOfBasic'"
-          :subInfoTitleNm="'기본정보'"
-        />
-        </div>
-      <div class="item">
         <FormDataComponent
-          :FormDataclass="'infoOfCus'"
+          :FormDataclass="'infoOfCust'"
           :subInfoTitleNm="'고객정보'"
         />
       </div>
-      <div class="item">
-        <FormDataComponent
-          :FormDataclass="'InfoOfOrg'"
-          :subInfoTitleNm="'영업조직정보'"
-        />
-      </div>
-      <div class="item">
-        <form-data-component
-          :FormDataclass="'InfoOfAccount'"
-          :subInfoTitleNm="'청구계정 정보'"
-          @input="addComp"
-          @modalShow="FormPopup"
-        />
-      </div>
-
+      
+      
+      <!-- 3 보유상품  -->
       <div class="item feeInfo">
         <BlcComponent
           :sub-info-title-nm="'요금정보'"
@@ -59,6 +33,54 @@
         />
       </div>
       
+      <!-- 4 계약 정보 -->
+      <div class="item">
+        <form-data-component
+          :FormDataclass="'infoOfCont'"
+          :subInfoTitleNm="'계약 정보'"
+        />
+        </div>
+      
+      <!-- 5 신청자정보 -->
+      <div class="item">
+        <FormDataComponent
+          :FormDataclass="'infoOfSubs'"
+          :subInfoTitleNm="'신청자 정보'"
+        />
+      </div>
+
+      <!-- 6 영업조직 정보 -->
+      <div class="item">
+        <FormDataComponent
+          :FormDataclass="'infoOfOrg'"
+          :subInfoTitleNm="'영업조직정보'"
+        />
+      </div>
+
+      <!-- 7 청구계정정보 -->
+      <div class="item">
+        <form-data-component
+          :FormDataclass="'infoOfAccount'"
+          :subInfoTitleNm="'청구계정 정보'"
+          @input="addComp"
+          @modalShow="FormPopup"
+        />
+      </div>
+      
+      <!-- 8 요금 정보 -->
+      <div class="item ">
+        <SubInfoTitle :subInfoTitleNm="'보유 상품'" />
+        <div class="cmProducts">
+        <TreeGridComponent :tableData="tableData" :columns="columns" style="min-width: 710px;"/>
+        </div>
+      </div>
+
+
+
+
+    </div>
+
+      
       <FormDataPopupComponent
       ref="form-data-popup-component"
       v-if="isFormModalShow"
@@ -67,8 +89,6 @@
       :popupmsg="' '"
       :reqtype="'2'"
     />
-
-    </div>
   </div>
 </template>
 
@@ -179,8 +199,8 @@ export default {
 <style scoped>
 .container{
   display:grid;
-  grid-template-columns:700px minmax(860px, 1fr) ;
-  grid-template-rows: 60px 180px 250px 130px 130px 200px minmax(250px,1fr);
+  grid-template-columns:740px 800px 1fr ;
+  grid-template-rows: 60px 140px 270px 70px 130px 200px minmax(250px,1fr);
   gap: 10px 10px;
 }
 
@@ -201,36 +221,32 @@ export default {
 
 .item:nth-child(3){
   grid-column: 1/2;
-  grid-row: 3/6;
+  grid-row: 3;
 }
 
 .item:nth-child(4){
-  width: 84%;
   grid-column: 2/3;
-  grid-row:3/4;
+  grid-row:3;
 }
 
 .item:nth-child(5){
-  width: 84%;
   grid-column: 2/3;
-  grid-row: 4/5;
+  grid-row: 4;
 }
 
 .item:nth-child(6){
-  width: 84%;
   grid-column: 2/3;
-  grid-row: 5/6;
+  grid-row: 5;
 }
 
 .item:nth-child(7){
   grid-column: 1/2;
-  grid-row:6/7;
+  grid-row:5;
 }
 
 .item:nth-child(8){
-  width: 84%;
   grid-column: 2/3;
-  grid-row:6/7;
+  grid-row:6;
 }
 
 div.layout {
