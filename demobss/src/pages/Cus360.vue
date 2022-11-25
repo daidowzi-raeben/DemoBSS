@@ -165,18 +165,15 @@ export default {
         groupId: 0,
         directoryName: '청구계정ID 홍길* 은행계좌자동이체',
         children: [
-          {groupId: 1, directoryName: '요금제명(서비스계약id) 서울시 강남구 학동로 111', chk:true, chk2:false},
-          {groupId: 2,
-            directoryName: '요금제명(서비스계약id) 서울시 강남구 학동로 111', chk:false, chk2:false,},
-          {groupId: 3, directoryName: '요금제명(서비스계약id) 서울시 강남구 학동로 111',chk:false, chk2:true},
-          {groupId: 4, directoryName: '요금제명(서비스계약id) 서울시 강남구 학동로 111',chk:true, chk2:true}
+          {groupId: 1, directoryName: '요금제명(서비스계약ID)2022-10-13~2022-10-15서울시 강남구 학동로 111', chk:true, chk2:false},
         ]
       },
-        {groupId: 5, directoryName: '요금제명(서비스계약id) 서울시 강남구 학동로 111', children: [
-            {groupId: 3, directoryName: '요금제명(서비스계약id) 서울시 강남구 학동로 111',chk:false, chk2:true},
-            {groupId: 4, directoryName: '요금제명(서비스계약id) 서울시 강남구 학동로 111',chk:true, chk2:true}
+        {groupId: 5, directoryName: '청구계정ID 홍길* 은행계좌자동이체', children: [
+            {groupId: 2, directoryName: '요금제명(서비스계약ID)2022-10-13~2022-10-15서울시 강남구 학동로 111',chk:false, chk2:true},
+            {groupId: 3, directoryName: '요금제명(서비스계약ID)2022-10-13~2022-10-15서울시 강남구 학동로 111',chk:true, chk2:true},
+            {groupId: 4, directoryName: '요금제명(서비스계약ID)2022-10-13~2022-10-15서울시 강남구 학동로 111',chk:true, chk2:true}
           ]},
-        {groupId: 6, directoryName: '요금제명(서비스계약id) 서울시 강남구 학동로 111'}
+        {groupId: 6, directoryName: '청구계정ID 홍길* 은행계좌자동이체'}
       ],
       activeItemObj: {}, // 활성화 시킬 객체
       selectedItemList: [] // 선택시킬 객체
@@ -197,7 +194,7 @@ export default {
   display: grid;
   /* grid-template-columns: 55% 55% 1fr; */
   grid-template-columns: 760px 760px 1fr;
-  grid-template-rows: 40px 180px 300px 90px 140px minmax(200px,1fr);
+  grid-template-rows: 40px 180px 300px 90px 150px 20px;
   /* 10% 97px  */
   /* grid-template-rows: 10% 20% 30% 10% 15% 10% minmax(200px,1fr); */
   gap: 20px 40px;

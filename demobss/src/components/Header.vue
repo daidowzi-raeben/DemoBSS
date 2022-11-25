@@ -14,6 +14,7 @@
             >
               {{ menu.menuNm }}
             </span>
+            <span v-show="menu.menuNm !='공통'" style="color: rgb(72,87,104)">|</span>
           </li>
           <li class="menu_serch">
             <div>
@@ -28,8 +29,9 @@
               <img :src="iconSerch" />
             </div>
           </li>
-          <li style="color: rgb(86,143,207); padding-left: 30px">
-            <img :src="iconUser"/>
+          <li style="color:white; padding-left: 30px">
+<!--            <img :src="iconUser"/>-->
+            ♣
             홍길동님, 환영합니다.
           </li>
           <li class="menu_logout">
@@ -85,26 +87,26 @@ export default {
 <style scoped>
 .brand_name > img{
   margin-top: 9px;
-  background-color: black;
+  background-color: rgb(113,156,205);
   object-fit: cover;
   width: 70px;
   height: 20px;
 }
 .menu_serch{
-  padding-left: calc(100% - 1100px);
-  color: white;
+  padding-left: calc(100% - 1200px);
+  color: rgb(231,231,231);
 }
 .menu_serch img{
   width: 15px;
   height: 15px;
-  margin-bottom:7px;
+  padding-right: 6px;
   object-fit: contain;
 }
 .menu_serch > div{
-  margin-top: 10px;
-  background-color: rgb(28,42,57);
+  margin-top: 4px;
+  background-color: rgb(184,208,235);
   width: 200px;
-  height: 20px;
+  height: 37px;
   border-radius:3em;
 }
 .menu_logout img{

@@ -21,12 +21,10 @@
               <span id="tab_nm">
                 {{ item.menuNm }}
               </span>
-              <span class="tab_x" @click.prevent.stop="DeleteComponent(index)"
-                >
-                <img v-if="this.comp === item.menuId" :src="iconDelBlack" />
-                <img v-else :src="iconDelWhite" />
-              </span
-              >
+              <span v-if="this.comp ===item.menuId" class="tab_x_on" @click.prevent.stop="DeleteComponent(index)"
+              >x</span>
+              <span v-else class="tab_x_off" @click.prevent.stop="DeleteComponent(index)"
+              >x</span>
             </div>
           </div>
         </div>
@@ -216,13 +214,14 @@ export default {
 <style scoped>
 
 .menu_tab_line {
-  height: 30px;
+  padding-top: 17px;
+  height: 28px;
   display: inline-flex;
   width: 100%;
   background-color: #5ad3cd;
   position: fixed;
   overflow: hidden;
-  z-index: 800;
+  z-index: 8;
 }
 .menu_tab_line .menu_tab_line_detail {
   width: calc(100% - 70px);
@@ -238,7 +237,7 @@ img{
 .menu_tab_line .menu_tab_line_detail_on {
   width: calc(100% - 400px);
   overflow: hidden;
-  padding-left: 247px;
+  padding-left: 258px;
   position: fixed;
   white-space: nowrap;
   flex-grow: 0;
@@ -248,24 +247,23 @@ img{
 
 div.tabon {
   /* 탭 선택되었을 때 */
-  background-color: rgb(255,255,255);
+  background-color: rgb(27,114,212);
   border-radius: 5px 5px 0 0;
-  color: rgb(27,114,212);
+  color: white;
 }
 
 div.taboff {
   /* 탭 선택x */
-  background-color: rgb(27,114,212);
-  color: rgb(255,255,255);
+  background-color: rgb(184,208,235);
+  color: black;
   border-radius: 5px 5px 0 0;
-  border-right: #343434 solid 1px;
 }
 
 .menu_tab_line {
   height: 30px;
   display: inline-flex;
   width: 100%;
-  background-color: rgb(8,22,38);
+  background-color: rgb(113,156,205);
   position: fixed;
   overflow: hidden;
   z-index: 3;
@@ -280,7 +278,16 @@ div.taboff {
   line-height: 30px;
   cursor: pointer;
 }
-
+.menu_tab > span.tab_x_off {
+  color: #444444;
+  font-size: 15px;
+  float: right;
+}
+.menu_tab > span.tab_x_on {
+  color: white;
+  font-size: 15px;
+  float: right;
+}
 .menu_tab > span#tab_nm {
   display: block;
   float: left;
@@ -289,12 +296,6 @@ div.taboff {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-}
-
-.menu_tab > span.tab_x {
-  color: #aeaeae;
-  font-size: 20px;
-  float: right;
 }
 
 /*네비게이션 열렸을 때 탭 버튼*/

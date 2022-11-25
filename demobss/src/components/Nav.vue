@@ -110,7 +110,7 @@ export default {
 <style scoped>
 
 #nav {
-
+  padding-top: 17px;
   position:fixed;
   height: 100%;
   z-index: 6;
@@ -120,9 +120,9 @@ img{
   height: 20px;
 }
 #nav > .tab {
-  background-color: black;
-  width: 245px;
-  height: 30px;
+  background-color: rgb(113,156,205);
+  width: 258px;
+  height: 28px;
   text-align: center;
   font-size: 20px;
   font-weight: 600;
@@ -132,7 +132,7 @@ img{
   width: 50%;
   height: 30px;
   float: left;
-  line-height:30px;
+  line-height:28px;
   cursor: pointer;
   border-radius: 10px 10px 0 0;
 }
@@ -141,7 +141,7 @@ img{
   width: 50%;
   height: 30px;
   float: left;
-  line-height:30px;
+  line-height:28px;
   cursor: pointer;
   border-radius: 10px 10px 0 0;
 }
@@ -160,9 +160,9 @@ img{
 
 #nav > .area {
   border-right: rgb(229,231,234) solid 1px;
-  width: 245px;
-  padding: 20px 0 0 10px;
-  height: 80vh;
+  width: 223px;
+  padding: 33px 0 0 35px;
+  height: 70vh;
   overflow: auto;
 }
 
