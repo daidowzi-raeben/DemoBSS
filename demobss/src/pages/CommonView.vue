@@ -190,9 +190,11 @@
     <h1 style="font-size: 30px">ButtonComponent</h1>
     <span>각 버튼의 클래스 이름</span>
     <div class="commondiv1">
-    <ButtonComponent :btnClass="'btnClass1'" :btnName="'btnClass1'" />
-    <ButtonComponent :btnClass="'btnclass2'" :btnName="'btnClass2'" />
-    <ButtonComponent :btnClass="'btnClass3'" :btnName="'btnClass3'"   />
+    <div> <ButtonComponent :btnClass="'btnClass1'" :btnName="'btnClass1'" /></div>
+    <div><ButtonComponent :btnClass="'btnclass2'" :btnName="'btnClass2'" /></div>
+    <div><ButtonComponent :btnClass="'btnClass3'" :btnName="'btnClass3'"   /></div>
+    <div><ButtonComponent :btnClass="'btnClass4'" :btnName="'btnClass4'" :btnWidth="'90px'" :btnHeight="'20px'"/></div>
+    <div><ButtonComponent :btnClass="'btnClass5'" :btnName="'btnClass5'"   /></div>
     <ButtonComponent :btnClass="'btnLeftImgClass'"/>btnLeftImgClass &nbsp;
     <ButtonComponent :btnClass="'btnRightImgClass'"/> btnRightImgClass&nbsp;
     <ButtonComponent :btnClass="'btnDeleteImgClass'"/> btnDeleteImgClass &nbsp;
@@ -208,32 +210,30 @@
     </div>
 
     <h1 style="font-size: 30px">FormDataComponent</h1>
-    <span></span>
     <div style="border-top: solid black 1px; margin: 10px; padding: 10px">
-      <FormDataComponent
-        :FormDataclass="'InfoOfCont'"
-        :subInfoTitleNm="'계약정보'"
-      />
-      <br />
-      <FormDataComponent
-        :FormDataclass="'InfoOfOrg'"
-        :subInfoTitleNm="'영업조직정보'"
+      <form-data-component
+      :FormDataclass="'infoOfCust'"
+      :subInfoTitleNm="'고객 정보'"
       />
       <br>
-      
-      <FormDataComponent
-        :FormDataclass="'infoOfCus'"
-        :subInfoTitleNm="'고객정보'"
+      <form-data-component
+      :FormDataclass="'infoOfCont'"
+      :subInfoTitleNm="'계약 정보'"
       />
       <br>
-      <FormDataComponent
-        :FormDataclass="'InfoOfBasic'"
-        :subInfoTitleNm="'기본정보'"
+      <form-data-component
+      :FormDataclass="'infoOfAccount'"      
+      :subInfoTitleNm="'청구 계정 정보'"
       />
       <br>
-      <FormDataComponent
-        :FormDataclass="'InfoOfAccount'"
-        :subInfoTitleNm="'청구계정정보'"
+      <form-data-component
+      :FormDataclass="'infoOfSubs'"
+      :subInfoTitleNm="'신청자 정보'"
+      />
+      <br>
+      <form-data-component
+      :FormDataclass="'infoOfOrg'"
+      :subInfoTitleNm="'영업 조직 정보'"
       />
       <br>
 
@@ -762,7 +762,16 @@ export default {
     fileDisable() {
       this.pDisable = !this.pDisable;
     },
-
+    postCodePopup(){
+      if (this.isPostCodeModalShow == false) this.isPostCodeModalShow = true
+      else this.isPostCodeModalShow = false
+      // this.$refs.postCodePopup.GetSubmitFormData()
+    },
+    selectedJuso(postCodeData,detailPostAddress){
+      this.postCodeObj = postCodeData;
+      this.postCodeObj["detailPostAddress"] = detailPostAddress
+      this.isPostCodeModalShow = false;
+    },
     popup(){
       if (this.isModalShow == false) this.isModalShow = true
       else this.isModalShow = false
