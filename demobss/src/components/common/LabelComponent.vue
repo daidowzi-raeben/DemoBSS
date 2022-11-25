@@ -29,8 +29,10 @@ export default {
 }
 
 .class1{
-  width: 89px;
-  font-size: 12pt;
+  /* width: 89px; */
+  width: 100%;
+  /* font-size: 12pt; */
+  font-size: 10pt;
   font-weight: bold;
   text-align: left;
   color: #000;
