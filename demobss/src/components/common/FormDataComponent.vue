@@ -5,85 +5,141 @@
   class="InfoForm">
     <div>
       <div> <SubInfoTitle :subInfoTitleNm='subInfoTitleNm'/> </div>
-      <div class="infoFlexTable" >
-        <div>
-          <label-component
-          :labelNm="'계약번호'"
-          :labelClass="'class1'"/>
-          <input-component :input-class="'class5'" :disabled="true" :value="'P100002214' " /> 
+      <!-- <div class="infoFlexTable" > -->
+      <div class="infoDataTable" >
+        <table>
+          <!-- <tr>
+            <th> 
+              <label-component
+              :labelNm="'계약번호'"
+              :labelClass="'class1'"/>
+            </th> 
+            <td>
+              <input-component :input-class="'class5'" :disabled="true" :value="'P100002214' " /> 
+            </td> 
+            
+            <th> 계약번호 </th> <td> P100002214</td>
+            <th> 계약번호 </th> <td> P100002214</td>
+          </tr>
           
+          <tr>
+            <th> 계약번호 </th> <td> P100002214</td> 
+            <th> 계약번호 </th> <td> P100002214</td>
+            <th> 계약번호 </th> <td> P100002214</td>
+          </tr>
 
-
-          <label-component
+          
+          <tr>
+            <th> 계약번호 </th> <td> P100002214</td> 
+            <th> 계약번호 </th> <td colspan="3"> P100002214</td>
+            <th> 계약번호 </th> <td> P100002214</td>
+          </tr> -->
+        <tr>
+          <th> 
+            <label-component
+            :labelNm="'계약번호'"
+            :labelClass="'class1'"/>
+          </th>
+          <td>
+            <input-component :input-class="'class5'" :disabled="true" :value="'P100002214' " /> 
+          </td>
+          <th> <label-component
           :labelNm="'서비스번호'"
           :labelClass="'class1'"/>
+          </th><td>
           <input-component :input-class="'class5'" :disabled="true" :value="'------' " /> 
-          <label-component
+          </td>
+          <th> <label-component
           :labelNm="'상태'"
           :labelClass="'class1'"/>
+          </th><td>
           <input-component :input-class="'class5'" :disabled="true" :value="'이용중' " /> 
-        </div>
-        <div>
-          
-          <label-component
+          </td>
+        </tr>
+
+        <tr>
+          <th> <label-component
           :labelNm="'가입유형'"
           :labelClass="'class1'"/>
+          </th><td>
           <input-component :input-class="'class5'" :disabled="true" :value="'일반' " /> 
+          </td>
           
-          <label-component
+          <th> <label-component
           :labelNm="'상품'"
           :labelClass="'class1'"/>
+          </th><td colspan="4">
           <input-component :input-class="'class5 class5_short2'" type="text" :value="'IDC'" /> 
           <input-component :input-class="'class5'" class="class5_long1" type="text" :value="'사용중인요금제명'"  /> 
-        </div>
-        <div>
+          </td>
+        </tr>
+
+        <tr>
           
-          <label-component
+          <th> <label-component
           :labelNm="'수용국'"
           :labelClass="'class1'"/>
+          </th><td>
           <input-component :input-class="'class5'" :disabled="true" :value="'김포지점' " /> 
+          </td>
           
-          <label-component
+          <th> <label-component
           :labelNm="'접수일자'"
           :labelClass="'class1'"/>
+          </th><td>
           <input-component :input-class="'class5'" :disabled="true" :value="'2022-10-12' " /> 
+          </td>
           
-          <label-component
+          <th> <label-component
           :labelNm="'개통일자'"
           :labelClass="'class1'"/>
+          </th><td>
           <input-component :input-class="'class5'" :disabled="true" :value="'2022-10-13' " /> 
-        </div>
-        <div>
-          <label-component
+          </td>
+        </tr>
+
+        <tr>
+          <th> <label-component
           :labelNm="'계약기간'"
           :labelClass="'class1'"/>
+          </th><td>
           <input-component :input-class="'class5'" :disabled="true" :value="'36개월' " /> 
+          </td>
 
-          <label-component
+          <th> <label-component
           :labelNm="'사용기간'"
           :labelClass="'class1'"/>
+          </th><td>
           <input-component :input-class="'class5'" :disabled="true" :value="'1개월 7일' " /> 
+          </td>
           
-          <label-component
+          <th> <label-component
           :labelNm="'약정만료일'"
           :labelClass="'class1'"/>
+          </th><td>
           <input-component :input-class="'class5'" :disabled="true" :value="'2025-10-12' " /> 
-        </div>
-        <div>
-          <label-component
+          </td>
+        </tr>
+
+        <tr>
+          <th> <label-component
           :labelNm="'미납요금'"
           :labelClass="'class1'"/>
+          </th><td>
           <input-component :input-class="'class5'" :disabled="true" :value="'26,790원'" style="text-align:right; margin-right:5px;" /> 
-        </div>
-        <div class="btnComps"> 
+          </td>
+        </tr>
+        <tr style="height:76px;" >
+        <td colspan="6" style="vertical-align: bottom;" >
           <span> <ButtonComponent :btnClass="'btnClass5'" :btnName="'이력보기'" @click="modalShow"/> </span>
           <span> <ButtonComponent :btnClass="'btnClass5'" :btnName="'상세조회'"/>   </span>
           <span> <ButtonComponent :btnClass="'btnClass5'" :btnName="'계약변경'"/>  </span>
           <span> <ButtonComponent :btnClass="'btnClass5'" :btnName="'명의변경'"/>  </span>
           <span> <ButtonComponent :btnClass="'btnClass5'" :btnName="'정지/부활'"/>  </span>
           <span> <ButtonComponent :btnClass="'btnClass5'" :btnName="'해지'" :menu="'bill_01_01_01'" @input="addComp"/></span>
-        </div>
-        <br><br><br>
+        </td>
+        </tr>
+        </table>
       </div>
     </div>
   </div>
@@ -387,12 +443,31 @@ export default {
 #selectSearch{
   float: right;
 }
+table, tr {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+/* .infoDataTable > table > tr{
+  border-collapse: collapse;
+} */
+.infoDataTable > table > tr{
+  height: 38px;
+}
+.infoDataTable > table > tr > th{
+  width: 92px; 
+  
+  background-color: #bdbdbd;
+}
+.infoDataTable > table > tr > td{
+  width: 165px; 
+  text-align:right;
+}
 
 #selectSearch tr > th {
   display: inline-block;
   border: 1px solid black;
   width: 40px;
-  /* margin-top:2px; */
   height: 18px;
   font-size: 10px;
   font-weight: bold;
@@ -406,19 +481,13 @@ export default {
   font-weight: bold;
   font-size: 10px;
 }
-
 .formDataTable {
   padding: 8px; 
   width: calc(100% - 4px);
   border: 1px solid #bdbdbd;
-  /* height: calc(100% - 25px); */
 }
-
 .formDataTable tr > th  {
-  /* background-color: #f9f9f9; */
-  /* border-style: groove; */
   width: 10%;
-  /* font-size: 10px; */
   height: 20px;
   font-size: 12pt;
   font-weight: bold;
@@ -435,11 +504,6 @@ export default {
   color: #000;
   text-align: left;
 }
-
-/* .InfoForm > div > #account > tr > th {
-  width: 15%;
-} */
-
 .infoFlexTable{
   padding: 5px 0 5px 15px;
   border: 1px solid #bdbdbd;
@@ -453,7 +517,6 @@ export default {
   align-items: center;
   height: 40px;
 }
-
 .infoFlexTable > .btnComps{
   float: right; 
   margin-top : 5px;
@@ -461,5 +524,4 @@ export default {
 .infoFlexTable > .btnComps > span{
   margin-right: 3px;
 }
-
 </style>
