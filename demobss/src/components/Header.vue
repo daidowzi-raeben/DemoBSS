@@ -14,7 +14,7 @@
             >
               {{ menu.menuNm }}
             </span>
-            <span v-show="menu.menuNm !='공통'" style="color: rgb(72,87,104)">|</span>
+            <span v-show="menu.menuNm !='공통'" style="color: rgb(67,111,162)">|</span>
           </li>
           <li class="menu_serch">
             <div>
@@ -29,9 +29,8 @@
               <img :src="iconSerch" />
             </div>
           </li>
-          <li style="color:white; padding-left: 30px">
-<!--            <img :src="iconUser"/>-->
-            ♣
+          <li style="color:white; padding-left: 38px">
+            <img style="margin-top:10px; width:18px; height:18px;object-fit: contain;" :src="iconUser"/>
             홍길동님, 환영합니다.
           </li>
           <li class="menu_logout">
@@ -56,7 +55,7 @@ export default {
       menuDepth1: [],
       iconLogo:require('../img/icon_logo_cloud.png'),
       iconSerch:require('../img/icon_small_search.png'),
-      iconUser:require('../img/icon_user.png'),
+      iconUser:require('../img/icon_user2.png'),
       logoLogout:require('../img/logo_logout.png')
     };
   },
