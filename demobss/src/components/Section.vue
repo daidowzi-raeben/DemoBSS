@@ -255,6 +255,7 @@ div.tabon {
 div.taboff {
   /* 탭 선택x */
   background-color: rgb(184,208,235);
+  border-right: rgb(113,156,205) 1px solid;
   color: black;
   border-radius: 5px 5px 0 0;
 }

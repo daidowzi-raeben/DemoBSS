@@ -23,10 +23,10 @@
     <div >
 <!--      <div v-show="chk1" class="tree_state1"/>-->
 <!--      <div v-show="chk2" class="tree_state2"/>-->
-      <div v-show="depth>0" style="float:left;font-size:8pt; text-align:center;width: 36px;height: 13px;padding-bottom: 2px; background-color: rgb(121,148,177);color:white">해지</div>
-      <div v-show="depth>0" style="float:left;font-size:8pt; text-align:center;width: 36px;height: 13px;padding-bottom: 2px; background-color: rgb(242,102,118);color:white">IDC</div>
-      <div v-show="depth>0" style="float:left;font-size:8pt; text-align:center;width: 36px;height: 13px;padding-bottom: 2px; background-color: rgb(110,181,90);color:white">사용중</div>
-      <div v-show="depth>0" style="float:left;font-size:8pt; text-align:center;width: 36px;height: 13px;padding-bottom: 2px; background-color: rgb(17,157,216);color:white">변경중</div>
+      <div v-show="depth>0" style="margin-right:2px;float:left;font-size:8pt; text-align:center;width: 36px;height: 13px;padding-bottom: 2px; background-color: rgb(121,148,177);color:white">해지</div>
+      <div v-show="depth>0" style="margin-right:2px;float:left;font-size:8pt; text-align:center;width: 36px;height: 13px;padding-bottom: 2px; background-color: rgb(242,102,118);color:white">IDC</div>
+      <div v-show="depth>0" style="margin-right:2px;float:left;font-size:8pt; text-align:center;width: 36px;height: 13px;padding-bottom: 2px; background-color: rgb(110,181,90);color:white">사용중</div>
+      <div v-show="depth>0" style="margin-right:2px;float:left;font-size:8pt; text-align:center;width: 36px;height: 13px;padding-bottom: 2px; background-color: rgb(17,157,216);color:white">변경중</div>
     </div>
   </div>
   <div v-show="depth>0 && final" style="width: 100%; border: #f2f2f2 1px solid"></div>
