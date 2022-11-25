@@ -160,6 +160,7 @@ img{
 
 #nav > .area {
   border-right: rgb(229,231,234) solid 1px;
+  background-color: white;
   width: 245px;
   padding: 20px 0 0 10px;
   height: 80vh;

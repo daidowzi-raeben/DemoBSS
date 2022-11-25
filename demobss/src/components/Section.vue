@@ -327,7 +327,7 @@ div.taboff {
 /*네비게이션 열렸을 때 Component내용*/
 .contentNavOn{
   overflow: hidden;
-  padding-left: 300px;
+  padding-left: 290px;
   padding-top: 50px;
   z-index: 3;
 }
