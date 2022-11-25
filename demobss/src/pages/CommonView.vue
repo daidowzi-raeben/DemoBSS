@@ -241,7 +241,8 @@
 
     <h1 style="font-size: 30px">PopupComponent</h1>
     <div class="commondiv1">
-    <button @click="popup">공통 PopUp</button>
+    <button-component :btnClass="'btnClass5'" :btnName="'공통 PopUp'" @click="popup"/>
+
     <PopupComponent
       v-if="isModalShow"
       @popup="isModalShow = false"
@@ -259,7 +260,7 @@
       :popupmsg="' '"
       :reqtype="'1'"
     />
-    <button @click="FormPopup1">출력 PopUp </button>
+    <button-component :btnClass="'btnClass4'" :btnName="'출력 PopUp'" :btnWidth="'120px'" @click="FormPopup1"/>
 
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
@@ -271,7 +272,7 @@
       :popupmsg="' '"
       :reqtype="'2'"
     />
-    <button @click="FormPopup2">입력 PopUp </button>
+    <button-component :btnClass="'btnClass3'" :btnName="'입력 PopUp'" @click="FormPopup2"/>
       <br />
       <p>화면 전체를 회색으로 감싸려면 z-index:7을 주면 적용</p>
     </div>
@@ -306,6 +307,25 @@
           }
         "
       />
+      <br> 
+      <input-component 
+      :input-class="'class3'"
+      :value="'input 컴포넌트 - class3 '"
+      /> 
+      <div>
+      <input-component 
+      :input-class="'class4'"
+      :value="'input 컴포넌트 - class4 '"
+      /> 
+      </div>
+
+      
+      <input-component 
+      :input-class="'class5'"
+      :value="'input 컴포넌트 - class5 '"
+      /> 
+      
+
     </div>
     <br /><br /><br />
 
@@ -542,7 +562,6 @@ import AgGridComponent from "../components/common/AgGridComponent.vue";
 import SelectBoxComponent from "../components/common/SelectBoxComponent.vue";
 import ButtonComponent from "@/components/common/ButtonComponent.vue";
 import SubInfoTitle from "@/components/common/SubInfoTitle.vue";
-import InputComponent from "@/components/common/InputComponent";
 import TitleArea from "@/components/common/TitleArea";
 import PopupComponent from "@/components/common/PopupComponent.vue";
 import CustInfoComponent from "@/components/common/CustInfoComponent";
@@ -567,6 +586,7 @@ import TabComponent from "@/components/common/TabComponent";
 import PostCodeComponent from "@/components/common/PostCodeComponent";
 import ApiMixin from "@/service/common.js";
 import TreeView from "@/components/common/Tree/TreeView";
+import InputComponent from '@/components/common/InputComponent.vue';
 
 export default {
   mixins:[ApiMixin],
@@ -602,6 +622,7 @@ export default {
     ChkBoxComponent,
     RadioComponent,
     linkComponent,
+    InputComponent,
   },
   data() {
     return {
