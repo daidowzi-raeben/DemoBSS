@@ -1,190 +1,238 @@
 {
-    "menu": [
-        {
-            "menuId": "cont_01",
-            "menuNm": "고객/청약",
-            "upMenuId": null,
-            "cmpnId": ""
-        },
-        {
-            "menuId": "cont_01_01",
-            "menuNm": "고객 360 View",
-            "upMenuId": "cont_01",
-            "cmpnId": ""
-        },
-        {
-            "menuId": "cont_01_01_01",
-            "menuNm": "계약상세",
-            "upMenuId": "cont_01_01",
-            "cmpnId": "ContSection"
-        },
-        {
-            "menuId": "cont_01_01_02",
-            "menuNm": "계약관리",
-            "upMenuId": "cont_01_01",
-            "cmpnId": "ContSection"
-        },
-        {
-            "menuId": "cont_01_01_03",
-            "menuNm": "계약 신청관리",
-            "upMenuId": "cont_01_01",
-            "cmpnId": "ContSection"
-        },
-        {
-            "menuId": "cont_01_01_04",
-            "menuNm": "TVRO 정시 스케줄관리",
-            "upMenuId": "cont_01_01",
-            "cmpnId": "ContSection"
-        },
-        {
-            "menuId": "cont_01_01_05",
-            "menuNm": "위성서비스실적관리",
-            "upMenuId": "cont_01_01",
-            "cmpnId": "ContSection"
-        },
-        {
-            "menuId": "cont_01_01_06",
-            "menuNm": "청약정보통보대상관리",
-            "upMenuId": "cont_01_01",
-            "cmpnId": "ContSection"
-        },
-        {
-            "menuId": "cont_01_01_07",
-            "menuNm": "KTSAT BSS Rate Plan 체크",
-            "upMenuId": "cont_01_01",
-            "cmpnId": "ContSection"
-        },
-        {
-            "menuId": "cont_01_01_08",
-            "menuNm": "팀장승인관리",
-            "upMenuId": "cont_01_01",
-            "cmpnId": "ContSection"
-        },
-        {
-            "menuId": "bill_01",
-            "menuNm": "요금/수납/미납",
-            "upMenuId": null,
-            "cmpnId": ""
-        },
-        {
-            "menuId": "bill_01_01",
-            "menuNm": "청구요금관리",
-            "upMenuId": "bill_01",
-            "cmpnId": ""
-        },
-        {
-            "menuId": "bill_01_01_01",
-            "menuNm": "청구요금정보조회",
-            "upMenuId": "bill_01_01",
-            "cmpnId": "ChageInfoRetv"
-        },
-        {
-            "menuId": "bill_01_01_02",
-            "menuNm": "일일통화내역",
-            "upMenuId": "bill_01_01",
-            "cmpnId": "ChageInfoRetv"
-        },
-        {
-            "menuId": "bill_01_01_03",
-            "menuNm": "FleetOne 통화내역",
-            "upMenuId": "bill_01_01",
-            "cmpnId": "ChageInfoRetv"
-        },
-        {
-            "menuId": "bill_01_01_04",
-            "menuNm": "청구내역조회",
-            "upMenuId": "bill_01_01",
-            "cmpnId": "ChageInfoRetv"
-        },
-        {
-            "menuId": "bill_01_01_05",
-            "menuNm": "청구내역갱신",
-            "upMenuId": "bill_01_01",
-            "cmpnId": "ChageInfoRetv"
-        },
-        {
-            "menuId": "bill_01_01_06",
-            "menuNm": "청구서안내문관리",
-            "upMenuId": "bill_01_01",
-            "cmpnId": "ChageInfoRetv"
-        },
-        {
-            "menuId": "bill_01_02",
-            "menuNm": "수납관리",
-            "upMenuId": "bill_01",
-            "cmpnId": ""
-        },
-        {
-            "menuId": "bill_01_02_01",
-            "menuNm": "청구요금정보조회",
-            "upMenuId": "bill_01_02",
-            "cmpnId": "ChageInfoRetv"
-        },
-        {
-            "menuId": "bill_01_02_02",
-            "menuNm": "일일통화내역",
-            "upMenuId": "bill_01_02",
-            "cmpnId": "ChageInfoRetv"
-        },
-        {
-            "menuId": "bill_01_02_03",
-            "menuNm": "FleetOne 통화내역",
-            "upMenuId": "bill_01_02",
-            "cmpnId": "ChageInfoRetv"
-        },
-        {
-            "menuId": "cust_01",
-            "menuNm": "청구/정산/매출",
-            "upMenuId": null,
-            "cmpnId": ""
-        },
-        {
-            "menuId": "cust_01_01",
-            "menuNm": "고객 360 View",
-            "upMenuId": "cust_01",
-            "cmpnId": ""
-        },
-        {
-            "menuId": "cust_01_01_01",
-            "menuNm": "고객 360 View",
-            "upMenuId": "cust_01_01",
-            "cmpnId": "Cus360"
-        },
-        {
-            "menuId": "sale_01",
-            "menuNm": "업무현황",
-            "upMenuId": null,
-            "cmpnId": ""
-        },
-        {
-            "menuId": "stat_01",
-            "menuNm": "업무지원",
-            "upMenuId": null,
-            "cmpnId": ""
-        },
-        {
-            "menuId": "prod_01",
-            "menuNm": "상품관리",
-            "upMenuId": null,
-            "cmpnId": ""
-        },
-        {
-            "menuId": "comn_01",
-            "menuNm": "공통",
-            "upMenuId": null,
-            "cmpnId": ""
-        },
-        {
-            "menuId": "comn_01_01",
-            "menuNm": "공통화면",
-            "upMenuId": "comn_01",
-            "cmpnId": ""
-        },
-        {
-            "menuId": "comn_01_01_01",
-            "menuNm": "공통화면참고",
-            "upMenuId": "comn_01_01",
-            "cmpnId": "CommonView"
-        }
-    ]
+  "menu":[
+    {
+      "menuId": "L01",
+      "menuNm": "고객/청약",
+      "upMenuId": null,
+      "cmpnId": ""
+    },
+    {
+      "menuId": "L01M01",
+      "menuNm": "고객 360 View",
+      "upMenuId": "L01",
+      "cmpnId": ""
+    },
+    {
+      "menuId": "L01M01S01",
+      "menuNm": "고객 360 View",
+      "upMenuId": "L01M01",
+      "cmpnId": "Cus360"
+    },
+    
+    {
+      "menuId": "L01M02",
+      "menuNm": "고객정보 조회/등록/수정",
+      "upMenuId": "L01",
+      "cmpnId": "ContSection"
+    },
+    {
+      "menuId": "L01M02S01",
+      "menuNm": "고객정보 등록",
+      "upMenuId": "L01M02",
+      "cmpnId": "ContSection"
+    },
+    {
+      "menuId": "L01M02S02",
+      "menuNm": "고객정보 수정",
+      "upMenuId": "L01M02",
+      "cmpnId": "ChageInfoRetv"
+    },
+    {
+      "menuId": "L01M03",
+      "menuNm": "납부 정보/등록/수정",
+      "upMenuId": "L01",
+      "cmpnId": "ContSection"
+    },
+    {
+      "menuId": "L01M03S01",
+      "menuNm": "납부정보 등록",
+      "upMenuId": "L01M03",
+      "cmpnId": "ContSection"
+    },
+    {
+      "menuId": "L01M03S02",
+      "menuNm": "납부정보 수정",
+      "upMenuId": "L01M03",
+      "cmpnId": "ChageInfoRetv"
+    },
+    {
+      "menuId": "L01M05",
+      "menuNm": "청약 정보/등록/수정",
+      "upMenuId": "L01",
+      "cmpnId": "ContSection"
+    },
+    {
+      "menuId": "L01M05S00",
+      "menuNm": "청약정보",
+      "upMenuId": "L01M05",
+      "cmpnId": "ContSection"
+    },
+    {
+      "menuId": "L01M05S01",
+      "menuNm": "고객정보 등록",
+      "upMenuId": "L01M05",
+      "cmpnId": "ContSection"
+    },
+    {
+      "menuId": "L01M05S02",
+      "menuNm": "고객정보 수정",
+      "upMenuId": "L01M05",
+      "cmpnId": "ChageInfoRetv"
+    },
+    {
+      "menuId": "L01M06S00",
+      "menuNm": "청약리스트",
+      "upMenuId": "L01",
+      "cmpnId": "ChageInfoRetv"
+    },
+    {
+      "menuId": "L01M07S00",
+      "menuNm": "명의변경",
+      "upMenuId": "L01",
+      "cmpnId": "ContSection"
+    },
+
+
+    
+    {
+      "menuId": "L02",
+      "menuNm": "요금/수납/미납",
+      "upMenuId": null,
+      "cmpnId": ""
+    },
+    {
+      "menuId": "L02M01",
+      "menuNm": "청구통합/분리",
+      "upMenuId": "L02",
+      "cmpnId": ""
+    },
+    {
+      "menuId": "L02M01S01",
+      "menuNm": "분리청구",
+      "upMenuId": "L02M01",
+      "cmpnId": "Cus360"
+    },
+    {
+      "menuId": "L02M02S00",
+      "menuNm": "청구요금",
+      "upMenuId": "L02",
+      "cmpnId": "ContSection"
+    },
+    {
+      "menuId": "L02M03",
+      "menuNm": "즉시수납",
+      "upMenuId": "L02",
+      "cmpnId": "ContSection"
+    },
+    {
+      "menuId": "L02M03S01",
+      "menuNm": "즉시수납",
+      "upMenuId": "L02M03",
+      "cmpnId": "ContSection"
+    },
+    {
+      "menuId": "L02M03S02",
+      "menuNm": "신용카드 승인 내역",
+      "upMenuId": "L02M03",
+      "cmpnId": "ChageInfoRetv"
+    },
+    {
+      "menuId": "L02M03S03",
+      "menuNm": "CMS즉시 출금 내역",
+      "upMenuId": "L02M03",
+      "cmpnId": "ContSection"
+    },
+
+
+
+    {
+      "menuId": "L03",
+      "menuNm": "청구/정산/매출",
+      "upMenuId": null,
+      "cmpnId": ""
+    },
+    {
+        "menuId": "L03M01",
+        "menuNm": "과금관리",
+        "upMenuId": "L03",
+        "cmpnId": ""
+    },
+    {
+        "menuId": "L03M01S01",
+        "menuNm": "과금 내역",
+        "upMenuId": "L03M01",
+        "cmpnId": "ContSection"
+    },
+
+
+    
+    {
+      "menuId": "L04",
+      "menuNm": "업무현황",
+      "upMenuId": null,
+      "cmpnId": ""
+    },
+    {
+        "menuId": "L04M01",
+        "menuNm": "고객현황",
+        "upMenuId": "L04",
+        "cmpnId": ""
+    },
+    {
+        "menuId": "L04M01S01",
+        "menuNm": "고객리스트",
+        "upMenuId": "L04M01",
+        "cmpnId": "ChageInfoRetv"
+    },
+
+
+
+    {
+      "menuId": "L05",
+      "menuNm": "업무지원",
+      "upMenuId": null,
+      "cmpnId": ""
+    },
+    {
+        "menuId": "L05M01",
+        "menuNm": "입출금관리",
+        "upMenuId": "L05",
+        "cmpnId": ""
+    },
+    {
+        "menuId": "L05M01S01",
+        "menuNm": "납부방법별 출금일관리",
+        "upMenuId": "L05M01",
+        "cmpnId": "ChageInfoRetv"
+    },
+    {
+        "menuId": "L05M01S02",
+        "menuNm": "가상계좌관리",
+        "upMenuId": "L05M01",
+        "cmpnId": "ChageInfoRetv"
+    },
+
+
+
+    {
+      "menuId": "L06",
+      "menuNm": "공통",
+      "upMenuId": null,
+      "cmpnId": ""
+    },
+  {
+      "menuId": "L06M01",
+      "menuNm": "공통화면",
+      "upMenuId": "L06",
+      "cmpnId": ""
+  },
+  {
+      "menuId": "L06M01S01",
+      "menuNm": "공통화면참고",
+      "upMenuId": "L06M01",
+      "cmpnId": "CommonView"
+  }
+
+
+  ]
 }

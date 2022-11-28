@@ -47,7 +47,7 @@
 </template>
 
 <script>
-import menu from "../../public/menu0.json";
+import menu from "../../public/menu.json";
 
 export default {
   name: "Nav",

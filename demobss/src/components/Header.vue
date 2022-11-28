@@ -51,7 +51,7 @@ export default {
   components: {InputComponent},
   data() {
     return {
-      menuId: "cont_01",
+      menuId: "L01",
       menuDepth1: [],
       iconLogo:require('../img/icon_logo_cloud.png'),
       iconSerch:require('../img/icon_small_search.png'),

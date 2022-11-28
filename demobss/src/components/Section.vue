@@ -102,20 +102,20 @@ export default {
   },
   data() {
     return {
-      comp: "bill_01_01_01",
+      comp: "L01M01S01",
       cur_num: 0,
       compm: [
         {
-          cmpnId: "ChageInfoRetv",
-          menuId: "bill_01_01_01",
-          menuNm: "청구요금정보조회",
-          upMenuId: "bill_01_01",
+          cmpnId: "Cus360",
+          menuId: "L01M01S01",
+          menuNm: "고객 360 View",
+          upMenuId: "L01M01",
         },
       ],
       compm2: [],
-      test: "ChageInfoRetv",
+      test: "Cus360",
       component: markRaw(
-          defineAsyncComponent(() => import("../pages/ChageInfoRetv.vue"))
+          defineAsyncComponent(() => import("../pages/Cus360.vue"))
       ),
       iconDelWhite:require("../img/icon_delete_white.png"),
       iconDelBlack:require("../img/icon_delete_black.png"),

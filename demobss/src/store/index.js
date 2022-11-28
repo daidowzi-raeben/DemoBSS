@@ -3,7 +3,7 @@ import { createStore } from "vuex";
 export default createStore({
   state: {
     navOn: true,
-    menuId: "cont_01",
+    menuId: "L01",
   },
   getters: {
     getMenuId(state) {
