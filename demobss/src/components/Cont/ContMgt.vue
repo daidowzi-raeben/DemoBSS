@@ -20,9 +20,9 @@
       </div>
       
       
-      <!-- 3 보유상품  -->
+      <!-- 3 요금정보  -->
       <div class="item feeInfo">
-        <BlcComponent
+        <blc-component
           :sub-info-title-nm="'요금정보'"
           :row-data="rowData"
           :column-defs="columnDefs"
@@ -30,6 +30,7 @@
           :total="'10'"
           :cdGroup="'optionsSearchDiv'"
           :btnName="'엑셀다운'"
+          style="height:110%"
         />
       </div>
       
@@ -67,11 +68,11 @@
         />
       </div>
       
-      <!-- 8 요금 정보 -->
+      <!-- 8 보유상품 -->
       <div class="item ">
-        <SubInfoTitle :subInfoTitleNm="'보유 상품'" />
+        <sub-infoTitle :subInfoTitleNm="'보유 상품'" style="display:block; width:500px;"/>
         <div class="cmProducts">
-        <TreeGridComponent :tableData="tableData" :columns="columns" style="min-width: 710px;"/>
+        <tree-Grid-component :tableData="tableData" :columns="columns" style="min-width: 710px;"/>
         </div>
       </div>
 
@@ -79,8 +80,6 @@
 
 
     </div>
-
-      
       <FormDataPopupComponent
       ref="form-data-popup-component"
       v-if="isFormModalShow"
@@ -93,14 +92,14 @@
 </template>
 
 <script>
-import CustRetvComponent from "@/components/common/CustRetvComponent";
+import CustRetvComponent from "@/components/common/CustRetvComponent.vue";
 import SubInfoTitle from "@/components/common/SubInfoTitle.vue";
-import CustInfoComponent from "@/components/common/CustInfoComponent";
-import BlcComponent from "@/components/common/BlcComponent";
-import TreeGridComponent from "@/components/common/TreeGridComponent";
+import CustInfoComponent from "@/components/common/CustInfoComponent.vue";
+import TreeGridComponent from "@/components/common/TreeGridComponent.vue";
 import FormDataComponent from "@/components/common/FormDataComponent.vue";
 import ApiMixin from "@/service/common";
 import FormDataPopupComponent from "@/components/common/FormDataPopupComponent.vue";
+import BlcComponent from '../common/BlcComponent.vue';
 
 export default {
   mixins:[ApiMixin],
@@ -113,6 +112,7 @@ export default {
     SubInfoTitle,
     FormDataComponent,
     FormDataPopupComponent,
+    BlcComponent,
   },
   data() {
     return {
@@ -200,8 +200,8 @@ export default {
 .container{
   display:grid;
   grid-template-columns:740px 800px 1fr ;
-  grid-template-rows: 60px 140px 270px 70px 130px 200px minmax(250px,1fr);
-  gap: 10px 10px;
+  grid-template-rows: 60px 140px 280px 70px 100px 200px minmax(250px,1fr);
+  gap: 20px 30px;
 }
 
 .item{
@@ -257,10 +257,9 @@ div.layout {
 
 .cmProducts {
   float: left;
-  margin:  auto;
   position: relative;
-  height: 230px;
-  min-width: 500px;
+  /* height: 230px; */
+  width:100%;
   border: groove;
   overflow: scroll;
 }
