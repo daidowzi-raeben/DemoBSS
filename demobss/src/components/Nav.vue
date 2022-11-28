@@ -47,7 +47,7 @@
 </template>
 
 <script>
-import menu from "../../public/menu.json";
+import menu from "../../public/menu0.json";
 
 export default {
   name: "Nav",
@@ -56,7 +56,7 @@ export default {
       menuDepth1Nm: "",
       menuDepth2: [],
       menuDepth3: [],
-      selectedMenuId: "cont_01_01",
+      selectedMenuId: "L01",
       tabIndex: 0,
       menuIcon1:require('../img/menu_type_1.png'),
       menuIcon2:require('../img/menu_type_2.png'),
