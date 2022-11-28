@@ -6,8 +6,8 @@
     </div>
     <div id="menu" >
       <div class="area">
-        <ul>
-          <li v-for="(menu, idx) in menuDepth1" :key="idx">
+        <div>
+          <span v-for="(menu, idx) in menuDepth1" :key="idx">
             <span
               @click="setMenuId(menu.menuId)"
               :class="[menuId == menu.menuId ? 'clicked' : '']"
@@ -15,8 +15,8 @@
               {{ menu.menuNm }}
             </span>
             <span v-show="menu.menuNm !='공통'" style="color: rgb(67,111,162)">|</span>
-          </li>
-          <li class="menu_serch">
+          </span>
+          <span class="menu_serch">
             <div>
               &nbsp;&nbsp;
               <input-component
@@ -28,15 +28,15 @@
               &nbsp;
               <img :src="iconSerch" />
             </div>
-          </li>
-          <li style="color:white; padding-left: 38px">
+          </span>
+          <span style="color:white; padding-left: 38px">
             <img style="margin-top:10px; width:18px; height:18px;object-fit: contain;" :src="iconUser"/>
             홍길동님, 환영합니다.
-          </li>
-          <li class="menu_logout">
+          </span>
+          <span class="menu_logout">
               <img :src="logoLogout" />
-          </li>
-        </ul>
+          </span>
+        </div>
       </div>
     </div>
   </header>
@@ -85,14 +85,14 @@ export default {
 
 <style scoped>
 .brand_name > img{
-  margin-top: 9px;
+  margin-top: 5px;
   background-color: rgb(113,156,205);
   object-fit: cover;
-  width: 70px;
-  height: 20px;
+  width: 100px;
+  height: 30px;
 }
 .menu_serch{
-  padding-left: calc(100% - 1200px);
+  padding-left: calc(100% - 1100px);
   color: rgb(231,231,231);
 }
 .menu_serch img{
@@ -105,11 +105,11 @@ export default {
   margin-top: 4px;
   background-color: rgb(184,208,235);
   width: 200px;
-  height: 37px;
+  height: 35px;
   border-radius:3em;
 }
 .menu_logout img{
-  margin-top:5px;
+  margin:5px 0 0 15px;
   width:40px;
   height:30px;
   object-fit: contain
@@ -117,4 +117,5 @@ export default {
 .menu_user_name{
   color:#0074d9;
 }
+
 </style>

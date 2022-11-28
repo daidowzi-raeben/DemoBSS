@@ -162,13 +162,13 @@ body {
   width: 100vw;
   margin: 0 auto;
 }
-#menu > .area > ul {
+#menu > .area > div {
   padding-top: 10px;
   height: 50px;
   overflow: hidden;
 }
 
-#menu > .area > ul > li {
+#menu > .area > div > span {
   float: left;
   font-size: 13px;
   color: rgb(255,255,255);
@@ -176,17 +176,17 @@ body {
   cursor: pointer;
 }
 
-#menu > .area > ul > li > span {
+#menu > .area > div > span > span {
   padding: 2px 14px;
 }
 
-#menu > .area > ul > li > span.clicked {
+#menu > .area > div > span > span.clicked {
   color: rgb(255,255,255);
   font-weight: 900;
   text-decoration: underline; text-underline-position:under;
 }
 
-#menu > .area > ul > li > span:hover {
+#menu > .area > div > span > span:hover {
   color: rgb(255,255,255);
   font-weight: 900;
   text-decoration: underline; text-underline-position:under;

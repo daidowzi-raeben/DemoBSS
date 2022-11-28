@@ -6,7 +6,7 @@
         :class="[tabIndex == 0 ? 'tabon' : 'taboff']"
         @click="tabIndex = 0"
       >
-        ◀
+        <img src="../img/arrow_left2.png" alt="" style="margin-top:5px; width:25px;">
       </div>
       <div
         id="nav_tab2"
