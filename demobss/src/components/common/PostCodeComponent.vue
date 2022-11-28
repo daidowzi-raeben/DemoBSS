@@ -49,7 +49,11 @@
               </table>
               
             <div style="text-align:center; font-size:20px;"> 
-              <p> 	&laquo; &lt;  1 2 3 4 5 &gt; &raquo; </p>
+              <paging-area
+              :pageableData="pageableData"
+              :pageSize="5"
+              @currentPage="(value) => {currentPage = value;}"
+              />{{currentPage}}
             </div>
             </form>
           </div>
@@ -84,9 +88,10 @@
 <script>
 import ButtonComponent from './ButtonComponent.vue';
 import InputComponent from './InputComponent.vue';
+import PagingArea from './PagingArea.vue';
 import RadioComponent from './RadioComponent.vue';
 export default {
-  components: { ButtonComponent, InputComponent, RadioComponent },
+  components: { ButtonComponent, InputComponent, RadioComponent, PagingArea },
   name: "CommonPopup",
   data() {
     return {
@@ -104,6 +109,15 @@ export default {
       col_11 : '91.66%',
       col_12 : '100%',
       detailPostAddress:'',
+      currentPage:'',    // 현재 페이지
+      postCodeNums:'',   // 주소 개수
+      pcTotalPages : '', // 총 페이지 수 
+      pageableData : {
+        pageNumber: 1,
+        currentMinPage: 1,
+        currentMaxPage: 5,
+        totalPages: 0,
+      },
     };
   },
   props: {
@@ -121,8 +135,11 @@ export default {
       type:String,
       default:'500px'
   },
+  watch:{
+    paging:() => {
+      console.log("sadfasdf",this.pageableData);
+  }}
   },
-
   beforeMount(){
       // this.axios.get('/postCodeEx.json').then((response) => {
       //   this.postCodeSearchData = response.data.results.juso
@@ -130,19 +147,33 @@ export default {
       // })
   },
   methods:{
-    getPostCode(){
-      this.axios.get('/postCodeEx.json').then((response) => {
+    async getPostCode(){
+      await this.axios.get('/postCodeEx.json').then((response) => {
         this.postCodeSearchData = response.data.results.juso
         console.log(this.postCodeSearchData)
+        // console.log("hihi",this.postCodeSearchData.length)
       })
+      this.postCodeNums = this.postCodeSearchData.length;
+      if(this.postCodeNums > 5) {
+        this.pcTotalPages = parseInt(this.postCodeNums/5)
+        if(this.postCodeNums%5 > 0) this.pcTotalPages +=1
+      }
+      console.log(this.postCodeNums);
+      console.log(this.pcTotalPages);
+      
+      this.pageableData.totalPages = this.pcTotalPages;
+      console.log("sadfasdf",this.pageableData);
     },
     // 주소 선택 시, 부모 컴포넌트에 해당 주소 객체 보냄
     selectPostCode(postCode, detailPostAddress){     
       this.$emit('selectedJusoData',postCode,detailPostAddress);
       console.log(postCode,'\n',detailPostAddress)
-      
     },
-  }
+
+    },
+    computed(){
+    }
+
   }
 </script>
 

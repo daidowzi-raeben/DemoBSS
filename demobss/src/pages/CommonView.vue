@@ -11,7 +11,7 @@
         :defaultValue="'선택'"
         v-model="searchDiv1"
         @input="
-          (value) => {
+          (currentPage) => {
             searchDiv1 = value;
           }
         "
@@ -154,21 +154,13 @@
       page size 10 페이징 데이터 {{ pageableData1 }} 현재페이지 : {{ page1 }}
       <paging-area
         :pageableData="pageableData1"
-        @input="
-          (value) => {
-            page1 = value;
-          }
-        "
+        @currentPage="(value) => {page2 = value;}"
       />
       page size 5 페이징 데이터 {{ pageableData2 }} 현재페이지 : {{ page2 }}
       <paging-area
         :pageableData="pageableData2"
-        :pageSize="5"
-        @input="
-          (value) => {
-            page2 = value;
-          }
-        "
+        :pageSize="2"
+        @currentPage="(value) => {page2 = value;}"
       />
     </div>
 
@@ -351,28 +343,23 @@
     <span></span>
     <div class="commondiv1">
       <div>
-        <table >
-
+        <table style="border:1px solid" >
           <tr>
-            <th style="border:1px solid black;"> <h1> &nbsp;우편번호 </h1> </th>
-            <td> {{ postCodeObj.zipNo }} </td>
+            <th > <h1> &nbsp;우편번호 </h1> </th>
+            <td> <input-component :inputClass="'class5_short1'" :value="postCodeObj.zipNo" /> </td>
           </tr>
           <tr>
-            <th style="border:1px solid black;"> <h1> 도로명주소</h1> </th>
-            <td> {{ postCodeObj.roadAddr }} </td>
+            <th > <h1> 도로명주소</h1> </th>
+            <td> <input-component :inputClass="'class5_long1'" :value="postCodeObj.roadAddr" /> </td>
           </tr>
           <tr>
-            <th style="border:1px solid black;"> <h1> &nbsp;지번주소  </h1> </th>
-            <td> {{ postCodeObj.jibunAddr }} </td>
+            <th > <h1> &nbsp;지번주소  </h1> </th>
+            <td> <input-component :inputClass="'class5_long1'" :value="postCodeObj.jibunAddr" /> </td>
           </tr>
           <tr>
-            <th style="border:1px solid black;"> <h1> &nbsp;상세주소</h1> </th>
-            <td> {{ postCodeObj.detailPostAddress }} </td>
+            <th > <h1> &nbsp;상세주소</h1> </th>
+            <td> <input-component :inputClass="'class5_long1'" :value="postCodeObj.detailPostAddress" /> </td>
           </tr>
-          <!-- <h1>우편번호  : <span>  {{ postCodeObj.zipNo }}           </span></h1>
-          <h1>도로명주소: <span>  {{ postCodeObj.roadAddr }}        </span></h1>
-          <h1>지번주소  : <span>  {{ postCodeObj.jibunAddr }}       </span></h1>
-          <h1>상세주소  : <span>  {{postCodeObj.detailPostAddress}} </span></h1> -->
         </table>
       </div>
       </div><div>
@@ -635,12 +622,12 @@ export default {
       date3: new Date(),
       date4: new Date(),
       pDisable: true,
-      comp: "cont_01_01_01",
+      comp: "L01M05S00",
       compm: [
         {
-          "menuId": "cont_01_01_01",
-          "menuNm": "계약상세",
-          "upMenuId": "cont_01_01",
+          "menuId": "L01M05S00",
+          "menuNm": "청약정보",
+          "upMenuId": "L01M05",
           "cmpnId": "ContMgt"
         },
       ],
@@ -708,9 +695,9 @@ export default {
       },
       currentMenu: {
         cmpnId: "ChageInfoRetv",
-        menuId: "bill_01_01_01",
+        menuId: "L01M05S02",
         menuNm: "청구요금정보조회",
-        upMenuId: "bill_01_01",
+        upMenuId: "L01M05",
       },
       pageableData1: {
         pageNumber: 1,
@@ -720,9 +707,7 @@ export default {
       },
       pageableData2: {
         pageNumber: 1,
-        currentMinPage: 1,
-        currentMaxPage: 5,
-        totalPages: 16,
+        totalPages: 4
       },
       page1: 1,
       page2: 1,
@@ -800,12 +785,12 @@ export default {
     FormPopup1(){
       if (this.isFormModalShow == false) this.isFormModalShow = true
       else this.isFormModalShow = false
-      this.$refs.form-data-popup-component.GetOutputFormData()
+      // this.$refs.form-data-popup-component.GetOutputFormData()
     },
     FormPopup2(){
       if (this.isFormModalShow2 == false) this.isFormModalShow2 = true
       else this.isFormModalShow2 = false
-      this.$refs.form-data-popup-component.GetSubmitFormData()
+      // this.$refs.form-data-popup-component.GetSubmitFormData()
     },
     getDiffDate(st,fns){
       return this.diffDate(st,fns);
