@@ -211,9 +211,6 @@
         "upMenuId": "L05M01",
         "cmpnId": "ChageInfoRetv"
     },
-
-
-
     {
       "menuId": "L06",
       "menuNm": "공통",
@@ -231,8 +228,13 @@
       "menuNm": "공통화면참고",
       "upMenuId": "L06M01",
       "cmpnId": "CommonView"
+  },
+  {
+      "menuId": "L06M01S02",
+      "menuNm": "로그인화면",
+      "upMenuId": "L06M01",
+      "cmpnId": "Login"
   }
 
-
-  ]
+    ]
 }

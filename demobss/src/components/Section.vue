@@ -181,8 +181,10 @@ export default {
         }
       }
     },
-    AddComponent: function (param) {
+    async AddComponent(param) {
       console.log(param);
+      if(await param.cmpnId === "Login") this.$router.push("/login")
+      else{
       if (param.menuId != "" && param.menuId != null) {
         const st = this.compm.find(
           (element) => element.menuId === param.menuId
@@ -206,7 +208,7 @@ export default {
           }
         }
       }
-    },
+    }}
   },
 };
 </script>
@@ -283,11 +285,15 @@ div.taboff {
   color: #444444;
   font-size: 15px;
   float: right;
+  width: 15px;
+  text-align: right;
 }
 .menu_tab > span.tab_x_on {
   color: white;
   font-size: 15px;
   float: right;
+  width: 15px;
+  text-align: right;
 }
 .menu_tab > span#tab_nm {
   display: block;
