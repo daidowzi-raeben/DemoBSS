@@ -147,7 +147,7 @@ export default {
   width: v-bind('btnWidth');
   height: v-bind('btnHeight');
   display: flex;
-  content: url(../../img/icon_form_left.png);
+  content: url(../../img/arrow_left_white.png);
 }
 .btnRightImgClass {
   /* background-color: #5ad3cd; */
@@ -157,7 +157,7 @@ export default {
   width: v-bind('btnWidth');
   height: v-bind('btnHeight');
   display: flex;
-  content: url(../../img/icon_form_right.png);
+  content: url(../../img/arrow_right_white.png);
 }
 .btnDeleteImgClass {
   background-color: transparent;
@@ -166,6 +166,7 @@ export default {
   width: v-bind('btnWidth');
   height: v-bind('btnHeight');
   display: flex;
-  content: url(../../img/icon_delete.png);
+  margin-top: 2px;
+  content: url(../../img/delete_white.png);
 }
 </style>

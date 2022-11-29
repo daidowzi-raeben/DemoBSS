@@ -34,22 +34,22 @@
             menuTabButtOn: navOn === true,
           }"
             class="menu_tab_buttons">
-          <ButtonComponent
+          <button-component
             :btnClass="'btnLeftImgClass'"
-            :btnHeight="'25px;'"
-            :btnwWidth="'25px;'"
+            :btnHeight="'25px'"
+            :btnwWidth="'25px'"
             @click="moveScrollLeft"
           />
-          <ButtonComponent
+          <button-component
             :btnClass="'btnRightImgClass'"
-            :btnHeight="'25px;'"
-            :btnwWidth="'25px;'"
+            :btnHeight="'25px'"
+            :btnwWidth="'25px'"
             @click="moveScrollRight"
           />
-          <ButtonComponent
+          <button-component
             :btnClass="'btnDeleteImgClass'"
-            :btnHeight="'25px;'"
-            :btnwWidth="'25px;'"
+            :btnHeight="'20px'"
+            :btnWidth="'30px'"
             @click="AllDeleteComponent"
           />
         </div>
