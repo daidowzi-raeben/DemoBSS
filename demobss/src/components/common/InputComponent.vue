@@ -83,11 +83,11 @@ input {
 /*상단 메뉴 스타일 */
 .class3{
   margin-top: 7px;
-  font-size: 12px;
+  font-size: 10pt;
   vertical-align: top;
   background-color: rgb(184,208,235);
   border: 0;
-  font-weight: bold;
+  font-weight: normal;
   color: white;
 }
 .class3:focus{

@@ -24,13 +24,14 @@
                   :height="10"
                   :placeholder="'메뉴검색'"
                   :input-class="'class3'"
+                
               />
               &nbsp;
-              <img :src="iconSerch" />
+              <img :src="iconSerch"  />
             </div>
           </span>
-          <span style="color:white; padding-left: 38px">
-            <img style="margin-top:10px; width:18px; height:18px;object-fit: contain;" :src="iconUser"/>
+          <span class="headerUserInfo">
+            <img :src="iconUser"/>
             홍길동님, 환영합니다.
           </span>
           <span class="menu_logout">
@@ -54,7 +55,7 @@ export default {
       menuId: "L01",
       menuDepth1: [],
       iconLogo:require('../img/icon_logo_cloud.png'),
-      iconSerch:require('../img/icon_small_search.png'),
+      iconSerch:require('../img/search_icon.svg'),
       iconUser:require('../img/icon_user2.png'),
       logoLogout:require('../img/logo_logout.png')
     };
@@ -92,7 +93,7 @@ export default {
   height: 30px;
 }
 .menu_search{
-  padding-left: calc(100% - 1150px);
+  padding-left: calc(100% - 1140px);
   color: rgb(231,231,231);
 }
 .menu_search img{
@@ -108,8 +109,13 @@ export default {
   height: 35px;
   border-radius:3em;
 }
+.menu_search > div > input{
+  padding-left:20px; 
+  width:135px; 
+  color:black;
+}
 .menu_logout img{
-  margin:5px 0 0 15px;
+  margin:5px 0 0 10px;
   width:40px;
   height:30px;
   object-fit: contain
@@ -117,7 +123,19 @@ export default {
 .menu_user_name{
   color:#0074d9;
 }
-.area > div > span > span{
-  /* font-size: 11pt; */
+.area > div > span {
+  height: 40px;
+}
+.headerUserInfo{
+  color:white; 
+  padding-left: 30px; 
+  display:flex; 
+  align-content: center;
+}
+.headerUserInfo > img {
+  margin:auto; 
+  width:30px; 
+  height:20px;
+  object-fit: contain;
 }
 </style>
