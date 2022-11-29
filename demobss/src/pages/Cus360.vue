@@ -134,7 +134,6 @@ import SelectBoxComponent from "@/components/common/SelectBoxComponent";
 import InputComponent from "@/components/common/InputComponent";
 import msfTree from "@/components/common/Tree/msf-tree";
 import SubInfoTitle from "@/components/common/SubInfoTitle";
-import TreeView from "@/components/common/Tree/TreeView";
 export default {
   data(){
     return{
@@ -167,7 +166,7 @@ export default {
   components: {
     msfTree,
     InputComponent,
-    SelectBoxComponent, CustInfoComponent, CustRetvComponent, FormDataComponent, ButtonComponent,
+    SelectBoxComponent, CustRetvComponent, FormDataComponent, ButtonComponent,
     SubInfoTitle,
   },
 

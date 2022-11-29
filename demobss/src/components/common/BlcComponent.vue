@@ -4,15 +4,18 @@
     (<label style="font-weight: bold">{{total}}</label>건)
     <span style="float: right">
   <ButtonComponent
-      :btnClass="'btnClass5'"
-      :btnName="btnName"/>
+      :btnClass="'btnClass3'"
+      :btnName="btnName"
+      />
     <select-box-component
         :selectClass="'select_input3'"
-        :width="200"
         :cdGroup="cdGroup"
         :defaultValue="'선택'"
-        :defaultNum="3"
         v-model="month"
+        style="
+        width: 120px;
+        height: 26px;
+        margin-right: 5px;"
         v-show="selectBoxShow"
         @input="
           (value) => {
@@ -26,7 +29,6 @@
     <ag-grid-component
         :rowData="this.rowData"
         :columnDefs="this.columnDefs"
-        :gridOptions="gridOptions"
         :isWidthFit="false"
     />
   </div>
@@ -71,8 +73,7 @@ export default {
 .ag-grid_sp{
   /* margin: 10px; */
   width: 100%;
-  height: 100%;
-  border: groove;
-  border-top-color: #2dbdb6;
+  height: 245px;
+  border-top: 3px solid rgb(27,114,212);
 }
 </style>

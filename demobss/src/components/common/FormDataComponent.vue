@@ -373,7 +373,7 @@
             <span> <ButtonComponent :btnClass="'btnClass5'" :btnName="'청구정보수정'"/>   </span>
             <span> <ButtonComponent :btnClass="'btnClass5'" :btnName="'청구지변경'"/>  </span>
             <span> <ButtonComponent :btnClass="'btnClass5'" :btnName="'청구분리'"/>  </span>
-            <span> <ButtonComponent :btnClass="'btnClass5'" :btnName="'청구통합'" :menu="'bill_01_01_01'" @input="addComp"/></span>
+            <span> <ButtonComponent :btnClass="'btnClass5'" :btnName="'청구통합'" :menu="'L01M02S02'" @input="addComp"/></span>
           </td>
           </tr>
         </table>
