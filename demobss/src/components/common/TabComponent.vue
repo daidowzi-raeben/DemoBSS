@@ -14,12 +14,15 @@
             <span id="tab_nm">
               {{ item.menuNm }}
             </span>
-            <span class="tab_x" @click.prevent.stop="DeleteComponent(index)">X</span>
+            <span v-if="this.comp ===item.menuId" class="tab_x_on" @click.prevent.stop="DeleteComponent(index)"
+            >x</span>
+            <span v-else class="tab_x_off" @click.prevent.stop="DeleteComponent(index)"
+            >x</span>
           </div>
         </div>
       </div>
     </div>
-    <div v-for="(item, index) in compm2" :key="item" class="view_wrap">
+    <div v-for="(item, index) in compm2" :key="item">
       <component
           v-bind:is="this.compm2[index]"
           v-show="index === this.cur_num"
@@ -105,6 +108,7 @@ export default {
         const st = this.compm.find(
             (element) => element.menuId === param.menuId
         );
+        console.log(st);
         if (st != null) {
           var i = this.compm.indexOf(st);
           this.cur_num = i;
@@ -140,26 +144,29 @@ export default {
 }
 
 .menu_tab_line .menu_tab_line_detail_on {
-  width: 81%;
+  width: calc(100% - 400px);
   overflow: hidden;
+  padding-left: 258px;
+  position: fixed;
   white-space: nowrap;
+  flex-grow: 0;
   display: flex;
+  z-index: 4;
 }
 
 div.tabon {
   /* 탭 선택되었을 때 */
-  background-color: #ffffff;
-  border-style: ridge;
-  color: #444444;
-  font-weight: bold;
+  background-color: rgb(27,114,212);
+  border-radius: 5px 5px 0 0;
+  color: white;
 }
 
 div.taboff {
   /* 탭 선택x */
-  background-color: #707070;
-  color: #aeaeae;
-  border-style: ridge;
-  border-right: #343434 solid 1px;
+  background-color: rgb(184,208,235);
+  border-right: rgb(113,156,205) 1px solid;
+  color: black;
+  border-radius: 5px 5px 0 0;
 }
 
 .menu_tab_line {
@@ -170,21 +177,34 @@ div.taboff {
 
 .menu_tab {
   float: left;
-  width: 120px;
+  width: 130px;
   height: inherit;
   padding: 0px 5px;
   line-height: 30px;
   cursor: pointer;
 }
-
+.menu_tab > span.tab_x_off {
+  color: #444444;
+  font-size: 15px;
+  float: right;
+  width: 15px;
+  text-align: right;
+}
+.menu_tab > span.tab_x_on {
+  color: white;
+  font-size: 15px;
+  float: right;
+  width: 15px;
+  text-align: right;
+}
 .menu_tab > span#tab_nm {
   display: block;
   float: left;
-  width: calc(100% - 10px );
+  width: 100px;
+  font-size: 10pt;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  text-align: center;
 }
 
 .menu_tab > span.tab_x {
@@ -203,7 +223,7 @@ div.taboff {
 .menu_tab_line .menu_button {
   float: right;
   color: #ffffff;
-  /* padding: 0 10px; */
+  padding: 0 10px;
   font-size: 20px;
   cursor: pointer;
   width: 5%;

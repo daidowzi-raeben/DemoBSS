@@ -229,13 +229,13 @@ export default {
 <style scoped>
 .menu_tab_line {
   padding-top: 17px;
-  height: 28px;
+  height: 30px;
   display: inline-flex;
   width: 100%;
-  background-color: #5ad3cd;
+  background-color: rgb(113,156,205);
   position: fixed;
   overflow: hidden;
-  z-index: 8;
+  z-index: 3;
 }
 .menu_tab_line .menu_tab_line_detail {
   width: calc(100% - 70px);

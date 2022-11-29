@@ -622,12 +622,12 @@ export default {
       date3: new Date(),
       date4: new Date(),
       pDisable: true,
-      comp: "L01M05S00",
+      comp: "L01M05S01",
       compm: [
         {
-          "menuId": "L01M05S00",
+          "menuId": "L01M05S01",
           "menuNm": "청약정보",
-          "upMenuId": "L01M05",
+          "upMenuId": "L01M05S00",
           "cmpnId": "ContMgt"
         },
       ],
