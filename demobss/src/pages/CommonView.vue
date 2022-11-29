@@ -694,10 +694,10 @@ export default {
         phoneNumber: "01012345678",
       },
       currentMenu: {
-        cmpnId: "ChageInfoRetv",
-        menuId: "L01M05S02",
-        menuNm: "청구요금정보조회",
-        upMenuId: "L01M05",
+        cmpnId: "CommonView",
+        menuId: "L06M01S01",
+        menuNm: "공통화면참고",
+        upMenuId: "L06M01",
       },
       pageableData1: {
         pageNumber: 1,

@@ -691,8 +691,12 @@
       "upMenuId": "L05",
       "cmpnId": ""
     },
-
-  {
+    {
+      "menuId": "L06",
+      "menuNm": "공통",
+      "upMenuId": null
+    },
+    {
       "menuId": "L06M01",
       "menuNm": "공통화면",
       "upMenuId": "L06",

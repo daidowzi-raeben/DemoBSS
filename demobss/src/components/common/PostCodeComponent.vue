@@ -141,7 +141,6 @@ export default {
       await this.axios.get('/postCodeEx.json').then((response) => {
         this.postCodeSearchData = response.data.results.juso
       this.postCodeNums = this.postCodeSearchData.length;     // 주소 개수
-      console.log("hh",this.postCodeNums)
       if (this.postCodeNums >0) this.currentPage =1 
       if(this.postCodeNums > 5) {
         this.pageableData.totalPages = parseInt(this.postCodeNums/5)
