@@ -7,93 +7,78 @@
       "cmpnId": ""
     },
     {
-      "menuId": "L01M01",
+      "menuId": "L01M01S00",
       "menuNm": "고객 360 View",
+      "upMenuId": "L01",
+      "cmpnId": "Cus360"
+    },
+    {
+      "menuId": "L01M02S00",
+      "menuNm": "고객정보",
       "upMenuId": "L01",
       "cmpnId": ""
     },
-    {
-      "menuId": "L01M01S01",
-      "menuNm": "고객 360 View",
-      "upMenuId": "L01M01",
-      "cmpnId": "Cus360"
-    },
     
-    {
-      "menuId": "L01M02",
-      "menuNm": "고객정보 조회/등록/수정",
-      "upMenuId": "L01",
-      "cmpnId": "ContSection"
-    },
     {
       "menuId": "L01M02S01",
       "menuNm": "고객정보 등록",
-      "upMenuId": "L01M02",
-      "cmpnId": "ContSection"
+      "upMenuId": "L01M02S00",
+      "cmpnId": ""
     },
     {
       "menuId": "L01M02S02",
       "menuNm": "고객정보 수정",
-      "upMenuId": "L01M02",
-      "cmpnId": "ChageInfoRetv"
+      "upMenuId": "L01M02S00",
+      "cmpnId": ""
     },
     {
-      "menuId": "L01M03",
-      "menuNm": "납부 정보/등록/수정",
+      "menuId": "L01M03S00",
+      "menuNm": "납부정보",
       "upMenuId": "L01",
-      "cmpnId": "ContSection"
+      "cmpnId": ""
     },
     {
       "menuId": "L01M03S01",
       "menuNm": "납부정보 등록",
-      "upMenuId": "L01M03",
-      "cmpnId": "ContSection"
+      "upMenuId": "L01M03S00",
+      "cmpnId": ""
     },
     {
       "menuId": "L01M03S02",
       "menuNm": "납부정보 수정",
-      "upMenuId": "L01M03",
-      "cmpnId": "ChageInfoRetv"
-    },
-    {
-      "menuId": "L01M05",
-      "menuNm": "청약 정보/등록/수정",
-      "upMenuId": "L01",
-      "cmpnId": "ContSection"
+      "upMenuId": "L01M03S00",
+      "cmpnId": ""
     },
     {
       "menuId": "L01M05S00",
-      "menuNm": "청약정보",
-      "upMenuId": "L01M05",
-      "cmpnId": "ContSection"
+      "menuNm": "청약정보 등록/변경",
+      "upMenuId": "L01",
+      "cmpnId": ""
     },
     {
       "menuId": "L01M05S01",
-      "menuNm": "고객정보 등록",
-      "upMenuId": "L01M05",
-      "cmpnId": "ContSection"
+      "menuNm": "청약 등록",
+      "upMenuId": "L01M05S00",
+      "cmpnId": ""
     },
     {
       "menuId": "L01M05S02",
-      "menuNm": "고객정보 수정",
-      "upMenuId": "L01M05",
-      "cmpnId": "ChageInfoRetv"
+      "menuNm": "청약 변경",
+      "upMenuId": "L01M05S00",
+      "cmpnId": ""
     },
     {
       "menuId": "L01M06S00",
-      "menuNm": "청약리스트",
+      "menuNm": "청약관리",
       "upMenuId": "L01",
-      "cmpnId": "ChageInfoRetv"
+      "cmpnId": ""
     },
     {
       "menuId": "L01M07S00",
       "menuNm": "명의변경",
       "upMenuId": "L01",
-      "cmpnId": "ContSection"
+      "cmpnId": ""
     },
-
-
-    
     {
       "menuId": "L02",
       "menuNm": "요금/수납/미납",
@@ -101,7 +86,7 @@
       "cmpnId": ""
     },
     {
-      "menuId": "L02M01",
+      "menuId": "L02M01S00",
       "menuNm": "청구통합/분리",
       "upMenuId": "L02",
       "cmpnId": ""
@@ -109,42 +94,147 @@
     {
       "menuId": "L02M01S01",
       "menuNm": "분리청구",
-      "upMenuId": "L02M01",
-      "cmpnId": "Cus360"
+      "upMenuId": "L02M01S00",
+      "cmpnId": ""
     },
     {
       "menuId": "L02M02S00",
       "menuNm": "청구요금",
       "upMenuId": "L02",
-      "cmpnId": "ContSection"
+      "cmpnId": ""
     },
     {
-      "menuId": "L02M03",
+      "menuId": "L02M03S00",
       "menuNm": "즉시수납",
       "upMenuId": "L02",
-      "cmpnId": "ContSection"
+      "cmpnId": ""
     },
     {
       "menuId": "L02M03S01",
       "menuNm": "즉시수납",
-      "upMenuId": "L02M03",
-      "cmpnId": "ContSection"
+      "upMenuId": "L02M03S00",
+      "cmpnId": ""
     },
     {
       "menuId": "L02M03S02",
       "menuNm": "신용카드 승인 내역",
-      "upMenuId": "L02M03",
-      "cmpnId": "ChageInfoRetv"
+      "upMenuId": "L02M03S00",
+      "cmpnId": ""
     },
     {
-      "menuId": "L02M03S03",
+      "menuId": "L02M03S04",
       "menuNm": "CMS즉시 출금 내역",
-      "upMenuId": "L02M03",
-      "cmpnId": "ContSection"
+      "upMenuId": "L02M03S00",
+      "cmpnId": ""
     },
-
-
-
+    {
+      "menuId": "L02M04S00",
+      "menuNm": "선수납관리",
+      "upMenuId": "L02",
+      "cmpnId": ""
+    },
+    {
+      "menuId": "L02M04S01",
+      "menuNm": "선납금 수납",
+      "upMenuId": "L02M04S00",
+      "cmpnId": ""
+    },
+    {
+      "menuId": "L02M04S02",
+      "menuNm": "선수납 대체 내역",
+      "upMenuId": "L02M04S00",
+      "cmpnId": ""
+    },
+    {
+      "menuId": "L02M05S00",
+      "menuNm": "수납관리",
+      "upMenuId": "L02",
+      "cmpnId": ""
+    },
+    {
+      "menuId": "L02M05S01",
+      "menuNm": "수납내역",
+      "upMenuId": "L02M05S00",
+      "cmpnId": ""
+    },
+    {
+      "menuId": "L02M06S00",
+      "menuNm": "과납관리",
+      "upMenuId": "L02",
+      "cmpnId": ""
+    },
+    {
+      "menuId": "L02M07S00",
+      "menuNm": "환불관리",
+      "upMenuId": "L02",
+      "cmpnId": ""
+    },
+    {
+      "menuId": "L02M07S01",
+      "menuNm": "환불 내역",
+      "upMenuId": "L02M07S00",
+      "cmpnId": ""
+    },
+    {
+      "menuId": "L02M07S02",
+      "menuNm": "환불접수 내역",
+      "upMenuId": "L02M07S00",
+      "cmpnId": ""
+    },
+    {
+      "menuId": "L02M08S00",
+      "menuNm": "미납관리",
+      "upMenuId": "L02",
+      "cmpnId": ""
+    },
+    {
+      "menuId": "L02M08S01",
+      "menuNm": "미납내역",
+      "upMenuId": "L02M08S00",
+      "cmpnId": ""
+    },
+    {
+      "menuId": "L02M11S00",
+      "menuNm": "입출금관리",
+      "upMenuId": "L02",
+      "cmpnId": ""
+    },
+    {
+      "menuId": "L02M011S01",
+      "menuNm": "자동이체 대상 입출금 리스트",
+      "upMenuId": "L02M11S00",
+      "cmpnId": ""
+    },
+    {
+      "menuId": "L02M11S02",
+      "menuNm": "실시간계좌이체 리스트",
+      "upMenuId": "L02M11S00",
+      "cmpnId": ""
+    },
+    {
+      "menuId": "L02M11S03",
+      "menuNm": "CMS출금결과 입금 리스트",
+      "upMenuId": "L02M11S00",
+      "cmpnId": ""
+    },
+    {
+      "menuId": "L02M11S04",
+      "menuNm": "신용카드 입금 리스트",
+      "upMenuId": "L02M11S00",
+      "cmpnId": ""
+    },
+    {
+      "menuId": "L02M11S05",
+      "menuNm": "가상계좌 입금 리스트",
+      "upMenuId": "L02M11S00",
+      "cmpnId": ""
+    },
+    {
+      "menuId": "L02M11S06",
+      "menuNm": "가상계좌 내역",
+      "upMenuId": "L02M11S00",
+      "cmpnId": ""
+    },
     {
       "menuId": "L03",
       "menuNm": "청구/정산/매출",
@@ -152,20 +242,203 @@
       "cmpnId": ""
     },
     {
-        "menuId": "L03M01",
-        "menuNm": "과금관리",
-        "upMenuId": "L03",
-        "cmpnId": ""
+      "menuId": "L03M01S00",
+      "menuNm": "과금관리",
+      "upMenuId": "L03",
+      "cmpnId": ""
     },
     {
-        "menuId": "L03M01S01",
-        "menuNm": "과금 내역",
-        "upMenuId": "L03M01",
-        "cmpnId": "ContSection"
+      "menuId": "L03M01S01",
+      "menuNm": "과금 내역",
+      "upMenuId": "L03M01S00",
+      "cmpnId": ""
     },
-
-
-    
+    {
+      "menuId": "L03M02S00",
+      "menuNm": "빌링관리",
+      "upMenuId": "L03",
+      "cmpnId": ""
+    },
+    {
+      "menuId": "L03M02S01",
+      "menuNm": "요금 리스트",
+      "upMenuId": "L03M02S00",
+      "cmpnId": ""
+    },
+    {
+      "menuId": "L03M02S02",
+      "menuNm": "청구작업 진행 리스트",
+      "upMenuId": "L03M02S00",
+      "cmpnId": ""
+    },
+    {
+      "menuId": "L03M03S00",
+      "menuNm": "요금조정",
+      "upMenuId": "L03",
+      "cmpnId": ""
+    },
+    {
+      "menuId": "L03M03S01",
+      "menuNm": "요금조정",
+      "upMenuId": "L03M03S00",
+      "cmpnId": ""
+    },
+    {
+      "menuId": "L03M03S02",
+      "menuNm": "차월요금조정",
+      "upMenuId": "L03M03S00",
+      "cmpnId": ""
+    },
+    {
+      "menuId": "L03M03S03",
+      "menuNm": "차월 가산금 감면",
+      "upMenuId": "L03M03S00",
+      "cmpnId": ""
+    },
+    {
+      "menuId": "L03M03S04",
+      "menuNm": "요금조정 리스트",
+      "upMenuId": "L03M03S00",
+      "cmpnId": ""
+    },
+    {
+      "menuId": "L03M04S00",
+      "menuNm": "수시청구",
+      "upMenuId": "L03",
+      "cmpnId": ""
+    },
+    {
+      "menuId": "L03M04S01",
+      "menuNm": "수시청구 리스트",
+      "upMenuId": "L03M04S00",
+      "cmpnId": ""
+    },
+    {
+      "menuId": "L03M04S02",
+      "menuNm": "수시청구 등록",
+      "upMenuId": "L03M04S00",
+      "cmpnId": ""
+    },
+    {
+      "menuId": "L03M05S00",
+      "menuNm": "청구서 발행/재발행",
+      "upMenuId": "L03",
+      "cmpnId": ""
+    },
+    {
+      "menuId": "L03M05S01",
+      "menuNm": "청구서 발행/재발행",
+      "upMenuId": "L03M05S00",
+      "cmpnId": ""
+    },
+    {
+      "menuId": "L03M05S02",
+      "menuNm": "청구서 발행/재발행 처리결과",
+      "upMenuId": "L03M05S00",
+      "cmpnId": ""
+    },
+    {
+      "menuId": "L03M06S00",
+      "menuNm": "청구서발행 이력관리",
+      "upMenuId": "L03",
+      "cmpnId": ""
+    },
+    {
+      "menuId": "L03M07S00",
+      "menuNm": "청구자료관리",
+      "upMenuId": "L03",
+      "cmpnId": ""
+    },
+    {
+      "menuId": "L03M07S01",
+      "menuNm": "CMS출금 내역",
+      "upMenuId": "L03M07S00",
+      "cmpnId": ""
+    },
+    {
+      "menuId": "L03M07S02",
+      "menuNm": "신용카드 청구 내역",
+      "upMenuId": "L03M07S00",
+      "cmpnId": ""
+    },
+    {
+      "menuId": "L03M07S03",
+      "menuNm": "신용카드 매입의뢰 내역",
+      "upMenuId": "L03M07S00",
+      "cmpnId": ""
+    },
+    {
+      "menuId": "L03M09S00",
+      "menuNm": "채널관리",
+      "upMenuId": "L03",
+      "cmpnId": ""
+    },
+    {
+      "menuId": "L03M10S00",
+      "menuNm": "실적관리",
+      "upMenuId": "L03",
+      "cmpnId": ""
+    },
+    {
+      "menuId": "L03M10S01",
+      "menuNm": "실적 리스트",
+      "upMenuId": "L03M10S00",
+      "cmpnId": ""
+    },
+    {
+      "menuId": "L03M10S02",
+      "menuNm": "실적 집계",
+      "upMenuId": "L03M10S00",
+      "cmpnId": ""
+    },
+    {
+      "menuId": "L03M10S03",
+      "menuNm": "납부 RS 집계",
+      "upMenuId": "L03M10S00",
+      "cmpnId": ""
+    },
+    {
+      "menuId": "L03M11S00",
+      "menuNm": "매출관리",
+      "upMenuId": "L03",
+      "cmpnId": ""
+    },
+    {
+      "menuId": "L03M11S01",
+      "menuNm": "월별 매출 리스트",
+      "upMenuId": "L03M11S00",
+      "cmpnId": ""
+    },
+    {
+      "menuId": "L03M11S02",
+      "menuNm": "세금계산서 발행 관리",
+      "upMenuId": "L03M11S00",
+      "cmpnId": ""
+    },
+    {
+      "menuId": "L03M12S00",
+      "menuNm": "정산관리",
+      "upMenuId": "L03",
+      "cmpnId": ""
+    },
+    {
+      "menuId": "L03M12S01",
+      "menuNm": "수수료정산 기준관리",
+      "upMenuId": "L03M12S00",
+      "cmpnId": ""
+    },
+    {
+      "menuId": "L03M12S02",
+      "menuNm": "내부원가 기준관리",
+      "upMenuId": "L03M12S00",
+      "cmpnId": ""
+    },
+    {
+      "menuId": "L03M12S03",
+      "menuNm": "수수료 정산 결과 리스트",
+      "upMenuId": "L03M12S00",
+      "cmpnId": ""
+    },
     {
       "menuId": "L04",
       "menuNm": "업무현황",
@@ -173,20 +446,101 @@
       "cmpnId": ""
     },
     {
-        "menuId": "L04M01",
-        "menuNm": "고객현황",
-        "upMenuId": "L04",
-        "cmpnId": ""
+      "menuId": "L04M01S00",
+      "menuNm": "고객현황",
+      "upMenuId": "L04",
+      "cmpnId": ""
     },
     {
-        "menuId": "L04M01S01",
-        "menuNm": "고객리스트",
-        "upMenuId": "L04M01",
-        "cmpnId": "ChageInfoRetv"
+      "menuId": "L04M01S01",
+      "menuNm": "고객리스트",
+      "upMenuId": "L04M01S00",
+      "cmpnId": ""
     },
-
-
-
+    {
+      "menuId": "L04M01S02",
+      "menuNm": "AM별 고객 리스트",
+      "upMenuId": "L04M01S00",
+      "cmpnId": ""
+    },
+    {
+      "menuId": "L04M01S03",
+      "menuNm": "AM 변경요청 리스트",
+      "upMenuId": "L04M01S00",
+      "cmpnId": ""
+    },
+    {
+      "menuId": "L04M02S00",
+      "menuNm": "해지고객현황",
+      "upMenuId": "L04",
+      "cmpnId": ""
+    },
+    {
+      "menuId": "L04M02S01",
+      "menuNm": "해지DB 분리고객 리스트",
+      "upMenuId": "L04M02S00",
+      "cmpnId": ""
+    },
+    {
+      "menuId": "L04M02S02",
+      "menuNm": "해지고객 조회 승인요청 리스트",
+      "upMenuId": "L04M2S00",
+      "cmpnId": ""
+    },
+    {
+      "menuId": "L04M03S00",
+      "menuNm": "청구고객현황",
+      "upMenuId": "L04",
+      "cmpnId": ""
+    },
+    {
+      "menuId": "L04M04S00",
+      "menuNm": "청약현황",
+      "upMenuId": "L04",
+      "cmpnId": ""
+    },
+    {
+      "menuId": "L04M05S00",
+      "menuNm": "수납현황",
+      "upMenuId": "L04",
+      "cmpnId": ""
+    },
+    {
+      "menuId": "L04M06S00",
+      "menuNm": "미납현황",
+      "upMenuId": "L04",
+      "cmpnId": ""
+    },
+    {
+      "menuId": "L04M07S00",
+      "menuNm": "비정형 통계추출",
+      "upMenuId": "L04",
+      "cmpnId": ""
+    },
+    {
+      "menuId": "L04M08S00",
+      "menuNm": "과거데이터현황",
+      "upMenuId": "L04",
+      "cmpnId": ""
+    },
+    {
+      "menuId": "L04M08S01",
+      "menuNm": "과거 청구요금 리스트",
+      "upMenuId": "L04M08S00",
+      "cmpnId": ""
+    },
+    {
+      "menuId": "L04M08S02",
+      "menuNm": "과거 수납 리스트",
+      "upMenuId": "L04M08S00",
+      "cmpnId": ""
+    },
+    {
+      "menuId": "L04M08S03",
+      "menuNm": "과거 미납 리스트",
+      "upMenuId": "L04M08S00",
+      "cmpnId": ""
+    },
     {
       "menuId": "L05",
       "menuNm": "업무지원",
@@ -194,29 +548,150 @@
       "cmpnId": ""
     },
     {
-        "menuId": "L05M01",
-        "menuNm": "입출금관리",
-        "upMenuId": "L05",
-        "cmpnId": ""
-    },
-    {
-        "menuId": "L05M01S01",
-        "menuNm": "납부방법별 출금일관리",
-        "upMenuId": "L05M01",
-        "cmpnId": "ChageInfoRetv"
-    },
-    {
-        "menuId": "L05M01S02",
-        "menuNm": "가상계좌관리",
-        "upMenuId": "L05M01",
-        "cmpnId": "ChageInfoRetv"
-    },
-    {
-      "menuId": "L06",
-      "menuNm": "공통",
-      "upMenuId": null,
+      "menuId": "L05M01S00",
+      "menuNm": "입출금관리",
+      "upMenuId": "L05",
       "cmpnId": ""
     },
+    {
+      "menuId": "L05M01S01",
+      "menuNm": "납부방법별 출금일관리",
+      "upMenuId": "L05M01S00",
+      "cmpnId": ""
+    },
+    {
+      "menuId": "L05M01S02",
+      "menuNm": "가상계좌관리",
+      "upMenuId": "L05M01S00",
+      "cmpnId": ""
+    },
+    {
+      "menuId": "L05M02S00",
+      "menuNm": "휴일관리",
+      "upMenuId": "L05",
+      "cmpnId": ""
+    },
+    {
+      "menuId": "L05M03S00",
+      "menuNm": "공통코드관리",
+      "upMenuId": "L05",
+      "cmpnId": ""
+    },
+    {
+      "menuId": "L05M04S00",
+      "menuNm": "공지사항관리",
+      "upMenuId": "L05",
+      "cmpnId": ""
+    },
+    {
+      "menuId": "L05M05S00",
+      "menuNm": "메시지관리",
+      "upMenuId": "L05",
+      "cmpnId": ""
+    },
+    {
+      "menuId": "L05M06S00",
+      "menuNm": "메뉴관리",
+      "upMenuId": "L05",
+      "cmpnId": ""
+    },
+    {
+      "menuId": "L05M07S00",
+      "menuNm": "조직관리",
+      "upMenuId": "L05",
+      "cmpnId": ""
+    },
+    {
+      "menuId": "L05M08S00",
+      "menuNm": "사용자관리",
+      "upMenuId": "L05",
+      "cmpnId": ""
+    },
+    {
+      "menuId": "L05M09S00",
+      "menuNm": "권한관리",
+      "upMenuId": "L05",
+      "cmpnId": ""
+    },
+    {
+      "menuId": "L05M09S01",
+      "menuNm": "권한관리",
+      "upMenuId": "L05M09S00",
+      "cmpnId": ""
+    },
+    {
+      "menuId": "L05M09S02",
+      "menuNm": "권한매핑관리",
+      "upMenuId": "L05M09S00",
+      "cmpnId": ""
+    },
+    {
+      "menuId": "L05M012S00",
+      "menuNm": "승인관리",
+      "upMenuId": "L05",
+      "cmpnId": ""
+    },
+    {
+      "menuId": "L05M11S00",
+      "menuNm": "보안관리",
+      "upMenuId": "L05",
+      "cmpnId": ""
+    },
+    {
+      "menuId": "L05M11S01",
+      "menuNm": "고객정보 조회 이력관리",
+      "upMenuId": "L05M11S00",
+      "cmpnId": ""
+    },
+    {
+      "menuId": "L05M11S02",
+      "menuNm": "마스킹 해제이력관리",
+      "upMenuId": "L05M11S00",
+      "cmpnId": ""
+    },
+    {
+      "menuId": "L05M13S00",
+      "menuNm": "배치관리",
+      "upMenuId": "L05",
+      "cmpnId": ""
+    },
+    {
+      "menuId": "L05M13S01",
+      "menuNm": "배치스케줄링 관리",
+      "upMenuId": "L05M13S00",
+      "cmpnId": ""
+    },
+    {
+      "menuId": "L05M13S02",
+      "menuNm": "배치실행 이력관리",
+      "upMenuId": "L05M13S00",
+      "cmpnId": ""
+    },
+    {
+      "menuId": "L05M14S00",
+      "menuNm": "연동관리",
+      "upMenuId": "L05",
+      "cmpnId": ""
+    },
+    {
+      "menuId": "L05M14S01",
+      "menuNm": "연동데몬관리",
+      "upMenuId": "L05M14S00",
+      "cmpnId": ""
+    },
+    {
+      "menuId": "L05M14S02",
+      "menuNm": "연동이력관리",
+      "upMenuId": "L05M14S00",
+      "cmpnId": ""
+    },
+    {
+      "menuId": "L05M15S00",
+      "menuNm": "고객응대/승인요청관리",
+      "upMenuId": "L05",
+      "cmpnId": ""
+    },
+
   {
       "menuId": "L06M01",
       "menuNm": "공통화면",
