@@ -169,4 +169,15 @@ export default {
   margin-top: 2px;
   content: url(../../img/delete_white.png);
 }
+
+.btnLeftImgClass:hover{
+  content: url(../../img/arrow_left_black.png);
+}
+.btnRightImgClass:hover{
+  content: url(../../img/arrow_right_black.png);
+}
+.btnDeleteImgClass:hover{
+  content: url(../../img/delete_black.png);
+}
+
 </style>
