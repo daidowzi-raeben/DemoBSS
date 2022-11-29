@@ -24,9 +24,10 @@
         />
       </div>
       <div class="product_box_sel">
+        <span>
         <select-box-component
-            :selectClass="'select_input'"
-            :width="140"
+            :selectClass="'select_input3'"
+            :width="120"
             :cdGroup="'optionsSearchDiv'"
             :defaultValue="'선택'"
             v-model="searchDiv1"
@@ -36,10 +37,11 @@
           }
         "
         />
-        &nbsp;
+          </span>
+        <span>
         <select-box-component
-            :selectClass="'select_input'"
-            :width="140"
+            :selectClass="'select_input3'"
+            :width="120"
             :cdGroup="'optionsSearchDiv'"
             :defaultValue="'선택'"
             v-model="searchDiv1"
@@ -49,10 +51,11 @@
           }
         "
         />
-        &nbsp;
+          </span>
+        <span>
         <select-box-component
-            :selectClass="'select_input'"
-            :width="140"
+            :selectClass="'select_input3'"
+            :width="120"
             :cdGroup="'optionsSearchDiv'"
             :defaultValue="'선택'"
             v-model="searchDiv1"
@@ -62,15 +65,15 @@
           }
         "
         />
-        &nbsp;
+          </span>
+        <span>
         <input-component
-            :type="'text'"
-            :height="'28px'"
-            :width="'140px'"
-            :input-class="'class1'"
+            :type="'search'"
+            :input-class="'class4'"
             :placeholder="'서비스계약ID 입력'"
-            style="background-color:white;"
+            style="width:100%; height:100%"
         />
+        </span>
         <div>
           <img :src="logo_search" />
         </div>
@@ -227,22 +230,29 @@ export default {
 } */
 .product_box_sel{
   border:1px solid #e4e4e4;
-  padding:10px 20px;
-  overflow: hidden;
-  display: block;
-  width: 740px;
+  padding-left: 10px;
+  display: flex;
+  align-items: center;
+  width: 770px;
   height: 40px;
-  background-color: rgb(239,245,252);
+  background-color: rgb(239, 245, 252);
+}
+.product_box_sel > span:nth-child(1),span:nth-child(2),span:nth-child(3){
+  width: 120px;
+  height: 26px;
+  margin-right: 5px;
+}
+.product_box_sel > span:nth-child(4){
+  width: 200px;
+  height: 26px;
+  margin-left: 10px;
 }
 .product_box_sel div{
-  float: right;
-  padding-right:80px;
-  width: 30px;
-  height: 30px;
+  margin-left:10px;
 }
 .product_box_tree{
   width: 100%;
-  height: 200px;
+  height: 225px;
   overflow: auto;
   border: 1px solid #e4e4e4;
 }
