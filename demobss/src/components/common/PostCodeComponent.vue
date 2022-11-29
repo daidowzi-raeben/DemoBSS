@@ -31,7 +31,7 @@
                   <th style="width:10%;">상세주소</th>
                   <th style="width:5%;">선택</th>
                 </tr>
-                <tr v-for="(item) in postCodeSearchData" :key="item">
+                <tr v-for="(item) in currentFivePostCodeSearchData" :key="item">
                   <td>{{item.zipNo}}</td>
                   <td> {{item.roadAddr}} </td>
                   <td> {{item.jibunAddr}}</td>
@@ -49,11 +49,12 @@
               </table>
               
             <div style="text-align:center; font-size:20px;"> 
-              <paging-area
+              <paging-area 
+              v-if="postCodeNums>0"
               :pageableData="pageableData"
               :pageSize="5"
               @currentPage="(value) => {currentPage = value;}"
-              />{{currentPage}}
+              />
             </div>
             </form>
           </div>
@@ -86,10 +87,12 @@
 </template>
 
 <script>
+import { computed } from '@vue/runtime-core';
 import ButtonComponent from './ButtonComponent.vue';
 import InputComponent from './InputComponent.vue';
 import PagingArea from './PagingArea.vue';
 import RadioComponent from './RadioComponent.vue';
+
 export default {
   components: { ButtonComponent, InputComponent, RadioComponent, PagingArea },
   name: "CommonPopup",
@@ -98,30 +101,20 @@ export default {
       postCodeSearchData:[],
       col_1 : '8.33%',
       col_2 : '16.66%',
-      col_3 : '25%',
-      col_4 : '33.33%',
-      col_5 : '41.66%',
-      col_6 : '50%',
-      col_7 : '58.33%',
-      col_8 : '66.66%',
-      col_9 : '75%',
-      col_10 : '83.33%',
-      col_11 : '91.66%',
-      col_12 : '100%',
       detailPostAddress:'',
       currentPage:'',    // 현재 페이지
-      postCodeNums:'',   // 주소 개수
-      pcTotalPages : '', // 총 페이지 수 
+      postCodeNums:0,   // 주소 개수
       pageableData : {
         pageNumber: 1,
         currentMinPage: 1,
         currentMaxPage: 5,
         totalPages: 0,
       },
+      currentFivePostCodeSearchData:[],
     };
   },
   props: {
-    reqtype:String,
+    reqtype  : String,
     popupmsg : String,
     PopupTitleMsg : {
       type: String,
@@ -135,51 +128,38 @@ export default {
       type:String,
       default:'500px'
   },
+  },
   watch:{
-    paging:() => {
-      console.log("sadfasdf",this.pageableData);
-  }}
+    currentPage(newData, oldData){
+      this.currentFivePostCodeSearchData = this.postCodeSearchData.slice((newData-1)*5 , ((newData-1)*5)+5)
+    }
   },
   beforeMount(){
-      // this.axios.get('/postCodeEx.json').then((response) => {
-      //   this.postCodeSearchData = response.data.results.juso
-      //   console.log(this.postCodeSearchData)
-      // })
   },
   methods:{
     async getPostCode(){
       await this.axios.get('/postCodeEx.json').then((response) => {
         this.postCodeSearchData = response.data.results.juso
-        console.log(this.postCodeSearchData)
-        // console.log("hihi",this.postCodeSearchData.length)
-      })
-      this.postCodeNums = this.postCodeSearchData.length;
+      this.postCodeNums = this.postCodeSearchData.length;     // 주소 개수
+      console.log("hh",this.postCodeNums)
+      if (this.postCodeNums >0) this.currentPage =1 
       if(this.postCodeNums > 5) {
-        this.pcTotalPages = parseInt(this.postCodeNums/5)
-        if(this.postCodeNums%5 > 0) this.pcTotalPages +=1
+        this.pageableData.totalPages = parseInt(this.postCodeNums/5)
+        if(this.postCodeNums%5 > 0) this.pageableData.totalPages +=1
       }
-      console.log(this.postCodeNums);
-      console.log(this.pcTotalPages);
-      
-      this.pageableData.totalPages = this.pcTotalPages;
-      console.log("sadfasdf",this.pageableData);
+      })
     },
     // 주소 선택 시, 부모 컴포넌트에 해당 주소 객체 보냄
     selectPostCode(postCode, detailPostAddress){     
       this.$emit('selectedJusoData',postCode,detailPostAddress);
-      console.log(postCode,'\n',detailPostAddress)
     },
-
-    },
-    computed(){
-    }
-
-  }
+  },
+  computed(){
+  },
+}
 </script>
 
 <style>
-
-
 .cm_popup_overlay {
   background-color: rgba(0, 0, 0, 0.6);
   cursor: default;
@@ -189,7 +169,6 @@ export default {
   top: 0;
   opacity: 30%;
   position: fixed;
-  /* visibility: hidden; */
   z-index: 6;
   transition: opacity 0.5s;
 }
@@ -201,11 +180,9 @@ export default {
   border: 1px solid #656565;
   display: grid;
   left: 50%;
-  /* opacity: 0; */
   padding: 26px;
   position: fixed;
   top: 40%;
-  /* visibility: hidden; */
   z-index: 100;
   transform: translate(-50%, -50%);
   transition: opacity 0.5s, top 0.5s;
