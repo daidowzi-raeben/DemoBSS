@@ -8,7 +8,6 @@
     :rowClassRules="rowClassRules"
     :suppressMovableColumns="true"
     :suppressRowTransform="true"
-    :pinnedBottomRowData="pinnedBottomRowData"
     :suppressHorizontalScroll="isWidthFit"
     :rowHeight="37"
     :columnDefs="columnDefs"
@@ -23,7 +22,7 @@
     :enableBrowserTooltips="true"
   />
 </template>
-
+<!--:pinnedBottomRowData="pinnedBottomRowData"  하단에 결과 출력할때 사용-->
 <script>
 import "ag-grid-community/dist/styles/ag-grid.css";
 import "ag-grid-community/dist/styles/ag-theme-alpine.css";
@@ -39,7 +38,7 @@ export default {
       rowClassRules: null,
       allColumnIds:[],
       overlayLoadingTemplate: `<div class="ag-overlay-loading-center"> Loading... </div>`,
-      pinnedBottomRowData: null,
+      // pinnedBottomRowData: null,
     };
   },
   props: {
@@ -121,10 +120,10 @@ export default {
         });
 
         // 여기 조율 필요합니다~~
-        // this.gridColumnApi.autoSizeColumn(allColumnIds);            // 컬럼, data 전부 생략, 간격 맞춤  (스크롤바)
+        this.gridColumnApi.autoSizeColumn(allColumnIds);            // 컬럼, data 전부 생략, 간격 맞춤  (스크롤바)
         // this.gridColumnApi.autoSizeAllColumns(allColumnIds);        // 컬럼은 생략됨 / data 전부 다 표시   (스크롤바)
         // this.gridColumnApi.autoSizeColumns(allColumnIds,false);     // 컬럼, data 전부 표시, 간격 맞춤 (스크롤바)
-         this.gridApi.sizeColumnsToFit(this.allColumnIds);                  // 컬럼, data 전부 생략, 간격 맞추고 테이블 크기 맞춤 (NO 스크롤)
+         //this.gridApi.sizeColumnsToFit(this.allColumnIds);                  // 컬럼, data 전부 생략, 간격 맞추고 테이블 크기 맞춤 (NO 스크롤)
         // this.gridApi.gridBodyCtrl.eBodyViewport.style = "border-bottom:0px;"; //안쪽
       } else {
         this.gridApi.sizeColumnsToFit(); //끝까지 맞춤

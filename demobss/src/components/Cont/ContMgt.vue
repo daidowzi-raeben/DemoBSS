@@ -184,6 +184,7 @@ export default {
   },
   methods:{
     addComp(param){
+      console.log(param);
       this.$emit('input',param);
     },
     
