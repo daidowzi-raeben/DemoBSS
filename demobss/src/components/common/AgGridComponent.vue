@@ -221,8 +221,8 @@ export default {
 
 .ag-grid .ag-header-cell-text,
 .ag-grid .ag-header-group-text {
-  /* 글씨 크기 */
-  font-family: 맑은 고딕;
+  /* 글씨 크기
+  font-family: 맑은 고딕; */
   font-size: 14px;
   color: #343434;
 
@@ -258,7 +258,7 @@ export default {
 .ag-grid .ag-cell {
   border-bottom: #efefef solid 1px;
   border-left: #e4e4e4 solid 1px;
-  font-family: 맑은 고딕;
+  /* font-family: 맑은 고딕; */
   font-size: 14px;
   color: #343434;
 
@@ -347,7 +347,7 @@ export default {
 .ag-grid .ag-cell {
   border-bottom: #efefef solid 1px;
   border-left: #e4e4e4 solid 1px;
-  font-family: 맑은 고딕;
+  /* font-family: 맑은 고딕; */
   font-size: 14px;
   color: #343434;
 

@@ -235,7 +235,7 @@
     <div class="commondiv1">
     <button-component :btnClass="'btnClass5'" :btnName="'공통 PopUp'" @click="popup"/>
 
-    <PopupComponent
+    <popup-component
       v-if="isModalShow"
       @popup="isModalShow = false"
       @AGREE = "''"

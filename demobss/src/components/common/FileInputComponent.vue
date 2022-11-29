@@ -256,7 +256,7 @@ div.attach_txt ul li > a.delete {
   border-radius: 3px;
 }
 .button_06 {
-  font-family: 맑은 고딕;
+  /* font-family: 맑은 고딕; */
   display: inline-block;
   color: #343434;
   padding: 0 13px;

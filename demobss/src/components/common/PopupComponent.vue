@@ -2,7 +2,7 @@
   <div>
     <!-- popup이외 영역 , 팝업 이외 영역 클릭 시, 팝업 닫음 -->
     <transition name="fade" appear>
-      <div class="cm_popup_overlay" @click="$emit(closeFunc)"></div>
+      <div :class="popupOverlay" @click="$emit(closeFunc)"></div>
     </transition>
     
     <!-- start : popup영역 출력 -->
@@ -13,7 +13,7 @@
         <article>
           <!-- 취소가 있는 팝업 -->
           <div class="btn_area" >
-            <div style="font-size:20px;">
+            <div>
             {{popupmsg}}
             <div>
             &nbsp;&nbsp; </div>
@@ -51,14 +51,16 @@
 </template>
 
 <script>
-import CustomerSeachComponent from "@/components/common/CustRetvComponent";
 export default {
   name: "CommonPopup",
-  components: {CustomerSeachComponent},
   data() {
     return {};
   },
   props: {
+    popupOverlay:{
+      type: String,
+      default:'cm_popup_overlay'
+    },
     popupmsg : String,
     popup: Object,
     closeFunc: {
@@ -92,7 +94,21 @@ export default {
   right: 0;
   top: 0;
   /* visibility: hidden; */
-  z-index: 5;
+  z-index: 6;
+  transition: opacity 0.5s;
+}
+
+.maxTabOverlay{
+  background-color: rgba(0, 0, 0, 0.116);
+  bottom: 0;
+  cursor: default;
+  left: 0;
+  opacity: 10%;
+  position: fixed;
+  right: 0;
+  top: 0;
+  /* visibility: hidden; */
+  z-index: 6;
   transition: opacity 0.5s;
 }
 
@@ -102,18 +118,18 @@ export default {
   display: inline-block;
   left: 50%;
   /* opacity: 0; */
-  padding: 26px;
+  padding: 25px;
   position: fixed;
   top: 50%;
   /* visibility: hidden; */
   z-index: 100;
-  width: 360px;
+  width: 400px;
   transform: translate(-50%, -50%);
   transition: opacity 0.5s, top 0.5s;
 }
 
 .popup360 > h1 {
-  font-size: 18px;
+  font-size: 14pt;
   font-weight: bold;
   padding-bottom: 13px;
   border-bottom: #e4e4e4 solid 2px;
@@ -133,11 +149,14 @@ export default {
 
 .popup360 .btn_area {
   text-align: center;
-  margin: 20px 0 0 0;
+  margin: auto;
+}
+.popup360 .btn_area > div{
+  font-size: 12pt;
+  margin: auto;
 }
 
 .button_04 {
-  font-family: 맑은 고딕;
   display: inline-block;
   color: #fff;
   padding: 0 25px 2px 25px;
@@ -145,14 +164,13 @@ export default {
   line-height: 32px;
   border-radius: 20px;
   border: none;
-  font-weight: bold;
-  font-size: 14px;
+  font-weight: normal;
+  font-size: 12pt;
   cursor: pointer;
   background-color: #5e5e5e;
 }
 
 .button_05 {
-  font-family: 맑은 고딕;
   display: inline-block;
   color: #fff;
   padding: 0 25px 2px 25px;
@@ -160,8 +178,8 @@ export default {
   line-height: 32px;
   border-radius: 20px;
   border: none;
-  font-weight: bold;
-  font-size: 14px;
+  font-weight: normal;
+  font-size: 12pt;
   cursor: pointer;
   background-color: #ed1820;
 }

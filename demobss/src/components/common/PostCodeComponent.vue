@@ -161,16 +161,18 @@ export default {
 <style>
 .cm_popup_overlay {
   background-color: rgba(0, 0, 0, 0.6);
-  cursor: default;
   bottom: 0;
+  cursor: default;
   left: 0;
-  right: 0;
-  top: 0;
   opacity: 30%;
   position: fixed;
+  right: 0;
+  top: 0;
+  /* visibility: hidden; */
   z-index: 6;
   transition: opacity 0.5s;
 }
+
 
 .formDataPopupFrame {
   width: v-bind('formDataPopupFrameWidth');
@@ -233,7 +235,7 @@ export default {
 }
 
 .button_04 {
-  font-family: 맑은 고딕;
+  /* font-family: 맑은 고딕; */
   display: inline-block;
   color: #fff;
   padding: 0 25px 2px 25px;
@@ -248,7 +250,7 @@ export default {
 }
 
 .button_05 {
-  font-family: 맑은 고딕;
+  /* font-family: 맑은 고딕; */
   display: inline-block;
   color: #fff;
   padding: 0 25px 2px 25px;

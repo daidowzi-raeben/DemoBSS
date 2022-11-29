@@ -78,6 +78,13 @@
           :style=" navOn ? '' : 'margin-left:2%;' "
 
         ></component>
+        <popup-component
+        v-if="isModalShow"
+        :popupOverlay="'maxTabOverlay'"
+        @popup="isModalShow = false"
+        @AGREE = "''"
+        :popupmsg="'10개를 초과하는 화면을 열 수 없습니다.'"
+        />
       </div>
       </div>
     </div>
@@ -91,6 +98,7 @@ import
 import Nav from "./Nav.vue";
 import { defineAsyncComponent, markRaw } from "vue";
 import ButtonComponent from "@/components/common/ButtonComponent.vue";
+import PopupComponent from './common/PopupComponent.vue';
 
 export default {
   name: "Section",
@@ -99,6 +107,7 @@ export default {
     TitleArea2,
     Nav,
     ButtonComponent,
+    PopupComponent,
   },
   data() {
     return {
@@ -113,12 +122,12 @@ export default {
         },
       ],
       compm2: [],
-      test: "Cus360",
       component: markRaw(
           defineAsyncComponent(() => import("../pages/Cus360.vue"))
       ),
       iconDelWhite:require("../img/icon_delete_white.png"),
       iconDelBlack:require("../img/icon_delete_black.png"),
+      isModalShow :false,
     };
   },
   watch: {
@@ -139,6 +148,10 @@ export default {
     },
   },
   methods: {
+    popup(){
+      if (this.isModalShow == false) this.isModalShow = true
+      else this.isModalShow = false
+    },
     moveScrollRight: function () {
       let menuTabScroll
       if(this.navOn===false){
@@ -204,7 +217,7 @@ export default {
             this.compm2.push(this.component);
             // console.log(this.component);
           } else {
-            // console.log("10개를 넘었습니다.");
+            this.popup();
           }
         }
       }
@@ -214,7 +227,6 @@ export default {
 </script>
 
 <style scoped>
-
 .menu_tab_line {
   padding-top: 17px;
   height: 28px;
