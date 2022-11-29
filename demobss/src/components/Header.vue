@@ -16,7 +16,7 @@
             </span>
             <span v-show="menu.menuNm !='공통'" style="color: rgb(67,111,162)">|</span>
           </span>
-          <span class="menu_serch">
+          <span class="menu_search">
             <div>
               &nbsp;&nbsp;
               <input-component
@@ -91,17 +91,17 @@ export default {
   width: 100px;
   height: 30px;
 }
-.menu_serch{
-  padding-left: calc(100% - 1100px);
+.menu_search{
+  padding-left: calc(100% - 1150px);
   color: rgb(231,231,231);
 }
-.menu_serch img{
+.menu_search img{
   width: 15px;
   height: 15px;
   padding-right: 6px;
   object-fit: contain;
 }
-.menu_serch > div{
+.menu_search > div{
   margin-top: 4px;
   background-color: rgb(184,208,235);
   width: 200px;
@@ -117,5 +117,7 @@ export default {
 .menu_user_name{
   color:#0074d9;
 }
-
+.area > div > span > span{
+  /* font-size: 11pt; */
+}
 </style>

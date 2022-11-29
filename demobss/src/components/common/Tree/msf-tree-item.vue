@@ -2,7 +2,7 @@
   <div class="treeitem" >
     <!--<div :style="{ width: data.depth * 20 + 'px'}"></div>-->
     <div class="expanded" :style="{cursor : hasChild(data) ? 'pointer' : ''}"
-         :class="hasChild(data) ? expanded ? 'open' : 'closed' : 'empty'" v-on:click="onClick">
+         :class="hasChild(data) ? expanded ? 'open' : 'closed' : 'empty'" @click="onClick">
     </div>
     <div style="
       justify-content: center;
@@ -13,12 +13,13 @@
       <div v-show="depth>0 && !final" style="display: flex;width: 10px; height: 10px; border-top: #000 1px solid; border-left: #000 1px solid; "></div>
       <div v-show="depth>0 && final" style="display: flex;width: 10px; height: 10px; border-top: #000 1px solid; "></div>
     </div>
-    <div class="item" :class="[isActive, isSelected, isOvered]" v-on:click="itemClick()" v-on:mouseover="treeItemOver()"
-         v-on:mouseout="treeItemOut()" v-on:dblclick="itemDoubleClick()">
+    <div class="item" :class="[isActive, isSelected, isOvered]" @click="itemClick()" @mouseover="treeItemOver()"
+         @mouseout="treeItemOut()" @dblclick="itemDoubleClick()">
       <div :class="{
               tree_label1: depth === 0,
               tree_label2: depth !== 0
-            }"> {{ label }} &nbsp;<div v-show="depth===0 & chk1 " style="margin-right:2px;font-size:8pt; text-align:center; align-items:center;width: 30px;height: 13px;padding-bottom: 4px; background-color: rgb(155,68,221);color:white">대표</div></div>
+            }"
+            style="margin-bottom:60px;">{{ label }} &nbsp;<div v-show="depth===0 & chk1 " style="margin-right:2px;font-size:8pt; text-align:center; align-items:center;width: 30px;height: 13px;padding-bottom: 4px; background-color: rgb(155,68,221);color:white">대표</div></div>
     </div>
     <div >
 <!--      <div v-show="chk1" class="tree_state1"/>-->
