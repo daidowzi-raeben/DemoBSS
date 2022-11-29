@@ -32,18 +32,17 @@
                   <th style="width:5%;">선택</th>
                 </tr>
                 <tr v-for="(item) in currentFivePostCodeSearchData" :key="item">
-                  <td>{{item.zipNo}}</td>
-                  <td> {{item.roadAddr}} </td>
-                  <td> {{item.jibunAddr}}</td>
-                  <td> <InputComponent
-                  v-model="detailPostAddress"/></td>
+                  <td> <input-component style="width:95%;" :input-class="'class5 class5_short2'" :disabled="true" :value="item.zipNo" />  </td>
+                  <td> <input-component style="width:98%;" :input-class="'class5 class5_long1'" :disabled="true" :value="item.roadAddr" /></td>
+                  <td> <input-component style="width:98%;" :input-class="'class5 class5_long1'" :disabled="true" :value="item.jibunAddr" /></td>
+                  <td> <input-component style="width:95%;" :input-class="'class5'" :disabled="true" v-model="detailPostAddress" /></td>
                   <td> 
-                  <button-component
-                  :btnClass="'btnclass3'"
-                  :btnName="'선택'"
-                  style="width:100%; height:100%;"
-                  @click="selectPostCode(item,detailPostAddress)"
-                  />
+                    <button-component
+                    :btnClass="'btnclass3'"
+                    :btnName="'선택'"
+                    style="width:100%; height:100%;"
+                    @click="selectPostCode(item,detailPostAddress)"
+                    />
                   </td>
                 </tr>
               </table>
@@ -122,7 +121,7 @@ export default {
     },
     formDataPopupFrameWidth:{
       type:String,
-      default:'1000px'
+      default:'1200px'
   },
     formDataPopupFrameHeight:{
       type:String,
@@ -183,7 +182,7 @@ export default {
   left: 50%;
   padding: 26px;
   position: fixed;
-  top: 40%;
+  top: 47%;
   z-index: 100;
   transform: translate(-50%, -50%);
   transition: opacity 0.5s, top 0.5s;
@@ -219,7 +218,6 @@ export default {
 }
 .formDataBind tr > td{
   border: groove; 
-  background-color: blanchedalmond;
   width: v-bind(col_1);
   font-size: 12px;
 }
