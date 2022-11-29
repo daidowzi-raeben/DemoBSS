@@ -5,6 +5,8 @@
          :class="hasChild(data) ? expanded ? 'open' : 'closed' : 'empty'" @click="onClick">
     </div>
     <div style="
+      position: relative;
+      right: 10px;--
       justify-content: center;
       align-items: center;
       height: 20px;

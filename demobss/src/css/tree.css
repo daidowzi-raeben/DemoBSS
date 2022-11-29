@@ -48,7 +48,7 @@ span[class^="count-"]:only-of-type {margin:0 2px; border-color:#333;}/* 분류�
 .level-h-group.disabled > li >* {color:#333; opacity:.5;}
 
 /* treegrid icon */
-i[class*="ico-item"] {width:18px; height:18px; background-image:url(../img/icon_big_search.png);}
+i[class*="ico-item"] {width:18px; height:18px; background-image:url(../img/icon_minus_2.png);}
 .ico-item.i-data-center {background-position:0 0;}/* data center */
 .ico-item.i-non-rack-node {background-position:-18px 0;}/* 미지정 rack/node */
 .ico-item.i-room {background-position:-36px 0;}/* room */
@@ -94,8 +94,8 @@ i[class*="ico-item"] {width:18px; height:18px; background-image:url(../img/icon_
 .treeitem .item + span[class^="txt-"] {margin:0 5px 0 15px;}
 .treeitem .expanded,
 .treeitem .empty {width:20px; height:20px;}
-.treeitem .expanded.open {background:url(../img/icon_minus.png) no-repeat 50% 50%;}
-.treeitem .expanded.closed {background:url(../img/icon_plus.png) no-repeat 50% 50%;}
+.treeitem .expanded.open {background:url(../img/icon_minus_2.png) no-repeat 50% 50%; background-size: contain;}
+.treeitem .expanded.closed {background:url(../img/icon_plus_2.png) no-repeat 50% 50%; background-size: contain;}
 .treeitem[class*="level-"] {}
 .treeitem.level-1 {padding-left:0;}
 .treeitem.level-2 {padding-left:20px;}
