@@ -273,7 +273,9 @@ div.taboff {
   color: black;
   border-radius: 5px 5px 0 0;
 }
-
+div.taboff:hover {
+  background-color: rgb(204,228,250);
+}
 .menu_tab_line {
   height: 30px;
   display: inline-flex;
@@ -295,17 +297,24 @@ div.taboff {
 }
 .menu_tab > span.tab_x_off {
   color: #444444;
-  font-size: 15px;
+  font-size: 14pt;
   float: right;
-  width: 15px;
+  width: 20px;
   text-align: right;
+}
+.menu_tab > span.tab_x_off:hover{
+  color: white;
 }
 .menu_tab > span.tab_x_on {
   color: white;
-  font-size: 15px;
+  font-size: 14pt;
   float: right;
-  width: 15px;
+  width: 20px;
   text-align: right;
+}
+
+.menu_tab > span.tab_x_on:hover {
+  color: black;
 }
 .menu_tab > span#tab_nm {
   display: block;

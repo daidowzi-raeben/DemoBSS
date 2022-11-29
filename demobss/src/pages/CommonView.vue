@@ -379,7 +379,6 @@
       @FormPopup="isPostCodeModalShow = false"
       @AGREE = "''"
       :PopupTitleMsg="'주소 검색'"
-      :formDataPopupFrameWidth="'800px'"
       :reqtype="'searchPostCode'"
       @selected-juso-data="selectedJuso"/>
       <br /><br /><br />
@@ -411,8 +410,9 @@
         margin: 10px;
       "
     >
-      <CustInfoComponent
-          :custInfo="custInfo"
+      <form-data-component
+      :FormDataclass="'infoOfCust'"
+      :subInfoTitleNm="'고객 정보'"
       />
     </div>
     <br /><br /><br />
