@@ -170,7 +170,7 @@ body {
 
 #menu > .area > div > span {
   float: left;
-  font-size: 13px;
+  font-size: 10pt;
   color: rgb(255,255,255);
   line-height: 40px;
   cursor: pointer;
@@ -182,13 +182,15 @@ body {
 
 #menu > .area > div > span > span.clicked {
   color: rgb(255,255,255);
-  font-weight: 900;
+  font-weight: bold;
+  font-size:10pt;
   text-decoration: underline; text-underline-position:under;
 }
 
 #menu > .area > div > span > span:hover {
   color: rgb(255,255,255);
-  font-weight: 900;
+  font-weight: bold;
+  font-size:10pt;
   text-decoration: underline; text-underline-position:under;
 }
 

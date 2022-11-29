@@ -707,7 +707,9 @@ export default {
       },
       pageableData2: {
         pageNumber: 1,
-        totalPages: 4
+        currentMinPage: 1,
+        currentMaxPage: 5,
+        totalPages: 16,
       },
       page1: 1,
       page2: 1,
