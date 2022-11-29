@@ -100,7 +100,7 @@ export default {
       else this.selectedMenuId = val;
     },
     setCmpn(val) {
-      console.log(val);
+      // console.log(val);
       this.$emit('input',val);
     },
   },

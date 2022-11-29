@@ -23,13 +23,13 @@
       "menuId": "L01M02S01",
       "menuNm": "고객정보 등록",
       "upMenuId": "L01M02S00",
-      "cmpnId": ""
+      "cmpnId": "ContSection"
     },
     {
       "menuId": "L01M02S02",
       "menuNm": "고객정보 수정",
       "upMenuId": "L01M02S00",
-      "cmpnId": ""
+      "cmpnId": "ChageInfoRetv"
     },
     {
       "menuId": "L01M03S00",

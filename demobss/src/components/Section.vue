@@ -182,7 +182,7 @@ export default {
       }
     },
     async AddComponent(param) {
-      console.log(param);
+      // console.log(param);
       if(await param.cmpnId === "Login") this.$router.push("/login")
       else{
       if (param.menuId != "" && param.menuId != null) {
@@ -202,9 +202,9 @@ export default {
               )
             );
             this.compm2.push(this.component);
-            console.log(this.component);
+            // console.log(this.component);
           } else {
-            console.log("10개를 넘었습니다.");
+            // console.log("10개를 넘었습니다.");
           }
         }
       }

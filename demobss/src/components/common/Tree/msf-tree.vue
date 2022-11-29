@@ -264,7 +264,7 @@ export default {
         this.filteredItems = ar
       } else {
         this.filteredItems = this.items
-        console.log(this.filteredItems);
+        // console.log(this.filteredItems);
       }
       this.list = this.filteredItems.filter(this.treeFilter)
       if (this.list && this.list.length > 0) {
@@ -273,7 +273,7 @@ export default {
 
       let self = this
       if (this.$refs.virtualList) {
-        console.log(this.$refs.virtualList);
+        // console.log(this.$refs.virtualList);
         setTimeout(function () {
           if (self.$refs.virtualList) {
             self.$refs.virtualList.forceRender()
@@ -316,7 +316,7 @@ export default {
       for (let i = 0; i < sampleData.length; i++) {
         var obj = sampleData[i]
         this.addItem(ar, obj, 0, null,false)
-        console.log(obj);
+        // console.log(obj);
       }
       this.items = ar
       this.refresh()
