@@ -402,18 +402,24 @@
       </div><div>
       <span> 주소 검색  </span>
       <input-component
-      :inputClass="'class1'"
-      :width="'210'"
-      :height="'25'"
-      :placeholder="'주소를 입력해 주세요. (클릭 시 주소 팝업)'"
+      :inputClass="'class5'"
+      style="width:210px; margin:0 3px;"
+      :height="'30px'"
+      :placeholder="'주소를 입력해 주세요.'"
       @click="postCodePopup"
       />
-      <button @click="postCodePopup">주소출력 PopUp </button>
+      <button-component 
+      @click="postCodePopup" 
+      :btnClass="'btnClass3'"
+      :btnName="'주소 검색'"
+      :btnHeight="'30px'"
+      />
 
-      <PostCodeComponent
+      <post-code-component
       ref="PostCodeComponent"
       v-if="isPostCodeModalShow"
       @FormPopup="isPostCodeModalShow = false"
+      :formDataPopupFrameWidth="'800px'"
       @AGREE = "''"
       :PopupTitleMsg="'주소 검색'"
       :reqtype="'searchPostCode'"

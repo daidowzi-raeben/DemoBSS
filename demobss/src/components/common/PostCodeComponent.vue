@@ -8,34 +8,35 @@
         <!-- 팝업 메세지 내용 -->
         <article>
           <div class="formDataBind" >
+            <label-component :labelNm="'주소 검색 : '" />
+            <input-component
+            :inputClass="'class4'"
+            :type="'search'"
+            :height="'30px'"
+            :placeholder="'주소를 입력해 주세요.'"
+            style="width:200px; margin:0 3px;"
+            @keypress.enter="getPostCode()"
+            />  
+            <button-component 
+            :btnClass="'btnClass3'"
+            :btnName="'주소 검색'"
+            :btnHeight="'30px'"
+            @click="getPostCode()"
+            />
             <form>
-              <label for=""> 주소 : </label>
-              <input-component
-              :inputClass="'class1'"
-              :width="'320'"
-              :height="'35'"
-              :placeholder="'주소를 입력해 주세요.'"
-              />
-
-              <button-component
-              :btnClass="'btnclass3'"
-              :btnName="'검색'"
-              style="width:50px; height:40px;"
-              @click="getPostCode()" />
-
               <table v-if="postCodeSearchData.length>0">
                 <tr>
-                  <th style="width:10%;">우편번호 </th>
-                  <th style="width:30%;">도로명주소  </th>
-                  <th style="width:30%;">지번주소</th>
-                  <th style="width:10%;">상세주소</th>
+                  <th style="width:5%;"> <label-component :labelNm="'우편번호'" :labelClass="'class1'"/> </th>
+                  <th style="width:35%;"><label-component :labelNm="'도로명주소  '" :labelClass="'class1'"/> </th>
+                  <th style="width:40%;"><label-component :labelNm="'지번주소'" :labelClass="'class1'"/> </th>
+                  <th style="width:10%;"><label-component :labelNm="'상세주소'" :labelClass="'class1'"/> </th>
                   <th style="width:5%;">선택</th>
                 </tr>
-                <tr v-for="(item) in currentFivePostCodeSearchData" :key="item">
-                  <td> <input-component style="width:95%;" :input-class="'class5 class5_short2'" :disabled="true" :value="item.zipNo" />  </td>
+                <tr v-for="(item) in currentPostCodeData" :key="item">
+                  <td> <input-component style="width:90%; text-align:center;" :input-class="'class5 class5_short2'" :disabled="true" :value="item.zipNo" />  </td>
                   <td> <input-component style="width:98%;" :input-class="'class5 class5_long1'" :disabled="true" :value="item.roadAddr" /></td>
                   <td> <input-component style="width:98%;" :input-class="'class5 class5_long1'" :disabled="true" :value="item.jibunAddr" /></td>
-                  <td> <input-component style="width:95%;" :input-class="'class5'" :disabled="true" v-model="detailPostAddress" /></td>
+                  <td> <input-component style="width:90%;" :input-class="'class5'"   v-model="detailPostAddress" /></td>
                   <td> 
                     <button-component
                     :btnClass="'btnclass3'"
@@ -48,6 +49,16 @@
               </table>
               
             <div style="text-align:center; font-size:20px;"> 
+              
+              <!-- <select-box-component
+              :selectClass="'select_input3'"
+              :cdGroup="'optionSearchNum'"
+              style="width:100px; height:20px; margin-top:15px;"
+              :defaultValue="'선택'"
+              v-model="postCodeDivNum_test"
+              @input=" (value) => { postCodeDivNum_test = value;}"
+              /> : {{ postCodeDivNum_test }} -->
+
               <paging-area 
               v-if="postCodeNums>0"
               :pageableData="pageableData"
@@ -86,21 +97,24 @@
 </template>
 
 <script>
-import { computed } from '@vue/runtime-core';
 import ButtonComponent from './ButtonComponent.vue';
 import InputComponent from './InputComponent.vue';
+import LabelComponent from './LabelComponent.vue';
 import PagingArea from './PagingArea.vue';
 import RadioComponent from './RadioComponent.vue';
+import SelectBoxComponent from './SelectBoxComponent.vue';
 
 export default {
-  components: { ButtonComponent, InputComponent, RadioComponent, PagingArea },
+  components: { ButtonComponent, InputComponent, RadioComponent, PagingArea, LabelComponent, SelectBoxComponent },
   name: "CommonPopup",
   data() {
     return {
-      postCodeSearchData:[],
       col_1 : '8.33%',
       col_2 : '16.66%',
       detailPostAddress:'',
+      postCodeSearchData:[],
+      postCodeDivNum_test:null,
+      postCodeDivNum:5,      // 각 페이지 당 출력 주소 개수
       currentPage:'',    // 현재 페이지
       postCodeNums:0,   // 주소 개수
       pageableData : {
@@ -109,7 +123,7 @@ export default {
         currentMaxPage: 5,
         totalPages: 0,
       },
-      currentFivePostCodeSearchData:[],
+      currentPostCodeData:[],
     };
   },
   props: {
@@ -121,7 +135,7 @@ export default {
     },
     formDataPopupFrameWidth:{
       type:String,
-      default:'1200px'
+      default:'1000px'
   },
     formDataPopupFrameHeight:{
       type:String,
@@ -130,20 +144,21 @@ export default {
   },
   watch:{
     currentPage(newData, oldData){
-      this.currentFivePostCodeSearchData = this.postCodeSearchData.slice((newData-1)*5 , ((newData-1)*5)+5)
-    }
+      this.currentPostCodeData = this.postCodeSearchData.slice((newData-1)*this.postCodeDivNum , ((newData-1)*this.postCodeDivNum)+this.postCodeDivNum)
+      }
   },
   beforeMount(){
   },
   methods:{
     async getPostCode(){
+      console.log('엔터인식')
       await this.axios.get('/postCodeEx.json').then((response) => {
         this.postCodeSearchData = response.data.results.juso
       this.postCodeNums = this.postCodeSearchData.length;     // 주소 개수
       if (this.postCodeNums >0) this.currentPage =1 
-      if(this.postCodeNums > 5) {
-        this.pageableData.totalPages = parseInt(this.postCodeNums/5)
-        if(this.postCodeNums%5 > 0) this.pageableData.totalPages +=1
+      if(this.postCodeNums > this.postCodeDivNum) {
+        this.pageableData.totalPages = parseInt(this.postCodeNums/this.postCodeDivNum)
+        if(this.postCodeNums%this.postCodeDivNum > 0) this.pageableData.totalPages +=1
       }
       })
     },

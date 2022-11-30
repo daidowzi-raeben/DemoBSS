@@ -69,12 +69,84 @@
       </div>
       
       <!-- 8 보유상품 -->
-      <div class="item ">
-        <sub-infoTitle :subInfoTitleNm="'보유 상품'" style="display:block; width:500px;"/>
-        <div class="cmProducts">
-        <tree-Grid-component :tableData="tableData" :columns="columns" style="min-width: 710px;"/>
+      <div class="item"> <!-- 3 -->
+      <div class="product_box">
+        <sub-info-title
+        :subInfoTitleNm="'보유상품'"
+        />
+        <button-component
+        :btn-name="'청약등록'"
+        :btn-class="'btnClass3'"
+        style="float: right;"
+        />
+      </div>
+      <div class="product_box_sel">
+        <span>
+        <select-box-component
+            :selectClass="'select_input3'"
+            :width="120"
+            :cdGroup="'optionsSearchDiv'"
+            :defaultValue="'선택'"
+            v-model="searchDiv1"
+            @input="
+          (value) => {
+            searchDiv1 = value;
+          }
+        "
+        />
+          </span>
+        <span>
+        <select-box-component
+            :selectClass="'select_input3'"
+            :width="120"
+            :cdGroup="'optionsSearchDiv'"
+            :defaultValue="'선택'"
+            v-model="searchDiv1"
+            @input="
+          (value) => {
+            searchDiv1 = value;
+          }
+        "
+        />
+          </span>
+        <span>
+        <select-box-component
+            :selectClass="'select_input3'"
+            :width="120"
+            :cdGroup="'optionsSearchDiv'"
+            :defaultValue="'선택'"
+            v-model="searchDiv1"
+            @input="
+          (value) => {
+            searchDiv1 = value;
+          }
+        "
+        />
+          </span>
+        <span>
+        <input-component
+            :type="'search'"
+            :input-class="'class4'"
+            :placeholder="'서비스계약ID 입력'"
+            style="width:100%; height:100%"
+        />
+        </span>
+        <div>
+          <img :src="logo_search" />
         </div>
       </div>
+      <div class="product_box_tree">
+        <msf-tree :source="contentTree"
+                  :activeItem="activeItemObj"
+                  :selectedList="selectedItemList"
+                  id-field="directoryName"
+                  label-field="directoryName"
+                  ref="tree"
+                  @itemClick="treeItemClick"
+                  style="width:100%; height:100%;font-size: 12pt;"
+        ></msf-tree>
+      </div>
+    </div>
 
 
 
@@ -100,6 +172,9 @@ import FormDataComponent from "@/components/common/FormDataComponent.vue";
 import ApiMixin from "@/service/common";
 import FormDataPopupComponent from "@/components/common/FormDataPopupComponent.vue";
 import BlcComponent from '../common/BlcComponent.vue';
+import SelectBoxComponent from '../common/SelectBoxComponent.vue';
+import InputComponent from '../common/InputComponent.vue';
+import MsfTree from '../common/Tree/msf-tree.vue';
 
 export default {
   mixins:[ApiMixin],
@@ -112,10 +187,36 @@ export default {
     SubInfoTitle,
     FormDataComponent,
     FormDataPopupComponent,
-    BlcComponent,
+    SelectBoxComponent,
+    InputComponent,
+    MsfTree,
   },
   data() {
     return {
+      logo_search:require('../../img/logo_search.png'),
+      contentTree: [{
+        groupId: 0,
+        directoryName: '청구계정ID 홍길* 은행계좌자동이체',
+        chk:true,
+        children: [
+          {groupId: 1, directoryName: '요금제명(서비스계약ID)2022-10-13~2022-10-15서울시 강남구 학동로 111', chk:true, chk2:false},
+        ]
+      },
+        {groupId: 5, directoryName: '청구계정ID 홍길* 은행계좌자동이체', children: [
+            {groupId: 2, directoryName: '요금제명(서비스계약ID)2022-10-13~2022-10-15서울시 강남구 학동로 111',chk:false, chk2:true},
+            {groupId: 3, directoryName: '요금제명(서비스계약ID)2022-10-13~2022-10-15서울시 강남구 학동로 1123',chk:true, chk2:true},
+            {groupId: 4, directoryName: '요금제명(서비스계약ID)2022-10-13~2022-10-15서울시 강남구 학동로 111',chk:true, chk2:true},
+            {groupId: 2, directoryName: '요금제명(서비스계약ID)2022-10-13~2022-10-15서울시 강남구 학동로 111',chk:false, chk2:true},
+            {groupId: 3, directoryName: '요금제명(서비스계약ID)2022-10-13~2022-10-15서울시 강남구 학동로 111',chk:true, chk2:true},
+            {groupId: 4, directoryName: '요금제명(서비스계약ID)2022-10-13~2022-10-15서울시 강남구 학동로 111',chk:true, chk2:true},
+            {groupId: 2, directoryName: '요금제명(서비스계약ID)2022-10-13~2022-10-15서울시 강남구 학동로 111',chk:false, chk2:true},
+            {groupId: 3, directoryName: '요금제명(서비스계약ID)2022-10-13~2022-10-15서울시 강남구 학동로 111',chk:true, chk2:true},
+            {groupId: 4, directoryName: '요금제명(서비스계약ID)2022-10-13~2022-10-15서울시 강남구 학동로 111',chk:true, chk2:true}
+          ]},
+        {groupId: 6, directoryName: '청구계정ID 홍길* 은행계좌자동이체'}
+      ],
+      activeItemObj: {}, // 활성화 시킬 객체
+      selectedItemList: [], // 선택시킬 객체
       gridOptions: null,
       tableData: [
         {
@@ -200,9 +301,9 @@ export default {
 <style scoped>
 .container{
   display:grid;
-  grid-template-columns:740px 800px 1fr ;
+  grid-template-columns:780px 780px 1fr ;
   grid-template-rows: 60px 140px 280px 70px 100px 200px minmax(250px,1fr);
-  gap: 20px 30px;
+  gap: 15px 30px;
 }
 
 .item{
@@ -241,8 +342,10 @@ export default {
 }
 
 .item:nth-child(7){
+  
   grid-column: 1/2;
-  grid-row:5;
+  grid-row:4/6;
+  
 }
 
 .item:nth-child(8){
@@ -270,6 +373,45 @@ div.layout {
 }
 
 
+.product_box{
+  padding-bottom:8px;
+  float:left;
+  height:20px;
+  width:100%;
+}
+/* .product_box_butt{
+  padding:5px 0;
+  width: 30%;
+  float: right;
+} */
+.product_box_sel{
+  border:1px solid #e4e4e4;
+  padding-left: 10px;
+  display: flex;
+  align-items: center;
+  width: 770px;
+  height: 40px;
+  background-color: rgb(239, 245, 252);
+}
+.product_box_sel > span:nth-child(1),span:nth-child(2),span:nth-child(3){
+  width: 120px;
+  height: 26px;
+  margin-right: 5px;
+}
+.product_box_sel > span:nth-child(4){
+  width: 200px;
+  height: 26px;
+  margin-left: 10px;
+}
+.product_box_sel div{
+  margin-left:3px;
+}
+.product_box_tree{
+  width: 100%;
+  height: 225px;
+  overflow: auto;
+  border: 1px solid #e4e4e4;
+}
 /* .col-1 {width: 8.33%;}
 .col-2 {width: 16.66%;}
 .col-3 {width: 25%;}
