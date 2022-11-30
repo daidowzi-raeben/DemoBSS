@@ -6,14 +6,14 @@
     </div>
     <div style="
       position: relative;
-      right: 10px;--
+      right: 10px;
       justify-content: center;
       align-items: center;
       height: 20px;
       flex-direction: column;">
-      <div v-show="depth>0" style="display: flex;width: 10px; height: 13px; border-left: #000 1px solid;"></div>
-      <div v-show="depth>0 && !final" style="display: flex;width: 10px; height: 10px; border-top: #000 1px solid; border-left: #000 1px solid; "></div>
-      <div v-show="depth>0 && final" style="display: flex;width: 10px; height: 10px; border-top: #000 1px solid; "></div>
+      <div v-show="depth>0" style="display: flex;width: 10px; height: 10px; border-left: #000 1px solid;"></div>
+      <div v-show="depth>0 && !final" style="display: flex;width: 10px; height: 16px; border-top: #000 1px solid; border-left: #000 1px solid; "></div>
+      <div v-show="depth>0 && final" style="display: flex;width: 10px; height: 13px; border-top: #000 1px solid; "></div>
     </div>
     <div class="item" :class="[isActive, isSelected, isOvered]" @click="itemClick()" @mouseover="treeItemOver()"
          @mouseout="treeItemOut()" @dblclick="itemDoubleClick()">
@@ -208,7 +208,7 @@ export default {
 
 .treeitem .item {
   cursor: pointer;
-  height: 20px;
+  height: 24px;
 }
 .tree_state1{
   float:left;
