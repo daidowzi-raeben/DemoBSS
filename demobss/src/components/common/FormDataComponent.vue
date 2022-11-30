@@ -781,7 +781,7 @@ export default {
 <style scoped>
 /*     11.24. A안 수정 CSS            */ 
 .InfoForm {
-  /* height: 100%; */
+  width:100%;
 }
 
 table, tr {

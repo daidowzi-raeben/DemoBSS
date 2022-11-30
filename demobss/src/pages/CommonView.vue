@@ -9,18 +9,53 @@
         :width="400"
         :cdGroup="'optionsSearchDiv'"
         :defaultValue="'선택'"
-        v-model="searchDiv1"
+        v-model="selectBox1"
         @input="
-          (currentPage) => {
-            searchDiv1 = value;
+          (value) => {
+            selectBox1 = value;
           }
         "
       />
-      : {{ searchDiv1 }}
+      : {{ selectBox1 }}
       <br />
       <br />
       <br />
+      <select-box-component
+      :selectClass="'select_input2'"
+      :cdGroup="'optionsSearchDiv'"
+      :width="200"
+      :defaultValue="'선택'"
+      v-model="selectBox2"
+      @input="
+        (value) => {
+          selectBox2 = value;
+        }
+        "
+      />
+      : {{ selectBox2 }}
 
+      <br />
+      <br />
+      <br />
+      <select-box-component
+      :selectClass="'select_input3'"
+      :cdGroup="'optionsSearchDiv'"
+      style="width:200px; height:30px;"
+      :defaultValue="'선택'"
+      v-model="selectBox3"
+      @input="
+        (value) => {
+          selectBox3 = value;
+        }
+        "
+      />
+      : {{ selectBox3 }}
+
+
+
+      <br />
+      <br />
+      <br />
       조회조건 (default 값 청구계정ID)
       <select-box-component
         :selectClass="'select_input'"
@@ -28,14 +63,14 @@
         :cdGroup="'optionsSearchDiv'"
         :defaultValue="'선택'"
         :defaultNum="3"
-        v-model="searchDiv2"
+        v-model="selectBox4"
         @input="
           (value) => {
-            searchDiv2 = value;
+            selectBox4 = value;
           }
         "
       />
-      : {{ searchDiv2 }}
+      : {{ selectBox4 }}
     </div>
 
     <h1 style="font-size: 30px">date picker</h1>
@@ -131,6 +166,8 @@
     <h1 style="font-size: 30px">file input</h1>
     <div class="commondiv0">
       <div style="width: 70%">
+        <input type="file"> adsfsdf
+
         <file-input-component
           :atcNoti="'첨부파일은 최대 10MB 이내로 첨부 가능합니다.'"
         />
@@ -154,7 +191,7 @@
       page size 10 페이징 데이터 {{ pageableData1 }} 현재페이지 : {{ page1 }}
       <paging-area
         :pageableData="pageableData1"
-        @currentPage="(value) => {page2 = value;}"
+        @currentPage="(value) => {page1 = value;}"
       />
       page size 5 페이징 데이터 {{ pageableData2 }} 현재페이지 : {{ page2 }}
       <paging-area
@@ -614,8 +651,10 @@ export default {
   data() {
     return {
       chk:false,
-      searchDiv1: null,
-      searchDiv2: null,
+      selectBox1 : null,
+      selectBox2 : null,
+      selectBox3 : null,
+      selectBox4 : null,
       searchValue: null,
       date1: new Date(2021, 9, 5),
       date2: new Date(),
