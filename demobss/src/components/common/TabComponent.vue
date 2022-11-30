@@ -171,7 +171,6 @@ div.taboff {
 
 .menu_tab_line {
   height: 25px;
-  display: inline-flex;
   width: 100%;
 }
 
