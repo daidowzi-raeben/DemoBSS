@@ -169,6 +169,11 @@ export default {
     SelectBoxComponent, CustRetvComponent, FormDataComponent, ButtonComponent,
     SubInfoTitle,
   },
+  methods:{
+    treeItemClick(event){
+      console.log(event);
+    }
+  }
 
 }
 </script>

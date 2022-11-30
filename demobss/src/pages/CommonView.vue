@@ -70,7 +70,45 @@
           }
         "
       />
-      : {{ selectBox4 }}
+      : {{ searchDiv2 }}
+      <br />
+      <br />
+      <br />
+
+      조회조건 값에 따른 추가 selectBox 추가(값에 따라 생겨남)
+      <select-box-component
+          :selectClass="'select_input'"
+          :width="250"
+          :cdGroup="'optionsSearchDiv'"
+          :defaultValue="'선택'"
+          :defaultNum="3"
+          :secndShow="true"
+          v-model="searchDiv2"
+          @input="
+          (value) => {
+            searchDiv2 = value;
+          }
+        "
+        />
+      <br />
+      <br />
+      <br />
+
+      조회조건 값에 따른 추가 selectBox 추가(기존에 존재함)
+      <select-box-component
+          :selectClass="'select_input'"
+          :width="250"
+          :cdGroup="'optionsSearchDiv'"
+          :defaultValue="'선택'"
+          :defaultNum="3"
+          :dcidShow="true"
+          v-model="searchDiv2"
+          @input="
+          (value) => {
+            searchDiv2 = value;
+          }
+        "
+      />
     </div>
 
     <h1 style="font-size: 30px">date picker</h1>
@@ -251,7 +289,7 @@
       />
       <br>
       <form-data-component
-      :FormDataclass="'infoOfAccount'"      
+      :FormDataclass="'infoOfAccount'"
       :subInfoTitleNm="'청구 계정 정보'"
       />
       <br>
@@ -336,24 +374,24 @@
           }
         "
       />
-      <br> 
-      <input-component 
+      <br>
+      <input-component
       :input-class="'class3'"
       :value="'input 컴포넌트 - class3 '"
-      /> 
+      />
       <div>
-      <input-component 
+      <input-component
       :input-class="'class4'"
       :value="'input 컴포넌트 - class4 '"
-      /> 
+      />
       </div>
 
-      
-      <input-component 
+
+      <input-component
       :input-class="'class5'"
       :value="'input 컴포넌트 - class5 '"
-      /> 
-      
+      />
+
 
     </div>
     <br /><br /><br />
@@ -408,8 +446,8 @@
       :placeholder="'주소를 입력해 주세요.'"
       @click="postCodePopup"
       />
-      <button-component 
-      @click="postCodePopup" 
+      <button-component
+      @click="postCodePopup"
       :btnClass="'btnClass3'"
       :btnName="'주소 검색'"
       :btnHeight="'30px'"
@@ -498,11 +536,19 @@
       />
     </div>
     <br /><br /><br />
-    <h1 style="font-size: 30px">TreeGridComponent</h1>
+    <h1 style="font-size: 30px">TreeComponent</h1>
     <span></span>
     <div class="commondiv2">
 <!--      <TreeGridComponent :tableData="tableData" :columns="columns" />-->
-      <TreeView/>
+      <msf-tree :source="contentTree"
+                :activeItem="activeItemObj"
+                :selectedList="selectedItemList"
+                id-field="directoryName"
+                label-field="directoryName"
+                ref="tree"
+                @itemClick="treeItemClick"
+                style="width:100%; height:100%;font-size: 12pt;"
+      ></msf-tree>
     </div>
     <br /><br /><br />
     <h1 style="font-size: 30px">ValdtnComponent</h1>
@@ -615,14 +661,14 @@ import {defineAsyncComponent, markRaw} from "vue";
 import TabComponent from "@/components/common/TabComponent";
 import PostCodeComponent from "@/components/common/PostCodeComponent";
 import ApiMixin from "@/service/common.js";
-import TreeView from "@/components/common/Tree/TreeView";
+import msfTree from "@/components/common/Tree/msf-tree";
 import InputComponent from '@/components/common/InputComponent.vue';
 
 export default {
   mixins:[ApiMixin],
   name: "CommonView",
   components: {
-    TreeView,
+    msfTree,
     PostCodeComponent,
     TabComponent,
     TextAreaComponent,
@@ -640,7 +686,6 @@ export default {
     SelectBoxComponent,
     ButtonComponent,
     SubInfoTitle,
-    InputComponent,
     TitleArea,
     PopupComponent,
     CustInfoComponent,
@@ -668,6 +713,29 @@ export default {
       date4: new Date(),
       pDisable: true,
       comp: "L01M05S01",
+      contentTree: [{
+        groupId: 0,
+        directoryName: '청구계정ID 홍길* 은행계좌자동이체',
+        chk:true,
+        children: [
+          {groupId: 1, directoryName: '요금제명(서비스계약ID)2022-10-13~2022-10-15서울시 강남구 학동로 111', chk:true, chk2:false},
+        ]
+      },
+        {groupId: 5, directoryName: '청구계정ID 홍길* 은행계좌자동이체', children: [
+            {groupId: 2, directoryName: '요금제명(서비스계약ID)2022-10-13~2022-10-15서울시 강남구 학동로 111',chk:false, chk2:true},
+            {groupId: 3, directoryName: '요금제명(서비스계약ID)2022-10-13~2022-10-15서울시 강남구 학동로 1123',chk:true, chk2:true},
+            {groupId: 4, directoryName: '요금제명(서비스계약ID)2022-10-13~2022-10-15서울시 강남구 학동로 111',chk:true, chk2:true},
+            {groupId: 2, directoryName: '요금제명(서비스계약ID)2022-10-13~2022-10-15서울시 강남구 학동로 111',chk:false, chk2:true},
+            {groupId: 3, directoryName: '요금제명(서비스계약ID)2022-10-13~2022-10-15서울시 강남구 학동로 111',chk:true, chk2:true},
+            {groupId: 4, directoryName: '요금제명(서비스계약ID)2022-10-13~2022-10-15서울시 강남구 학동로 111',chk:true, chk2:true},
+            {groupId: 2, directoryName: '요금제명(서비스계약ID)2022-10-13~2022-10-15서울시 강남구 학동로 111',chk:false, chk2:true},
+            {groupId: 3, directoryName: '요금제명(서비스계약ID)2022-10-13~2022-10-15서울시 강남구 학동로 111',chk:true, chk2:true},
+            {groupId: 4, directoryName: '요금제명(서비스계약ID)2022-10-13~2022-10-15서울시 강남구 학동로 111',chk:true, chk2:true}
+          ]},
+        {groupId: 6, directoryName: '청구계정ID 홍길* 은행계좌자동이체'}
+      ],
+      activeItemObj: {}, // 활성화 시킬 객체
+      selectedItemList: [], // 선택시킬 객체
       compm: [
         {
           "menuId": "L01M05S01",

@@ -12,10 +12,7 @@
         :cdGroup="cdGroup"
         :defaultValue="'선택'"
         v-model="month"
-        style="
-        width: 120px;
-        height: 26px;
-        margin-right: 5px;"
+        :width="120"
         v-show="selectBoxShow"
         @input="
           (value) => {
