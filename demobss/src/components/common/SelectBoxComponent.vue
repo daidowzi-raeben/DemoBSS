@@ -4,6 +4,7 @@
     :style="{ width: width + 'px' }"
     v-model="value"
     :input="updateValue(value)"
+    @change="chkevent($event)"
   >
     <option v-if="defaultValue != null" :value="''">
       {{ defaultValue }}
@@ -12,17 +13,35 @@
       {{ option.cdNm }}
     </option>
   </select>
+  <span>
+  <select
+    :class="selectClass"
+    :style="{width:width + 'px'}"
+    v-model="secndValue"
+    v-show="(secndOptions!=null && secndShow )|| dcidShow "
+    >
+    <option v-if="defaultValue != null" :value="''">
+      {{ defaultValue }}
+    </option>
+    <option v-for="(option,idx) in secndOptions" :key="idx" :value="option.cdId">
+      {{option.cdNm}}
+    </option>
+  </select>
+</span>
 </template>
 
 <script>
 import select from "../../../public/selectBoxOption.json";
-
+import secndSelect from "../../../public/selectBoxSecndOption.json";
 export default {
   name: "SelectBoxComponent",
   data() {
     return {
       options: [],
+      secndOptions:null,
       value: "",
+      secndValue: "",
+      cur:"",
     };
   },
   props: {
@@ -31,6 +50,14 @@ export default {
     selectClass: null,
     defaultNum: null,
     defaultValue: String,
+    secndShow:{
+      type:Boolean,
+      default:false
+    },
+    dcidShow:{
+      type:Boolean,
+      default:false
+    },
   },
   beforeMount() {
     this.options = select[this.cdGroup];
@@ -38,12 +65,20 @@ export default {
       this.value = this.options[this.defaultNum].cdId;
     }
   },
-  watch: {},
+  watch: {
+    cur(newValue,oldValue){
+      this.secndOptions = secndSelect[newValue];
+    }
+  },
   methods: {
     updateValue(value) {
       // console.log(value, this.value);
       this.$emit("input", value);
     },
+    chkevent(event){
+      this.cur = event.target.value;
+
+    }
   },
 };
 </script>
