@@ -23,7 +23,6 @@
     "vue": "^3.2.13",
     "vue-axios": "^3.5.2",
     "vue-router": "^4.0.3",
-    "vue-tree-table-component": "^0.1.1",
     "vue-virtual-scroll-list": "^2.3.4",
     "vue3-datepicker": "^0.3.4",
     "vue3-virtual-scroll-list": "^0.2.1",
