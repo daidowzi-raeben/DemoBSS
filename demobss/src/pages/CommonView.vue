@@ -414,16 +414,15 @@
       :btnName="'주소 검색'"
       :btnHeight="'30px'"
       />
-
       <post-code-component
-      ref="PostCodeComponent"
-      v-if="isPostCodeModalShow"
       @FormPopup="isPostCodeModalShow = false"
+      @selected-juso-data="selectedJuso"
       :formDataPopupFrameWidth="'800px'"
-      @AGREE = "''"
       :PopupTitleMsg="'주소 검색'"
       :reqtype="'searchPostCode'"
-      @selected-juso-data="selectedJuso"/>
+      ref="PostCodeComponent"
+      v-if="isPostCodeModalShow"
+      />
       <br /><br /><br />
     </div>
 

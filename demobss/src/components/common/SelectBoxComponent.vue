@@ -5,7 +5,7 @@
     v-model="value"
     :input="updateValue(value)"
   >
-    <option v-if="defaultValue != null" :value="''">
+    <option v-if="defaultValue != null" :value="''" :disabled="disabled" >
       {{ defaultValue }}
     </option>
     <option  v-for="(option, idx) in options" :key="idx" :value="option.cdId">
@@ -28,14 +28,23 @@ export default {
   props: {
     cdGroup: String,
     width: Number,
-    selectClass: null,
-    defaultNum: null,
-    defaultValue: String,
-  },
+    selectClass: String,
+    defaultValue: null,
+    defaultcdId : String,
+    disabled:{
+      type:Boolean,
+      default:false,
+    },
+    },
   beforeMount() {
     this.options = select[this.cdGroup];
-    if (this.defaultNum != null) {
-      this.value = this.options[this.defaultNum].cdId;
+    if (this.defaultcdId != null ) {
+      for(let i =0 ; i< this.options.length; i++){
+        if( this.options[i].cdId == this.defaultcdId ){
+          this.value = this.defaultcdId ;
+          break; 
+        } 
+      }
     }
   },
   watch: {},
