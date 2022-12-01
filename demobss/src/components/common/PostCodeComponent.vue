@@ -15,16 +15,16 @@
             :height="'30px'"
             :placeholder="'주소를 입력해 주세요.'"
             style="width:200px; margin:0 3px;"
-            @keypress.enter="getPostCode()"
+            @keypress.enter="getPostData()"
             />  
             <button-component 
             :btnClass="'btnClass3'"
             :btnName="'주소 검색'"
             :btnHeight="'30px'"
-            @click="getPostCode()"
+            @click="getPostData()"
             />
             <form>
-              <table v-if="postCodeSearchData.length>0">
+              <table v-if="currentPostCodeData.length>0">
                 <tr>
                   <th style="width:5%;"> <label-component :labelNm="'우편번호'" :labelClass="'class1'"/> </th>
                   <th style="width:35%;"><label-component :labelNm="'도로명주소  '" :labelClass="'class1'"/> </th>
@@ -48,23 +48,31 @@
                 </tr>
               </table>
               
-            <div style="text-align:center; font-size:20px;"> 
-              
-              <!-- <select-box-component
-              :selectClass="'select_input3'"
-              :cdGroup="'optionSearchNum'"
-              style="width:100px; height:20px; margin-top:15px;"
-              :defaultValue="'선택'"
-              v-model="postCodeDivNum_test"
-              @input=" (value) => { postCodeDivNum_test = value;}"
-              /> : {{ postCodeDivNum_test }} -->
-
+            <div class="pcSelectAndPagingFlex" > 
+              <div>
               <paging-area 
-              v-if="postCodeNums>0"
+              class="pcPagingArea"
+              ref="PagingArea"
+              v-show="postCodeNums>0"
               :pageableData="pageableData"
               :pageSize="5"
+              style="padding:0;"
               @currentPage="(value) => {currentPage = value;}"
               />
+              </div><div>
+              <select-box-component
+              class="pcSelectBox"
+              v-show="postCodeNums>0"
+              :selectClass="'select_input3'"
+              :cdGroup="'optionSearchNum'"
+              :defaultValue="'선택'"
+              :defaultcdId="postCodeShowNum"
+              :disabled="true"
+              v-model="postCodeShowNum"
+              @input=" (value) => { postCodeShowNum = value;}"
+              style=" width:100px; height:22px;"
+              />
+              </div>
             </div>
             </form>
           </div>
@@ -113,16 +121,15 @@ export default {
       col_2 : '16.66%',
       detailPostAddress:'',
       postCodeSearchData:[],
-      postCodeDivNum_test:null,
-      postCodeDivNum:5,      // 각 페이지 당 출력 주소 개수
+      postCodeShowNum:5,      // 각 페이지 당 출력 주소 개수
       currentPage:'',    // 현재 페이지
       postCodeNums:0,   // 주소 개수
-      pageableData : {
+      pageableData: {
         pageNumber: 1,
         currentMinPage: 1,
         currentMaxPage: 5,
         totalPages: 0,
-      },
+        },
       currentPostCodeData:[],
     };
   },
@@ -144,28 +151,50 @@ export default {
   },
   watch:{
     currentPage(newData, oldData){
-      this.currentPostCodeData = this.postCodeSearchData.slice((newData-1)*this.postCodeDivNum , ((newData-1)*this.postCodeDivNum)+this.postCodeDivNum)
-      }
+      this.currentPostCodeData = this.postCodeSearchData.slice((newData-1)*this.postCodeShowNum , ((newData-1)*this.postCodeShowNum)+this.postCodeShowNum)
+      },
+    postCodeShowNum(newOne, oldOne){
+      // console.log("postCodeShowNum:", this.postCodeShowNum,"\n newOne" ,newOne, "\n oldOne" ,oldOne );
+      if(newOne != oldOne){
+        this.postCodeShowNum = newOne; 
+        this.$refs.PagingArea.resetPageableData();
+        this.CalcPostCodeData();
+        }
+    }
   },
   beforeMount(){
   },
   methods:{
-    async getPostCode(){
-      console.log('엔터인식')
+    async getPostData(){
+      // console.log('주소 검색 데이터 Get')
+      this.postCodeSearchData=[]
       await this.axios.get('/postCodeEx.json').then((response) => {
-        this.postCodeSearchData = response.data.results.juso
-      this.postCodeNums = this.postCodeSearchData.length;     // 주소 개수
-      if (this.postCodeNums >0) this.currentPage =1 
-      if(this.postCodeNums > this.postCodeDivNum) {
-        this.pageableData.totalPages = parseInt(this.postCodeNums/this.postCodeDivNum)
-        if(this.postCodeNums%this.postCodeDivNum > 0) this.pageableData.totalPages +=1
-      }
+        this.postCodeSearchData = response.data.results.juso;
+        this.CalcPostCodeData();
       })
+    },
+    CalcPostCodeData(){
+      this.postCodeNums = this.postCodeSearchData.length;     // 주소 개수
+      if (this.postCodeNums >0){
+        this.currentPage =1;
+        this.pageableData.totalPages=1; 
+        this.currentPostCodeData = this.postCodeSearchData.slice(0,this.postCodeShowNum);
+        }else{ return false }
+      if(this.postCodeNums > this.postCodeShowNum) {
+        this.pageableData.totalPages = parseInt(this.postCodeNums/this.postCodeShowNum)
+        if(this.postCodeNums%this.postCodeShowNum > 0) this.pageableData.totalPages +=1
+      }
     },
     // 주소 선택 시, 부모 컴포넌트에 해당 주소 객체 보냄
     selectPostCode(postCode, detailPostAddress){     
       this.$emit('selectedJusoData',postCode,detailPostAddress);
     },
+    // resetPageableData(){
+    //   this.pageableData.pageNumber= 1;
+    //   this.pageableData.totalPages= 1;
+    //   this.pageableData.currentMinPage= 1;
+    //   this.pageableData.currentMaxPage= this.postCodeShowNum;
+    // }
   },
   computed(){
   },
@@ -197,7 +226,7 @@ export default {
   left: 50%;
   padding: 26px;
   position: fixed;
-  top: 47%;
+  top: 50%;
   z-index: 100;
   transform: translate(-50%, -50%);
   transition: opacity 0.5s, top 0.5s;
@@ -275,5 +304,21 @@ export default {
   font-size: 14px;
   cursor: pointer;
   background-color: #ed1820;
+}
+
+
+.pcSelectAndPagingFlex{ 
+  /* text-align:center;  */
+  font-size:20px; 
+  margin-top:20px;
+  display:grid;
+  grid-template-columns: 100px calc(100% - 200px) 100px;
+  }
+
+.pcSelectAndPagingFlex > div:nth-child(1) {
+  grid-column: 2;
+}
+.pcSelectAndPagingFlex > div:nth-child(2) {
+  grid-column: 3;
 }
 </style>

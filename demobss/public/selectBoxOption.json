@@ -146,20 +146,20 @@
   ],
   "optionSearchNum":[
     {
-      "cdNm": "1건",
-      "cdId": 1
-    },
-    {
-      "cdNm": "3건",
-      "cdId": 3
-    },
-    {
       "cdNm": "5건",
       "cdId": 5
     },
     {
       "cdNm": "10건",
       "cdId": 10
+    },
+    {
+      "cdNm": "15건",
+      "cdId": 15
+    },
+    {
+      "cdNm": "20건",
+      "cdId": 20
     }
 
   ]
