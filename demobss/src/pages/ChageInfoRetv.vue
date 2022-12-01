@@ -69,9 +69,14 @@
             <button-component :btn-class="'btnClass3'" :btnName="'선박발송'" />
             <button-component :btn-class="'btnClass3'" :btnName="'선박별 상세'" />
             <button-component :btn-class="'btnClass3'" :btnName="'선박별 요약'" />
+              </span>
+              <span style="float: right">
               <select-box-component
                 :selectClass="'select_input3'"
-                :width="120"
+                style="
+                width: 120px;
+                height: 26px;
+                margin-right: 12px;"
                 :cdGroup="'optionsSearchDiv'"
                 :defaultValue="'선택'"
                 v-model="searchDiv"

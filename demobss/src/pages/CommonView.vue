@@ -39,8 +39,8 @@
       <br />
       <select-box-component
       :selectClass="'select_input3'"
-      :cdGroup="'optionsSearchDiv'"
       style="width:200px; height:30px;"
+      :cdGroup="'optionsSearchDiv'"
       :defaultValue="'선택'"
       v-model="selectBox3"
       @input="

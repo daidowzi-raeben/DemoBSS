@@ -7,12 +7,17 @@
       :btnClass="'btnClass3'"
       :btnName="btnName"
       />
+    </span>
+    <span style="float: right">
     <select-box-component
         :selectClass="'select_input3'"
         :cdGroup="cdGroup"
         :defaultValue="'선택'"
         v-model="month"
-        :width="120"
+        style="
+        width: 120px;
+        height: 26px;
+        margin-right: 15px;"
         v-show="selectBoxShow"
         @input="
           (value) => {

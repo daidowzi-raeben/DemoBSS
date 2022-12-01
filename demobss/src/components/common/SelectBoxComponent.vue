@@ -1,4 +1,7 @@
 <template>
+  <div :class="{
+          div_style : selectClass==='select_input3'
+          }" style="white-space:nowrap; display: inline-block;" >
   <select
     :class="selectClass"
     :style="{ width: width + 'px' }"
@@ -13,13 +16,12 @@
       {{ option.cdNm }}
     </option>
   </select>
-  <span>
   <select
-    :class="selectClass"
-    :style="{width:width + 'px'}"
-    v-model="secndValue"
-    v-show="(secndOptions!=null && secndShow )|| dcidShow "
-    >
+      :class="selectClass"
+      :style="{ width: width + 'px' }"
+      v-model="secndValue"
+      v-if="(secndOptions!=null && secndShow )|| dcidShow "
+  >
     <option v-if="defaultValue != null" :value="''">
       {{ defaultValue }}
     </option>
@@ -27,7 +29,7 @@
       {{option.cdNm}}
     </option>
   </select>
-</span>
+  </div>
 </template>
 
 <script>
@@ -84,6 +86,10 @@ export default {
 </script>
 
 <style scoped>
+.div_style{
+  width: 100%;
+  height: 100%;
+}
 select {
   font-size: 12pt;
   color: #343434;
