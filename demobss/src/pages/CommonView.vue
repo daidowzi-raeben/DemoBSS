@@ -62,7 +62,7 @@
         :width="250"
         :cdGroup="'optionsSearchDiv'"
         :defaultValue="'선택'"
-        :defaultNum="3"
+        :defaultcdId="'05'"
         v-model="selectBox4"
         @input="
           (value) => {
@@ -382,19 +382,19 @@
       <div>
         <table style="border:1px solid" >
           <tr>
-            <th > <h1> &nbsp;우편번호 </h1> </th>
+            <th> <label-component :labelNm="'우편번호'" /> </th>
             <td> <input-component :inputClass="'class5_short1'" :value="postCodeObj.zipNo" /> </td>
           </tr>
           <tr>
-            <th > <h1> 도로명주소</h1> </th>
+            <th> <label-component :labelNm="'도로명주소'" /> </th>
             <td> <input-component :inputClass="'class5_long1'" :value="postCodeObj.roadAddr" /> </td>
           </tr>
           <tr>
-            <th > <h1> &nbsp;지번주소  </h1> </th>
+            <th> <label-component :labelNm="'지번주소'" />   </th>
             <td> <input-component :inputClass="'class5_long1'" :value="postCodeObj.jibunAddr" /> </td>
           </tr>
           <tr>
-            <th > <h1> &nbsp;상세주소</h1> </th>
+            <th> <label-component :labelNm="'상세주소'" /> </th>
             <td> <input-component :inputClass="'class5_long1'" :value="postCodeObj.detailPostAddress" /> </td>
           </tr>
         </table>
@@ -617,6 +617,8 @@ import PostCodeComponent from "@/components/common/PostCodeComponent";
 import ApiMixin from "@/service/common.js";
 import TreeView from "@/components/common/Tree/TreeView";
 import InputComponent from '@/components/common/InputComponent.vue';
+import LabelComponent from '@/components/common/LabelComponent.vue';
+
 
 export default {
   mixins:[ApiMixin],
@@ -653,6 +655,7 @@ export default {
     RadioComponent,
     linkComponent,
     InputComponent,
+    LabelComponent
   },
   data() {
     return {

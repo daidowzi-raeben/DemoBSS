@@ -176,11 +176,8 @@ export default {
 <style scoped>
 .cus360View{
   display: grid;
-  /* grid-template-columns: 55% 55% 1fr; */
   grid-template-columns: 780px 780px 1fr;
   grid-template-rows: 40px 150px 300px 70px  minmax(140px,1fr);
-  /* 10% 97px  */
-  /* grid-template-rows: 10% 20% 30% 10% 15% 10% minmax(200px,1fr); */
   gap: 20px 30px;
 }
 .cus360View > .item:nth-child(1){
@@ -228,11 +225,7 @@ export default {
   height:20px;
   width:100%;
 }
-/* .product_box_butt{
-  padding:5px 0;
-  width: 30%;
-  float: right;
-} */
+
 .product_box_sel{
   border:1px solid #e4e4e4;
   padding-left: 10px;
