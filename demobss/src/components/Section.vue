@@ -72,12 +72,19 @@
           view_wrap: true,
         }"
       >
+        <Suspense>
+          <template #default>
         <component
           v-bind:is="this.compm2[index]"
           v-show="index === this.cur_num"
           :style=" navOn ? '' : 'margin-left:2%;' "
 
         ></component>
+          </template>
+          <template #fallback>
+            <LoadingSpinnerComponent/>
+          </template>
+        </Suspense>
         <popup-component
         v-if="isModalShow"
         :popupOverlay="'maxTabOverlay'"
@@ -99,10 +106,12 @@ import Nav from "./Nav.vue";
 import { defineAsyncComponent, markRaw } from "vue";
 import ButtonComponent from "@/components/common/ButtonComponent.vue";
 import PopupComponent from './common/PopupComponent.vue';
+import LoadingSpinnerComponent from "@/components/common/LoadingSpinnerComponent";
 
 export default {
   name: "Section",
   components: {
+    LoadingSpinnerComponent,
     // TitleArea,
     TitleArea2,
     Nav,
