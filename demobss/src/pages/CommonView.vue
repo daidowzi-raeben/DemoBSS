@@ -66,7 +66,7 @@
           }
         "
       />
-      : {{ searchDiv2 }}
+      : {{ selectBox4 }}
       <br />
       <br />
       <br />
@@ -113,7 +113,7 @@
         href="https://icehaunter.github.io/vue3-datepicker/examples.html"
         style="width: 100%"
         target="_blank"
-        >https://icehaunter.github.io/vue3-datepicker/examples.html
+        > <p> https://icehaunter.github.io/vue3-datepicker/examples.html </p>
       </a>
       <br />
       css : classWrapper *수정*
