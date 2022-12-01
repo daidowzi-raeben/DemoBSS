@@ -167,7 +167,6 @@
 import CustRetvComponent from "@/components/common/CustRetvComponent.vue";
 import SubInfoTitle from "@/components/common/SubInfoTitle.vue";
 import CustInfoComponent from "@/components/common/CustInfoComponent.vue";
-import TreeGridComponent from "@/components/common/TreeGridComponent.vue";
 import FormDataComponent from "@/components/common/FormDataComponent.vue";
 import ApiMixin from "@/service/common";
 import FormDataPopupComponent from "@/components/common/FormDataPopupComponent.vue";
@@ -180,7 +179,6 @@ export default {
   mixins:[ApiMixin],
   name: "ContMgt",
   components: {
-    TreeGridComponent,
     BlcComponent,
     CustInfoComponent,
     CustRetvComponent,

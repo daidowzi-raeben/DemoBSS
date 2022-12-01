@@ -5,37 +5,13 @@
       <tr>
         <th>파일유형</th><th>등록일시</th><th>파일</th><th>비고</th>
       </tr>
-      <tr>
-        <td class="t1">파일명</td><td class="t2">2021-07-12 00:00:00</td>
+      <tr v-for="(item,idx) in dummy" :key="idx">
+        <td class="t1">{{item.type}}</td><td class="t2">{{item.date}}</td>
         <td class="t3">
-          파일.pdf
+          {{item.file}}
         </td>
         <td class="t1">
-        </td>
-      </tr>
-      <tr>
-        <td class="t1">파일명</td><td class="t2">2021-07-12 00:00:00</td>
-        <td class="t3">
-          파일.pdf
-        </td>
-        <td class="t1">
-        </td>
-      </tr>
-      <tr>
-        <td class="t1">파일명</td><td class="t2">2021-07-12 00:00:00</td>
-        <td class="t3">
-          파일.pdf
-        </td>
-        <td class="t1">
-        </td>
-      </tr>
-      <tr>
-        <td class="t1">파일명</td><td class="t2">2021-07-12 00:00:00</td>
-        <td class="t3">
-          파일.pdf
-        </td>
-        <td class="t1">
-
+          {{item.atc}}
         </td>
       </tr>
     </table>
@@ -47,7 +23,12 @@ export default {
   name: "AtcListComponent",
   data(){
     return{
-
+      dummy:[
+        {type:"파일명",date:"2021-07-12 00:00:00", file:"파일.pdf",atc:"비고"},
+        {type:"파일명",date:"2021-07-12 00:00:00", file:"파일.pdf",atc:"비고"},
+        {type:"파일명",date:"2021-07-12 00:00:00", file:"파일.pdf",atc:"비고"},
+        {type:"파일명",date:"2021-07-12 00:00:00", file:"파일.pdf",atc:"비고"}
+      ]
     }
   },
   props:{

@@ -23,7 +23,10 @@ export default {
       type: String,
       default: 'Type here',
     },
-    value: {},
+    value: {
+      type:String,
+      default:null,
+    },
     maxlength: {
       type: Number,
       default: 11,
@@ -57,6 +60,9 @@ export default {
       default: 18,
     },
   },
+  created() {
+    this.inputValue = '';
+  },
   watch: {
     inputValue(value) {
       this.$emit('input', value);
@@ -64,7 +70,7 @@ export default {
     },
   },
   mounted() {
-    this.inputValue = this.value;
+    if(this.value!==null) this.inputValue = this.value;
     this.handleCloseBtn(this.inputValue);
     this.unActive = this.inputValue === '';
   },

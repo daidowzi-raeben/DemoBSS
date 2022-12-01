@@ -1,5 +1,4 @@
 <template>
-
   <div class="container">
     <h1 style="font-size: 30px">select box</h1>
     <div class="commondiv0">
@@ -518,6 +517,13 @@
     </div>
     <br /><br /><br />
 
+    <h1 style="font-size: 30px">LodingSpinnerComponent</h1>
+    <span></span>
+    <div class="commondiv1"  >
+      <LoadingSpinnerComponent />
+    </div>
+    <br /><br /><br />
+
     <h1 style="font-size: 30px">BlcComponent</h1>
     <span></span>
     <div class="commondiv2">
@@ -535,7 +541,7 @@
     <h1 style="font-size: 30px">TreeComponent</h1>
     <span></span>
     <div class="commondiv2">
-<!--      <TreeGridComponent :tableData="tableData" :columns="columns" />-->
+
       <msf-tree :source="contentTree"
                 :activeItem="activeItemObj"
                 :selectedList="selectedItemList"
@@ -640,7 +646,6 @@ import CustInfoComponent from "@/components/common/CustInfoComponent";
 import CustRetvComponent from "@/components/common/CustRetvComponent";
 import BlcComponent from "@/components/common/BlcComponent";
 import FormDataComponent from "@/components/common/FormDataComponent.vue";
-import TreeGridComponent from "@/components/common/TreeGridComponent";
 import FormDataPopupComponent from '../components/common/FormDataPopupComponent.vue';
 import RangeComponent from "../components/common/RangeComponent.vue"
 import ChkBoxComponent from '../components/common/ChkBoxComponent.vue';
@@ -660,12 +665,13 @@ import ApiMixin from "@/service/common.js";
 import msfTree from "@/components/common/Tree/msf-tree";
 import InputComponent from '@/components/common/InputComponent.vue';
 import LabelComponent from '@/components/common/LabelComponent.vue';
-
+import LoadingSpinnerComponent from "@/components/common/LoadingSpinnerComponent";
 
 export default {
   mixins:[ApiMixin],
   name: "CommonView",
   components: {
+    LoadingSpinnerComponent,
     msfTree,
     PostCodeComponent,
     TabComponent,
@@ -676,7 +682,6 @@ export default {
     FloatingLabelsComponent_2,
     FloatingLabelsComponent,
     ValdtnComponent,
-    TreeGridComponent,
     PagingArea,
     FileInputComponent,
     DatePickerComponent,
