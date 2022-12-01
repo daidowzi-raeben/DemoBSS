@@ -5,8 +5,8 @@
     <tr>
       <th>파일유형</th><th>필수여부</th><th>파일</th><th>비고</th>
     </tr>
-    <tr>
-      <td class="t1">파일명</td><td class="t1">필수</td>
+    <tr v-for="(item,idx) in dummy" :key="idx">
+      <td class="t1">{{item.type}}</td><td class="t1">{{item.required}}</td>
       <td class="t2">
         <file-input-component
             :is-multiple=false
@@ -18,80 +18,11 @@
             :height="20"
             :width="250"
             :input-class="'class1'"
-            v-model="searchValue"
+            v-model="atcValue"
             :placeholder="'비고 입력'"
             @input="
           (value) => {
-            searchValue = value;
-          }
-        "
-        />
-      </td>
-    </tr>
-    <tr>
-      <td class="t1">파일명</td><td class="t1">필수</td>
-      <td class="t2">
-        <file-input-component
-            :is-multiple=false
-        />
-      </td>
-      <td class="t3">
-        <input-component
-            :type="'text'"
-            :height="20"
-            :width="250"
-            :input-class="'class1'"
-            v-model="searchValue"
-            :placeholder="'비고 입력'"
-            @input="
-          (value) => {
-            searchValue = value;
-          }
-        "
-        />
-      </td>
-    </tr>
-    <tr>
-      <td class="t1">파일명</td><td class="t1">필수</td>
-      <td class="t2">
-        <file-input-component
-            :is-multiple=false
-        />
-      </td>
-      <td class="t3">
-        <input-component
-            :type="'text'"
-            :height="20"
-            :width="250"
-            :input-class="'class1'"
-            v-model="searchValue"
-            :placeholder="'비고 입력'"
-            @input="
-          (value) => {
-            searchValue = value;
-          }
-        "
-        />
-      </td>
-    </tr>
-    <tr>
-      <td class="t1">파일명</td><td class="t1">필수</td>
-      <td class="t2">
-        <file-input-component
-            :is-multiple=false
-        />
-      </td>
-      <td class="t3">
-        <input-component
-            :type="'text'"
-            :height="20"
-            :width="250"
-            :input-class="'class1'"
-            v-model="searchValue"
-            :placeholder="'비고 입력'"
-            @input="
-          (value) => {
-            searchValue = value;
+            atcValue = value;
           }
         "
         />
@@ -113,7 +44,13 @@ export default {
   },
   data(){
     return{
-
+      dummy:[
+        {type:"파일명", required:"필수"},
+        {type:"파일명", required:"필수"},
+        {type:"파일명", required:"필수"},
+        {type:"파일명", required:"필수"},
+      ],
+      atcValue:null,
     }
   },
   props:{
