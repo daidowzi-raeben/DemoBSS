@@ -56,6 +56,14 @@ export default {
       // console.log(val);
       this.$emit("currentPage", val); //현재 페이지! 부모에 전달
     },
+    pageableData:{
+      deep:true,
+      handler(){
+        this.totalPages = this.pageableData.totalPages;
+        this.setPageableData(this.pageableData);
+        // console.log("paging watch 성공")
+      }
+    }
   },
   methods: {
     setPage(page) {
@@ -63,6 +71,7 @@ export default {
     },
     //목록 페이징 세팅
     setPageableData(data) {
+      this.resetPageableData();
       this.totalPages = data.totalPages;
       if (this.totalPages <= this.pageSize)
         this.currentMaxPage = data.totalPages;
