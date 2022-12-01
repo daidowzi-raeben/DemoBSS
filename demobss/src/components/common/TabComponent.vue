@@ -168,7 +168,9 @@ div.taboff {
   color: black;
   border-radius: 5px 5px 0 0;
 }
-
+div.taboff:hover {
+  background-color: rgb(204,228,250);
+}
 .menu_tab_line {
   height: 25px;
   width: 100%;
@@ -189,12 +191,18 @@ div.taboff {
   width: 15px;
   text-align: right;
 }
+.menu_tab > span.tab_x_off:hover{
+  color: white;
+}
 .menu_tab > span.tab_x_on {
   color: white;
   font-size: 15px;
   float: right;
   width: 15px;
   text-align: right;
+}
+.menu_tab > span.tab_x_on:hover {
+  color: black;
 }
 .menu_tab > span#tab_nm {
   display: block;
