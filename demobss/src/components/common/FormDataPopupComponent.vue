@@ -7,11 +7,6 @@
     <transition appear>
       <div class="formDataPopupFrame" v-if="reqtype=='1'">
         <h1 >{{ PopupTitleMsg }}
-        <ButtonComponent 
-        @click="GetOutputFormData" 
-        :btnClass="'btnclass2'" 
-        :btnName="'데이터 출력'" 
-        style="width:100px; float:right;"/>
         </h1> 
         <!-- 팝업 메세지 내용 -->
         <article>
@@ -58,7 +53,7 @@
     <transition appear>
       <div class="formDataPopupFrame" v-if="reqtype=='2'">
         <h1>{{ PopupTitleMsg }} 
-          <ButtonComponent @click="GetSubmitFormData" :btnClass="'btnclass2'" :btnName="'입력 형식 출력'" style=" float:right;"/>
+          <!-- <ButtonComponent @click="GetSubmitFormData" :btnClass="'btnclass2'" :btnName="'입력 형식 출력'" style=" float:right;"/> -->
         </h1>
         <!-- 팝업 메세지 내용 -->
         <article>
@@ -157,11 +152,6 @@
         </article>
       </div>
     </transition>
-
-
-
-
-
     </div>
     <!-- end : popup영역 -->
   </div>
@@ -254,7 +244,6 @@ export default {
   position: fixed;
   right: 0;
   top: 0;
-  /* visibility: hidden; */
   z-index: 6;
   transition: opacity 0.5s;
 }
@@ -266,11 +255,9 @@ export default {
   border: 1px solid #656565;
   display: grid;
   left: 50%;
-  /* opacity: 0; */
   padding: 26px;
   position: fixed;
   top: 50%;
-  /* visibility: hidden; */
   z-index: 100;
   transform: translate(-50%, -50%);
   transition: opacity 0.5s, top 0.5s;
@@ -337,7 +324,6 @@ export default {
 }
 
 .button_04 {
-  /* font-family: 맑은 고딕; */
   display: inline-block;
   color: #fff;
   padding: 0 25px 2px 25px;
@@ -352,7 +338,6 @@ export default {
 }
 
 .button_05 {
-  /* font-family: 맑은 고딕; */
   display: inline-block;
   color: #fff;
   padding: 0 25px 2px 25px;

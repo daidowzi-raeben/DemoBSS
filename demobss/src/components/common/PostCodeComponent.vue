@@ -5,8 +5,7 @@
     <transition appear>
       <div class="formDataPopupFrame" >
         <h1>{{ PopupTitleMsg }} </h1>
-        <!-- 팝업 메세지 내용 -->
-        <article>
+        <article> <!-- 팝업 메세지 내용 -->
           <div class="formDataBind" >
             <label-component :labelNm="'주소 검색 : '" />
             <input-component
@@ -23,8 +22,8 @@
             :btnHeight="'30px'"
             @click="getPostData()"
             />
-            <form>
-              <table v-if="currentPostCodeData.length>0">
+            <form v-if="postCodeNums>0" >
+              <table >
                 <tr>
                   <th style="width:5%;"> <label-component :labelNm="'우편번호'" :labelClass="'class1'"/> </th>
                   <th style="width:35%;"><label-component :labelNm="'도로명주소  '" :labelClass="'class1'"/> </th>
@@ -53,7 +52,6 @@
               <paging-area 
               class="pcPagingArea"
               ref="PagingArea"
-              v-show="postCodeNums>0"
               :pageableData="pageableData"
               :pageSize="5"
               style="padding:0;"
@@ -62,7 +60,6 @@
               </div><div>
               <select-box-component
               class="pcSelectBox"
-              v-show="postCodeNums>0"
               :selectClass="'select_input3'"
               :cdGroup="'optionSearchNum'"
               :defaultValue="'선택'"
@@ -75,24 +72,16 @@
               </div>
             </div>
             </form>
+
+            <form v-else-if="searchBtnClicked>0">
+              <table> <tr> <th> <p>검색 결과가 없습니다.</p>  </th> </tr> </table>
+            </form>
           </div>
-          <!-- 확인/취소 영역 -->
-          <div class="btn_area" >
+          <div class="btn_area" > <!-- 확인/취소 영역 -->
             <div> {{popupmsg}} </div>  <!-- 팝업 메세지 -->
-            
-            <button
-              type="button"
-              class="button_05"
-              @click="[$emit('FormPopup', true), $emit('AGREE')]"  
-            >확인 
-            </button> <!-- 확인을 누르면, emit으로 formpopup이라는 변수에다가 true라는 값을 전달하며, agree라는 함수도 호출 -->
-            &nbsp;&nbsp;
-            <button
-              type="button"
-              class="button_04"
-              @click="$emit('FormPopup')"
-            >취소
-            </button>
+            <button type="button" class="button_05"  @click="[$emit('FormPopup', true), $emit('AGREE')]" >확인 </button> <!-- 확인을 누르면, emit으로 formpopup이라는 변수에다가 true라는 값을 전달하며, agree라는 함수도 호출 -->
+            &nbsp;&nbsp; 
+            <button type="button" class="button_04" @click="$emit('FormPopup')" >취소 </button>
           </div>
         </article>
       </div>
@@ -131,9 +120,11 @@ export default {
         totalPages: 0,
         },
       currentPostCodeData:[],
-    };
+      searchBtnClicked :0,
+      };
   },
   props: {
+    isSearchPostCodeNull: Boolean,
     reqtype  : String,
     popupmsg : String,
     PopupTitleMsg : {
@@ -150,36 +141,34 @@ export default {
   },
   },
   watch:{
-    currentPage(newData, oldData){
-      this.currentPostCodeData = this.postCodeSearchData.slice((newData-1)*this.postCodeShowNum , ((newData-1)*this.postCodeShowNum)+this.postCodeShowNum)
-      },
+    currentPage(newData){
+      let startIndex = (newData-1)*this.postCodeShowNum;
+      let endIndex = startIndex+this.postCodeShowNum;
+      this.currentPostCodeData = this.postCodeSearchData.slice( startIndex, endIndex)
+      }, 
     postCodeShowNum(newOne, oldOne){
-      // console.log("postCodeShowNum:", this.postCodeShowNum,"\n newOne" ,newOne, "\n oldOne" ,oldOne );
       if(newOne != oldOne){
         this.postCodeShowNum = newOne; 
         this.$refs.PagingArea.resetPageableData();
         this.CalcPostCodeData();
-        }
+      }
     }
-  },
-  beforeMount(){
   },
   methods:{
     async getPostData(){
-      // console.log('주소 검색 데이터 Get')
       this.postCodeSearchData=[]
-      await this.axios.get('/postCodeEx.json').then((response) => {
+      await this.axios.get('/postCodeEx.json')
+      .then((response) => {
         this.postCodeSearchData = response.data.results.juso;
-        this.CalcPostCodeData();
+        this.postCodeNums = this.postCodeSearchData.length;
+        this.postCodeNums > 0 ? this.CalcPostCodeData() : this.searchBtnClicked +=1 ;
       })
+      .catch( (error) => {console.log(error); this.searchBtnClicked +=1; })
     },
     CalcPostCodeData(){
-      this.postCodeNums = this.postCodeSearchData.length;     // 주소 개수
-      if (this.postCodeNums >0){
         this.currentPage =1;
         this.pageableData.totalPages=1; 
         this.currentPostCodeData = this.postCodeSearchData.slice(0,this.postCodeShowNum);
-        }else{ return false }
       if(this.postCodeNums > this.postCodeShowNum) {
         this.pageableData.totalPages = parseInt(this.postCodeNums/this.postCodeShowNum)
         if(this.postCodeNums%this.postCodeShowNum > 0) this.pageableData.totalPages +=1
@@ -189,14 +178,6 @@ export default {
     selectPostCode(postCode, detailPostAddress){     
       this.$emit('selectedJusoData',postCode,detailPostAddress);
     },
-    // resetPageableData(){
-    //   this.pageableData.pageNumber= 1;
-    //   this.pageableData.totalPages= 1;
-    //   this.pageableData.currentMinPage= 1;
-    //   this.pageableData.currentMaxPage= this.postCodeShowNum;
-    // }
-  },
-  computed(){
   },
 }
 </script>
@@ -211,12 +192,9 @@ export default {
   position: fixed;
   right: 0;
   top: 0;
-  /* visibility: hidden; */
   z-index: 6;
   transition: opacity 0.5s;
 }
-
-
 .formDataPopupFrame {
   width: v-bind('formDataPopupFrameWidth');
   height:auto;
@@ -231,7 +209,6 @@ export default {
   transform: translate(-50%, -50%);
   transition: opacity 0.5s, top 0.5s;
 }
-
 .formDataPopupFrame > h1 {
   text-align: center;
   font-size: 18px;
@@ -240,9 +217,6 @@ export default {
   border-bottom: #e4e4e4 solid 2px;
   margin-bottom: 20px;
 }
-
-
-
 .formDataPopupFrame > article {
   padding: 0 15px;
 }
@@ -277,7 +251,6 @@ export default {
 }
 
 .button_04 {
-  /* font-family: 맑은 고딕; */
   display: inline-block;
   color: #fff;
   padding: 0 25px 2px 25px;

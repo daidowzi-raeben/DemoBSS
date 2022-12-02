@@ -117,15 +117,13 @@ export default {
   border: 1px solid #656565;
   display: inline-block;
   left: 50%;
-  /* opacity: 0; */
   padding: 25px;
   position: fixed;
   top: 50%;
-  /* visibility: hidden; */
-  z-index: 100;
   width: 400px;
   transform: translate(-50%, -50%);
   transition: opacity 0.5s, top 0.5s;
+  z-index: 100;
 }
 
 .popup360 > h1 {
