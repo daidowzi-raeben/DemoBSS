@@ -21,10 +21,8 @@
       <ul id="depth2_list">
         <li v-for="(menu2, idx) in menuDepth2" :key="idx" :value="menu2.menuId">
           <div id="depth2" @click="setMenu2(menu2.menuId)"  :style="[ selectedMenuId == menu2.menuId  ? { 'color': 'rgb(27,114,212)' } : '']" >
-            <span v-if="selectedMenuId == menu2.menuId">
-              <img src="../img/menu_type_1.png" />
-            </span>
-            <span v-else><img src="../img/menu_type_3.png" /></span>
+            <span v-if="selectedMenuId == menu2.menuId"> <img :src="menuIcon1" /></span>
+            <span v-else><img :src="menuIcon3" /></span>
             {{ menu2.menuNm }}
           </div>
           <ul id="depth3_list" v-if="selectedMenuId == menu2.menuId">
@@ -41,7 +39,18 @@
         </li>
       </ul>
     </div>
-    <div class="area" v-else></div>
+    <div class="area" v-else>
+      <div id="navTitle">즐겨찾기</div>
+      <ul id="depth2_list">
+        <li v-for="staredMenu in staredNavMenu" :key="staredMenu" :value="staredMenu" >{{staredMenu}}</li>
+        <!-- <li v-for="(menu2, idx) in menuDepth2" :key="idx" :value="menu2.menuId">
+          <div id="depth2" @click="setMenu2(menu2.menuId)"  :style="[ selectedMenuId == menu2.menuId  ? { 'color': 'rgb(27,114,212)' } : '']" >
+            <span v-if="selectedMenuId == menu2.menuId"> <img :src="menuIcon1" /></span>
+            <span v-else><img :src="menuIcon3" /></span>
+            {{ menu2.menuNm }}
+          </div> -->
+      </ul>
+    </div>
   </div>
 
 </template>
@@ -100,7 +109,7 @@ export default {
       else this.selectedMenuId = val;
     },
     setCmpn(val) {
-      // console.log(val);
+      console.log(val);
       this.$emit('input',val);
     },
   },
