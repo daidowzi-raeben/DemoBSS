@@ -456,6 +456,7 @@
       :reqtype="'searchPostCode'"
       ref="PostCodeComponent"
       v-if="isPostCodeModalShow"
+      :btnClicked ="0"
       />
       <br /><br /><br />
     </div>
