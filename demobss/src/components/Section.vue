@@ -88,7 +88,7 @@
         <popup-component
         v-if="isModalShow"
         :popupOverlay="'maxTabOverlay'"
-        @popup="isModalShow = false"
+        @MaxTaNumnPopup="isModalShow = false"
         @AGREE = "''"
         :popupmsg="'10개를 초과하는 화면을 열 수 없습니다.'"
         />
@@ -157,7 +157,7 @@ export default {
     },
   },
   methods: {
-    popup(){
+    MaxTabNumPopup(){
       if (this.isModalShow == false) this.isModalShow = true
       else this.isModalShow = false
     },
@@ -186,7 +186,7 @@ export default {
       this.cur_num = index;
     },
     AllDeleteComponent() {
-      var component_length = this.compm.length;
+      let component_length = this.compm.length;
       this.compm.splice(1, component_length - 1);
       this.compm2.splice(1, component_length - 1);
       this.cur_num = 0;
@@ -204,33 +204,29 @@ export default {
       }
     },
     async AddComponent(param) {
-      // console.log(param);
-      if(await param.cmpnId === "Login") this.$router.push("/login")
-      else{
-      if (param.menuId != "" && param.menuId != null) {
-        const st = this.compm.find(
-          (element) => element.menuId === param.menuId
-        );
-        if (st != null) {
-          var i = this.compm.indexOf(st);
-          this.cur_num = i;
-        } else {
-          if (this.compm.length < 10) {
-            this.compm.push(param);
-            this.cur_num = this.compm.length - 1;
-            this.component = markRaw(
-              defineAsyncComponent(() =>
-                import("../pages/" + this.compm[this.cur_num].cmpnId + ".vue")
-              )
-            );
-            this.compm2.push(this.component);
-            // console.log(this.component);
-          } else {
-            this.popup();
-          }
+      if(await param.cmpnId === "Login") 
+      {this.$router.push("/login")
+      }else{
+        if (param.menuId != "" && param.menuId != null) {
+          const st = this.compm.find( (element) => element.menuId === param.menuId);
+          if (st != null) {
+            let i = this.compm.indexOf(st);
+            this.cur_num = i;
+            } else {
+              if (this.compm.length < 10) {
+                this.compm.push(param);
+                this.cur_num = this.compm.length - 1;
+                this.component = markRaw(
+                  defineAsyncComponent(() =>
+                  import(`../pages/${this.compm[this.cur_num].cmpnId}.vue`))
+                  );
+                this.compm2.push(this.component);
+                } else { this.MaxTabNumPopup();
+                }
+              }
         }
       }
-    }}
+    }
   },
 };
 </script>

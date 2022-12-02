@@ -109,16 +109,11 @@ export default {
   background: linear-gradient( to bottom, #ffffff, rgb(240, 240, 240) );
   border: 0.5px solid #dbdbdb;
   border-radius: 3px;
-  /* box-shadow: 2px 2px 2px #dbdbdb; */
 }
 .btnClass5:hover {
-  /* background-color: #70707077; */
-  /* background-color: rgb(28, 113, 209); */
   color: grey;
 }
 .btnClass5:focus {
-  /* background-color: #70707077; */
-  /* background-color: rgb(28, 113, 209); */
   color: grey;
   -webkit-transform: scale(0.98);
   transform: scale(0.98);

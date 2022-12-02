@@ -44,7 +44,6 @@ export default {
   display: flex;
   align-items: center;
 }
-
 .icon {
   height: 25px;
   width: 25px;
@@ -52,38 +51,14 @@ export default {
   margin-right: 8px;
   cursor: pointer;
 }
-
 .title_area h1 {
   margin-bottom: 20px;
   display: inline-block;
   color: #949494;
 }
-
 .title_area label {
   color: #000;
   font-size: 18pt;
   font-weight: bold;
 }
-/* 
-.title_area > .right {
-  float: right;
-  margin: 0 15px;
-}
-
- .title_area > .right .home_menu {
-  float: left;
-  padding: 5px;
-  margin-right: 10px;
-  background-color: #707070;
-  color: #aeaeae;
-  cursor: pointer;
-}
-
- .title_area > .right .view_reset {
-  float: right;
-  padding: 5px;
-  background-color: #707070;
-  color: #aeaeae;
-  cursor: pointer;
-} */
 </style>
