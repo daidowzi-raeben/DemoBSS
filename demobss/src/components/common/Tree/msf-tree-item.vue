@@ -21,7 +21,7 @@
               tree_label1: depth === 0,
               tree_label2: depth !== 0
             }"
-            style="margin-bottom:60px;">{{ label }} &nbsp;<div v-show="depth===0 & chk1 " style="margin-right:2px;font-size:8pt; text-align:center; align-items:center;width: 30px;height: 13px;padding-bottom: 4px; background-color: rgb(155,68,221);color:white">대표</div></div>
+            >{{ label }} &nbsp;<div v-show="depth===0 & chk1 " style="margin-right:2px;font-size:8pt; text-align:center; align-items:center;width: 30px;height: 13px;padding-bottom: 4px; background-color: rgb(155,68,221);color:white">대표</div></div>
     </div>
     <div >
 <!--      <div v-show="chk1" class="tree_state1"/>-->
