@@ -377,11 +377,6 @@ div.layout {
   height:20px;
   width:100%;
 }
-/* .product_box_butt{
-  padding:5px 0;
-  width: 30%;
-  float: right;
-} */
 .product_box_sel{
   border:1px solid #e4e4e4;
   padding-left: 10px;

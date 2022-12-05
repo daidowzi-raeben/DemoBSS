@@ -68,6 +68,12 @@
       "cmpnId": ""
     },
     {
+      "menuId": "L01M05S03",
+      "menuNm": "청약 리스트",
+      "upMenuId": "L01M05S00",
+      "cmpnId": "SubsList"
+    },
+    {
       "menuId": "L01M06S00",
       "menuNm": "청약관리",
       "upMenuId": "L01",

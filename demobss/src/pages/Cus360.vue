@@ -129,7 +129,6 @@
 import CustRetvComponent from '@/components/common/CustRetvComponent.vue'
 import FormDataComponent from '@/components/common/FormDataComponent.vue'
 import ButtonComponent from "@/components/common/ButtonComponent";
-import CustInfoComponent from "@/components/common/CustInfoComponent";
 import SelectBoxComponent from "@/components/common/SelectBoxComponent";
 import InputComponent from "@/components/common/InputComponent";
 import msfTree from "@/components/common/Tree/msf-tree";
