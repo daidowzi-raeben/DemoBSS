@@ -1,6 +1,8 @@
 <template>
   <div class="title_area" :style=" !this.navOn ? 'margin-left:1.3%;':''" >
-    <label class="icon"> </label>    <!-- 클릭 시, 즐겨찾기 method 적용해야함 -->
+    <label 
+    :class="[ stateOfBookMark ? 'bookMarkIcon' : 'icon']"
+    @click="clickBookMark()" /> 
     <label style="display:inline-block;"> {{ currentMenu.menuNm }} </label>
   </div>
 </template>
@@ -8,32 +10,43 @@
 <script>
 import ButtonComponent from "./ButtonComponent.vue";
 import menu from "../../../public/menu.json";
+import {mapMutations, mapState} from 'vuex';
 
 export default {
   components: { ButtonComponent },
   name: "TitleArea",
   data() {
     return {
-      menuDepth1: {},
       menuDepth2: {},
     };
   },
   props: {
     currentMenu: Object,
+    stateOfBookMark : Boolean,
   },
-  created() {},
   watch: {
     currentMenu() {
       this.menuDepth2 = menu.menu.filter((menu) => {
-        return menu.menuId == this.currentMenu.upMenuId;
-      })[0];
-    },
+        return menu.menuId == this.currentMenu.upMenuId;})[0];
+    }
   },
-  methods: {},
+  methods: {
+    ...mapMutations(['addBookMark','delBookMark']),
+    clickBookMark(){
+      if (this.stateOfBookMark) { 
+        this.delBookMark(this.currentMenu.menuNm); 
+        this.$emit("stateOfBookMark",false);
+      }else{ 
+        this.addBookMark(this.currentMenu.menuNm);
+        this.$emit("stateOfBookMark",true);
+        }
+    }
+  },
   computed:{
     navOn() {
       return this.$store.state.navOn;
-    },}
+    }
+  }
 };
 </script>
 
@@ -43,6 +56,13 @@ export default {
   margin: 10px 0 15px 0;
   display: flex;
   align-items: center;
+}
+.bookMarkIcon {
+  height: 25px;
+  width: 25px;
+  content: url(../../img/bookmarkedstar.png);
+  margin-right: 8px;
+  cursor: pointer;
 }
 .icon {
   height: 25px;

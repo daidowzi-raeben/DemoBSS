@@ -1,6 +1,8 @@
 <template>
   <section>
-    <Nav v-show="navOn" @input="AddComponent" />
+    <Nav 
+    v-show="navOn" 
+    @input="AddComponent" />
     <div class="wrap">
       <div class="menu_tab_line">
         <div
@@ -61,7 +63,11 @@
           }"
           class="content">
       <!-- <title-area :currentMenu="currentMenu" :style=" !this.navOn ? 'margin-left:10%; width:82%;':'' "/> -->
-      <title-area2 :currentMenu="currentMenu"/>
+      <title-area2 
+      :currentMenu="currentMenu"
+      :stateOfBookMark="bookMark.indexOf(currentMenu.menuNm) > -1  ?  true : false"
+      @stateOfBookMark="stateOfBookMark = value"
+      />
 
       <div
         v-for="(item, index) in compm2"
@@ -107,6 +113,7 @@ import { defineAsyncComponent, markRaw } from "vue";
 import ButtonComponent from "@/components/common/ButtonComponent.vue";
 import PopupComponent from './common/PopupComponent.vue';
 import LoadingSpinnerComponent from "@/components/common/LoadingSpinnerComponent";
+import {mapState} from 'vuex';
 
 export default {
   name: "Section",
@@ -130,6 +137,7 @@ export default {
           upMenuId: "L01M01",
         },
       ],
+      stateOfBookMark:'',
       compm2: [],
       component: markRaw(
           defineAsyncComponent(() => import("../pages/Cus360.vue"))
@@ -149,6 +157,7 @@ export default {
     this.compm2.push(this.component);
   },
   computed: {
+    ...mapState(["bookMark"]),
     navOn() {
       return this.$store.state.navOn;
     },
