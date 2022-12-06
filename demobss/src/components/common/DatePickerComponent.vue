@@ -1,7 +1,7 @@
 <template>
   <datepicker
+    style="background-color:white;"
     v-model="date"
-    :style="{ width: width + 'px' }"
     :class="classWrapper"
     :locale="lang"
     :minimumView="type"
@@ -49,7 +49,14 @@ export default {
   },
   props: {
     pDate: null,
-    width: Number,
+    width:{
+      type:String,
+      default:'140px'
+    },
+    height:{
+      type:String,
+      default:'34px'
+    },
     classWrapper: null,
     type: {
       //일력 월력 시분
@@ -104,10 +111,12 @@ export default {
 <style>
 .calender_input {
   box-sizing: border-box;
-  min-width: 130px;
+  /* min-width: 130px; */
+  width: v-bind('width');
+  height: v-bind('height');
+  background-color: white;
   border: #b6b6b6 solid 1px;
   font-size: 12px;
-  height: 34px;
   color: #494949;
   padding: 0 22px 0 9px;
   background: url(../../img/icon_form_calender.png) no-repeat;
