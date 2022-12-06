@@ -86,9 +86,8 @@ export default {
     total:null,
   },
   methods:{
-  
-
-},
+    
+  },
 }
 </script>
 

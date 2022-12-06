@@ -17,7 +17,7 @@
       :btnName1="'일괄정지 신청'"
       :btnName2="'숨김해제'"
       :btnName3="'엑셀 다운로드'"
-      :agGirdHeight="'50%'"
+      :agGirdHeight="'70%'"
     />  
   </div>
 
@@ -72,7 +72,6 @@ export default {
   grid-column: 1;
   grid-row: 2;
   height: 900px;
-  /* background-color: rgb(154, 145, 210); */
 }
 
 </style>
