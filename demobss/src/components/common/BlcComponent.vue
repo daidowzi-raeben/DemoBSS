@@ -1,14 +1,13 @@
 <template>
   <div style="width: 100%">
   <SubInfoTitle :subInfoTitleNm="subInfoTitleNm"/>
-    (<label style="font-weight: bold">{{total}}</label>건)
     <span style="float: right">
   <ButtonComponent
       :btnClass="'btnClass3'"
       :btnName="btnName"
       />
     </span>
-    <span style="float: right">
+    <span style="float: right" v-show="selectBoxShow">
     <select-box-component
         :selectClass="'select_input3'"
         :cdGroup="cdGroup"
@@ -18,7 +17,6 @@
         width: 120px;
         height: 26px;
         margin-right: 15px;"
-        v-show="selectBoxShow"
         @input="
           (value) => {
             month = value;
@@ -27,8 +25,17 @@
     />
       </span>
   </div>
-  <div class="ag-grid_sp">
+  <div class="ag-grid_sp" v-if="!bill">
     <ag-grid-component
+        :header-color="headerColor"
+        :rowData="this.rowData"
+        :columnDefs="this.columnDefs"
+        :isWidthFit="false"
+    />
+  </div>
+  <div class="ag-grid_sp2" v-if="bill">
+    <ag-grid-component
+        :header-color="headerColor"
         :rowData="this.rowData"
         :columnDefs="this.columnDefs"
         :isWidthFit="false"
@@ -58,6 +65,11 @@ export default {
     }
   },
   props: {
+    headerColor:null,
+    bill:{
+      type:Boolean,
+      default:false,
+    },
     columnDefs:null,
     rowData: null,
     subInfoTitleNm:null,
@@ -77,5 +89,9 @@ export default {
   width: 100%;
   height: 245px;
   border-top: 3px solid rgb(27,114,212);
+}
+.ag-grid_sp2{
+  width: 100%;
+  height: 285px;
 }
 </style>
