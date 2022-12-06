@@ -1,7 +1,7 @@
 <template>
   <div style="width: 100%">
   <SubInfoTitle :subInfoTitleNm="subInfoTitleNm"/>
-    (<label style="font-weight: bold">{{total}}</label>건)
+    <p style="margin-left:5px; display:inline-block;">(총 <label style="font-weight: bold">{{total}}</label>건)</p>
     <span style="float: right">
   <ButtonComponent
       :btnClass="'btnClass3'"
@@ -58,6 +58,10 @@ export default {
     }
   },
   props: {
+    agGirdHeight:{
+      default:"245px",
+      type:String,
+    },
     columnDefs:null,
     rowData: null,
     subInfoTitleNm:null,
@@ -75,7 +79,7 @@ export default {
 .ag-grid_sp{
   /* margin: 10px; */
   width: 100%;
-  height: 245px;
+  height: v-bind('agGirdHeight');
   border-top: 3px solid rgb(27,114,212);
 }
 </style>

@@ -22,6 +22,7 @@
           <ButtonComponent
           :btnClass="'btnClass5'"
           :btnName="'고객정보수정'"
+          :btnWidth="'auto'"
           />
         </div>
       </div>
@@ -275,12 +276,12 @@
 
           <tr style="height:76px;" >
           <td colspan="6" class="infoDataTableButtons">
-            <span> <ButtonComponent :btnClass="'btnClass5'" :btnName="'이력보기'" @click="modalShow"/> </span>
-            <span> <ButtonComponent :btnClass="'btnClass5'" :btnName="'상세조회'"/>   </span>
-            <span> <ButtonComponent :btnClass="'btnClass5'" :btnName="'계약변경'"/>  </span>
-            <span> <ButtonComponent :btnClass="'btnClass5'" :btnName="'명의변경'"/>  </span>
-            <span> <ButtonComponent :btnClass="'btnClass5'" :btnName="'정지/부활'"/>  </span>
-            <span> <ButtonComponent :btnClass="'btnClass5'" :btnName="'해지'" :menu="'bill_01_01_01'" @input="addComp"/></span>
+            <span> <ButtonComponent :btnClass="'btnClass5'" :btnWidth="'auto'" :btnName="'이력보기'" @click="modalShow"/> </span>
+            <span> <ButtonComponent :btnClass="'btnClass5'" :btnWidth="'auto'" :btnName="'상세조회'"/>   </span>
+            <span> <ButtonComponent :btnClass="'btnClass5'" :btnWidth="'auto'" :btnName="'계약변경'"/>  </span>
+            <span> <ButtonComponent :btnClass="'btnClass5'" :btnWidth="'auto'" :btnName="'명의변경'"/>  </span>
+            <span> <ButtonComponent :btnClass="'btnClass5'" :btnWidth="'auto'" :btnName="'정지/부활'"/>  </span>
+            <span> <ButtonComponent :btnClass="'btnClass5'" :btnWidth="'auto'" :btnName="'해지'" :menu="'bill_01_01_01'" @input="addComp"/></span>
           </td>
           </tr>
         </table>
@@ -369,11 +370,11 @@
           </tr>
           <tr>
           <td colspan="8" class="infoDataTableButtons">
-            <span> <ButtonComponent :btnClass="'btnClass5'" :btnName="'상세조회'" @click="modalShow"/> </span>
-            <span> <ButtonComponent :btnClass="'btnClass5'" :btnName="'청구정보수정'"/>   </span>
-            <span> <ButtonComponent :btnClass="'btnClass5'" :btnName="'청구지변경'"/>  </span>
-            <span> <ButtonComponent :btnClass="'btnClass5'" :btnName="'청구분리'"/>  </span>
-            <span> <ButtonComponent :btnClass="'btnClass5'" :btnName="'청구통합'" :menu="'L01M02S02'" @input="addComp"/></span>
+            <span> <ButtonComponent :btnClass="'btnClass5'" :btnWidth="'auto'" :btnName="'상세조회'" @click="modalShow"/> </span>
+            <span> <ButtonComponent :btnClass="'btnClass5'" :btnWidth="'auto'" :btnName="'청구정보수정'"/>   </span>
+            <span> <ButtonComponent :btnClass="'btnClass5'" :btnWidth="'auto'" :btnName="'청구지변경'"/>  </span>
+            <span> <ButtonComponent :btnClass="'btnClass5'" :btnWidth="'auto'" :btnName="'청구분리'"/>  </span>
+            <span> <ButtonComponent :btnClass="'btnClass5'" :btnWidth="'auto'" :btnName="'청구통합'" :menu="'L01M02S02'" @input="addComp"/></span>
           </td>
           </tr>
         </table>

@@ -256,7 +256,7 @@
     <div> <ButtonComponent :btnClass="'btnClass1'" :btnName="'btnClass1'" /></div>
     <div><ButtonComponent :btnClass="'btnclass2'" :btnName="'btnClass2'" /></div>
     <div><ButtonComponent :btnClass="'btnClass3'" :btnName="'btnClass3'"   /></div>
-    <div><ButtonComponent :btnClass="'btnClass4'" :btnName="'btnClass4'" :btnWidth="'90px'" :btnHeight="'20px'"/></div>
+    <div><ButtonComponent :btnClass="'btnClass4'" :btnName="'btnClass4'" :btnFontWeight="'bold'" :btnWidth="'90px'" :btnHeight="'20px'"/></div>
     <div><ButtonComponent :btnClass="'btnClass5'" :btnName="'btnClass5'"   /></div>
     <ButtonComponent :btnClass="'btnLeftImgClass'"/>btnLeftImgClass &nbsp;
     <ButtonComponent :btnClass="'btnRightImgClass'"/> btnRightImgClass&nbsp;
@@ -661,12 +661,12 @@ import AtcListComponent from "@/components/common/AtcListComponent";
 import TextAreaComponent from "@/components/common/TextAreaComponent";
 import {defineAsyncComponent, markRaw} from "vue";
 import TabComponent from "@/components/common/TabComponent";
-import PostCodeComponent from "@/components/common/PostCodeComponent";
 import ApiMixin from "@/service/common.js";
 import msfTree from "@/components/common/Tree/msf-tree";
 import InputComponent from '@/components/common/InputComponent.vue';
 import LabelComponent from '@/components/common/LabelComponent.vue';
 import LoadingSpinnerComponent from "@/components/common/LoadingSpinnerComponent";
+import PostCodeComponent from '@/components/common/PostCodeComponent.vue';
 
 export default {
   mixins:[ApiMixin],
@@ -702,7 +702,7 @@ export default {
     RadioComponent,
     linkComponent,
     InputComponent,
-    LabelComponent
+    LabelComponent,
   },
   data() {
     return {

@@ -64,6 +64,10 @@ export default {
       type:Boolean,
       default:false
     },
+    select_input3_marginLeft:{
+      type:String,
+      default:"10px"
+    }
   },
   beforeMount() {
     this.options = select[this.cdGroup];
@@ -132,7 +136,7 @@ select option:hover{
 }
 
 .select_input3 {
-  margin-left: 10px;
+  margin-left: v-bind(select_input3_marginLeft);
   border: 1px solid #bdbdbd;
   font-size: 10pt;
   height: 100%;

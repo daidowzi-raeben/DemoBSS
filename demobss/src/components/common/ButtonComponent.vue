@@ -24,7 +24,10 @@ export default {
       type: String,
       default: '25px'
     },
-
+    btnFontWeight:{
+      type:String,
+      default:'normal'
+    },
     btnHeight: {
       type: String,
       default: '25px'
@@ -90,7 +93,7 @@ export default {
   height: v-bind('btnHeight');
   font-size: 10pt;
   background-color: rgb(27,114,212);
-  font-weight: bold;
+  font-weight: v-bind('btnFontWeight');
   cursor: pointer;
   color: white;
   border: 0.5px solid #bdbdbd;
@@ -101,11 +104,11 @@ export default {
 
 .btnClass5 {
   height: v-bind('btnHeight');
+  width: v-bind('btnWidth');
   font-size: 9pt;
   color: black;
-  font-weight: normal;
+  font-weight: v-bind('btnFontWeight');
   cursor: pointer;
-  height: 24px;
   background: linear-gradient( to bottom, #ffffff, rgb(240, 240, 240) );
   border: 0.5px solid #dbdbdb;
   border-radius: 3px;

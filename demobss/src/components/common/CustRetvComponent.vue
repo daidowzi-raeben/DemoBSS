@@ -25,6 +25,7 @@
       <span>
         <button-component
           :btn-class="'btnClass4'"
+          :btnFontWeight="'bold'"
           :btn-name ="'검색'"
           :btnHeight="'28px'"
           :btnWidth ="'78px'"

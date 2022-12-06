@@ -10,6 +10,7 @@
 </template>
 
 <script>
+
 export default {
   name: "InputComponent",
   data() {
@@ -57,9 +58,14 @@ export default {
 </script>
 
 <style scoped>
+@font-face {
+  font-family: 'noto-sans-kr';
+  src: url('../../../public/fonts/NotoSansKR-Regular.otf');
+}
 input {
   font-size: 10pt;
   color: #000;
+  font-family: 'noto-sans-kr';
 }
 /*정보 스타일*/
 .class1 {
