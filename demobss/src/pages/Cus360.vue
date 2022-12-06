@@ -129,36 +129,17 @@
 import CustRetvComponent from '@/components/common/CustRetvComponent.vue'
 import FormDataComponent from '@/components/common/FormDataComponent.vue'
 import ButtonComponent from "@/components/common/ButtonComponent";
-import CustInfoComponent from "@/components/common/CustInfoComponent";
 import SelectBoxComponent from "@/components/common/SelectBoxComponent";
 import InputComponent from "@/components/common/InputComponent";
 import msfTree from "@/components/common/Tree/msf-tree";
 import SubInfoTitle from "@/components/common/SubInfoTitle";
+import ApiMixin from "@/service/common";
 export default {
+  mixins:[ApiMixin],
   data(){
     return{
       logo_search:require('../img/logo_search.png'),
-      contentTree: [{
-        groupId: 0,
-        directoryName: '청구계정ID 홍길* 은행계좌자동이체',
-        chk:true,
-        children: [
-          {groupId: 1, directoryName: '요금제명(서비스계약ID)2022-10-13~2022-10-15서울시 강남구 학동로 111', chk:true, chk2:false},
-        ]
-      },
-        {groupId: 5, directoryName: '청구계정ID 홍길* 은행계좌자동이체', children: [
-            {groupId: 2, directoryName: '요금제명(서비스계약ID)2022-10-13~2022-10-15서울시 강남구 학동로 111',chk:false, chk2:true},
-            {groupId: 3, directoryName: '요금제명(서비스계약ID)2022-10-13~2022-10-15서울시 강남구 학동로 1123',chk:true, chk2:true},
-            {groupId: 4, directoryName: '요금제명(서비스계약ID)2022-10-13~2022-10-15서울시 강남구 학동로 111',chk:true, chk2:true},
-            {groupId: 2, directoryName: '요금제명(서비스계약ID)2022-10-13~2022-10-15서울시 강남구 학동로 111',chk:false, chk2:true},
-            {groupId: 3, directoryName: '요금제명(서비스계약ID)2022-10-13~2022-10-15서울시 강남구 학동로 111',chk:true, chk2:true},
-            {groupId: 4, directoryName: '요금제명(서비스계약ID)2022-10-13~2022-10-15서울시 강남구 학동로 111',chk:true, chk2:true},
-            {groupId: 2, directoryName: '요금제명(서비스계약ID)2022-10-13~2022-10-15서울시 강남구 학동로 111',chk:false, chk2:true},
-            {groupId: 3, directoryName: '요금제명(서비스계약ID)2022-10-13~2022-10-15서울시 강남구 학동로 111',chk:true, chk2:true},
-            {groupId: 4, directoryName: '요금제명(서비스계약ID)2022-10-13~2022-10-15서울시 강남구 학동로 111',chk:true, chk2:true}
-          ]},
-        {groupId: 6, directoryName: '청구계정ID 홍길* 은행계좌자동이체'}
-      ],
+      contentTree:null,
       activeItemObj: {}, // 활성화 시킬 객체
       selectedItemList: [] // 선택시킬 객체
     }
@@ -168,6 +149,16 @@ export default {
     InputComponent,
     SelectBoxComponent, CustRetvComponent, FormDataComponent, ButtonComponent,
     SubInfoTitle,
+  },
+  async beforeMount() {
+    // this.gridOptions = {
+    //   pinnedBottomRowData: [{ model0: "합계", model1: null, model4: 0 }],
+    // };
+    await this.$connect('application/json','/info.json','get','').then((res)=>{
+      this.contentTree = res.data.contentTree;
+    })
+
+
   },
   methods:{
     treeItemClick(event){
@@ -259,4 +250,5 @@ export default {
   overflow: auto;
   border: 1px solid #e4e4e4;
 }
+
 </style>
