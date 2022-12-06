@@ -16,7 +16,7 @@
       "headerName": "결제통화",
       "field": "model0"
     },
-    { "headerName": "요금항목명", "field": "model1" },
+    { "headerName": "요금항목명", "field": "model1"},
     { "headerName": "요금항목구분", "field": "model2" },
     { "headerName": "협정금액", "field": "model3" },
     { "headerName": "협정할인금액", "field": "model4" },
@@ -153,5 +153,99 @@
       "StartDate": "2022-05-31",
       "EndDate": "2024-07-31"
     }
+  ],
+  "rowDataBill1": [
+    {
+      "model0": "코로케이션",
+      "model3": "100,000원",
+      "model4": "10,000원",
+      "model5": "90,000원",
+      "model6": "Y"
+    },
+    {
+      "model0": null,
+      "model1": null,
+      "model2": "추가설치비",
+      "model3": "100,000원",
+      "model4": "10,000원",
+      "model5": "90,000원",
+      "model6": "Y"
+    },
+    {
+      "model0": "소계",
+      "model3": "200,000원",
+      "model4": "20,000원",
+      "model5": "180,000원",
+      "model6": null
+    },
+    {
+      "model0": "부가가치세",
+      "model3": "10,000원",
+      "model4": "10,000원",
+      "model5": "10,000원",
+      "model6": null
+    },
+    {
+      "model0": "당월요금계",
+      "model3": "110,000원",
+      "model4": "0원",
+      "model5": "110,000원",
+      "model6": null
+    },
+    {
+      "model0": "과납요금",
+      "model3": "-50,000원",
+      "model4": "0원",
+      "model5": "-50,000원",
+      "model6": null
+    },
+    {
+      "model0": "요금계",
+      "model3": "60,000원",
+      "model4": "10,000원",
+      "model5": "60,000원",
+      "model6": null
+    }
+
+  ],
+  "rowDataBill2": [
+    {
+      "model0": "코로케이션",
+      "model1": "P7-00****",
+      "model4": "100,000원",
+      "model5": "10,000원",
+      "model6": "90,000원",
+      "model7": "Y"
+    },
+    {
+      "model0": "코로케이션",
+      "model1": "P7-00****",
+      "model4": "100,000원",
+      "model5": "10,000원",
+      "model6": "90,000원",
+      "model7": "Y"
+    }
+  ],
+  "contentTree": [
+    {
+    "groupId": 0,
+    "directoryName": "청구계정ID 홍길* 은행계좌자동이체",
+    "chk":true,
+    "children": [
+      {"groupId": 1, "directoryName": "요금제명(서비스계약ID)2022-10-13~2022-10-15서울시 강남구 학동로 111", "chk":true, "chk2":false}
+    ]
+  },
+    {"groupId": 5, "directoryName": "청구계정ID 홍길* 은행계좌자동이체", "children": [
+      {"groupId": 2, "directoryName": "요금제명(서비스계약ID)2022-10-13~2022-10-15서울시 강남구 학동로 111","chk":false, "chk2":true},
+      {"groupId": 3, "directoryName": "요금제명(서비스계약ID)2022-10-13~2022-10-15서울시 강남구 학동로 1123","chk":true, "chk2":true},
+      {"groupId": 4, "directoryName": "요금제명(서비스계약ID)2022-10-13~2022-10-15서울시 강남구 학동로 111","chk":true, "chk2":true},
+      {"groupId": 2, "directoryName": "요금제명(서비스계약ID)2022-10-13~2022-10-15서울시 강남구 학동로 111","chk":false, "chk2":true},
+      {"groupId": 3, "directoryName": "요금제명(서비스계약ID)2022-10-13~2022-10-15서울시 강남구 학동로 111","chk":true, "chk2":true},
+      {"groupId": 4, "directoryName": "요금제명(서비스계약ID)2022-10-13~2022-10-15서울시 강남구 학동로 111","chk":true, "chk2":true},
+      {"groupId": 2, "directoryName": "요금제명(서비스계약ID)2022-10-13~2022-10-15서울시 강남구 학동로 111","chk":false, "chk2":true},
+      {"groupId": 3, "directoryName": "요금제명(서비스계약ID)2022-10-13~2022-10-15서울시 강남구 학동로 111","chk":true, "chk2":true},
+      {"groupId": 4, "directoryName": "요금제명(서비스계약ID)2022-10-13~2022-10-15서울시 강남구 학동로 111","chk":true, "chk2":true}
+    ]},
+    {"groupId": 6, "directoryName": "청구계정ID 홍길* 은행계좌자동이체"}
   ]
 }
