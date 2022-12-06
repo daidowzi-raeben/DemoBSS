@@ -127,8 +127,8 @@ export default {
         // 여기 조율 필요합니다~~
         // this.gridColumnApi.autoSizeColumn(this.allColumnIds);            // 컬럼, data 전부 생략, 간격 맞춤  (스크롤바)
         // this.gridColumnApi.autoSizeAllColumns(this.allColumnIds);        // 컬럼은 생략됨 / data 전부 다 표시   (스크롤바)
-        this.gridColumnApi.autoSizeColumns(this.allColumnIds,false);     // 컬럼, data 전부 표시, 간격 맞춤 (스크롤바)
-        //  this.gridApi.sizeColumnsToFit(this.allColumnIds);                  // 컬럼, data 전부 생략, 간격 맞추고 테이블 크기 맞춤 (NO 스크롤)
+        // this.gridColumnApi.autoSizeColumns(this.allColumnIds,false);     // 컬럼, data 전부 표시, 간격 맞춤 (스크롤바)
+         this.gridApi.sizeColumnsToFit(this.allColumnIds);                  // 컬럼, data 전부 생략, 간격 맞추고 테이블 크기 맞춤 (NO 스크롤)
         // this.gridApi.gridBodyCtrl.eBodyViewport.style = "border-bottom:0px;"; //안쪽
       } else {
         this.gridApi.sizeColumnsToFit(); //끝까지 맞춤
