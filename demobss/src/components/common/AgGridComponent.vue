@@ -10,6 +10,7 @@
     :suppressRowTransform="true"
     :suppressHorizontalScroll="isWidthFit"
     :rowHeight="43"
+    headerHeight="30"
     :columnDefs="columnDefs"
     :rowData="rowData"
     :overlayNoRowsTemplate="overlayNoRowsTemplate"
@@ -42,6 +43,10 @@ export default {
     };
   },
   props: {
+    headerColor:{
+      type:String,
+      default:"#f8f8f8"
+    },
     rowData: null,
     columnDefs: null,
     gridOptions: null,
@@ -70,7 +75,7 @@ export default {
   },
   watch:{
     windowWidth(){
-      this.gridApi.sizeColumnsToFit(this.allColumnIds);  
+      this.gridApi.sizeColumnsToFit(this.allColumnIds);
     }
   },
   mounted() {
@@ -98,6 +103,7 @@ export default {
 
       // 합계 색상, 마지막줄
       this.rowClassRules = {
+
         "ag-row-nobottom": function (params) {
           return (
             params.node.rowIndex == params.api.rowModel.rowsToDisplay.length - 1
@@ -183,7 +189,7 @@ export default {
 }
 
 .ag-grid .ag-header {
-  background-color: #f8f8f8;
+  background-color: v-bind(headerColor);
   border-bottom: #e4e4e4 solid 1px;
   box-sizing: border-box;
 }
@@ -260,7 +266,7 @@ export default {
   /* font-family: 맑은 고딕; */
   font-size: 14px;
   color: #343434;
-
+  padding:10px;
   line-height: 39px;
   display: flex;
   justify-content: center;

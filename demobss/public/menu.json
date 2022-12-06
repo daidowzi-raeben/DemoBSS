@@ -110,6 +110,12 @@
       "cmpnId": ""
     },
     {
+      "menuId": "L02M02S01",
+      "menuNm": "청구요금",
+      "upMenuId": "L02M02S00",
+      "cmpnId": "BillChage"
+    },
+    {
       "menuId": "L02M03S00",
       "menuNm": "즉시수납",
       "upMenuId": "L02",
