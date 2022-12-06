@@ -88,7 +88,7 @@
         <popup-component
         v-if="isModalShow"
         :popupOverlay="'maxTabOverlay'"
-        @MaxTaNumnPopup="isModalShow = false"
+        @popup="isModalShow = false"
         @AGREE = "''"
         :popupmsg="'10개를 초과하는 화면을 열 수 없습니다.'"
         />
@@ -157,7 +157,7 @@ export default {
     },
   },
   methods: {
-    MaxTabNumPopup(){
+    maxTabNumPopup(){
       if (this.isModalShow == false) this.isModalShow = true
       else this.isModalShow = false
     },
@@ -181,7 +181,7 @@ export default {
       }
       menuTabScroll.scrollLeft -= 100;
     },
-    ChageComponent: function (componentName, index) {
+    ChageComponent(componentName, index) {
       this.comp = componentName;
       this.cur_num = index;
     },
@@ -191,7 +191,7 @@ export default {
       this.compm2.splice(1, component_length - 1);
       this.cur_num = 0;
     },
-    DeleteComponent: function (index) {
+    DeleteComponent(index) {
       if (index != 0) {
         this.compm.splice(index, 1);
         this.compm2.splice(index, 1);
@@ -221,7 +221,7 @@ export default {
                   import(`../pages/${this.compm[this.cur_num].cmpnId}.vue`))
                   );
                 this.compm2.push(this.component);
-                } else { this.MaxTabNumPopup();
+                } else { this.maxTabNumPopup();
                 }
               }
         }
