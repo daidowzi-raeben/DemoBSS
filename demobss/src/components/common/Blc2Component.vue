@@ -24,18 +24,16 @@
           }
         "
     />
-      </span>
+    </span>
   </div>
   <div class="ag-grid_sp">
-    <ag-grid-component
-        :rowData="this.rowData"
-        :columnDefs="this.columnDefs"
-        :isWidthFit="false"
+    <ag-grid-component2
+    
     />
     <div>
-    <paging-area
-        :pageableData="pageableData"
-        @currentPage="(value) => {page = value;}"
+      <paging-area
+      :pageableData="pageableData"
+      @currentPage="(value) => {page = value;}"
       />
     </div>
   </div>
@@ -44,7 +42,7 @@
 <script>
 import SelectBoxComponent from "@/components/common/SelectBoxComponent";
 import ButtonComponent from "@/components/common/ButtonComponent";
-import AgGridComponent from "@/components/common/AgGridComponent";
+import AgGridComponent2 from "@/components/common/AgGridComponent2";
 import SubInfoTitle from "@/components/common/SubInfoTitle";
 import ApiMixin from "@/service/common";
 import PagingArea from '@/components/common/PagingArea.vue';
@@ -55,7 +53,7 @@ export default {
   components:{
     SelectBoxComponent,
     ButtonComponent,
-    AgGridComponent,
+    AgGridComponent2,
     SubInfoTitle,
     PagingArea
   },
@@ -87,7 +85,10 @@ export default {
     btnName3 : String,
     total:null,
   },
+  methods:{
+  
 
+},
 }
 </script>
 
