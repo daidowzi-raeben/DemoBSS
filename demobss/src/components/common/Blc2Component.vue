@@ -28,8 +28,7 @@
   </div>
   <div class="ag-grid_sp">
     <ag-grid-component2
-    
-    />
+    :rowData="rowData" />
     <div>
       <paging-area
       :pageableData="pageableData"
@@ -84,9 +83,6 @@ export default {
     btnName2 : String,
     btnName3 : String,
     total:null,
-  },
-  methods:{
-    
   },
 }
 </script>

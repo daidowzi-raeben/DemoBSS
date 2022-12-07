@@ -9,7 +9,6 @@
 }
 /* common */
 body {
-  /* font-family: 맑은 고딕; */
   font-size: 14px;
   margin: 0;
   color: #343434;
@@ -42,13 +41,11 @@ a:hover {
 td,
 tr,
 div {
-  /* font-family: 맑은 고딕; */
   font-size: 10pt;
   color: #343434;
 }
 textarea,
 text {
-  /* font-family: 맑은 고딕; */
   font-size: 14px;
   color: #343434;
   border: 1px solid #999999;

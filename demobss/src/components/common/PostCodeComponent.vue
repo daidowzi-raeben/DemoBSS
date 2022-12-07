@@ -265,7 +265,6 @@ export default {
 }
 
 .button_05 {
-  /* font-family: 맑은 고딕; */
   display: inline-block;
   color: #fff;
   padding: 0 25px 2px 25px;
