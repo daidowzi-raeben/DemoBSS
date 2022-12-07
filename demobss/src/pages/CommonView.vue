@@ -403,9 +403,9 @@
 
     <h1 style="font-size: 30px">linkComponent</h1>
     <div class="commondiv1" >
-    <linkComponent
+    <link-component
     :destination="'/'"
-    :linkName="'링크 컴포넌트(mounse over)'"  />
+    :linkNm="'링크 컴포넌트(mounse over)'"  />
     </div>
     <br /><br /><br />
 
