@@ -26,6 +26,12 @@ const routes = [
         import(/* webpackChunkName: "about" */ "../pages/BillChage.vue"),
   },
   {
+    path: "/ComCdAdm",
+    name: "ComCdAdm",
+    component: () =>
+        import(/* webpackChunkName: "about" */ "../pages/ComCdAdm.vue"),
+  },
+  {
     path: "/common",
     name: "Common",
     component: () =>
