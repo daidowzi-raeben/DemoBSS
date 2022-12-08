@@ -63,10 +63,10 @@
               :selectClass="'select_input3'"
               :cdGroup="'optionSearchNum'"
               :defaultValue="'선택'"
-              :defaultcdId="postCodeShowNum"
-              :disabled="true"
-              v-model="postCodeShowNum"
-              @input=" (value) => { postCodeShowNum = value;}"
+              :defaultcdId="showTheNum"
+              :isDisabled="true"
+              v-model="showTheNum"
+              @input=" (value) => { showTheNum = value;}"
               style=" width:100px; height:22px;"
               />
               </div>
@@ -110,7 +110,7 @@ export default {
       col_2 : '16.66%',
       detailPostAddress:'',
       postCodeSearchData:[],
-      postCodeShowNum:5,      // 각 페이지 당 출력 주소 개수
+      showTheNum:5,      // 각 페이지 당 출력 주소 개수
       currentPage:'',    // 현재 페이지
       postCodeNums:0,   // 주소 개수
       pageableData: {
@@ -142,13 +142,13 @@ export default {
   },
   watch:{
     currentPage(newData){
-      let startIndex = (newData-1)*this.postCodeShowNum;
-      let endIndex = startIndex+this.postCodeShowNum;
+      let startIndex = (newData-1)*this.showTheNum;
+      let endIndex = startIndex+this.showTheNum;
       this.currentPostCodeData = this.postCodeSearchData.slice( startIndex, endIndex)
       }, 
-    postCodeShowNum(newOne, oldOne){
+    showTheNum(newOne, oldOne){
       if(newOne != oldOne){
-        this.postCodeShowNum = newOne; 
+        this.showTheNum = newOne; 
         this.$refs.PagingArea.resetPageableData();
         this.CalcPostCodeData();
       }
@@ -168,10 +168,10 @@ export default {
     CalcPostCodeData(){
         this.currentPage =1;
         this.pageableData.totalPages=1; 
-        this.currentPostCodeData = this.postCodeSearchData.slice(0,this.postCodeShowNum);
-      if(this.postCodeNums > this.postCodeShowNum) {
-        this.pageableData.totalPages = parseInt(this.postCodeNums/this.postCodeShowNum)
-        if(this.postCodeNums%this.postCodeShowNum > 0) this.pageableData.totalPages +=1
+        this.currentPostCodeData = this.postCodeSearchData.slice(0,this.showTheNum);
+      if(this.postCodeNums > this.showTheNum) {
+        this.pageableData.totalPages = parseInt(this.postCodeNums/this.showTheNum)
+        if(this.postCodeNums%this.showTheNum > 0) this.pageableData.totalPages +=1
       }
     },
     // 주소 선택 시, 부모 컴포넌트에 해당 주소 객체 보냄
@@ -293,4 +293,5 @@ export default {
 .pcSelectAndPagingFlex > div:nth-child(2) {
   grid-column: 3;
 }
+
 </style>

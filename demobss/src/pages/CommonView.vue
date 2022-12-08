@@ -304,7 +304,7 @@
 
     <h1 style="font-size: 30px">PopupComponent</h1>
     <div class="commondiv1">
-    <button-component :btnClass="'btnClass5'" :btnName="'공통 PopUp'" @click="popup"/>
+    <button-component :btnClass="'btnClass5'" :btnName="'공통 PopUp'" @click="popup" :btnWidth="'90px'"/>
 
     <popup-component
       v-if="isModalShow"
