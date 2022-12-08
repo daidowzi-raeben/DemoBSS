@@ -173,7 +173,7 @@ import FormDataPopupComponent from "@/components/common/FormDataPopupComponent.v
 import BlcComponent from '../common/BlcComponent.vue';
 import SelectBoxComponent from '../common/SelectBoxComponent.vue';
 import InputComponent from '../common/InputComponent.vue';
-import MsfTree from '../common/Tree/msf-tree.vue';
+import MsfTree from '../common/TreeComponent/msf-tree.vue';
 
 export default {
   mixins:[ApiMixin],

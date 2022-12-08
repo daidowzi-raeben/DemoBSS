@@ -177,7 +177,7 @@ img{
   border-right: rgb(229,231,234) solid 1px;
   width: 223px;
   padding: 33px 0 0 35px;
-  height: 70vh;
+  height: 80vh;
   background-color: white;
   overflow: auto;
 }
@@ -194,7 +194,7 @@ img{
 
 #nav > .area > ul#depth2_list > li #depth2 {
   padding: 10px 15px;
-  font-size: 14pt;
+  font-size: 12pt;
   font-weight: bold;
   color: #000;
   cursor: pointer;

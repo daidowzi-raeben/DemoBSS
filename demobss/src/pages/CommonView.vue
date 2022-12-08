@@ -628,8 +628,6 @@
     <br /><br /><br />
 
 
-
-
   </div>
 </template>
 
@@ -662,7 +660,7 @@ import TextAreaComponent from "@/components/common/TextAreaComponent";
 import {defineAsyncComponent, markRaw} from "vue";
 import TabComponent from "@/components/common/TabComponent";
 import ApiMixin from "@/service/common.js";
-import msfTree from "@/components/common/Tree/msf-tree";
+import msfTree from "@/components/common/TreeComponent/msf-tree";
 import InputComponent from '@/components/common/InputComponent.vue';
 import LabelComponent from '@/components/common/LabelComponent.vue';
 import LoadingSpinnerComponent from "@/components/common/LoadingSpinnerComponent";
@@ -914,7 +912,7 @@ export default {
     },
     getDiffDate(st,fns){
       return this.diffDate(st,fns);
-    }
+    },
   },
 };
 </script>

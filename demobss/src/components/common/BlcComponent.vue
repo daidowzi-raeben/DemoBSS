@@ -38,6 +38,7 @@
     <ag-grid-component
         :header-color="headerColor"
         :rowData="this.rowData"
+        :rowClicked="clickedRow"
         :columnDefs="this.columnDefs"
         :isWidthFit="false"
     />
@@ -84,6 +85,11 @@ export default {
     btnName : null,
     total:null,
   },
+  methods:{
+    clickedRow(params){
+      console.log(params);
+    }
+  }
 
 }
 </script>
@@ -97,6 +103,6 @@ export default {
 }
 .ag-grid_sp2{
   width: 100%;
-  height: 285px;
+  height: 332px;
 }
 </style>

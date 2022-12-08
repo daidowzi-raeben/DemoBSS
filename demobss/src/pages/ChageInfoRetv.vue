@@ -107,7 +107,7 @@ import BlcComponent from "@/components/common/BlcComponent";
 import CustRetvComponent from "@/components/common/CustRetvComponent";
 import ApiMixin from "@/service/common.js";
 import FormDataComponent from '@/components/common/FormDataComponent.vue'
-import msfTree from "@/components/common/Tree/msf-tree";
+import msfTree from "@/components/common/TreeComponent/msf-tree";
 export default {
   mixins:[ApiMixin],
   name: "ChageInfoRetv",

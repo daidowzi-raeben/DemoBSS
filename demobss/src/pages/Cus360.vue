@@ -131,7 +131,7 @@ import FormDataComponent from '@/components/common/FormDataComponent.vue'
 import ButtonComponent from "@/components/common/ButtonComponent";
 import SelectBoxComponent from "@/components/common/SelectBoxComponent";
 import InputComponent from "@/components/common/InputComponent";
-import msfTree from "@/components/common/Tree/msf-tree";
+import msfTree from "@/components/common/TreeComponent/msf-tree";
 import SubInfoTitle from "@/components/common/SubInfoTitle";
 import ApiMixin from "@/service/common";
 export default {
