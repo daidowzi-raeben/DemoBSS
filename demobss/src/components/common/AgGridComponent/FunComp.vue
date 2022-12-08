@@ -9,6 +9,10 @@
 <script>
 export default {
   name: "FunComp",
+  // setup(props){    //props로 후처리 할때
+  //   console.log(props.params.value);
+  //   console.log(11);
+  // },
   data(){
     return{
       expend : {
@@ -19,6 +23,7 @@ export default {
       open : require("../../../img/icon_plus_2.png"),
     }
   },
+
   methods:{
     Click(){
       this.params.clicked(this.params.value);

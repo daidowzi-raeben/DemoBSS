@@ -590,6 +590,12 @@
       "cmpnId": ""
     },
     {
+      "menuId": "L05M03S01",
+      "menuNm": "공통코드관리",
+      "upMenuId": "L05M03S00",
+      "cmpnId": "ComCdAdm"
+    },
+    {
       "menuId": "L05M04S00",
       "menuNm": "공지사항관리",
       "upMenuId": "L05",

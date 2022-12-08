@@ -67,31 +67,37 @@
             :btn-name="'즉시수납'"
             :btn-class="'btnClass5'"
             style="float: right;"
+            :btnWidth="'auto'"
         />
         <button-component
             :btn-name="'수납이력'"
             :btn-class="'btnClass5'"
             style="float: right;"
+            :btnWidth="'auto'"
         />
         <button-component
             :btn-name="'요금조정'"
             :btn-class="'btnClass5'"
             style="float: right;"
+            :btnWidth="'auto'"
         />
         <button-component
             :btn-name="'가상계좌'"
             :btn-class="'btnClass5'"
             style="float: right;"
+            :btnWidth="'auto'"
         />
         <button-component
             :btn-name="'실시간 요금'"
             :btn-class="'btnClass5'"
             style="float: right;"
+            :btnWidth="'auto'"
         />
         <button-component
             :btn-name="'해지 예상요금'"
             :btn-class="'btnClass5'"
             style="float: right;"
+            :btnWidth="'auto'"
         />
       </div>
       <div class="product_box_sel" style="background-color: white">
@@ -198,7 +204,7 @@
                 </th>
                 <td colspan="2">
                   <input-component :input-class="'class5'" :disabled="true" :value="'aaa***' " />
-                  <span>@</span>
+                  <span style="margin-right: 6px;">@</span>
                   <input-component :input-class="'class5'" :disabled="true" :value="'kt.com' " />
                 </td>
                 <th> <label-component
@@ -242,7 +248,7 @@
       </div>
     </div>
 
-    <div class="item"> <!-- 6 -->
+    <div class="item"> <!-- 6 엔터프라이즈버전의 Row Selection 사용 예정 -->
       <blc-component
           :sub-info-title-nm="'청구계정 요금'"
           :row-data="rowDataBill1"
@@ -282,12 +288,12 @@ import CustRetvComponent from '@/components/common/CustRetvComponent.vue'
 import FormDataComponent from '@/components/common/FormDataComponent.vue'
 import SelectBoxComponent from "@/components/common/SelectBoxComponent";
 import InputComponent from "@/components/common/InputComponent";
-import msfTree from "@/components/common/Tree/msf-tree";
+import msfTree from "@/components/common/TreeComponent/msf-tree";
 import SubInfoTitle from "@/components/common/SubInfoTitle";
 import ButtonComponent from "@/components/common/ButtonComponent";
 import BlcComponent from "@/components/common/BlcComponent";
 import LabelComponent from '@/components/common/LabelComponent.vue';
-import FunComp from "@/components/common/AgGrid/FunComp";
+import FunComp from "@/components/common/AgGridComponent/FunComp";
 import ApiMixin from "@/service/common";
 export default {
   mixins:[ApiMixin],
@@ -367,6 +373,9 @@ export default {
           cellStyle:function (params){
             if(params.value!=='소계' && params.value!=='부가가치세' && params.value!=='당월요금계' && params.value!=='과납요금' && params.value!=='요금계')
             return {justifyContent: "flex-start"};
+            else{
+              return {backgroundColor:'rgb(247, 247, 248)'};
+            }
           }
         },
         { headerName: "대분류", field: "model1",  cellRenderer : 'FunComp',
@@ -457,7 +466,6 @@ export default {
   height:20px;
   width:100%;
 }
-
 .product_box_sel{
   border:1px solid #e4e4e4;
   padding-left: 10px;

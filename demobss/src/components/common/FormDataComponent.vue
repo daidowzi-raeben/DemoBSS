@@ -20,7 +20,7 @@
           :btnName="'고객등록'"
           />
           <ButtonComponent
-          :btnClass="'btnClass5'"
+          :btnClass="'btnClass3'"
           :btnName="'고객정보수정'"
           :btnWidth="'auto'"
           />
