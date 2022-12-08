@@ -60,7 +60,7 @@ export default {
 }
 </script>
 
-<style >
+<style  >
 .agtable {
   border : 1px solid black;
 }
@@ -94,9 +94,9 @@ export default {
   /* 컬럼 헤더 가운데 정렬 */
   justify-content: center;
 }
-.ag-row{
+/* .ag-row{
   background-color: rgb(255, 254,238);
-}
+} */
 .ag-row:hover{
   background-color: rgb(255, 254,238);
 }

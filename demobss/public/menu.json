@@ -620,6 +620,12 @@
       "cmpnId": ""
     },
     {
+      "menuId": "L05M08S01",
+      "menuNm": "사용자관리",
+      "upMenuId": "L05M08S00",
+      "cmpnId": "UserAdm"
+    },
+    {
       "menuId": "L05M09S00",
       "menuNm": "권한관리",
       "upMenuId": "L05",

@@ -2,7 +2,7 @@
 <div class="cusSearch">
   <table>
     <tr>
-      <th>조회구분</th>
+      <th> <label-component :labelNm="'조회구분'" /> </th>
       <td>
         <select-box-component
         :selectClass="'select_input3'"
@@ -27,7 +27,7 @@
       </td>
       <td></td> <td class="emptyBox1"></td>
       
-      <th> 청약 기간</th>
+      <th> <label-component :labelNm="'청약 기간'" /> </th>
       <td >
         <date-picker-component
         :classWrapper="'calender_input'"
@@ -52,7 +52,7 @@
       <td  class="emptyBox2"></td>    <!--empty 280px -->
     </tr>
     <tr>
-      <th>상품구분</th>
+      <th> <label-component :labelNm="'상품구분'" /> </th>
       <td>
         <select-box-component
         :selectClass="'select_input3'"
@@ -86,7 +86,7 @@
         /></td>
 
       <td class="emptyBox1"></td>
-      <th>상태구분</th>
+      <th> <label-component :labelNm="'상태구분'" /> </th>
       <td colspan=2 >
         <select-box-component
         :selectClass="'select_input3'"
@@ -130,7 +130,7 @@
         /></td>
     </tr>
     <tr>
-      <th>접수자</th>
+      <th> <label-component :labelNm="'접수자'" /> </th>
       <td>
         <select-box-component
         :selectClass="'select_input3'"
@@ -189,6 +189,7 @@ import SelectBoxComponent from "@/components/common/SelectBoxComponent.vue";
 import ButtonComponent from "@/components/common/ButtonComponent.vue";
 import ChkBoxComponent from '@/components/common/ChkBoxComponent.vue';
 import DatePickerComponent from './DatePickerComponent.vue';
+import LabelComponent from './LabelComponent.vue';
 export default {
   name: "CustomerSearchComponent",
   components:{SubInfoTitle,
@@ -197,6 +198,7 @@ export default {
               ButtonComponent,
               ChkBoxComponent,
     DatePickerComponent,
+    LabelComponent,
             },
   data(){
     return{
