@@ -85,7 +85,7 @@ export default {
 .btnClass3:hover{
   background-color: rgb(28, 113, 209);
 }
-.btnClass3:focus {
+.btnClass3:active {
   background-color: rgb(28, 113, 209);
 }
 .btnClass4 {
@@ -116,7 +116,7 @@ export default {
 .btnClass5:hover {
   color: grey;
 }
-.btnClass5:focus {
+.btnClass5:active {
   color: grey;
   -webkit-transform: scale(0.98);
   transform: scale(0.98);

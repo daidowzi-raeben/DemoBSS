@@ -22,14 +22,15 @@
       <td> 
         <select-box-component
         :selectClass="'select_input4'"
-        :cdGroup="'직책_json'"
+        :cdGroup="'rspof'"
         :defaultValue="'직책 선택'"
         :isDisabled="true"
         @input=" (value) => { selectValue = value;}"
         :width="200"
         style="height:28px;"
         v-model="selectValue"
-        /></td>
+        />
+      </td>
       <td class="emptyBox2"></td>
 
       <td class="btnBox" > 
