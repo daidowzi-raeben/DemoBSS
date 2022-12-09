@@ -17,11 +17,11 @@
     { "headerName": "고객ID",       "field": "CustID", "width":130},
     { "headerName": "청구계정ID",    "field": "SubsID" ,"width":130},
     { "headerName": "고객명",        "field": "CustName" ,"width":80 },
-    { "headerName": "상품명",        "field": "ProductName" ,"width":450 },
-    { "headerName": "서비스계약 상태","field": "ServState","width":100 },
+    { "headerName": "상품명",        "field": "ProductName" ,"width":428 },
+    { "headerName": "서비스계약 상태","field": "ServState","width":140 },
     { "headerName": "청약상태",       "field": "SubsState" ,"width":90},
-    { "headerName": "개통일시",       "field": "StartDate" , "width":150},
-    { "headerName": "정지/해지일시",   "field": "EndDate" , "width":150}
+    { "headerName": "개통일시",       "field": "StartDate" , "width":165},
+    { "headerName": "정지/해지일시",   "field": "EndDate" , "width":165}
   ],
   "rowData": [
     { "index": 1, "ServID": "S000008950", "CustID": "C000053216", "SubsID": "P000021352",  "CustName": "홍길동", "ServState": "사용중", "SubsState": "청약완료",  "ProductName" : "[IDC]kt cloud SSD 컴퓨팅 스토리지 서버리스 애플리케이션",  "StartDate": "2022-12-12 10:30:30", "EndDate": "2023-12-31 00:00:00"},
@@ -64,9 +64,6 @@
     { "index": 28, "ServID": "S000008950", "CustID": "C000053216", "SubsID": "P000021352",  "CustName": "홍길동", "ServState": "사용중", "SubsState": "청약완료",  "ProductName" : "[IDC]kt cloud SSD 컴퓨팅 스토리지 서버리스 애플리케이션",  "StartDate": "2022-07-11 10:26:30", "EndDate": "2023-12-31 00:00:00"},
     { "index": 29, "ServID": "S000008950", "CustID": "C000053216", "SubsID": "P000021352",  "CustName": "홍길동", "ServState": "사용중", "SubsState": "청약완료",  "ProductName" : "[IDC]kt cloud SSD 컴퓨팅 스토리지 서버리스 애플리케이션",  "StartDate": "2022-06-11 10:26:30", "EndDate": "2023-12-31 00:00:00"}
   ],
-
-
-
   "columnDefs2": [
     {"headerName": "결제통화", "field": "index" },
     { "headerName": "청구금액", "field": "model5" },
@@ -104,5 +101,177 @@
       "StartDate": "2022-05-31 10:26:30",
       "EndDate": "2024-07-31"
     }
+  ],
+  "userRowData":[
+    {
+      "CMPNO" : "82679315",
+      "userNm" : "홍길동",
+      "inofficeSttus" : "재직",
+      "org" : "DX사업본부",
+      "rspof" : "사원",
+      "duty" : "BSS 개발"
+    },
+    {
+      "CMPNO" : "82672436",
+      "userNm" : "홍길은",
+      "inofficeSttus" : "재직",
+      "org" : "DX사업본부",
+      "rspof" : "사원",
+      "duty" : "BSS 개발2"
+    },
+    {
+      "CMPNO" : "82679415",
+      "userNm" : "홍길금",
+      "inofficeSttus" : "재직",
+      "org" : "DX사업본부",
+      "rspof" : "사원",
+      "duty" : "BSS 개발3"
+    },
+    {
+      "CMPNO" : "82619315",
+      "userNm" : "홍길형",
+      "inofficeSttus" : "재직",
+      "org" : "DX사업본부",
+      "rspof" : "사원",
+      "duty" : "BSS 개발4"
+    },
+    {
+      "CMPNO" : "82675315",
+      "userNm" : "홍길진",
+      "inofficeSttus" : "재직",
+      "org" : "DX사업본부",
+      "rspof" : "사원",
+      "duty" : "BSS 개발5"
+    },
+    {
+      "CMPNO" : "89679315",
+      "userNm" : "홍길명",
+      "inofficeSttus" : "재직",
+      "org" : "DX사업본부",
+      "rspof" : "사원",
+      "duty" : "BSS 개발6"
+    },
+    {
+      "CMPNO" : "82672436",
+      "userNm" : "홍길은",
+      "inofficeSttus" : "재직",
+      "org" : "DX사업본부",
+      "rspof" : "사원",
+      "duty" : "BSS 개발2"
+    },
+    {
+      "CMPNO" : "82679415",
+      "userNm" : "홍길금",
+      "inofficeSttus" : "재직",
+      "org" : "DX사업본부",
+      "rspof" : "사원",
+      "duty" : "BSS 개발3"
+    },
+    {
+      "CMPNO" : "82619315",
+      "userNm" : "홍길형",
+      "inofficeSttus" : "재직",
+      "org" : "DX사업본부",
+      "rspof" : "사원",
+      "duty" : "BSS 개발4"
+    },
+    {
+      "CMPNO" : "82675315",
+      "userNm" : "홍길진",
+      "inofficeSttus" : "재직",
+      "org" : "DX사업본부",
+      "rspof" : "사원",
+      "duty" : "BSS 개발5"
+    },
+    {
+      "CMPNO" : "89679315",
+      "userNm" : "홍길명",
+      "inofficeSttus" : "재직",
+      "org" : "DX사업본부",
+      "rspof" : "사원",
+      "duty" : "BSS 개발6"
+    },
+    {
+      "CMPNO" : "82672436",
+      "userNm" : "홍길은",
+      "inofficeSttus" : "재직",
+      "org" : "DX사업본부",
+      "rspof" : "사원",
+      "duty" : "BSS 개발2"
+    },
+    {
+      "CMPNO" : "82679415",
+      "userNm" : "홍길금",
+      "inofficeSttus" : "재직",
+      "org" : "DX사업본부",
+      "rspof" : "사원",
+      "duty" : "BSS 개발3"
+    },
+    {
+      "CMPNO" : "82619315",
+      "userNm" : "홍길형",
+      "inofficeSttus" : "재직",
+      "org" : "DX사업본부",
+      "rspof" : "사원",
+      "duty" : "BSS 개발4"
+    },
+    {
+      "CMPNO" : "82675315",
+      "userNm" : "홍길진",
+      "inofficeSttus" : "재직",
+      "org" : "DX사업본부",
+      "rspof" : "사원",
+      "duty" : "BSS 개발5"
+    },
+    {
+      "CMPNO" : "89679315",
+      "userNm" : "홍길명",
+      "inofficeSttus" : "재직",
+      "org" : "DX사업본부",
+      "rspof" : "사원",
+      "duty" : "BSS 개발6"
+    },
+    {
+      "CMPNO" : "82672436",
+      "userNm" : "홍길은",
+      "inofficeSttus" : "재직",
+      "org" : "DX사업본부",
+      "rspof" : "사원",
+      "duty" : "BSS 개발2"
+    },
+    {
+      "CMPNO" : "82679415",
+      "userNm" : "홍길금",
+      "inofficeSttus" : "재직",
+      "org" : "DX사업본부",
+      "rspof" : "사원",
+      "duty" : "BSS 개발3"
+    },
+    {
+      "CMPNO" : "82619315",
+      "userNm" : "홍길형",
+      "inofficeSttus" : "재직",
+      "org" : "DX사업본부",
+      "rspof" : "사원",
+      "duty" : "BSS 개발4"
+    },
+    {
+      "CMPNO" : "82675315",
+      "userNm" : "홍길진",
+      "inofficeSttus" : "재직",
+      "org" : "DX사업본부",
+      "rspof" : "사원",
+      "duty" : "BSS 개발5"
+    },
+    {
+      "CMPNO" : "89679315",
+      "userNm" : "홍길명",
+      "inofficeSttus" : "재직",
+      "org" : "DX사업본부",
+      "rspof" : "사원",
+      "duty" : "BSS 개발6"
+    }
+    
   ]
+
 }

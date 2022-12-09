@@ -27,8 +27,9 @@
     </span>
   </div>
   <div class="ag-grid_sp">
-    <ag-grid-component2
-    :rowData="rowData" />
+    <ag-grid-component-2
+    :rowData="rowData"
+    :columnDefs="columnDefs" />
     <div>
       <paging-area
       :pageableData="pageableData"
@@ -41,10 +42,10 @@
 <script>
 import SelectBoxComponent from "@/components/common/SelectBoxComponent";
 import ButtonComponent from "@/components/common/ButtonComponent";
-import AgGridComponent2 from "@/components/common/AgGridComponent2";
 import SubInfoTitle from "@/components/common/SubInfoTitle";
 import ApiMixin from "@/service/common";
 import PagingArea from '@/components/common/PagingArea.vue';
+import AgGridComponent2 from './AgGridComponent2.vue';
 
 export default {
   mixins:[ApiMixin],
@@ -52,9 +53,9 @@ export default {
   components:{
     SelectBoxComponent,
     ButtonComponent,
-    AgGridComponent2,
     SubInfoTitle,
-    PagingArea
+    PagingArea,
+    AgGridComponent2
   },
   data(){
     return {
@@ -73,8 +74,8 @@ export default {
       default:"245px",
       type:String,
     },
-    columnDefs:null,
-    rowData: null,
+    columnDefs:'',
+    rowData: '',
     subInfoTitleNm:null,
     selectBoxShow:null,
     gridOptions: null,
@@ -89,7 +90,6 @@ export default {
 
 <style scoped>
 .ag-grid_sp{
-  /* margin: 10px; */
   width: 100%;
   height: v-bind('agGirdHeight');
   border-top: 3px solid rgb(27,114,212);

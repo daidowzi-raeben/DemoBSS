@@ -30,7 +30,7 @@ import TableComponent from '@/components/common/TableComponent.vue';
 
 export default {
   mixins:[ApiMixin],
-  name: "SubsList",
+  name: "SubsLst",
   components: { Blc2Component, SubsRetvComponent, PagingArea, TableComponent },
   data(){
     return{
