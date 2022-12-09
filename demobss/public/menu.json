@@ -635,13 +635,13 @@
       "menuId": "L05M09S01",
       "menuNm": "권한관리",
       "upMenuId": "L05M09S00",
-      "cmpnId": ""
+      "cmpnId": "AutAdm"
     },
     {
       "menuId": "L05M09S02",
       "menuNm": "권한매핑관리",
       "upMenuId": "L05M09S00",
-      "cmpnId": ""
+      "cmpnId": "AutMappgAdm"
     },
     {
       "menuId": "L05M012S00",
