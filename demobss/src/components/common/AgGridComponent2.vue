@@ -44,7 +44,8 @@ export default {
   methods:{
     onSelectionChanged(params) {
       this.seletedRowData = params.api.getSelectedRows();
-    console.log("seletedRowData : ",this.seletedRowData);
+      this.$emit('seletedRowData',this.seletedRowData)
+      console.log("seletedRowData : ",this.seletedRowData);
     }
   },
   created(){
