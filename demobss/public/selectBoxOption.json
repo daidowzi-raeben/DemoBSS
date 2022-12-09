@@ -162,5 +162,53 @@
       "cdId": 20
     }
 
+  ],
+  "inOfficeSttus":[
+    
+    {
+      "cdNm": "전체",
+      "cdId": "whole"
+    },
+    {
+      "cdNm":  "재직",
+      "cdId":  "inOffice"
+    },
+    {
+      "cdNm":  "휴직",
+      "cdId":  "loab"
+    }
+  ],
+
+  "직책_json":[
+    {
+      "cdNm":  "직책",
+      "cdId":  "role1"
+    },
+    {
+      "cdNm":  "직책2",
+      "cdId":  "role2"
+    }
+
+  ],
+  "dutySelect":[
+    {
+      "cdNm":  "직무",
+      "cdId":  "role1"
+    },
+    {
+      "cdNm":  "직무2",
+      "cdId":  "role2"
+    }
+  ],
+  "orgSelect":[
+    {
+      "cdNm":  "조직",
+      "cdId":  "role1"
+    },
+    {
+      "cdNm":  "조직2",
+      "cdId":  "role2"
+    }
+
   ]
 }
