@@ -248,9 +248,20 @@
       <div style="width: 30%; height: 360px; margin: 10px">
         <ag-grid-component :rowData="rowData2" :columnDefs="columnDefs2" />
       </div>
-    </div>
 
-    <h1 style="font-size: 30px">ButtonComponent</h1>
+    </div>
+    <h1 style="font-size: 30px">ag grid Grid to Grid</h1>
+    <div class="commondiv1">
+      <div style="width: 60%; height: 360px; margin: 10px">
+        <AgGridComponent3
+            :left-row-data="leftRowData"
+            :right-row-data="rightRowData"
+            :Columns="GridToGridColumns"
+            :isWidthFit="false"
+        />
+      </div>
+    </div>
+      <h1 style="font-size: 30px">ButtonComponent</h1>
     <span>각 버튼의 클래스 이름</span>
     <div class="commondiv1">
     <div> <ButtonComponent :btnClass="'btnClass1'" :btnName="'btnClass1'" /></div>
@@ -665,11 +676,13 @@ import InputComponent from '@/components/common/InputComponent.vue';
 import LabelComponent from '@/components/common/LabelComponent.vue';
 import LoadingSpinnerComponent from "@/components/common/LoadingSpinnerComponent";
 import PostCodeComponent from '@/components/common/PostCodeComponent.vue';
+import AgGridComponent3 from "@/components/common/AgGridComponent3";
 
 export default {
   mixins:[ApiMixin],
   name: "CommonView",
   components: {
+    AgGridComponent3,
     LoadingSpinnerComponent,
     msfTree,
     PostCodeComponent,
@@ -716,6 +729,38 @@ export default {
       date4: new Date(),
       pDisable: true,
       comp: "L01M05S01",
+      leftRowData: [
+        {athlete:"Michael Phelps",sport:"Swi214312ming"},
+        {athlete:"Mic1123lps",sport:"Swi222ng"},
+        {athlete:"Mic455elps",sport:"Swimming"},
+      ],
+      rightRowData: [
+        {athlete:"233",sport:"Swimm22ing"},
+        {athlete:"Mic24521lps",sport:"Swi252151ming"},
+        {athlete:"111helps",sport:"Sw244512ng"},
+      ],
+      GridToGridColumns: [
+        {
+          rowDrag: true,
+          maxWidth: 50,
+          suppressMenu: true,
+          rowDragText: function(params, dragItemCount) { //드래그해서 이동될때 보이는 값
+            if (dragItemCount > 1) {
+              return dragItemCount + ' athletes';
+            }
+            return params.rowNode.data.athlete;
+          },
+        },
+        {
+          colId: 'checkbox',
+          maxWidth: 50,
+          checkboxSelection: true,
+          suppressMenu: true,
+          headerCheckboxSelection: true
+        },
+        { field: "athlete" },
+        { field: "sport" }
+      ],
       contentTree: [{
         groupId: 0,
         directoryName: '청구계정ID 홍길* 은행계좌자동이체',
@@ -837,15 +882,11 @@ export default {
             "border-left": "0px",
           },
           headerClass: "ag-header-first-child",
+          rowDrag:true,
         },
         { headerName: "Model", field: "model" },
         { headerName: "Price", field: "price" },
-        { headerName: "Make", field: "make" },
-        { headerName: "Model", field: "model" },
-        { headerName: "Price", field: "price" },
-        { headerName: "Make", field: "make" },
-        { headerName: "Model", field: "model" },
-        { headerName: "Price", field: "price" },
+
       ],
       rowData1: [
         { make: "Toyota", model: "Celica", price: 35000 },
