@@ -30,7 +30,7 @@ import TableComponent from '@/components/common/TableComponent.vue';
 
 export default {
   mixins:[ApiMixin],
-  name: "SubsList",
+  name: "SubsLst",
   components: { Blc2Component, SubsRetvComponent, PagingArea, TableComponent },
   data(){
     return{
@@ -41,7 +41,7 @@ export default {
   },
   async beforeMount() {
     await this.$connect('application/json','/info2.json','get','').then((res)=>{
-      this.custInfo = res.data.info[0];
+      
       this.columnDefs =res.data.columnDefs;
       this.rowData = res.data.rowData;
     }).catch((e)=>{

@@ -28,6 +28,10 @@ export default {
       type:String,
       default:'150px'
     },
+    class6Width:{
+      type:String,
+      default:'140px'
+    },
     longWidth :{
       type: String,
       default:'330px'
@@ -131,5 +135,20 @@ input {
 
 .class5_long1{
   width: v-bind('longWidth');
+}
+
+.class6{
+  width: v-bind("class6Width");
+  /* font-size: 12pt; */
+  font-size: 10pt;
+  font-weight: normal;
+  color: #000;
+  background-color: white;
+  border: 1px solid #e4e4e4;
+  margin-right: 11px;
+  height: 24px;
+}
+.class6_2{
+  background-color: rgb(251, 253, 255);
 }
 </style>

@@ -163,40 +163,88 @@
     }
 
   ],
-  "codeDiv" : [
+    "codeDiv" : [
+      {
+        "cdNm" : "전체",
+        "cdId" : "1"
+      },
+      {
+        "cdNm" : "코드그룹ID",
+        "cdId" : "2"
+      },
+      {
+        "cdNm" : "코드그룹명",
+        "cdId" : "3"
+      },
+      {
+        "cdNm" : "코드ID",
+        "cdId" : "4"
+      },
+      {
+        "cdNm" : "코드명",
+        "cdId" : "5"
+      }
+    ],
+    "useYn": [
+      {
+        "cdNm" : "전체",
+        "cdId" : 1
+      },
+      {
+        "cdNm" : "사용",
+        "cdId" : true
+      },
+      {
+        "cdNm" : "미사용",
+        "cdId" : false
+      }
+  ],
+  "inOfficeSttus":[
+
     {
-      "cdNm" : "전체",
-      "cdId" : "1"
+      "cdNm": "전체",
+      "cdId": "whole"
     },
     {
-      "cdNm" : "코드그룹ID",
-      "cdId" : "2"
+      "cdNm":  "재직",
+      "cdId":  "inOffice"
     },
     {
-      "cdNm" : "코드그룹명",
-      "cdId" : "3"
-    },
-    {
-      "cdNm" : "코드ID",
-      "cdId" : "4"
-    },
-    {
-      "cdNm" : "코드명",
-      "cdId" : "5"
+      "cdNm":  "휴직",
+      "cdId":  "loab"
     }
   ],
-  "useYn": [
+
+  "직책_json":[
     {
-      "cdNm" : "전체",
-      "cdId" : 1
+      "cdNm":  "직책",
+      "cdId":  "role1"
     },
     {
-      "cdNm" : "사용",
-      "cdId" : true
-    },
-    {
-      "cdNm" : "미사용",
-      "cdId" : false
+      "cdNm":  "직책2",
+      "cdId":  "role2"
     }
+
+  ],
+  "dutySelect":[
+    {
+      "cdNm":  "직무",
+      "cdId":  "role1"
+    },
+    {
+      "cdNm":  "직무2",
+      "cdId":  "role2"
+    }
+  ],
+  "orgSelect":[
+    {
+      "cdNm":  "조직",
+      "cdId":  "role1"
+    },
+    {
+      "cdNm":  "조직2",
+      "cdId":  "role2"
+    }
+
   ]
 }
