@@ -4,14 +4,12 @@
   class="ag-theme-alpine"
   :columnDefs="columnDefs"
   :rowData="rowData"
-  :rowHeight="30"
+  :rowHeight="rowHeight"
   :suppressRowTransform="true"
   :suppressMovableColumns="true"
-  rowSelection="multiple"
-  @grid-ready="onGridReady"
-  :pagination="true"
-  :paginationPageSize="paginationPageSize"
+  rowSelection="single"
   :suppressRowHoverHighlight="true"
+  @selection-changed="onSelectionChanged"
   ></ag-grid-vue>
 </template>
 
@@ -28,23 +26,31 @@ export default {
       type:Array,
       default:''
       },
+    rowHeight:{
+      type:Number,
+      default:30
+    }
   },
   data(){
     return{
       paginationPageSize: null,
       servState :["사용중","예약(기설중)","정지","해지"],
+      seletedRowData:''
     }
   },
   components:{
     AgGridVue
   },
   methods:{
-    onGridReady(params){
-    },
+    onSelectionChanged(params) {
+      this.seletedRowData = params.api.getSelectedRows();
+    console.log("seletedRowData : ",this.seletedRowData);
+    }
   },
   created(){
     this.paginationPageSize = 7*2;
-  }
+  },
+
 }
 </script>
 
@@ -68,12 +74,17 @@ export default {
   background-color: violet;
 }
 
-
+.ag-cell-wrapper {
+  margin-left:auto;
+}
 
 .cell-span {
   /* background-color: rgb(231,231,231); */
   /* background-color: white; */
-}
+  }
+  .ag-theme-alpine .ag-ltr .ag-cell-focus:not(.ag-cell-range-selected):focus-within{
+    border-color: none;
+  }
 .ag-header-cell{
   background-color: rgb(239, 245, 252);
   border: .5px solid rgb(231,231,231);
@@ -90,6 +101,7 @@ export default {
 }
 .ag-theme-alpine{
   --ag-selected-row-background-color:rgb(255, 254,238);
+  --ag-range-selection-border-color:#bdbdbd;
 }
 .ag-grid_sp{
   border: none;
