@@ -226,6 +226,154 @@
       "model7": "Y"
     }
   ],
+  "cdGpRowData": [
+    {
+      "model1": "1",
+      "model2": "0087EQPMODELCD",
+      "model4": "선박위성시설 SET 장치모델",
+      "model6": "선박위성시설 SET 장치 모델코드",
+      "model7": "10",
+      "model8": "사용",
+      "StartDate": "2022-05-01",
+      "EndDate": "9999-12-31"
+    },
+    {
+      "model1": "2",
+      "model2": "ACRND_TYPE_CD",
+      "model4": "청구서유형",
+      "model7": "1",
+      "model8": "사용"
+    },
+    {
+      "model1": "3",
+      "model2": "ACTN_CD",
+      "model4": "조치코드",
+      "model5": "ACTN_CD",
+      "model6": "조치 코드 (CDR Drop, Error 등)",
+      "model7": "6",
+      "model8": "미사용"
+    },
+    {
+      "model1": "4",
+      "model2": "ACTN_CD",
+      "model4": "조치코드",
+      "model5": "ACTN_CD",
+      "model6": "조치 코드 (CDR Drop, Error 등)",
+      "model7": "6",
+      "model8": "미사용"
+    },
+    {
+      "model1": "5",
+      "model2": "ACTN_CD",
+      "model4": "조치코드",
+      "model5": "ACTN_CD",
+      "model6": "조치 코드 (CDR Drop, Error 등)",
+      "model7": "6",
+      "model8": "미사용"
+    }
+  ],
+  "cdLstRowData": [
+    {
+      "model1" : "1",
+      "model2" : "100000146",
+      "model5" : "V100NX",
+      "model6" : "V100NX",
+      "model7" : "1",
+      "model8" : "사용",
+      "StartDate": "2022-05-01",
+      "EndDate": "9999-12-31"
+    },
+    {
+      "model1" : "2",
+      "model2" : "100000146",
+      "model5" : "V100NX",
+      "model6" : "V100NX",
+      "model7" : "1",
+      "model8" : "사용",
+      "StartDate": "2022-05-01",
+      "EndDate": "9999-12-31"
+    },
+    {
+      "model1" : "3",
+      "model2" : "100000146",
+      "model5" : "V100NX",
+      "model6" : "V100NX",
+      "model7" : "1",
+      "model8" : "사용",
+      "StartDate": "2022-05-01",
+      "EndDate": "9999-12-31"
+    },
+    {
+      "model1" : "4",
+      "model2" : "100000146",
+      "model5" : "V100NX",
+      "model6" : "V100NX",
+      "model7" : "1",
+      "model8" : "사용",
+      "StartDate": "2022-05-01",
+      "EndDate": "9999-12-31"
+    },
+    {
+      "model1" : "5",
+      "model2" : "100000146",
+      "model5" : "V100NX",
+      "model6" : "V100NX",
+      "model7" : "1",
+      "model8" : "사용",
+      "StartDate": "2022-05-01",
+      "EndDate": "9999-12-31"
+    },
+    {
+      "model1" : "6",
+      "model2" : "100000146",
+      "model5" : "V100NX",
+      "model6" : "V100NX",
+      "model7" : "1",
+      "model8" : "사용",
+      "StartDate": "2022-05-01",
+      "EndDate": "9999-12-31"
+    },
+    {
+      "model1" : "7",
+      "model2" : "100000146",
+      "model5" : "V100NX",
+      "model6" : "V100NX",
+      "model7" : "1",
+      "model8" : "사용",
+      "StartDate": "2022-05-01",
+      "EndDate": "9999-12-31"
+    },
+    {
+      "model1" : "8",
+      "model2" : "100000146",
+      "model5" : "V100NX",
+      "model6" : "V100NX",
+      "model7" : "1",
+      "model8" : "사용",
+      "StartDate": "2022-05-01",
+      "EndDate": "9999-12-31"
+    },
+    {
+      "model1" : "9",
+      "model2" : "100000146",
+      "model5" : "V100NX",
+      "model6" : "V100NX",
+      "model7" : "1",
+      "model8" : "사용",
+      "StartDate": "2022-05-01",
+      "EndDate": "9999-12-31"
+    },
+    {
+      "model1" : "10",
+      "model2" : "100000146",
+      "model5" : "V100NX",
+      "model6" : "V100NX",
+      "model7" : "1",
+      "model8" : "사용",
+      "StartDate": "2022-05-01",
+      "EndDate": "9999-12-31"
+    }
+  ],
   "contentTree": [
     {
     "groupId": 0,

@@ -18,6 +18,8 @@
     :debounceVerticalScrollbar="true"
     :suppressColumnVirtualisation="true"
     :suppressRowVirtualisation="true"
+    :rowSelection="'single'"
+    :suppressCellSelection="true"
     :suppressMaxRenderedRowRestriction="true"
     :enableCellTextSelection="true"
     :enableBrowserTooltips="true"
@@ -49,7 +51,7 @@ export default {
     },
     rowData: null,
     columnDefs: null,
-    gridOptions: null,
+    gridOptions: {},
     rowClicked: {
       //행 클릭 이벤트
       type: Function,
@@ -264,6 +266,8 @@ export default {
 .ag-grid .ag-cell {
   border-bottom: #efefef solid 1px;
   border-left: #e4e4e4 solid 1px;
+
+   */
   /*  */
   font-size: 14px;
   color: #343434;
@@ -284,7 +288,16 @@ export default {
 .ag-grid .ag-cell-label-container {
   width: auto;
 }
+.ag-grid .ag-row-selected{
+  background-color: rgb(255,254,238);
+}
+.ag-grid .ag-checkbox-input::after{
+  display: none;
 
+}
+.ag-grid .ag-checkbox-input.ag-checked::after{
+  display: none;
+}
 .ag-grid .ag-cell-left {
   /* 왼쪽 정렬 */
   box-sizing: border-box;

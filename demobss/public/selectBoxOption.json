@@ -162,5 +162,41 @@
       "cdId": 20
     }
 
+  ],
+  "codeDiv" : [
+    {
+      "cdNm" : "전체",
+      "cdId" : "1"
+    },
+    {
+      "cdNm" : "코드그룹ID",
+      "cdId" : "2"
+    },
+    {
+      "cdNm" : "코드그룹명",
+      "cdId" : "3"
+    },
+    {
+      "cdNm" : "코드ID",
+      "cdId" : "4"
+    },
+    {
+      "cdNm" : "코드명",
+      "cdId" : "5"
+    }
+  ],
+  "useYn": [
+    {
+      "cdNm" : "전체",
+      "cdId" : 1
+    },
+    {
+      "cdNm" : "사용",
+      "cdId" : true
+    },
+    {
+      "cdNm" : "미사용",
+      "cdId" : false
+    }
   ]
 }

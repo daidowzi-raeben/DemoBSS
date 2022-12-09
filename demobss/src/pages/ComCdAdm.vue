@@ -8,7 +8,8 @@
         <span>
         <select-box-component
             :selectClass="'select_input3'"
-            :cdGroup="cdGroup"
+            :cdGroup="'codeDiv'"
+            :disabled="true"
             :defaultValue="'코드구분선택'"
             @input=" (value) => { searchDiv = value;}"
             v-model="searchDiv"
@@ -30,8 +31,8 @@
         <span>
         <select-box-component
             :selectClass="'select_input3'"
-            :cdGroup="cdGroup"
-            :defaultValue="'코드구분선택'"
+            :cdGroup="'useYn'"
+            :defaultValue="'사용여부 선택'"
             @input=" (value) => { searchDiv = value;}"
             v-model="searchDiv"
         />
@@ -74,6 +75,7 @@
           :btnClass="'btnClass3'"
           :btnName="'변경'"
           :btnWidth="'auto'"
+          @click="isCdGpModalShow=true; cdGpType=2"
       />
         </span>
         <span style="float: right">
@@ -81,6 +83,7 @@
           :btnClass="'btnClass3'"
           :btnName="'신규등록'"
           :btnWidth="'auto'"
+          @click="isCdGpModalShow=true; cdGpType=1"
       />
         </span>
         <span style="float: right">
@@ -94,16 +97,20 @@
       <div class="ag-grid_sp">
         <ag-grid-component
             :header-color="'rgb(239 245 252)'"
-            :rowData="this.rowData"
+            :rowData="this.cdGpRowData"
             :columnDefs="columnDefs"
+            :rowClicked="clickedRow"
             :isWidthFit="false"
+            :overlayNoRowsTemplate="
+          `<span> <br>` + '<br />조회 결과가 없습니다.' + ` </span>`
+          "
         />
       </div>
       <div style="width: 100%">
         <span style="display: flex; float: left; padding-top: 20px;">
     <select-box-component
         :selectClass="'select_input3'"
-        :cdGroup="cdGroup"
+        :cdGroup="'optionSearchNum'"
         :defaultValue="'선택'"
         v-model="month"
         style="
@@ -125,7 +132,7 @@
       </div>
     </div>
 
-    <div class="item">  <!--3번 영역 -->
+    <div class="item" v-if="isCdGpShow">  <!--3번 영역 -->
       <div style="width: 100%">
         <SubInfoTitle :subInfoTitleNm="'코드 리스트'"/>
         <p style="margin-left:5px; display:inline-block;">(총 <label style="font-weight: bold">{{ total }}</label>건)</p>
@@ -142,6 +149,7 @@
           :btnClass="'btnClass3'"
           :btnName="'변경'"
           :btnWidth="'auto'"
+          @click="isCdLstModalShow=true; cdLstType=2"
       />
         </span>
         <span style="float: right">
@@ -149,19 +157,38 @@
           :btnClass="'btnClass3'"
           :btnName="'신규등록'"
           :btnWidth="'auto'"
+          @click="isCdLstModalShow=true; cdLstType=1"
       />
         </span>
       </div>
       <div class="ag-grid_sp">
         <ag-grid-component
             :header-color="'rgb(239 245 252)'"
-            :rowData="this.rowData"
+            :rowData="this.cdLstRowData"
             :columnDefs="columnDefs"
+            :rowClicked="clickedRow"
             :isWidthFit="false"
+            :overlayNoRowsTemplate="
+          `<span> <br>` + '<br />조회 결과가 없습니다.' + ` </span>`
+          "
         />
       </div>
     </div>
-
+    <!-- 팝업 영역 -->
+    <!--코드그룹리스트 팝업 -->
+    <CodeGroupPopup
+        v-if="isCdGpModalShow"
+        :type="cdGpType"
+        :value="cdGpvalue"
+        @close="closeCdGpModal"
+      />
+    <!--코드리스트 팝업 -->
+    <CdLstPopup
+        v-if="isCdLstModalShow"
+        :type="cdLstType"
+        :value="cdLstvalue"
+        @close="closeCdLstModal"
+    />
   </article>
 </template>
 
@@ -173,27 +200,43 @@ import AgGridComponent from "@/components/common/AgGridComponent";
 import InputComponent from "@/components/common/InputComponent";
 import SubInfoTitle from "@/components/common/SubInfoTitle";
 import ApiMixin from "@/service/common";
+import CodeGroupPopup from "@/components/common/PopupComponent/CdGroupLstPopup";
+import CdLstPopup from "@/components/common/PopupComponent/CdLstPopup";
+import AgGridRadioComp from "@/components/common/AgGridComponent/AgGridRadioComp";
 export default {
   mixins:[ApiMixin],
   name: "ComCdAdm",
   components: {
+    CdLstPopup,
+    CodeGroupPopup,
     pagingArea,
     selectBoxComponent,
     ButtonComponent,
     AgGridComponent,
     SubInfoTitle,
-    InputComponent
+    InputComponent,
+    AgGridRadioComp
   },
   data(){
     return{
-      rowData: [],
       cdGroup:null,
+      isCdGpModalShow : false,  //코드그룹 리스트 등록/변경 팝업
+      isCdLstModalShow : false, // 코드리스트 등록/변경 팝업
+      cdGpType : null,
+      cdLstType : null,
+      isCdGpShow: false,
+      cdLstRowData:[],
+      cdGpRowData : [],
       columnDefs: [
         {
           headerName: "선택",
-          field: "model0",
-          headerClass: "ag-header-first-child",
-          width : 30
+          field: '',
+          checkboxSelection: true,
+          showDisabledCheckboxes: true,
+          width: 30,
+          cellStyle: () =>{
+              return {'pointer-events' : "none"}
+          }
         },
         { headerName: "순번", field: "model1", width : 30 },
         { headerName: "코드그룹ID", field: "model2", width : 70 },
@@ -211,7 +254,8 @@ export default {
           headerName: "선택",
           field: "model0",
           headerClass: "ag-header-first-child",
-          width : 30
+          width : 30,
+          cellRenderer : 'AgGridRadioComp'
         },
         { headerName: "순번", field: "model1", width : 30 },
         { headerName: "코드ID", field: "model2", width : 70 },
@@ -232,12 +276,29 @@ export default {
       },
     }
   },
+  methods:{
+    //코드 그룹 팝업 닫기
+    closeCdGpModal(){
+      this.isCdGpModalShow = false;
+      this.cdGpType = null;
+    },
+    //코드리스트 팝업 닫기
+    closeCdLstModal(){
+      this.isCdLstModalShow = false;
+      this.cdLstType = null;
+    },
+    clickedRow(params){
+      this.isCdGpShow = true;
+      console.log(params);
+    }
+  },
   async beforeMount() {
     // this.gridOptions = {
     //   pinnedBottomRowData: [{ model0: "합계", model1: null, model4: 0 }],
     // };
     await this.$connect('application/json','/info.json','get','').then((res)=>{
-      this.rowData = res.data.rowData;
+      this.cdGpRowData = res.data.cdGpRowData;
+      this.cdLstRowData = res.data.cdLstRowData;
     })
     console.log(this.rowData);
   },
@@ -320,6 +381,6 @@ export default {
   /* margin: 10px; */
   width: 100%;
   height: 250px;
-  border-top: 3px solid rgb(27,114,212);
 }
+
 </style>
