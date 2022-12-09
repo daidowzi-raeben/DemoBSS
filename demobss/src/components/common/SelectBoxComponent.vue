@@ -6,8 +6,7 @@
     :class="selectClass"
     :style="{ width: width + 'px' }"
     v-model="value"
-    :input="updateValue(value)"
-    @change="chkevent($event)"
+    @change="[updateValue(value), chkevent($event)]"
   >
     <option 
     v-if="defaultValue != null" 
@@ -52,6 +51,7 @@ export default {
     };
   },
   props: {
+    selectedValue : String,
     cdGroup: String,
     width: Number,
     selectClass: String,
@@ -88,16 +88,26 @@ export default {
   watch: {
     cur(newValue,oldValue){
       this.secndOptions = secndSelect[newValue];
+    },
+    selectedValue(newSelectedValue){
+      // 해당 셀렉트박스 옵션 중 선택 된 값이 있는지 판단 후,
+      // 있다면 해당 값을 선택 값으로 올림, 그렇지 않으면 empty 문자열 반환하여 placeholder(disabled, hidden) 반환 
+      this.value = this.options.map(n => n.cdId).includes(newSelectedValue) ? newSelectedValue : '';
+    },
+    value(newValue){
+      this.value= newValue;
     }
   },
   methods: {
     updateValue(value) {
-      // console.log(value, this.value);
       this.$emit("input", value);
+      // console.log("value@@@",value,this.options[this.options.map(n => n.cdId).indexOf(value)].cdNm);
+      // this.$emit("input", this.options[this.options.map(n => n.cdId).indexOf(value)].cdNm);
+      // console.log("value@@@",value,this.options[this.options.map(n => n.cdNm).indexOf(value)].cdId);
+      // this.$emit("input", this.options[this.options.map(n => n.cdNm).indexOf(value)].cdId);
     },
     chkevent(event){
       this.cur = event.target.value;
-
     }
   },
 };
@@ -161,7 +171,7 @@ select option:hover{
   height: 100%;
   width: 100%;
   color: #000;
-  padding: 1px 22px 0 9px;
+  padding: 1px 22px 0 4px;
   background: #fff url(../../img/icon_form_arrow_black_02.png) no-repeat;
   background-size: 12px;
   background-position: right 7px center;
