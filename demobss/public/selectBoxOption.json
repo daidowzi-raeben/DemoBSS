@@ -214,26 +214,62 @@
       "cdId":  "loab"
     }
   ],
-
-  "직책_json":[
+  
+  "inOfficeSttus2":[
     {
-      "cdNm":  "직책",
-      "cdId":  "role1"
+      "cdNm":  "재직",
+      "cdId":  "inOffice"
+    },
+    {
+      "cdNm":  "휴직",
+      "cdId":  "loab"
+    }
+  ],
+  "ntcMeth":[
+    {
+      "cdNm":  "Email",
+      "cdId":  "ntcMeth1"
+    },
+    {
+      "cdNm":  "SMS(문자)",
+      "cdId":  "ntcMeth2"
+    },
+    {
+      "cdNm":  "SMS(알림톡)",
+      "cdId":  "ntcMeth3"
+    }
+  ],
+
+  "rspof":[
+    {
+      "cdNm":  "관리자",
+      "cdId":  "rspof1"
     },
     {
       "cdNm":  "직책2",
-      "cdId":  "role2"
+      "cdId":  "rspof2"
+    },
+    {
+      "cdNm":  "직책3",
+      "cdId":  "rspof3"
     }
-
   ],
   "dutySelect":[
     {
-      "cdNm":  "직무",
+      "cdNm":  "시스템관리",
       "cdId":  "role1"
     },
     {
-      "cdNm":  "직무2",
+      "cdNm":  "개발관리",
       "cdId":  "role2"
+    },
+    {
+      "cdNm":  "데이터관리",
+      "cdId":  "role3"
+    },
+    {
+      "cdNm":  "프로젝트관리",
+      "cdId":  "role4"
     }
   ],
   "orgSelect":[
@@ -245,6 +281,31 @@
       "cdNm":  "조직2",
       "cdId":  "role2"
     }
-
+  ],
+  "emailDomain":[
+    {
+      "cdNm":  "kt.com",
+      "cdId":  "kt"
+    },
+    {
+      "cdNm":  "ktds.com",
+      "cdId":  "ktds"
+    },
+    {
+      "cdNm":  "ktcloud.com",
+      "cdId":  "ktcloud"
+    },
+    {
+      "cdNm":  "kt2.com",
+      "cdId":  "kt2"
+    },
+    {
+      "cdNm":  "kt3.com",
+      "cdId":  "kt3"
+    },
+    {
+      "cdNm":  "kt4.com",
+      "cdId":  "kt4"
+    }
   ]
 }
