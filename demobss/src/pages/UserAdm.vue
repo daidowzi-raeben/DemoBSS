@@ -47,6 +47,185 @@
   </div>
 
   <div class="item3">
+    
+    <div>
+      <sub-info-title :subInfoTitleNm="subInfoTitleNm_Item3"/>
+      <span style="float: right">
+        <button-component :btnClass="'btnClass3'" :btnName="userAdmObject.sttus=='amend'? '변경':'등록'" />
+      </span>
+    </div>
+    
+    <div>
+      <form action="">
+        <table class="userDtlInfoTable">
+          <tr>
+            <th><label-component :labelNm="'사번'"/> </th>
+            <td> 
+              <input-component 
+              :class6Width="'180px'" 
+              :input-class="userAdmObject.inputClass" 
+              :disabled="userAdmObject.isDisabled"
+              :value="userAdmObject.cmpno" 
+              :placeholder="'사번 입력'"
+              />  
+            </td>
+            <th><label-component :labelNm="'재직상태'"/> </th>
+            <td>           </td>
+          </tr>
+
+          
+          <tr>
+            <th><label-component :labelNm="'사용자명'"/> </th>
+            <td> <input-component 
+            :input-class="'class6'" 
+            :class6Width="'180px'" 
+            :value="userAdmObject.userNm" 
+            :placeholder="'이름 입력'"
+            />   </td>
+            <th><label-component :labelNm="'사용여부'"/> </th>
+            <td> radio </td>
+          </tr>
+
+          
+          <tr>
+            <th><label-component :labelNm="'알림방법'"/> </th>
+            <td> 셀렉트박스 </td>
+            <th><label-component :labelNm="'OTP사용여부'"/> </th>
+            <td>           </td>
+          </tr>
+
+          
+          <tr>
+            <th><label-component :labelNm="'조직'"/> </th>
+            <td colspan="2">
+              <input-component 
+            :input-class="'class6 class6_2'" 
+            :class6Width="'180px'" 
+            :disabled="true"
+            :value="userAdmObject.org" 
+            :placeholder="' 조직검색 '"
+            />   </td>
+            <td>           </td>
+          </tr>
+
+          
+          <tr>
+            <th><label-component :labelNm="'직책'"/> </th>
+            <td>            </td>
+            <th><label-component :labelNm="'직무'"/> </th>
+            <td>           </td>
+          </tr>
+
+          
+          <tr>
+            <th><label-component :labelNm="'이메일주소'"/> </th>
+            <td colspan="3">
+              <input-component 
+              :input-class="'class6 '" 
+              :class6Width="'180px'" 
+              :value="userAdmObject.email" 
+              :placeholder="' 이메일주소 '"
+              />
+            </td>
+          </tr>
+
+          
+          <tr>
+            <th><label-component :labelNm="'휴대전화번호'"/> </th>
+            <td colspan="3">
+              <input-component 
+              :input-class="'class6 '" 
+              :class6Width="'180px'" 
+              :value="userAdmObject.mphon" 
+              :placeholder="' 휴대 전화 번호 '"
+              />
+            </td>
+          </tr>
+          <tr>
+            <th><label-component :labelNm="'전화번호'"/> </th>
+            <td colspan="3">
+              <input-component 
+              :input-class="'class6 '" 
+              :class6Width="'180px'" 
+              :value="userAdmObject.ppon" 
+              :placeholder="' 전화번호 '"
+              />
+            </td>
+          </tr>
+
+          <tr>
+            <th><label-component :labelNm="'비밀번호'"/> </th>
+            <td colspan="3">
+              <input-component 
+              :input-class="userAdmObject.inputClass"
+              :disabled="userAdmObject.isDisabled"
+              :class6Width="'180px'"  
+              :value="userAdmObject.pwd"
+              :placeholder=" userAdmObject.sttus=='register'? '비밀번호 입력':''" /> 
+            </td>
+          </tr>
+
+          <tr>
+            <th><label-component :labelNm="'비밀번호변경일'"/> </th>
+            <td colspan="3"> 
+            <input-component 
+            :input-class="'class6 class6_2'" 
+            :class6Width="'180px'" 
+            :disabled="true"
+            :value="userAdmObject.pwdChgDt" 
+            :placeholder="' - '"
+            />   </td>
+          </tr>
+          
+          <tr>
+            <th><label-component :labelNm="'최종로그인일시'"/> </th>
+            <td colspan="3">
+              <input-component 
+            :input-class="'class6 class6_2'" 
+            :class6Width="'180px'" 
+            :disabled="true"
+            :value="userAdmObject.lastLogIn" 
+            :placeholder="' - '"
+            />   
+            </td>
+          </tr>
+          
+          <tr>
+            <th><label-component :labelNm="'로그인실패'"/> </th>
+            <td colspan="3"><input-component 
+            :input-class="'class6 class6_2'" 
+            :class6Width="'180px'" 
+            :disabled="true"
+            :value="userAdmObject.failLogIn" 
+            :placeholder="' - '"
+            />   </td>
+          </tr>
+          
+          <tr>
+            <th><label-component :labelNm="'등록자/등록일시'"/> </th>
+            <td colspan="3"><input-component 
+            :input-class="'class6 class6_2'" 
+            :class6Width="'180px'" 
+            :disabled="true"
+            :value="userAdmObject.regrDt" 
+            :placeholder="' 2022-12-09 20:03:30 '"
+            />   </td>
+          </tr>
+          
+          <tr>
+            <th><label-component :labelNm="'수정자/수정일시'"/> </th>
+            <td colspan="3"><input-component 
+            :input-class="'class6 class6_2'" 
+            :class6Width="'180px'" 
+            :disabled="true"
+            :value="userAdmObject.amdrDt" 
+            :placeholder="' 2022-12-09 19:20:30 '"
+            />   </td>
+          </tr>
+        </table>
+
+      </form>
+      
     </div>
   </div>
 </article>
@@ -70,6 +249,34 @@ export default {
   components: { UserAdmRetvComponent, AgGridComponent2, SubInfoTitle, ButtonComponent, SelectBoxComponent, PagingArea, LabelComponent, InputComponent },
   data(){
     return{
+      subInfoTitleNm_Item2:"사용자 리스트",
+      subInfoTitleNm_Item3:"사용자 상세정보",
+      total: "65",
+      btnName1 : '등록',
+      btnName2 : '변경',
+      btnName3 : '숨김해제',
+      btnName4 : '액셀다운로드',
+      rowHeight:'48',
+      rowData:[],
+      columnDefs:[
+        { headerName: "선택",      field: "select",       width:80,  cellClass: 'cell-span', checkboxSelection:true, 
+        cellStyle:()=> {return {'pointer-events':'none' };}
+        },
+        { headerName: "사번",      field: "CMPNO",     width:110,  cellClass: '"cell"-span'},
+        { headerName: "사용자명",  field: "userNm",      width:130,  cellClass: 'cell-span'},
+        { headerName: "재직상태",  field: "inofficeSttus", width:90,  cellClass: 'cell-span'},
+        { headerName: "조직",      field: "org",   width:140,   cellClass: 'cell-span'},
+        { headerName: "직책",      field: "rspof", width:130,  cellClassRules: { 'cell-span': "true", }},
+        { headerName: "직무",      field: "duty", width:158,  cellClassRules: { 'cell-span': "true", }}  
+      ],
+      
+      pageableData: {
+        pageNumber: 1,
+        currentMinPage: 1,
+        currentMaxPage: 10,
+        totalPages: 30,
+        },
+        currentPage:'',
       userAdmObject:{ 
         sttus : "amend",
         inputClass : "class6 class6_2",
@@ -89,6 +296,14 @@ export default {
         amdrDt:"수정자/수정일시",
         }
     }
+  },
+  async beforeMount() {
+    await this.$connect('application/json','/info2.json','get','').then((res)=>{
+      this.rowData = res.data.userRowData;
+      console.log(this.rowData);
+    }).catch((e)=>{
+      console.log(e);
+    });
   },
   methods:{
     clickUserRegister(){
@@ -147,6 +362,34 @@ export default {
   grid-row: 2;
   grid-column: 2;
 }
+.item2 > div:nth-child(1){
+  width: 100%;
+  height: 25px;
+}
+.item2 > div:nth-child(2){
+  width: 100%;
+  height: calc(100% - 100px);
+  margin-top: 5px;
+  
+}
+
+.pcSelectAndPagingFlex{ 
+  font-size:20px; 
+  margin-top:20px;
+  display:grid;
+  grid-template-columns: 100px calc(100% - 200px) 100px;
+  }
+
+.pcSelectAndPagingFlex > div:nth-child(1) {
+  grid-column: 2;
+  padding: 0px;
+}
+.pcSelectAndPagingFlex > div:nth-child(2) {
+  grid-column: 3;
+  width:100px;
+  height:22px;
+}
+
 .userDtlInfoTable{
   width: 100%;
   border-collapse: collapse;
