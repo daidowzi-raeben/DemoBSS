@@ -76,7 +76,7 @@
           :btnClass="'btnClass3'"
           :btnName="'변경'"
           :btnWidth="'auto'"
-          @click="isCdGpModalShow=true; cdGpType=2"
+          @click="autUpdate=true; autReg=false; disabled=true"
       />
         </span>
         <span style="float: right">
@@ -84,7 +84,7 @@
           :btnClass="'btnClass3'"
           :btnName="'등록'"
           :btnWidth="'auto'"
-          @click="isCdGpModalShow=true; cdGpType=1"
+          @click="autReg=true; autUpdate=false; disabled=false"
       />
         </span>
       </div>
@@ -126,7 +126,7 @@
         </span>
       </div>
     </div>
-    <div class="item"> <!--3번 -->
+    <div class="item" v-if="autReg===true || autUpdate===true"> <!--3번 -->
       <div style="width: 100%; height: 100%;">
         <div>
           <sub-info-title :subInfoTitleNm="'권한 상세정보'"/>
@@ -136,7 +136,17 @@
             :btnName="'등록'"
             :btnHeight="'28px'"
             :btnWidth ="'100px'"
+            v-if="autReg===true"
+            @click="isModalRegShow=true"
         />
+            <button-component
+                :btnClass="'btnClass4'"
+                :btnName="'변경'"
+                :btnHeight="'28px'"
+                :btnWidth ="'100px'"
+                v-if="autUpdate===true"
+                @click="isModalUpdateShow=true"
+            />
       </span>
         </div>
         <div class="content_area">
@@ -144,7 +154,7 @@
             <tr>
               <th>권한ID</th>
               <td colspan="3">
-                <input-component :input-class="'class5 class5_long1'" :long-width="'600px'" :value="'ACRND_TYPE_CD' " />
+                <input-component :input-class="'class5 class5_long1'" :class="autUpdate===true ? 'input_disabled':'input'"  :long-width="'600px'" :disabled="disabled" :value="'ACRND_TYPE_CD' " />
               </td>
             </tr>
             <tr>
@@ -162,42 +172,58 @@
                     :disabled="true"
                     :is-disabled="true"
                     style="
-                    width: 200px;
+                    width: 100px;
                     height: 26px;
                     "
-                    :defaultValue="'코드구분선택'"
+                    :select_input3_marginLeft="0"
+                    :defaultValue="'조회'"
                     @input=" (value) => { searchDiv = value;}"
                     v-model="searchDiv"
                   />
               </td>
-              <th style="width: 100px;">사용여부</th>
+              <th>사용여부</th>
               <td>
-                <input type="radio"  selected>사용
-                <input type="radio" >미사용
+                <span style="margin-right: 50px;"><input type="radio" v-model="useAble" value="use">사용</span>
+                <span><input type="radio" v-model="useAble"  value="unuse">미사용</span>
               </td>
             </tr>
             <tr>
               <th>등록자/등록일시</th>
-              <td>
-                <input-component class="input" :input-class="'class5 class5_long1'" :long-width="'220px'" :value="'코드그룹명 입력' " />
+              <td colspan="3">
+                <span><input-component :class="autUpdate===true ? 'input_disabled':'input'" :input-class="'class5 class5_long1'" :long-width="'150px'" :disabled="disabled" :value="'코드그룹명 입력' " /></span>
+                <span >
+                <date-picker-component
+                    :classWrapper="'calender_input'" :disabled="disabled" :class="autUpdate===true ? 'input_disabled':'input'"
+                /></span>
               </td>
-              <td><date-picker-component
-                  :classWrapper="'calender_input'"
-              /></td>
             </tr>
             <tr>
               <th>수정자/수정일시</th>
-              <td>
-                <input-component class="input" :input-class="'class5 class5_long1'" :long-width="'220px'" :value="'코드그룹명 입력' " />
+              <td colspan="3">
+                <span><input-component :class="autUpdate===true ? 'input_disabled':'input'" :input-class="'class5 class5_long1'" :long-width="'150px'"  :disabled="disabled" :value="'코드그룹명 입력' " /></span>
+                <span><date-picker-component
+                    :classWrapper="'calender_input'" :disabled="disabled" :class="autUpdate===true ? 'input_disabled':'input'"
+                /></span>
               </td>
-              <td><date-picker-component
-                  :classWrapper="'calender_input'"
-              /></td>
+
             </tr>
           </table>
         </div>
       </div>
     </div>
+    <popup-component
+        v-if="isModalUpdateShow"
+        @popup="isModalUpdateShow = false"
+        @AGREE = "''"
+        :popupmsg="'변경하시겠습니까?'"
+    />
+    <popup-component
+        v-if="isModalRegShow"
+        @popup="isModalRegShow = false"
+        @AGREE = "''"
+        :popupmsg="'등록하시겠습니까?'"
+    />
+
   </article>
 </template>
 
@@ -209,12 +235,14 @@ import AgGridComponent from "@/components/common/AgGridComponent";
 import InputComponent from "@/components/common/InputComponent";
 import SubInfoTitle from "@/components/common/SubInfoTitle";
 import DatePickerComponent from "@/components/common/DatePickerComponent";
+import PopupComponent from "@/components/common/PopupComponent.vue";
 import ApiMixin from "@/service/common";
 export default {
   mixins:[ApiMixin],
   name: "AutAdm",
   components: {
     DatePickerComponent,
+    PopupComponent,
     pagingArea,
     selectBoxComponent,
     ButtonComponent,
@@ -225,6 +253,12 @@ export default {
   data(){
     return{
       RowData:[],
+      isModalRegShow:false, //등록 팝업
+      isModalUpdateShow:false, //변경 팝업
+      useAble:null, //사용여부관련 라디오 변수
+      autUpdate:false, //권한상세정보 변경관련 변수
+      autReg:false,  //권한상세정보 등록관련 변수
+      disabled:false, //각 상세정보 input disabled 처리 변수
       columnDefs: [
         {
           headerName: "선택",
@@ -344,9 +378,15 @@ table > tr > th{
   padding-left: 1%;
 }
 table > tr > td{
-  width: 174px;
+  width: 205px;
   /* text-align:right; */
   padding-left: 8px;
+}
+table > tr > td > span{
+  display: inline-block;
+}
+.input {
+  background-color: white;
 }
 .input_disabled{
   background-color: rgb(239, 245, 252);
