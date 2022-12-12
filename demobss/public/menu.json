@@ -614,6 +614,12 @@
       "cmpnId": ""
     },
     {
+      "menuId": "L05M06S01",
+      "menuNm": "메뉴관리",
+      "upMenuId": "L05M06S00",
+      "cmpnId": "MenuAdm"
+    },
+    {
       "menuId": "L05M07S00",
       "menuNm": "조직관리",
       "upMenuId": "L05",

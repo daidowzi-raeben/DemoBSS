@@ -307,5 +307,34 @@
       "cdNm":  "kt4.com",
       "cdId":  "kt4"
     }
+  ],
+  "retvCond":[
+
+    {
+      "cdNm": "전체",
+      "cdId": "whole"
+    },
+    {
+      "cdNm":  "메뉴ID",
+      "cdId":  "menuId"
+    },
+    {
+      "cdNm":  "메뉴명",
+      "cdId":  "menuNm"
+    }
+  ],
+  "wjtOptions":[
+    {
+      "cdNm":"화면조회",
+      "cdId":"scrnRetv"
+    },
+    {
+      "cdNm":"버튼",
+      "cdId":"butt"
+    },
+    {
+      "cdNm":"공통코드",
+      "cdId":"comCd"
+    }
   ]
 }
