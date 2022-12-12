@@ -1,16 +1,16 @@
 <template>
   <datepicker
-    style="background-color:white;"
-    v-model="date"
-    :class="classWrapper"
-    :locale="lang"
-    :minimumView="type"
-    :inputFormat="dateFormat"
-    :typeable="true"
-    :placeholder="pPlaceholder"
-    :input="updateDate(date)"
-    :clearable="true"
-    ref="datepicker"
+  :style="{'background-color': calenderBackgroundColor}"
+  v-model="date"
+  :class="classWrapper"
+  :locale="lang"
+  :minimumView="type"
+  :inputFormat="dateFormat"
+  :typeable="true"
+  :placeholder="pPlaceholder"
+  :input="updateDate(date)"
+  :clearable="true"
+  ref="datepicker"
   >
   </datepicker>
   <select v-show="timeShow">
@@ -48,6 +48,10 @@ export default {
     };
   },
   props: {
+    calenderBackgroundColor:{
+      type:String,
+      default:'white'
+    },
     pDate: null,
     width:{
       type:String,
@@ -114,7 +118,8 @@ export default {
   /* min-width: 130px; */
   width: v-bind('width');
   height: v-bind('height');
-  background-color: white;
+  /* background-color: v-bind('calenderBackgroundColor'); */
+  /* background-color: red; */
   border: #b6b6b6 solid 1px;
   font-size: 12px;
   color: #494949;

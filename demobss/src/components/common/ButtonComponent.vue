@@ -99,7 +99,12 @@ export default {
   border: 0.5px solid #bdbdbd;
 }
 .btnClass4:hover{
-  background-color: rgba(154, 42, 218, 0.967);
+  background-color: rgb(27,114,212,0.7) ;
+}
+.btnClass4:active {
+  color: rgb(27,114,212);
+  -webkit-transform: scale(0.98);
+  transform: scale(0.98);
 }
 
 .btnClass5 {

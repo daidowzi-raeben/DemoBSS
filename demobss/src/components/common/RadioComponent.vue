@@ -35,6 +35,7 @@ export default {
 }
 
 .radioContainer > input{
+  cursor: pointer;
 }
 
 .container {
