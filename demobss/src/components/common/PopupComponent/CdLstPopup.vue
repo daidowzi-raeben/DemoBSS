@@ -80,8 +80,8 @@
               <tr>
                 <th>사용여부</th>
                 <td>
-                  <input type="radio" selected>사용
-                  <input type="radio">미사용
+                  <span  style="margin-right: 50px;"><input type="radio" v-model="useAble" value="use">사용</span>
+                  <span><input type="radio" v-model="useAble"  value="unuse">미사용</span>
                 </td>
                 <th>코드출력순서</th>
                 <td>
@@ -122,6 +122,7 @@ export default {
   data() {
     return {
       disabled:false,
+      useAble:null
 
     };
   },
@@ -210,6 +211,10 @@ table > tr > td{
   width: 174px;
   /* text-align:right; */
   padding-left: 8px;
+}
+
+table > tr > td > span{
+  display: inline-block;
 }
 .input_disabled{
   background-color: rgb(239, 245, 252);

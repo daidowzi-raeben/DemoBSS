@@ -12,8 +12,8 @@
             :is-disabled="true"
             :disabled="true"
             :defaultValue="'코드구분선택'"
-            @input=" (value) => { searchDiv = value;}"
-            v-model="searchDiv"
+            @input=" (value) => { cdDivSel = value;}"
+            :pValue="cdDivSel"
         />
       </span>
         <span>
@@ -35,8 +35,8 @@
             :cdGroup="'useYn'"
             :is-disabled="true"
             :defaultValue="'사용여부 선택'"
-            @input=" (value) => { searchDiv = value;}"
-            v-model="searchDiv"
+            @input=" (value) => { useYn = value;}"
+            :p-value="useYn"
         />
       </span>
         <span>
@@ -46,6 +46,7 @@
             :btn-name ="'초기화'"
             :btnHeight="'28px'"
             :btnWidth ="'100px'"
+            @click="resetSearch"
         />
       </span>
         <span>
@@ -222,6 +223,9 @@ export default {
     return{
       cdGroup:null,
       isCdGpModalShow : false,  //코드그룹 리스트 등록/변경 팝업
+      cdDivSel:null,            //코드구분 select box
+      searchValue:null,         //검색 값
+      useYn:null,               //사용여부 select box
       isCdLstModalShow : false, // 코드리스트 등록/변경 팝업
       cdGpType : null,
       cdLstType : null,
@@ -296,6 +300,11 @@ export default {
     clickedRow(params){
       this.isCdGpShow = true;
       console.log(params);
+    },
+    resetSearch(){
+      this.cdDivSel="";
+      this.searchValue="";
+      this.useYn="";
     }
   },
   async beforeMount() {
