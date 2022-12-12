@@ -1,10 +1,12 @@
 <template>
 <div>
-  <label class="container" v-for="RadioOpt in RadioOptions" :key="RadioOpt" >
-    <input type="radio" :id="RadioOpt" :value="RadioOpt" v-model="radioValues">{{RadioOpt}}
+  <label class="radioContainer" v-for="RadioOpt in RadioOptions" :key="RadioOpt" >
+    <input type="radio" :id="RadioOpt" :value="RadioOpt" v-model="radioValue">{{RadioOpt}}
+  </label>  <!-- <label class="container" v-for="RadioOpt in RadioOptions" :key="RadioOpt" >
+    <input type="radio" :id="RadioOpt" :value="RadioOpt" v-model="radioValue">{{RadioOpt}}
     <span class="radiomark" ></span>
   </label>
-  <p style="font-size:20px;" v-show="radioValues.length>0">선택 값 : {{radioValues}}</p>
+  <p style="font-size:20px;" v-show="radioValue.length>0">선택 값 : {{radioValue}}</p> -->
 </div>
 </template>
 
@@ -18,19 +20,28 @@ export default {
   },
   data(){
     return{
-      radioValues:[],
+      radioValue:'',
     }
   },
 }
 </script>
 
 <style scoped>
+.radioContainer{
+  text-align: center;
+  vertical-align: center;
+  cursor: pointer;
+  margin-right: 20px;
+}
+
+.radioContainer > input{
+}
 
 .container {
-  display: block;
+  display: inline-block;
   position: relative;
-  padding-left: 35px;
-  margin-bottom: 12px;
+  /* padding-left: 35px;
+  margin-bottom: 12px; */
   cursor: pointer;
   font-size: 22px;
   -webkit-user-select: none;
@@ -51,10 +62,11 @@ export default {
 /* Create a custom radio button */
 .radiomark {
   position: absolute;
-  top: 0;
-  left: 0;
-  height: 25px;
-  width: 25px;
+  /* top: 0;
+  left: 0; */
+  /* margin:auto; */
+  height: 15px;
+  width: 15px;
   background-color: #eee;
   border-radius: 50%;
 }

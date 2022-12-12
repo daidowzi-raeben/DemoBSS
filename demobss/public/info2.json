@@ -104,119 +104,174 @@
   ],
   "userRowData":[
     {
-      "CMPNO" : "82679315",
+      "cmpno" : "82679315",
       "userNm" : "홍길동",
-      "inofficeSttus" : "재직",
+      "inofficeSttus" : "inOffice",
       "org" : "DX사업본부",
-      "rspof" : "사원",
-      "duty" : "BSS 개발"
+      "rspof" : "rspof1",
+      "duty" : "BSS 개발",
+      "dutySelect":"role2",
+      "orgSelect" : "role1",
+      "ntcMeth": "ntcMeth1"
     },
     {
-      "CMPNO" : "82672436",
+      "cmpno" : "82672436",
       "userNm" : "홍길은",
-      "inofficeSttus" : "재직",
+      "inofficeSttus" : "loab",
       "org" : "DX사업본부",
-      "rspof" : "사원",
+      "rspof" : "rspof2",
+      "duty" : "BSS 개발2",
+      "dutySelect":"role4",
+      "orgSelect" : "role2",
+      "ntcMeth": "ntcMeth1"
+    },
+    {
+      "cmpno" : "82679415",
+      "userNm" : "홍길금",
+      "inofficeSttus" : "inOffice",
+      "org" : "DX사업본부",
+      "rspof" : "rspof3",
+      "duty" : "BSS 개발3",
+      "dutySelect":"role2",
+      "orgSelect" : "role1",
+      "ntcMeth": "ntcMeth2"
+    },
+    {
+      "cmpno" : "82619315",
+      "userNm" : "홍길형",
+      "inofficeSttus" : "loab",
+      "org" : "DX사업본부",
+      "rspof" : "rspof1",
+      "duty" : "BSS 개발4",
+      "dutySelect":"role4",
+      "orgSelect" : "role2",
+      "ntcMeth": "ntcMeth3"
+    },
+    {
+      "cmpno" : "82675315",
+      "userNm" : "홍길진",
+      "inofficeSttus" : "loab",
+      "org" : "DX사업본부",
+      "rspof" : "rspof2",
+      "duty" : "BSS 개발5",
+      "dutySelect":"role3",
+      "orgSelect" : "role2",
+      "ntcMeth": "ntcMeth3"
+    },
+    {
+      "cmpno" : "89679315",
+      "userNm" : "홍길명",
+      "inofficeSttus" : "inOffice",
+      "org" : "DX사업본부",
+      "rspof" : "rspof2",
+      "duty" : "BSS 개발6"
+    },
+    {
+      "cmpno" : "82672436",
+      "userNm" : "홍길은",
+      "inofficeSttus" : "inOffice",
+      "org" : "DX사업본부",
+      "rspof" : "rspof2",
       "duty" : "BSS 개발2"
     },
     {
-      "CMPNO" : "82679415",
+      "cmpno" : "82679415",
       "userNm" : "홍길금",
-      "inofficeSttus" : "재직",
+      "inofficeSttus" : "inOffice",
       "org" : "DX사업본부",
-      "rspof" : "사원",
+      "rspof" : "rspof2",
       "duty" : "BSS 개발3"
     },
     {
-      "CMPNO" : "82619315",
+      "cmpno" : "82619315",
       "userNm" : "홍길형",
-      "inofficeSttus" : "재직",
+      "inofficeSttus" : "inOffice",
       "org" : "DX사업본부",
-      "rspof" : "사원",
+      "rspof" : "인턴",
       "duty" : "BSS 개발4"
     },
     {
-      "CMPNO" : "82675315",
+      "cmpno" : "82675315",
       "userNm" : "홍길진",
-      "inofficeSttus" : "재직",
+      "inofficeSttus" : "loab",
       "org" : "DX사업본부",
       "rspof" : "사원",
       "duty" : "BSS 개발5"
     },
     {
-      "CMPNO" : "89679315",
+      "cmpno" : "89679315",
       "userNm" : "홍길명",
-      "inofficeSttus" : "재직",
+      "inofficeSttus" : "loab",
       "org" : "DX사업본부",
       "rspof" : "사원",
       "duty" : "BSS 개발6"
     },
     {
-      "CMPNO" : "82672436",
+      "cmpno" : "82672436",
       "userNm" : "홍길은",
-      "inofficeSttus" : "재직",
+      "inofficeSttus" : "loab",
       "org" : "DX사업본부",
       "rspof" : "사원",
       "duty" : "BSS 개발2"
     },
     {
-      "CMPNO" : "82679415",
+      "cmpno" : "82679415",
       "userNm" : "홍길금",
-      "inofficeSttus" : "재직",
+      "inofficeSttus" : "loab",
       "org" : "DX사업본부",
       "rspof" : "사원",
       "duty" : "BSS 개발3"
     },
     {
-      "CMPNO" : "82619315",
+      "cmpno" : "82619315",
       "userNm" : "홍길형",
-      "inofficeSttus" : "재직",
+      "inofficeSttus" : "loab",
       "org" : "DX사업본부",
       "rspof" : "사원",
       "duty" : "BSS 개발4"
     },
     {
-      "CMPNO" : "82675315",
+      "cmpno" : "82675315",
       "userNm" : "홍길진",
-      "inofficeSttus" : "재직",
+      "inofficeSttus" : "loab",
       "org" : "DX사업본부",
       "rspof" : "사원",
       "duty" : "BSS 개발5"
     },
     {
-      "CMPNO" : "89679315",
+      "cmpno" : "89679315",
       "userNm" : "홍길명",
-      "inofficeSttus" : "재직",
+      "inofficeSttus" : "loab",
       "org" : "DX사업본부",
       "rspof" : "사원",
       "duty" : "BSS 개발6"
     },
     {
-      "CMPNO" : "82672436",
+      "cmpno" : "82672436",
       "userNm" : "홍길은",
-      "inofficeSttus" : "재직",
+      "inofficeSttus" : "loab",
       "org" : "DX사업본부",
       "rspof" : "사원",
       "duty" : "BSS 개발2"
     },
     {
-      "CMPNO" : "82679415",
+      "cmpno" : "82679415",
       "userNm" : "홍길금",
-      "inofficeSttus" : "재직",
+      "inofficeSttus" : "loab",
       "org" : "DX사업본부",
       "rspof" : "사원",
       "duty" : "BSS 개발3"
     },
     {
-      "CMPNO" : "82619315",
+      "cmpno" : "82619315",
       "userNm" : "홍길형",
-      "inofficeSttus" : "재직",
+      "inofficeSttus" : "loab",
       "org" : "DX사업본부",
       "rspof" : "사원",
       "duty" : "BSS 개발4"
     },
     {
-      "CMPNO" : "82675315",
+      "cmpno" : "82675315",
       "userNm" : "홍길진",
       "inofficeSttus" : "재직",
       "org" : "DX사업본부",
@@ -224,47 +279,7 @@
       "duty" : "BSS 개발5"
     },
     {
-      "CMPNO" : "89679315",
-      "userNm" : "홍길명",
-      "inofficeSttus" : "재직",
-      "org" : "DX사업본부",
-      "rspof" : "사원",
-      "duty" : "BSS 개발6"
-    },
-    {
-      "CMPNO" : "82672436",
-      "userNm" : "홍길은",
-      "inofficeSttus" : "재직",
-      "org" : "DX사업본부",
-      "rspof" : "사원",
-      "duty" : "BSS 개발2"
-    },
-    {
-      "CMPNO" : "82679415",
-      "userNm" : "홍길금",
-      "inofficeSttus" : "재직",
-      "org" : "DX사업본부",
-      "rspof" : "사원",
-      "duty" : "BSS 개발3"
-    },
-    {
-      "CMPNO" : "82619315",
-      "userNm" : "홍길형",
-      "inofficeSttus" : "재직",
-      "org" : "DX사업본부",
-      "rspof" : "사원",
-      "duty" : "BSS 개발4"
-    },
-    {
-      "CMPNO" : "82675315",
-      "userNm" : "홍길진",
-      "inofficeSttus" : "재직",
-      "org" : "DX사업본부",
-      "rspof" : "사원",
-      "duty" : "BSS 개발5"
-    },
-    {
-      "CMPNO" : "89679315",
+      "cmpno" : "89679315",
       "userNm" : "홍길명",
       "inofficeSttus" : "재직",
       "org" : "DX사업본부",
