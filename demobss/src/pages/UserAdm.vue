@@ -52,7 +52,7 @@
     <div>
       <sub-info-title :subInfoTitleNm="subInfoTitleNm_Item3"/>
       <span style="float: right">
-        <button-component :btnClass="'btnClass3'" :btnName="userAdmObject.sttus=='amend'? '변경':'등록'" />
+        <button-component :btnClass="'btnClass3'" :btnName="userAdmObject.sttus=='amend'? '변경':'등록'" @click="popup" />
       </span>
     </div>
     
@@ -129,8 +129,18 @@
             :disabled="true"
             :value="userAdmObject.org" 
             :placeholder="' 조직검색 '"
-            />   </td>
-            <td>           </td>
+            />  
+            <span style="margin-left:30px;">
+              <button-component 
+              :btnClass="'btnClass5'" 
+              :btnHeight="'28px'"
+              :btnWidth ="'100px'"
+              :btnFontWeight="'normal'"
+              :btnName="'조직 검색'"
+              /> 
+            </span>
+              </td>
+            <td></td>
           </tr>
 
           
@@ -196,21 +206,53 @@
             <td colspan="3">
               <input-component 
               :input-class="'class6 '" 
-              :class6Width="'180px'" 
-              :value="userAdmObject.mphon" 
-              :placeholder="' 휴대 전화 번호 '"
+              :class6Width="'100px'" 
+              :value="userAdmObject.mphon1" 
+              :placeholder="'010'"
+              /> 
+              <span style="font-size:12pt; font-weight:bold;  margin-right:7px;"> - </span>
+              <input-component 
+              :input-class="'class6 '" 
+              :class6Width="'100px'" 
+              :value="userAdmObject.mphon2" 
+              :placeholder="' OOO '"
               />
+              <span style="font-size:12pt; font-weight:bold; margin-right:7px;"> - </span>
+              <input-component 
+              :input-class="'class6 '" 
+              :class6Width="'100px'" 
+              :value="userAdmObject.mphon3" 
+              :placeholder="' OOO '"
+              />
+              <!-- <button @click="checkTheNum(userAdmObject.mphon)"> check </button> -->
+
             </td>
           </tr>
           <tr>
             <th><label-component :labelNm="'전화번호'"/> </th>
             <td colspan="3">
+              
               <input-component 
               :input-class="'class6 '" 
-              :class6Width="'180px'" 
-              :value="userAdmObject.ppon" 
-              :placeholder="' 전화번호 '"
+              :class6Width="'100px'" 
+              :value="userAdmObject.mphon1" 
+              :placeholder="'지역번호'"
+              /> 
+              <span style="font-size:12pt; font-weight:bold;  margin-right:7px;"> - </span>
+              <input-component 
+              :input-class="'class6 '" 
+              :class6Width="'100px'" 
+              :value="userAdmObject.mphon2" 
+              :placeholder="' OOO '"
               />
+              <span style="font-size:12pt; font-weight:bold; margin-right:7px;"> - </span>
+              <input-component 
+              :input-class="'class6 '" 
+              :class6Width="'100px'" 
+              :value="userAdmObject.mphon3" 
+              :placeholder="' OOO '"
+              />
+              
             </td>
           </tr>
 
@@ -329,6 +371,13 @@
 
       </form>
       {{seletedUserData}}
+      
+      <popup-component
+      v-if="isModalShow"
+      :popupmsg="`${userAdmObject.sttus=='amend'? '변경' :'등록'}하시겠습니까?`"
+      @popup="isModalShow = false"
+      @AGREE = "popupAgree()"
+      />
     </div>
   </div>
 </article>
@@ -347,10 +396,12 @@ import PagingArea from '@/components/common/PagingArea.vue';
 import LabelComponent from '@/components/common/LabelComponent.vue';
 import InputComponent from '@/components/common/InputComponent.vue';
 import RadioComponent from '@/components/common/RadioComponent.vue';
+import {formatTel} from '@/service/FormatService.js';
+import PopupComponent from '@/components/common/PopupComponent.vue';
 
 export default {
   mixins:[ApiMixin],
-  components: { UserAdmRetvComponent, AgGridComponent2, SubInfoTitle, ButtonComponent, SelectBoxComponent, PagingArea, LabelComponent, InputComponent, RadioComponent },
+  components: { UserAdmRetvComponent, AgGridComponent2, SubInfoTitle, ButtonComponent, SelectBoxComponent, PagingArea, LabelComponent, InputComponent, RadioComponent, PopupComponent },
   data(){
     return{
       seletedUserData : "",
@@ -402,7 +453,8 @@ export default {
         failLogIn : "로그인실패",
         regrDt:"2022-12-09 20:03:30",
         amdrDt:"2022-12-09 19:20:30",
-        }
+        },
+        isModalShow: false, // popup 조건
     }
   },
   async beforeMount() {
@@ -433,12 +485,9 @@ export default {
         this.userAdmObject.org = newSeletedUserData.org;
         this.userAdmObject.ntcMeth = newSeletedUserData.ntcMeth;
         // console.log("newSeletedUserData",this.userAdmObject.inOfficeSttus2);
+      },
 
 
-
-
-
-      }
     }
     },
 
@@ -474,6 +523,23 @@ export default {
         this.userAdmObject.inputClass = "class6 class6_2";
         this.userAdmObject.isDisabled = true;
         console.log(this.userAdmObject);
+      }
+    },
+    checkTheNum(num){
+      console.log(num);
+      console.log(formatTel(num));
+    },
+    popup(){
+      if (this.isModalShow == false) this.isModalShow = true
+      else this.isModalShow = false
+    },
+    popupAgree(){
+      if(this.userAdmObject.sttus=='amend'){
+        // 수정 팝업 확인 버튼 함수 
+        console.log("변경 완려")
+      }else if(this.userAdmObject.sttus=='register'){
+        //  등록 팝업 확인 버튼 함수 
+        console.log("등록 완려")
       }
     }
     

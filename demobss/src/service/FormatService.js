@@ -61,3 +61,23 @@ export function formatAmt(value) {
   var parts = value.toString().split(".");//소수점 구분
   return parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",") + (parts[1] ? "." + parts[1] : "");
 }
+
+
+// 전화번호 format
+export function formatTel(num) {
+  // console.log(num);
+  if (num == null)
+    return;
+  num = num.replace(/[^0-9]/g, '');//숫자 외 제거
+  if (num.length == 11) {
+    return num.replace(/(\d{3})(\d{4})(\d{4})/, '$1-$2-$3');//휴대전화
+  }
+  else if (num.length == 8)
+    return num.replace(/(\d{4})(\d{4})/, '$1-$2');//8자리 전화번호
+  else
+    if (num.indexOf('02') == 0)
+      return num.replace(/(\d{2})(\d{4})(\d{4})/, '$1-$2-$3');//02 전화번호
+    else
+      return num.replace(/(\d{3})(\d{3})(\d{4})/, '$1-$2-$3');//휴대전화
+  
+}
