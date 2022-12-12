@@ -1,8 +1,8 @@
 <template>
   <div class="tree-wrap">
     <virtual-list ref="virtualList"  :size="size" :remain="remain" class="tree-list">
-      <msf-tree-item v-on:expand="expand" v-on:checkClick="checkclick" v-on:itemClick="itemClick" v-on:itemDblClick="itemDblClick" v-for="item of list" :key="item.key" :data="item" :checked="item.checked"
-                     :expanded="item.expanded" :final="item.final" :depth="item.depth" :label="item.labelValue" :chk1="item.check1" :chk2="item.check2" :half-checked="item.halfChecked" :active="item.active"/>
+      <msf-tree-item :isBadgeShow="isBadgeShow" v-on:expand="expand" v-on:checkClick="checkclick" v-on:itemClick="itemClick" v-on:itemDblClick="itemDblClick" v-for="item of list" :key="item.key" :data="item" :checked="item.checked"
+                    :expanded="item.expanded" :final="item.final" :depth="item.depth" :label="item.labelValue" :chk1="item.check1" :chk2="item.check2" :half-checked="item.halfChecked" :active="item.active"/>
     </virtual-list>
   </div>
 </template>
@@ -23,8 +23,13 @@ export default {
     expandDepth: {
       default: 1,
       type: Number
+    },
+    isBadgeShow:{
+      type:Boolean,
+      default:true
     }
   },
+  
   data () {
     return {
       items: [], // 전체 데이터

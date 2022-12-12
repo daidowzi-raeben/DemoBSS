@@ -67,6 +67,7 @@
               :input-class="userAdmObject.inputClass" 
               :disabled="userAdmObject.isDisabled"
               :value="userAdmObject.cmpno" 
+              v-model="userAdmObject.cmpno"
               :placeholder="'사번 입력'"
               />  
             </td>
@@ -92,9 +93,10 @@
             <td> <input-component 
             :input-class="'class6'" 
             :class6Width="'180px'" 
+            v-model="userAdmObject.userNm"
             :value="userAdmObject.userNm" 
             :placeholder="'이름 입력'"
-            />   </td>
+            />  {{userAdmObject.userNm}} </td>
             <th><label-component :labelNm="'사용여부'"/> </th>
             <td> <radio-component :RadioOptions='["사용","미사용"]' /> </td>
           </tr>
@@ -127,7 +129,7 @@
             :input-class="'class6 class6_2'" 
             :class6Width="'180px'" 
             :disabled="true"
-            :value="userAdmObject.org" 
+            :value="userAdmObject.org"
             :placeholder="' 조직검색 '"
             />  
             <span style="margin-left:30px;">
@@ -183,6 +185,7 @@
               :input-class="'class6 '" 
               :class6Width="'180px'" 
               :value="userAdmObject.email" 
+              v-model="userAdmObject.email"
               :placeholder="' 이메일주소 '"
               />
               <span style="margin-right:10px; ">@</span>
@@ -207,21 +210,24 @@
               <input-component 
               :input-class="'class6 '" 
               :class6Width="'100px'" 
-              :value="userAdmObject.mphon1" 
+              :value="userAdmObject.mphon[0]"
+              v-model="userAdmObject.mphon[0]"
               :placeholder="'010'"
               /> 
               <span style="font-size:12pt; font-weight:bold;  margin-right:7px;"> - </span>
               <input-component 
               :input-class="'class6 '" 
               :class6Width="'100px'" 
-              :value="userAdmObject.mphon2" 
+              :value="userAdmObject.mphon[1]" 
+              v-model="userAdmObject.mphon[1]"
               :placeholder="' OOO '"
               />
               <span style="font-size:12pt; font-weight:bold; margin-right:7px;"> - </span>
               <input-component 
               :input-class="'class6 '" 
               :class6Width="'100px'" 
-              :value="userAdmObject.mphon3" 
+              :value="userAdmObject.mphon[2]" 
+              v-model="userAdmObject.mphon[2]"
               :placeholder="' OOO '"
               />
               <!-- <button @click="checkTheNum(userAdmObject.mphon)"> check </button> -->
@@ -235,21 +241,24 @@
               <input-component 
               :input-class="'class6 '" 
               :class6Width="'100px'" 
-              :value="userAdmObject.mphon1" 
+              :value="userAdmObject.ppon[0]"
+              v-model="userAdmObject.ppon[0]"
               :placeholder="'지역번호'"
               /> 
               <span style="font-size:12pt; font-weight:bold;  margin-right:7px;"> - </span>
               <input-component 
               :input-class="'class6 '" 
               :class6Width="'100px'" 
-              :value="userAdmObject.mphon2" 
+              :value="userAdmObject.ppon[1]"
+              v-model="userAdmObject.ppon[1]"
               :placeholder="' OOO '"
               />
               <span style="font-size:12pt; font-weight:bold; margin-right:7px;"> - </span>
               <input-component 
               :input-class="'class6 '" 
               :class6Width="'100px'" 
-              :value="userAdmObject.mphon3" 
+              :value="userAdmObject.ppon[2]"
+              v-model="userAdmObject.ppon[2]"
               :placeholder="' OOO '"
               />
               
@@ -264,6 +273,7 @@
               :disabled="userAdmObject.isDisabled"
               :class6Width="'180px'"  
               :value="userAdmObject.pwd"
+              v-model="userAdmObject.pwd"
               :placeholder=" userAdmObject.sttus=='register'? '비밀번호 입력':''" /> 
               
               <span>
@@ -415,7 +425,7 @@ export default {
       rowHeight:'48',
       rowData:[],
       columnDefs:[
-        { headerName: "선택",      field: "select",       width:80,  cellClass: 'cell-span', checkboxSelection:true, 
+        { headerName: "선택",      field: "select",       width:64,  cellClass: 'cell-span', checkboxSelection:true, 
         cellStyle:()=> {return {'pointer-events':'none' };}
         },
         { headerName: "사번",      field: "cmpno",     width:110,  cellClass: '"cell"-span'},
@@ -445,8 +455,8 @@ export default {
         rspof: "rspof3",
         dutySelect:"role1",
         email : "이메일주소",
-        mphon:"휴대전화번호",
-        ppon:"전화번호",
+        mphon:["","",""],
+        ppon:["","",""],
         pwd : "비밀번호",
         pwdChgDt:"2022-12-10 10:20:30",
         lastLogIn:"최종로그인일시",

@@ -23,7 +23,7 @@
             }"
             >{{ label }} &nbsp;<div v-show="depth===0 & chk1 " style="margin-right:2px;font-size:8pt; text-align:center; align-items:center;width: 30px;height: 13px;padding-bottom: 4px; background-color: rgb(155,68,221);color:white">대표</div></div>
     </div>
-    <div >
+    <div v-if="isBadgeShow" >
 <!--      <div v-show="chk1" class="tree_state1"/>-->
 <!--      <div v-show="chk2" class="tree_state2"/>-->
       <div v-show="depth>0" style="margin-right:2px;float:left;font-size:8pt; text-align:center;width: 36px;height: 13px;padding-bottom: 2px; background-color: rgb(121,148,177);color:white">해지</div>
@@ -48,7 +48,12 @@ export default {
     chk1 : null,
     chk2 : null,
     final:null,
-    halfChecked: Boolean
+    halfChecked: Boolean,
+    isBadgeShow:{
+      type:Boolean,
+      default:true
+    }
+    
   },
   data () {
     return {

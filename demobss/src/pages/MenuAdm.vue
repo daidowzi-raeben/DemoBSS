@@ -7,6 +7,28 @@
     </div>
     
     <div class="item2">
+      <div>
+        <sub-info-title :subInfoTitleNm="'메뉴 리스트'"/>
+        <p style="margin-left:5px; display:inline-block;">(총 <label style="font-weight: bold">{{total}}</label>건)</p>
+        <span style="float: right">
+          <button-component :btnClass="'btnClass3'" :btnName="'등록'" @click="clickUserRegister()"/>
+          <button-component :btnClass="'btnClass3'" :btnName="'변경'" @click="clickUserAmend()"/>
+          <button-component :btnClass="'btnClass3'" :btnName="'엑셀다운로드'" />
+        </span>
+      </div>
+
+      <div class="cont_list">
+        <msf-tree :source="contentTree"
+                  :activeItem="activeItemObj"
+                  :selectedList="selectedItemList"
+                  id-field="directoryName"
+                  label-field="directoryName"
+                  ref="tree"
+                  @itemClick="treeItemClick"
+                  style="border: 1px solid rgb(239, 245, 252); padding: 0"
+                  :isBadgeShow="false"
+        ></msf-tree>
+      </div>
 
     </div>
 
@@ -124,9 +146,8 @@
                 :input-class="'class6 class6_2'" 
                 :class6Width="'180px'" 
                 :disabled="true"
-                :value="' 김클라우드  '" 
+                :value="'김클라우드'" 
                 /> 
-
                 <input-component 
                 :input-class="'class6 class6_2'" 
                 :class6Width="'180px'" 
@@ -266,6 +287,7 @@ import SubInfoTitle from '@/components/common/SubInfoTitle.vue'
 import ButtonComponent from '@/components/common/ButtonComponent.vue'
 import DatePickerComponent from '@/components/common/DatePickerComponent.vue'
 import PopupComponent from '@/components/common/PopupComponent.vue'
+import MsfTree from '@/components/common/TreeComponent/msf-tree.vue'
 
 export default {
   components: { RetvCondComponent, 
@@ -276,7 +298,8 @@ export default {
   SubInfoTitle, 
   ButtonComponent,
   DatePickerComponent,
-  PopupComponent 
+  PopupComponent,
+  MsfTree 
   },
 
   data(){
@@ -286,6 +309,59 @@ export default {
       },
       isModalShow:false,
       test:'',
+
+
+      // 트리
+      activeItemObj: {}, // 활성화 시킬 객체
+      selectedItemList: [], // 선택시킬 객체
+      contentTree: [
+        {
+          groupId: 1,
+          directoryName: "[L01] 고객/청약",
+          children: [
+            { groupId:1, directoryName: "[L01M02S00] 고객 360 View" },
+            { groupId:1, directoryName: "[L01M02S01] 고객정보 등록" },
+            { groupId:1, directoryName: "[L01M02S02] 고객정보 변경" },
+            { groupId:1, directoryName: "[L01M06S00] 청약관리" },
+            { groupId:1, directoryName: "[미사용] [L01M07S00] 명의변경" },
+          ],
+        },
+        {
+          groupId: 2,
+          directoryName: "[L02] 요금",
+          children: [
+            { groupId:2, directoryName: "[L02M03S01] 요금 즉시수납" },
+            { groupId:2, directoryName: "[L02M03S02] 요금 신용카드 승인 내역" },
+            { groupId:2, directoryName: "[L02M05S01] 요금 수납관리" },
+            { groupId:2, directoryName: "[L02M06S00] 요금 과납관리" },
+            { groupId:2, directoryName: "[L02M11S01] 자동이체 대상 입출금 리스트" },
+            { groupId:2, directoryName: "[L02M11S04] 신용카드 입금 리스트" },
+            
+          ],
+        },
+        {
+          groupId: 3,
+          directoryName: "[L03] 청구",
+          children: [
+            { groupId:3, directoryName: "[L03M05S01] 청구 과금관리" },
+            { groupId:3, directoryName: "[L03M07S01] CMS출금 내역" },
+            { groupId:3, directoryName: "[L03M05S01] 청구서 발행/재발행" },
+            { groupId:3, directoryName: "[L03M11S01] 월별 매출 리스트" },
+            { groupId:3, directoryName: "[L03M12S03] 수수료 정산 결과 리스트" },
+          ],
+        },
+        {
+          groupId: 4,
+          directoryName: "[L04] 업무현황",
+          children: [
+            { groupId:3, directoryName: "[L04M01S01] 고객 리스트" },
+            { groupId:3, directoryName: "[L04M01S02] AM별 고객 리스트" },
+            { groupId:3, directoryName: "[L04M02S01] 해지DB 분리고객 리스트" },
+            { groupId:3, directoryName: "[L04M04S00] 청약현황" },
+            { groupId:3, directoryName: "[L04M04S00] 수납현황" },
+          ],
+        },
+      ],
     }
   },
   methods:{
@@ -300,11 +376,17 @@ export default {
 
 
 <style scoped>
+.cont_list{
+  width: 99%;
+  height: 85%;
+  overflow-x: hidden ;
+  border: 1px solid #e4e4e4;
+}
 
 .menuAdmContainer{
 
   display: grid;
-  grid-template-columns: 850px 700px 1fr;
+  grid-template-columns: 750px 800px 1fr;
   grid-template-rows: 50px 350px 300px 1fr;
   gap: 20px 30px;
 }
@@ -318,7 +400,6 @@ export default {
 .menuAdmContainer > .item2{
   grid-row: 2/4;
   grid-column: 1;
-  background-color: aquamarine;
 }
 .menuAdmContainer > .item3{
   grid-row: 2;
