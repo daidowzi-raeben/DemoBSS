@@ -10,6 +10,7 @@
             :selectClass="'select_input3'"
             :cdGroup="'codeDiv'"
             :disabled="true"
+            :is-disabled="true"
             :defaultValue="'코드구분선택'"
             @input=" (value) => { searchDiv = value;}"
             v-model="searchDiv"
@@ -32,6 +33,7 @@
         <select-box-component
             :selectClass="'select_input3'"
             :cdGroup="'useYn'"
+            :is-disabled="true"
             :defaultValue="'사용여부 선택'"
             @input=" (value) => { searchDiv = value;}"
             v-model="searchDiv"
@@ -58,10 +60,143 @@
       </div>
     </div>
     <div class="item"> <!--2번 -->
+      <div style="width: 100%;" >
+        <SubInfoTitle :subInfoTitleNm="'코드그룹 리스트'"/>
+        <p style="margin-left:5px; display:inline-block;">(총 <label style="font-weight: bold">{{ total }}</label>건)</p>
 
+        <span style="float: right">
+      <ButtonComponent
+          :btnClass="'btnClass3'"
+          :btnName="'엑셀다운로드'"
+          :btnWidth="'auto'"
+      />
+        </span>
+        <span style="float: right">
+      <ButtonComponent
+          :btnClass="'btnClass3'"
+          :btnName="'변경'"
+          :btnWidth="'auto'"
+          @click="isCdGpModalShow=true; cdGpType=2"
+      />
+        </span>
+        <span style="float: right">
+      <ButtonComponent
+          :btnClass="'btnClass3'"
+          :btnName="'등록'"
+          :btnWidth="'auto'"
+          @click="isCdGpModalShow=true; cdGpType=1"
+      />
+        </span>
+      </div>
+      <div class="ag-grid_sp">
+        <ag-grid-component
+            :header-color="'rgb(239 245 252)'"
+            :rowData="RowData"
+            :columnDefs="columnDefs"
+            :rowClicked="clickedRow"
+            :isWidthFit="false"
+            :overlayNoRowsTemplate="
+          `<span> <br>` + '<br />조회 결과가 없습니다.' + ` </span>`
+          "
+        />
+      </div>
+      <div style="width: 100%">
+        <span style="display: flex; float: left; padding-top: 20px;">
+    <select-box-component
+        :selectClass="'select_input3'"
+        :cdGroup="'optionSearchNum'"
+        :is-disabled="true"
+        :defaultValue="'선택'"
+        v-model="month"
+        style="
+        width: 120px;
+        height: 26px;
+        margin-right: 15px;"
+        @input="
+          (value) => {
+            month = value;
+          }
+        "
+    />
+      </span>
+        <span style="display: flex; justify-content: center">
+          <paging-area
+              :pageableData="pageableData1"
+          />
+        </span>
+      </div>
     </div>
     <div class="item"> <!--3번 -->
-
+      <div style="width: 100%; height: 100%;">
+        <div>
+          <sub-info-title :subInfoTitleNm="'권한 상세정보'"/>
+          <span style="float: right">
+        <button-component
+            :btnClass="'btnClass4'"
+            :btnName="'등록'"
+            :btnHeight="'28px'"
+            :btnWidth ="'100px'"
+        />
+      </span>
+        </div>
+        <div class="content_area">
+          <table>
+            <tr>
+              <th>권한ID</th>
+              <td colspan="3">
+                <input-component :input-class="'class5 class5_long1'" :long-width="'600px'" :value="'ACRND_TYPE_CD' " />
+              </td>
+            </tr>
+            <tr>
+              <th>권한명</th>
+              <td colspan="3">
+                <input-component class="input" :input-class="'class5 class5_long1'" :long-width="'600px'" :value="'코드그룹명 입력' " />
+              </td>
+            </tr>
+            <tr>
+              <th>권한유형</th>
+              <td>
+                <select-box-component
+                    :selectClass="'select_input3'"
+                    :cdGroup="'codeDiv'"
+                    :disabled="true"
+                    :is-disabled="true"
+                    style="
+                    width: 200px;
+                    height: 26px;
+                    "
+                    :defaultValue="'코드구분선택'"
+                    @input=" (value) => { searchDiv = value;}"
+                    v-model="searchDiv"
+                  />
+              </td>
+              <th style="width: 100px;">사용여부</th>
+              <td>
+                <input type="radio"  selected>사용
+                <input type="radio" >미사용
+              </td>
+            </tr>
+            <tr>
+              <th>등록자/등록일시</th>
+              <td>
+                <input-component class="input" :input-class="'class5 class5_long1'" :long-width="'220px'" :value="'코드그룹명 입력' " />
+              </td>
+              <td><date-picker-component
+                  :classWrapper="'calender_input'"
+              /></td>
+            </tr>
+            <tr>
+              <th>수정자/수정일시</th>
+              <td>
+                <input-component class="input" :input-class="'class5 class5_long1'" :long-width="'220px'" :value="'코드그룹명 입력' " />
+              </td>
+              <td><date-picker-component
+                  :classWrapper="'calender_input'"
+              /></td>
+            </tr>
+          </table>
+        </div>
+      </div>
     </div>
   </article>
 </template>
@@ -73,11 +208,13 @@ import ButtonComponent from "@/components/common/ButtonComponent";
 import AgGridComponent from "@/components/common/AgGridComponent";
 import InputComponent from "@/components/common/InputComponent";
 import SubInfoTitle from "@/components/common/SubInfoTitle";
+import DatePickerComponent from "@/components/common/DatePickerComponent";
 import ApiMixin from "@/service/common";
 export default {
   mixins:[ApiMixin],
   name: "AutAdm",
   components: {
+    DatePickerComponent,
     pagingArea,
     selectBoxComponent,
     ButtonComponent,
@@ -87,8 +224,41 @@ export default {
   },
   data(){
     return{
-
+      RowData:[],
+      columnDefs: [
+        {
+          headerName: "선택",
+          field: '',
+          checkboxSelection: true,
+          showDisabledCheckboxes: true,
+          width: 30,
+          cellStyle: () =>{    //체크 박스 해제되는 것을 막기 위해 pointer events 수정
+            return {'pointer-events' : "none"}
+          }
+        },
+        { headerName: "권한ID", field: "model1", width : 130},
+        { headerName: "권한명", field: "model2", width : 110, cellStyle:{justifyContent: "flex-start"}  },
+        { headerName: "권한유형", field: "model3", width : 70 },
+        { headerName: "사용여부", field: "model4", width : 70, },
+        { headerName: "메뉴", field: "model5", width : 70,},
+        { headerName: "조직", field: "model6", width : 70,},
+      ],
+      pageableData1: {
+        pageNumber: 1,
+        currentMinPage: 1,
+        currentMaxPage: 10,
+        totalPages: 12,
+      },
     }
+  },
+  async beforeMount() {
+    // this.gridOptions = {
+    //   pinnedBottomRowData: [{ model0: "합계", model1: null, model4: 0 }],
+    // };
+    await this.$connect('application/json','/info.json','get','').then((res)=>{
+      this.RowData = res.data.autRowData;
+    })
+    console.log(this.rowData);
   },
 }
 </script>
@@ -97,8 +267,8 @@ export default {
 .AutAdmView{
   display: grid;
   grid-template-columns: 790px minmax(790px,1fr);
-  grid-template-rows: 50px minmax(500px, 1fr);
-  gap: 20px 10px;
+  grid-template-rows: 50px minmax(600px, 1fr);
+  gap: 20px 20px;
 }
 
 .AutAdmView > .item:nth-child(1) {
@@ -155,5 +325,43 @@ export default {
 }
 .AutType > span:nth-child(7){
   margin-left: 10px;
+}
+
+table, tr {
+  border: 1px solid rgb(232, 238,246);
+  border-collapse: collapse;
+  width: 100%;
+}
+
+table > tr{
+  height: 38px;
+}
+table > tr > th{
+  width: 100px;
+  text-align: left;
+  border-left: 1px solid rgb(232, 238,246);
+  background-color:  rgb(239, 245, 252);
+  padding-left: 1%;
+}
+table > tr > td{
+  width: 174px;
+  /* text-align:right; */
+  padding-left: 8px;
+}
+.input_disabled{
+  background-color: rgb(239, 245, 252);
+}
+
+
+
+
+.ag-grid_sp{
+  /* margin: 10px; */
+  width: 100%;
+  height: 600px;
+}
+.content_area{
+  width: 100%;
+  height: 250px;
 }
 </style>
