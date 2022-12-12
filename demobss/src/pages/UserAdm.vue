@@ -20,17 +20,11 @@
       :rowData="rowData"
       :columnDefs="columnDefs"
       :rowHeight="rowHeight"
+      @seletedRowData="(value) => { seletedUserData = value[0];}"
       />
       <div class="pcSelectAndPagingFlex" > 
         <div>
-        <paging-area 
-        class="pcPagingArea"
-        ref="PagingArea"
-        :pageableData="pageableData"
-        style="padding:0;"
-        @currentPage="(value) => {currentPage = value;}"
-        />
-        </div><div>
+          
         <select-box-component
         class="pcSelectBox"
         :selectClass="'select_input3'"
@@ -41,13 +35,20 @@
         v-model="showTheNum"
         @input=" (value) => { showTheNum = value;}"
         />
+        </div><div>
+        <paging-area 
+        class="pcPagingArea"
+        ref="PagingArea"
+        :pageableData="pageableData"
+        style="padding:0;"
+        @currentPage="(value) => {currentPage = value;}"
+        />
         </div>
       </div>
     </div>
   </div>
 
   <div class="item3">
-    
     <div>
       <sub-info-title :subInfoTitleNm="subInfoTitleNm_Item3"/>
       <span style="float: right">
@@ -70,7 +71,19 @@
               />  
             </td>
             <th><label-component :labelNm="'재직상태'"/> </th>
-            <td>           </td>
+            <td> 
+              <select-box-component
+              :selectClass="'select_input4'"
+              :cdGroup="'inOfficeSttus2'"
+              :defaultValue="'재직상태'"
+              :defaultcdId=" userAdmObject.sttus=='amend' ? userAdmObject.inOfficeSttus2 : '' "
+              :isDisabled="true"
+              @input=" (value) => { userAdmObject.inOfficeSttus2 = value;}"
+              :width="100"
+              :selectedValue="userAdmObject.inOfficeSttus2"
+              style="height:28px;"
+              /> 
+            </td>
           </tr>
 
           
@@ -83,15 +96,27 @@
             :placeholder="'이름 입력'"
             />   </td>
             <th><label-component :labelNm="'사용여부'"/> </th>
-            <td> radio </td>
+            <td> <radio-component :RadioOptions='["사용","미사용"]' /> </td>
           </tr>
 
           
           <tr>
             <th><label-component :labelNm="'알림방법'"/> </th>
-            <td> 셀렉트박스 </td>
+            <td> 
+              <select-box-component
+              style="height:28px;"
+              :selectClass="'select_input4'"
+              :cdGroup="'ntcMeth'"
+              :defaultValue="'알림방법 선택'"
+              :defaultcdId="userAdmObject.ntcMeth"
+              :isDisabled="true"
+              :width="185"
+              :selectedValue="userAdmObject.ntcMeth"
+              @input=" (value) => { userAdmObject.ntcMeth = value;}"
+              /> 
+            </td>
             <th><label-component :labelNm="'OTP사용여부'"/> </th>
-            <td>           </td>
+            <td> <radio-component :RadioOptions='["사용","미사용"]' />  </td>
           </tr>
 
           
@@ -111,9 +136,33 @@
           
           <tr>
             <th><label-component :labelNm="'직책'"/> </th>
-            <td>            </td>
+            <td>
+              <select-box-component
+              style="height:28px;"
+              :selectClass="'select_input4'"
+              :cdGroup="'rspof'"
+              :defaultValue="'직책 선택'"
+              :defaultcdId="userAdmObject.rspof"
+              :isDisabled="true"
+              :width="185"
+              :selectedValue="userAdmObject.rspof"
+              @input=" (value) => { userAdmObject.rspof = value;}"
+              /> 
+            </td>
             <th><label-component :labelNm="'직무'"/> </th>
-            <td>           </td>
+            <td>
+              <select-box-component
+              style="height:28px;"
+              :selectClass="'select_input4'"
+              :cdGroup="'dutySelect'"
+              :defaultValue="'직무선택'"
+              :defaultcdId="userAdmObject.dutySelect"
+              :isDisabled="true"
+              :width="185"
+              :selectedValue="userAdmObject.dutySelect"
+              @input=" (value) => { userAdmObject.dutySelect = value;}"
+              /> 
+            </td>
           </tr>
 
           
@@ -126,6 +175,18 @@
               :value="userAdmObject.email" 
               :placeholder="' 이메일주소 '"
               />
+              <span style="margin-right:10px; ">@</span>
+              <select-box-component
+              style="height:28px;"
+              :selectClass="'select_input4'"
+              :cdGroup="'emailDomain'"
+              :defaultValue="'도메인 선택'"
+              :defaultcdId="userAdmObject.email"
+              :isDisabled="true"
+              :width="185"
+              :selectedValue="userAdmObject.email"
+              @input=" (value) => { userAdmObject.email = value;}"
+              /> 
             </td>
           </tr>
 
@@ -162,7 +223,17 @@
               :class6Width="'180px'"  
               :value="userAdmObject.pwd"
               :placeholder=" userAdmObject.sttus=='register'? '비밀번호 입력':''" /> 
+              
+              <span>
+                <button-component 
+              :btnClass="'btnClass5'" 
+                :btnHeight="'28px'"
+                :btnWidth ="'140px'"
+                :btnFontWeight="'normal'"
+                :btnName="'비밀번호 초기화'"/> 
+              </span>
             </td>
+            
           </tr>
 
           <tr>
@@ -172,9 +243,16 @@
             :input-class="'class6 class6_2'" 
             :class6Width="'180px'" 
             :disabled="true"
+            :value="' PW'" 
+            :placeholder="' - '"
+            /> 
+            <input-component 
+            :input-class="'class6 class6_2'" 
+            :class6Width="'180px'" 
+            :disabled="true"
             :value="userAdmObject.pwdChgDt" 
             :placeholder="' - '"
-            />   </td>
+            />  </td>
           </tr>
           
           <tr>
@@ -192,7 +270,18 @@
           
           <tr>
             <th><label-component :labelNm="'로그인실패'"/> </th>
-            <td colspan="3"><input-component 
+            <td colspan="3">
+            
+            <input-component 
+            :input-class="'class6 class6_2'" 
+            :class6Width="'40px'" 
+            :disabled="true"
+            style="text-align:center;"
+            :value="'-'" 
+            :placeholder="' - '"
+            />
+              
+            <input-component 
             :input-class="'class6 class6_2'" 
             :class6Width="'180px'" 
             :disabled="true"
@@ -203,29 +292,43 @@
           
           <tr>
             <th><label-component :labelNm="'등록자/등록일시'"/> </th>
-            <td colspan="3"><input-component 
+            <td colspan="3">
+              <input-component 
+            :input-class="'class6 class6_2'" 
+            :class6Width="'180px'" 
+            :disabled="true"
+            :value="'김케이티'" 
+            />
+              <input-component 
             :input-class="'class6 class6_2'" 
             :class6Width="'180px'" 
             :disabled="true"
             :value="userAdmObject.regrDt" 
-            :placeholder="' 2022-12-09 20:03:30 '"
             />   </td>
           </tr>
           
           <tr>
             <th><label-component :labelNm="'수정자/수정일시'"/> </th>
-            <td colspan="3"><input-component 
-            :input-class="'class6 class6_2'" 
-            :class6Width="'180px'" 
-            :disabled="true"
-            :value="userAdmObject.amdrDt" 
-            :placeholder="' 2022-12-09 19:20:30 '"
-            />   </td>
+            <td colspan="3">
+              <input-component 
+              :input-class="'class6 class6_2'" 
+              :class6Width="'180px'" 
+              :disabled="true"
+              :value="' 김클라우드  '" 
+              /> 
+
+              <input-component 
+              :input-class="'class6 class6_2'" 
+              :class6Width="'180px'" 
+              :disabled="true"
+              :value="userAdmObject.amdrDt" 
+              /> 
+            </td>
           </tr>
         </table>
 
       </form>
-      
+      {{seletedUserData}}
     </div>
   </div>
 </article>
@@ -243,12 +346,14 @@ import SelectBoxComponent from '@/components/common/SelectBoxComponent.vue';
 import PagingArea from '@/components/common/PagingArea.vue';
 import LabelComponent from '@/components/common/LabelComponent.vue';
 import InputComponent from '@/components/common/InputComponent.vue';
+import RadioComponent from '@/components/common/RadioComponent.vue';
 
 export default {
   mixins:[ApiMixin],
-  components: { UserAdmRetvComponent, AgGridComponent2, SubInfoTitle, ButtonComponent, SelectBoxComponent, PagingArea, LabelComponent, InputComponent },
+  components: { UserAdmRetvComponent, AgGridComponent2, SubInfoTitle, ButtonComponent, SelectBoxComponent, PagingArea, LabelComponent, InputComponent, RadioComponent },
   data(){
     return{
+      seletedUserData : "",
       subInfoTitleNm_Item2:"사용자 리스트",
       subInfoTitleNm_Item3:"사용자 상세정보",
       total: "65",
@@ -262,7 +367,7 @@ export default {
         { headerName: "선택",      field: "select",       width:80,  cellClass: 'cell-span', checkboxSelection:true, 
         cellStyle:()=> {return {'pointer-events':'none' };}
         },
-        { headerName: "사번",      field: "CMPNO",     width:110,  cellClass: '"cell"-span'},
+        { headerName: "사번",      field: "cmpno",     width:110,  cellClass: '"cell"-span'},
         { headerName: "사용자명",  field: "userNm",      width:130,  cellClass: 'cell-span'},
         { headerName: "재직상태",  field: "inofficeSttus", width:90,  cellClass: 'cell-span'},
         { headerName: "조직",      field: "org",   width:140,   cellClass: 'cell-span'},
@@ -282,18 +387,21 @@ export default {
         inputClass : "class6 class6_2",
         isDisabled: true,
         cmpno:"사번",
-        userNm:"사용자명",
+        inOfficeSttus2:"inOffice",
+        userNm:"홍길동",
+        ntcMeth:"ntcMeth1",
         org:"조직",
-        rspof: "직책",
+        rspof: "rspof3",
+        dutySelect:"role1",
         email : "이메일주소",
         mphon:"휴대전화번호",
         ppon:"전화번호",
         pwd : "비밀번호",
-        pwdChgDt:"비밀번호변경일",
+        pwdChgDt:"2022-12-10 10:20:30",
         lastLogIn:"최종로그인일시",
         failLogIn : "로그인실패",
-        regrDt:"등록자/등록일시",
-        amdrDt:"수정자/수정일시",
+        regrDt:"2022-12-09 20:03:30",
+        amdrDt:"2022-12-09 19:20:30",
         }
     }
   },
@@ -305,16 +413,49 @@ export default {
       console.log(e);
     });
   },
+  watch:{
+    userAdmObject:{  // 사용자 상세정보 변경이 감지되면 해당 변경 적용 
+      deep:true,
+      handler(newone2){
+        this.userAdmObject = newone2;
+        console.log("@@@userAdmObject@@@@: ", newone2)
+      },
+    },
+    seletedUserData:{   // 사용자리스트(ag-grid) row가 선택 되었을 때, 해당 데이터를 기반으로 사용자 상세정보 변경
+      deep:true,
+      handler(newSeletedUserData){
+        // console.log("userAdmObject : ", this.userAdmObject)
+        this.userAdmObject.cmpno = newSeletedUserData.cmpno;
+        this.userAdmObject.userNm = newSeletedUserData.userNm;
+        this.userAdmObject.inOfficeSttus2 = newSeletedUserData.inofficeSttus;
+        this.userAdmObject.rspof = newSeletedUserData.rspof;
+        this.userAdmObject.dutySelect = newSeletedUserData.dutySelect;
+        this.userAdmObject.org = newSeletedUserData.org;
+        this.userAdmObject.ntcMeth = newSeletedUserData.ntcMeth;
+        // console.log("newSeletedUserData",this.userAdmObject.inOfficeSttus2);
+
+
+
+
+
+      }
+    }
+    },
+
   methods:{
     clickUserRegister(){
+      console.log(this.seletedUserData);
       if(this.userAdmObject.sttus=="amend"){
         this.userAdmObject.sttus = "register" ;
         this.userAdmObject.inputClass = "class6"; 
         this.userAdmObject.isDisabled = false;
         this.userAdmObject.cmpno = null;
+        this.userAdmObject.inOfficeSttus2 = '';
         this.userAdmObject.userNm = null;
+        this.userAdmObject.ntcMeth = '';
         this.userAdmObject.org = null;
-        this.userAdmObject.rspof = null;
+        this.userAdmObject.rspof = '';
+        this.userAdmObject.dutySelect = '';
         this.userAdmObject.email  = null;
         this.userAdmObject.mphon = null;
         this.userAdmObject.ppon = null;
@@ -381,13 +522,13 @@ export default {
   }
 
 .pcSelectAndPagingFlex > div:nth-child(1) {
-  grid-column: 2;
-  padding: 0px;
-}
-.pcSelectAndPagingFlex > div:nth-child(2) {
-  grid-column: 3;
+  grid-column: 1;
   width:100px;
   height:22px;
+}
+.pcSelectAndPagingFlex > div:nth-child(2) {
+  grid-column: 2;
+  padding: 0px;
 }
 
 .userDtlInfoTable{
