@@ -74,10 +74,10 @@ export default {
   border : 1px solid black;
   background-color: violet;
 }
-
-.ag-cell-wrapper {
-  margin-left:auto;
-}
+/* .ag-cell-wrapper {
+    display: flex;
+    align-items: center;
+} */
 
 .cell-span {
   /* background-color: rgb(231,231,231); */

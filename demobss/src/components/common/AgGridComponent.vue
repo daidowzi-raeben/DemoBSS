@@ -3,13 +3,14 @@
     class="ag-grid"
     @grid-ready="onGridReady"
     @rowClicked="rowClicked"
+    @selection-changed="onSelectionChanged"
     @first-data-rendered="onFirstDataRendered"
     :grid-options="gridOptions"
     :rowClassRules="rowClassRules"
     :suppressMovableColumns="true"
     :suppressRowTransform="true"
     :suppressHorizontalScroll="isWidthFit"
-    :rowHeight="43"
+    :rowHeight="rowHeight"
     headerHeight="30"
     :columnDefs="columnDefs"
     :rowData="rowData"
@@ -23,6 +24,7 @@
     :suppressMaxRenderedRowRestriction="true"
     :enableCellTextSelection="true"
     :enableBrowserTooltips="true"
+  :suppressRowHoverHighlight="true"
   />
 </template>
 <!--:pinnedBottomRowData="pinnedBottomRowData"  하단에 결과 출력할때 사용-->
@@ -42,6 +44,9 @@ export default {
       allColumnIds:[],
       overlayLoadingTemplate: `<div class="ag-overlay-loading-center"> Loading... </div>`,
       // pinnedBottomRowData: null,
+      paginationPageSize: null,
+      servState :["사용중","예약(기설중)","정지","해지"],
+      seletedRowData:''
     };
   },
   props: {
@@ -49,9 +54,16 @@ export default {
       type:String,
       default:"#f8f8f8"
     },
-    rowData: null,
-    columnDefs: null,
+    rowData: Object,
+    columnDefs:{
+      type:Array,
+      default:''
+      },
     gridOptions: {},
+    rowHeight:{
+      type:Number,
+      default:30
+    },
     rowClicked: {
       //행 클릭 이벤트
       type: Function,
@@ -87,12 +99,19 @@ export default {
   },
   created() {
     this.pinnedBottomRowData = [{
-    }]
+    }];
+    
+    this.paginationPageSize = 7*2;
   },
   methods: {
     loading() {
       // console.log("loading");
       // if (this.gridApi != null) this.gridApi.showLoadingOverlay();
+    },
+    onSelectionChanged(params) {
+      this.seletedRowData = params.api.getSelectedRows();
+      this.$emit('seletedRowData',this.seletedRowData)
+      console.log("seletedRowData : ",this.seletedRowData);
     },
     onGridReady(params) {
       // console.log("onGridReady");
