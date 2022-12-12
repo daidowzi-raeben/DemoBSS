@@ -9,6 +9,7 @@
         <select-box-component
             :selectClass="'select_input3'"
             :cdGroup="'codeDiv'"
+            :is-disabled="true"
             :disabled="true"
             :defaultValue="'코드구분선택'"
             @input=" (value) => { searchDiv = value;}"
@@ -32,6 +33,7 @@
         <select-box-component
             :selectClass="'select_input3'"
             :cdGroup="'useYn'"
+            :is-disabled="true"
             :defaultValue="'사용여부 선택'"
             @input=" (value) => { searchDiv = value;}"
             v-model="searchDiv"
@@ -111,6 +113,7 @@
     <select-box-component
         :selectClass="'select_input3'"
         :cdGroup="'optionSearchNum'"
+        :is-disabled="true"
         :defaultValue="'선택'"
         v-model="month"
         style="
@@ -161,11 +164,11 @@
       />
         </span>
       </div>
-      <div class="ag-grid_sp">
+      <div class="ag-grid_sp2">
         <ag-grid-component
             :header-color="'rgb(239 245 252)'"
             :rowData="this.cdLstRowData"
-            :columnDefs="columnDefs"
+            :columnDefs="columnDefs1"
             :rowClicked="clickedRow"
             :isWidthFit="false"
             :overlayNoRowsTemplate="
@@ -202,7 +205,6 @@ import SubInfoTitle from "@/components/common/SubInfoTitle";
 import ApiMixin from "@/service/common";
 import CodeGroupPopup from "@/components/common/PopupComponent/CdGroupLstPopup";
 import CdLstPopup from "@/components/common/PopupComponent/CdLstPopup";
-import AgGridRadioComp from "@/components/common/AgGridComponent/AgGridRadioComp";
 export default {
   mixins:[ApiMixin],
   name: "ComCdAdm",
@@ -215,7 +217,6 @@ export default {
     AgGridComponent,
     SubInfoTitle,
     InputComponent,
-    AgGridRadioComp
   },
   data(){
     return{
@@ -234,16 +235,16 @@ export default {
           checkboxSelection: true,
           showDisabledCheckboxes: true,
           width: 30,
-          cellStyle: () =>{
+          cellStyle: () =>{    //체크 박스 해제되는 것을 막기 위해 pointer events 수정
               return {'pointer-events' : "none"}
           }
         },
-        { headerName: "순번", field: "model1", width : 30 },
+        { headerName: "순번", field: "model1", width : 30},
         { headerName: "코드그룹ID", field: "model2", width : 70 },
         { headerName: "상위코드그룹ID", field: "model3", width : 70 },
-        { headerName: "코드그룹명", field: "model4", width : 100 },
-        { headerName: "코드그룹영문명", field: "model5", width : 100 },
-        { headerName: "코드그룹설명내용", field: "model6", width : 150 },
+        { headerName: "코드그룹명", field: "model4", width : 100, cellStyle:{justifyContent: "flex-start"} },
+        { headerName: "코드그룹영문명", field: "model5", width : 100, cellStyle:{justifyContent: "flex-start"} },
+        { headerName: "코드그룹설명내용", field: "model6", width : 150, cellStyle:{justifyContent: "flex-start"} },
         { headerName: "코드길이값", field: "model7", width : 50 },
         { headerName: "사용여부", field: "model8", width : 50 },
         { headerName: "유효시작일자", field: "StartDate", width : 60 },
@@ -255,14 +256,19 @@ export default {
           field: "model0",
           headerClass: "ag-header-first-child",
           width : 30,
-          cellRenderer : 'AgGridRadioComp'
+          checkboxSelection: true,
+          showDisabledCheckboxes: true,
+          cellRenderer : 'AgGridRadioComp',
+          cellStyle: () =>{    //체크 박스 해제되는 것을 막기 위해 pointer events 수정
+            return {'pointer-events' : "none"}
+          }
         },
         { headerName: "순번", field: "model1", width : 30 },
         { headerName: "코드ID", field: "model2", width : 70 },
         { headerName: "상위코드ID", field: "model3", width : 70 },
         { headerName: "표준코드ID", field: "model4", width : 70 },
-        { headerName: "코드명", field: "model5", width : 70 },
-        { headerName: "코드설명내용", field: "model6", width : 200 },
+        { headerName: "코드명", field: "model5", width : 70, cellStyle:{justifyContent: "flex-start"} },
+        { headerName: "코드설명내용", field: "model6", width : 200, cellStyle:{justifyContent: "flex-start"} },
         { headerName: "코드출력순서", field: "model7", width : 50 },
         { headerName: "사용여부", field: "model8", width : 50 },
         { headerName: "유효시작일자", field: "StartDate", width : 60 },
@@ -380,7 +386,12 @@ export default {
 .ag-grid_sp{
   /* margin: 10px; */
   width: 100%;
-  height: 250px;
+  height: 246px;
 }
 
+.ag-grid_sp2{
+  /* margin: 10px; */
+  width: 100%;
+  height: 465px;
+}
 </style>
