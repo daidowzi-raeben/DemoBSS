@@ -63,7 +63,7 @@
       </div>
     </div>
 
-    <div class="item" v-if="cdGpRowData!=null">  <!--2번 영역 -->
+    <div class="item">  <!--2번 영역 -->
       <div style="width: 100%">
         <SubInfoTitle :subInfoTitleNm="'코드그룹 리스트'"/>
         <p style="margin-left:5px; display:inline-block;">(총 <label style="font-weight: bold">{{ total }}</label>건)</p>
@@ -139,7 +139,7 @@
       </div>
     </div>
 
-    <div class="item" v-if="isCdGpShow">  <!--3번 영역 -->
+    <div class="item">  <!--3번 영역 -->
       <div style="width: 100%">
         <SubInfoTitle :subInfoTitleNm="'코드 리스트'"/>
         <p style="margin-left:5px; display:inline-block;">(총 <label style="font-weight: bold">{{ total }}</label>건)</p>
@@ -208,6 +208,7 @@
 
 <script>
 import pagingArea from "@/components/common/PagingArea";
+import popupComponent from "@/components/common/PopupComponent";
 import selectBoxComponent from "@/components/common/SelectBoxComponent";
 import ButtonComponent from "@/components/common/ButtonComponent";
 import AgGridComponent from "@/components/common/AgGridComponent";
@@ -221,6 +222,7 @@ export default {
   name: "ComCdAdm",
   components: {
     CdLstPopup,
+    popupComponent,
     CodeGroupPopup,
     pagingArea,
     selectBoxComponent,
@@ -240,39 +242,38 @@ export default {
       isCdLstModalShow : false, // 코드리스트 등록/변경 팝업
       cdGpType : null,
       cdLstType : null,
-      isCdGpShow: false,
       cdGpData:null,        //코드그룹리스트 클릭한 데이터
       cdLstData:null,       //코드리스트 클릭한 데이터
-      cdLstRowData:null,      //코드리스트 데이터
-      cdGpRowData : null,     //코드그룹 데이터
+      cdLstRowData:[],      //코드리스트 데이터
+      cdGpRowData :[],     //코드그룹 데이터
       columnDefs: [
         {
           headerName: "선택",
           field: '',
           checkboxSelection: true,
           showDisabledCheckboxes: true,
-          width: 30,
+          width: 70,
           cellStyle: () =>{    //체크 박스 해제되는 것을 막기 위해 pointer events 수정
               return {'pointer-events' : "none"}
           }
         },
-        { headerName: "순번", field: "model1", width : 30},
-        { headerName: "코드그룹ID", field: "model2", width : 70 },
-        { headerName: "상위코드그룹ID", field: "model3", width : 70 },
-        { headerName: "코드그룹명", field: "model4", width : 100, cellStyle:{justifyContent: "flex-start"} },
-        { headerName: "코드그룹영문명", field: "model5", width : 100, cellStyle:{justifyContent: "flex-start"} },
-        { headerName: "코드그룹설명내용", field: "model6", width : 150, cellStyle:{justifyContent: "flex-start"} },
-        { headerName: "코드길이값", field: "model7", width : 50 },
-        { headerName: "사용여부", field: "model8", width : 50 },
-        { headerName: "유효시작일자", field: "StartDate", width : 60 },
-        { headerName: "유효종료일자", field: "EndDate", width : 60 },
+        { headerName: "순번", field: "model1", width : 100},
+        { headerName: "코드그룹ID", field: "model2", width : 160 },
+        { headerName: "상위코드그룹ID", field: "model3", width : 160 },
+        { headerName: "코드그룹명", field: "model4", width : 200, cellStyle:{justifyContent: "flex-start"} },
+        { headerName: "코드그룹영문명", field: "model5", width : 170, cellStyle:{justifyContent: "flex-start"} },
+        { headerName: "코드그룹설명내용", field: "model6", width : 270, cellStyle:{justifyContent: "flex-start"} },
+        { headerName: "코드길이값", field: "model7", width : 110 },
+        { headerName: "사용여부", field: "model8", width : 110 },
+        { headerName: "유효시작일자", field: "StartDate", width : 125 },
+        { headerName: "유효종료일자", field: "EndDate", width : 125 },
       ],
       columnDefs1: [
         {
           headerName: "선택",
           field: "model0",
           headerClass: "ag-header-first-child",
-          width : 30,
+          width : 70,
           checkboxSelection: true,
           showDisabledCheckboxes: true,
           cellRenderer : 'AgGridRadioComp',
@@ -280,16 +281,16 @@ export default {
             return {'pointer-events' : "none"}
           }
         },
-        { headerName: "순번", field: "model1", width : 30 },
-        { headerName: "코드ID", field: "model2", width : 70 },
-        { headerName: "상위코드ID", field: "model3", width : 70 },
-        { headerName: "표준코드ID", field: "model4", width : 70 },
-        { headerName: "코드명", field: "model5", width : 70, cellStyle:{justifyContent: "flex-start"} },
-        { headerName: "코드설명내용", field: "model6", width : 200, cellStyle:{justifyContent: "flex-start"} },
-        { headerName: "코드출력순서", field: "model7", width : 50 },
-        { headerName: "사용여부", field: "model8", width : 50 },
-        { headerName: "유효시작일자", field: "StartDate", width : 60 },
-        { headerName: "유효종료일자", field: "EndDate", width : 60 },
+        { headerName: "순번", field: "model1", width : 100 },
+        { headerName: "코드ID", field: "model2", width : 160 },
+        { headerName: "상위코드ID", field: "model3", width : 160 },
+        { headerName: "표준코드ID", field: "model4", width : 160 },
+        { headerName: "코드명", field: "model5", width : 160, cellStyle:{justifyContent: "flex-start"} },
+        { headerName: "코드설명내용", field: "model6", width : 320, cellStyle:{justifyContent: "flex-start"} },
+        { headerName: "코드출력순서", field: "model7", width : 120 },
+        { headerName: "사용여부", field: "model8", width : 100 },
+        { headerName: "유효시작일자", field: "StartDate", width : 125 },
+        { headerName: "유효종료일자", field: "EndDate", width : 125 },
       ],
       pageableData1: {
         pageNumber: 1,
@@ -298,6 +299,11 @@ export default {
         totalPages: 12,
       },
     }
+  },
+  async beforeMount(){
+    await this.$connect('application/json','/info.json','get','').then((res)=>{
+      this.cdGpRowData = res.data.cdGpRowData;
+    })
   },
   watch:{
     searchValue(newValue){
@@ -334,9 +340,10 @@ export default {
       this.cdLstType = null;
     },
     cdGpclickedRow(params){     //코드그룹 AG GRID 클릭함수
-      this.isCdGpShow = true;
       this.cdGpData = params.data;
-      console.log(this.cdGpData);
+      this.$connect('application/json','/info.json','get','').then((res)=>{
+        this.cdLstRowData = res.data.cdLstRowData;
+      })
     },
     cdLstclickedRow(params){    ////코드리스트 AG GRID 클릭함수
       this.cdLstData = params.data;
@@ -344,7 +351,6 @@ export default {
     cdGpSearch(){     //검색 함수
       this.$connect('application/json','/info.json','get','').then((res)=>{
         this.cdGpRowData = res.data.cdGpRowData;
-        this.cdLstRowData = res.data.cdLstRowData;
       })
     },
     resetSearch(){    //리셋함수
@@ -437,6 +443,6 @@ export default {
 .ag-grid_sp2{
   /* margin: 10px; */
   width: 100%;
-  height: 465px;
+  height: 335px;
 }
 </style>
