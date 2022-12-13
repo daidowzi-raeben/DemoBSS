@@ -301,7 +301,8 @@ export default {
     }
   },
   async beforeMount(){
-    await this.$connect('application/json','/info.json','get','').then((res)=>{
+    await this.$connect('application/json','/info','get','').then((res)=>{
+      console.log(res.data.cdGpRowData);
       this.cdGpRowData = res.data.cdGpRowData;
     })
   },
@@ -341,7 +342,7 @@ export default {
     },
     cdGpclickedRow(params){     //코드그룹 AG GRID 클릭함수
       this.cdGpData = params.data;
-      this.$connect('application/json','/info.json','get','').then((res)=>{
+      this.$connect('application/json','/info','get','').then((res)=>{
         this.cdLstRowData = res.data.cdLstRowData;
       })
     },
@@ -349,7 +350,7 @@ export default {
       this.cdLstData = params.data;
     },
     cdGpSearch(){     //검색 함수
-      this.$connect('application/json','/info.json','get','').then((res)=>{
+      this.$connect('application/json','/info','get','').then((res)=>{
         this.cdGpRowData = res.data.cdGpRowData;
       })
     },
