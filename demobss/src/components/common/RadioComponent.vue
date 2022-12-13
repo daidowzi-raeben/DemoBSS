@@ -2,17 +2,18 @@
   <div>
     <label
       class="radioContainer"
-      v-for="RadioOpt in RadioOptions"
-      :key="RadioOpt"
+      v-for="radioOpt in radioOptions"
+      :key="radioOpt"
     >
       <input
         type="radio"
-        :id="RadioOpt"
-        :value="RadioOpt"
+        :id="radioOpt"
+        :value="radioOpt.cdId"
         v-model="radioValue"
-      />{{ RadioOpt }}
+        @change="updateValue(radioValue)"
+      />{{ radioOpt.cdNm }}
     </label>
-    <!-- <label class="container" v-for="RadioOpt in RadioOptions" :key="RadioOpt" >
+    <!-- <label class="container" v-for="RadioOpt in RadioOption" :key="RadioOpt" >
     <input type="radio" :id="RadioOpt" :value="RadioOpt" v-model="radioValue">{{RadioOpt}}
     <span class="radiomark" ></span>
   </label>
@@ -21,17 +22,53 @@
 </template>
 
 <script>
+import radioSelect from "../../../public/radioOption.json";
+
 export default {
   props: {
-    RadioOptions: {
-      type: Array,
-      default: ["default옵션", "radio2", "radio3", "radio4", "radio5"],
+    seletedRadio: String,
+    defaultcdId: String,
+    RadioOption: {
+      type: String,
+      default: "defaultRadio",
     },
   },
   data() {
     return {
       radioValue: "",
+      radioOptions: [],
     };
+  },
+  beforeMount() {
+    this.radioOptions = radioSelect[this.RadioOption];
+    console.log(this.radioOptions);
+    if (this.defaultcdId != null) {
+      for (let i = 0; i < this.radioOptions.length; i++) {
+        if (this.radioOptions[i].cdId == this.defaultcdId) {
+          this.value = this.defaultcdId;
+          break;
+        }
+      }
+    }
+  },
+  methods: {
+    updateValue(radioValue) {
+      this.$emit("radioEmit", radioValue);
+    },
+  },
+  watch: {
+    seletedRadio(newseletedRadio) {
+      // 해당 셀렉트박스 옵션 중 선택 된 값이 있는지 판단 후,
+      // 있다면 해당 값을 선택 값으로 올림, 그렇지 않으면 empty 문자열 반환하여 placeholder(disabled, hidden) 반환
+      this.radioValue = this.radioOptions
+        .map((n) => n.cdId)
+        .includes(newseletedRadio)
+        ? newseletedRadio
+        : "";
+    },
+    radioValue(newValue) {
+      this.radioValue = newValue;
+    },
   },
 };
 </script>

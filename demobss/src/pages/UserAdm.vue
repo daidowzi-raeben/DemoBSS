@@ -126,10 +126,11 @@
                   :value="userAdmObject.userNm"
                   :placeholder="'이름 입력'"
                 />
-                {{ userAdmObject.userNm }}
               </td>
               <th><label-component :labelNm="'사용여부'" /></th>
-              <td><radio-component :RadioOptions="['사용', '미사용']" /></td>
+              <td><radio-component :RadioOption="'useNouse'" 
+                    @radioEmit="(radioValue) => { userAdmObject.useYn = radioValue }"
+                    :seletedRadio="userAdmObject.useYn" /></td>
             </tr>
 
             <tr>
@@ -138,21 +139,20 @@
                 <select-box-component
                   style="height: 28px"
                   :selectClass="'select_input4'"
+                  :width="185"
                   :cdGroup="'ntcMeth'"
                   :defaultValue="'알림방법 선택'"
                   :defaultcdId="userAdmObject.ntcMeth"
-                  :isDisabled="true"
-                  :width="185"
                   :selectedValue="userAdmObject.ntcMeth"
-                  @input="
-                    (value) => {
-                      userAdmObject.ntcMeth = value;
-                    }
-                  "
+                  :isDisabled="true"
+                  @input=" (value) => { userAdmObject.ntcMeth = value;}"
                 />
               </td>
               <th><label-component :labelNm="'OTP사용여부'" /></th>
-              <td><radio-component :RadioOptions="['사용', '미사용']" /></td>
+              <td><radio-component 
+                    :RadioOption="'useNouse'" 
+                    @radioEmit="(radioValue) => { userAdmObject.otpYn = radioValue }"
+                    :seletedRadio="userAdmObject.otpYn" /></td>
             </tr>
 
             <tr>
@@ -221,11 +221,12 @@
               <th><label-component :labelNm="'이메일주소'" /></th>
               <td colspan="3">
                 <input-component
-                  :input-class="'class6 '"
+                
+                  :input-class="'class6'"
                   :class6Width="'180px'"
-                  :value="userAdmObject.email"
-                  v-model="userAdmObject.email"
-                  :placeholder="' 이메일주소 '"
+                  v-model="userAdmObject.userNm"
+                  :value="userAdmObject.userNm"
+                  :placeholder="'이름 입력'"
                 />
                 <span style="margin-right: 10px">@</span>
                 <select-box-component
@@ -233,13 +234,13 @@
                   :selectClass="'select_input4'"
                   :cdGroup="'emailDomain'"
                   :defaultValue="'도메인 선택'"
-                  :defaultcdId="userAdmObject.email"
+                  :defaultcdId="userAdmObject.emailDomain"
                   :isDisabled="true"
                   :width="185"
-                  :selectedValue="userAdmObject.email"
+                  :selectedValue="userAdmObject.emailDomain"
                   @input="
                     (value) => {
-                      userAdmObject.email = value;
+                      userAdmObject.emailDomain = value;
                     }
                   "
                 />
@@ -557,11 +558,14 @@ export default {
         cmpno: "사번",
         inOfficeSttus2: "inOffice",
         userNm: "홍길동",
+        useYn: "",
         ntcMeth: "ntcMeth1",
+        otpYn: "",
         org: "조직",
         rspof: "rspof3",
         dutySelect: "role1",
         email: "이메일주소",
+        emailDomain: "",
         mphon: ["", "", ""],
         ppon: ["", "", ""],
         pwd: "비밀번호",
@@ -607,6 +611,10 @@ export default {
         this.userAdmObject.dutySelect = newSeletedUserData.dutySelect;
         this.userAdmObject.org = newSeletedUserData.org;
         this.userAdmObject.ntcMeth = newSeletedUserData.ntcMeth;
+        this.userAdmObject.useYn = newSeletedUserData.useYn;
+        this.userAdmObject.otpYn = newSeletedUserData.otpYn;
+        this.userAdmObject.email = newSeletedUserData.email;
+        this.userAdmObject.emailDomain = newSeletedUserData.emailDomain;
         // console.log("newSeletedUserData",this.userAdmObject.inOfficeSttus2);
       },
     },

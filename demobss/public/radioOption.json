@@ -1,0 +1,58 @@
+{
+  "useNouse": [
+    {
+      "cdNm": "사용",
+      "cdId": "01"
+    },
+    {
+      "cdNm": "미사용",
+      "cdId": "02"
+    }
+  ],
+  "apvRfsl": [
+    {
+      "cdNm": "승인",
+      "cdId": "01"
+    },
+    {
+      "cdNm": "반려",
+      "cdId": "02"
+    }
+  ],
+  "RmnyOpt": [
+    {
+      "cdNm": "신용카드",
+      "cdId": "01"
+    },
+    {
+      "cdNm": "실시간 계좌이체",
+      "cdId": "02"
+    },
+    {
+      "cdNm": "현금",
+      "cdId": "03"
+    }
+  ],
+  "defaultRadio": [
+    {
+      "cdNm": "radio1",
+      "cdId": "01"
+    },
+    {
+      "cdNm": "radio2",
+      "cdId": "02"
+    },
+    {
+      "cdNm": "radio3",
+      "cdId": "03"
+    },
+    {
+      "cdNm": "radio4",
+      "cdId": "04"
+    },
+    {
+      "cdNm": "radio5",
+      "cdId": "05"
+    }
+  ]
+}

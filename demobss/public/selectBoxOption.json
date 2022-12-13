@@ -1,4 +1,18 @@
 {
+  "dummyOptions": [
+    {
+      "cdNm": "선택조건1",
+      "cdId": "01"
+    },
+    {
+      "cdNm": "선택조건2",
+      "cdId": "02"
+    },
+    {
+      "cdNm": "선택조건3",
+      "cdId": "03"
+    }
+  ],
   "optionsSearchDiv": [
     {
       "cdNm": "명의고객명",
@@ -286,24 +300,36 @@
       "cdId": "kt"
     },
     {
-      "cdNm": "ktds.com",
-      "cdId": "ktds"
-    },
-    {
       "cdNm": "ktcloud.com",
       "cdId": "ktcloud"
     },
     {
-      "cdNm": "kt2.com",
-      "cdId": "kt2"
+      "cdNm": "naver.com",
+      "cdId": "naver"
     },
     {
-      "cdNm": "kt3.com",
-      "cdId": "kt3"
+      "cdNm": "gmail.com",
+      "cdId": "gmail"
     },
     {
-      "cdNm": "kt4.com",
-      "cdId": "kt4"
+      "cdNm": "daum.net",
+      "cdId": "daum"
+    },
+    {
+      "cdNm": "hanmail.com",
+      "cdId": "hanmail"
+    },
+    {
+      "cdNm": "nate.com",
+      "cdId": "nate"
+    },
+    {
+      "cdNm": "yahoo.co.kr",
+      "cdId": "yahoo"
+    },
+    {
+      "cdNm": "직접입력",
+      "cdId": "drInput"
     }
   ],
   "retvCond": [

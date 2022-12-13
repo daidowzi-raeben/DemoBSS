@@ -541,7 +541,12 @@
       "duty": "BSS 개발",
       "dutySelect": "role2",
       "orgSelect": "role1",
-      "ntcMeth": "ntcMeth1"
+      "ntcMeth": "ntcMeth1",
+      "useYn": "02",
+      "otpYn": "01",
+      "email":"abe56e",
+      "emailDomain":"daum"
+      
     },
     {
       "cmpno": "82672436",
@@ -552,7 +557,12 @@
       "duty": "BSS 개발2",
       "dutySelect": "role4",
       "orgSelect": "role2",
-      "ntcMeth": "ntcMeth1"
+      "ntcMeth": "ntcMeth1",
+      "useYn": "01",
+      "otpYn": "02",
+      "email":"ab24cd",
+      "emailDomain":"naver"
+      
     },
     {
       "cmpno": "82679415",
@@ -563,7 +573,12 @@
       "duty": "BSS 개발3",
       "dutySelect": "role2",
       "orgSelect": "role1",
-      "ntcMeth": "ntcMeth2"
+      "ntcMeth": "ntcMeth2",
+      "useYn": "02",
+      "otpYn": "02",
+      "email":"2ee12",
+      "emailDomain":"kt"
+      
     },
     {
       "cmpno": "82619315",
@@ -574,7 +589,12 @@
       "duty": "BSS 개발4",
       "dutySelect": "role4",
       "orgSelect": "role2",
-      "ntcMeth": "ntcMeth3"
+      "ntcMeth": "ntcMeth3",
+      "useYn": "01",
+      "otpYn": "01",
+      "email":"t435",
+      "emailDomain":"gmail"
+      
     },
     {
       "cmpno": "82675315",
@@ -585,7 +605,12 @@
       "duty": "BSS 개발5",
       "dutySelect": "role3",
       "orgSelect": "role2",
-      "ntcMeth": "ntcMeth3"
+      "ntcMeth": "ntcMeth3",
+      "useYn": "02",
+      "otpYn": "02",
+      "email":"123ewr",
+      "emailDomain":"daum"
+      
     },
     {
       "cmpno": "89679315",
