@@ -4,12 +4,6 @@ module.exports = defineConfig({
   transpileDependencies: true,
   lintOnSave : false,
   devServer:{
-    proxy: {
-      '/': {
-        "target": 'http://localhost:8080',
-        "pathRewrite" :{'^/':''},
-        "changeOrigin": true
-      },
-    }
+    proxy: 'http://localhost:8080'
   }
 })
