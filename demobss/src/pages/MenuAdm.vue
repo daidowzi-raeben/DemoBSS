@@ -12,8 +12,7 @@
       <div>
         <sub-info-title :subInfoTitleNm="'메뉴 리스트'" />
         <p style="margin-left: 5px; display: inline-block">
-          (총 <label style="font-weight: bold">{{ total }}</label
-          >건)
+          (총 <label style="font-weight: bold">{{ total }}</label>건)
         </p>
         <span style="float: right">
           <button-component

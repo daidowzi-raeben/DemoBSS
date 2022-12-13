@@ -8,8 +8,7 @@
       <div>
         <sub-info-title :subInfoTitleNm="subInfoTitleNm_Item2" />
         <p style="margin-left: 5px; display: inline-block">
-          (총 <label style="font-weight: bold">{{ total }}</label
-          >건)
+          (총 <label style="font-weight: bold">{{ total }}</label>건)
         </p>
         <span style="float: right">
           <button-component
@@ -27,7 +26,7 @@
         </span>
       </div>
       <div>
-        <ag-grid-component-2
+        <ag-grid-component
           :rowData="rowData"
           :columnDefs="columnDefs"
           :rowHeight="rowHeight"
@@ -462,7 +461,6 @@
 
 <script>
 import UserAdmRetvComponent from "@/components/common/UserAdmRetvComponent.vue";
-import AgGridComponent2 from "@/components/common/AgGridComponent2.vue";
 import ApiMixin from "@/service/common.js";
 import SubInfoTitle from "@/components/common/SubInfoTitle.vue";
 import ButtonComponent from "@/components/common/ButtonComponent.vue";
@@ -473,12 +471,12 @@ import InputComponent from "@/components/common/InputComponent.vue";
 import RadioComponent from "@/components/common/RadioComponent.vue";
 import { formatTel } from "@/service/FormatService.js";
 import PopupComponent from "@/components/common/PopupComponent.vue";
+import AgGridComponent from '@/components/common/AgGridComponent.vue';
 
 export default {
   mixins: [ApiMixin],
   components: {
     UserAdmRetvComponent,
-    AgGridComponent2,
     SubInfoTitle,
     ButtonComponent,
     SelectBoxComponent,
@@ -487,6 +485,7 @@ export default {
     InputComponent,
     RadioComponent,
     PopupComponent,
+    AgGridComponent,
   },
   data() {
     return {

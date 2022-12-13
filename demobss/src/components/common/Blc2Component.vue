@@ -27,7 +27,7 @@
     </span>
   </div>
   <div class="ag-grid_sp">
-    <ag-grid-component-2 :rowData="rowData" :columnDefs="columnDefs" />
+    <ag-grid-component :rowData="rowData" :columnDefs="columnDefs" />
     <div>
       <paging-area
         :pageableData="pageableData"
@@ -47,7 +47,7 @@ import ButtonComponent from "@/components/common/ButtonComponent";
 import SubInfoTitle from "@/components/common/SubInfoTitle";
 import ApiMixin from "@/service/common";
 import PagingArea from "@/components/common/PagingArea.vue";
-import AgGridComponent2 from "./AgGridComponent2.vue";
+import AgGridComponent from './AgGridComponent.vue';
 
 export default {
   mixins: [ApiMixin],
@@ -57,7 +57,7 @@ export default {
     ButtonComponent,
     SubInfoTitle,
     PagingArea,
-    AgGridComponent2,
+    AgGridComponent,
   },
   data() {
     return {
