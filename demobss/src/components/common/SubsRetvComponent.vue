@@ -5,32 +5,29 @@
         <th><label-component :labelNm="'조회구분'" /></th>
         <td>
           <select-box-component
+            style="height: 28px"
+            :width="140"
             :selectClass="'select_input3'"
             :select_input3_marginLeft="'0px'"
-            :cdGroup="cdGroup"
+            :cdGroup="'dummyOptions'"
+            :isDisabled="true"
             :defaultValue="'선택'"
+            :selectedValue="selectValues.selectValue1"
             @input="
               (value) => {
-                searchDiv = value;
+                selectValues.selectValue1 = value;
               }
             "
-            :width="140"
-            style="height: 28px"
-            v-model="searchDiv"
           />
         </td>
         <td colspan="2">
           <input-component
+            style="width: 100`%; height: 28px"
             :type="'search'"
             :inputClass="'class4'"
             :placeholder="'검색어 입력'"
-            @input="
-              (value) => {
-                searchValue = value;
-              }
-            "
-            v-model="searchValue"
-            style="width: 100%; height: 28px"
+            :value="selectValues.inputValue1"
+            v-model="selectValues.inputValue1"
           />
         </td>
         <td></td>
@@ -74,48 +71,46 @@
         <th><label-component :labelNm="'상품구분'" /></th>
         <td>
           <select-box-component
+            style="height: 28px"
+            :width="140"
             :selectClass="'select_input3'"
             :select_input3_marginLeft="'0px'"
-            :cdGroup="cdGroup"
+            :cdGroup="'dummyOptions'"
+            :isDisabled="true"
             :defaultValue="'선택'"
+            :selectedValue="selectValues.selectValue2"
             @input="
               (value) => {
-                searchDiv = value;
+                selectValues.selectValue2 = value;
               }
             "
-            :width="140"
-            style="height: 28px"
-            v-model="searchDiv"
           />
         </td>
         <td>
           <select-box-component
+            style="height: 28px"
+            :width="140"
             :selectClass="'select_input3'"
             :select_input3_marginLeft="'0px'"
-            :cdGroup="cdGroup"
+            :cdGroup="'dummyOptions'"
+            :isDisabled="true"
             :defaultValue="'선택'"
+            :selectedValue="selectValues.selectValue3"
             @input="
               (value) => {
-                searchDiv = value;
+                selectValues.selectValue3 = value;
               }
             "
-            :width="140"
-            style="height: 28px"
-            v-model="searchDiv"
           />
         </td>
         <td colspan="2">
           <input-component
+            style="width: 100`%; height: 28px"
             :type="'search'"
             :inputClass="'class4'"
-            :placeholder="'상품명 입력'"
-            @input="
-              (value) => {
-                searchValue = value;
-              }
-            "
-            v-model="searchValue"
-            style="width: 100%; height: 28px"
+            :placeholder="'검색어 입력'"
+            :value="selectValues.inputValue2"
+            v-model="selectValues.inputValue2"
           />
         </td>
 
@@ -123,34 +118,36 @@
         <th><label-component :labelNm="'상태구분'" /></th>
         <td colspan="2">
           <select-box-component
+            style="height: 28px"
+            :width="140"
             :selectClass="'select_input3'"
             :select_input3_marginLeft="'0px'"
-            :cdGroup="cdGroup"
+            :cdGroup="'dummyOptions'"
+            :isDisabled="true"
             :defaultValue="'선택'"
+            :selectedValue="selectValues.selectValue4"
             @input="
               (value) => {
-                searchDiv = value;
+                selectValues.selectValue4 = value;
               }
             "
-            :width="150"
-            style="height: 28px"
-            v-model="searchDiv"
           />
         </td>
         <td>
           <select-box-component
+            style="height: 28px"
+            :width="140"
             :selectClass="'select_input3'"
             :select_input3_marginLeft="'0px'"
-            :cdGroup="cdGroup"
+            :cdGroup="'dummyOptions'"
+            :isDisabled="true"
             :defaultValue="'선택'"
+            :selectedValue="selectValues.selectValue8"
             @input="
               (value) => {
-                searchDiv = value;
+                selectValues.selectValue8 = value;
               }
             "
-            :width="140"
-            style="height: 28px"
-            v-model="searchDiv"
           />
         </td>
         <!--300px -->
@@ -163,6 +160,7 @@
             :btnWidth="'78px'"
             :btnFontWeight="'bold'"
             :btnName="'초기화'"
+            @click="resetRetvCond"  
           />
         </td>
         <td class="btnBox">
@@ -179,64 +177,63 @@
         <th><label-component :labelNm="'접수자'" /></th>
         <td>
           <select-box-component
+            style="height: 28px"
+            :width="140"
             :selectClass="'select_input3'"
             :select_input3_marginLeft="'0px'"
-            :cdGroup="cdGroup"
+            :cdGroup="'dummyOptions'"
+            :isDisabled="true"
             :defaultValue="'선택'"
+            :selectedValue="selectValues.selectValue5"
             @input="
               (value) => {
-                searchDiv = value;
+                selectValues.selectValue5 = value;
               }
             "
-            :width="140"
-            style="height: 28px"
-            v-model="searchDiv"
           />
         </td>
         <td>
           <select-box-component
+            style="height: 28px"
+            :width="140"
             :selectClass="'select_input3'"
             :select_input3_marginLeft="'0px'"
-            :cdGroup="cdGroup"
+            :cdGroup="'dummyOptions'"
+            :isDisabled="true"
             :defaultValue="'선택'"
+            :selectedValue="selectValues.selectValue6"
             @input="
               (value) => {
-                searchDiv = value;
+                selectValues.selectValue6 = value;
               }
             "
-            :width="140"
-            style="height: 28px"
-            v-model="searchDiv"
           />
         </td>
         <td>
           <select-box-component
+            style="height: 28px"
+            :width="140"
             :selectClass="'select_input3'"
             :select_input3_marginLeft="'0px'"
-            :cdGroup="cdGroup"
+            :cdGroup="'dummyOptions'"
+            :isDisabled="true"
             :defaultValue="'선택'"
+            :selectedValue="selectValues.selectValue7"
             @input="
               (value) => {
-                searchDiv = value;
+                selectValues.selectValue7 = value;
               }
             "
-            :width="140"
-            style="height: 28px"
-            v-model="searchDiv"
           />
         </td>
         <td>
           <input-component
+            style="width: 100`%; height: 28px"
             :type="'search'"
             :inputClass="'class4'"
-            :placeholder="'사원명 입력'"
-            @input="
-              (value) => {
-                searchValue = value;
-              }
-            "
-            v-model="searchValue"
-            style="width: 100%; height: 28px"
+            :placeholder="'검색어 입력'"
+            :value="selectValues.inputValue3"
+            v-model="selectValues.inputValue3"
           />
         </td>
       </tr>
@@ -265,9 +262,37 @@ export default {
   },
   data() {
     return {
-      searchDiv: null,
-      searchValue: null,
+      selectValues: {
+        selectValue1: "",
+        selectValue2: "",
+        selectValue3: "",
+        selectValue4: "",
+        selectValue5: "",
+        selectValue6: "",
+        selectValue7: "",
+        selectValue8: "",
+        selectValue9: "",
+        inputValue1 : null,
+        inputValue2 : null,
+        inputValue3 : null,
+      },
     };
+  },
+  methods:{
+    resetRetvCond(){
+        this.selectValues.selectValue1= "";
+        this.selectValues.selectValue2= "";
+        this.selectValues.selectValue3= "";
+        this.selectValues.selectValue4= "";
+        this.selectValues.selectValue5= "";
+        this.selectValues.selectValue6= "";
+        this.selectValues.selectValue7= "";
+        this.selectValues.selectValue8= "";
+        this.selectValues.selectValue9= "";
+        this.selectValues.inputValue1= null;
+        this.selectValues.inputValue2= null;
+        this.selectValues.inputValue3= null;
+    }
   },
   props: {
     cdGroup: null,

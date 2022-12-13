@@ -3,50 +3,45 @@
     <span> {{ retvCondNm }} </span>
     <span>
       <select-box-component
+        style="height: 28px"
+        :width="140"
         :selectClass="'select_input4'"
         :cdGroup="selectCdGroup"
-        :disabled="true"
         :isDisabled="true"
         :defaultValue="selectDefltValue"
+        :selectedValue="selectValues.selectValueOfRetv"
         @input="
           (value) => {
-            searchDiv = value;
+            selectValues.selectValueOfRetv = value;
           }
         "
-        v-model="searchDiv"
-        :width="140"
-        style="height: 28px"
       />
     </span>
     <span>
       <input-component
+        style="width: 100%; height: 28px"
         :type="'search'"
         :inputClass="'class4'"
         :placeholder="'검색어 입력'"
-        @input="
-          (value) => {
-            searchValue = value;
-          }
-        "
-        v-model="searchValue"
-        style="width: 100%; height: 100%"
+        :value="selectValues.inputValueOfRetv"
+        v-model="selectValues.inputValueOfRetv"
       />
     </span>
     <span> 사용여부 </span>
     <span>
       <select-box-component
+        style="height: 28px"
+        :width="140"
         :selectClass="'select_input4'"
         :cdGroup="'useYn'"
-        :is-disabled="true"
+        :isDisabled="true"
         :defaultValue="'사용여부 선택'"
+        :selectedValue="selectValues.selectValueOfUseYn"
         @input="
           (value) => {
-            searchDiv = value;
+            selectValues.selectValueOfUseYn = value;
           }
         "
-        v-model="searchDiv"
-        :width="140"
-        style="height: 28px"
       />
     </span>
     <span>
@@ -56,6 +51,8 @@
         :btn-name="'초기화'"
         :btnHeight="'28px'"
         :btnWidth="'100px'"
+        @click="resetRetvCond"
+        
       />
     </span>
     <span>
@@ -87,6 +84,23 @@ export default {
       default: "구분 선택",
     },
   },
+  data() {
+    return {
+      selectValues: {
+        selectValueOfRetv: "",
+        inputValueOfRetv: null,
+        selectValueOfUseYn:"",
+      },
+    };
+  },
+  methods:{
+    resetRetvCond(){
+        this.selectValues.selectValueOfRetv= "";
+        this.selectValues.inputValueOfRetv= null;
+        this.selectValues.selectValueOfUseYn="";
+    }
+
+  }
 };
 </script>
 
