@@ -16,7 +16,6 @@
         :btnName3="'엑셀 다운로드'"
         :agGirdHeight="'60%'"
       />
-      <!-- <table-component /> -->
     </div>
   </div>
 </template>

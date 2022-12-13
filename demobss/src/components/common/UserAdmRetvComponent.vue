@@ -9,11 +9,7 @@
             :cdGroup="'dutySelect'"
             :defaultValue="'직무 선택'"
             :isDisabled="true"
-            @input="
-              (value) => {
-                selectValue = value;
-              }
-            "
+            @input="(value) => {selectValue = value;}"
             :width="140"
             style="height: 28px"
             v-model="selectValue"
@@ -29,11 +25,7 @@
             :cdGroup="'rspof'"
             :defaultValue="'직책 선택'"
             :isDisabled="true"
-            @input="
-              (value) => {
-                selectValue = value;
-              }
-            "
+            @input="(value) => {selectValue = value;}"
             :width="200"
             style="height: 28px"
             v-model="selectValue"

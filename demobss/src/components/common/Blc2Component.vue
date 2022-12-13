@@ -2,8 +2,7 @@
   <div style="width: 100%">
     <SubInfoTitle :subInfoTitleNm="subInfoTitleNm" />
     <p style="margin-left: 5px; display: inline-block">
-      (총 <label style="font-weight: bold">{{ total }}</label
-      >건)
+      (총 <label style="font-weight: bold">{{ total }}</label>건)
     </p>
     <span style="float: right">
       <button-component :btnClass="'btnClass3'" :btnName="btnName1" />
@@ -18,11 +17,7 @@
         v-model="month"
         style="width: 80px; height: 26px; margin-right: 15px"
         v-show="selectBoxShow"
-        @input="
-          (value) => {
-            month = value;
-          }
-        "
+        @input=" (value) => { month = value; }"
       />
     </span>
   </div>
@@ -31,11 +26,7 @@
     <div>
       <paging-area
         :pageableData="pageableData"
-        @currentPage="
-          (value) => {
-            page = value;
-          }
-        "
+        @currentPage=" (value) => { page = value;}"
       />
     </div>
   </div>

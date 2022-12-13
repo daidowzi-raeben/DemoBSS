@@ -3,7 +3,6 @@
     <div class="item1">
       <user-adm-retv-component />
     </div>
-
     <div class="item2">
       <div>
         <sub-info-title :subInfoTitleNm="subInfoTitleNm_Item2" />
@@ -46,11 +45,7 @@
               :defaultcdId="showTheNum"
               :isDisabled="true"
               v-model="showTheNum"
-              @input="
-                (value) => {
-                  showTheNum = value;
-                }
-              "
+              @input="(value) => {selectValue = value;}"
             />
           </div>
           <div>
@@ -189,11 +184,11 @@
                 <select-box-component
                   style="height: 28px"
                   :selectClass="'select_input4'"
+                  :width="185"
                   :cdGroup="'rspof'"
+                  :isDisabled="true"
                   :defaultValue="'직책 선택'"
                   :defaultcdId="userAdmObject.rspof"
-                  :isDisabled="true"
-                  :width="185"
                   :selectedValue="userAdmObject.rspof"
                   @input="
                     (value) => {
