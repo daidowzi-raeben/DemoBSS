@@ -12,8 +12,8 @@
             :is-disabled="true"
             :disabled="true"
             :defaultValue="'코드구분선택'"
+            :selected-value="cdDivSel"
             @input=" (value) => { cdDivSel = value;}"
-            :pValue="cdDivSel"
         />
       </span>
         <span>
@@ -21,7 +21,7 @@
             :type="'search'"
             :inputClass="'class4'"
             :placeholder="'검색어 입력'"
-            @input=" (value) => { searchValue = value;}"
+            :value="searchValue"
             v-model="searchValue"
             style="width:100%; height:100%"
         />
@@ -36,8 +36,9 @@
             :is-disabled="true"
             :defaultValue="'사용여부 선택'"
             @input=" (value) => { useYn = value;}"
-            :p-value="useYn"
+            :selected-value="useYn"
         />
+
       </span>
         <span>
         <button-component
@@ -56,12 +57,13 @@
             :btn-name ="'검색'"
             :btnHeight="'28px'"
             :btnWidth ="'100px'"
+            @click="cdGpSearch"
         />
       </span>
       </div>
     </div>
 
-    <div class="item">  <!--2번 영역 -->
+    <div class="item" v-if="cdGpRowData!=null">  <!--2번 영역 -->
       <div style="width: 100%">
         <SubInfoTitle :subInfoTitleNm="'코드그룹 리스트'"/>
         <p style="margin-left:5px; display:inline-block;">(총 <label style="font-weight: bold">{{ total }}</label>건)</p>
@@ -78,7 +80,7 @@
           :btnClass="'btnClass3'"
           :btnName="'변경'"
           :btnWidth="'auto'"
-          @click="isCdGpModalShow=true; cdGpType=2"
+          @click="cdGpChg"
       />
         </span>
         <span style="float: right">
@@ -86,7 +88,7 @@
           :btnClass="'btnClass3'"
           :btnName="'신규등록'"
           :btnWidth="'auto'"
-          @click="isCdGpModalShow=true; cdGpType=1"
+          @click="isCdGpModalShow=true; cdGpType=1;"
       />
         </span>
         <span style="float: right">
@@ -94,6 +96,7 @@
           :btnClass="'btnClass3'"
           :btnName="'코드서버즉시적용'"
           :btnWidth="'auto'"
+          @click="isModalCdShow=true;"
       />
         </span>
       </div>
@@ -102,7 +105,7 @@
             :header-color="'rgb(239 245 252)'"
             :rowData="this.cdGpRowData"
             :columnDefs="columnDefs"
-            :rowClicked="clickedRow"
+            :rowClicked="cdGpclickedRow"
             :isWidthFit="false"
             :overlayNoRowsTemplate="
           `<span> <br>` + '<br />조회 결과가 없습니다.' + ` </span>`
@@ -153,7 +156,7 @@
           :btnClass="'btnClass3'"
           :btnName="'변경'"
           :btnWidth="'auto'"
-          @click="isCdLstModalShow=true; cdLstType=2"
+          @click="cdLstChg"
       />
         </span>
         <span style="float: right">
@@ -161,7 +164,7 @@
           :btnClass="'btnClass3'"
           :btnName="'신규등록'"
           :btnWidth="'auto'"
-          @click="isCdLstModalShow=true; cdLstType=1"
+          @click="isCdLstModalShow=true; cdLstType=1;"
       />
         </span>
       </div>
@@ -170,7 +173,7 @@
             :header-color="'rgb(239 245 252)'"
             :rowData="this.cdLstRowData"
             :columnDefs="columnDefs1"
-            :rowClicked="clickedRow"
+            :rowClicked="cdLstclickedRow"
             :isWidthFit="false"
             :overlayNoRowsTemplate="
           `<span> <br>` + '<br />조회 결과가 없습니다.' + ` </span>`
@@ -183,15 +186,22 @@
     <CodeGroupPopup
         v-if="isCdGpModalShow"
         :type="cdGpType"
-        :value="cdGpvalue"
+        :value="this.cdGpData"
         @close="closeCdGpModal"
       />
     <!--코드리스트 팝업 -->
     <CdLstPopup
         v-if="isCdLstModalShow"
         :type="cdLstType"
-        :value="cdLstvalue"
+        :value="this.cdLstData"
         @close="closeCdLstModal"
+    />
+    <!--코드서버즉시 팝업 -->
+    <popup-component
+        v-if="isModalCdShow"
+        @popup="isModalCdShow = false"
+        @AGREE = "''"
+        :popupmsg="'코드정보를 서버에 즉시 반영하시겠습니까?'"
     />
   </article>
 </template>
@@ -222,16 +232,19 @@ export default {
   data(){
     return{
       cdGroup:null,
+      isModalCdShow : false,    //코드서버즉시 팝업
       isCdGpModalShow : false,  //코드그룹 리스트 등록/변경 팝업
-      cdDivSel:null,            //코드구분 select box
-      searchValue:null,         //검색 값
-      useYn:null,               //사용여부 select box
+      cdDivSel:"",            //코드구분 select box
+      searchValue:"",         //검색 값
+      useYn:"",               //사용여부 select box
       isCdLstModalShow : false, // 코드리스트 등록/변경 팝업
       cdGpType : null,
       cdLstType : null,
       isCdGpShow: false,
-      cdLstRowData:[],
-      cdGpRowData : [],
+      cdGpData:null,        //코드그룹리스트 클릭한 데이터
+      cdLstData:null,       //코드리스트 클릭한 데이터
+      cdLstRowData:null,      //코드리스트 데이터
+      cdGpRowData : null,     //코드그룹 데이터
       columnDefs: [
         {
           headerName: "선택",
@@ -286,7 +299,30 @@ export default {
       },
     }
   },
+  watch:{
+    searchValue(newValue){
+      this.searchValue = newValue;
+    }
+  },
   methods:{
+    cdGpChg(){  //코드그룹변경
+      if(this.cdGpData!=null){
+        this.isCdGpModalShow=true;
+        this.cdGpType=2;
+      }
+      else{
+        this.isCdGpModalShow=false;
+      }
+    },
+    cdLstChg(){
+      if(this.cdLstData!=null){
+        this.isCdLstModalShow = true;
+        this.cdLstType=2;
+      }
+      else{
+        this.isCdLstModalShow = false;
+      }
+    },
     //코드 그룹 팝업 닫기
     closeCdGpModal(){
       this.isCdGpModalShow = false;
@@ -297,25 +333,25 @@ export default {
       this.isCdLstModalShow = false;
       this.cdLstType = null;
     },
-    clickedRow(params){
+    cdGpclickedRow(params){     //코드그룹 AG GRID 클릭함수
       this.isCdGpShow = true;
-      console.log(params);
+      this.cdGpData = params.data;
+      console.log(this.cdGpData);
     },
-    resetSearch(){
+    cdLstclickedRow(params){    ////코드리스트 AG GRID 클릭함수
+      this.cdLstData = params.data;
+    },
+    cdGpSearch(){     //검색 함수
+      this.$connect('application/json','/info.json','get','').then((res)=>{
+        this.cdGpRowData = res.data.cdGpRowData;
+        this.cdLstRowData = res.data.cdLstRowData;
+      })
+    },
+    resetSearch(){    //리셋함수
       this.cdDivSel="";
-      this.searchValue="";
+      this.searchValue=null;
       this.useYn="";
     }
-  },
-  async beforeMount() {
-    // this.gridOptions = {
-    //   pinnedBottomRowData: [{ model0: "합계", model1: null, model4: 0 }],
-    // };
-    await this.$connect('application/json','/info.json','get','').then((res)=>{
-      this.cdGpRowData = res.data.cdGpRowData;
-      this.cdLstRowData = res.data.cdLstRowData;
-    })
-    console.log(this.rowData);
   },
 
 }

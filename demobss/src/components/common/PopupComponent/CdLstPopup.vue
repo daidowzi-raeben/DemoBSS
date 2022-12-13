@@ -44,37 +44,37 @@
               <tr>
                 <th>코드그룹ID</th>
                 <td>
-                  <input-component :class="this.type===2 ? 'input_disabled':'input'" :input-class="'class5'" :disabled="disabled" :value="'ACRND_TYPE_CD' " />
+                  <input-component :class="this.type===2 ? 'input_disabled':'input'" :input-class="'class5'" :disabled="disabled" :value="this.cdGpId" />
                 </td>
                 <th>상위코드그룹ID</th>
                 <td>
-                  <input-component :class="this.type===2 ? 'input_disabled':'input'" :input-class="'class5'" :disabled="disabled" :value="'' " />
+                  <input-component :class="this.type===2 ? 'input_disabled':'input'" :input-class="'class5'" :disabled="disabled" :value="this.upCdGpId" />
                 </td>
               </tr>
               <tr>
                 <th>코드ID</th>
                 <td>
-                  <input-component :class="this.type===2 ? 'input_disabled':'input'" :input-class="'class5'" :disabled="disabled" :value="'코드그룹ID 입력' " />
+                  <input-component :class="this.type===2 ? 'input_disabled':'input'" :input-class="'class5'" :disabled="disabled" :value="this.cdId" />
                 </td>
                 <th>상위코드ID</th>
                 <td>
-                  <input-component :class="this.type===2 ? 'input_disabled':'input'" :input-class="'class5'" :disabled="disabled" :value="'상위코드그룹ID 입력' " />
+                  <input-component :class="this.type===2 ? 'input_disabled':'input'" :input-class="'class5'" :disabled="disabled" :value="this.upCdId" />
                 </td>
               </tr>
               <tr>
                 <th>코드명</th>
                 <td>
-                  <input-component class="input" :input-class="'class5 class5_long1'" :long-width="'220px'" :value="'코드그룹명 입력' " />
+                  <input-component class="input" :input-class="'class5 class5_long1'" :long-width="'220px'" :value="this.cdNm" />
                 </td>
                 <th>표준코드ID</th>
                 <td>
-                  <input-component :class="this.type===2 ? 'input_disabled':'input'" :input-class="'class5 class5_long1'" :disabled="disabled" :long-width="'220px'" :value="'표준코드ID 입력' " />
+                  <input-component :class="this.type===2 ? 'input_disabled':'input'" :input-class="'class5 class5_long1'" :disabled="disabled" :long-width="'220px'" :value="this.stdCdId" />
                 </td>
               </tr>
               <tr>
                 <th>코드설명</th>
                 <td colspan="3">
-                  <input-component class="input" :input-class="'class5 class5_long1'" :long-width="'625px'" :value="'코드그룹설명 입력' " />
+                  <input-component class="input" :input-class="'class5 class5_long1'" :long-width="'625px'" :value="this.cdDesc" />
                 </td>
               </tr>
               <tr>
@@ -85,7 +85,7 @@
                 </td>
                 <th>코드출력순서</th>
                 <td>
-                  <input-component class="input" :input-class="'class5'" :value="'순서 입력' " />
+                  <input-component class="input" :input-class="'class5'" :value="this.cdOtputOdrg" />
                 </td>
               </tr>
               <tr>
@@ -122,17 +122,46 @@ export default {
   data() {
     return {
       disabled:false,
-      useAble:null
+      useAble:null,
 
+      cdGpId:null,      //코드그룹ID
+      upCdGpId:null,    //상위코드그룹ID
+      cdId:null,        //코드ID
+      upCdId:null,      //상위코드ID
+      cdNm:null,        //코드명
+      stdCdId:null,     //표준코드ID
+      cdDesc:null,      //코드그룹 설명
+      useYn:null,       //사용여부
+      cdOtputOdrg:null, //코드출력순서
+      efctStDate:null,  //유효시작일자
+      efctFnsDate:null, //유효종료일자
     };
   },
   beforeMount() {
-    if(this.type==2) this.disabled=true;
+    if(this.type==2) {
+      this.disabled = true;
+      if (this.value !== null) {       //초기값 셋팅
+
+        this.cdId = this.value.model2;
+        this.cdNm = this.value.model5;
+        this.cdDesc = this.value.model6;
+        this.cdOtputOdrg = this.value.model7;
+        this.efctStDate = this.value.StartDate;
+        this.efctFnsDate = this.value.EndDate;
+
+        if (this.value.model8 === "사용") this.useAble = 'use';
+        else this.useAble = 'unuse';
+      }
+    }
   },
   props: {
     type:{
       type:Number,
       default: 1
+    },
+    value:{
+      type:Object,
+      default:null
     },
     popupOverlay:{
       type: String,

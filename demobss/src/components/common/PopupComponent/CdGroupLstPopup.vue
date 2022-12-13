@@ -44,27 +44,27 @@
               <tr>
                 <th>코드그룹ID</th>
                 <td>
-                  <input-component :input-class="'class5'" :class="this.type===2 ? 'input_disabled':'input'" :disabled="disabled" :value="'ACRND_TYPE_CD' " />
+                  <input-component :input-class="'class5'" :class="this.type===2 ? 'input_disabled':'input'" :disabled="disabled" :value="this.cdGpId" />
                 </td>
                 <th>상위코드그룹ID</th>
                 <td>
-                  <input-component :input-class="'class5'" :class="this.type===2 ? 'input_disabled':'input'" :disabled="disabled" :value="'상위코드그룹 ID' " />
+                  <input-component :input-class="'class5'" :class="this.type===2 ? 'input_disabled':'input'" :disabled="disabled" :value="this.upCdGpId" />
                 </td>
               </tr>
               <tr>
                 <th>코드그룹명</th>
                 <td>
-                  <input-component class="input" :input-class="'class5 class5_long1'" :long-width="'220px'" :value="'코드그룹명 입력' " />
+                  <input-component class="input" :input-class="'class5 class5_long1'" :long-width="'220px'" :value="this.cdGpNm" />
                 </td>
                 <th>코드그룹영문명</th>
                 <td>
-                  <input-component class="input" :input-class="'class5 class5_long1'" :long-width="'220px'" :value="'코드그룹영문명 입력' " />
+                  <input-component class="input" :input-class="'class5 class5_long1'" :long-width="'220px'" :value="this.cdGpEngNm" />
                 </td>
               </tr>
               <tr>
                 <th>코드그룹 설명</th>
                 <td colspan="3">
-                  <input-component class="input" :input-class="'class5 class5_long1'" :long-width="'625px'" :value="'코드그룹설명 입력' " />
+                  <input-component class="input" :input-class="'class5 class5_long1'" :long-width="'625px'" :value="this.cdGpDesc" />
                 </td>
               </tr>
               <tr>
@@ -78,10 +78,12 @@
                 <th>유효시작일자</th>
                 <td><date-picker-component
                     :classWrapper="'calender_input'"
+                    :pDate ="this.efctStDate"
                 /></td>
                 <th>유효종료일자</th>
                 <td><date-picker-component
                     :classWrapper="'calender_input'"
+                    :p-date="this.efctStDate"
                 /></td>
               </tr>
             </table>
@@ -107,18 +109,45 @@ export default {
 
   data() {
     return {
-      disabled : false,
-      useAble:null
+      disabled : false, //input box disabled관련 변수
+      useAble:null, //사용여부 라디오 value
+
+      cdGpId:null,      //코드그룹ID
+      upCdGpId:null,    //상위코드그룹ID
+      cdGpNm:null,      //코드그룹명
+      cdGpEngNm:null,   //코드그룹영문명
+      cdGpDesc:null,    //코드그룹 설명
+      cdLen:null,       //코드길이값
+      useYn:null,       //사용여부
+      efctStDate:null,  //유효시작일자
+      efctFnsDate:null, //유효종료일자
 
     };
   },
   beforeMount() {
-    if(this.type==2) this.disabled=true;
+    if(this.type===2) {
+      this.disabled = true;
+      if (this.value !== null) {           //초기값 셋팅
+        this.cdGpId = this.value.model2;
+        this.cdGpNm = this.value.model4;
+        this.cdGpEngNm = this.value.model5;
+        this.cdGpDesc = this.value.model6;
+        this.cdLen = this.value.model7;
+        this.efctStDate = this.value.StartDate;
+        this.efctFnsDate = this.value.EndDate;
+        if (this.value.model8 === "사용") this.useAble = 'use';
+        else this.useAble = 'unuse';
+      }
+    }
   },
   props: {
     type:{
       type:Number,
       default : 1
+    },
+    value:{
+      type:Object,
+      default:null
     },
     popupOverlay:{
       type: String,
