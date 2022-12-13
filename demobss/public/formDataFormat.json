@@ -1,38 +1,38 @@
 {
-  "OutputFormData":[
-    {"title":"계약ID", "value":"K000001" },
-    {"title":"BM"          },
-    {"title":"계약상태", "value":"사용중" },
-    {"title":"개통일시", "value":"2022-11-03" },
-    {"title":"약정기간", "value":"24개월" },
-    {"title":"서비스오더ID", "value":"PA00123"},
-    {"title":"상품", "value":" Global Premium MVSAT" },
-    {"title":"약정", "value":"2024-11-02" },
-    {"title":"부가정보", "value":" -" },
-    {"title":"비고",   "value":"-----"}
+  "OutputFormData": [
+    { "title": "계약ID", "value": "K000001" },
+    { "title": "BM" },
+    { "title": "계약상태", "value": "사용중" },
+    { "title": "개통일시", "value": "2022-11-03" },
+    { "title": "약정기간", "value": "24개월" },
+    { "title": "서비스오더ID", "value": "PA00123" },
+    { "title": "상품", "value": " Global Premium MVSAT" },
+    { "title": "약정", "value": "2024-11-02" },
+    { "title": "부가정보", "value": " -" },
+    { "title": "비고", "value": "-----" }
   ],
-  "SubmitFormData":[
-    {"title":"이름"},
-    {"title":"이메일"          },
-    {"title":"휴대폰 번호"},
-    {"title":"신청 상품명"},
-    {"title":"약정기간"},
-    {"title":"비고 사항1"},
-    {"title":"비고 사항2"},
-    {"title":"비고 사항3"},
-    {"title":"비고 사항4"},
-    {"title":"비고 5"}
+  "SubmitFormData": [
+    { "title": "이름" },
+    { "title": "이메일" },
+    { "title": "휴대폰 번호" },
+    { "title": "신청 상품명" },
+    { "title": "약정기간" },
+    { "title": "비고 사항1" },
+    { "title": "비고 사항2" },
+    { "title": "비고 사항3" },
+    { "title": "비고 사항4" },
+    { "title": "비고 5" }
   ],
-  "findIdFormData":[
-    {"title":"이름"},
-    {"title":"휴대폰번호"},
-    {"title":"비고(수정)"}
+  "findIdFormData": [
+    { "title": "이름" },
+    { "title": "휴대폰번호" },
+    { "title": "비고(수정)" }
   ],
-  
-  "findPwFormData":[
-    {"title":"이름"},
-    {"title":"사번"},
-    {"title":"휴대폰번호"},
-    {"title":"비고(수정)"}
+
+  "findPwFormData": [
+    { "title": "이름" },
+    { "title": "사번" },
+    { "title": "휴대폰번호" },
+    { "title": "비고(수정)" }
   ]
 }

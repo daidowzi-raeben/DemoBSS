@@ -1,5 +1,5 @@
 <template>
-  <div v-if="this.$route.path =='/login'" id="Login">
+  <div v-if="this.$route.path == '/login'" id="Login">
     <login />
   </div>
   <div v-else id="wrap">
@@ -11,15 +11,15 @@
 <script>
 import Header from "./components/Header.vue";
 import Section from "./components/Section.vue";
-import Login from './pages/Login/Login.vue';
+import Login from "./pages/Login/Login.vue";
 
 export default {
   name: "App",
-  components: { 
+  components: {
     Header,
     Section,
-    Login
-  }
+    Login,
+  },
 };
 </script>
 

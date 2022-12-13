@@ -23,25 +23,25 @@ const routes = [
     path: "/BillChage",
     name: "BillChage",
     component: () =>
-        import(/* webpackChunkName: "about" */ "../pages/BillChage.vue"),
+      import(/* webpackChunkName: "about" */ "../pages/BillChage.vue"),
   },
   {
     path: "/ComCdAdm",
     name: "ComCdAdm",
     component: () =>
-        import(/* webpackChunkName: "about" */ "../pages/ComCdAdm.vue"),
+      import(/* webpackChunkName: "about" */ "../pages/ComCdAdm.vue"),
   },
   {
     path: "/AutAdm",
     name: "AutAdm",
     component: () =>
-        import(/* webpackChunkName: "about" */ "../pages/AutAdm.vue"),
+      import(/* webpackChunkName: "about" */ "../pages/AutAdm.vue"),
   },
   {
     path: "/AutMappgAdm",
     name: "AutMappgAdm",
     component: () =>
-        import(/* webpackChunkName: "about" */ "../pages/AutMappgAdm.vue"),
+      import(/* webpackChunkName: "about" */ "../pages/AutMappgAdm.vue"),
   },
   {
     path: "/common",

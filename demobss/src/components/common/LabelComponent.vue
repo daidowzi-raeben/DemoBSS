@@ -4,31 +4,29 @@
 
 <script>
 export default {
-  props:{
-    labelNm:{
-      type:String,
-      required: true
+  props: {
+    labelNm: {
+      type: String,
+      required: true,
     },
-    labelClass:{
-      type:String,
-      default:"class1"
-    }
-  }
-
-}
+    labelClass: {
+      type: String,
+      default: "class1",
+    },
+  },
+};
 </script>
 
 <style>
-
 @font-face {
-  font-family: 'noto-sans-kr';
-  src: url('../../../public/fonts/NotoSansKR-Regular.otf');
+  font-family: "noto-sans-kr";
+  src: url("../../../public/fonts/NotoSansKR-Regular.otf");
 }
-*{
-  font-family: 'noto-sans-kr';
+* {
+  font-family: "noto-sans-kr";
 }
 
-.class1{
+.class1 {
   /* width: 89px; */
   width: 100%;
   /* font-size: 12pt; */
@@ -38,5 +36,4 @@ export default {
   color: #000;
   height: 28px;
 }
-
 </style>

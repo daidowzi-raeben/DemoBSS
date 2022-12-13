@@ -1,40 +1,50 @@
 <template>
-<div>
-  <label class="radioContainer" v-for="RadioOpt in RadioOptions" :key="RadioOpt" >
-    <input type="radio" :id="RadioOpt" :value="RadioOpt" v-model="radioValue">{{RadioOpt}}
-  </label>  <!-- <label class="container" v-for="RadioOpt in RadioOptions" :key="RadioOpt" >
+  <div>
+    <label
+      class="radioContainer"
+      v-for="RadioOpt in RadioOptions"
+      :key="RadioOpt"
+    >
+      <input
+        type="radio"
+        :id="RadioOpt"
+        :value="RadioOpt"
+        v-model="radioValue"
+      />{{ RadioOpt }}
+    </label>
+    <!-- <label class="container" v-for="RadioOpt in RadioOptions" :key="RadioOpt" >
     <input type="radio" :id="RadioOpt" :value="RadioOpt" v-model="radioValue">{{RadioOpt}}
     <span class="radiomark" ></span>
   </label>
   <p style="font-size:20px;" v-show="radioValue.length>0">선택 값 : {{radioValue}}</p> -->
-</div>
+  </div>
 </template>
 
 <script>
 export default {
-  props:{
+  props: {
     RadioOptions: {
-      type:Array,
-      default: ["default옵션","radio2","radio3","radio4","radio5"]
-      }
+      type: Array,
+      default: ["default옵션", "radio2", "radio3", "radio4", "radio5"],
+    },
   },
-  data(){
-    return{
-      radioValue:'',
-    }
+  data() {
+    return {
+      radioValue: "",
+    };
   },
-}
+};
 </script>
 
 <style scoped>
-.radioContainer{
+.radioContainer {
   text-align: center;
   vertical-align: center;
   cursor: pointer;
   margin-right: 20px;
 }
 
-.radioContainer > input{
+.radioContainer > input {
   cursor: pointer;
 }
 
@@ -79,7 +89,7 @@ export default {
 
 /* When the radio button is checked, add a blue background */
 .container input:checked ~ .radiomark {
-  background-color: #2196F3;
+  background-color: #2196f3;
 }
 
 /* Create the indicator (the dot/circle - hidden when not checked) */

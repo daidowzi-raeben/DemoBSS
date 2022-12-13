@@ -1,5 +1,5 @@
 {
-  "menu":[
+  "menu": [
     {
       "menuId": "L01",
       "menuNm": "고객/청약",
@@ -18,7 +18,7 @@
       "upMenuId": "L01",
       "cmpnId": ""
     },
-    
+
     {
       "menuId": "L01M02S01",
       "menuNm": "고객정보 등록",
@@ -731,19 +731,18 @@
       "menuNm": "공통화면",
       "upMenuId": "L06",
       "cmpnId": ""
-  },
-  {
+    },
+    {
       "menuId": "L06M01S01",
       "menuNm": "공통화면참고",
       "upMenuId": "L06M01",
       "cmpnId": "CommonView"
-  },
-  {
+    },
+    {
       "menuId": "L06M01S02",
       "menuNm": "로그인화면",
       "upMenuId": "L06M01",
       "cmpnId": "Login"
-  }
-
-    ]
+    }
+  ]
 }

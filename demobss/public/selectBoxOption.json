@@ -144,7 +144,7 @@
       "cdId": "20220725"
     }
   ],
-  "optionSearchNum":[
+  "optionSearchNum": [
     {
       "cdNm": "5건",
       "cdId": 5
@@ -161,180 +161,177 @@
       "cdNm": "20건",
       "cdId": 20
     }
-
   ],
-    "codeDiv" : [
-      {
-        "cdNm" : "전체",
-        "cdId" : "1"
-      },
-      {
-        "cdNm" : "코드그룹ID",
-        "cdId" : "2"
-      },
-      {
-        "cdNm" : "코드그룹명",
-        "cdId" : "3"
-      },
-      {
-        "cdNm" : "코드ID",
-        "cdId" : "4"
-      },
-      {
-        "cdNm" : "코드명",
-        "cdId" : "5"
-      }
-    ],
-    "useYn": [
-      {
-        "cdNm" : "전체",
-        "cdId" : 1
-      },
-      {
-        "cdNm" : "사용",
-        "cdId" : true
-      },
-      {
-        "cdNm" : "미사용",
-        "cdId" : false
-      }
+  "codeDiv": [
+    {
+      "cdNm": "전체",
+      "cdId": "1"
+    },
+    {
+      "cdNm": "코드그룹ID",
+      "cdId": "2"
+    },
+    {
+      "cdNm": "코드그룹명",
+      "cdId": "3"
+    },
+    {
+      "cdNm": "코드ID",
+      "cdId": "4"
+    },
+    {
+      "cdNm": "코드명",
+      "cdId": "5"
+    }
   ],
-  "inOfficeSttus":[
-
+  "useYn": [
+    {
+      "cdNm": "전체",
+      "cdId": 1
+    },
+    {
+      "cdNm": "사용",
+      "cdId": true
+    },
+    {
+      "cdNm": "미사용",
+      "cdId": false
+    }
+  ],
+  "inOfficeSttus": [
     {
       "cdNm": "전체",
       "cdId": "whole"
     },
     {
-      "cdNm":  "재직",
-      "cdId":  "inOffice"
+      "cdNm": "재직",
+      "cdId": "inOffice"
     },
     {
-      "cdNm":  "휴직",
-      "cdId":  "loab"
-    }
-  ],
-  
-  "inOfficeSttus2":[
-    {
-      "cdNm":  "재직",
-      "cdId":  "inOffice"
-    },
-    {
-      "cdNm":  "휴직",
-      "cdId":  "loab"
-    }
-  ],
-  "ntcMeth":[
-    {
-      "cdNm":  "Email",
-      "cdId":  "ntcMeth1"
-    },
-    {
-      "cdNm":  "SMS(문자)",
-      "cdId":  "ntcMeth2"
-    },
-    {
-      "cdNm":  "SMS(알림톡)",
-      "cdId":  "ntcMeth3"
+      "cdNm": "휴직",
+      "cdId": "loab"
     }
   ],
 
-  "rspof":[
+  "inOfficeSttus2": [
     {
-      "cdNm":  "관리자",
-      "cdId":  "rspof1"
+      "cdNm": "재직",
+      "cdId": "inOffice"
     },
     {
-      "cdNm":  "직책2",
-      "cdId":  "rspof2"
-    },
-    {
-      "cdNm":  "직책3",
-      "cdId":  "rspof3"
+      "cdNm": "휴직",
+      "cdId": "loab"
     }
   ],
-  "dutySelect":[
+  "ntcMeth": [
     {
-      "cdNm":  "시스템관리",
-      "cdId":  "role1"
+      "cdNm": "Email",
+      "cdId": "ntcMeth1"
     },
     {
-      "cdNm":  "개발관리",
-      "cdId":  "role2"
+      "cdNm": "SMS(문자)",
+      "cdId": "ntcMeth2"
     },
     {
-      "cdNm":  "데이터관리",
-      "cdId":  "role3"
-    },
-    {
-      "cdNm":  "프로젝트관리",
-      "cdId":  "role4"
+      "cdNm": "SMS(알림톡)",
+      "cdId": "ntcMeth3"
     }
   ],
-  "orgSelect":[
-    {
-      "cdNm":  "조직",
-      "cdId":  "role1"
-    },
-    {
-      "cdNm":  "조직2",
-      "cdId":  "role2"
-    }
-  ],
-  "emailDomain":[
-    {
-      "cdNm":  "kt.com",
-      "cdId":  "kt"
-    },
-    {
-      "cdNm":  "ktds.com",
-      "cdId":  "ktds"
-    },
-    {
-      "cdNm":  "ktcloud.com",
-      "cdId":  "ktcloud"
-    },
-    {
-      "cdNm":  "kt2.com",
-      "cdId":  "kt2"
-    },
-    {
-      "cdNm":  "kt3.com",
-      "cdId":  "kt3"
-    },
-    {
-      "cdNm":  "kt4.com",
-      "cdId":  "kt4"
-    }
-  ],
-  "retvCond":[
 
+  "rspof": [
+    {
+      "cdNm": "관리자",
+      "cdId": "rspof1"
+    },
+    {
+      "cdNm": "직책2",
+      "cdId": "rspof2"
+    },
+    {
+      "cdNm": "직책3",
+      "cdId": "rspof3"
+    }
+  ],
+  "dutySelect": [
+    {
+      "cdNm": "시스템관리",
+      "cdId": "role1"
+    },
+    {
+      "cdNm": "개발관리",
+      "cdId": "role2"
+    },
+    {
+      "cdNm": "데이터관리",
+      "cdId": "role3"
+    },
+    {
+      "cdNm": "프로젝트관리",
+      "cdId": "role4"
+    }
+  ],
+  "orgSelect": [
+    {
+      "cdNm": "조직",
+      "cdId": "role1"
+    },
+    {
+      "cdNm": "조직2",
+      "cdId": "role2"
+    }
+  ],
+  "emailDomain": [
+    {
+      "cdNm": "kt.com",
+      "cdId": "kt"
+    },
+    {
+      "cdNm": "ktds.com",
+      "cdId": "ktds"
+    },
+    {
+      "cdNm": "ktcloud.com",
+      "cdId": "ktcloud"
+    },
+    {
+      "cdNm": "kt2.com",
+      "cdId": "kt2"
+    },
+    {
+      "cdNm": "kt3.com",
+      "cdId": "kt3"
+    },
+    {
+      "cdNm": "kt4.com",
+      "cdId": "kt4"
+    }
+  ],
+  "retvCond": [
     {
       "cdNm": "전체",
       "cdId": "whole"
     },
     {
-      "cdNm":  "메뉴ID",
-      "cdId":  "menuId"
+      "cdNm": "메뉴ID",
+      "cdId": "menuId"
     },
     {
-      "cdNm":  "메뉴명",
-      "cdId":  "menuNm"
+      "cdNm": "메뉴명",
+      "cdId": "menuNm"
     }
   ],
-  "wjtOptions":[
+  "wjtOptions": [
     {
-      "cdNm":"화면조회",
-      "cdId":"scrnRetv"
+      "cdNm": "화면조회",
+      "cdId": "scrnRetv"
     },
     {
-      "cdNm":"버튼",
-      "cdId":"butt"
+      "cdNm": "버튼",
+      "cdId": "butt"
     },
     {
-      "cdNm":"공통코드",
-      "cdId":"comCd"
+      "cdNm": "공통코드",
+      "cdId": "comCd"
     }
   ]
 }

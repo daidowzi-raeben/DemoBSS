@@ -1,8 +1,12 @@
 <template>
   <div id="paging_area">
     <div class="page_navi">
-      <a class="arrow last" @click="moveToFirstPage"><span class="txt-hidden">첫페이지</span></a>
-      <a class="arrow next_link" @click="moveToBeforePage"><span class="txt-hidden">이전 목록</span></a>
+      <a class="arrow last" @click="moveToFirstPage"
+        ><span class="txt-hidden">첫페이지</span></a
+      >
+      <a class="arrow next_link" @click="moveToBeforePage"
+        ><span class="txt-hidden">이전 목록</span></a
+      >
       <a
         v-for="page in currentMaxPage"
         :key="page"
@@ -55,14 +59,14 @@ export default {
       // console.log(val);
       this.$emit("currentPage", val); //현재 페이지! 부모에 전달
     },
-    pageableData:{
-      deep:true,
-      handler(){
+    pageableData: {
+      deep: true,
+      handler() {
         this.totalPages = this.pageableData.totalPages;
         this.setPageableData(this.pageableData);
         // console.log("paging watch 성공")
-      }
-    }
+      },
+    },
   },
   methods: {
     setPage(page) {

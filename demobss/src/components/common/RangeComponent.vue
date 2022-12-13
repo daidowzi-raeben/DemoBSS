@@ -1,24 +1,24 @@
 <template>
   <div class="slidecontainer">
     <p>range slider:</p>
-    <input class="slider" type="range" min="1" max="100" v-model="rangeValue"   >
-    <p style="font-size:20px;"> range Value : {{rangeValue}} </p>
-    </div>
+    <input class="slider" type="range" min="1" max="100" v-model="rangeValue" />
+    <p style="font-size: 20px">range Value : {{ rangeValue }}</p>
+  </div>
 </template>
 
 <script>
 export default {
-  data(){
-    return{
-      rangeValue: 50,   // default 값
+  data() {
+    return {
+      rangeValue: 50, // default 값
 
       // css
-      sliderContainerWidth: '70%', // 슬라이더 컨테이너 너비
-      sliderWidth: '100%', // 슬라이더 너비
+      sliderContainerWidth: "70%", // 슬라이더 컨테이너 너비
+      sliderWidth: "100%", // 슬라이더 너비
       sliderheight: "15px",
-    }
-  }
-}
+    };
+  },
+};
 </script>
 
 <style>
@@ -33,9 +33,9 @@ export default {
   background: #d3d3d3;
   outline: none;
   opacity: 0.7;
-  -webkit-transition: .2s;
-  transition: opacity .2s;
-  border-radius:25px;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+  border-radius: 25px;
 }
 
 .slider:hover {
@@ -49,14 +49,13 @@ export default {
   height: 25px;
   background: #2dbdb6;
   cursor: pointer;
-  border-radius:25px;
+  border-radius: 25px;
 }
 
 .slider::-moz-range-thumb {
   width: 25px;
   height: 25px;
-  background: #04AA6D;
+  background: #04aa6d;
   cursor: pointer;
-
 }
 </style>

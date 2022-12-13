@@ -1,16 +1,17 @@
 <template>
-  <div class="title_area" :style=" !this.navOn ? 'margin-left:1.3%;':''" >
-    <label 
-    :class="[ stateOfBookMark ? 'bookMarkIcon' : 'icon']"
-    @click="clickBookMark()" /> 
-    <label style="display:inline-block;"> {{ currentMenu.menuNm }} </label>
+  <div class="title_area" :style="!this.navOn ? 'margin-left:1.3%;' : ''">
+    <label
+      :class="[stateOfBookMark ? 'bookMarkIcon' : 'icon']"
+      @click="clickBookMark()"
+    />
+    <label style="display: inline-block"> {{ currentMenu.menuNm }} </label>
   </div>
 </template>
 
 <script>
 import ButtonComponent from "./ButtonComponent.vue";
 import menu from "../../../public/menu.json";
-import {mapMutations, mapState} from 'vuex';
+import { mapMutations, mapState } from "vuex";
 
 export default {
   components: { ButtonComponent },
@@ -22,31 +23,32 @@ export default {
   },
   props: {
     currentMenu: Object,
-    stateOfBookMark : Boolean,
+    stateOfBookMark: Boolean,
   },
   watch: {
     currentMenu() {
       this.menuDepth2 = menu.menu.filter((menu) => {
-        return menu.menuId == this.currentMenu.upMenuId;})[0];
-    }
+        return menu.menuId == this.currentMenu.upMenuId;
+      })[0];
+    },
   },
   methods: {
-    ...mapMutations(['addBookMark','delBookMark']),
-    clickBookMark(){
-      if (this.stateOfBookMark) { 
-        this.delBookMark(this.currentMenu.menuNm); 
-        this.$emit("stateOfBookMark",false);
-      }else{ 
+    ...mapMutations(["addBookMark", "delBookMark"]),
+    clickBookMark() {
+      if (this.stateOfBookMark) {
+        this.delBookMark(this.currentMenu.menuNm);
+        this.$emit("stateOfBookMark", false);
+      } else {
         this.addBookMark(this.currentMenu.menuNm);
-        this.$emit("stateOfBookMark",true);
-        }
-    }
+        this.$emit("stateOfBookMark", true);
+      }
+    },
   },
-  computed:{
+  computed: {
     navOn() {
       return this.$store.state.navOn;
-    }
-  }
+    },
+  },
 };
 </script>
 

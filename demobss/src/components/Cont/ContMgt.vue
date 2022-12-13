@@ -1,25 +1,23 @@
 <template>
   <div>
     <div class="container">
-
       <!-- 1 고객 조회 -->
-      <div class="item" >
+      <div class="item">
         <CustRetvComponent
-        :cdGroup="'optionsSearchDiv'"
-        :titleShow="false"
-        style="height:60px;"
+          :cdGroup="'optionsSearchDiv'"
+          :titleShow="false"
+          style="height: 60px"
         />
       </div>
 
       <!-- 2 고객 정보 -->
-      <div class="item" style="display:block;">
+      <div class="item" style="display: block">
         <FormDataComponent
           :FormDataclass="'infoOfCust'"
           :subInfoTitleNm="'고객정보'"
         />
       </div>
-      
-      
+
       <!-- 3 요금정보  -->
       <div class="item feeInfo">
         <blc-component
@@ -30,18 +28,18 @@
           :total="'10'"
           :cdGroup="'optionsSearchDiv'"
           :btnName="'엑셀다운'"
-          style="height:110%"
+          style="height: 110%"
         />
       </div>
-      
+
       <!-- 4 계약 정보 -->
       <div class="item">
         <form-data-component
           :FormDataclass="'infoOfCont'"
           :subInfoTitleNm="'계약 정보'"
         />
-        </div>
-      
+      </div>
+
       <!-- 5 신청자정보 -->
       <div class="item">
         <FormDataComponent
@@ -67,96 +65,92 @@
           @modalShow="FormPopup"
         />
       </div>
-      
+
       <!-- 8 보유상품 -->
-      <div class="item"> <!-- 3 -->
-      <div class="product_box">
-        <sub-info-title
-        :subInfoTitleNm="'보유상품'"
-        />
-        <button-component
-        :btn-name="'청약등록'"
-        :btn-class="'btnClass3'"
-        style="float: right;"
-        />
-      </div>
-      <div class="product_box_sel">
-        <span>
-        <select-box-component
-            :selectClass="'select_input3'"
-            :width="120"
-            :cdGroup="'optionsSearchDiv'"
-            :defaultValue="'선택'"
-            v-model="searchDiv1"
-            @input="
-          (value) => {
-            searchDiv1 = value;
-          }
-        "
-        />
+      <div class="item">
+        <!-- 3 -->
+        <div class="product_box">
+          <sub-info-title :subInfoTitleNm="'보유상품'" />
+          <button-component
+            :btn-name="'청약등록'"
+            :btn-class="'btnClass3'"
+            style="float: right"
+          />
+        </div>
+        <div class="product_box_sel">
+          <span>
+            <select-box-component
+              :selectClass="'select_input3'"
+              :width="120"
+              :cdGroup="'optionsSearchDiv'"
+              :defaultValue="'선택'"
+              v-model="searchDiv1"
+              @input="
+                (value) => {
+                  searchDiv1 = value;
+                }
+              "
+            />
           </span>
-        <span>
-        <select-box-component
-            :selectClass="'select_input3'"
-            :width="120"
-            :cdGroup="'optionsSearchDiv'"
-            :defaultValue="'선택'"
-            v-model="searchDiv1"
-            @input="
-          (value) => {
-            searchDiv1 = value;
-          }
-        "
-        />
+          <span>
+            <select-box-component
+              :selectClass="'select_input3'"
+              :width="120"
+              :cdGroup="'optionsSearchDiv'"
+              :defaultValue="'선택'"
+              v-model="searchDiv1"
+              @input="
+                (value) => {
+                  searchDiv1 = value;
+                }
+              "
+            />
           </span>
-        <span>
-        <select-box-component
-            :selectClass="'select_input3'"
-            :width="120"
-            :cdGroup="'optionsSearchDiv'"
-            :defaultValue="'선택'"
-            v-model="searchDiv1"
-            @input="
-          (value) => {
-            searchDiv1 = value;
-          }
-        "
-        />
+          <span>
+            <select-box-component
+              :selectClass="'select_input3'"
+              :width="120"
+              :cdGroup="'optionsSearchDiv'"
+              :defaultValue="'선택'"
+              v-model="searchDiv1"
+              @input="
+                (value) => {
+                  searchDiv1 = value;
+                }
+              "
+            />
           </span>
-        <span>
-        <input-component
-            :type="'search'"
-            :input-class="'class4'"
-            :placeholder="'서비스계약ID 입력'"
-            style="width:100%; height:100%"
-        />
-        </span>
-        <div>
-          <img :src="logo_search" />
+          <span>
+            <input-component
+              :type="'search'"
+              :input-class="'class4'"
+              :placeholder="'서비스계약ID 입력'"
+              style="width: 100%; height: 100%"
+            />
+          </span>
+          <div>
+            <img :src="logo_search" />
+          </div>
+        </div>
+        <div class="product_box_tree">
+          <msf-tree
+            :source="contentTree"
+            :activeItem="activeItemObj"
+            :selectedList="selectedItemList"
+            id-field="directoryName"
+            label-field="directoryName"
+            ref="tree"
+            @itemClick="treeItemClick"
+            style="width: 100%; height: 100%; font-size: 12pt"
+          ></msf-tree>
         </div>
       </div>
-      <div class="product_box_tree">
-        <msf-tree :source="contentTree"
-                  :activeItem="activeItemObj"
-                  :selectedList="selectedItemList"
-                  id-field="directoryName"
-                  label-field="directoryName"
-                  ref="tree"
-                  @itemClick="treeItemClick"
-                  style="width:100%; height:100%;font-size: 12pt;"
-        ></msf-tree>
-      </div>
     </div>
-
-
-
-
-    </div>
-      <FormDataPopupComponent
+    <FormDataPopupComponent
       ref="form-data-popup-component"
       v-if="isFormModalShow"
       @FormPopup="isFormModalShow = false"
-      @AGREE = "''"
+      @AGREE="''"
       :popupmsg="' '"
       :reqtype="'2'"
     />
@@ -170,13 +164,13 @@ import CustInfoComponent from "@/components/common/CustInfoComponent.vue";
 import FormDataComponent from "@/components/common/FormDataComponent.vue";
 import ApiMixin from "@/service/common";
 import FormDataPopupComponent from "@/components/common/FormDataPopupComponent.vue";
-import BlcComponent from '../common/BlcComponent.vue';
-import SelectBoxComponent from '../common/SelectBoxComponent.vue';
-import InputComponent from '../common/InputComponent.vue';
-import MsfTree from '../common/TreeComponent/msf-tree.vue';
+import BlcComponent from "../common/BlcComponent.vue";
+import SelectBoxComponent from "../common/SelectBoxComponent.vue";
+import InputComponent from "../common/InputComponent.vue";
+import MsfTree from "../common/TreeComponent/msf-tree.vue";
 
 export default {
-  mixins:[ApiMixin],
+  mixins: [ApiMixin],
   name: "ContMgt",
   components: {
     BlcComponent,
@@ -191,27 +185,92 @@ export default {
   },
   data() {
     return {
-      logo_search:require('../../img/logo_search.png'),
-      contentTree: [{
-        groupId: 0,
-        directoryName: '청구계정ID 홍길* 은행계좌자동이체',
-        chk:true,
-        children: [
-          {groupId: 1, directoryName: '요금제명(서비스계약ID)2022-10-13~2022-10-15서울시 강남구 학동로 111', chk:true, chk2:false},
-        ]
-      },
-        {groupId: 5, directoryName: '청구계정ID 홍길* 은행계좌자동이체', children: [
-            {groupId: 2, directoryName: '요금제명(서비스계약ID)2022-10-13~2022-10-15서울시 강남구 학동로 111',chk:false, chk2:true},
-            {groupId: 3, directoryName: '요금제명(서비스계약ID)2022-10-13~2022-10-15서울시 강남구 학동로 1123',chk:true, chk2:true},
-            {groupId: 4, directoryName: '요금제명(서비스계약ID)2022-10-13~2022-10-15서울시 강남구 학동로 111',chk:true, chk2:true},
-            {groupId: 2, directoryName: '요금제명(서비스계약ID)2022-10-13~2022-10-15서울시 강남구 학동로 111',chk:false, chk2:true},
-            {groupId: 3, directoryName: '요금제명(서비스계약ID)2022-10-13~2022-10-15서울시 강남구 학동로 111',chk:true, chk2:true},
-            {groupId: 4, directoryName: '요금제명(서비스계약ID)2022-10-13~2022-10-15서울시 강남구 학동로 111',chk:true, chk2:true},
-            {groupId: 2, directoryName: '요금제명(서비스계약ID)2022-10-13~2022-10-15서울시 강남구 학동로 111',chk:false, chk2:true},
-            {groupId: 3, directoryName: '요금제명(서비스계약ID)2022-10-13~2022-10-15서울시 강남구 학동로 111',chk:true, chk2:true},
-            {groupId: 4, directoryName: '요금제명(서비스계약ID)2022-10-13~2022-10-15서울시 강남구 학동로 111',chk:true, chk2:true}
-          ]},
-        {groupId: 6, directoryName: '청구계정ID 홍길* 은행계좌자동이체'}
+      logo_search: require("../../img/logo_search.png"),
+      contentTree: [
+        {
+          groupId: 0,
+          directoryName: "청구계정ID 홍길* 은행계좌자동이체",
+          chk: true,
+          children: [
+            {
+              groupId: 1,
+              directoryName:
+                "요금제명(서비스계약ID)2022-10-13~2022-10-15서울시 강남구 학동로 111",
+              chk: true,
+              chk2: false,
+            },
+          ],
+        },
+        {
+          groupId: 5,
+          directoryName: "청구계정ID 홍길* 은행계좌자동이체",
+          children: [
+            {
+              groupId: 2,
+              directoryName:
+                "요금제명(서비스계약ID)2022-10-13~2022-10-15서울시 강남구 학동로 111",
+              chk: false,
+              chk2: true,
+            },
+            {
+              groupId: 3,
+              directoryName:
+                "요금제명(서비스계약ID)2022-10-13~2022-10-15서울시 강남구 학동로 1123",
+              chk: true,
+              chk2: true,
+            },
+            {
+              groupId: 4,
+              directoryName:
+                "요금제명(서비스계약ID)2022-10-13~2022-10-15서울시 강남구 학동로 111",
+              chk: true,
+              chk2: true,
+            },
+            {
+              groupId: 2,
+              directoryName:
+                "요금제명(서비스계약ID)2022-10-13~2022-10-15서울시 강남구 학동로 111",
+              chk: false,
+              chk2: true,
+            },
+            {
+              groupId: 3,
+              directoryName:
+                "요금제명(서비스계약ID)2022-10-13~2022-10-15서울시 강남구 학동로 111",
+              chk: true,
+              chk2: true,
+            },
+            {
+              groupId: 4,
+              directoryName:
+                "요금제명(서비스계약ID)2022-10-13~2022-10-15서울시 강남구 학동로 111",
+              chk: true,
+              chk2: true,
+            },
+            {
+              groupId: 2,
+              directoryName:
+                "요금제명(서비스계약ID)2022-10-13~2022-10-15서울시 강남구 학동로 111",
+              chk: false,
+              chk2: true,
+            },
+            {
+              groupId: 3,
+              directoryName:
+                "요금제명(서비스계약ID)2022-10-13~2022-10-15서울시 강남구 학동로 111",
+              chk: true,
+              chk2: true,
+            },
+            {
+              groupId: 4,
+              directoryName:
+                "요금제명(서비스계약ID)2022-10-13~2022-10-15서울시 강남구 학동로 111",
+              chk: true,
+              chk2: true,
+            },
+          ],
+        },
+        { groupId: 6, directoryName: "청구계정ID 홍길* 은행계좌자동이체" },
       ],
       activeItemObj: {}, // 활성화 시킬 객체
       selectedItemList: [], // 선택시킬 객체
@@ -266,89 +325,89 @@ export default {
         { label: "상품ID", id: "id" },
         { label: "상태", id: "state" },
       ],
-      custInfo : [],
+      custInfo: [],
       columnDefs: [],
       rowData: [],
-      isFormModalShow:false,
+      isFormModalShow: false,
     };
   },
   async beforeMount() {
-    await this.$connect('application/json','/info.json','get','').then((res)=>{
-      this.custInfo = res.data.info[0];
-      this.columnDefs =res.data.columnDefs;
-      this.rowData = res.data.rowData;
-    }).catch((e)=>{
-      console.log(e);
-    });
+    await this.$connect("application/json", "/info.json", "get", "")
+      .then((res) => {
+        this.custInfo = res.data.info[0];
+        this.columnDefs = res.data.columnDefs;
+        this.rowData = res.data.rowData;
+      })
+      .catch((e) => {
+        console.log(e);
+      });
   },
-  methods:{
-    addComp(param){
+  methods: {
+    addComp(param) {
       console.log(param);
-      this.$emit('input',param);
+      this.$emit("input", param);
     },
-    
-    FormPopup(){
-      if (this.isFormModalShow == false) this.isFormModalShow = true
-      else this.isFormModalShow = false
-      this.$refs.form-data-popup-component.GetSubmitFormData()
+
+    FormPopup() {
+      if (this.isFormModalShow == false) this.isFormModalShow = true;
+      else this.isFormModalShow = false;
+      this.$refs.form - data - popup - component.GetSubmitFormData();
     },
-  }
+  },
 };
 </script>
 
 <style scoped>
-.container{
-  display:grid;
-  grid-template-columns:780px 780px 1fr ;
-  grid-template-rows: 60px 140px 280px 70px 100px 200px minmax(250px,1fr);
+.container {
+  display: grid;
+  grid-template-columns: 780px 780px 1fr;
+  grid-template-rows: 60px 140px 280px 70px 100px 200px minmax(250px, 1fr);
   gap: 15px 30px;
 }
 
-.item{
+.item {
   display: flex;
   flex-wrap: wrap;
 }
 
-.item:nth-child(1){
+.item:nth-child(1) {
   grid-column: 1/3;
-  grid-row:1/2;
+  grid-row: 1/2;
 }
 
-.item:nth-child(2){
+.item:nth-child(2) {
   grid-column: 1/3;
-  grid-row:2/3;
+  grid-row: 2/3;
 }
 
-.item:nth-child(3){
+.item:nth-child(3) {
   grid-column: 1/2;
   grid-row: 3;
 }
 
-.item:nth-child(4){
+.item:nth-child(4) {
   grid-column: 2/3;
-  grid-row:3;
+  grid-row: 3;
 }
 
-.item:nth-child(5){
+.item:nth-child(5) {
   grid-column: 2/3;
   grid-row: 4;
 }
 
-.item:nth-child(6){
+.item:nth-child(6) {
   grid-column: 2/3;
   grid-row: 5;
 }
 
-.item:nth-child(7){
-  
+.item:nth-child(7) {
   grid-column: 1/2;
-  grid-row:4/6;
-  
+  grid-row: 4/6;
 }
 
-.item:nth-child(8){
+.item:nth-child(8) {
   grid-column: 2/3;
-  grid-row:6;
+  grid-row: 6;
 }
 
 div.layout {
@@ -361,7 +420,7 @@ div.layout {
   float: left;
   position: relative;
   /* height: 230px; */
-  width:100%;
+  width: 100%;
   border: groove;
   overflow: scroll;
 }
@@ -370,15 +429,14 @@ div.layout {
   height: 300px;
 }
 
-
-.product_box{
-  padding-bottom:8px;
-  float:left;
-  height:20px;
-  width:100%;
+.product_box {
+  padding-bottom: 8px;
+  float: left;
+  height: 20px;
+  width: 100%;
 }
-.product_box_sel{
-  border:1px solid #e4e4e4;
+.product_box_sel {
+  border: 1px solid #e4e4e4;
   padding-left: 10px;
   display: flex;
   align-items: center;
@@ -386,20 +444,22 @@ div.layout {
   height: 40px;
   background-color: rgb(239, 245, 252);
 }
-.product_box_sel > span:nth-child(1),span:nth-child(2),span:nth-child(3){
+.product_box_sel > span:nth-child(1),
+span:nth-child(2),
+span:nth-child(3) {
   width: 120px;
   height: 26px;
   margin-right: 5px;
 }
-.product_box_sel > span:nth-child(4){
+.product_box_sel > span:nth-child(4) {
   width: 200px;
   height: 26px;
   margin-left: 10px;
 }
-.product_box_sel div{
-  margin-left:3px;
+.product_box_sel div {
+  margin-left: 3px;
 }
-.product_box_tree{
+.product_box_tree {
   width: 100%;
   height: 225px;
   overflow: auto;

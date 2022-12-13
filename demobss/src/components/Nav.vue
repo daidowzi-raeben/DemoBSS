@@ -6,7 +6,11 @@
         :class="[tabIndex == 0 ? 'tabon' : 'taboff']"
         @click="tabIndex = 0"
       >
-        <img src="../img/arrow_left2.png" alt="" style="margin-top:5px; width:25px;">
+        <img
+          src="../img/arrow_left2.png"
+          alt=""
+          style="margin-top: 5px; width: 25px"
+        />
       </div>
       <div
         id="nav_tab2"
@@ -20,8 +24,18 @@
       <div id="navTitle">{{ menuDepth1Nm }}</div>
       <ul id="depth2_list">
         <li v-for="(menu2, idx) in menuDepth2" :key="idx" :value="menu2.menuId">
-          <div id="depth2" @click="setMenu2(menu2.menuId)"  :style="[ selectedMenuId == menu2.menuId  ? { 'color': 'rgb(27,114,212)' } : '']" >
-            <span v-if="selectedMenuId == menu2.menuId"> <img :src="menuIcon1" /></span>
+          <div
+            id="depth2"
+            @click="setMenu2(menu2.menuId)"
+            :style="[
+              selectedMenuId == menu2.menuId
+                ? { color: 'rgb(27,114,212)' }
+                : '',
+            ]"
+          >
+            <span v-if="selectedMenuId == menu2.menuId">
+              <img :src="menuIcon1"
+            /></span>
             <span v-else><img :src="menuIcon3" /></span>
             {{ menu2.menuNm }}
           </div>
@@ -42,7 +56,13 @@
     <div class="area" v-else>
       <div id="navTitle">즐겨찾기</div>
       <ul id="depth2_list">
-        <li v-for="staredMenu in bookMark" :key="staredMenu" :value="staredMenu" >{{staredMenu}}</li>
+        <li
+          v-for="staredMenu in bookMark"
+          :key="staredMenu"
+          :value="staredMenu"
+        >
+          {{ staredMenu }}
+        </li>
         <!-- <li v-for="(menu2, idx) in menuDepth2" :key="idx" :value="menu2.menuId">
           <div id="depth2" @click="setMenu2(menu2.menuId)"  :style="[ selectedMenuId == menu2.menuId  ? { 'color': 'rgb(27,114,212)' } : '']" >
             <span v-if="selectedMenuId == menu2.menuId"> <img :src="menuIcon1" /></span>
@@ -52,17 +72,16 @@
       </ul>
     </div>
   </div>
-
 </template>
 
 <script>
 import menu from "../../public/menu.json";
-import {mapState} from 'vuex';
+import { mapState } from "vuex";
 
 export default {
   name: "Nav",
-  props:{
-    bookmarkMenu:String,
+  props: {
+    bookmarkMenu: String,
   },
   data() {
     return {
@@ -71,9 +90,9 @@ export default {
       menuDepth3: [],
       selectedMenuId: "L01",
       tabIndex: 0,
-      menuIcon1:require('../img/menu_type_1.png'),
-      menuIcon2:require('../img/menu_type_2.png'),
-      menuIcon3:require('../img/menu_type_3.png'),
+      menuIcon1: require("../img/menu_type_1.png"),
+      menuIcon2: require("../img/menu_type_2.png"),
+      menuIcon3: require("../img/menu_type_3.png"),
     };
   },
   computed: {
@@ -81,7 +100,6 @@ export default {
     getMenu() {
       return this.$store.getters.getMenuId;
     },
-
   },
   created() {
     this.menuDepth1Nm = menu.menu.filter((menu) => {
@@ -116,26 +134,25 @@ export default {
     },
     setCmpn(val) {
       console.log(val);
-      this.$emit('input',val);
+      this.$emit("input", val);
     },
   },
 };
 </script>
 
 <style scoped>
-
 #nav {
   padding-top: 17px;
-  position:fixed;
+  position: fixed;
   height: 100%;
   z-index: 6;
 }
-img{
+img {
   width: 20px;
   height: 20px;
 }
 #nav > .tab {
-  background-color: rgb(113,156,205);
+  background-color: rgb(113, 156, 205);
   width: 258px;
   height: 28px;
   text-align: center;
@@ -147,7 +164,7 @@ img{
   width: 50%;
   height: 30px;
   float: left;
-  line-height:28px;
+  line-height: 28px;
   cursor: pointer;
   border-radius: 10px 10px 0 0;
 }
@@ -156,25 +173,25 @@ img{
   width: 50%;
   height: 30px;
   float: left;
-  line-height:28px;
+  line-height: 28px;
   cursor: pointer;
   border-radius: 10px 10px 0 0;
 }
 
 #nav > .tab .tabon {
   /* 탭 선택되었을 때 */
-  background-color: rgb(231,231,231);
-  color: rgb(0,0,0);
+  background-color: rgb(231, 231, 231);
+  color: rgb(0, 0, 0);
 }
 
 #nav > .tab .taboff {
   /* 탭 선택x */
-  background-color: rgb(72,87,104);
-  color: rgb(255,255,255);
+  background-color: rgb(72, 87, 104);
+  color: rgb(255, 255, 255);
 }
 
 #nav > .area {
-  border-right: rgb(229,231,234) solid 1px;
+  border-right: rgb(229, 231, 234) solid 1px;
   width: 223px;
   padding: 33px 0 0 35px;
   height: 80vh;
@@ -201,10 +218,10 @@ img{
 }
 
 #nav > .area > ul > li #depth2:hover {
-  color: rgb(27,114,212) !important;
+  color: rgb(27, 114, 212) !important;
 }
-#nav > .area > ul > li #depth2:hover > img{
-  content:url("../img/menu_type_1.png");
+#nav > .area > ul > li #depth2:hover > img {
+  content: url("../img/menu_type_1.png");
 }
 
 #nav > .area > ul#depth2_list > li > ul#depth3_list {
@@ -220,6 +237,6 @@ img{
 }
 
 #nav > .area > ul#depth2_list > li > ul#depth3_list > li#depth3:hover {
-  color: rgb(27,114,212);
+  color: rgb(27, 114, 212);
 }
 </style>

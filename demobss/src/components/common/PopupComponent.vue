@@ -4,7 +4,7 @@
     <transition name="fade" appear>
       <div :class="popupOverlay" @click="$emit(closeFunc)"></div>
     </transition>
-    
+
     <!-- start : popup영역 출력 -->
     <transition name="modal" appear>
       <div class="popup360">
@@ -12,24 +12,21 @@
 
         <article>
           <!-- 취소가 있는 팝업 -->
-          <div class="btn_area" >
+          <div class="btn_area">
             <div>
-            {{popupmsg}}
-            <div>
-            &nbsp;&nbsp; </div>
+              {{ popupmsg }}
+              <div>&nbsp;&nbsp;</div>
             </div>
             <button
               type="button"
               class="button_05"
               @click="[$emit('popup', true), $emit('AGREE')]"
-            >확인
+            >
+              확인
             </button>
             &nbsp;&nbsp;
-            <button
-              type="button"
-              class="button_04"
-              @click="$emit('popup')"
-            >취소
+            <button type="button" class="button_04" @click="$emit('popup')">
+              취소
             </button>
           </div>
           <!-- <div class="btn_area" >
@@ -57,11 +54,11 @@ export default {
     return {};
   },
   props: {
-    popupOverlay:{
+    popupOverlay: {
       type: String,
-      default:'cm_popup_overlay'
+      default: "cm_popup_overlay",
     },
-    popupmsg : String,
+    popupmsg: String,
     popup: Object,
     closeFunc: {
       type: String,
@@ -98,7 +95,7 @@ export default {
   transition: opacity 0.5s;
 }
 
-.maxTabOverlay{
+.maxTabOverlay {
   background-color: rgba(0, 0, 0, 0.116);
   bottom: 0;
   cursor: default;
@@ -149,7 +146,7 @@ export default {
   text-align: center;
   margin: auto;
 }
-.popup360 .btn_area > div{
+.popup360 .btn_area > div {
   font-size: 12pt;
   margin: auto;
 }
@@ -181,5 +178,4 @@ export default {
   cursor: pointer;
   background-color: #ed1820;
 }
-
 </style>
