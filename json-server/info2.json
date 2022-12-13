@@ -12,7 +12,7 @@
   ],
 
   "columnDefs": [
-    { "headerName": "순서", "field": "index", "width": 100 },
+    { "headerName": "순서2", "field": "index", "width": 100 },
     { "headerName": "서비스계약ID", "field": "ServID", "width": 130 },
     { "headerName": "고객ID", "field": "CustID", "width": 130 },
     { "headerName": "청구계정ID", "field": "SubsID", "width": 130 },
@@ -26,8 +26,8 @@
   "rowData": [
     {
       "index": 1,
-      "ServID": "S000008950",
-      "CustID": "C000053216",
+      "ServID": "S999999999",
+      "CustID": "C000983216",
       "SubsID": "P000021352",
       "CustName": "홍길동",
       "ServState": "사용중",
@@ -534,19 +534,14 @@
   "userRowData": [
     {
       "cmpno": "82679315",
-      "userNm": "홍길동",
+      "userNm": "홍길동aaaa",
       "inofficeSttus": "inOffice",
       "org": "DX사업본부",
       "rspof": "rspof1",
       "duty": "BSS 개발",
       "dutySelect": "role2",
       "orgSelect": "role1",
-      "ntcMeth": "ntcMeth1",
-      "useYn": "02",
-      "otpYn": "01",
-      "email":"abe56e",
-      "emailDomain":"daum"
-      
+      "ntcMeth": "ntcMeth1"
     },
     {
       "cmpno": "82672436",
@@ -557,12 +552,7 @@
       "duty": "BSS 개발2",
       "dutySelect": "role4",
       "orgSelect": "role2",
-      "ntcMeth": "ntcMeth1",
-      "useYn": "01",
-      "otpYn": "02",
-      "email":"ab24cd",
-      "emailDomain":"naver"
-      
+      "ntcMeth": "ntcMeth1"
     },
     {
       "cmpno": "82679415",
@@ -573,12 +563,7 @@
       "duty": "BSS 개발3",
       "dutySelect": "role2",
       "orgSelect": "role1",
-      "ntcMeth": "ntcMeth2",
-      "useYn": "02",
-      "otpYn": "02",
-      "email":"2ee12",
-      "emailDomain":"kt"
-      
+      "ntcMeth": "ntcMeth2"
     },
     {
       "cmpno": "82619315",
@@ -589,12 +574,7 @@
       "duty": "BSS 개발4",
       "dutySelect": "role4",
       "orgSelect": "role2",
-      "ntcMeth": "ntcMeth3",
-      "useYn": "01",
-      "otpYn": "01",
-      "email":"t435",
-      "emailDomain":"gmail"
-      
+      "ntcMeth": "ntcMeth3"
     },
     {
       "cmpno": "82675315",
@@ -605,12 +585,7 @@
       "duty": "BSS 개발5",
       "dutySelect": "role3",
       "orgSelect": "role2",
-      "ntcMeth": "ntcMeth3",
-      "useYn": "02",
-      "otpYn": "02",
-      "email":"123ewr",
-      "emailDomain":"daum"
-      
+      "ntcMeth": "ntcMeth3"
     },
     {
       "cmpno": "89679315",

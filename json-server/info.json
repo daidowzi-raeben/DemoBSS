@@ -1,520 +1,520 @@
 {
-"info": {
-  "info": [
-    {
-      "customerId": "CC10001042",
-      "customerName": "주식회사 시너샛코리아",
-      "customerType": "일반공통",
-      "country": "공통함수",
-      "businessNumber": "6268700321",
-      "customerClass": "영리법인",
-      "phoneNumber": "01012345678"
-    }
-  ],
+  "info": {
+    "info": [
+      {
+        "customerId": "CC10001042",
+        "customerName": "주식회사 시너샛코리아",
+        "customerType": "일반공통",
+        "country": "공통함수",
+        "businessNumber": "6268700321",
+        "customerClass": "영리법인",
+        "phoneNumber": "01012345678"
+      }
+    ],
 
-  "columnDefs": [
-    {
-      "headerName": "결제통화",
-      "field": "model0"
-    },
-    { "headerName": "요금항목명", "field": "model1" },
-    { "headerName": "요금항목구분", "field": "model2" },
-    { "headerName": "협정금액", "field": "model3" },
-    { "headerName": "협정할인금액", "field": "model4" },
-    { "headerName": "협정청구금액", "field": "model5" },
-    { "headerName": "유효시작일", "field": "StartDate" },
-    { "headerName": "유효종료일", "field": "EndDate" }
-  ],
-  "rowData": [
-    {
-      "model0": "KRW",
-      "model1": "기본료",
-      "model2": "정액요금",
-      "model3": "133,500,000",
-      "model4": "1,500,000",
-      "model5": "132,000,000",
-      "StartDate": "2021-10-19",
-      "EndDate": "2023-12-31"
-    },
-    {
-      "model0": "KRW",
-      "model1": "프리미엄요금",
-      "model2": "정액요금",
-      "model3": "220,225,000",
-      "model4": "225,000",
-      "model5": "220,000,000",
-      "StartDate": "2022-05-31",
-      "EndDate": "2024-07-31"
-    },
-    {
-      "model0": "KRW",
-      "model1": "설치비",
-      "model2": "정액요금",
-      "model3": "9200000000",
-      "model4": "3000000",
-      "model5": "66665222",
-      "StartDate": "2022-10-19",
-      "EndDate": "2025-09-31"
-    },
-    {
-      "model0": "KRW",
-      "model1": "기본료",
-      "model2": "정액요금",
-      "model3": "133,500,000",
-      "model4": "1,500,000",
-      "model5": "132,000,000",
-      "StartDate": "2021-10-19",
-      "EndDate": "2023-12-31"
-    },
-    {
-      "model0": "KRW",
-      "model1": "프리미엄요금",
-      "model2": "정액요금",
-      "model3": "220,225,000",
-      "model4": "225,000",
-      "model5": "220,000,000",
-      "StartDate": "2022-05-31",
-      "EndDate": "2024-07-31"
-    },
-    {
-      "model0": "KRW",
-      "model1": "설치비",
-      "model2": "정액요금",
-      "model3": "9200000000",
-      "model4": "3000000",
-      "model5": "66665222",
-      "StartDate": "2022-10-19",
-      "EndDate": "2025-09-31"
-    },
-    {
-      "model0": "KRW",
-      "model1": "기본료",
-      "model2": "정액요금",
-      "model3": "133,500,000",
-      "model4": "1,500,000",
-      "model5": "132,000,000",
-      "StartDate": "2021-10-19",
-      "EndDate": "2023-12-31"
-    },
-    {
-      "model0": "KRW",
-      "model1": "프리미엄요금",
-      "model2": "정액요금",
-      "model3": "220,225,000",
-      "model4": "225,000",
-      "model5": "220,000,000",
-      "StartDate": "2022-05-31",
-      "EndDate": "2024-07-31"
-    },
-    {
-      "model0": "KRW",
-      "model1": "설치비",
-      "model2": "정액요금",
-      "model3": "9200000000",
-      "model4": "3000000",
-      "model5": "66665222",
-      "StartDate": "2022-10-19",
-      "EndDate": "2025-09-31"
-    }
-  ],
-  "columnDefs2": [
-    { "headerName": "결제통화", "field": "model0" },
-    { "headerName": "청구금액", "field": "model5" },
-    { "headerName": "유효시작일", "field": "StartDate" },
-    { "headerName": "유효종료일", "field": "EndDate" }
-  ],
-  "rowData2": [
-    {
-      "model0": "USD",
-      "model5": "132,000,000",
-      "StartDate": "2021-10-19",
-      "EndDate": "2023-12-31"
-    },
-    {
-      "model0": "KRW",
-      "model5": "220,000,000",
-      "StartDate": "2022-05-31",
-      "EndDate": "2024-07-31"
-    },
-    {
-      "model0": "USD",
-      "model5": "66665222",
-      "StartDate": "2022-10-19",
-      "EndDate": "2025-09-31"
-    },
-    {
-      "model0": "KRW",
-      "model5": "132,000,000",
-      "StartDate": "2021-10-19",
-      "EndDate": "2023-12-31"
-    },
-    {
-      "model0": "USD",
-      "model5": "220,000,000",
-      "StartDate": "2022-05-31",
-      "EndDate": "2024-07-31"
-    }
-  ],
-  "rowDataBill1": [
-    {
-      "model0": "코로케이션",
-      "model3": "100,000원",
-      "model4": "10,000원",
-      "model5": "90,000원",
-      "model6": "Y"
-    },
-    {
-      "model0": null,
-      "model1": null,
-      "model2": "추가설치비",
-      "model3": "100,000원",
-      "model4": "10,000원",
-      "model5": "90,000원",
-      "model6": "Y"
-    },
-    {
-      "model0": "소계",
-      "model3": "200,000원",
-      "model4": "20,000원",
-      "model5": "180,000원",
-      "model6": null
-    },
-    {
-      "model0": "부가가치세",
-      "model3": "10,000원",
-      "model4": "10,000원",
-      "model5": "10,000원",
-      "model6": null
-    },
-    {
-      "model0": "당월요금계",
-      "model3": "110,000원",
-      "model4": "0원",
-      "model5": "110,000원",
-      "model6": null
-    },
-    {
-      "model0": "과납요금",
-      "model3": "-50,000원",
-      "model4": "0원",
-      "model5": "-50,000원",
-      "model6": null
-    },
-    {
-      "model0": "요금계",
-      "model3": "60,000원",
-      "model4": "10,000원",
-      "model5": "60,000원",
-      "model6": null
-    }
-  ],
-  "rowDataBill2": [
-    {
-      "model0": "코로케이션",
-      "model1": "P7-00****",
-      "model4": "100,000원",
-      "model5": "10,000원",
-      "model6": "90,000원",
-      "model7": "Y"
-    },
-    {
-      "model0": "코로케이션",
-      "model1": "P7-00****",
-      "model4": "100,000원",
-      "model5": "10,000원",
-      "model6": "90,000원",
-      "model7": "Y"
-    }
-  ],
-  "cdGpRowData": [
-    {
-      "model1": "1",
-      "model2": "0087EQPMODELCD",
-      "model4": "선박위성시설 SET 장치모델",
-      "model6": "선박위성시설 SET 장치 모델코드",
-      "model7": "10",
-      "model8": "사용",
-      "StartDate": "2022-05-01",
-      "EndDate": "9999-12-31"
-    },
-    {
-      "model1": "2",
-      "model2": "ACRND_TYPE_CD",
-      "model4": "청구서유형",
-      "model7": "1",
-      "model8": "사용"
-    },
-    {
-      "model1": "3",
-      "model2": "ACTN_CD",
-      "model4": "조치코드",
-      "model5": "ACTN_CD",
-      "model6": "조치 코드 (CDR Drop, Error 등)",
-      "model7": "6",
-      "model8": "미사용"
-    },
-    {
-      "model1": "4",
-      "model2": "ACTN_CD",
-      "model4": "조치코드",
-      "model5": "ACTN_CD",
-      "model6": "조치 코드 (CDR Drop, Error 등)",
-      "model7": "6",
-      "model8": "미사용"
-    },
-    {
-      "model1": "5",
-      "model2": "ACTN_CD",
-      "model4": "조치코드",
-      "model5": "ACTN_CD",
-      "model6": "조치 코드 (CDR Drop, Error 등)",
-      "model7": "6",
-      "model8": "미사용"
-    }
-  ],
-  "cdLstRowData": [
-    {
-      "model1": "1",
-      "model2": "100000146",
-      "model5": "V100NX",
-      "model6": "V100NX",
-      "model7": "1",
-      "model8": "사용",
-      "StartDate": "2022-05-01",
-      "EndDate": "9999-12-31"
-    },
-    {
-      "model1": "2",
-      "model2": "100000146",
-      "model5": "V100NX",
-      "model6": "V100NX",
-      "model7": "1",
-      "model8": "사용",
-      "StartDate": "2022-05-01",
-      "EndDate": "9999-12-31"
-    },
-    {
-      "model1": "3",
-      "model2": "100000146",
-      "model5": "V100NX",
-      "model6": "V100NX",
-      "model7": "1",
-      "model8": "사용",
-      "StartDate": "2022-05-01",
-      "EndDate": "9999-12-31"
-    },
-    {
-      "model1": "4",
-      "model2": "100000146",
-      "model5": "V100NX",
-      "model6": "V100NX",
-      "model7": "1",
-      "model8": "사용",
-      "StartDate": "2022-05-01",
-      "EndDate": "9999-12-31"
-    },
-    {
-      "model1": "5",
-      "model2": "100000146",
-      "model5": "V100NX",
-      "model6": "V100NX",
-      "model7": "1",
-      "model8": "사용",
-      "StartDate": "2022-05-01",
-      "EndDate": "9999-12-31"
-    },
-    {
-      "model1": "6",
-      "model2": "100000146",
-      "model5": "V100NX",
-      "model6": "V100NX",
-      "model7": "1",
-      "model8": "사용",
-      "StartDate": "2022-05-01",
-      "EndDate": "9999-12-31"
-    },
-    {
-      "model1": "7",
-      "model2": "100000146",
-      "model5": "V100NX",
-      "model6": "V100NX",
-      "model7": "1",
-      "model8": "사용",
-      "StartDate": "2022-05-01",
-      "EndDate": "9999-12-31"
-    },
-    {
-      "model1": "8",
-      "model2": "100000146",
-      "model5": "V100NX",
-      "model6": "V100NX",
-      "model7": "1",
-      "model8": "사용",
-      "StartDate": "2022-05-01",
-      "EndDate": "9999-12-31"
-    },
-    {
-      "model1": "9",
-      "model2": "100000146",
-      "model5": "V100NX",
-      "model6": "V100NX",
-      "model7": "1",
-      "model8": "사용",
-      "StartDate": "2022-05-01",
-      "EndDate": "9999-12-31"
-    },
-    {
-      "model1": "10",
-      "model2": "100000146",
-      "model5": "V100NX",
-      "model6": "V100NX",
-      "model7": "1",
-      "model8": "사용",
-      "StartDate": "2022-05-01",
-      "EndDate": "9999-12-31"
-    }
-  ],
-  "autRowData": [
-    {
-      "model1": "AUT_ARCM_01_001-01",
-      "model2": "입금조회-조회",
-      "model3": "조회",
-      "model4": "사용",
-      "model5": "3",
-      "model6": "8"
-    },
-    {
-      "model1": "AUT_ARCM_01_001-01",
-      "model2": "입금조회-조회",
-      "model3": "조회",
-      "model4": "사용",
-      "model5": "3",
-      "model6": "8"
-    },
-    {
-      "model1": "AUT_ARCM_01_001-01",
-      "model2": "입금조회-조회",
-      "model3": "조회",
-      "model4": "사용",
-      "model5": "3",
-      "model6": "8"
-    },
-    {
-      "model1": "AUT_ARCM_01_001-01",
-      "model2": "입금조회-조회",
-      "model3": "조회",
-      "model4": "사용",
-      "model5": "3",
-      "model6": "8"
-    },
-    {
-      "model1": "AUT_ARCM_01_001-01",
-      "model2": "입금조회-조회",
-      "model3": "조회",
-      "model4": "사용",
-      "model5": "3",
-      "model6": "8"
-    },
-    {
-      "model1": "AUT_ARCM_01_001-01",
-      "model2": "입금조회-조회",
-      "model3": "조회",
-      "model4": "사용",
-      "model5": "3",
-      "model6": "8"
-    },
-    {
-      "model1": "AUT_ARCM_01_001-01",
-      "model2": "입금조회-조회",
-      "model3": "조회",
-      "model4": "사용",
-      "model5": "3",
-      "model6": "8"
-    },
-    {
-      "model1": "AUT_ARCM_01_001-01",
-      "model2": "입금조회-조회",
-      "model3": "조회",
-      "model4": "사용",
-      "model5": "3",
-      "model6": "8"
-    }
-  ],
-  "contentTree": [
-    {
-      "groupId": 0,
-      "directoryName": "청구계정ID 홍길* 은행계좌자동이체",
-      "chk": true,
-      "children": [
-        {
-          "groupId": 1,
-          "directoryName": "요금제명(서비스계약ID)2022-10-13~2022-10-15서울시 강남구 학동로 111",
-          "chk": true,
-          "chk2": false
-        }
-      ]
-    },
-    {
-      "groupId": 5,
-      "directoryName": "청구계정ID 홍길* 은행계좌자동이체",
-      "children": [
-        {
-          "groupId": 2,
-          "directoryName": "요금제명(서비스계약ID)2022-10-13~2022-10-15서울시 강남구 학동로 111",
-          "chk": false,
-          "chk2": true
-        },
-        {
-          "groupId": 3,
-          "directoryName": "요금제명(서비스계약ID)2022-10-13~2022-10-15서울시 강남구 학동로 1123",
-          "chk": true,
-          "chk2": true
-        },
-        {
-          "groupId": 4,
-          "directoryName": "요금제명(서비스계약ID)2022-10-13~2022-10-15서울시 강남구 학동로 111",
-          "chk": true,
-          "chk2": true
-        },
-        {
-          "groupId": 2,
-          "directoryName": "요금제명(서비스계약ID)2022-10-13~2022-10-15서울시 강남구 학동로 111",
-          "chk": false,
-          "chk2": true
-        },
-        {
-          "groupId": 3,
-          "directoryName": "요금제명(서비스계약ID)2022-10-13~2022-10-15서울시 강남구 학동로 111",
-          "chk": true,
-          "chk2": true
-        },
-        {
-          "groupId": 4,
-          "directoryName": "요금제명(서비스계약ID)2022-10-13~2022-10-15서울시 강남구 학동로 111",
-          "chk": true,
-          "chk2": true
-        },
-        {
-          "groupId": 2,
-          "directoryName": "요금제명(서비스계약ID)2022-10-13~2022-10-15서울시 강남구 학동로 111",
-          "chk": false,
-          "chk2": true
-        },
-        {
-          "groupId": 3,
-          "directoryName": "요금제명(서비스계약ID)2022-10-13~2022-10-15서울시 강남구 학동로 111",
-          "chk": true,
-          "chk2": true
-        },
-        {
-          "groupId": 4,
-          "directoryName": "요금제명(서비스계약ID)2022-10-13~2022-10-15서울시 강남구 학동로 111",
-          "chk": true,
-          "chk2": true
-        }
-      ]
-    },
-    { "groupId": 6, "directoryName": "청구계정ID 홍길* 은행계좌자동이체" }
-  ]
-}
+    "columnDefs": [
+      {
+        "headerName": "결제통화",
+        "field": "model0"
+      },
+      { "headerName": "요금항목명", "field": "model1" },
+      { "headerName": "요금항목구분", "field": "model2" },
+      { "headerName": "협정금액", "field": "model3" },
+      { "headerName": "협정할인금액", "field": "model4" },
+      { "headerName": "협정청구금액", "field": "model5" },
+      { "headerName": "유효시작일", "field": "StartDate" },
+      { "headerName": "유효종료일", "field": "EndDate" }
+    ],
+    "rowData": [
+      {
+        "model0": "KRW",
+        "model1": "기본료",
+        "model2": "정액요금",
+        "model3": "133,500,000",
+        "model4": "1,500,000",
+        "model5": "132,000,000",
+        "StartDate": "2021-10-19",
+        "EndDate": "2023-12-31"
+      },
+      {
+        "model0": "KRW",
+        "model1": "프리미엄요금",
+        "model2": "정액요금",
+        "model3": "220,225,000",
+        "model4": "225,000",
+        "model5": "220,000,000",
+        "StartDate": "2022-05-31",
+        "EndDate": "2024-07-31"
+      },
+      {
+        "model0": "KRW",
+        "model1": "설치비",
+        "model2": "정액요금",
+        "model3": "9200000000",
+        "model4": "3000000",
+        "model5": "66665222",
+        "StartDate": "2022-10-19",
+        "EndDate": "2025-09-31"
+      },
+      {
+        "model0": "KRW",
+        "model1": "기본료",
+        "model2": "정액요금",
+        "model3": "133,500,000",
+        "model4": "1,500,000",
+        "model5": "132,000,000",
+        "StartDate": "2021-10-19",
+        "EndDate": "2023-12-31"
+      },
+      {
+        "model0": "KRW",
+        "model1": "프리미엄요금",
+        "model2": "정액요금",
+        "model3": "220,225,000",
+        "model4": "225,000",
+        "model5": "220,000,000",
+        "StartDate": "2022-05-31",
+        "EndDate": "2024-07-31"
+      },
+      {
+        "model0": "KRW",
+        "model1": "설치비",
+        "model2": "정액요금",
+        "model3": "9200000000",
+        "model4": "3000000",
+        "model5": "66665222",
+        "StartDate": "2022-10-19",
+        "EndDate": "2025-09-31"
+      },
+      {
+        "model0": "KRW",
+        "model1": "기본료",
+        "model2": "정액요금",
+        "model3": "133,500,000",
+        "model4": "1,500,000",
+        "model5": "132,000,000",
+        "StartDate": "2021-10-19",
+        "EndDate": "2023-12-31"
+      },
+      {
+        "model0": "KRW",
+        "model1": "프리미엄요금",
+        "model2": "정액요금",
+        "model3": "220,225,000",
+        "model4": "225,000",
+        "model5": "220,000,000",
+        "StartDate": "2022-05-31",
+        "EndDate": "2024-07-31"
+      },
+      {
+        "model0": "KRW",
+        "model1": "설치비",
+        "model2": "정액요금",
+        "model3": "9200000000",
+        "model4": "3000000",
+        "model5": "66665222",
+        "StartDate": "2022-10-19",
+        "EndDate": "2025-09-31"
+      }
+    ],
+    "columnDefs2": [
+      { "headerName": "결제통화", "field": "model0" },
+      { "headerName": "청구금액", "field": "model5" },
+      { "headerName": "유효시작일", "field": "StartDate" },
+      { "headerName": "유효종료일", "field": "EndDate" }
+    ],
+    "rowData2": [
+      {
+        "model0": "USD",
+        "model5": "132,000,000",
+        "StartDate": "2021-10-19",
+        "EndDate": "2023-12-31"
+      },
+      {
+        "model0": "KRW",
+        "model5": "220,000,000",
+        "StartDate": "2022-05-31",
+        "EndDate": "2024-07-31"
+      },
+      {
+        "model0": "USD",
+        "model5": "66665222",
+        "StartDate": "2022-10-19",
+        "EndDate": "2025-09-31"
+      },
+      {
+        "model0": "KRW",
+        "model5": "132,000,000",
+        "StartDate": "2021-10-19",
+        "EndDate": "2023-12-31"
+      },
+      {
+        "model0": "USD",
+        "model5": "220,000,000",
+        "StartDate": "2022-05-31",
+        "EndDate": "2024-07-31"
+      }
+    ],
+    "rowDataBill1": [
+      {
+        "model0": "코로케이션",
+        "model3": "100,000원",
+        "model4": "10,000원",
+        "model5": "90,000원",
+        "model6": "Y"
+      },
+      {
+        "model0": null,
+        "model1": null,
+        "model2": "추가설치비",
+        "model3": "100,000원",
+        "model4": "10,000원",
+        "model5": "90,000원",
+        "model6": "Y"
+      },
+      {
+        "model0": "소계",
+        "model3": "200,000원",
+        "model4": "20,000원",
+        "model5": "180,000원",
+        "model6": null
+      },
+      {
+        "model0": "부가가치세",
+        "model3": "10,000원",
+        "model4": "10,000원",
+        "model5": "10,000원",
+        "model6": null
+      },
+      {
+        "model0": "당월요금계",
+        "model3": "110,000원",
+        "model4": "0원",
+        "model5": "110,000원",
+        "model6": null
+      },
+      {
+        "model0": "과납요금",
+        "model3": "-50,000원",
+        "model4": "0원",
+        "model5": "-50,000원",
+        "model6": null
+      },
+      {
+        "model0": "요금계",
+        "model3": "60,000원",
+        "model4": "10,000원",
+        "model5": "60,000원",
+        "model6": null
+      }
+    ],
+    "rowDataBill2": [
+      {
+        "model0": "코로케이션",
+        "model1": "P7-00****",
+        "model4": "100,000원",
+        "model5": "10,000원",
+        "model6": "90,000원",
+        "model7": "Y"
+      },
+      {
+        "model0": "코로케이션",
+        "model1": "P7-00****",
+        "model4": "100,000원",
+        "model5": "10,000원",
+        "model6": "90,000원",
+        "model7": "Y"
+      }
+    ],
+    "cdGpRowData": [
+      {
+        "model1": "1",
+        "model2": "0087EQPMODELCD",
+        "model4": "선박위성시설 SET 장치모델",
+        "model6": "선박위성시설 SET 장치 모델코드",
+        "model7": "10",
+        "model8": "사용",
+        "StartDate": "2022-05-01",
+        "EndDate": "9999-12-31"
+      },
+      {
+        "model1": "2",
+        "model2": "ACRND_TYPE_CD",
+        "model4": "청구서유형",
+        "model7": "1",
+        "model8": "사용"
+      },
+      {
+        "model1": "3",
+        "model2": "ACTN_CD",
+        "model4": "조치코드",
+        "model5": "ACTN_CD",
+        "model6": "조치 코드 (CDR Drop, Error 등)",
+        "model7": "6",
+        "model8": "미사용"
+      },
+      {
+        "model1": "4",
+        "model2": "ACTN_CD",
+        "model4": "조치코드",
+        "model5": "ACTN_CD",
+        "model6": "조치 코드 (CDR Drop, Error 등)",
+        "model7": "6",
+        "model8": "미사용"
+      },
+      {
+        "model1": "5",
+        "model2": "ACTN_CD",
+        "model4": "조치코드",
+        "model5": "ACTN_CD",
+        "model6": "조치 코드 (CDR Drop, Error 등)",
+        "model7": "6",
+        "model8": "미사용"
+      }
+    ],
+    "cdLstRowData": [
+      {
+        "model1": "1",
+        "model2": "100000146",
+        "model5": "V100NX",
+        "model6": "V100NX",
+        "model7": "1",
+        "model8": "사용",
+        "StartDate": "2022-05-01",
+        "EndDate": "9999-12-31"
+      },
+      {
+        "model1": "2",
+        "model2": "100000146",
+        "model5": "V100NX",
+        "model6": "V100NX",
+        "model7": "1",
+        "model8": "사용",
+        "StartDate": "2022-05-01",
+        "EndDate": "9999-12-31"
+      },
+      {
+        "model1": "3",
+        "model2": "100000146",
+        "model5": "V100NX",
+        "model6": "V100NX",
+        "model7": "1",
+        "model8": "사용",
+        "StartDate": "2022-05-01",
+        "EndDate": "9999-12-31"
+      },
+      {
+        "model1": "4",
+        "model2": "100000146",
+        "model5": "V100NX",
+        "model6": "V100NX",
+        "model7": "1",
+        "model8": "사용",
+        "StartDate": "2022-05-01",
+        "EndDate": "9999-12-31"
+      },
+      {
+        "model1": "5",
+        "model2": "100000146",
+        "model5": "V100NX",
+        "model6": "V100NX",
+        "model7": "1",
+        "model8": "사용",
+        "StartDate": "2022-05-01",
+        "EndDate": "9999-12-31"
+      },
+      {
+        "model1": "6",
+        "model2": "100000146",
+        "model5": "V100NX",
+        "model6": "V100NX",
+        "model7": "1",
+        "model8": "사용",
+        "StartDate": "2022-05-01",
+        "EndDate": "9999-12-31"
+      },
+      {
+        "model1": "7",
+        "model2": "100000146",
+        "model5": "V100NX",
+        "model6": "V100NX",
+        "model7": "1",
+        "model8": "사용",
+        "StartDate": "2022-05-01",
+        "EndDate": "9999-12-31"
+      },
+      {
+        "model1": "8",
+        "model2": "100000146",
+        "model5": "V100NX",
+        "model6": "V100NX",
+        "model7": "1",
+        "model8": "사용",
+        "StartDate": "2022-05-01",
+        "EndDate": "9999-12-31"
+      },
+      {
+        "model1": "9",
+        "model2": "100000146",
+        "model5": "V100NX",
+        "model6": "V100NX",
+        "model7": "1",
+        "model8": "사용",
+        "StartDate": "2022-05-01",
+        "EndDate": "9999-12-31"
+      },
+      {
+        "model1": "10",
+        "model2": "100000146",
+        "model5": "V100NX",
+        "model6": "V100NX",
+        "model7": "1",
+        "model8": "사용",
+        "StartDate": "2022-05-01",
+        "EndDate": "9999-12-31"
+      }
+    ],
+    "autRowData": [
+      {
+        "model1": "AUT_ARCM_01_001-01",
+        "model2": "입금조회-조회",
+        "model3": "조회",
+        "model4": "사용",
+        "model5": "3",
+        "model6": "8"
+      },
+      {
+        "model1": "AUT_ARCM_01_001-01",
+        "model2": "입금조회-조회",
+        "model3": "조회",
+        "model4": "사용",
+        "model5": "3",
+        "model6": "8"
+      },
+      {
+        "model1": "AUT_ARCM_01_001-01",
+        "model2": "입금조회-조회",
+        "model3": "조회",
+        "model4": "사용",
+        "model5": "3",
+        "model6": "8"
+      },
+      {
+        "model1": "AUT_ARCM_01_001-01",
+        "model2": "입금조회-조회",
+        "model3": "조회",
+        "model4": "사용",
+        "model5": "3",
+        "model6": "8"
+      },
+      {
+        "model1": "AUT_ARCM_01_001-01",
+        "model2": "입금조회-조회",
+        "model3": "조회",
+        "model4": "사용",
+        "model5": "3",
+        "model6": "8"
+      },
+      {
+        "model1": "AUT_ARCM_01_001-01",
+        "model2": "입금조회-조회",
+        "model3": "조회",
+        "model4": "사용",
+        "model5": "3",
+        "model6": "8"
+      },
+      {
+        "model1": "AUT_ARCM_01_001-01",
+        "model2": "입금조회-조회",
+        "model3": "조회",
+        "model4": "사용",
+        "model5": "3",
+        "model6": "8"
+      },
+      {
+        "model1": "AUT_ARCM_01_001-01",
+        "model2": "입금조회-조회",
+        "model3": "조회",
+        "model4": "사용",
+        "model5": "3",
+        "model6": "8"
+      }
+    ],
+    "contentTree": [
+      {
+        "groupId": 0,
+        "directoryName": "청구계정ID 홍길* 은행계좌자동이체",
+        "chk": true,
+        "children": [
+          {
+            "groupId": 1,
+            "directoryName": "요금제명(서비스계약ID)2022-10-13~2022-10-15서울시 강남구 학동로 111",
+            "chk": true,
+            "chk2": false
+          }
+        ]
+      },
+      {
+        "groupId": 5,
+        "directoryName": "청구계정ID 홍길* 은행계좌자동이체",
+        "children": [
+          {
+            "groupId": 2,
+            "directoryName": "요금제명(서비스계약ID)2022-10-13~2022-10-15서울시 강남구 학동로 111",
+            "chk": false,
+            "chk2": true
+          },
+          {
+            "groupId": 3,
+            "directoryName": "요금제명(서비스계약ID)2022-10-13~2022-10-15서울시 강남구 학동로 1123",
+            "chk": true,
+            "chk2": true
+          },
+          {
+            "groupId": 4,
+            "directoryName": "요금제명(서비스계약ID)2022-10-13~2022-10-15서울시 강남구 학동로 111",
+            "chk": true,
+            "chk2": true
+          },
+          {
+            "groupId": 2,
+            "directoryName": "요금제명(서비스계약ID)2022-10-13~2022-10-15서울시 강남구 학동로 111",
+            "chk": false,
+            "chk2": true
+          },
+          {
+            "groupId": 3,
+            "directoryName": "요금제명(서비스계약ID)2022-10-13~2022-10-15서울시 강남구 학동로 111",
+            "chk": true,
+            "chk2": true
+          },
+          {
+            "groupId": 4,
+            "directoryName": "요금제명(서비스계약ID)2022-10-13~2022-10-15서울시 강남구 학동로 111",
+            "chk": true,
+            "chk2": true
+          },
+          {
+            "groupId": 2,
+            "directoryName": "요금제명(서비스계약ID)2022-10-13~2022-10-15서울시 강남구 학동로 111",
+            "chk": false,
+            "chk2": true
+          },
+          {
+            "groupId": 3,
+            "directoryName": "요금제명(서비스계약ID)2022-10-13~2022-10-15서울시 강남구 학동로 111",
+            "chk": true,
+            "chk2": true
+          },
+          {
+            "groupId": 4,
+            "directoryName": "요금제명(서비스계약ID)2022-10-13~2022-10-15서울시 강남구 학동로 111",
+            "chk": true,
+            "chk2": true
+          }
+        ]
+      },
+      { "groupId": 6, "directoryName": "청구계정ID 홍길* 은행계좌자동이체" }
+    ]
+  }
 }

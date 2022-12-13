@@ -74,6 +74,28 @@ export default {
       default:"10px"
     }
   },
+  
+  // async beforeMount() {
+  //   await this.axios.get("/selectBoxOption.json")
+  //     .then((res) => {
+  //       console.log(res)
+  //       // this.rowData = res.data;
+  //       // console.log(this.rowData);
+  //       this.options = res.data.selectBoxOption[this.cdGroup];
+  //     if (this.defaultcdId != null ) {
+  //       for(let i =0 ; i< this.options.length; i++){
+  //         if( this.options[i].cdId == this.defaultcdId ){
+  //           this.value = this.defaultcdId ;
+  //           break;
+  //         }
+  //       }
+  //     }
+  //     })
+  //     .catch((e) => {
+  //       console.log(e);
+  //     });
+    
+  // },
   beforeMount() {
     this.options = select[this.cdGroup];
     if (this.defaultcdId != null ) {

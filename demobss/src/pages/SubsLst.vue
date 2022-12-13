@@ -39,13 +39,22 @@ export default {
     };
   },
   async beforeMount() {
-    await this.$connect("application/json", "/info2.json", "get", "")
-      .then((res) => {
-        this.columnDefs = res.data.columnDefs;
-        this.rowData = res.data.rowData;
-      })
-      .catch((e) => {
-        console.log(e);
+      // await this.$connect("application/json", "/info2.json", "get", "")
+      await this.$connect("application/json", "/columnDefs", "get", "")
+        .then((res) => {
+          // this.columnDefs = res.data.columnDefs;
+          // this.rowData = res.data.rowData;
+          this.columnDefs = res.data;
+        })
+        .catch((e) => {
+          console.log(e);
+        });
+      await this.$connect("application/json", "/rowData", "get", "")
+        .then((res) => {
+          this.rowData = res.data;
+        })
+        .catch((e) => {
+          console.log(e);
       });
   },
 };
