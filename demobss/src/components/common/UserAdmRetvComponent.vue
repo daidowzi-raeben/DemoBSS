@@ -5,14 +5,14 @@
         <th><label-component :labelNm="'직무'" /></th>
         <td>
           <select-box-component
+            style="height: 28px"
             :selectClass="'select_input4'"
+            :width="140"
             :cdGroup="'dutySelect'"
             :defaultValue="'직무 선택'"
             :isDisabled="true"
-            @input="(value) => {selectValue = value;}"
-            :width="140"
-            style="height: 28px"
-            v-model="selectValue"
+            :selectedValue="selectValues.selectValueOfDuty"
+            @input="(value) => {selectValues.selectValueOfDuty = value;}"
           />
         </td>
         <td colspan="3"></td>
@@ -21,14 +21,14 @@
         <th><label-component :labelNm="'직책'" /></th>
         <td>
           <select-box-component
+            style="height: 28px"
             :selectClass="'select_input4'"
+            :width="200"
             :cdGroup="'rspof'"
             :defaultValue="'직책 선택'"
             :isDisabled="true"
-            @input="(value) => {selectValue = value;}"
-            :width="200"
-            style="height: 28px"
-            v-model="selectValue"
+            :selectedValue="selectValues.selectValueOfRspof"
+            @input="(value) => {selectValues.selectValueOfRspof = value;}"
           />
         </td>
         <td class="emptyBox2"></td>
@@ -48,64 +48,48 @@
         <th><label-component :labelNm="'조직'" /></th>
         <td>
           <select-box-component
-            :selectClass="'select_input4'"
-            :cdGroup="'orgSelect'"
-            :defaultValue="'조직 선택'"
-            :isDisabled="true"
-            @input="
-              (value) => {
-                selectValue = value;
-              }
-            "
-            :width="140"
             style="height: 28px"
-            v-model="selectValue"
+            :selectClass="'select_input4'"
+            :width="140"
+            :cdGroup="'orgSelect'"
+            :defaultValue="'조직 선택1'"
+            :isDisabled="true"
+            :selectedValue="selectValues.selectValueOfOrg1"
+            @input="(value) => {selectValues.selectValueOfOrg1 = value;}"
           />
         </td>
         <td>
           <select-box-component
-            :selectClass="'select_input4'"
-            :cdGroup="'orgSelect'"
-            :defaultValue="'조직 선택'"
-            :isDisabled="true"
-            @input="
-              (value) => {
-                selectValue = value;
-              }
-            "
-            :width="140"
             style="height: 28px"
-            v-model="selectValue"
+            :selectClass="'select_input4'"
+            :width="140"
+            :cdGroup="'orgSelect'"
+            :defaultValue="'조직 선택2'"
+            :isDisabled="true"
+            :selectedValue="selectValues.selectValueOfOrg2"
+            @input="(value) => {selectValues.selectValueOfOrg2 = value;}"
           />
         </td>
         <td>
           <select-box-component
-            :selectClass="'select_input4'"
-            :cdGroup="'orgSelect'"
-            :defaultValue="'조직 선택'"
-            :isDisabled="true"
-            @input="
-              (value) => {
-                selectValue = value;
-              }
-            "
-            :width="140"
             style="height: 28px"
-            v-model="selectValue"
+            :selectClass="'select_input4'"
+            :width="140"
+            :cdGroup="'orgSelect'"
+            :defaultValue="'조직 선택3'"
+            :isDisabled="true"
+            :selectedValue="selectValues.selectValueOfOrg3"
+            @input="(value) => {selectValues.selectValueOfOrg3 = value;}"
           />
         </td>
         <td>
           <input-component
+            style="width: 100%; height: 28px"
             :type="'search'"
             :inputClass="'class4'"
             :placeholder="'사원명 입력'"
-            @input="
-              (value) => {
-                searchValue = value;
-              }
-            "
-            v-model="searchValue"
-            style="width: 100%; height: 28px"
+            :value="selectValues.inputValueOfEmpNm"
+            v-model="selectValues.inputValueOfEmpNm"
           />
         </td>
 
@@ -113,19 +97,15 @@
         <th><label-component :labelNm="'재직상태'" /></th>
         <td>
           <select-box-component
+            style="height: 28px"
             :selectClass="'select_input4'"
+            :width="200"
             :cdGroup="'inOfficeSttus'"
             :defaultValue="'재직상태 선택'"
             :isDisabled="true"
-            @input="
-              (value) => {
-                selectValue = value;
-              }
-            "
-            :width="200"
-            style="height: 28px"
-            v-model="selectValue"
-          />
+            :selectedValue="selectValues.selectValueOfinOfficeSttus"
+            @input="(value) => {selectValues.selectValueOfinOfficeSttus = value;}"
+            />
         </td>
         <td class="emptyBox2"></td>
 
@@ -136,6 +116,7 @@
             :btnWidth="'78px'"
             :btnFontWeight="'bold'"
             :btnName="'초기화'"
+            @click="resetRetvCond"
           />
         </td>
       </tr>
@@ -164,14 +145,40 @@ export default {
   },
   data() {
     return {
-      selectValue: null,
-      searchValue: null,
+      selectValues : {
+      selectValueOfDuty : "",
+      selectValueOfRspof : "",
+      selectValueOfOrg1 : "",
+      selectValueOfOrg2 : "",
+      selectValueOfOrg3 : "",
+      inputValueOfEmpNm : "",
+      selectValueOfinOfficeSttus : "",
+      }
     };
   },
   props: {
     cdGroup: null,
     titleShow: null,
   },
+  methods:{
+    async resetRetvCond(){
+      console.log(this.selectValues);
+      this.selectValues.selectValueOfDuty = "" ;
+      this.selectValues.selectValueOfRspof = "" ;
+      this.selectValues.selectValueOfOrg1 = "" ;
+      this.selectValues.selectValueOfOrg2 = "" ;
+      this.selectValues.selectValueOfOrg3 = "" ;
+      this.selectValues.inputValueOfEmpNm = "" ;
+      this.selectValues.selectValueOfinOfficeSttus = "";
+      console.log(this.selectValues);
+    }
+  },
+  watch:{
+    selectValues(newSelectedValue){
+      this.selectValues = newSelectedValue;
+      console.log(this.selectValues)
+    }
+  }
 };
 </script>
 

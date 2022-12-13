@@ -576,9 +576,11 @@ export default {
   },
   async beforeMount() {
     await this.$connect("application/json", "/info2.json", "get", "")
+    // await this.axios.get("userRowData")
       .then((res) => {
+        console.log("info2",res)
         this.rowData = res.data.userRowData;
-        console.log(this.rowData);
+        // console.log(this.rowData);
       })
       .catch((e) => {
         console.log(e);
@@ -625,8 +627,8 @@ export default {
         this.userAdmObject.rspof = "";
         this.userAdmObject.dutySelect = "";
         this.userAdmObject.email = null;
-        this.userAdmObject.mphon = null;
-        this.userAdmObject.ppon = null;
+        this.userAdmObject.mphon = ["","",""];
+        this.userAdmObject.ppon =  ["","",""];
         this.userAdmObject.pwd = null;
         this.userAdmObject.pwdChgDt = null;
         this.userAdmObject.lastLogIn = null;
