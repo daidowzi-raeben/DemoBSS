@@ -1,5 +1,5 @@
 <template>
-  <article class="UserAdmContainer">
+  <article class="userAdmContainer">
     <div class="item1">
       <user-adm-retv-component />
     </div>
@@ -29,6 +29,7 @@
           :rowData="rowData"
           :columnDefs="columnDefs"
           :rowHeight="rowHeight"
+          :isDeselect="true"
           @seletedRowData="
             (value) => {
               seletedUserData = value[0];
@@ -441,7 +442,6 @@
           </table>
         </form>
         {{ seletedUserData }}
-
         <popup-component
           v-if="isModalShow"
           :popupmsg="`${
@@ -622,7 +622,6 @@ export default {
 
   methods: {
     clickUserRegister() {
-      console.log(this.seletedUserData);
       if (this.userAdmObject.sttus == "amend") {
         this.userAdmObject.sttus = "register";
         this.userAdmObject.inputClass = "class6";
@@ -676,23 +675,23 @@ export default {
 </script>
 
 <style scoped>
-.UserAdmContainer {
+.userAdmContainer {
   display: grid;
   grid-template-columns: 850px 700px 1fr;
   grid-template-rows: 100px 640px 1fr;
   gap: 20px 30px;
 }
 
-.UserAdmContainer > .item1 {
+.userAdmContainer > .item1 {
   grid-row: 1;
   grid-column: 1/3;
   background-color: burlywood;
 }
-.UserAdmContainer > .item2 {
+.userAdmContainer > .item2 {
   grid-row: 2;
   grid-column: 1;
 }
-.UserAdmContainer > .item3 {
+.userAdmContainer > .item3 {
   grid-row: 2;
   grid-column: 2;
 }

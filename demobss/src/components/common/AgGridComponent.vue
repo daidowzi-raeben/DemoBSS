@@ -6,6 +6,7 @@
     @selection-changed="onSelectionChanged"
     @first-data-rendered="onFirstDataRendered"
     :grid-options="gridOptions"
+    :rowMultiSelectWithClick="isDeselect"
     :rowClassRules="rowClassRules"
     :suppressMovableColumns="true"
     :suppressRowTransform="true"
@@ -50,6 +51,10 @@ export default {
     };
   },
   props: {
+    isDeselect:{
+      type: Boolean,
+      default: false
+    },
     headerColor:{
       type:String,
       default:"#f8f8f8"

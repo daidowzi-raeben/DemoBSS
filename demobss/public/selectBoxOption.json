@@ -1,6 +1,10 @@
 {
   "dummyOptions": [
     {
+      "cdNm": "전체",
+      "cdId": "00"
+    },
+    {
       "cdNm": "선택조건1",
       "cdId": "01"
     },
@@ -14,6 +18,7 @@
     }
   ],
   "optionsSearchDiv": [
+    
     {
       "cdNm": "명의고객명",
       "cdId": "01",
@@ -229,6 +234,10 @@
 
   "inOfficeSttus2": [
     {
+      "cdNm": "전체",
+      "cdId": "whole"
+    },
+    {
       "cdNm": "재직",
       "cdId": "inOffice"
     },
@@ -254,6 +263,10 @@
 
   "rspof": [
     {
+      "cdNm": "전체",
+      "cdId": "rspof0"
+    },
+    {
       "cdNm": "관리자",
       "cdId": "rspof1"
     },
@@ -267,6 +280,10 @@
     }
   ],
   "dutySelect": [
+    {
+      "cdNm": "전체",
+      "cdId": "role0"
+    },
     {
       "cdNm": "시스템관리",
       "cdId": "role1"
@@ -285,6 +302,10 @@
     }
   ],
   "orgSelect": [
+    {
+      "cdNm": "전체",
+      "cdId": "role0"
+    },
     {
       "cdNm": "조직",
       "cdId": "role1"
