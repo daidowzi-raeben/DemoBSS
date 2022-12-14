@@ -43,10 +43,17 @@ export default {
   },
   methods: {
     onSelectionChanged(params) {
-      this.seletedRowData = params.api.getSelectedRows();
-      this.$emit("seletedRowData", this.seletedRowData);
-      console.log("seletedRowData : ", this.seletedRowData);
+      // console.log("params aPI",params.api)
+      // console.log("params aPI get select row",params.api.getSelectedRows())
+      if(params.api.getSelectedRows() == "") this.$emit("seletedRowData", 'empty');
+      else{
+        this.seletedRowData = params.api.getSelectedRows()[0];
+        this.$emit("seletedRowData", this.seletedRowData);
+        }
+      // this.gridApi.deselectAll()
     },
+  },
+  watch:{
   },
   created() {
     this.paginationPageSize = 7 * 2;
