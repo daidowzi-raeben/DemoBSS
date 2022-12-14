@@ -4,7 +4,7 @@
       <subs-retv-component />
     </div>
     <div class="item">
-      <blc2-component
+      <Blc2Component
         :sub-info-title-nm="'청약리스트'"
         :row-data="rowData"
         :column-defs="columnDefs"
@@ -21,11 +21,11 @@
 </template>
 
 <script>
-import Blc2Component from "@/components/common/Blc2Component.vue";
 import ApiMixin from "@/service/common.js";
 import SubsRetvComponent from "@/components/common/SubsRetvComponent.vue";
 import PagingArea from "@/components/common/PagingArea.vue";
 import TableComponent from "@/components/common/TableComponent.vue";
+import Blc2Component from '@/components/common/Blc2Component.vue';
 
 export default {
   mixins: [ApiMixin],
@@ -39,23 +39,16 @@ export default {
     };
   },
   async beforeMount() {
-      // await this.$connect("application/json", "/info2.json", "get", "")
-      await this.$connect("application/json", "/columnDefs", "get", "")
-        .then((res) => {
-          // this.columnDefs = res.data.columnDefs;
-          // this.rowData = res.data.rowData;
-          this.columnDefs = res.data;
-        })
-        .catch((e) => {
-          console.log(e);
-        });
-      await this.$connect("application/json", "/rowData", "get", "")
-        .then((res) => {
-          this.rowData = res.data;
-        })
-        .catch((e) => {
-          console.log(e);
-      });
+    await this.$connect("application/json", "/info2.json", "get", "")
+    // await this.$connect("application/json", "/columnDefs", "get", "")
+    .then((res) => {
+      console.log(res);
+      this.columnDefs = res.data.columnDefs;
+      this.rowData = res.data.rowData;
+      })
+    .catch((e) => {
+      console.log(e);
+    });
   },
 };
 </script>

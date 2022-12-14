@@ -22,7 +22,10 @@
     </span>
   </div>
   <div class="ag-grid_sp">
-    <ag-grid-component :rowData="rowData" :columnDefs="columnDefs" />
+    <Ag-grid-component
+    :overlayNoRowsTemplate="noRowTemplateMsg"
+    :rowData="rowData" 
+    :columnDefs="columnDefs" />
     <div>
       <paging-area
         :pageableData="pageableData"
@@ -34,11 +37,11 @@
 
 <script>
 import SelectBoxComponent from "@/components/common/SelectBoxComponent";
-import ButtonComponent from "@/components/common/ButtonComponent";
+import ButtonComponent from "@/components/common/ButtonComponent.vue";
 import SubInfoTitle from "@/components/common/SubInfoTitle";
 import ApiMixin from "@/service/common";
 import PagingArea from "@/components/common/PagingArea.vue";
-import AgGridComponent from './AgGridComponent.vue';
+import AgGridComponent from "@/components/common/AgGridComponent.vue";
 
 export default {
   mixins: [ApiMixin],
@@ -52,6 +55,7 @@ export default {
   },
   data() {
     return {
+      noRowTemplateMsg: `<span> <strong>  조회 결과가 없습니다. </strong> <br><br><br> </span>`,
       month: 0,
       pageableData: {
         pageNumber: 1,
@@ -67,7 +71,7 @@ export default {
       default: "245px",
       type: String,
     },
-    columnDefs: "",
+    columnDefs: [],
     rowData: "",
     subInfoTitleNm: null,
     selectBoxShow: null,
