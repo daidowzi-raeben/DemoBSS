@@ -134,9 +134,15 @@
             </tr>
             <tr>
               <th><label-component :labelNm="'메뉴노출여부'" /></th>
-              <td><radio-component :RadioOptions="['사용', '미사용']" /></td>
+              <td><radio-component 
+                    :RadioOption="'useNouse'" 
+                    @radioEmit="(radioValue) => { menuAdmObject.otpYn1 = radioValue }"
+                    :seletedRadio="menuAdmObject.otpYn1" /></td>
               <th><label-component :labelNm="'메뉴 사용여부'" /></th>
-              <td><radio-component :RadioOptions="['사용', '미사용']" /></td>
+              <td><radio-component 
+                    :RadioOption="'useNouse'" 
+                    @radioEmit="(radioValue) => { menuAdmObject.otpYn2 = radioValue }"
+                    :seletedRadio="menuAdmObject.otpYn2" /></td>
             </tr>
 
             <tr>
@@ -251,14 +257,20 @@
                 <label-component :labelNm="'사용여부'" />
               </th>
               <td style="width: 100px">
-                <radio-component :RadioOptions="['사용', '미사용']" />
+              <radio-component 
+                    :RadioOption="'useNouse'" 
+                    @radioEmit="(radioValue) => { menuAdmObject.otpYn3 = radioValue }"
+                    :seletedRadio="menuAdmObject.otpYn3" />
               </td>
             </tr>
 
             <tr>
               <th><label-component :labelNm="'권한적용대상'" /></th>
               <td colspan="3">
-                <radio-component :RadioOptions="['적용 대상', '적용 제외']" />
+                <radio-component 
+                  :RadioOption="'aplyExpt'" 
+                  @radioEmit="(radioValue) => { menuAdmObject.aplyExpt = radioValue }"
+                  :seletedRadio="menuAdmObject.aplyExpt" />
               </td>
             </tr>
 
@@ -335,6 +347,15 @@ export default {
     return {
       menuAdmObject: {
         sttus: "amend",
+        otpYn1: "",
+        otpYn2: "",
+        otpYn3: "",
+        aplyExpt:'',
+
+
+
+        regrDt: "2022-12-09 20:03:30",
+        amdrDt: "2022-12-09 19:20:30",
       },
       isModalShow: false,
       test: "",
@@ -404,6 +425,12 @@ export default {
     popup() {
       if (this.isModalShow == false) this.isModalShow = true;
       else this.isModalShow = false;
+    },
+    clickUserRegister(){
+
+    },
+    clickUserAmend(){
+
     },
   },
 };
