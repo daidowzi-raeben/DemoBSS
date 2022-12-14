@@ -26,15 +26,15 @@
       </div>
       <div>
         <ag-grid-component
+          ref="agGridComponent"
           :rowData="rowData"
           :columnDefs="columnDefs"
           :rowHeight="rowHeight"
           :isDeselect="true"
-          @seletedRowData="
-            (value) => {
-              seletedUserData = value[0];
-            }
-          "
+          :userAdmSttus="userAdmObject.sttus"
+          @seletedRowData=" (value) => {seletedUserData = value; } "
+          @rowClickedPopup="(value)=> { isUserLstModalShow= value;  }"
+          :overlayNoRowsTemplate="noRowTemplateMsg"
         />
         <div class="pcSelectAndPagingFlex">
           <div>
@@ -73,7 +73,7 @@
           <button-component
             :btnClass="'btnClass3'"
             :btnName="userAdmObject.sttus == 'amend' ? '변경' : '등록'"
-            @click="popup"
+            @click="popup('sttus')"
           />
         </span>
       </div>
@@ -222,11 +222,10 @@
               <th><label-component :labelNm="'이메일주소'" /></th>
               <td colspan="3">
                 <input-component
-                
                   :input-class="'class6'"
                   :class6Width="'180px'"
-                  v-model="userAdmObject.userNm"
-                  :value="userAdmObject.userNm"
+                  v-model="userAdmObject.email"
+                  :value="userAdmObject.email"
                   :placeholder="'이름 입력'"
                 />
                 <span style="margin-right: 10px">@</span>
@@ -343,6 +342,7 @@
                     :btnWidth="'140px'"
                     :btnFontWeight="'normal'"
                     :btnName="'비밀번호 초기화'"
+                    @click="popup('비밀번호를 초기화하시겠습니까?')"
                   />
                 </span>
               </td>
@@ -444,11 +444,15 @@
         {{ seletedUserData }}
         <popup-component
           v-if="isModalShow"
-          :popupmsg="`${
-            userAdmObject.sttus == 'amend' ? '변경' : '등록'
-          }하시겠습니까?`"
+          :popupmsg="popupMsg"
           @popup="isModalShow = false"
           @AGREE="popupAgree()"
+        />
+        <popup-component
+          v-if="isUserLstModalShow"
+          :popupmsg="'등록 상태 입니다. 사용자관리 상태를 확인해주세요.'"
+          @popup="isUserLstModalShow = false"
+          @AGREE="userLstpopupAgree()"
         />
       </div>
     </div>
@@ -467,7 +471,7 @@ import InputComponent from "@/components/common/InputComponent.vue";
 import RadioComponent from "@/components/common/RadioComponent.vue";
 import { formatTel } from "@/service/FormatService.js";
 import PopupComponent from "@/components/common/PopupComponent.vue";
-import AgGridComponent from '@/components/common/AgGridComponent.vue';
+import AgGridComponent from "@/components/common/AgGridComponent.vue";
 
 export default {
   mixins: [ApiMixin],
@@ -486,9 +490,11 @@ export default {
   data() {
     return {
       seletedUserData: "",
+      noRowTemplateMsg : `<span> <strong>  조회 결과가 없습니다. </strong> <br><br><br> </span>`,
       subInfoTitleNm_Item2: "사용자 리스트",
       subInfoTitleNm_Item3: "사용자 상세정보",
       total: "65",
+      popupMsg:"",
       btnName1: "등록",
       btnName2: "변경",
       btnName3: "숨김해제",
@@ -576,13 +582,14 @@ export default {
         amdrDt: "2022-12-09 19:20:30",
       },
       isModalShow: false, // popup 조건
+      isUserLstModalShow:false,
     };
   },
   async beforeMount() {
     await this.$connect("application/json", "/info2.json", "get", "")
-    // await this.axios.get("userRowData")
+      // await this.axios.get("userRowData")
       .then((res) => {
-        console.log("info2",res)
+        console.log("info2", res);
         this.rowData = res.data.userRowData;
         // console.log(this.rowData);
       })
@@ -603,72 +610,98 @@ export default {
       // 사용자리스트(ag-grid) row가 선택 되었을 때, 해당 데이터를 기반으로 사용자 상세정보 변경
       deep: true,
       handler(newSeletedUserData) {
-        // console.log("userAdmObject : ", this.userAdmObject)
-        this.userAdmObject.cmpno = newSeletedUserData.cmpno;
-        this.userAdmObject.userNm = newSeletedUserData.userNm;
-        this.userAdmObject.inOfficeSttus2 = newSeletedUserData.inofficeSttus;
-        this.userAdmObject.rspof = newSeletedUserData.rspof;
-        this.userAdmObject.dutySelect = newSeletedUserData.dutySelect;
-        this.userAdmObject.org = newSeletedUserData.org;
-        this.userAdmObject.ntcMeth = newSeletedUserData.ntcMeth;
-        this.userAdmObject.useYn = newSeletedUserData.useYn;
-        this.userAdmObject.otpYn = newSeletedUserData.otpYn;
-        this.userAdmObject.email = newSeletedUserData.email;
-        this.userAdmObject.emailDomain = newSeletedUserData.emailDomain;
-        // console.log("newSeletedUserData",this.userAdmObject.inOfficeSttus2);
+        console.log("newSeletedUserData", newSeletedUserData);
+        if (newSeletedUserData == "empty") {
+          this.emptyUserAdmObject(this.userAdmObject);
+        } else if (newSeletedUserData == "register") {
+          this.userLstPopup("register")
+        } else {
+          // console.log("userAdmObject : ", this.userAdmObject)
+          this.userAdmObject.cmpno = newSeletedUserData.cmpno;
+          this.userAdmObject.userNm = newSeletedUserData.userNm;
+          this.userAdmObject.inOfficeSttus2 = newSeletedUserData.inofficeSttus;
+          this.userAdmObject.rspof = newSeletedUserData.rspof;
+          this.userAdmObject.dutySelect = newSeletedUserData.dutySelect;
+          this.userAdmObject.org = newSeletedUserData.org;
+          this.userAdmObject.ntcMeth = newSeletedUserData.ntcMeth;
+          this.userAdmObject.useYn = newSeletedUserData.useYn;
+          this.userAdmObject.otpYn = newSeletedUserData.otpYn;
+          this.userAdmObject.email = newSeletedUserData.email;
+          this.userAdmObject.emailDomain = newSeletedUserData.emailDomain;
+          // console.log("newSeletedUserData",this.userAdmObject.inOfficeSttus2);
+        }
       },
     },
   },
 
   methods: {
     clickUserRegister() {
-      if (this.userAdmObject.sttus == "amend") {
-        this.userAdmObject.sttus = "register";
-        this.userAdmObject.inputClass = "class6";
-        this.userAdmObject.isDisabled = false;
-        this.userAdmObject.cmpno = null;
-        this.userAdmObject.inOfficeSttus2 = "";
-        this.userAdmObject.userNm = null;
-        this.userAdmObject.ntcMeth = "";
-        this.userAdmObject.org = null;
-        this.userAdmObject.rspof = "";
-        this.userAdmObject.dutySelect = "";
-        this.userAdmObject.email = null;
-        this.userAdmObject.mphon = ["","",""];
-        this.userAdmObject.ppon =  ["","",""];
-        this.userAdmObject.pwd = null;
-        this.userAdmObject.pwdChgDt = null;
-        this.userAdmObject.lastLogIn = null;
-        this.userAdmObject.failLogIn = null;
-        this.userAdmObject.regrDt = null;
-        this.userAdmObject.amdrDt = null;
-        console.log(this.userAdmObject);
-      }
+      // if (this.userAdmObject.sttus == "amend") {
+      this.userAdmObject.sttus = "register";
+      this.userAdmObject.inputClass = "class6";
+      this.userAdmObject.isDisabled = false;
+      this.emptyUserAdmObject(this.userAdmObject);
+      this.$refs.agGridComponent.deselectAll(1);
+      // console.log(this.userAdmObject);
+      // }
     },
     clickUserAmend() {
       if (this.userAdmObject.sttus == "register") {
         this.userAdmObject.sttus = "amend";
         this.userAdmObject.inputClass = "class6 class6_2";
         this.userAdmObject.isDisabled = true;
-        console.log(this.userAdmObject);
+        // console.log(this.userAdmObject);
       }
     },
     checkTheNum(num) {
       console.log(num);
       console.log(formatTel(num));
     },
-    popup() {
+    emptyUserAdmObject(userObject) {
+      userObject.cmpno = null;
+      userObject.inOfficeSttus2 = "";
+      userObject.userNm = null;
+      userObject.ntcMeth = "";
+      userObject.org = null;
+      userObject.rspof = "";
+      userObject.dutySelect = "";
+      userObject.email = null;
+      userObject.mphon = ["", "", ""];
+      userObject.ppon = ["", "", ""];
+      userObject.pwd = null;
+      userObject.pwdChgDt = null;
+      userObject.lastLogIn = null;
+      userObject.failLogIn = null;
+      userObject.regrDt = null;
+      userObject.amdrDt = null;
+      userObject.useYn =null;
+      userObject.otpYn = null;
+      userObject.emailDomain = null;
+    },
+    popup( msg ) {
       if (this.isModalShow == false) this.isModalShow = true;
       else this.isModalShow = false;
+      
+      if(msg=='sttus') this.popupMsg = this.userAdmObject.sttus == 'amend' ? '변경하시겠습니까?' : '등록하시겠습니까?';
+      else this.popupMsg = msg;
     },
     popupAgree() {
-      if (this.userAdmObject.sttus == "amend") {
+      if (this.userAdmObject.sttus == "amend" ) {
         // 수정 팝업 확인 버튼 함수
-        console.log("변경 완려");
-      } else if (this.userAdmObject.sttus == "register") {
+        if(this.popupMsg=="변경하시겠습니까?") console.log("변경 완료");
+        else console.log("비밀번호 변경 완료")
+      }else if (this.userAdmObject.sttus == "register") {
         //  등록 팝업 확인 버튼 함수
-        console.log("등록 완려");
+        console.log("등록 완료");
       }
+    },
+    userLstPopup(){
+      if (this.isUserLstModalShow == false) this.isUserLstModalShow = true;
+      else this.isUserLstModalShow = false;
+    },
+    userLstpopupAgree(){
+      console.log(true)
+
     },
   },
 };
