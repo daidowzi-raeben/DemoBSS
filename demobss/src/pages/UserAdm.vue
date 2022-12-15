@@ -126,7 +126,8 @@
               <th><label-component :labelNm="'사용여부'" /></th>
               <td><radio-component :RadioOption="'useNouse'" 
                     @radioEmit="(radioValue) => { userAdmObject.useYn = radioValue }"
-                    :seletedRadio="userAdmObject.useYn" /></td>
+                    :seletedRadio="userAdmObject.useYn"
+                    :defaultcdId="userAdmObject.useYn" /></td>
             </tr>
 
             <tr>
@@ -559,7 +560,7 @@ export default {
         cmpno: "사번",
         inOfficeSttus2: "inOffice",
         userNm: "홍길동",
-        useYn: "",
+        useYn: "01",
         ntcMeth: "ntcMeth1",
         otpYn: "",
         org: "조직",

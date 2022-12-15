@@ -26,7 +26,10 @@ import radioSelect from "../../../public/radioOption.json";
 
 export default {
   props: {
-    seletedRadio: String,
+    seletedRadio: {
+      type:String,
+      default:''
+    },
     defaultcdId: String,
     RadioOption: {
       type: String,
@@ -41,11 +44,10 @@ export default {
   },
   beforeMount() {
     this.radioOptions = radioSelect[this.RadioOption];
-    console.log(this.radioOptions);
     if (this.defaultcdId != null) {
       for (let i = 0; i < this.radioOptions.length; i++) {
         if (this.radioOptions[i].cdId == this.defaultcdId) {
-          this.value = this.defaultcdId;
+          this.radioValue = this.defaultcdId;
           break;
         }
       }
