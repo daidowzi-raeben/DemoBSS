@@ -380,5 +380,28 @@
       "cdNm": "공통코드",
       "cdId": "comCd"
     }
+  ],
+  "wjtButtOptions":[
+    
+    {
+      "cdNm": "등록 버튼",
+      "cdId": "butt1"
+    },
+    {
+      "cdNm": "변경 버튼",
+      "cdId": "butt2"
+    },
+    {
+      "cdNm": "삭제 버튼",
+      "cdId": "butt3"
+    },
+    {
+      "cdNm": "승인요청 버튼",
+      "cdId": "butt4"
+    },
+    {
+      "cdNm": "승인/반려 버튼",
+      "cdId": "butt5"
+    }
   ]
 }

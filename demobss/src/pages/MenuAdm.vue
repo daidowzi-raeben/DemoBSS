@@ -41,6 +41,22 @@
           style="border: 1px solid rgb(239, 245, 252); padding: 0"
           :isBadgeShow="false"
         ></msf-tree>
+<!-- 
+        <AgGridComponent
+          ref="agGridComponent"
+          :rowData="rowData"
+          :columnDefs="columnDefs"
+          :rowHeight="rowHeight"
+          :isDeselect="true"
+          :rowClicked="userLstRowClicked"
+          :overlayNoRowsTemplate="noRowTemplateMsg"
+        /> -->
+
+
+
+
+
+
       </div>
     </div>
 
@@ -66,8 +82,8 @@
                   :class6Width="'180px'"
                   :input-class="'class6 class6_2'"
                   :disabled="true"
-                  :value="menuAdmObject.menuId"
                   :placeholder="'메뉴ID'"
+                  :value="menuAdmObject.menuId"
                 />
               </td>
               <th><label-component :labelNm="'상위메뉴ID'" /></th>
@@ -76,8 +92,8 @@
                   :class6Width="'180px'"
                   :input-class="'class6 class6_2'"
                   :disabled="true"
+                  :placeholder="'상위메뉴ID'"
                   :value="menuAdmObject.upperMenuId"
-                  :placeholder="'----'"
                 />
               </td>
             </tr>
@@ -87,8 +103,9 @@
                 <input-component
                   :input-class="'class6'"
                   :class6Width="'300px'"
-                  :value="menuAdmObject.menuNm"
                   :placeholder="'계약'"
+                  :value="menuAdmObject.menuNm"
+                  v-model="menuAdmObject.menuNm"
                 />
               </td>
             </tr>
@@ -98,8 +115,9 @@
                 <input-component
                   :input-class="'class6'"
                   :class6Width="'300px'"
-                  :value="menuAdmObject.sortingCond"
                   :placeholder="'숫자'"
+                  :value="menuAdmObject.sortingCond"
+                  v-model="menuAdmObject.sortingCond"
                 />
               </td>
             </tr>
@@ -109,8 +127,9 @@
                 <input-component
                   :input-class="'class6'"
                   :class6Width="'300px'"
-                  :value="menuAdmObject.url"
                   :placeholder="'URL'"
+                  :value="menuAdmObject.url"
+                  v-model="menuAdmObject.url"
                 />
               </td>
             </tr>
@@ -119,15 +138,21 @@
               <td colspan="3">
                 <div style="display: inline-block">
                   <date-picker-component
-                    :classWrapper="'calender_input'"
-                    :calenderBackgroundColor="'rgb(247, 247, 248)'"
+                  :p-date="menuAdmObject.menuDtlStDt"
+                  @input="(value) => {menuAdmObject.menuDtlStDt = value;}"
+                  :date-format="'yyyy-MM-dd'"
+                  :classWrapper="'calender_input'"
+                  :calenderBackgroundColor="'rgb(247, 247, 248)'"
                   />
                 </div>
                 <span> ~ </span>
                 <div style="display: inline-block">
                   <date-picker-component
-                    :classWrapper="'calender_input'"
-                    :calenderBackgroundColor="'rgb(247, 247, 248)'"
+                  :isMinDate="menuAdmObject.menuDtlMinDt"
+                  :pDate="menuAdmObject.menuDtlEndDt"
+                  @input="(value) => {menuAdmObject.menuDtlEndDt = value;}"
+                  :classWrapper="'calender_input'"
+                  :calenderBackgroundColor="'rgb(247, 247, 248)'"
                   />
                 </div>
               </td>
@@ -136,13 +161,15 @@
               <th><label-component :labelNm="'메뉴노출여부'" /></th>
               <td><radio-component 
                     :RadioOption="'useNouse'" 
-                    @radioEmit="(radioValue) => { menuAdmObject.otpYn1 = radioValue }"
-                    :seletedRadio="menuAdmObject.otpYn1" /></td>
-              <th><label-component :labelNm="'메뉴 사용여부'" /></th>
+                    @radioEmit="(radioValue) => { menuAdmObject.menuShowYn = radioValue }"
+                    :seletedRadio="menuAdmObject.menuShowYn"
+                    :defaultcdId="menuAdmObject.menuShowYn" /></td>
+              <th><label-component :labelNm="'메뉴사용여부'" /></th>
               <td><radio-component 
                     :RadioOption="'useNouse'" 
-                    @radioEmit="(radioValue) => { menuAdmObject.otpYn2 = radioValue }"
-                    :seletedRadio="menuAdmObject.otpYn2" /></td>
+                    @radioEmit="(radioValue) => { menuAdmObject.menuUseYn = radioValue }"
+                    :seletedRadio="menuAdmObject.menuUseYn"
+                    :defaultcdId="menuAdmObject.menuUseYn" /></td>
             </tr>
 
             <tr>
@@ -152,13 +179,13 @@
                   :input-class="'class6 class6_2'"
                   :class6Width="'180px'"
                   :disabled="true"
-                  :value="'김케이티'"
+                  :value="menuAdmObject.dtlRegrNm"
                 />
                 <input-component
                   :input-class="'class6 class6_2'"
                   :class6Width="'180px'"
                   :disabled="true"
-                  :value="menuAdmObject.regrDt"
+                  :value="menuAdmObject.dtlRegrDt"
                 />
               </td>
             </tr>
@@ -170,13 +197,13 @@
                   :input-class="'class6 class6_2'"
                   :class6Width="'180px'"
                   :disabled="true"
-                  :value="'김클라우드'"
+                  :value="menuAdmObject.dtlAmdrNm"
                 />
                 <input-component
                   :input-class="'class6 class6_2'"
                   :class6Width="'180px'"
                   :disabled="true"
-                  :value="menuAdmObject.amdrDt"
+                  :value="menuAdmObject.dtlAmdrDt"
                 />
               </td>
             </tr>
@@ -216,40 +243,62 @@
                   :class6Width="'140px'"
                   :input-class="'class6 class6_2'"
                   :disabled="true"
-                  :value="menuAdmObject.menuId"
-                  :placeholder="'메뉴ID'"
+                  :value="menuAdmObject.wjtTypeId"
+                  :placeholder="'업무유형'"
                 />
                 <select-box-component
-                  style="height: 28px"
+                  style="height: 28px; margin-right: 6px;"
+                  :width="140"
                   :selectClass="'select_input4'"
                   :cdGroup="'wjtOptions'"
-                  :defaultValue="'업무유형 선택'"
-                  :defaultcdId="''"
                   :isDisabled="true"
-                  :width="140"
-                  :selectedValue="''"
-                  @input="
-                    (value) => {
-                      test = value;
-                    }
-                  "
+                  :defaultValue="'업무유형 선택'"
+                  :defaultcdId="menuAdmObject.wjtOption1"
+                  :selectedValue="menuAdmObject.wjtOption1"
+                  @input="(value) => {menuAdmObject.wjtOption1 = value;}"
                 />
+                <select-box-component
+                  v-if="menuAdmObject.wjtOption1==='butt'"
+                  style="height: 28px"
+                  :width="140"
+                  :selectClass="'select_input4'"
+                  :cdGroup="'wjtButtOptions'"
+                  :isDisabled="true"
+                  :defaultValue="'버튼 선택'"
+                  :defaultcdId="menuAdmObject.wjtOption2"
+                  :selectedValue="menuAdmObject.wjtOption2"
+                  @input="(value) => {menuAdmObject.wjtOption2 = value;}"
+                />
+                <input-component
+                  v-else-if="menuAdmObject.wjtOption1==='comCd'"
+                  :input-class="'class6'"
+                  :class6Width="'140px'"
+                  :placeholder="'공통그룹코드 입력'"
+                  :value="menuAdmObject.wjtOption2"
+                  v-model="menuAdmObject.wjtOption2"
+                />
+                <div>{{menuAdmObject.wjtOption1}}</div>
               </td>
             </tr>
             <tr>
-              <th><label-component :labelNm="'메뉴사용기간'" /></th>
+              <th><label-component :labelNm="'사용기간'" /></th>
               <td style="width: 50%">
                 <div style="display: inline-block">
                   <date-picker-component
-                    :classWrapper="'calender_input'"
-                    :calenderBackgroundColor="'rgb(247, 247, 248)'"
+                  :p-date="menuAdmObject.trtStDt"
+                  @input="(value) => {menuAdmObject.trtStDt = value;}"
+                  :classWrapper="'calender_input'"
+                  :calenderBackgroundColor="'rgb(247, 247, 248)'"
                   />
                 </div>
                 <span> ~ </span>
                 <div style="display: inline-block">
                   <date-picker-component
-                    :classWrapper="'calender_input'"
-                    :calenderBackgroundColor="'rgb(247, 247, 248)'"
+                  :p-date="menuAdmObject.trtEndDt"
+                  :isMinDate="menuAdmObject.trtStDt"
+                  @input="(value) => {menuAdmObject.trtEndDt = value;}"
+                  :classWrapper="'calender_input'"
+                  :calenderBackgroundColor="'rgb(247, 247, 248)'"
                   />
                 </div>
               </td>
@@ -259,8 +308,9 @@
               <td style="width: 100px">
               <radio-component 
                     :RadioOption="'useNouse'" 
-                    @radioEmit="(radioValue) => { menuAdmObject.otpYn3 = radioValue }"
-                    :seletedRadio="menuAdmObject.otpYn3" />
+                    @radioEmit="(radioValue) => { menuAdmObject.UseYn = radioValue }"
+                    :seletedRadio="menuAdmObject.UseYn"
+                    :defaultcdId="menuAdmObject.UseYn" />
               </td>
             </tr>
 
@@ -270,7 +320,8 @@
                 <radio-component 
                   :RadioOption="'aplyExpt'" 
                   @radioEmit="(radioValue) => { menuAdmObject.aplyExpt = radioValue }"
-                  :seletedRadio="menuAdmObject.aplyExpt" />
+                  :seletedRadio="menuAdmObject.aplyExpt"
+                  :defaultcdId="menuAdmObject.aplyExpt" />
               </td>
             </tr>
 
@@ -281,13 +332,13 @@
                   :input-class="'class6 class6_2'"
                   :class6Width="'180px'"
                   :disabled="true"
-                  :value="'김케이티'"
+                  :value="menuAdmObject.trtRegrNm"
                 />
                 <input-component
                   :input-class="'class6 class6_2'"
                   :class6Width="'180px'"
                   :disabled="true"
-                  :value="menuAdmObject.regrDt"
+                  :value="menuAdmObject.trtRegrDt"
                 />
               </td>
             </tr>
@@ -299,20 +350,22 @@
                   :input-class="'class6 class6_2'"
                   :class6Width="'180px'"
                   :disabled="true"
-                  :value="' 김클라우드  '"
+                  :value="menuAdmObject.trtAmdrNm"
                 />
 
                 <input-component
                   :input-class="'class6 class6_2'"
                   :class6Width="'180px'"
                   :disabled="true"
-                  :value="menuAdmObject.amdrDt"
+                  :value="menuAdmObject.trtAmdrDt"
                 />
               </td>
             </tr>
           </table>
         </form>
       </div>
+    
+      {{menuAdmObject}}
     </div>
   </article>
 </template>
@@ -328,6 +381,7 @@ import ButtonComponent from "@/components/common/ButtonComponent.vue";
 import DatePickerComponent from "@/components/common/DatePickerComponent.vue";
 import PopupComponent from "@/components/common/PopupComponent.vue";
 import MsfTree from "@/components/common/TreeComponent/msf-tree.vue";
+import AgGridComponent from "@/components/common/AgGridComponent.vue";
 
 export default {
   components: {
@@ -341,21 +395,40 @@ export default {
     DatePickerComponent,
     PopupComponent,
     MsfTree,
-  },
+    AgGridComponent,
+},
 
   data() {
     return {
       menuAdmObject: {
         sttus: "amend",
-        otpYn1: "",
-        otpYn2: "",
-        otpYn3: "",
-        aplyExpt:'',
-
-
-
-        regrDt: "2022-12-09 20:03:30",
-        amdrDt: "2022-12-09 19:20:30",
+        menuId:"",
+        upMenuId:"",
+        menuNm:"",
+        sortingCond:"",
+        url:"",
+        menuDtlStDt : new Date(), 
+        menuDtlMinDt : this.menuDtlStDt,
+        menuDtlEndDt : new Date('9999-12-31'),
+        menuShowYn: "01",
+        menuUseYn: "01",
+        dtlRegrNm : "김케이티",
+        dtlAmdrNm: "김클라우드",
+        dtlRegrDt: "2022-12-14 19:03:30",
+        dtlAmdrDt: "2022-12-15 10:09:40",
+        
+        wjtTypeId : "BTN00001" , 
+        wjtOption1:"",
+        wjtOption2:"",
+        trtStDt : new Date(), 
+        trtMinDt : this.trtStDt,
+        trtEndDt : new Date('9999-12-31'),
+        UseYn: "01",
+        aplyExpt:"01",
+        trtRegrNm : "김클라우드",
+        trtAmdrNm: "김케이티",
+        trtRegrDt: "2022-12-14 20:03:30",
+        trtAmdrDt: "2022-12-15 20:09:40",
       },
       isModalShow: false,
       test: "",

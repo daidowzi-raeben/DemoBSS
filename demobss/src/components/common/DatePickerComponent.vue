@@ -9,6 +9,7 @@
   :typeable="true"
   :placeholder="pPlaceholder"
   :input="updateDate(date)"
+  :min-date="new Date(isMinDate)"
   :clearable="true"
   ref="datepicker"
   >
@@ -48,11 +49,15 @@ export default {
     };
   },
   props: {
+    isMinDate:{
+      type: String,
+      default:null
+    },
     calenderBackgroundColor:{
       type:String,
       default:'white'
     },
-    pDate: null,
+    pDate: Date,
     width:{
       type:String,
       default:'140px'
@@ -73,7 +78,7 @@ export default {
     },
     dateFormat: {
       type: String,
-      default: "yyyy.MM.dd",
+      default: "yyyy-MM-dd",
     },
     // pPlaceholder: {
     //   //부모에서 받아올 placeholder
@@ -93,11 +98,10 @@ export default {
   },
   created() {
     this.date = this.pDate;
-    // console.log(this.date);
   },
   watch: {
-    pdate: function () {
-      this.date = this.pdate;
+    pDate(newDate) {
+      this.date = newDate;
     },
   },
   methods: {
@@ -141,8 +145,13 @@ select{
 }
 .v3dp__clearable {
   position: absolute;
-  right: 45px;
-  margin: 5px 0;
+  right: 40px;
+  margin: 3px 0;
   left: unset;
 }
+
+.v3dp__clearable > i{
+  font-size: 12pt;
+  font-weight: bold;
+  }
 </style>
