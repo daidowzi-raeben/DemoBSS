@@ -71,8 +71,8 @@ export default {
     },
     rowClicked: {
       //행 클릭 이벤트
-      type: String,
-      // default: function () {},
+      type: Function,
+      default: function () {},
     },
     isWidthFit: {
       //sizeColumnsToFit = 가로 스크롤 표시하지 않도록
@@ -112,22 +112,6 @@ export default {
     loading() {
       // console.log("loading");
       // if (this.gridApi != null) this.gridApi.showLoadingOverlay();
-    },
-    rowClicked(params) {
-      console.log(params)
-      if(this.userAdmSttus=="register") {               // 사용자관리 상태가 등록일 경우,
-        this.$emit('rowClickedPopup', true);            // row 클릭 될 경우 팝업 띄우고 
-        return this.deselectAll(1);                     // row 클릭 되지 않게 함 
-      }
-      else if(params.api.getSelectedRows() == ""){
-        this.$emit("seletedRowData", 'empty');          // 동일한 row 클릭 시, 해당 row 클릭 해제, 해당 객체 데이터 비우도록 emit
-      }else{
-        this.seletedRowData = params.api.getSelectedRows()[0]; // 다른 row 클릭 시
-        this.$emit("seletedRowData", this.seletedRowData);     // 달라진 값 객체 데이터에 전달 
-        }
-      // console.log("params aPI",params.api)                 params 객체 나중에 참고하면 좋을 듯
-      // console.log("params aPI get select row",params.api.getSelectedRows())
-        // this.gridApi.deselectAll()
     },
     onGridReady(params) {
       // console.log("onGridReady");
@@ -200,7 +184,7 @@ export default {
     },
     deselectAll(registerState){
       if (registerState==1 ){
-        this.$emit('seletedRowData', 'register');
+        // this.$emit('seletedRowData', 'register');
         this.gridApi.deselectAll();
       }
     },

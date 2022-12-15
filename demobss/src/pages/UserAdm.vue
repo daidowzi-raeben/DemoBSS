@@ -32,8 +32,7 @@
           :rowHeight="rowHeight"
           :isDeselect="true"
           :userAdmSttus="userAdmObject.sttus"
-          @seletedRowData=" (value) => {seletedUserData = value; } "
-          @rowClickedPopup="(value)=> { isUserLstModalShow= value;  }"
+          :rowClicked="userLstRowClicked"
           :overlayNoRowsTemplate="noRowTemplateMsg"
         />
         <div class="pcSelectAndPagingFlex">
@@ -55,11 +54,7 @@
               ref="PagingArea"
               :pageableData="pageableData"
               style="padding: 0"
-              @currentPage="
-                (value) => {
-                  currentPage = value;
-                }
-              "
+              @currentPage=" (value) => {currentPage = value;}"
             />
           </div>
         </div>
@@ -613,9 +608,11 @@ export default {
         console.log("newSeletedUserData", newSeletedUserData);
         if (newSeletedUserData == "empty") {
           this.emptyUserAdmObject(this.userAdmObject);
-        } else if (newSeletedUserData == "register") {
-          this.userLstPopup("register")
-        } else {
+        } 
+        // else if (newSeletedUserData == "register") {
+        //   this.userLstPopup()
+        // } 
+        else {
           // console.log("userAdmObject : ", this.userAdmObject)
           this.userAdmObject.cmpno = newSeletedUserData.cmpno;
           this.userAdmObject.userNm = newSeletedUserData.userNm;
@@ -642,15 +639,13 @@ export default {
       this.userAdmObject.isDisabled = false;
       this.emptyUserAdmObject(this.userAdmObject);
       this.$refs.agGridComponent.deselectAll(1);
-      // console.log(this.userAdmObject);
-      // }
+      this.seletedUserData = "register"
     },
     clickUserAmend() {
       if (this.userAdmObject.sttus == "register") {
         this.userAdmObject.sttus = "amend";
         this.userAdmObject.inputClass = "class6 class6_2";
         this.userAdmObject.isDisabled = true;
-        // console.log(this.userAdmObject);
       }
     },
     checkTheNum(num) {
@@ -700,9 +695,19 @@ export default {
       else this.isUserLstModalShow = false;
     },
     userLstpopupAgree(){
-      console.log(true)
-
+      console.log("유저리스트 팝업동의")
     },
+    userLstRowClicked(params){
+      let seletedRowData = params.api.getSelectedRows();
+      if(this.userAdmObject.sttus=="register") {       // 사용자관리 상태가 등록일 경우,
+        this.isUserLstModalShow= true;                 //row 클릭 될 경우 팝업 띄우고 
+        this.$refs.agGridComponent.deselectAll(1);     // 이전에 클릭 된 row 클릭 해제                   
+      }else if(seletedRowData == ""){
+        this.seletedUserData = "empty";                // 동일한 row 클릭 시, 해당 row 클릭 해제, 해당 객체 데이터 비우도록 emit
+      }else{
+        this.seletedUserData = seletedRowData[0];      // 다른 row 클릭 시 달라진 값 객체 데이터에 전달 
+      }
+    }
   },
 };
 </script>
