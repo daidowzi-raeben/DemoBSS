@@ -617,7 +617,7 @@
       "menuId": "L05M05S01",
       "menuNm": "메시지관리",
       "upMenuId": "L05M05S00",
-      "cmpnId": ""
+      "cmpnId": "MsgAdm"
     },
     {
       "menuId": "L05M06S00",
