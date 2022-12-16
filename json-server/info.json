@@ -440,6 +440,11 @@
       "model6": "8"
     }
   ],
+  "holiRowData":[
+    {"model1":"2022-05-01", "model2" : "일요일"},
+    {"model1":"2022-05-02", "model2" : "월요일"},
+    {"model1":"2022-05-03", "model2" : "화요일"}
+  ],
   "upRowData": [
     {
       "model1":"Cont_01_002",
