@@ -1,4 +1,4 @@
-{
+ {
   "info": {
     "info": [
       {
@@ -548,6 +548,17 @@
         "model5": "3",
         "model6": "8"
       }
+    ],
+    "securRowData": [
+      {"model1":"1","model2":"C0000008950","model3":"B0000008950","model4":"홍길*","model5":"S000008950","model6":"조회",
+        "model7":"L1M1S1", "model8":"고객 360 View", "model9":"/CUS010M.do","model10":"고객 360 View", "model11":"99334400",
+        "model12":"김길*", "model13":"111.111.111.111", "model14":"-", "model15":"2022-05-30 11:05:00"},
+      {"model1":"2","model2":"C0000008950","model3":"B0000008950","model4":"홍길*","model5":"S000008950","model6":"엑셀다운로드",
+        "model7":"L1M1S1", "model8":"고객 360 View", "model9":"/CUS010M.do","model10":"고객 360 View", "model11":"99334400",
+        "model12":"김길*", "model13":"111.111.111.111", "model14":"-", "model15":"2022-05-30 11:05:00"},
+      {"model1":"3","model2":"C0000008950","model3":"B0000008950","model4":"홍길*","model5":"S000008950","model6":"엑셀다운로드",
+        "model7":"L1M1S1", "model8":"고객 360 View", "model9":"/CUS010M.do","model10":"고객 360 View", "model11":"99334400",
+        "model12":"김길*", "model13":"111.111.111.111", "model14":"엑셀파일명.xlsx/100", "model15":"2022-05-30 11:05:00"}
     ],
     "holiRowData":[
       {"model1":"2022-05-01", "model2" : "일요일"},
