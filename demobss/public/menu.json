@@ -677,13 +677,13 @@
       "menuId": "L05M11S01",
       "menuNm": "고객정보 조회 이력관리",
       "upMenuId": "L05M11S00",
-      "cmpnId": ""
+      "cmpnId": "CustInfoRetvAdm"
     },
     {
       "menuId": "L05M11S02",
       "menuNm": "마스킹 해제이력관리",
       "upMenuId": "L05M11S00",
-      "cmpnId": ""
+      "cmpnId": "MaskRelesAdm"
     },
     {
       "menuId": "L05M13S00",
