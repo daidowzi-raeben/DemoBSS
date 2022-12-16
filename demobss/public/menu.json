@@ -584,6 +584,12 @@
       "cmpnId": ""
     },
     {
+      "menuId": "L05M02S01",
+      "menuNm": "휴일관리",
+      "upMenuId": "L05M02S00",
+      "cmpnId": "HoliAdm"
+    },
+    {
       "menuId": "L05M03S00",
       "menuNm": "공통코드관리",
       "upMenuId": "L05",

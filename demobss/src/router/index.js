@@ -44,6 +44,12 @@ const routes = [
       import(/* webpackChunkName: "about" */ "../pages/AutMappgAdm.vue"),
   },
   {
+    path: "/HoliAdm",
+    name: "HoliAdm",
+    component: () =>
+        import(/* webpackChunkName: "about" */ "../pages/HoliAdm.vue"),
+  },
+  {
     path: "/common",
     name: "Common",
     component: () =>
