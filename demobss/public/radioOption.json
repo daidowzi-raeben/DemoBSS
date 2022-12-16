@@ -64,5 +64,16 @@
       "cdNm": "radio5",
       "cdId": "05"
     }
+  ],
+  "scrtOptions":[
+    {
+      "cdNm": "비밀글",
+      "cdId": "01"
+    },
+    {
+      "cdNm": "공개",
+      "cdId": "02"
+    }
+  
   ]
 }

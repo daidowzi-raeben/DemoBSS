@@ -404,7 +404,7 @@
       "cdId": "butt5"
     }
   ],
-  "retvOptions":[
+  "ntfRetv":[
     {
       "cdNm": "전체",
       "cdId": "01"
@@ -422,7 +422,7 @@
       "cdId": "04"
     }
   ],
-  "NtfType":[
+  "ntfType":[
     {
       "cdNm": "전체",
       "cdId": "01"
@@ -442,6 +442,20 @@
     {
       "cdNm": "고객문의",
       "cdId": "05"
+    }
+  ],
+  "rcvrOptions":[
+    {
+      "cdNm": "제한안함",
+      "cdId": "01"
+    },
+    {
+      "cdNm": "A수신자",
+      "cdId": "02"
+    },
+    {
+      "cdNm": "B수신자",
+      "cdId": "03"
     }
   ]
 }
