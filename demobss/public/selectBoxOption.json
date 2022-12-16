@@ -206,15 +206,15 @@
   "useYn": [
     {
       "cdNm": "전체",
-      "cdId": 1
+      "cdId": "00"
     },
     {
       "cdNm": "사용",
-      "cdId": true
+      "cdId": "01"
     },
     {
       "cdNm": "미사용",
-      "cdId": false
+      "cdId": "02"
     }
   ],
   "inOfficeSttus": [
@@ -402,6 +402,46 @@
     {
       "cdNm": "승인/반려 버튼",
       "cdId": "butt5"
+    }
+  ],
+  "retvOptions":[
+    {
+      "cdNm": "전체",
+      "cdId": "01"
+    },
+    {
+      "cdNm": "글제목",
+      "cdId": "02"
+    },
+    {
+      "cdNm": "글내용",
+      "cdId": "03"
+    },
+    {
+      "cdNm": "작성자",
+      "cdId": "04"
+    }
+  ],
+  "NtfType":[
+    {
+      "cdNm": "전체",
+      "cdId": "01"
+    },
+    {
+      "cdNm": "일반공지",
+      "cdId": "02"
+    },
+    {
+      "cdNm": "시스템공지",
+      "cdId": "03"
+    },
+    {
+      "cdNm": "도움말",
+      "cdId": "04"
+    },
+    {
+      "cdNm": "고객문의",
+      "cdId": "05"
     }
   ]
 }

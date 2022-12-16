@@ -602,9 +602,21 @@
       "cmpnId": ""
     },
     {
+      "menuId": "L05M04S01",
+      "menuNm": "공지사항관리",
+      "upMenuId": "L05M04S00",
+      "cmpnId": "NoticeAdm"
+    },
+    {
       "menuId": "L05M05S00",
       "menuNm": "메시지관리",
       "upMenuId": "L05",
+      "cmpnId": ""
+    },
+    {
+      "menuId": "L05M05S01",
+      "menuNm": "메시지관리",
+      "upMenuId": "L05M05S00",
       "cmpnId": ""
     },
     {
