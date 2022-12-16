@@ -440,6 +440,67 @@
       "model6": "8"
     }
   ],
+  "upRowData": [
+    {
+      "model1":"Cont_01_002",
+      "model2":"계약>계약정보>계약관리",
+      "model3":"사용"
+    },
+    {
+      "model1":"Cont_01_002",
+      "model2":"계약>계약정보>계약관리",
+      "model3":"사용"
+    },
+    {
+      "model1":"Cont_01_002",
+      "model2":"계약>계약정보>계약관리",
+      "model3":"미사용"
+    }
+  ],
+  "downRowData": [
+    {
+      "model1":"BTN0000001",
+      "model2":"공통코드",
+      "model3":"코드그룹명",
+      "model4":"사용"
+    },
+    {
+      "model1":"BTN0000001",
+      "model2":"버튼",
+      "model3":"등록 버튼",
+      "model4":"사용"
+    },
+    {
+      "model1":"BTN0000001",
+      "model2":"버튼",
+      "model3":"삭제 버튼",
+      "model4":"사용"
+    },
+    {
+      "model1":"BTN0000001",
+      "model2":"공통코드",
+      "model3":"코드그룹명",
+      "model4":"사용"
+    }
+  ],
+  "autTabData": [
+    {
+      "menuId": "11",
+      "menuNm": "메뉴권한"
+    },
+    {
+      "menuId": "22",
+      "menuNm": "컴포넌트권한"
+    },
+    {
+      "menuId": "33",
+      "menuNm": "조직권한"
+    },
+    {
+      "menuId": "44",
+      "menuNm": "사용자권한"
+    }
+  ],
   "contentTree": [
     {
       "groupId": 0,

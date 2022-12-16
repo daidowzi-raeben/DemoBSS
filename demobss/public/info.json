@@ -439,6 +439,24 @@
       "model6": "8"
     }
   ],
+  "autTabData": [
+    {
+      "menuId": "",
+      "menuNm": "메뉴권한"
+    },
+    {
+      "menuId": "",
+      "menuNm": "컴포넌트권한"
+    },
+    {
+      "menuId": "",
+      "menuNm": "조직권한"
+    },
+    {
+      "menuId": "",
+      "menuNm": "사용자권한"
+    }
+  ],
   "contentTree": [
     {
       "groupId": 0,

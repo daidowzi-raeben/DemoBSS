@@ -198,6 +198,42 @@
       "cdId": false
     }
   ],
+  "autType": [
+    {
+      "cdNm": "전체",
+      "cdId": "전체"
+    },
+    {
+      "cdNm": "조회",
+      "cdId": "조회"
+    },
+    {
+      "cdNm": "등록",
+      "cdId": "등록"
+    },
+    {
+      "cdNm": "변경",
+      "cdId": "변경"
+    },
+    {
+      "cdNm": "삭제",
+      "cdId": "삭제"
+    }
+  ],
+  "retvBase": [
+    {
+      "cdNm": "전체",
+      "cdId": "전체"
+    },
+    {
+      "cdNm": "메뉴ID",
+      "cdId": "menuId"
+    },
+    {
+      "cdNm": "메뉴명",
+      "cdId": "menuNm"
+    }
+  ],
   "inOfficeSttus": [
     {
       "cdNm": "전체",
@@ -212,7 +248,30 @@
       "cdId": "loab"
     }
   ],
-
+  "dtlCd": [
+    {
+      "cdNm": "CDDTL01 코드명",
+      "cdId": "CDDTL01"
+    },
+    {
+      "cdNm": "CDDTL02 코드명",
+      "cdId": "CDDTL02"
+    }
+  ],
+  "orgBase": [
+    {
+      "cdNm": "전체",
+      "cdId": "전체"
+    },
+    {
+      "cdNm": "조직ID",
+      "cdId": "orgId"
+    },
+    {
+      "cdNm": "조직명",
+      "cdId": "orgNm"
+    }
+  ],
   "inOfficeSttus2": [
     {
       "cdNm": "재직",
