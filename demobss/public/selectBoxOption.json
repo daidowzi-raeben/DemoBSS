@@ -206,15 +206,15 @@
   "useYn": [
     {
       "cdNm": "전체",
-      "cdId": 1
+      "cdId": "00"
     },
     {
       "cdNm": "사용",
-      "cdId": true
+      "cdId": "01"
     },
     {
       "cdNm": "미사용",
-      "cdId": false
+      "cdId": "02"
     }
   ],
   "autType": [
@@ -519,6 +519,92 @@
     {
       "cdNm": "승인/반려 버튼",
       "cdId": "butt5"
+    }
+  ],
+  "ntfRetv":[
+    {
+      "cdNm": "전체",
+      "cdId": "01"
+    },
+    {
+      "cdNm": "글제목",
+      "cdId": "02"
+    },
+    {
+      "cdNm": "글내용",
+      "cdId": "03"
+    },
+    {
+      "cdNm": "작성자",
+      "cdId": "04"
+    }
+  ],
+  "ntfType":[
+    {
+      "cdNm": "전체",
+      "cdId": "01"
+    },
+    {
+      "cdNm": "일반공지",
+      "cdId": "02"
+    },
+    {
+      "cdNm": "시스템공지",
+      "cdId": "03"
+    },
+    {
+      "cdNm": "도움말",
+      "cdId": "04"
+    },
+    {
+      "cdNm": "고객문의",
+      "cdId": "05"
+    }
+  ],
+  "rcvrOptions":[
+    {
+      "cdNm": "제한안함",
+      "cdId": "01"
+    },
+    {
+      "cdNm": "A수신자",
+      "cdId": "02"
+    },
+    {
+      "cdNm": "B수신자",
+      "cdId": "03"
+    }
+  ],
+  "msgRetv":[
+    {
+      "cdNm": "전체",
+      "cdId": "01"
+    },
+    {
+      "cdNm": "메시지 제목",
+      "cdId": "02"
+    },
+    {
+      "cdNm": "메시지 내용",
+      "cdId": "03"
+    }
+  ],
+  "msgType":[
+    {
+      "cdNm": "전체",
+      "cdId": "01"
+    },
+    {
+      "cdNm": "Email",
+      "cdId": "02"
+    },
+    {
+      "cdNm": "SMS(알림톡)",
+      "cdId": "03"
+    },
+    {
+      "cdNm": "청구서안내",
+      "cdId": "04"
     }
   ]
 }

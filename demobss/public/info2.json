@@ -544,9 +544,8 @@
       "ntcMeth": "ntcMeth1",
       "useYn": "02",
       "otpYn": "01",
-      "email":"abe56e",
-      "emailDomain":"daum"
-      
+      "email": "abe56e",
+      "emailDomain": "daum"
     },
     {
       "cmpno": "82672436",
@@ -560,9 +559,8 @@
       "ntcMeth": "ntcMeth1",
       "useYn": "01",
       "otpYn": "02",
-      "email":"ab24cd",
-      "emailDomain":"naver"
-      
+      "email": "ab24cd",
+      "emailDomain": "naver"
     },
     {
       "cmpno": "82679415",
@@ -576,9 +574,8 @@
       "ntcMeth": "ntcMeth2",
       "useYn": "02",
       "otpYn": "02",
-      "email":"2ee12",
-      "emailDomain":"kt"
-      
+      "email": "2ee12",
+      "emailDomain": "kt"
     },
     {
       "cmpno": "82619315",
@@ -592,9 +589,8 @@
       "ntcMeth": "ntcMeth3",
       "useYn": "01",
       "otpYn": "01",
-      "email":"t435",
-      "emailDomain":"gmail"
-      
+      "email": "t435",
+      "emailDomain": "gmail"
     },
     {
       "cmpno": "82675315",
@@ -608,9 +604,8 @@
       "ntcMeth": "ntcMeth3",
       "useYn": "02",
       "otpYn": "02",
-      "email":"123ewr",
-      "emailDomain":"daum"
-      
+      "email": "123ewr",
+      "emailDomain": "daum"
     },
     {
       "cmpno": "89679315",
@@ -747,6 +742,100 @@
       "org": "DX사업본부",
       "rspof": "사원",
       "duty": "BSS 개발6"
+    }
+  ],
+  "NoticeRowData": [
+    {
+      "ntfIndex": "0620",
+      "ntfType": "일반공지",
+      "ntfTilte": "일반 공지 안내 드립니다.",
+      "ntfYn": "N",
+      "ntfStDt": "2022-12-19",
+      "ntfEndDt": "2022-12-24",
+      "attachment": "N",
+      "popupYn": "Y",
+      "popupStDt": "2022-12-19",
+      "popupEndDt": "2022-12-24",
+      "regr": "김케이티",
+      "regrDt": "2022-12-05"
+    },
+    {
+      "ntfIndex": "0621",
+      "ntfType": "시스템공지",
+      "ntfTilte": "시스템공지 안내 드립니다.",
+      "ntfYn": "Y",
+      "ntfStDt": "2022-12-26",
+      "ntfEndDt": "2022-12-31",
+      "attachment": "Y",
+      "popupYn": "N",
+      "popupStDt": "-",
+      "popupEndDt": "-",
+      "regr": "김케이티",
+      "regrDt": "2022-12-05"
+    }
+  ],
+  "rcvrRowData": [
+    {
+      "rcvrGrNm": "경영기획본부",
+      "rcvrGrId": "1001"
+    },
+    {
+      "rcvrGrNm": "Cloud본부",
+      "rcvrGrId": "1002"
+    },
+    {
+      "rcvrGrNm": "IDC본부",
+      "rcvrGrId": "1003"
+    },
+    {
+      "rcvrGrNm": "정보보안담당",
+      "rcvrGrId": "1004"
+    },
+    {
+      "rcvrGrNm": "IT개발P-TF",
+      "rcvrGrId": "1005"
+    }
+  ],
+  "msgRowData": [
+    {
+      "msgId": "0001",
+      "msgType": "시스템공지",
+      "msgTilte": "IDC 점검",
+      "msgCallBack": "1577-1111",
+      "msgStDt": "2022-12-05",
+      "msgEndDt": "",
+      "regr": "김클라우드",
+      "regrDt": "2022-11-16"
+    },
+    {
+      "msgId": "0002",
+      "msgType": "도움말",
+      "msgTilte": "BSS 사용 문의 안내",
+      "msgCallBack": "1577-1111",
+      "msgStDt": "",
+      "msgEndDt": "",
+      "regr": "김클라우드",
+      "regrDt": "2022-12-23"
+    },
+    {
+      "msgId": "0003",
+      "msgType": "도움말",
+      "msgTilte": "안내 사항",
+      "msgCallBack": "1577-1111",
+      "msgStDt": "2022-12-21",
+      "msgEndDt": "",
+      "regr": "김클라우드",
+      "regrDt": "2022-12-29"
+    },
+    {
+      "msgId": "0004",
+      "msgType": "시스템공지",
+      "msgTilte": "점검 안내 ",
+      "msgCallBack": "1577-1111",
+      "msgStDt": "2023-01-02",
+      "msgEndDt": "2023-01-05",
+      "regr": "김클라우드",
+      "regrDt": "-"
     }
   ]
 }

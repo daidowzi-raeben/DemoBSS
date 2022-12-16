@@ -31,14 +31,13 @@
           :columnDefs="columnDefs"
           :rowHeight="rowHeight"
           :isDeselect="true"
-          :userAdmSttus="userAdmObject.sttus"
           :rowClicked="userLstRowClicked"
           :overlayNoRowsTemplate="noRowTemplateMsg"
         />
-        <div class="pcSelectAndPagingFlex">
+        <div class="pgSelectAndPagingFlex">
           <div>
             <select-box-component
-              class="pcSelectBox"
+              class="pgSelectBox"
               :selectClass="'select_input3'"
               :cdGroup="'optionSearchNum'"
               :defaultValue="'선택'"
@@ -50,7 +49,7 @@
           </div>
           <div>
             <paging-area
-              class="pcPagingArea"
+              class="pgPagingArea"
               ref="PagingArea"
               :pageableData="pageableData"
               style="padding: 0"
@@ -545,7 +544,6 @@ export default {
           cellClassRules: { "cell-span": "true" },
         },
       ],
-
       pageableData: {
         pageNumber: 1,
         currentMinPage: 1,
@@ -744,19 +742,19 @@ export default {
   margin-top: 5px;
 }
 
-.pcSelectAndPagingFlex {
+.pgSelectAndPagingFlex {
   font-size: 20px;
   margin-top: 20px;
   display: grid;
   grid-template-columns: 100px calc(100% - 200px) 100px;
 }
 
-.pcSelectAndPagingFlex > div:nth-child(1) {
+.pgSelectAndPagingFlex > div:nth-child(1) {
   grid-column: 1;
   width: 100px;
   height: 22px;
 }
-.pcSelectAndPagingFlex > div:nth-child(2) {
+.pgSelectAndPagingFlex > div:nth-child(2) {
   grid-column: 2;
   padding: 0px;
 }

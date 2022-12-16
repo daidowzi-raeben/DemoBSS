@@ -67,7 +67,7 @@
           <button-component
             :btnClass="'btnClass5'"
             :btnWidth="'60px'"
-            :btnName="menuAdmObject.sttus == 'amend' ? '변경' : '등록'"
+            :btnName="menuAdmObject.ntfSttus == 'amend' ? '변경' : '등록'"
             @click="popup"
           />
         </span>
@@ -213,7 +213,7 @@
         <popup-component
           v-if="isModalShow"
           :popupmsg="`${
-            menuAdmObject.sttus == 'amend' ? '변경' : '등록'
+            menuAdmObject.ntfSttus == 'amend' ? '변경' : '등록'
           }하시겠습니까?`"
           @popup="isModalShow = false"
           @AGREE="popupAgree()"
@@ -401,7 +401,7 @@ export default {
   data() {
     return {
       menuAdmObject: {
-        sttus: "amend",
+        ntfSttus: "amend",
         menuId:"",
         upMenuId:"",
         menuNm:"",
