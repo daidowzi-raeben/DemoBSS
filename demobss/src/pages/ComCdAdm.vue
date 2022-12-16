@@ -105,6 +105,7 @@
             :header-color="'rgb(239 245 252)'"
             :rowData="this.cdGpRowData"
             :columnDefs="columnDefs"
+            :row-height="40"
             :rowClicked="cdGpclickedRow"
             :isWidthFit="false"
             :overlayNoRowsTemplate="
@@ -174,6 +175,7 @@
             :rowData="this.cdLstRowData"
             :columnDefs="columnDefs1"
             :rowClicked="cdLstclickedRow"
+            :row-height="40"
             :isWidthFit="false"
             :overlayNoRowsTemplate="
           `<span> <br>` + '<br />조회 결과가 없습니다.' + ` </span>`

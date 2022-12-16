@@ -1,15 +1,23 @@
 <template>
   <div class="top-container">
     <div class="grid-wrapper ag-theme-alpine">
-      <div class="panel panel-primary" style="margin-right: 10px;">
+      <sub-info-title :subInfoTitleNm="leftTitle"/>
+      <p style="margin-left:5px; display:inline-block;">(총 <label style="font-weight: bold">{{ total }}</label>건)</p>
+      <div class="panel panel-primary" style="height: 260px;">
           <ag-grid-vue
+              class="ag-grid"
               style="height: 100%;"
               :defaultColDef="defaultColDef"
+              @first-data-rendered="onFirstDataRendered"
               rowSelection="multiple"
               :rowDragMultiRow="true"
+              :rowClassRules="rowClassRules"
               :suppressRowClickSelection="true"
               :getRowNodeId="getRowNodeId"
+              headerHeight="30"
               :rowDragManaged="true"
+              :overlayNoRowsTemplate="overlayNoRowsTemplate"
+              :overlayLoadingTemplate="overlayLoadingTemplate"
               :suppressMoveWhenRowDragging="true"
               :animateRows="true"
               :rowData="leftRowData"
@@ -18,15 +26,24 @@
               :modules="modules">
           </ag-grid-vue>
       </div>
-      <div class="panel panel-primary" style="margin-left: 10px;">
+      <br />
+      <sub-info-title :subInfoTitleNm="rightTitle"/>
+      <p style="margin-left:5px; display:inline-block;">(총 <label style="font-weight: bold">{{ total }}</label>건)</p>
+      <div class="panel panel-primary" style="height: 260px;">
           <ag-grid-vue
+              class="ag-grid"
               style="height: 100%;"
               :defaultColDef="defaultColDef"
+              @first-data-rendered="onFirstDataRendered"
               rowSelection="multiple"
               :rowDragMultiRow="true"
+              :rowClassRules="rowClassRules"
               :suppressRowClickSelection="true"
               :getRowNodeId="getRowNodeId"
+              headerHeight="30"
               :rowDragManaged="true"
+              :overlayNoRowsTemplate="overlayNoRowsTemplate"
+              :overlayLoadingTemplate="overlayLoadingTemplate"
               :suppressMoveWhenRowDragging="true"
               :animateRows="true"
               :rowData="rightRowData"
@@ -42,6 +59,7 @@
 <script>
 import "ag-grid-community/dist/styles/ag-grid.css";
 import "ag-grid-community/dist/styles/ag-theme-alpine.css";
+import subInfoTitle from "@/components/common/SubInfoTitle";
 import {AgGridVue} from "ag-grid-vue3";
 import {AllCommunityModules} from '@ag-grid-community/all-modules';
 
@@ -49,30 +67,47 @@ export default {
   name: "AgGridComponent",
   data: function () {
     return {
+      windowWidth :window.innerWidth,
       modules: AllCommunityModules,
       leftApi: null,
       rightApi: null,
-
+      gridApi: null,
+      gridColumnApi: null,
+      rowClassRules: null,
       defaultColDef: {
         flex: 1,
         minWidth: 100,
-        sortable: true,
-        filter: true,
-        resizable: true
+        resizable: true,
       },
+      overlayLoadingTemplate: `<div class="ag-overlay-loading-center"> Loading... </div>`,
     };
   },
   props:{
-    leftRowData : [],
-    rightRowData : [],
-    Columns:[]
+    leftRowData : Object,
+    rightRowData : Object,
+    Columns:{
+      type:Array,
+      default:''
+    },
+    leftTitle:null,
+    rightTitle:null,
+
+    headerColor:{
+      type:String,
+      default:"#f8f8f8"
+    },
+    overlayNoRowsTemplate: {
+      type: String,
+      default: `<span class="red"> <br><br>검색 결과가 없습니다. </span>`,
+    },
   },
   components: {
     AgGridVue,
+    subInfoTitle
   },
   methods: {
     getRowNodeId(data) {
-      return data.athlete;
+      return data.model1;
     },
 
     onGridReady(params, side) {
@@ -104,15 +139,64 @@ export default {
       );
 
       api.addRowDropZone(dropZone);
-    }
+    },
+    onFirstDataRendered() {
+      // console.log("onFirstDataRendered");
+      this.makeNoRows();
+      this.makeAutoWidth();
+    },
+    makeAutoWidth() {
+      if (!this.isWidthFit) {
+        //가로 스크롤 = autosize
+        this.allColumnIds= [];
+        this.gridColumnApi.getColumns().forEach((column) => {
+          this.allColumnIds.push(column.colId);
+        });
+
+        // 여기 조율 필요합니다~~
+        // this.gridColumnApi.autoSizeColumn(this.allColumnIds);            // 컬럼, data 전부 생략, 간격 맞춤  (스크롤바)
+        // this.gridColumnApi.autoSizeAllColumns(this.allColumnIds);        // 컬럼은 생략됨 / data 전부 다 표시   (스크롤바)
+        //this.gridColumnApi.autoSizeColumns(this.allColumnIds,false);     // 컬럼, data 전부 표시, 간격 맞춤 (스크롤바)
+        this.gridApi.sizeColumnsToFit(this.allColumnIds);                  // 컬럼, data 전부 생략, 간격 맞추고 테이블 크기 맞춤 (NO 스크롤)
+        // this.gridApi.gridBodyCtrl.eBodyViewport.style = "border-bottom:0px;"; //안쪽
+      } else {
+        this.gridApi.sizeColumnsToFit(); //끝까지 맞춤
+        // console.log("끝까지 맞춤 ");
+      }
+    },
+    makeNoRows() {
+      if (this.rowData == null || this.rowData.length == 0) {
+        //데이터가 없는 경우
+        //overlayNoRowsTemplate 출력됨
+
+        // this.gridApi.gridBodyCtrl.eBodyViewport.style = "height:90px; ";
+        this.gridApi.gridBodyCtrl.eBodyViewport.style.height = "90px";
+        // border-bottom:#e4e4e4 solid 1px;
+
+        if (!this.isAutoHeight) {
+          this.gridApi.setDomLayout("normal");
+        }
+        // this.gridApi.showNoRowsOverlay();
+        // console.log("NO DATA");
+      }
+      // else {
+      //   //데이터가 있는 경우
+      //   this.gridApi.gridBodyCtrl.eBodyViewport.style.height = "";
+
+      //   if (this.isAutoHeight) {
+      //     this.gridApi.setDomLayout("autoHeight");
+      //   } else {
+      //     this.gridApi.setDomLayout("normal"); //정해진 만큼만 보이도록(스크롤)
+      //   }
+      // }
+    },
   },
 };
 </script>
 
-<style scoped>
+<style>
 .top-container {
   height: 100%;
-  display: flex;
   flex-direction: column;
 }
 
@@ -125,14 +209,12 @@ export default {
 }
 
 .grid-wrapper {
-  display: flex;
   flex: 1 1 auto;
   margin-top: 5px;
 }
 
 .grid-wrapper .panel {
   flex: 1 1 50%;
-  display: flex;
   flex-direction: column;
   overflow: hidden;
 }
@@ -141,7 +223,6 @@ export default {
   flex: 1 1 auto;
   overflow: hidden;
   padding: 0;
-  display: flex;
 }
 
 .grid-wrapper .panel-body > div {
@@ -150,7 +231,6 @@ export default {
 .ag-grid {
   width: 100%;
   height: 100%;
-  border-top: 1px solid #008b84;
   border-right: 1px solid #dfe5e9;
   border-bottom: 1px solid #dfe5e9;
   border-left: 1px solid #dfe5e9;
@@ -176,7 +256,7 @@ export default {
   cursor: pointer;
 }
 
-.ag-grid .ag-header {
+.ag-theme-alpine .ag-header {
   background-color: v-bind(headerColor);
   border-bottom: #e4e4e4 solid 1px;
   box-sizing: border-box;
@@ -209,7 +289,7 @@ export default {
   border-left: 0;
 }
 
-.ag-grid .ag-header-cell-label,
+.ag-theme-alpine .ag-header-cell-label,
 .ag-header-group-cell-label {
   justify-content: center;
   height: 60px;
@@ -278,7 +358,9 @@ export default {
 .ag-grid .ag-row-selected {
   background-color: rgb(255, 254, 238);
 }
-
+.ag-grid .ag-checkbox-input{
+  justify-content: flex-start;
+}
 .ag-grid .ag-checkbox-input::after {
   display: none;
 
@@ -432,14 +514,4 @@ export default {
   z-index: 1;
 }
 
-.ag-overlay-loading-center {
-  width: 100%;
-  height: 100%;
-  justify-content: center;
-  text-align: center;
-  display: flex;
-  background-color: #f8f8f8cc;
-  align-items: center;
-  font-weight: 600;
-}
 </style>
