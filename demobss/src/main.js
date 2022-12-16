@@ -15,6 +15,7 @@ import VirtualList from "vue3-virtual-scroll-list";
 // axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*';
 
 
+
 createApp(App)
   .use(store)
   .use(router)

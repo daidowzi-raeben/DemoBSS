@@ -440,6 +440,115 @@
         "model6": "8"
       }
     ],
+    "upRowData": [
+      {
+        "model1":"Cont_01_002",
+        "model2":"계약>계약정보>계약관리",
+        "model3":"사용"
+      },
+      {
+        "model1":"Cont_01_002",
+        "model2":"계약>계약정보>계약관리",
+        "model3":"사용"
+      },
+      {
+        "model1":"Cont_01_002",
+        "model2":"계약>계약정보>계약관리",
+        "model3":"미사용"
+      }
+    ],
+    "downRowData": [
+      {
+        "model1":"BTN0000001",
+        "model2":"공통코드",
+        "model3":"코드그룹명",
+        "model4":"사용"
+      },
+      {
+        "model1":"BTN0000001",
+        "model2":"버튼",
+        "model3":"등록 버튼",
+        "model4":"사용"
+      },
+      {
+        "model1":"BTN0000001",
+        "model2":"버튼",
+        "model3":"삭제 버튼",
+        "model4":"사용"
+      },
+      {
+        "model1":"BTN0000001",
+        "model2":"공통코드",
+        "model3":"코드그룹명",
+        "model4":"사용"
+      }
+    ],
+    "autRowData": [
+      {
+        "model1": "AUT_ARCM_01_001-01",
+        "model2": "입금조회-조회",
+        "model3": "조회",
+        "model4": "사용",
+        "model5": "3",
+        "model6": "8"
+      },
+      {
+        "model1": "AUT_ARCM_01_001-01",
+        "model2": "입금조회-조회",
+        "model3": "조회",
+        "model4": "사용",
+        "model5": "3",
+        "model6": "8"
+      },
+      {
+        "model1": "AUT_ARCM_01_001-01",
+        "model2": "입금조회-조회",
+        "model3": "조회",
+        "model4": "사용",
+        "model5": "3",
+        "model6": "8"
+      },
+      {
+        "model1": "AUT_ARCM_01_001-01",
+        "model2": "입금조회-조회",
+        "model3": "조회",
+        "model4": "사용",
+        "model5": "3",
+        "model6": "8"
+      },
+      {
+        "model1": "AUT_ARCM_01_001-01",
+        "model2": "입금조회-조회",
+        "model3": "조회",
+        "model4": "사용",
+        "model5": "3",
+        "model6": "8"
+      },
+      {
+        "model1": "AUT_ARCM_01_001-01",
+        "model2": "입금조회-조회",
+        "model3": "조회",
+        "model4": "사용",
+        "model5": "3",
+        "model6": "8"
+      },
+      {
+        "model1": "AUT_ARCM_01_001-01",
+        "model2": "입금조회-조회",
+        "model3": "조회",
+        "model4": "사용",
+        "model5": "3",
+        "model6": "8"
+      },
+      {
+        "model1": "AUT_ARCM_01_001-01",
+        "model2": "입금조회-조회",
+        "model3": "조회",
+        "model4": "사용",
+        "model5": "3",
+        "model6": "8"
+      }
+    ],
     "contentTree": [
       {
         "groupId": 0,

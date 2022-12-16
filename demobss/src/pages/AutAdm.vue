@@ -3,7 +3,7 @@
     <div class="item"> <!--1번 -->
       <div class="AutType">
       <span>
-        코드구분
+        권한유형
       </span>
         <span>
         <select-box-component
@@ -11,9 +11,9 @@
             :cdGroup="'codeDiv'"
             :disabled="true"
             :is-disabled="true"
-            :defaultValue="'코드구분선택'"
-            @input=" (value) => { searchDiv = value;}"
-            v-model="searchDiv"
+            :defaultValue="'권한유형 선택'"
+            :selected-value="autTypeSel"
+            @input=" (value) => { autTypeSel = value;}"
         />
       </span>
         <span>
@@ -21,7 +21,7 @@
             :type="'search'"
             :inputClass="'class4'"
             :placeholder="'검색어 입력'"
-            @input=" (value) => { searchValue = value;}"
+            :value="searchValue"
             v-model="searchValue"
             style="width:100%; height:100%"
         />
@@ -35,8 +35,8 @@
             :cdGroup="'useYn'"
             :is-disabled="true"
             :defaultValue="'사용여부 선택'"
-            @input=" (value) => { searchDiv = value;}"
-            v-model="searchDiv"
+            @input=" (value) => { useYn = value;}"
+            :selected-value="useYn"
         />
       </span>
         <span>
@@ -46,6 +46,7 @@
             :btn-name ="'초기화'"
             :btnHeight="'28px'"
             :btnWidth ="'100px'"
+            @click="resetSearch"
         />
       </span>
         <span>
@@ -55,13 +56,14 @@
             :btn-name ="'검색'"
             :btnHeight="'28px'"
             :btnWidth ="'100px'"
+            @click="autLstSearch"
         />
       </span>
       </div>
     </div>
     <div class="item"> <!--2번 -->
       <div style="width: 100%;" >
-        <SubInfoTitle :subInfoTitleNm="'코드그룹 리스트'"/>
+        <SubInfoTitle :subInfoTitleNm="'권한 리스트'"/>
         <p style="margin-left:5px; display:inline-block;">(총 <label style="font-weight: bold">{{ total }}</label>건)</p>
 
         <span style="float: right">
@@ -76,7 +78,7 @@
           :btnClass="'btnClass3'"
           :btnName="'변경'"
           :btnWidth="'auto'"
-          @click="autUpdate=true; autReg=false; disabled=true"
+          @click="autChg"
       />
         </span>
         <span style="float: right">
@@ -84,7 +86,7 @@
           :btnClass="'btnClass3'"
           :btnName="'등록'"
           :btnWidth="'auto'"
-          @click="autReg=true; autUpdate=false; disabled=false"
+          @click="autReg"
       />
         </span>
       </div>
@@ -93,6 +95,7 @@
             :header-color="'rgb(239 245 252)'"
             :rowData="RowData"
             :columnDefs="columnDefs"
+            :row-height="40"
             :rowClicked="clickedRow"
             :isWidthFit="false"
             :overlayNoRowsTemplate="
@@ -126,7 +129,7 @@
         </span>
       </div>
     </div>
-    <div class="item" v-if="autReg===true || autUpdate===true"> <!--3번 -->
+    <div class="item"> <!--3번 -->
       <div style="width: 100%; height: 100%;">
         <div>
           <sub-info-title :subInfoTitleNm="'권한 상세정보'"/>
@@ -136,7 +139,7 @@
             :btnName="'등록'"
             :btnHeight="'28px'"
             :btnWidth ="'100px'"
-            v-if="autReg===true"
+            v-if="autRegConf===true || autChgConf===false"
             @click="isModalRegShow=true"
         />
             <button-component
@@ -144,7 +147,7 @@
                 :btnName="'변경'"
                 :btnHeight="'28px'"
                 :btnWidth ="'100px'"
-                v-if="autUpdate===true"
+                v-if="autChgConf===true"
                 @click="isModalUpdateShow=true"
             />
       </span>
@@ -154,13 +157,13 @@
             <tr>
               <th>권한ID</th>
               <td colspan="3">
-                <input-component :input-class="'class5 class5_long1'" :class="autUpdate===true ? 'input_disabled':'input'"  :long-width="'600px'" :disabled="disabled" :value="'ACRND_TYPE_CD' " />
+                <input-component :input-class="'class5 class5_long1'" :class="autChgConf===true ? 'input_disabled':'input'"  :long-width="'600px'" :disabled="disabled" :value="this.autId" />
               </td>
             </tr>
             <tr>
               <th>권한명</th>
               <td colspan="3">
-                <input-component class="input" :input-class="'class5 class5_long1'" :long-width="'600px'" :value="'코드그룹명 입력' " />
+                <input-component class="input" :input-class="'class5 class5_long1'" :long-width="'600px'" :value="this.autNm" />
               </td>
             </tr>
             <tr>
@@ -168,17 +171,18 @@
               <td>
                 <select-box-component
                     :selectClass="'select_input3'"
-                    :cdGroup="'codeDiv'"
+                    :cdGroup="'autType'"
                     :disabled="true"
                     :is-disabled="true"
                     style="
-                    width: 100px;
+                    width: 120px;
                     height: 26px;
                     "
+                    :selected-value="autType"
                     :select_input3_marginLeft="0"
-                    :defaultValue="'조회'"
-                    @input=" (value) => { searchDiv = value;}"
-                    v-model="searchDiv"
+                    :defaultValue="'권한유형 선택'"
+                    @input=" (value) => { autType = value;}"
+                    v-model="autType"
                   />
               </td>
               <th>사용여부</th>
@@ -190,20 +194,15 @@
             <tr>
               <th>등록자/등록일시</th>
               <td colspan="3">
-                <span><input-component :class="autUpdate===true ? 'input_disabled':'input'" :input-class="'class5 class5_long1'" :long-width="'150px'" :disabled="disabled" :value="'코드그룹명 입력' " /></span>
-                <span >
-                <date-picker-component
-                    :classWrapper="'calender_input'" :disabled="disabled" :class="autUpdate===true ? 'input_disabled':'input'"
-                /></span>
+                <span><input-component :class="'input_disabled'" :input-class="'class5 class5_long1'" :long-width="'150px'" :disabled="true" :value="this.regr" /></span>
+                <span ><input-component :class="'input_disabled'" :input-class="'class5 class5_long1'" :long-width="'150px'"  :disabled="true" :value="this.regDate" /></span>
               </td>
             </tr>
             <tr>
               <th>수정자/수정일시</th>
               <td colspan="3">
-                <span><input-component :class="autUpdate===true ? 'input_disabled':'input'" :input-class="'class5 class5_long1'" :long-width="'150px'"  :disabled="disabled" :value="'코드그룹명 입력' " /></span>
-                <span><date-picker-component
-                    :classWrapper="'calender_input'" :disabled="disabled" :class="autUpdate===true ? 'input_disabled':'input'"
-                /></span>
+                <span><input-component :class="'input_disabled'" :input-class="'class5 class5_long1'" :long-width="'150px'"  :disabled="true" :value="this.amdr" /></span>
+                <span><input-component :class="'input_disabled'" :input-class="'class5 class5_long1'" :long-width="'150px'"  :disabled="true" :value="this.amdDate" /></span>
               </td>
 
             </tr>
@@ -237,6 +236,7 @@ import SubInfoTitle from "@/components/common/SubInfoTitle";
 import DatePickerComponent from "@/components/common/DatePickerComponent";
 import PopupComponent from "@/components/common/PopupComponent.vue";
 import ApiMixin from "@/service/common";
+import {calDateString, calDateTime} from "@/service/FormatService";
 export default {
   mixins:[ApiMixin],
   name: "AutAdm",
@@ -253,12 +253,25 @@ export default {
   data(){
     return{
       RowData:[],
-      isModalRegShow:false, //등록 팝업
+      isModalRegShow:false,    //등록 팝업
       isModalUpdateShow:false, //변경 팝업
-      useAble:null, //사용여부관련 라디오 변수
-      autUpdate:false, //권한상세정보 변경관련 변수
-      autReg:false,  //권한상세정보 등록관련 변수
-      disabled:false, //각 상세정보 input disabled 처리 변수
+      autChgConf:false,        //권한상세정보 변경관련 변수
+      autRegConf:false,        //권한상세정보 등록관련 변수
+      disabled:false,          //각 상세정보 input disabled 처리 변수
+      autData:null,            //권한 리스트 클릭 데이터
+      useYn:null,              //사용여부 셀렉트박스
+      searchValue:null,        //검색어
+      autTypeSel:null,         //권한유형 셀렉트박스
+
+      autId:null,     //권한ID
+      autNm:null,     //권한명
+      autType:null,   //권한유형    //현재 셀렉트json에 id값도 "조회" 이런식으로 들어가 있음.(매칭을위해) 추후 수정 필수
+      useAble:null,   //사용여부관련 라디오 변수
+      regr:null,      //등록자
+      regDate:null,   //등록일시
+      amdr:null,      //수정자
+      amdDate:null,   //수정일시
+
       columnDefs: [
         {
           headerName: "선택",
@@ -285,14 +298,62 @@ export default {
       },
     }
   },
+  methods:{
+    clickedRow(params){
+      this.autData = params.data;
+      this.autChgConf = true;
+      this.autRegConf = false;
+      this.disabled = true
+      this.autId = this.autData.model1;
+      this.autNm = this.autData.model2;
+      this.autType = this.autData.model3;
+      this.amdDate=calDateString(new Date());
+      if(this.autData.model4==='사용')this.useAble='use';
+      else this.useAble='unuse';
+    },
+    autChg(){
+      if(this.autData!==null) {
+        this.autChgConf = true;
+        this.autRegConf = false;
+        this.disabled = true
+        this.autId = this.autData.model1;
+        this.autNm = this.autData.model2;
+        this.autType = this.autData.model3;
+        this.amdDate=calDateString(new Date());
+        if(this.autData.model4==='사용')this.useAble='use';
+        else this.useAble='unuse';
+      }
+    },
+    autReg(){
+      if(this.autData!==null){
+        this.autId=null;
+        this.autNm=null;
+        this.autType="";
+        this.useAble=null;
+      }
+      this.regr="MIG";
+      this.amdr="12345678";
+      this.amdDate=calDateString(new Date());
+      this.regDate=calDateString(new Date());
+      this.autRegConf=true;
+      this.autChgConf=false;
+      this.disabled=false
+    },
+    autLstSearch(){
+      this.$connect('application/json','/info','get','').then((res)=>{
+        this.RowData = res.data.autRowData;
+      })
+    },
+    resetSearch(){
+      this.autTypeSel="";
+      this.searchValue="";
+      this.useYn="";
+    }
+  },
   async beforeMount() {
-    // this.gridOptions = {
-    //   pinnedBottomRowData: [{ model0: "합계", model1: null, model4: 0 }],
-    // };
-    await this.$connect('application/json','/info.json','get','').then((res)=>{
+    await this.$connect('application/json','/info','get','').then((res)=>{
       this.RowData = res.data.autRowData;
     })
-    console.log(this.rowData);
   },
 }
 </script>
