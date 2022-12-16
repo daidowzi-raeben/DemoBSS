@@ -11,7 +11,7 @@
     :suppressRowTransform="true"
     :suppressHorizontalScroll="isWidthFit"
     :rowHeight="rowHeight"
-    headerHeight="30"
+    :headerHeight="headerHeight"
     :columnDefs="columnDefs"
     :rowData="rowData"
     :overlayNoRowsTemplate="overlayNoRowsTemplate"
@@ -50,7 +50,10 @@ export default {
     };
   },
   props: {
-    userAdmSttus:String,
+    headerHeight:{
+      type:String,
+      default:30
+    },
     isDeselect:{
       type: Boolean,
       default: false
