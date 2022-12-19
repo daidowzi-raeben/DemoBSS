@@ -53,6 +53,5 @@ textarea{
   height: v-bind('textAreaHeight');
   border: 1px solid;
   resize: none;
-  margin: 10px;
 }
 </style>

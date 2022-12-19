@@ -164,14 +164,14 @@
                 <th>
                   <label-component
                       :labelNm="'청구계정ID'"
-                      :labelClass="'class1'"/>
+                      :labelClass="'label-type'"/>
                 </th>
                 <td>
                   <input-component :input-class="'class5'" :disabled="true" :value="'999900005' " />
                 </td>
                 <th> <label-component
                     :labelNm="'청구고객명'"
-                    :labelClass="'class1'"/>
+                    :labelClass="'label-type'"/>
                 </th>
                 <td>
                   <input-component :input-class="'class5'" :disabled="true" :value="'김포파인쇼****' " />
@@ -181,7 +181,7 @@
                 <!-- <th></th> -->
                 <th> <label-component
                     :labelNm="'식별변호'"
-                    :labelClass="'class1'"/>
+                    :labelClass="'label-type'"/>
                 </th>
                 <td colspan="2">
                   <input-component :input-class="'class5 class5_short1'" :disabled="true" :value="'801212' " />
@@ -193,14 +193,14 @@
               <tr>
                 <th> <label-component
                     :labelNm="'청구유형'"
-                    :labelClass="'class1'"/>
+                    :labelClass="'label-type'"/>
                 </th>
                 <td>
                   <input-component :input-class="'class5'" :disabled="true" :value="'이메일' " />
                 </td>
                 <th> <label-component
                     :labelNm="'이메일'"
-                    :labelClass="'class1'"/>
+                    :labelClass="'label-type'"/>
                 </th>
                 <td colspan="2">
                   <input-component :input-class="'class5'" :disabled="true" :value="'aaa***' " />
@@ -209,7 +209,7 @@
                 </td>
                 <th> <label-component
                     :labelNm="'청구서 언어'"
-                    :labelClass="'class1'"/>
+                    :labelClass="'label-type'"/>
                 </th>
                 <td>
                   <input-component :input-class="'class5'" :disabled="true" :value="'한글' " />
@@ -219,7 +219,7 @@
               <tr>
                 <th> <label-component
                     :labelNm="'청구 주소'"
-                    :labelClass="'class1'"/>
+                    :labelClass="'label-type'"/>
                 </th>
                 <td colspan="5">
                   <input-component :input-class="'class5 class5_short1'" :disabled="true" :value="'12345'" />
@@ -231,7 +231,7 @@
               <tr>
                 <th> <label-component
                     :labelNm="'납부방법'"
-                    :labelClass="'class1'"/>
+                    :labelClass="'label-type'"/>
                 </th>
                 <td colspan="5">
                   <input-component :input-class="'class5'" :disabled="true" :value="'신용카드 자동이체' " />

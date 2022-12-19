@@ -1,4 +1,5 @@
 <template>
+  <div>
   <transition appear> <div class="cm_popup_overlay"></div> </transition>
   <!-- 오버레이 -->
 
@@ -30,25 +31,25 @@
                   <th style="width: 5%">
                     <label-component
                       :labelNm="'우편번호'"
-                      :labelClass="'class1'"
+                      :labelClass="'label-type'"
                     />
                   </th>
                   <th style="width: 35%">
                     <label-component
                       :labelNm="'도로명주소  '"
-                      :labelClass="'class1'"
+                      :labelClass="'label-type'"
                     />
                   </th>
                   <th style="width: 40%">
                     <label-component
                       :labelNm="'지번주소'"
-                      :labelClass="'class1'"
+                      :labelClass="'label-type'"
                     />
                   </th>
                   <th style="width: 10%">
                     <label-component
                       :labelNm="'상세주소'"
-                      :labelClass="'class1'"
+                      :labelClass="'label-type'"
                     />
                   </th>
                   <th style="width: 5%">선택</th>
@@ -160,6 +161,7 @@
       </div>
     </transition>
   </div>
+</div>
 </template>
 
 <script>

@@ -799,7 +799,7 @@
   "msgRowData": [
     {
       "msgId": "0001",
-      "msgType": "시스템공지",
+      "msgType": "SMS(알림톡)",
       "msgTilte": "IDC 점검",
       "msgCallBack": "1577-1111",
       "msgStDt": "2022-12-05",
@@ -809,7 +809,7 @@
     },
     {
       "msgId": "0002",
-      "msgType": "도움말",
+      "msgType": "청구서안내",
       "msgTilte": "BSS 사용 문의 안내",
       "msgCallBack": "1577-1111",
       "msgStDt": "",
@@ -819,7 +819,7 @@
     },
     {
       "msgId": "0003",
-      "msgType": "도움말",
+      "msgType": "Email",
       "msgTilte": "안내 사항",
       "msgCallBack": "1577-1111",
       "msgStDt": "2022-12-21",
@@ -829,7 +829,37 @@
     },
     {
       "msgId": "0004",
-      "msgType": "시스템공지",
+      "msgType": "청구서안내",
+      "msgTilte": "점검 안내 ",
+      "msgCallBack": "1577-1111",
+      "msgStDt": "2023-01-02",
+      "msgEndDt": "2023-01-05",
+      "regr": "김클라우드",
+      "regrDt": "-"
+    },
+    {
+      "msgId": "0005",
+      "msgType": "청구서안내",
+      "msgTilte": "BSS 사용 문의 안내",
+      "msgCallBack": "1577-1111",
+      "msgStDt": "",
+      "msgEndDt": "",
+      "regr": "김클라우드",
+      "regrDt": "2022-12-23"
+    },
+    {
+      "msgId": "0006",
+      "msgType": "Email",
+      "msgTilte": "안내 사항",
+      "msgCallBack": "1577-1111",
+      "msgStDt": "2022-12-21",
+      "msgEndDt": "",
+      "regr": "김클라우드",
+      "regrDt": "2022-12-29"
+    },
+    {
+      "msgId": "0007",
+      "msgType": "청구서안내",
       "msgTilte": "점검 안내 ",
       "msgCallBack": "1577-1111",
       "msgStDt": "2023-01-02",

@@ -11,7 +11,7 @@ export default {
     },
     labelClass: {
       type: String,
-      default: "class1",
+      default: "label-type",
     },
   },
 };
@@ -26,7 +26,7 @@ export default {
   font-family: "noto-sans-kr";
 }
 
-.class1 {
+.label-type {
   /* width: 89px; */
   width: 100%;
   /* font-size: 12pt; */

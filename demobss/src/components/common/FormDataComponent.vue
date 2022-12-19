@@ -18,7 +18,7 @@
         <table>
           <tr>
             <th>
-              <label-component :labelNm="'고객ID'" :labelClass="'class1'" />
+              <label-component :labelNm="'고객ID'" :labelClass="'label-type'" />
             </th>
             <td>
               <input-component
@@ -28,7 +28,7 @@
               />
             </td>
             <th>
-              <label-component :labelNm="'고객명'" :labelClass="'class1'" />
+              <label-component :labelNm="'고객명'" :labelClass="'label-type'" />
             </th>
             <td>
               <input-component
@@ -38,7 +38,7 @@
               />
             </td>
             <th>
-              <label-component :labelNm="'고객유형'" :labelClass="'class1'" />
+              <label-component :labelNm="'고객유형'" :labelClass="'label-type'" />
             </th>
             <td>
               <input-component
@@ -48,7 +48,7 @@
               />
             </td>
             <th>
-              <label-component :labelNm="'고객구분'" :labelClass="'class1'" />
+              <label-component :labelNm="'고객구분'" :labelClass="'label-type'" />
             </th>
             <td>
               <input-component
@@ -58,7 +58,7 @@
               />
             </td>
             <th>
-              <label-component :labelNm="'내외구분'" :labelClass="'class1'" />
+              <label-component :labelNm="'내외구분'" :labelClass="'label-type'" />
             </th>
             <td style="width: 422px">
               <input-component
@@ -71,7 +71,7 @@
 
           <tr>
             <th>
-              <label-component :labelNm="'법인번호'" :labelClass="'class1'" />
+              <label-component :labelNm="'법인번호'" :labelClass="'label-type'" />
             </th>
             <td>
               <input-component
@@ -82,7 +82,7 @@
             </td>
 
             <th>
-              <label-component :labelNm="'사업자번호'" :labelClass="'class1'" />
+              <label-component :labelNm="'사업자번호'" :labelClass="'label-type'" />
             </th>
             <td>
               <input-component
@@ -92,7 +92,7 @@
               />
             </td>
             <th>
-              <label-component :labelNm="'업종'" :labelClass="'class1'" />
+              <label-component :labelNm="'업종'" :labelClass="'label-type'" />
             </th>
             <td>
               <input-component
@@ -102,7 +102,7 @@
               />
             </td>
             <th>
-              <label-component :labelNm="'업태'" :labelClass="'class1'" />
+              <label-component :labelNm="'업태'" :labelClass="'label-type'" />
             </th>
             <td>
               <input-component
@@ -114,7 +114,7 @@
             <th>
               <!-- <label-component
           :labelNm="''"
-          :labelClass="'class1'"/> -->
+          :labelClass="'label-type'"/> -->
             </th>
             <td>
               <!-- <input-component :input-class="'class5'" :disabled="true" :value="''" />  -->
@@ -123,7 +123,7 @@
 
           <tr>
             <th>
-              <label-component :labelNm="'대표자'" :labelClass="'class1'" />
+              <label-component :labelNm="'대표자'" :labelClass="'label-type'" />
             </th>
             <td>
               <input-component
@@ -133,7 +133,7 @@
               />
             </td>
             <th>
-              <label-component :labelNm="'대리인'" :labelClass="'class1'" />
+              <label-component :labelNm="'대리인'" :labelClass="'label-type'" />
             </th>
             <td>
               <input-component
@@ -143,7 +143,7 @@
               />
             </td>
             <th>
-              <label-component :labelNm="'주소'" :labelClass="'class1'" />
+              <label-component :labelNm="'주소'" :labelClass="'label-type'" />
             </th>
             <td colspan="3">
               <input-component
@@ -159,7 +159,7 @@
               />
             </td>
             <th>
-              <label-component :labelNm="'연락처'" :labelClass="'class1'" />
+              <label-component :labelNm="'연락처'" :labelClass="'label-type'" />
             </th>
             <td>
               <input-component
@@ -181,7 +181,7 @@
         <table>
           <tr>
             <th>
-              <label-component :labelNm="'계약번호'" :labelClass="'class1'" />
+              <label-component :labelNm="'계약번호'" :labelClass="'label-type'" />
             </th>
             <td>
               <input-component
@@ -191,7 +191,7 @@
               />
             </td>
             <th>
-              <label-component :labelNm="'서비스번호'" :labelClass="'class1'" />
+              <label-component :labelNm="'서비스번호'" :labelClass="'label-type'" />
             </th>
             <td>
               <input-component
@@ -201,7 +201,7 @@
               />
             </td>
             <th>
-              <label-component :labelNm="'상태'" :labelClass="'class1'" />
+              <label-component :labelNm="'상태'" :labelClass="'label-type'" />
             </th>
             <td>
               <input-component
@@ -214,7 +214,7 @@
 
           <tr>
             <th>
-              <label-component :labelNm="'가입유형'" :labelClass="'class1'" />
+              <label-component :labelNm="'가입유형'" :labelClass="'label-type'" />
             </th>
             <td>
               <input-component
@@ -225,7 +225,7 @@
             </td>
 
             <th>
-              <label-component :labelNm="'상품'" :labelClass="'class1'" />
+              <label-component :labelNm="'상품'" :labelClass="'label-type'" />
             </th>
             <td colspan="4">
               <input-component
@@ -243,7 +243,7 @@
 
           <tr>
             <th>
-              <label-component :labelNm="'수용국'" :labelClass="'class1'" />
+              <label-component :labelNm="'수용국'" :labelClass="'label-type'" />
             </th>
             <td>
               <input-component
@@ -254,7 +254,7 @@
             </td>
 
             <th>
-              <label-component :labelNm="'접수일자'" :labelClass="'class1'" />
+              <label-component :labelNm="'접수일자'" :labelClass="'label-type'" />
             </th>
             <td>
               <input-component
@@ -265,7 +265,7 @@
             </td>
 
             <th>
-              <label-component :labelNm="'개통일자'" :labelClass="'class1'" />
+              <label-component :labelNm="'개통일자'" :labelClass="'label-type'" />
             </th>
             <td>
               <input-component
@@ -278,7 +278,7 @@
 
           <tr>
             <th>
-              <label-component :labelNm="'계약기간'" :labelClass="'class1'" />
+              <label-component :labelNm="'계약기간'" :labelClass="'label-type'" />
             </th>
             <td>
               <input-component
@@ -289,7 +289,7 @@
             </td>
 
             <th>
-              <label-component :labelNm="'사용기간'" :labelClass="'class1'" />
+              <label-component :labelNm="'사용기간'" :labelClass="'label-type'" />
             </th>
             <td>
               <input-component
@@ -300,7 +300,7 @@
             </td>
 
             <th>
-              <label-component :labelNm="'약정만료일'" :labelClass="'class1'" />
+              <label-component :labelNm="'약정만료일'" :labelClass="'label-type'" />
             </th>
             <td>
               <input-component
@@ -313,7 +313,7 @@
 
           <tr>
             <th>
-              <label-component :labelNm="'미납요금'" :labelClass="'class1'" />
+              <label-component :labelNm="'미납요금'" :labelClass="'label-type'" />
             </th>
             <td>
               <input-component
@@ -323,11 +323,11 @@
                 style="text-align: right"
               />
             </td>
-            <th><label-component :labelNm="'  '" :labelClass="'class1'" /></th>
+            <th><label-component :labelNm="'  '" :labelClass="'label-type'" /></th>
             <td>
               <!-- <input-component :input-class="'class5'" :disabled="true" :value="''" />  -->
             </td>
-            <th><label-component :labelNm="'  '" :labelClass="'class1'" /></th>
+            <th><label-component :labelNm="'  '" :labelClass="'label-type'" /></th>
             <td>
               <!-- <input-component :input-class="'class5'" :disabled="true" :value="''" />  -->
             </td>
@@ -399,7 +399,7 @@
         <table>
           <tr>
             <th>
-              <label-component :labelNm="'청구계정ID'" :labelClass="'class1'" />
+              <label-component :labelNm="'청구계정ID'" :labelClass="'label-type'" />
             </th>
             <td>
               <input-component
@@ -409,7 +409,7 @@
               />
             </td>
             <th>
-              <label-component :labelNm="'청구고객명'" :labelClass="'class1'" />
+              <label-component :labelNm="'청구고객명'" :labelClass="'label-type'" />
             </th>
             <td>
               <input-component
@@ -424,7 +424,7 @@
           </tr>
           <tr>
             <th>
-              <label-component :labelNm="'납부방법'" :labelClass="'class1'" />
+              <label-component :labelNm="'납부방법'" :labelClass="'label-type'" />
             </th>
             <td colspan="3">
               <input-component
@@ -441,7 +441,7 @@
           </tr>
           <tr>
             <th>
-              <label-component :labelNm="'계좌/카드'" :labelClass="'class1'" />
+              <label-component :labelNm="'계좌/카드'" :labelClass="'label-type'" />
             </th>
             <td colspan="4">
               <input-component
@@ -464,7 +464,7 @@
 
           <tr>
             <th>
-              <label-component :labelNm="'청구유형'" :labelClass="'class1'" />
+              <label-component :labelNm="'청구유형'" :labelClass="'label-type'" />
             </th>
             <td>
               <input-component
@@ -475,7 +475,7 @@
             </td>
 
             <th>
-              <label-component :labelNm="'주소'" :labelClass="'class1'" />
+              <label-component :labelNm="'주소'" :labelClass="'label-type'" />
             </th>
             <td colspan="3">
               <input-component
@@ -544,7 +544,7 @@
         <table>
           <tr>
             <th>
-              <label-component :labelNm="'신청자'" :labelClass="'class1'" />
+              <label-component :labelNm="'신청자'" :labelClass="'label-type'" />
             </th>
             <td>
               <input-component
@@ -554,7 +554,7 @@
               />
             </td>
             <th>
-              <label-component :labelNm="'E-mail'" :labelClass="'class1'" />
+              <label-component :labelNm="'E-mail'" :labelClass="'label-type'" />
             </th>
             <td>
               <input-component
@@ -564,7 +564,7 @@
               />
             </td>
             <th>
-              <label-component :labelNm="'연락처'" :labelClass="'class1'" />
+              <label-component :labelNm="'연락처'" :labelClass="'label-type'" />
             </th>
             <td>
               <input-component
@@ -591,7 +591,7 @@
         <table>
           <tr>
             <th>
-              <label-component :labelNm="'영업조직'" :labelClass="'class1'" />
+              <label-component :labelNm="'영업조직'" :labelClass="'label-type'" />
             </th>
             <td>
               <input-component
@@ -601,7 +601,7 @@
               />
             </td>
             <th>
-              <label-component :labelNm="'영업담당자'" :labelClass="'class1'" />
+              <label-component :labelNm="'영업담당자'" :labelClass="'label-type'" />
             </th>
             <td>
               <input-component
@@ -611,7 +611,7 @@
               />
             </td>
             <th>
-              <label-component :labelNm="'승인상태'" :labelClass="'class1'" />
+              <label-component :labelNm="'승인상태'" :labelClass="'label-type'" />
             </th>
             <td>
               <input-component
@@ -625,7 +625,7 @@
             <th>
               <label-component
                 :labelNm="'최근판매조직'"
-                :labelClass="'class1'"
+                :labelClass="'label-type'"
               />
             </th>
             <td>
@@ -636,7 +636,7 @@
               />
             </td>
             <th>
-              <label-component :labelNm="'최근판매자'" :labelClass="'class1'" />
+              <label-component :labelNm="'최근판매자'" :labelClass="'label-type'" />
             </th>
             <td>
               <input-component
@@ -645,7 +645,7 @@
                 :value="'이영업'"
               />
             </td>
-            <th><label-component :labelNm="''" :labelClass="'class1'" /></th>
+            <th><label-component :labelNm="''" :labelClass="'label-type'" /></th>
             <td>
               <!-- <input-component :input-class="'class5'" :disabled="true" :value="''" />  -->
             </td>
@@ -675,25 +675,25 @@
         <div>
           <label-component
           :labelNm="'영업조직'"
-          :labelClass="'class1'"/>
+          :labelClass="'label-type'"/>
           <input-component :input-class="'class5'" :disabled="true" :value="'기업고객팀'" /> 
           <label-component
           :labelNm="'영업담당자'"
-          :labelClass="'class1'"/>
+          :labelClass="'label-type'"/>
           <input-component :input-class="'class5'" :disabled="true" :value="'김영업'" /> 
           <label-component
           :labelNm="'승인상태'"
-          :labelClass="'class1'"/>
+          :labelClass="'label-type'"/>
           <input-component :input-class="'class5'" :disabled="true" :value="'승인'" /> 
         </div>
         <div>
           <label-component
           :labelNm="'최근판매조직'"
-          :labelClass="'class1'"/>
+          :labelClass="'label-type'"/>
           <input-component :input-class="'class5'" :disabled="true" :value="'AA고객팀'" /> 
           <label-component
           :labelNm="'최근판매자'"
-          :labelClass="'class1'"/>
+          :labelClass="'label-type'"/>
           <input-component :input-class="'class5'" :disabled="true" :value="'이영업'" /> 
         
         </div>
@@ -710,17 +710,17 @@
         <div class="infoOfCus" >
           <label-component
           :labelNm="'신청자'"
-          :labelClass="'class1'"/>
+          :labelClass="'label-type'"/>
           <input-component :input-class="'class5'" :disabled="true" :value="'9900000221' " /> 
           
           <label-component
           :labelNm="'E-mail'"
-          :labelClass="'class1'"/>
+          :labelClass="'label-type'"/>
           <input-component :input-class="'class5'" :disabled="true" :value="'cloud@kt.com' " /> 
           
           <label-component
           :labelNm="'연락처'"
-          :labelClass="'class1'"/>
+          :labelClass="'label-type'"/>
           <input-component :input-class="'class5'" :disabled="true" :value="'010-1111-2222' " /> 
         </div>
       </div>
@@ -809,24 +809,24 @@
         <div>
           <label-component
           :labelNm="'청구계정ID'"
-          :labelClass="'class1'"/>
+          :labelClass="'label-type'"/>
           <input-component :input-class="'class5'" :disabled="true" :value="'999900005' " /> 
           <label-component
           :labelNm="'청구고객명'"
-          :labelClass="'class1'"/>
+          :labelClass="'label-type'"/>
           <input-component :input-class="'class5'" :disabled="true" :value="'이청구' " /> 
         </div>
         <div>
           <label-component
           :labelNm="'납부방법'"
-          :labelClass="'class1'"/>
+          :labelClass="'label-type'"/>
           <input-component :input-class="'class5'" :disabled="true" :value="'은행계좌이체' " /> 
           <input-component :input-class="'class5 class5_short1'" type="text" :value="'매월 25일' " /> 
         </div>
         <div>
           <label-component
           :labelNm="'계좌/카드'"
-          :labelClass="'class1'"/>
+          :labelClass="'label-type'"/>
           <input-component :input-class="'class5 class5_short1'"  type="text" :value="'카카오뱅크' " /> 
           <input-component :input-class="'class5'" :disabled="true" :value="'333306****' " style="margin-right:3px;"/> 
           <input-component :input-class="'class5'" :disabled="true" :value="'ktds솔루션***' " /> 
@@ -834,11 +834,11 @@
         <div>
           <label-component
           :labelNm="'청구유형'"
-          :labelClass="'class1'"/>
+          :labelClass="'label-type'"/>
           <input-component :input-class="'class5'" :disabled="true" :value="'우편(종이)' " /> 
           <label-component
           :labelNm="'주소'"
-          :labelClass="'class1'"/>
+          :labelClass="'label-type'"/>
           <input-component :input-class="'class5 class5_short2'" type="text" :value="'06037' " /> 
           <input-component :input-class="'class5'" class="class5_long1" type="text" :value="'서울특별시 강남구 도산대로19길 10 (신사동, 현우빌딩)' " /> 
         </div>
