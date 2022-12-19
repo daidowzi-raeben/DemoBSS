@@ -85,10 +85,8 @@ export default {
             tab_text += '</x:ExcelWorksheets></x:ExcelWorkbook></xml></head><body>'
             tab_text += "<table>"
             const temp = document.getElementById(id).innerHTML
-            // console.log(temp)
             tab_text += temp
             tab_text += '</table></body></html>'
-            console.log(tab_text)
             const fileName =  title + '.xls';
             const a_tag = document.createElement('a')
             const blob = new Blob([tab_text], { type: 'application/vnd.ms-excel;charset=utf-8;' })

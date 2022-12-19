@@ -158,7 +158,6 @@ select option:hover{
   -webkit-appearance: none;
   -moz-appearance: none;
 }
-
 .select_input2 {
   border: 1px solid #c1c1c1;
   font-size: 13px;

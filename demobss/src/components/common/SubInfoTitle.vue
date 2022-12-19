@@ -1,7 +1,5 @@
 <template>
 <div class="subInfoTitleContainer">
-  <!-- <label :class="subInfoTitleMark"
-  :style="{height:markHeight, width: markWidth }" ></label> -->
   <label
   :class="subInfoTitle">{{subInfoTitleNm}}</label>
 </div>

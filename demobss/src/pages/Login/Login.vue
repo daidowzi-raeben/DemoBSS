@@ -260,7 +260,6 @@ export default {
             type: "audio/wave",
           });
           var url = window.URL.createObjectURL(blob);
-          // console.log(url);
           var audio = new Audio(url);
           audio.play();
         })

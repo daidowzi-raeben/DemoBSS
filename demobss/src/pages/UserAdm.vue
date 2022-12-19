@@ -581,11 +581,8 @@ export default {
   },
   async beforeMount() {
     await this.$connect("application/json", "/info.json", "get", "")
-      // await this.axios.get("userRowData")
       .then((res) => {
-        console.log("info", res);
         this.rowData = res.data.userRowData;
-        // console.log(this.rowData);
       })
       .catch((e) => {
         console.log(e);
@@ -612,7 +609,6 @@ export default {
         //   this.userLstPopup()
         // } 
         else {
-          // console.log("userAdmObject : ", this.userAdmObject)
           this.userAdmObject.cmpno = newSeletedUserData.cmpno;
           this.userAdmObject.userNm = newSeletedUserData.userNm;
           this.userAdmObject.inOfficeSttus2 = newSeletedUserData.inofficeSttus;
@@ -624,7 +620,6 @@ export default {
           this.userAdmObject.otpYn = newSeletedUserData.otpYn;
           this.userAdmObject.email = newSeletedUserData.email;
           this.userAdmObject.emailDomain = newSeletedUserData.emailDomain;
-          // console.log("newSeletedUserData",this.userAdmObject.inOfficeSttus2);
         }
       },
     },

@@ -107,7 +107,7 @@ export default {
           cellRenderer:'AutCdGpNm',
           cellRendererParams: { //업무유형이 공통코드일때 셀렉트반환값
             clicked: function (field) {
-              console.log(field);
+              // console.log(field);
             }
           },
           cellStyle:{justifyContent: "flex-start"}

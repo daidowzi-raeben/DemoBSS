@@ -13,11 +13,6 @@
         @change="updateValue(radioValue)"
       />{{ radioOpt.cdNm }}
     </label>
-    <!-- <label class="container" v-for="RadioOpt in RadioOption" :key="RadioOpt" >
-    <input type="radio" :id="RadioOpt" :value="RadioOpt" v-model="radioValue">{{RadioOpt}}
-    <span class="radiomark" ></span>
-  </label>
-  <p style="font-size:20px;" v-show="radioValue.length>0">선택 값 : {{radioValue}}</p> -->
   </div>
 </template>
 
@@ -27,8 +22,8 @@ import radioSelect from "../../../public/radioOption.json";
 export default {
   props: {
     seletedRadio: {
-      type:String,
-      default:''
+      type: String,
+      default: "",
     },
     defaultcdId: String,
     RadioOption: {
