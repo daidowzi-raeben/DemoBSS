@@ -430,7 +430,7 @@ import ApiMixin from "../service/common.js"
         ntfSttus : 'amend',
         ntfTitle:'',
         ntfRegr : '',
-        ntfRegrDt : new Date("2022-12-16"),
+        ntfRegrDt : new Date().toLocaleString(),
         ntfStYn: "01",                      // 공지게시
         ntfStDt : new Date(),               // 공지게시 일자
         ntfEndDt : new Date("2023-12-31"),  // 공지게시 일자
@@ -663,7 +663,7 @@ import ApiMixin from "../service/common.js"
   async beforeMount() {
     await this.$connect("application/json", "/info.json", "get", "")
       .then((res) => {
-        console.log("info", res);
+        // console.log("info", res);
         this.rcvrRowData= res.data.rcvrRowData;
         this.rowData = res.data.NoticeRowData;
       })

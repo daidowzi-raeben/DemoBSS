@@ -419,7 +419,7 @@ export default {
         msgId: "",
         msgTitle: "",
         msgRegr: "",
-        msgRegrDt: new Date("2022-12-16"),
+        msgRegrDt: new Date().toLocaleString(),
         msgStDt: new Date(), // 공지게시 일자
         msgEndDt: new Date("2023-12-31"), // 공지게시 일자
         msgUseYn: "01", // 팝업게시
