@@ -120,14 +120,14 @@
         :cdGroup="'optionSearchNum'"
         :is-disabled="true"
         :defaultValue="'선택'"
-        v-model="month"
+        v-model="SearchNum"
         style="
         width: 120px;
         height: 26px;
         margin-right: 15px;"
         @input="
           (value) => {
-            month = value;
+            SearchNum = value;
           }
         "
     />
@@ -240,6 +240,7 @@ export default {
       isCdGpModalShow : false,  //코드그룹 리스트 등록/변경 팝업
       cdDivSel:"",            //코드구분 select box
       searchValue:"",         //검색 값
+      SearchNum:null,         //검색 건수
       useYn:"",               //사용여부 select box
       isCdLstModalShow : false, // 코드리스트 등록/변경 팝업
       cdGpType : null,

@@ -356,7 +356,7 @@ export default {
   },
   async beforeMount() {
     await this.$connect('application/json','/info','get','').then((res)=>{
-      this.RowData = res.data.autRowData;
+
     })
   },
 }

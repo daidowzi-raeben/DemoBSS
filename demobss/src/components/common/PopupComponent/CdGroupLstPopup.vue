@@ -44,27 +44,27 @@
               <tr>
                 <th>코드그룹ID</th>
                 <td>
-                  <input-component :input-class="'class5'" :class="this.type===2 ? 'input_disabled':'input'" :disabled="disabled" :value="this.cdGpId" />
+                  <input-component :input-class="'class5'" :class="this.type===2 ? 'input_disabled':'input'" :disabled="disabled" v-model="this.cdGpId" :value="this.cdGpId" />
                 </td>
                 <th>상위코드그룹ID</th>
                 <td>
-                  <input-component :input-class="'class5'" :class="this.type===2 ? 'input_disabled':'input'" :disabled="disabled" :value="this.upCdGpId" />
+                  <input-component :input-class="'class5'" :class="this.type===2 ? 'input_disabled':'input'" :disabled="disabled" v-model="this.upCdGpId" :value="this.upCdGpId" />
                 </td>
               </tr>
               <tr>
                 <th>코드그룹명</th>
                 <td>
-                  <input-component class="input" :input-class="'class5 class5_long1'" :long-width="'220px'" :value="this.cdGpNm" />
+                  <input-component class="input" :input-class="'class5 class5_long1'" :long-width="'220px'" v-model="this.cdGpNm" :value="this.cdGpNm" />
                 </td>
                 <th>코드그룹영문명</th>
                 <td>
-                  <input-component class="input" :input-class="'class5 class5_long1'" :long-width="'220px'" :value="this.cdGpEngNm" />
+                  <input-component class="input" :input-class="'class5 class5_long1'" :long-width="'220px'" v-model="this.cdGpEngNm" :value="this.cdGpEngNm" />
                 </td>
               </tr>
               <tr>
                 <th>코드그룹 설명</th>
                 <td colspan="3">
-                  <input-component class="input" :input-class="'class5 class5_long1'" :long-width="'625px'" :value="this.cdGpDesc" />
+                  <input-component class="input" :input-class="'class5 class5_long1'" :long-width="'625px'" v-model="this.cdGpDesc" :value="this.cdGpDesc" />
                 </td>
               </tr>
               <tr>
@@ -79,11 +79,15 @@
                 <td><date-picker-component
                     :classWrapper="'calender_input'"
                     :pDate ="this.efctStDate"
+                    @input="
+                    (value) => {this.efctStDate = value}"
                 /></td>
                 <th>유효종료일자</th>
                 <td><date-picker-component
                     :classWrapper="'calender_input'"
-                    :p-date="this.efctStDate"
+                    :pDate="this.efctFnsDate"
+                    @input="
+                    (value) => {this.efctFnsDate = value}"
                 /></td>
               </tr>
             </table>
@@ -138,6 +142,10 @@ export default {
         if (this.value.model8 === "사용") this.useAble = 'use';
         else this.useAble = 'unuse';
       }
+    }
+    else{
+      this.efctStDate = new Date();
+      this.efctFnsDate = new Date(9999,11,31);
     }
   },
   props: {

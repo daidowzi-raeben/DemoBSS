@@ -178,14 +178,14 @@
         :cdGroup="'optionSearchNum'"
         :is-disabled="true"
         :defaultValue="'선택'"
-        v-model="month"
+        v-model="SearchNum"
         style="
         width: 120px;
         height: 26px;
         margin-right: 15px;"
         @input="
           (value) => {
-            month = value;
+            SearchNum = value;
           }
         "
     />
@@ -240,6 +240,7 @@ export default {
       empNm:null,            //사원명
       selectValues:null,     //조직 선택
       isModalHideShow:false, //숨김해제 팝업
+      SearchNum :null,       //검색 건수
       pageableData1: {
         pageNumber: 1,
         currentMinPage: 1,
@@ -270,8 +271,10 @@ export default {
     reset(){
       this.securRetv = "";
       this.searchValues = "";
-      this.retvStDate = new Date();
-      this.retvEnDate = new Date();
+      let date = new Date();
+      date.setMonth(date.getMonth() -1);
+      this.retvStDate = date;       //조회 기간 시작
+      this.retvEnDate = new Date();       //조회 기간 끝
       this.empNm ="";
       this.selectValues="";
     },
@@ -285,6 +288,10 @@ export default {
     await this.$connect('application/json','/info','get','').then((res)=>{
       this.MaksRelesRowData = res.data.securRowData;
     })
+    let date = new Date();
+    date.setMonth(date.getMonth() -1);
+    this.retvStDate = date;       //조회 기간 시작
+    this.retvEnDate = new Date();       //조회 기간 끝
   }
 
 }
