@@ -695,7 +695,7 @@
       "menuId": "L05M13S01",
       "menuNm": "배치스케줄링 관리",
       "upMenuId": "L05M13S00",
-      "cmpnId": ""
+      "cmpnId": "BatchSclgAdm"
     },
     {
       "menuId": "L05M13S02",
