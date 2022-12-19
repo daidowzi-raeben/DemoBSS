@@ -6,7 +6,7 @@
     :class="selectClass"
     :style="{ width: width + 'px' }"
     v-model="value"
-    @change="[updateValue(value), chkevent($event)]"
+    @change="updateValue(value)"
   >
     <option 
     v-if="defaultValue != null" 
@@ -20,34 +20,17 @@
       {{ option.cdNm }}
     </option>
   </select>
-  <select
-      :class="selectClass"
-      :style="{ width: width + 'px' }"
-      v-model="secndValue"
-      v-if="(secndOptions!=null && secndShow )|| dcidShow "
-  >
-    <option v-if="defaultValue != null" :value="''">
-      {{ defaultValue }}
-    </option>
-    <option v-for="(option,idx) in secndOptions" :key="idx" :value="option.cdId">
-      {{option.cdNm}}
-    </option>
-  </select>
   </div>
 </template>
 
 <script>
 import select from "../../../public/selectBoxOption.json";
-import secndSelect from "../../../public/selectBoxSecndOption.json";
 export default {
   name: "SelectBoxComponent",
   data() {
     return {
       options: [],
-      secndOptions:null,
       value: "",
-      secndValue: "",
-      cur:"",
     };
   },
   props: {
@@ -61,41 +44,12 @@ export default {
       type:Boolean,
       default:false,
     },
-    secndShow:{
-      type:Boolean,
-      default:false
-    },
-    dcidShow:{
-      type:Boolean,
-      default:false
-    },
     select_input3_marginLeft:{
       type:String,
       default:"10px"
     }
   },
-  
-  // async beforeMount() {
-  //   await this.axios.get("/selectBoxOption.json")
-  //     .then((res) => {
-  //       console.log(res)
-  //       // this.rowData = res.data;
-  //       // console.log(this.rowData);
-  //       this.options = res.data.selectBoxOption[this.cdGroup];
-  //     if (this.defaultcdId != null ) {
-  //       for(let i =0 ; i< this.options.length; i++){
-  //         if( this.options[i].cdId == this.defaultcdId ){
-  //           this.value = this.defaultcdId ;
-  //           break;
-  //         }
-  //       }
-  //     }
-  //     })
-  //     .catch((e) => {
-  //       console.log(e);
-  //     });
-    
-  // },
+
   beforeMount() {
     this.options = select[this.cdGroup];
     if (this.defaultcdId != null ) {
@@ -108,9 +62,6 @@ export default {
     }
   },
   watch: {
-    cur(newValue,oldValue){
-      this.secndOptions = secndSelect[newValue];
-    },
     selectedValue(newSelectedValue){
       // 해당 셀렉트박스 옵션 중 선택 된 값이 있는지 판단 후,
       // 있다면 해당 값을 선택 값으로 올림, 그렇지 않으면 empty 문자열 반환하여 placeholder(disabled, hidden) 반환 
@@ -123,14 +74,7 @@ export default {
   methods: {
     updateValue(value) {
       this.$emit("input", value);
-      // console.log("value@@@",value,this.options[this.options.map(n => n.cdId).indexOf(value)].cdNm);
-      // this.$emit("input", this.options[this.options.map(n => n.cdId).indexOf(value)].cdNm);
-      // console.log("value@@@",value,this.options[this.options.map(n => n.cdNm).indexOf(value)].cdId);
-      // this.$emit("input", this.options[this.options.map(n => n.cdNm).indexOf(value)].cdId);
     },
-    chkevent(event){
-      this.cur = event.target.value;
-    }
   },
 };
 </script>
@@ -151,19 +95,6 @@ select option:hover{
   border: 1px solid #c1c1c1;
   font-size: 11px;
   height: 28px;
-  color: #000000;
-  padding: 1px 22px 0 9px;
-  background: #fff url(../../img/icon_form_arrow_02.png) no-repeat;
-  background-position: right 11px center;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-}
-
-.select_input2 {
-  border: 1px solid #c1c1c1;
-  font-size: 13px;
-  height: 36px;
-  width: 50px;
   color: #000000;
   padding: 1px 22px 0 9px;
   background: #fff url(../../img/icon_form_arrow_02.png) no-repeat;

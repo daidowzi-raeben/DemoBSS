@@ -527,8 +527,7 @@
                   :btnClass="'btnClass5'"
                   :btnWidth="'auto'"
                   :btnName="'청구통합'"
-                  :menu="'L01M02S02'"
-                  @input="addComp"
+                  @click="addComp('L01M02S02')"
               /></span>
             </td>
           </tr>
@@ -861,6 +860,7 @@ import ButtonComponent from "@/components/common/ButtonComponent.vue";
 import InputComponent from "@/components/common/InputComponent.vue";
 import SelectBoxComponent from "@/components/common/SelectBoxComponent.vue";
 import LabelComponent from "./LabelComponent.vue";
+import menu from "../../../public/menu.json";
 
 export default {
   components: {
@@ -961,8 +961,11 @@ export default {
     FormDataclass: String,
   },
   methods: {
-    addComp(param) {
-      this.$emit("input", param);
+    addComp(page) {
+      let comp = menu.menu.filter((menu) => {
+        return menu.menuId == page;
+      });
+      this.$emit("input", comp[0]);
     },
     modalShow() {
       this.$emit("modalShow", true);

@@ -199,8 +199,8 @@ import buttonComponent from "@/components/common/ButtonComponent";
 import subInfoTitle from "@/components/common/SubInfoTitle";
 import labelComponent from "@/components/common/LabelComponent";
 import popupComponent from "@/components/common/PopupComponent";
-import HoliDiv from "@/components/common/AgGridComponent/HoliDiv";
-import HoliDesc from "@/components/common/AgGridComponent/HoliDesc";
+import HoliDiv from "@/components/common/AgGridCellRender/HoliDiv";
+import HoliDesc from "@/components/common/AgGridCellRender/HoliDesc";
 import ApiMixin from "@/service/common";
 
 export default {

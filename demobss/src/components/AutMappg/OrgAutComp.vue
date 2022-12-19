@@ -9,7 +9,7 @@
       }"
   />
   <div class="ag-grid_sp">
-    <AgGridComponent3
+    <DragGrid
         :header-color="'rgb(239 245 252)'"
         :left-title="'대상 조직'"
         :right-title="'권한 적용 조직'"
@@ -26,14 +26,14 @@
 
 <script>
 import autRetvComponent from "@/components/common/AutRetvComponent";
-import AgGridComponent3 from "@/components/common/AgGridComponent3";
+import DragGrid from "@/components/common/DragGrid";
 import ApiMixin from "@/service/common";
 export default {
   mixins:[ApiMixin],
   name: "OrgAutComp",
   components:{
     autRetvComponent,
-    AgGridComponent3
+    DragGrid
   },
   data(){
     return{
