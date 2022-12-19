@@ -165,7 +165,10 @@
             <tr>
               <th>파라미터(JSON)</th>
               <td>
-                <input-component class="input" :input-class="'class5 class5_long1'" :long-width="'600px'" :value="this.param" />
+                <text-area-component
+                    :contents="this.param"
+                    @input="(value) => {this.param = value;}"
+                />
               </td>
             </tr>
             <tr>
@@ -191,7 +194,10 @@
             <tr>
               <th>설명</th>
               <td>
-                <input-component class="input" :input-class="'class5 class5_long1'" :long-width="'600px'" :value="this.desc" />
+                <text-area-component
+                    :contents="this.desc"
+                    @input="(value) => {this.desc = value;}"
+                />
               </td>
             </tr>
           </table>
