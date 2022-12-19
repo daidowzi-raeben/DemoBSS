@@ -367,6 +367,52 @@
       "cdId": "orgNm"
     }
   ],
+  "jobNmSel" : [
+    {
+      "cdNm" : "전체",
+      "cdId" : "전체"
+    },
+    {
+      "cdNm" : "Job Name1",
+      "cdId" : "Job Name1"
+    },
+    {
+      "cdNm" : "Job Name2",
+      "cdId" : "Job Name2"
+    },
+    {
+      "cdNm" : "등등",
+      "cdId" : "등등"
+    }
+  ],
+  "wrkSttusSel" : [
+    {
+      "cdNm" : "전체",
+      "cdId" : "전체"
+    },
+    {
+      "cdNm" : "STARTED",
+      "cdId" : "STARTED"
+    },
+    {
+      "cdNm" : "등등",
+      "cdId" : "등등"
+    }
+  ],
+  "wrkResltSel" : [
+    {
+      "cdNm" : "전체",
+      "cdId" : "전체"
+    },
+    {
+      "cdNm" : "UNKNOWN",
+      "cdId" : "UNKNOWN"
+    },
+    {
+      "cdNm" : "등등",
+      "cdId" : "등등"
+    }
+  ],
   "inOfficeSttus2": [
     {
       "cdNm": "전체",

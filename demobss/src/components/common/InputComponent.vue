@@ -15,7 +15,7 @@ export default {
   name: "InputComponent",
   data() {
     return {
-      value: "",
+
     };
   },
   props: {
