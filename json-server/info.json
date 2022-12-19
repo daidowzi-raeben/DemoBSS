@@ -374,6 +374,24 @@
         "EndDate": "9999-12-31"
       }
     ],
+    "autTabData": [
+      {
+        "menuId": "",
+        "menuNm": "메뉴권한"
+      },
+      {
+        "menuId": "",
+        "menuNm": "컴포넌트권한"
+      },
+      {
+        "menuId": "",
+        "menuNm": "조직권한"
+      },
+      {
+        "menuId": "",
+        "menuNm": "사용자권한"
+      }
+    ],
     "autRowData": [
       {
         "model1": "AUT_ARCM_01_001-01",
