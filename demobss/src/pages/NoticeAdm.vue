@@ -138,9 +138,12 @@
             :columnDefs="ntfLstColumnDefs"
             :rowHeight="ntfLstRowHeight"
             :isDeselect="true"
+            :isAutoSize="[false,'type1']"
+            :isWidthFit="false"
             :headerHeight="60"
             :rowClicked="userLstRowClicked"
             :overlayNoRowsTemplate="noRowTemplateMsg"
+
           />
           <div class="pgSelectAndPagingFlex">
             <div>
@@ -466,13 +469,13 @@ import ApiMixin from "../service/common.js"
         {
           headerName: "제목",
           field: "ntfTilte",
-          width: 250,
+          width: 350,
           cellClass: "agCellStyle ",
         },
         {
           headerName: "공지 게시여부",
           field: "ntfYn",
-          width: 60,
+          width: 100,
           cellClass: "agCellStyle ",
         },
         {
@@ -490,7 +493,7 @@ import ApiMixin from "../service/common.js"
         {
           headerName: "첨부",
           field: "attachment",
-          width: 60,
+          width: 150,
           cellClass: "agCellStyle ",
         },
         {
@@ -682,7 +685,8 @@ import ApiMixin from "../service/common.js"
 }
 
 .agCellStyle {
-  white-space : normal;
+  /* white-space : normal; */
+  min-width: 300px;
   /* background-color:black; */
 }
 

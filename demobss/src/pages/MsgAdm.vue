@@ -141,6 +141,8 @@
             :columnDefs="msgLstColumnDefs"
             :rowHeight="msgLstRowHeight"
             :isDeselect="true"
+            :isAutoSize="[false,'type1']"
+            :isWidthFit="false"
             :headerHeight="60"
             :rowClicked="userLstRowClicked"
             :overlayNoRowsTemplate="noRowTemplateMsg"
@@ -441,19 +443,19 @@ export default {
         {
           headerName: "메시지ID",
           field: "msgId",
-          width: 70,
+          width: 100,
           cellClass: '"cell"-span',
         },
         {
           headerName: "메시지유형",
           field: "msgType",
-          width: 100,
+          width: 150,
           cellClass: "agCellStyle ",
         },
         {
           headerName: "메시지제목",
           field: "msgTilte",
-          width: 200,
+          width: 400,
           cellClass: "agCellStyle ",
         },
         {

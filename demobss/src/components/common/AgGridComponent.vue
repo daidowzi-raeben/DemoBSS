@@ -3,7 +3,7 @@
     class="ag-grid"
     @grid-ready="onGridReady"
     @rowClicked="rowClicked"
-    @first-data-rendered="onFirstDataRendered"
+    @first-data-rendered="onFirstDataRendered(isAutoSize)"
     :grid-options="gridOptions"
     :rowMultiSelectWithClick="isDeselect"
     :rowClassRules="rowClassRules"
@@ -50,6 +50,10 @@ export default {
     };
   },
   props: {
+    isAutoSize:{
+      type:Array,
+      default:[true, 'type1']
+    },
     headerHeight:{
       type:String,
       default:30
@@ -135,24 +139,38 @@ export default {
         },
       };
     },
-    onFirstDataRendered() {
+    onFirstDataRendered(isAutoSize) {
       // console.log("onFirstDataRendered");
-      this.makeNoRows();
-      this.makeAutoWidth();
+      if(isAutoSize[0]){
+        this.makeNoRows();
+        this.makeAutoWidth(isAutoSize[1]);
+      }
     },
-    makeAutoWidth() {
+    makeAutoWidth(autoSizeType) {
       if (!this.isWidthFit) {
         //가로 스크롤 = autosize
         this.allColumnIds= [];
         this.gridColumnApi.getColumns().forEach((column) => {
           this.allColumnIds.push(column.colId);
         });
+        
+        switch(autoSizeType){
+          case "type1":
+            this.gridApi.sizeColumnsToFit(this.allColumnIds);
+            break;
+          case "type2":
+          this.gridColumnApi.autoSizeAllColumns(this.allColumnIds, false);
+            break;
+          case "type3":
+          this.gridColumnApi.autoSizeAllColumns(this.allColumnIds);
+          break;
+          }
 
         // 여기 조율 필요합니다~~
         // this.gridColumnApi.autoSizeColumn(this.allColumnIds);            // 컬럼, data 전부 생략, 간격 맞춤  (스크롤바)
-        // this.gridColumnApi.autoSizeAllColumns(this.allColumnIds);        // 컬럼은 생략됨 / data 전부 다 표시   (스크롤바)
-        //this.gridColumnApi.autoSizeColumns(this.allColumnIds,false);     // 컬럼, data 전부 표시, 간격 맞춤 (스크롤바)
-        this.gridApi.sizeColumnsToFit(this.allColumnIds);                  // 컬럼, data 전부 생략, 간격 맞추고 테이블 크기 맞춤 (NO 스크롤)
+        // this.gridColumnApi.autoSizeAllColumns(this.allColumnIds, false);    // 컬럼은 생략됨 / data 전부 다 표시   (스크롤바)
+        // this.gridColumnApi.autoSizeColumns(this.allColumnIds,false);     // 컬럼, data 전부 표시, 간격 맞춤 (스크롤바)
+        // this.gridApi.sizeColumnsToFit(this.allColumnIds);                // 컬럼, data 전부 생략, 간격 맞추고 테이블 크기 맞춤 (NO 스크롤)
         // this.gridApi.gridBodyCtrl.eBodyViewport.style = "border-bottom:0px;"; //안쪽
       } else {
         this.gridApi.sizeColumnsToFit(); //끝까지 맞춤
