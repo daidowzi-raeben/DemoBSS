@@ -531,10 +531,10 @@ export default {
     }
   },
   async beforeMount() {
-    await this.$connect("application/json", "/info2.json", "get", "")
-      // await this.axios.get("userRowData")
+    await this.$connect("application/json", "/info.json", "get", "")
+      // await this.axios.get("msgRowData")
       .then((res) => {
-        console.log("info2", res);
+        console.log("info", res);
         this.rowData = res.data.msgRowData;
         // console.log(this.rowData);
       })

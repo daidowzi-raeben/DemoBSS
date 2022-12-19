@@ -590,9 +590,9 @@ import ApiMixin from "../service/common.js"
   },
   
   async beforeMount() {
-    await this.$connect("application/json", "/info2.json", "get", "")
+    await this.$connect("application/json", "/info.json", "get", "")
       .then((res) => {
-        console.log("info2", res);
+        console.log("info", res);
         this.rcvrRowData= res.data.rcvrRowData;
         this.rowData = res.data.NoticeRowData;
       })
