@@ -349,6 +349,7 @@
                 :placeholder="'내용 입력'"
                 :maxlength="10"
                 :contents="noticeAdmObject.ntfContent"
+                v-model="noticeAdmObject.ntfContent"
                 />
               </td>
             </tr>
@@ -371,6 +372,7 @@
                 :placeholder="'내용 입력'"
                 :maxlength="10"
                 :contents="noticeAdmObject.ansSbst"
+                v-model="noticeAdmObject.ansSbst"
                 />
               </td>
             </tr>

@@ -353,6 +353,7 @@
                     :placeholder="'내용 입력'"
                     :maxlength="10"
                     :contents="msgAdmObject.msgContent"
+                    v-model="msgAdmObject.msgContent"
                   />
                 </td>
               </tr>

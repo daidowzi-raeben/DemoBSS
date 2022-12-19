@@ -436,7 +436,7 @@
             </tr>
           </table>
         </form>
-        {{ seletedUserData }}
+        {{ selectedUserData }}
         <popup-component
           v-if="isModalShow"
           :popupmsg="popupMsg"
@@ -484,7 +484,7 @@ export default {
   },
   data() {
     return {
-      seletedUserData: "",
+      selectedUserData: "",
       noRowTemplateMsg : `<span> <strong>  조회 결과가 없습니다. </strong> <br><br><br> </span>`,
       subInfoTitleNm_Item2: "사용자 리스트",
       subInfoTitleNm_Item3: "사용자 상세정보",
@@ -600,7 +600,7 @@ export default {
         console.log("@@@userAdmObject@@@@: ", newone2);
       },
     },
-    seletedUserData: {
+    selectedUserData: {
       // 사용자리스트(ag-grid) row가 선택 되었을 때, 해당 데이터를 기반으로 사용자 상세정보 변경
       deep: true,
       handler(newSeletedUserData) {
@@ -638,7 +638,7 @@ export default {
       this.userAdmObject.isDisabled = false;
       this.emptyUserAdmObject(this.userAdmObject);
       this.$refs.agGridComponent.deselectAll(1);
-      this.seletedUserData = "register"
+      this.selectedUserData = "register"
     },
     clickUserAmend() {
       if (this.userAdmObject.sttus == "register") {
@@ -702,9 +702,9 @@ export default {
         this.isUserLstModalShow= true;                 //row 클릭 될 경우 팝업 띄우고 
         this.$refs.agGridComponent.deselectAll(1);     // 이전에 클릭 된 row 클릭 해제                   
       }else if(seletedRowData == ""){
-        this.seletedUserData = "empty";                // 동일한 row 클릭 시, 해당 row 클릭 해제, 해당 객체 데이터 비우도록 emit
+        this.selectedUserData = "empty";                // 동일한 row 클릭 시, 해당 row 클릭 해제, 해당 객체 데이터 비우도록 emit
       }else{
-        this.seletedUserData = seletedRowData[0];      // 다른 row 클릭 시 달라진 값 객체 데이터에 전달 
+        this.selectedUserData = seletedRowData[0];      // 다른 row 클릭 시 달라진 값 객체 데이터에 전달 
       }
     }
   },
