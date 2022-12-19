@@ -110,14 +110,14 @@
         :cdGroup="'optionSearchNum'"
         :is-disabled="true"
         :defaultValue="'선택'"
-        v-model="month"
+        v-model="SearchNum"
         style="
         width: 120px;
         height: 26px;
         margin-right: 15px;"
         @input="
           (value) => {
-            month = value;
+            SearchNum = value;
           }
         "
     />
@@ -157,13 +157,13 @@
             <tr>
               <th>권한ID</th>
               <td colspan="3">
-                <input-component :input-class="'class5 class5_long1'" :class="autChgConf===true ? 'input_disabled':'input'"  :long-width="'600px'" :disabled="disabled" :value="this.autId" />
+                <input-component :input-class="'class5 class5_long1'" :class="autChgConf===true ? 'input_disabled':'input'"  :long-width="'600px'" :disabled="disabled" v-model="this.autId" :value="this.autId" />
               </td>
             </tr>
             <tr>
               <th>권한명</th>
               <td colspan="3">
-                <input-component class="input" :input-class="'class5 class5_long1'" :long-width="'600px'" :value="this.autNm" />
+                <input-component class="input" :input-class="'class5 class5_long1'" :long-width="'600px'" v-model="this.autNm" :value="this.autNm" />
               </td>
             </tr>
             <tr>
@@ -188,7 +188,7 @@
               <th>사용여부</th>
               <td>
                 <span style="margin-right: 50px;"><input type="radio" v-model="useAble" value="use">사용</span>
-                <span><input type="radio" v-model="useAble"  value="unuse">미사용</span>
+                <span><input type="radio" v-model="useAble" value="unuse">미사용</span>
               </td>
             </tr>
             <tr>
@@ -233,15 +233,12 @@ import ButtonComponent from "@/components/common/ButtonComponent";
 import AgGridComponent from "@/components/common/AgGridComponent";
 import InputComponent from "@/components/common/InputComponent";
 import SubInfoTitle from "@/components/common/SubInfoTitle";
-import DatePickerComponent from "@/components/common/DatePickerComponent";
 import PopupComponent from "@/components/common/PopupComponent.vue";
 import ApiMixin from "@/service/common";
-import {calDateString, calDateTime} from "@/service/FormatService";
 export default {
   mixins:[ApiMixin],
   name: "AutAdm",
   components: {
-    DatePickerComponent,
     PopupComponent,
     pagingArea,
     selectBoxComponent,
@@ -262,6 +259,7 @@ export default {
       useYn:null,              //사용여부 셀렉트박스
       searchValue:null,        //검색어
       autTypeSel:null,         //권한유형 셀렉트박스
+      SearchNum:null,          //검색 건수
 
       autId:null,     //권한ID
       autNm:null,     //권한명
@@ -307,7 +305,7 @@ export default {
       this.autId = this.autData.model1;
       this.autNm = this.autData.model2;
       this.autType = this.autData.model3;
-      this.amdDate=calDateString(new Date());
+      this.amdDate=new Date().toLocaleString();
       if(this.autData.model4==='사용')this.useAble='use';
       else this.useAble='unuse';
     },
@@ -319,7 +317,7 @@ export default {
         this.autId = this.autData.model1;
         this.autNm = this.autData.model2;
         this.autType = this.autData.model3;
-        this.amdDate=calDateString(new Date());
+        this.amdDate=new Date().toLocaleString();
         if(this.autData.model4==='사용')this.useAble='use';
         else this.useAble='unuse';
       }
@@ -333,8 +331,8 @@ export default {
       }
       this.regr="MIG";
       this.amdr="12345678";
-      this.amdDate=calDateString(new Date());
-      this.regDate=calDateString(new Date());
+      this.amdDate=new Date().toLocaleString();
+      this.regDate=new Date().toLocaleString();
       this.autRegConf=true;
       this.autChgConf=false;
       this.disabled=false

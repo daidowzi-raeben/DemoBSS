@@ -1,9 +1,9 @@
 <template>
     <textarea
-        id="contents"
+        name=""
         :rows="rows"
         :placeholder="placeholder"
-        v-model="contents"
+        v-model="value"
       :maxlength="maxlength"
     />
 </template>
@@ -13,6 +13,7 @@ export default {
   name: "TextAreaComponent",
   data(){
     return{
+      value:""
     }
   },
   props:{
@@ -41,6 +42,9 @@ export default {
   },
   methods:{
 
+  },
+  beforeUpdate() {
+    this.value = this.contents;
   }
 
 }
@@ -51,7 +55,7 @@ export default {
 textarea{
   width: 95%;
   height: v-bind('textAreaHeight');
-  border: 1px solid;
+  border: 1px solid #e4e4e4;
   resize: none;
 }
 </style>

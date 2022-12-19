@@ -34,14 +34,14 @@
         :cdGroup="'optionSearchNum'"
         :is-disabled="true"
         :defaultValue="'선택'"
-        v-model="month"
+        v-model="SearchNum"
         style="
         width: 120px;
         height: 26px;
         margin-right: 15px;"
         @input="
           (value) => {
-            month = value;
+            SearchNum = value;
           }
         "
     />
@@ -118,6 +118,7 @@ export default {
       autId:null,     //agGrid에서 선택된 row의 권한ID
       searchValue:null, //검색어 값
       selValue:null,    //select박스 선택값
+      SearchNum:null,   //검색 건수
       comp:"",
       columnDefs: [
         {

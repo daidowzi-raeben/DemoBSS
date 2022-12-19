@@ -44,37 +44,37 @@
               <tr>
                 <th>코드그룹ID</th>
                 <td>
-                  <input-component :class="this.type===2 ? 'input_disabled':'input'" :input-class="'class5'" :disabled="disabled" :value="this.cdGpId" />
+                  <input-component :class="this.type===2 ? 'input_disabled':'input'" :input-class="'class5'" :disabled="disabled" v-model="this.cdGpId" :value="this.cdGpId" />
                 </td>
                 <th>상위코드그룹ID</th>
                 <td>
-                  <input-component :class="this.type===2 ? 'input_disabled':'input'" :input-class="'class5'" :disabled="disabled" :value="this.upCdGpId" />
+                  <input-component :class="this.type===2 ? 'input_disabled':'input'" :input-class="'class5'" :disabled="disabled" v-model="this.upCdGpId" :value="this.upCdGpId" />
                 </td>
               </tr>
               <tr>
                 <th>코드ID</th>
                 <td>
-                  <input-component :class="this.type===2 ? 'input_disabled':'input'" :input-class="'class5'" :disabled="disabled" :value="this.cdId" />
+                  <input-component :class="this.type===2 ? 'input_disabled':'input'" :input-class="'class5'" :disabled="disabled" v-model="this.cdId" :value="this.cdId" />
                 </td>
                 <th>상위코드ID</th>
                 <td>
-                  <input-component :class="this.type===2 ? 'input_disabled':'input'" :input-class="'class5'" :disabled="disabled" :value="this.upCdId" />
+                  <input-component :class="this.type===2 ? 'input_disabled':'input'" :input-class="'class5'" :disabled="disabled" v-model="this.upCdId" :value="this.upCdId" />
                 </td>
               </tr>
               <tr>
                 <th>코드명</th>
                 <td>
-                  <input-component class="input" :input-class="'class5 class5_long1'" :long-width="'220px'" :value="this.cdNm" />
+                  <input-component class="input" :input-class="'class5 class5_long1'" :long-width="'220px'" v-model="this.cdNm" :value="this.cdNm" />
                 </td>
                 <th>표준코드ID</th>
                 <td>
-                  <input-component :class="this.type===2 ? 'input_disabled':'input'" :input-class="'class5 class5_long1'" :disabled="disabled" :long-width="'220px'" :value="this.stdCdId" />
+                  <input-component :class="this.type===2 ? 'input_disabled':'input'" :input-class="'class5 class5_long1'" :disabled="disabled" :long-width="'220px'" v-model="this.stdCdId" :value="this.stdCdId" />
                 </td>
               </tr>
               <tr>
                 <th>코드설명</th>
                 <td colspan="3">
-                  <input-component class="input" :input-class="'class5 class5_long1'" :long-width="'625px'" :value="this.cdDesc" />
+                  <input-component class="input" :input-class="'class5 class5_long1'" :long-width="'625px'" v-model="this.cdDesc" :value="this.cdDesc" />
                 </td>
               </tr>
               <tr>
@@ -85,17 +85,23 @@
                 </td>
                 <th>코드출력순서</th>
                 <td>
-                  <input-component class="input" :input-class="'class5'" :value="this.cdOtputOdrg" />
+                  <input-component class="input" :input-class="'class5'" :value="this.cdOtputOdrg" v-model="this.cdOtputOdrg" />
                 </td>
               </tr>
               <tr>
                 <th>유효시작일자</th>
                 <td><date-picker-component
                     :classWrapper="'calender_input'"
+                    :pDate ="this.efctStDate"
+                    @input="
+                    (value) => {this.efctStDate = value}"
                 /></td>
                 <th>유효종료일자</th>
                 <td><date-picker-component
                     :classWrapper="'calender_input'"
+                    :pDate ="this.efctFnsDate"
+                    @input="
+                    (value) => {this.efctFnsDate = value}"
                 /></td>
               </tr>
             </table>
@@ -152,6 +158,10 @@ export default {
         if (this.value.model8 === "사용") this.useAble = 'use';
         else this.useAble = 'unuse';
       }
+    }
+    else{
+      this.efctStDate = new Date();
+      this.efctFnsDate =  new Date(9999,11,31);
     }
   },
   props: {
