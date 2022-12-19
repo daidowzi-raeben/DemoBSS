@@ -676,7 +676,7 @@ import InputComponent from '@/components/common/InputComponent.vue';
 import LabelComponent from '@/components/common/LabelComponent.vue';
 import LoadingSpinnerComponent from "@/components/common/LoadingSpinnerComponent";
 import PostCodeComponent from '@/components/common/PostCodeComponent.vue';
-import AgGridComponent3 from "@/components/common/AgGridComponent3";
+import AgGridComponent3 from "@/components/common/DragGrid";
 
 export default {
   mixins:[ApiMixin],

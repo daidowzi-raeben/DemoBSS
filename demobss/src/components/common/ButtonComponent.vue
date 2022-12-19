@@ -1,5 +1,5 @@
 <template>
-  <button :class="btnClass" type="button" @click="setCmpn(comp)">
+  <button :class="btnClass" type="button" >
     {{ btnName }}
   </button>
 </template>
@@ -15,7 +15,6 @@ export default {
   props: {
     btnClass: null,
     btnName: String,
-    menu: null,
     btnWidth: {
       type: String,
       default: "25px",
@@ -29,16 +28,6 @@ export default {
       default: "25px",
     },
   },
-  created() {
-    this.comp = menu.menu.filter((menu) => {
-      return menu.menuId == this.menu;
-    });
-  },
-  methods: {
-    setCmpn(param) {
-      this.$emit("input", param[0]);
-    },
-  },
 };
 </script>
 
@@ -47,25 +36,13 @@ export default {
   float: right;
   padding: 2px;
   font-size: 12pt;
-  border: rgb(231, 231, 231) 1px solod;
+  border: rgb(231, 231, 231) 1px solid;
   border-radius: 3px;
   color: #000;
   margin: 0px 0px 0px 3px;
   background-color: rgb(251, 251, 251);
 }
-.btnClass2 {
-  background-color: rgb(119, 146, 176);
-  border: rgb(231, 231, 231) 1px solid;
-  border-radius: 3px;
-  color: white;
-  cursor: pointer;
-  float: right;
-  font-size: 12pt;
-  margin: 0px 0px 0px 3px;
-  padding: 2px;
-}
-.btnClass1:hover,
-.btnClass2:hover {
+.btnClass1:hover {
   background-color: rgb(27, 114, 212);
   color: white;
 }
@@ -123,24 +100,7 @@ export default {
   -webkit-transform: scale(0.98);
   transform: scale(0.98);
 }
-.btnSearchImgClass {
-  float: left;
-  padding: 5px;
-  margin-right: 10px;
-  width: 100%;
-  height: 100%;
-  background-color: #707070;
-  font-weight: bold;
-  font-size: 20px;
-  color: #ffffff;
-  cursor: pointer;
-}
-.btnSearchImgClass:hover {
-  background-color: rgba(114, 99, 99, 0.47);
-  border: 3px solid red;
-  margin: -3px;
-  border-radius: 5px;
-}
+
 .btnLeftImgClass {
   background-color: transparent;
   border: none;

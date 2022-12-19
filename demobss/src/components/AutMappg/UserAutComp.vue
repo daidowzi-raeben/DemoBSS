@@ -52,7 +52,7 @@
       </span>
   </div>
   <div class="ag-grid_sp">
-    <AgGridComponent3
+    <DragGrid
         :header-color="'rgb(239 245 252)'"
         :left-title="'대상 사원'"
         :right-title="'권한 적용 사원'"
@@ -72,14 +72,14 @@
 import selectBoxComponent from "@/components/common/SelectBoxComponent";
 import inputComponent from "@/components/common/InputComponent";
 import buttonComponent from "@/components/common/ButtonComponent";
-import AgGridComponent3 from "@/components/common/AgGridComponent3";
+import DragGrid from "@/components/common/DragGrid";
 import ApiMixin from "@/service/common";
 export default {
   mixins:[ApiMixin],
   name: "UserAutComp",
   components:{
     selectBoxComponent,
-    AgGridComponent3,
+    DragGrid,
     inputComponent,
     buttonComponent
   },

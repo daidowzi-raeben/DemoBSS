@@ -62,8 +62,8 @@ import autRetvComponent from "@/components/common/AutRetvComponent";
 import subInfoTitle from "@/components/common/SubInfoTitle";
 import buttonComponent from "@/components/common/ButtonComponent";
 import AgGridComponent from "@/components/common/AgGridComponent";
-import AutCdGpNm from "@/components/common/AgGridComponent/AutCdGpNm";
-import AutYn from "@/components/common/AgGridComponent/AutYn";
+import AutCdGpNm from "@/components/common/AgGridCellRender/AutCdGpNm";
+import AutYn from "@/components/common/AgGridCellRender/AutYn";
 import popupComponent from "@/components/common/PopupComponent";
 import ApiMixin from "@/service/common.js";
 export default {
