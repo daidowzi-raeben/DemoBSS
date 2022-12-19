@@ -178,14 +178,14 @@
         :cdGroup="'optionSearchNum'"
         :is-disabled="true"
         :defaultValue="'선택'"
-        v-model="month"
+        v-model="SearchNum"
         style="
         width: 120px;
         height: 26px;
         margin-right: 15px;"
         @input="
           (value) => {
-            month = value;
+            SearchNum = value;
           }
         "
     />
@@ -249,7 +249,7 @@ export default {
       wrkOdrg:null,                //작업순서
       jobInstId:null,              //작업 인스턴스 id
       wrkReslt:null,               //작업 결과
-
+      SearchNum:null,                 //건수
       btExeInfo:null,              //배치실행 정보
       isModelBtExeInfoShow:false,  //배치실행상세정보 팝업
       isModalBtExeShow:false,      //배치실행 팝업
@@ -292,7 +292,9 @@ export default {
     reset() {
       this.jobNm="";
       this.wrkSttus="";
-      this.btStDate=new Date();
+      let date = new Date();
+      date.setMonth(date.getMonth() -1);
+      this.btStDate=date;
       this.btEnDate=new Date();
       this.wrkOdrg="";
       this.jobInstId="";
@@ -302,6 +304,19 @@ export default {
     closeBtInfoModal(){
       this.isModelBtExeInfoShow = false;
     },
+    search() {
+      this.$connect('application/json', '/info', 'get', '').then((res) => {
+      })
+    }
+  },
+  async beforeMount() {
+    await this.$connect('application/json','/info','get','').then((res)=>{
+
+    })
+    let date = new Date();
+    date.setMonth(date.getMonth() -1);
+    this.btStDate=date;
+    this.btEnDate=new Date();
   }
 }
 </script>

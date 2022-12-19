@@ -55,7 +55,7 @@ export default {
 textarea{
   width: 95%;
   height: v-bind('textAreaHeight');
-  border: 1px solid rgb(239, 245, 252);
+  border: 1px solid #e4e4e4;
   resize: none;
 }
 </style>

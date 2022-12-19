@@ -10,7 +10,8 @@
                  :classWrapper="'calender_input'"
                  :width="'200px'"
                  :height="'28px'"
-                 :pPlaceholder="'2022.01.01'"
+                 :type="'month'"
+                 :dateFormat="'yyyy-MM'"
                  :pDate="holiStDate"
                  @input="
               (value) => {
@@ -25,7 +26,8 @@
                   :classWrapper="'calender_input'"
                   :width="'200px'"
                   :height="'28px'"
-                  :pPlaceholder="'2022.01.01'"
+                  :type="'month'"
+                  :dateFormat="'yyyy-MM'"
                   :pDate="holiEnDate"
                   @input="
               (value) => {
@@ -146,11 +148,12 @@
           <date-picker-component
               :classWrapper="'calender_input'"
               :width="100"
-              :pPlaceholder="'2022.01.01'"
-              :pDate="date1"
+              :type="'year'"
+              :date-format="'yyyy년'"
+              :pDate="caldrStDate"
               @input="
               (value) => {
-                date1 = value;
+                caldrStDate = value;
               }
             "
           />
@@ -160,11 +163,12 @@
           <date-picker-component
               :classWrapper="'calender_input'"
               :width="100"
-              :pPlaceholder="'2022.01.01'"
-              :pDate="date1"
+              :type="'year'"
+              :date-format="'yyyy년'"
+              :pDate="caldrEnDate"
               @input="
               (value) => {
-                date1 = value;
+                caldrEnDate = value;
               }
             "
           />
@@ -210,8 +214,8 @@ export default {
     selectBoxComponent,
     buttonComponent,
     subInfoTitle,
-    HoliDiv,
-    HoliDesc
+    HoliDiv,          //Ag Grid CellRender
+    HoliDesc          //Ag Grid CellRender
   },
   data(){
     return{
@@ -252,17 +256,25 @@ export default {
       ],
       holiYn:null,        //휴일 여부
       holiDiv:null,      //휴일 구분
-      holiStDate:null,   //조회시작년월
+      holiStDate: null,   //조회시작년월
       holiEnDate:null,   //조회종료년월
+
+
       isModalChgShow:false, //변경팝업
-      isModalCretShow:false //생성팝업
+      isModalCretShow:false, //생성팝업
+
+
+      caldrStDate: new Date(),  //달력시작년
+      caldrEnDate: new Date()   //달력종료년
     }
   },
   methods:{
     reset(){
       this.holiYn="";
       this.holiDiv="";
-      this.holiStDate=new Date();
+      let date = new Date();
+      date.setMonth(date.getMonth() -1);
+      this.holiStDate=date;
       this.holiEnDate=new Date();
     },
     search(){
@@ -275,6 +287,11 @@ export default {
     await this.$connect('application/json','/info','get','').then((res)=>{
         this.holiRowData = res.data.holiRowData;
     })
+    let date = new Date();
+    date.setMonth(date.getMonth() -1);
+    this.holiStDate=date;
+    this.holiEnDate=new Date();
+
   }
 }
 </script>
