@@ -701,7 +701,7 @@
       "menuId": "L05M13S02",
       "menuNm": "배치실행 이력관리",
       "upMenuId": "L05M13S00",
-      "cmpnId": ""
+      "cmpnId": "BatchExeAdm"
     },
     {
       "menuId": "L05M14S00",

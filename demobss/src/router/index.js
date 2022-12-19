@@ -68,6 +68,12 @@ const routes = [
         import(/* webpackChunkName: "about" */ "../pages/BatchSclgAdm.vue"),
   },
   {
+    path: "/BatchExeAdm",
+    name: "BatchExeAdm",
+    component: () =>
+        import(/* webpackChunkName: "about" */ "../pages/BatchExeAdm.vue"),
+  },
+  {
     path: "/common",
     name: "Common",
     component: () =>
