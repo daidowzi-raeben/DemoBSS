@@ -1,14 +1,11 @@
 <template>
-  <div class="textAreaDiv">
     <textarea
-        id="contents"
+        name=""
         :rows="rows"
         :placeholder="placeholder"
-        v-model="contents"
+        v-model="value"
       :maxlength="maxlength"
     />
-    <p v-if="!isContentsValid">글자수가 최대입니다.</p>
-  </div>
 </template>
 
 <script>
@@ -16,10 +13,11 @@ export default {
   name: "TextAreaComponent",
   data(){
     return{
-      contents:"",
+      value:""
     }
   },
   props:{
+    contents:String,
     rows:{
       type:Number,
       default:5,
@@ -31,29 +29,33 @@ export default {
     maxlength:{
       type:Number,
       default:100,
+    },
+    textAreaHeight:{
+      type:String,
+      default: '80%'
     }
   },
   computed:{
     isContentsValid(){  //최대 글자수 체크 관련 함수
-      return this.contents.length < 10;
+      return this.contents.length < 100;
     }
   },
   methods:{
 
+  },
+  beforeUpdate() {
+    this.value = this.contents;
   }
 
 }
 </script>
 
 <style scoped>
-.textAreaDiv{
-  width: 1000px;
-  height: 500px;
-}
+
 textarea{
-  width: 100%;
-  height: 6.25em;
-  border: 1px solid;
+  width: 95%;
+  height: v-bind('textAreaHeight');
+  border: 1px solid rgb(239, 245, 252);
   resize: none;
 }
 </style>

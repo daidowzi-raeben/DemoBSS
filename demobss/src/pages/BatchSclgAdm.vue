@@ -87,6 +87,7 @@
             :columnDefs="batchSclgColumnDefs"
             :row-height="40"
             :rowClicked="clickedRow"
+            :is-auto-size="'Type2'"
             :isWidthFit="false"
             :overlayNoRowsTemplate="
           `<span> <br>` + '<br />조회 결과가 없습니다.' + ` </span>`
@@ -147,19 +148,19 @@
             <tr>
               <th>스케줄링ID</th>
               <td >
-                <input-component :input-class="'class5 class5_long1'" :class="batchChgConf===true ? 'input_disabled':'input'"  :long-width="'600px'" :disabled="disabled" :value="this.sclgId" />
+                <input-component :input-class="'class5 class5_long1'" :class="batchChgConf===true ? 'input_disabled':'input'"  :long-width="'600px'" :disabled="disabled" v-model="this.sclgId" :value="this.sclgId" />
               </td>
             </tr>
             <tr>
               <th>배치서버</th>
               <td>
-                <input-component class="input" :input-class="'class5 class5_long1'" :long-width="'600px'" :value="this.batchSrvr" />
+                <input-component class="input" :input-class="'class5 class5_long1'" :long-width="'600px'" v-model="this.batchSrvr" :value="this.batchSrvr" />
               </td>
             </tr>
             <tr>
               <th>스케줄링 그룹</th>
               <td>
-                <input-component class="input" :input-class="'class5 class5_long1'" :long-width="'600px'" :value="this.sclgGp" />
+                <input-component class="input" :input-class="'class5 class5_long1'" :long-width="'600px'" v-model="this.sclgGp" :value="this.sclgGp" />
               </td>
             </tr>
             <tr>
@@ -167,14 +168,14 @@
               <td>
                 <text-area-component
                     :contents="this.param"
-                    @input="(value) => {this.param = value;}"
+                    v-model="this.param"
                 />
               </td>
             </tr>
             <tr>
               <th>실행주기(크론식)</th>
               <td>
-                <input-component class="input" :input-class="'class5 class5_long1'" :long-width="'600px'" :value="this.exeCycl" />
+                <input-component class="input" :input-class="'class5 class5_long1'" :long-width="'600px'" v-model="this.exeCycl" :value="this.exeCycl" />
               </td>
             </tr>
             <tr>
@@ -196,7 +197,7 @@
               <td>
                 <text-area-component
                     :contents="this.desc"
-                    @input="(value) => {this.desc = value;}"
+                    v-model="this.desc"
                 />
               </td>
             </tr>
@@ -251,7 +252,7 @@ export default {
       sclgId:null,      //스케줄링ID
       batchSrvr:null,   //배치서버
       sclgGp:null,      //스케줄링그룹
-      param:null,       //파라미터
+      param:"",       //파라미터
       exeCycl:null,     //실행주기
       useYn:null,       //사용여부
       aplyYn:null,      //적용여부
