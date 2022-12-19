@@ -113,7 +113,6 @@
       </div>
 
       <div class="item2">
-        {{msgAdmObject}}
         <div>
           <sub-info-title :subInfoTitleNm="'메시지 리스트'" />
           <p style="margin-left: 5px; display: inline-block">
@@ -144,7 +143,7 @@
             :isAutoSize="[false,'type1']"
             :isWidthFit="false"
             :headerHeight="60"
-            :rowClicked="userLstRowClicked"
+            :rowClicked="msgLstRowClicked"
             :overlayNoRowsTemplate="noRowTemplateMsg"
           />
           <div class="pgSelectAndPagingFlex">
@@ -229,7 +228,7 @@
                     :input-class="'class6 class6_2'"
                     :disabled="true"
                     :placeholder="'System'"
-                    :value="msgAdmObject.msgMKer"
+                    :value="msgAdmObject.msgRegr"
                   />
                 </td>
                 <th><label-component :labelNm="'작성일자'" /></th>
@@ -239,7 +238,7 @@
                     :input-class="'class6 class6_2'"
                     :disabled="true"
                     :placeholder="'  '"
-                    :value="msgAdmObject.msgMkeDt"
+                    :value="msgAdmObject.msgRegrDt"
                   />
                 </td>
               </tr>
@@ -299,7 +298,7 @@
                     :width="150"
                     :cdGroup="'msgType'"
                     :isDisabled="true"
-                    :defaultValue="'공지유형선택 선택'"
+                    :defaultValue="'메시지유형선택 선택'"
                     :defaultcdId="msgAdmObject.msgType"
                     :selectedValue="msgAdmObject.msgType"
                     @input="
@@ -358,6 +357,10 @@
                 </td>
               </tr>
             </table>
+            
+        <!-- {{msgAdmObject}}
+        <p> ----------- </p>
+        {{selectedMsgData}} -->
           </form>
 
           <popup-component
@@ -415,8 +418,8 @@ export default {
         msgSttus: "amend",
         msgId: "",
         msgTitle: "",
-        msgMKer: "",
-        msgMkeDt: new Date("2022-12-16"),
+        msgRegr: "",
+        msgRegrDt: new Date("2022-12-16"),
         msgStDt: new Date(), // 공지게시 일자
         msgEndDt: new Date("2023-12-31"), // 공지게시 일자
         msgUseYn: "01", // 팝업게시
@@ -455,7 +458,7 @@ export default {
         },
         {
           headerName: "메시지제목",
-          field: "msgTilte",
+          field: "msgTitle",
           width: 400,
           cellClass: "agCellStyle ",
         },
@@ -479,17 +482,18 @@ export default {
         },
         {
           headerName: "작성자",
-          field: "regr",
+          field: "msgRegr",
           width: 100,
           cellClass: "agCellStyle ",
         },
         {
           headerName: "작성일자",
-          field: "regrDt",
+          field: "msgRegrDt",
           width: 100,
           cellClass: "agCellStyle ",
         },
       ],
+      isMsgLstModalShow:false,
       rowData: [],
       noRowTemplateMsg: `<span> <strong>  조회 결과가 없습니다. </strong> <br><br><br> </span>`,
       pageableData: {
@@ -500,10 +504,34 @@ export default {
       },
       currentPage: "",
       popupMsg: "",
-      isModalShow: false, // popup 조건
+      selectedMsgData:""
     };
   },
   methods:{
+    msgLstRowClicked(params){
+      let selectedRowData = params.api.getSelectedRows();
+      if(this.msgAdmObject.msgSttus=="register") {       // 사용자관리 상태가 등록일 경우,
+        this.isMsgLstModalShow= true;                 //row 클릭 될 경우 팝업 띄우고 
+        this.$refs.agGridComponent.deselectAll(1);     // 이전에 클릭 된 row 클릭 해제                   
+      }else if(selectedRowData == ""){
+        this.selectedMsgData = "empty";                // 동일한 row 클릭 시, 해당 row 클릭 해제, 해당 객체 데이터 비우도록 emit
+      }else{
+        this.selectedMsgData = selectedRowData[0];      // 다른 row 클릭 시 달라진 값 객체 데이터에 전달 
+      }
+    },
+    emptyMsgAdmObject(ntfObject){
+      ntfObject.msgId = "";
+      ntfObject.msgTitle = "";
+      ntfObject.msgRegr = null;
+      ntfObject.msgRegrDt = new Date();
+      ntfObject.msgStDt =   new Date()           ;
+      ntfObject.msgEndDt =  new Date("2023-12-31");
+      ntfObject.msgUseYn = "";
+      ntfObject.msgType =  "";
+      ntfObject.rcvrRstrtn = new Date("2023-12-31");
+      ntfObject.msgCallBack = "";
+      ntfObject.msgContent = "";
+    },
     resetRetvCond(){
       console.log(this.selectValues);
       this.selectValues.selectValueOfRetv = "" ;
@@ -528,7 +556,44 @@ export default {
     selectValues(newSelectedValue){
       this.selectValues = newSelectedValue;
       console.log(this.selectValues)
-    }
+    },
+    
+    msgAdmObject: {
+      // 사용자 상세정보 변경이 감지되면 해당 변경 적용
+      deep: true,
+      handler(newone2) {
+        this.msgAdmObject = newone2;
+        console.log("@@@msgAdmObject@@@@: ", newone2);
+      },
+    },
+    selectedMsgData: {
+      // 메시지리스트(ag-grid) row가 선택 되었을 때, 해당 데이터를 기반으로 사용자 상세정보 변경
+      deep: true,
+      handler(newSeletedMsgData) {
+        console.log("newSeletedMsgData", newSeletedMsgData);
+        if (newSeletedMsgData == "empty") {
+          this.emptyMsgAdmObject(this.msgAdmObject);
+        } 
+        else {
+          // console.log("msgAdmObject : ", this.msgAdmObject)
+          let tmpMsgAdmObject = this.msgAdmObject
+          tmpMsgAdmObject.msgId = newSeletedMsgData.msgId;
+          tmpMsgAdmObject.msgTitle = newSeletedMsgData.msgTitle;
+          tmpMsgAdmObject.msgRegr = newSeletedMsgData.msgRegr;
+          tmpMsgAdmObject.msgRegrDt = new Date(newSeletedMsgData.msgRegrDt);
+          tmpMsgAdmObject.msgStDt = new Date(newSeletedMsgData.msgStDt);
+          tmpMsgAdmObject.msgEndDt = new Date(newSeletedMsgData.msgEndDt);
+          tmpMsgAdmObject.msgUseYn = newSeletedMsgData.msgUseYn;
+          tmpMsgAdmObject.msgType = newSeletedMsgData.msgType;
+          tmpMsgAdmObject.rcvrRstrtn = newSeletedMsgData.rcvrRstrtn;
+          tmpMsgAdmObject.msgCallBack = newSeletedMsgData.msgCallBack;
+          tmpMsgAdmObject.msgContent = newSeletedMsgData.msgContent;
+          // console.log("newSeletedMsgData",this.msgAdmObject.inOfficeSttus2);
+          
+          this.msgAdmObject = tmpMsgAdmObject  ;
+        }
+      },
+    },
   },
   async beforeMount() {
     await this.$connect("application/json", "/info.json", "get", "")

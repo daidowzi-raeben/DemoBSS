@@ -131,7 +131,9 @@
         </div>
 
         <div>
-      {{noticeAdmObject}}
+      <!-- 객체 데이터 값{{noticeAdmObject}}
+      <p>------</p>
+      row 선택 값 {{ selectedNtfData}} -->
           <ag-grid-component
             ref="agGridComponent"
             :rowData="rowData"
@@ -141,7 +143,7 @@
             :isAutoSize="[false,'type1']"
             :isWidthFit="false"
             :headerHeight="60"
-            :rowClicked="userLstRowClicked"
+            :rowClicked="ntfLstRowClicked"
             :overlayNoRowsTemplate="noRowTemplateMsg"
 
           />
@@ -193,8 +195,8 @@
                   :input-class="'class6'"
                   :class6Width="'300px'"
                   :placeholder="'공지사항 제목'"
-                  :value="noticeAdmObject.menuNm"
-                  v-model="noticeAdmObject.menuNm"
+                  :value="noticeAdmObject.ntfTitle"
+                  v-model="noticeAdmObject.ntfTitle"
                 />
               </td>
             </tr>
@@ -207,7 +209,7 @@
                   :input-class="'class6 class6_2'"
                   :disabled="true"
                   :placeholder="'System'"
-                  :value="noticeAdmObject.ntfMKer"
+                  :value="noticeAdmObject.ntfRegr"
                 />
               </td>
               <th><label-component :labelNm="'작성일자'" /></th>
@@ -217,7 +219,7 @@
                   :input-class="'class6 class6_2'"
                   :disabled="true"
                   :placeholder="'  '"
-                  :value="noticeAdmObject.ntfMkeDt"
+                  :value="noticeAdmObject.ntfRegrDt"
                 />
               </td>
             </tr>
@@ -259,9 +261,9 @@
               <td style="width: 100px">
               <radio-component 
                     :RadioOption="'useNouse'" 
-                    @radioEmit="(radioValue) => { noticeAdmObject.UseYn = radioValue }"
-                    :seletedRadio="noticeAdmObject.UseYn"
-                    :defaultcdId="noticeAdmObject.UseYn" />
+                    @radioEmit="(radioValue) => { noticeAdmObject.popupYn = radioValue }"
+                    :seletedRadio="noticeAdmObject.popupYn"
+                    :defaultcdId="noticeAdmObject.popupYn" />
               </td>
               <th style="width: 35px">
                 <label-component :labelNm="'팝업게시일자'" />
@@ -335,7 +337,7 @@
                 :rowHeight="ntfDtlRowHeight"
                 :isDeselect="true"
                 :headerHeight="30"
-                :rowClicked="userLstRowClicked"
+                :rowClicked="ntfDtlRowClicked"
                 :overlayNoRowsTemplate="noRowTemplateMsg"
                 />
               </td>
@@ -427,13 +429,13 @@ import ApiMixin from "../service/common.js"
       noticeAdmObject:{
         ntfSttus : 'amend',
         ntfTitle:'',
-        ntfMKer : '',
-        ntfMkeDt : new Date("2022-12-16"),
+        ntfRegr : '',
+        ntfRegrDt : new Date("2022-12-16"),
         ntfStYn: "01",                      // 공지게시
         ntfStDt : new Date(),               // 공지게시 일자
         ntfEndDt : new Date("2023-12-31"),  // 공지게시 일자
         popupYn : "01",                     // 팝업게시 
-        popupStDt : new Date(),             // 팝업게시 일자
+        popupStDt :  new Date(),             // 팝업게시 일자
         popupEndDt : new Date("2023-12-31"),// 팝업게시 일자
         ntfType : "",                       // 공지 유형
         rcvrRstrtn : "",                    // 수신자그룹제한
@@ -470,13 +472,13 @@ import ApiMixin from "../service/common.js"
         },
         {
           headerName: "제목",
-          field: "ntfTilte",
+          field: "ntfTitle",
           width: 350,
           cellClass: "agCellStyle ",
         },
         {
           headerName: "공지 게시여부",
-          field: "ntfYn",
+          field: "ntfStYn",
           width: 100,
           cellClass: "agCellStyle ",
         },
@@ -518,13 +520,13 @@ import ApiMixin from "../service/common.js"
         },
         {
           headerName: "작성자",
-          field: "regr",
+          field: "ntfRegr",
           width: 100,
           cellClass: "agCellStyle ",
         },
         {
           headerName: "작성일자",
-          field: "regrDt",
+          field: "ntfRegrDt",
           width: 100,
           cellClass: "agCellStyle ",
         },
@@ -565,10 +567,23 @@ import ApiMixin from "../service/common.js"
       currentPage: "",
       popupMsg:"",
       isModalShow: false, // popup 조건
+      selectedNtfData:''
 
     }
   },
   methods:{
+    ntfLstRowClicked(params){
+      let seletedRowData = params.api.getSelectedRows();
+      if(this.noticeAdmObject.ntfSttus=="register") {       // 사용자관리 상태가 등록일 경우,
+        this.isNtfLstModalShow= true;                 //row 클릭 될 경우 팝업 띄우고 
+        this.$refs.agGridComponent.deselectAll(1);     // 이전에 클릭 된 row 클릭 해제                   
+      }else if(seletedRowData == ""){
+        this.selectedNtfData = "empty";                // 동일한 row 클릭 시, 해당 row 클릭 해제, 해당 객체 데이터 비우도록 emit
+      }else{
+        this.selectedNtfData = seletedRowData[0];      // 다른 row 클릭 시 달라진 값 객체 데이터에 전달 
+      }
+
+    },
     resetRetvCond(){
       console.log(this.selectValues);
       this.selectValues.selectValueOfRetv = "" ;
@@ -580,13 +595,69 @@ import ApiMixin from "../service/common.js"
       // this.selectValues.EndDt= new Date().setDate( new Date().setMonth(new Date('2022-12-01').getMonth()+1 )  );  
       this.selectValues.EndDt = new Date("2022-12-31") ; 
       console.log(this.selectValues);
-    }
+    },
+    emptyNtfAdmObject(ntfObject) {
+      ntfObject.ntfTitle = "";
+      ntfObject.ntfRegr = "";
+      ntfObject.ntfRegrDt = null;
+      ntfObject.ntfStYn = "";
+      ntfObject.ntfStDt =   new Date()           ;
+      ntfObject.ntfEndDt =  new Date("2023-12-31");
+      ntfObject.popupYn = "";
+      ntfObject.popupStDt =  new Date();
+      ntfObject.popupEndDt = new Date("2023-12-31");
+      ntfObject.ntfType = "";
+      ntfObject.rcvrRstrtn = null;
+      ntfObject.ntfContent = null;
+      ntfObject.scrt = null;
+      ntfObject.ansSbst = null;
+      
+    },
   },
   watch:{
     selectValues(newSelectedValue){
       this.selectValues = newSelectedValue;
       console.log(this.selectValues)
-    }
+    },
+    noticeAdmObject: {
+      // 공지사항 상세정보 변경이 감지되면 해당 변경 적용
+      deep: true,
+      handler(newone2) {
+        this.noticeAdmObject = newone2;
+        console.log("@@@noticeAdmObject@@@@: ", newone2);
+      },
+    },
+    selectedNtfData: {
+      // 공지사항 리스트(ag-grid) row가 선택 되었을 때, 해당 데이터를 기반으로 사용자 상세정보 변경
+      deep: true,
+      handler(newSeletedNtfData) {
+        console.log("newSeletedNtfData", newSeletedNtfData);
+        if (newSeletedNtfData == "empty") {
+          this.emptyNtfAdmObject(this.noticeAdmObject);
+        } 
+        else {
+          // console.log("new 공지관리객체 ",newSeletedNtfData)
+          let tmpNoticeAdmObject = this.noticeAdmObject ;    // 지역변수 선언 후 watch의 새로운 값 지역변수에서 바꿔준다. 
+          tmpNoticeAdmObject.ntfTitle = newSeletedNtfData.ntfTitle;
+          tmpNoticeAdmObject.ntfRegr = newSeletedNtfData.ntfRegr;
+          tmpNoticeAdmObject.ntfRegrDt = new Date(newSeletedNtfData.ntfRegrDt);
+          tmpNoticeAdmObject.ntfStYn = newSeletedNtfData.ntfStYn;
+          tmpNoticeAdmObject.ntfStDt = new Date(newSeletedNtfData.ntfStDt);
+          tmpNoticeAdmObject.ntfEndDt = new Date(newSeletedNtfData.ntfEndDt);
+          tmpNoticeAdmObject.popupYn = newSeletedNtfData.popupYn;
+          tmpNoticeAdmObject.popupStDt = new Date(newSeletedNtfData.popupStDt);
+          tmpNoticeAdmObject.popupEndDt = new Date(newSeletedNtfData.popupEndDt);
+          tmpNoticeAdmObject.ntfType = newSeletedNtfData.ntfType;
+          tmpNoticeAdmObject.rcvrRstrtn = newSeletedNtfData.rcvrRstrtn;
+          tmpNoticeAdmObject.ntfContent = newSeletedNtfData.ntfContent;
+          tmpNoticeAdmObject.scrt = newSeletedNtfData.scrt;
+          tmpNoticeAdmObject.ansSbst = newSeletedNtfData.ansSbst;
+          // this.noticeAdmObject = newSeletedNtfData;
+          this.noticeAdmObject = tmpNoticeAdmObject  ;
+          // console.log("하나씩 바꾼 공지관리객체",this.noticeAdmObject)
+        }
+      },
+    },
   },
   
   async beforeMount() {
