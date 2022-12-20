@@ -141,7 +141,7 @@ export default {
   mixins: [ApiMixin],
   data() {
     return {
-      logo_search: require("../img/logo_search.png"),
+      logo_search: require("../../img/logo_search.png"),
       contentTree: null,
       activeItemObj: {}, // 활성화 시킬 객체
       selectedItemList: [], // 선택시킬 객체
