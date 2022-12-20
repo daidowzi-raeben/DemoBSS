@@ -666,7 +666,7 @@ import FloatingLabelsComponent_2 from "@/components/common/Etc/FloatingLabelsCom
 import ToastComponent from "@/components/common/Etc/ToastComponent";
 import linkComponent from '@/components/common/linkComponent.vue';
 import AtcRegComponent from "@/components/common/Etc/AtcRegComponent";
-import AtcListComponent from "@/components/common/Etc/AtcListComponent";
+import AtcListComponent from "@/components/common/Etc/AtcLstComponent";
 import TextAreaComponent from "@/components/common/TextAreaComponent";
 import {defineAsyncComponent, markRaw} from "vue";
 import TabComponent from "@/components/common/TabComponent";

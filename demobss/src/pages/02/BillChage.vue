@@ -293,7 +293,7 @@ import SubInfoTitle from "@/components/common/SubInfoTitle";
 import ButtonComponent from "@/components/common/ButtonComponent";
 import BlcComponent from "@/components/UnionForm/BlcComponent";
 import LabelComponent from '@/components/common/LabelComponent.vue';
-import FunComp from "@/components/common/AgGridCellRender/FunComp";
+import FunComp from "@/components/common/AgGridCellRender/BillChageDiv";
 import ApiMixin from "@/service/common";
 export default {
   mixins:[ApiMixin],
@@ -342,7 +342,7 @@ export default {
           }
         },
         { headerName: "서비스번호", field: "model1",width:180, cellStyle:{justifyContent: "flex-start"} },
-        { headerName: "대분류", field: "model2",  cellRenderer : 'FunComp',
+        { headerName: "대분류", field: "model2",  cellRenderer : 'BillChageDiv',
           cellRendererParams:{
             clicked: function (field){
               console.log(field);

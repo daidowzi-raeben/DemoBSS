@@ -185,7 +185,7 @@
     </div>
     <!-- 팝업 영역 -->
     <!--코드그룹리스트 팝업 -->
-    <CodeGroupPopup
+    <CodeGpPopup
         v-if="isCdGpModalShow"
         :type="cdGpType"
         :value="this.cdGpData"
@@ -217,7 +217,7 @@ import AgGridComponent from "@/components/common/AgGridComponent";
 import InputComponent from "@/components/common/InputComponent";
 import SubInfoTitle from "@/components/common/SubInfoTitle";
 import ApiMixin from "@/service/common";
-import CodeGroupPopup from "@/components/common/PopupComponent/CdGroupLstPopup";
+import CodeGpPopup from "@/components/common/PopupComponent/CdGpLstPopup";
 import CdLstPopup from "@/components/common/PopupComponent/CdLstPopup";
 export default {
   mixins:[ApiMixin],
@@ -225,7 +225,7 @@ export default {
   components: {
     CdLstPopup,
     popupComponent,
-    CodeGroupPopup,
+    CodeGpPopup,
     pagingArea,
     selectBoxComponent,
     ButtonComponent,
