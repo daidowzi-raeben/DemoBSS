@@ -68,9 +68,9 @@
 </template>
 
 <script>
-import ButtonComponent from "./ButtonComponent.vue";
-import InputComponent from "./InputComponent.vue";
-import SelectBoxComponent from "./SelectBoxComponent.vue";
+import ButtonComponent from "../common/ButtonComponent.vue";
+import InputComponent from "../common/InputComponent.vue";
+import SelectBoxComponent from "../common/SelectBoxComponent.vue";
 export default {
   components: { SelectBoxComponent, InputComponent, ButtonComponent },
   props: {

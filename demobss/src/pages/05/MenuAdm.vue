@@ -371,7 +371,7 @@
 </template>
 
 <script>
-import RetvCondComponent from "@/components/common/RetvCondComponent.vue";
+import RetvCondComponent from "@/components/UnionForm/RetvCondComponent.vue";
 import RadioComponent from "@/components/common/RadioComponent.vue";
 import LabelComponent from "@/components/common/LabelComponent.vue";
 import InputComponent from "@/components/common/InputComponent.vue";

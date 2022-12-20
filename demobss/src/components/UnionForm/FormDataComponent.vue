@@ -859,7 +859,7 @@ import SubInfoTitle from "@/components/common/SubInfoTitle.vue";
 import ButtonComponent from "@/components/common/ButtonComponent.vue";
 import InputComponent from "@/components/common/InputComponent.vue";
 import SelectBoxComponent from "@/components/common/SelectBoxComponent.vue";
-import LabelComponent from "./LabelComponent.vue";
+import LabelComponent from "../common/LabelComponent.vue";
 import menu from "../../../public/menu.json";
 
 export default {

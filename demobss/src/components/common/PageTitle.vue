@@ -9,13 +9,12 @@
 </template>
 
 <script>
-import ButtonComponent from "./ButtonComponent.vue";
 import menu from "../../../public/menu.json";
 import { mapMutations, mapState } from "vuex";
 
 export default {
-  components: { ButtonComponent },
-  name: "TitleArea",
+  components: { },
+  name: "PageTitle",
   data() {
     return {
       menuDepth2: {},

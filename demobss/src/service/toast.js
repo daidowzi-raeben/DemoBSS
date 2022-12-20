@@ -1,5 +1,5 @@
 import { render, createVNode } from "vue";
-import ToastConstructor from "../components/common/ToastComponent";
+import ToastConstructor from "../components/common/Etc/ToastComponent";
 
 let globalConfig = {
   className: "",

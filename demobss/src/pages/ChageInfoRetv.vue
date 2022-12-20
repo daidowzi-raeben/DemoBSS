@@ -103,10 +103,10 @@ import AgGridComponent from "@/components/common/AgGridComponent";
 import ButtonComponent from "@/components/common/ButtonComponent.vue";
 import SelectBoxComponent from "@/components/common/SelectBoxComponent";
 import SubInfoTitle from "@/components/common/SubInfoTitle.vue";
-import BlcComponent from "@/components/common/BlcComponent";
-import CustRetvComponent from "@/components/common/CustRetvComponent";
+import BlcComponent from "@/components/UnionForm/BlcComponent";
+import CustRetvComponent from "@/components/UnionForm/CustRetvComponent";
 import ApiMixin from "@/service/common.js";
-import FormDataComponent from '@/components/common/FormDataComponent.vue'
+import FormDataComponent from '@/components/UnionForm/FormDataComponent.vue'
 import msfTree from "@/components/common/TreeComponent/msf-tree";
 export default {
   mixins:[ApiMixin],

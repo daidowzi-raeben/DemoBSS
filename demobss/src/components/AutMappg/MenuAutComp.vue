@@ -25,7 +25,7 @@
 </template>
 
 <script>
-import autRetvComponent from "@/components/common/AutRetvComponent";
+import autRetvComponent from "@/components/UnionForm/AutRetvComponent";
 import DragGrid from "@/components/common/DragGrid";
 import ApiMixin from "@/service/common";
 export default {

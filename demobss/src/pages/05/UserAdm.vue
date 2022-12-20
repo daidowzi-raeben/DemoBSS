@@ -455,7 +455,7 @@
 </template>
 
 <script>
-import UserAdmRetvComponent from "@/components/common/UserAdmRetvComponent.vue";
+import UserAdmRetvComponent from "@/components/UnionForm/UserAdmRetvComponent.vue";
 import ApiMixin from "@/service/common.js";
 import SubInfoTitle from "@/components/common/SubInfoTitle.vue";
 import ButtonComponent from "@/components/common/ButtonComponent.vue";

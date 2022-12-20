@@ -18,6 +18,7 @@ export default {
       sliderheight: "15px",
     };
   },
+
 };
 </script>
 

@@ -106,8 +106,8 @@
 
 <script>
 import
-  // TitleArea from "./common/TitleArea.vue";
-  TitleArea2 from "./common/TitleArea2.vue";
+  // DepthTitle from "./common/DepthTitle.vue";
+  PageTitle from "./common/PageTitle.vue";
 import Nav from "./Nav.vue";
 import { defineAsyncComponent, markRaw } from "vue";
 import ButtonComponent from "@/components/common/ButtonComponent.vue";
@@ -119,8 +119,8 @@ export default {
   name: "Section",
   components: {
     LoadingSpinnerComponent,
-    // TitleArea,
-    TitleArea2,
+    // DepthTitle,
+    PageTitle,
     Nav,
     ButtonComponent,
     PopupComponent,

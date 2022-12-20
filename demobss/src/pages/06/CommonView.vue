@@ -522,7 +522,7 @@
     </div>
     <br /><br /><br />
 
-    <h1 style="font-size: 30px">TitleAreaComponent</h1>
+    <h1 style="font-size: 30px">DepthTitleComponent</h1>
     <span></span>
     <div class="commondiv1" style="width:1960px;" >
       <title-area :currentMenu="currentMenu" />
@@ -643,30 +643,30 @@
 </template>
 
 <script>
-import PagingArea from "../components/common/PagingArea.vue";
-import FileInputComponent from "../components/common/FileInputComponent.vue";
-import DatePickerComponent from "../components/common/DatePickerComponent.vue";
-import AgGridComponent from "../components/common/AgGridComponent.vue";
-import SelectBoxComponent from "../components/common/SelectBoxComponent.vue";
+import PagingArea from "../../components/common/PagingArea.vue";
+import FileInputComponent from "../../components/common/FileInputComponent.vue";
+import DatePickerComponent from "../../components/common/DatePickerComponent.vue";
+import AgGridComponent from "../../components/common/AgGridComponent.vue";
+import SelectBoxComponent from "../../components/common/SelectBoxComponent.vue";
 import ButtonComponent from "@/components/common/ButtonComponent.vue";
 import SubInfoTitle from "@/components/common/SubInfoTitle.vue";
-import TitleArea from "@/components/common/TitleArea";
+import DepthTitle from "@/components/common/DepthTitle";
 import PopupComponent from "@/components/common/PopupComponent.vue";
-import CustInfoComponent from "@/components/common/CustInfoComponent";
-import CustRetvComponent from "@/components/common/CustRetvComponent";
-import BlcComponent from "@/components/common/BlcComponent";
-import FormDataComponent from "@/components/common/FormDataComponent.vue";
-import FormDataPopupComponent from '../components/common/FormDataPopupComponent.vue';
-import RangeComponent from "../components/common/RangeComponent.vue"
-import ChkBoxComponent from '../components/common/ChkBoxComponent.vue';
-import RadioComponent from '../components/common/RadioComponent.vue'
-import ValdtnComponent from "@/components/common/ValdtnComponent";
-import FloatingLabelsComponent from "@/components/common/FloatingLabelsComponent";
-import FloatingLabelsComponent_2 from "@/components/common/FloatingLabelsComponent_2";
-import ToastComponent from "@/components/common/ToastComponent";
+import CustInfoComponent from "@/components/UnionForm/CustInfoComponent";
+import CustRetvComponent from "@/components/UnionForm/CustRetvComponent";
+import BlcComponent from "@/components/UnionForm/BlcComponent";
+import FormDataComponent from "@/components/UnionForm/FormDataComponent.vue";
+import FormDataPopupComponent from '../../components/UnionForm/FormDataPopupComponent.vue';
+import RangeComponent from "../../components/common/Etc/RangeComponent.vue"
+import ChkBoxComponent from '../../components/common/ChkBoxComponent.vue';
+import RadioComponent from '../../components/common/RadioComponent.vue'
+import ValdtnComponent from "@/components/common/Etc/ValdtnComponent";
+import FloatingLabelsComponent from "@/components/common/Etc/FloatingLabelsComponent";
+import FloatingLabelsComponent_2 from "@/components/common/Etc/FloatingLabelsComponent_2";
+import ToastComponent from "@/components/common/Etc/ToastComponent";
 import linkComponent from '@/components/common/linkComponent.vue';
-import AtcRegComponent from "@/components/common/AtcRegComponent";
-import AtcListComponent from "@/components/common/AtcListComponent";
+import AtcRegComponent from "@/components/common/Etc/AtcRegComponent";
+import AtcListComponent from "@/components/common/Etc/AtcListComponent";
 import TextAreaComponent from "@/components/common/TextAreaComponent";
 import {defineAsyncComponent, markRaw} from "vue";
 import TabComponent from "@/components/common/TabComponent";
@@ -675,7 +675,7 @@ import msfTree from "@/components/common/TreeComponent/msf-tree";
 import InputComponent from '@/components/common/InputComponent.vue';
 import LabelComponent from '@/components/common/LabelComponent.vue';
 import LoadingSpinnerComponent from "@/components/common/LoadingSpinnerComponent";
-import PostCodeComponent from '@/components/common/PostCodeComponent.vue';
+import PostCodeComponent from '@/components/UnionForm/PostCodeComponent.vue';
 import AgGridComponent3 from "@/components/common/DragGrid";
 
 export default {
@@ -701,7 +701,7 @@ export default {
     SelectBoxComponent,
     ButtonComponent,
     SubInfoTitle,
-    TitleArea,
+    DepthTitle,
     PopupComponent,
     CustInfoComponent,
     CustRetvComponent,
@@ -793,7 +793,7 @@ export default {
         },
       ],
       component: markRaw(
-          defineAsyncComponent(() => import("../components/Cont/ContMgt.vue")),
+          defineAsyncComponent(() => import("../../components/Cont/ContMgt.vue")),
       ),
       tableData: [
         {
