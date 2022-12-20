@@ -754,7 +754,7 @@
       "menuId": "L06M01S01",
       "menuNm": "공통화면참고",
       "upMenuId": "L06M01",
-      "cmpnId": "CommonView"
+      "cmpnId": "06/CommonView"
     },
     {
       "menuId": "L06M01S02",

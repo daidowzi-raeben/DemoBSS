@@ -158,13 +158,13 @@
 </template>
 
 <script>
-import CustRetvComponent from "@/components/common/CustRetvComponent.vue";
+import CustRetvComponent from "@/components/UnionForm/CustRetvComponent.vue";
 import SubInfoTitle from "@/components/common/SubInfoTitle.vue";
-import CustInfoComponent from "@/components/common/CustInfoComponent.vue";
-import FormDataComponent from "@/components/common/FormDataComponent.vue";
+import CustInfoComponent from "@/components/UnionForm/CustInfoComponent.vue";
+import FormDataComponent from "@/components/UnionForm/FormDataComponent.vue";
 import ApiMixin from "@/service/common";
-import FormDataPopupComponent from "@/components/common/FormDataPopupComponent.vue";
-import BlcComponent from "../common/BlcComponent.vue";
+import FormDataPopupComponent from "@/components/UnionForm/FormDataPopupComponent.vue";
+import BlcComponent from "../UnionForm/BlcComponent.vue";
 import SelectBoxComponent from "../common/SelectBoxComponent.vue";
 import InputComponent from "../common/InputComponent.vue";
 import MsfTree from "../common/TreeComponent/msf-tree.vue";

@@ -103,7 +103,7 @@
 import ChkBoxComponent from "@/components/common/ChkBoxComponent.vue";
 import linkComponent from "@/components/common/linkComponent.vue";
 import ButtonComponent from "@/components/common/ButtonComponent.vue";
-import FormDataPopupComponent from "@/components/common/FormDataPopupComponent.vue";
+import FormDataPopupComponent from "@/components/UnionForm/FormDataPopupComponent.vue";
 import ApiMixin from "@/service/common.js";
 
 export default {

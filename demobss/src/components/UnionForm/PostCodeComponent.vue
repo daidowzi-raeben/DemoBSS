@@ -165,12 +165,12 @@
 </template>
 
 <script>
-import ButtonComponent from "./ButtonComponent.vue";
-import InputComponent from "./InputComponent.vue";
-import LabelComponent from "./LabelComponent.vue";
-import PagingArea from "./PagingArea.vue";
-import RadioComponent from "./RadioComponent.vue";
-import SelectBoxComponent from "./SelectBoxComponent.vue";
+import ButtonComponent from "../common/ButtonComponent.vue";
+import InputComponent from "../common/InputComponent.vue";
+import LabelComponent from "../common/LabelComponent.vue";
+import PagingArea from "../common/PagingArea.vue";
+import RadioComponent from "../common/RadioComponent.vue";
+import SelectBoxComponent from "../common/SelectBoxComponent.vue";
 
 export default {
   components: {

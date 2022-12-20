@@ -129,8 +129,8 @@
 </template>
 
 <script>
-import CustRetvComponent from "@/components/common/CustRetvComponent.vue";
-import FormDataComponent from "@/components/common/FormDataComponent.vue";
+import CustRetvComponent from "@/components/UnionForm/CustRetvComponent.vue";
+import FormDataComponent from "@/components/UnionForm/FormDataComponent.vue";
 import ButtonComponent from "@/components/common/ButtonComponent";
 import SelectBoxComponent from "@/components/common/SelectBoxComponent";
 import InputComponent from "@/components/common/InputComponent";

@@ -245,8 +245,8 @@ import InputComponent from "@/components/common/InputComponent.vue";
 import SelectBoxComponent from "@/components/common/SelectBoxComponent.vue";
 import ButtonComponent from "@/components/common/ButtonComponent.vue";
 import ChkBoxComponent from "@/components/common/ChkBoxComponent.vue";
-import DatePickerComponent from "./DatePickerComponent.vue";
-import LabelComponent from "./LabelComponent.vue";
+import DatePickerComponent from "../common/DatePickerComponent.vue";
+import LabelComponent from "../common/LabelComponent.vue";
 export default {
   name: "CustomerSearchComponent",
   components: {

@@ -5,7 +5,7 @@ const routes = [
     path: "/Login",
     name: "Login",
     component: () =>
-      import(/* webpackChunkName: "about" */ "../pages/Login/Login.vue"),
+      import(/* webpackChunkName: "about" */ "../pages/06/Login.vue"),
   },
   {
     path: "/ContSection",
@@ -77,7 +77,7 @@ const routes = [
     path: "/common",
     name: "Common",
     component: () =>
-      import(/* webpackChunkName: "about" */ "../pages/CommonView.vue"),
+      import(/* webpackChunkName: "about" */ "../pages/06/CommonView.vue"),
   },
 ];
 

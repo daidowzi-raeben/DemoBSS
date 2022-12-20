@@ -58,7 +58,7 @@
 </template>
 
 <script>
-import autRetvComponent from "@/components/common/AutRetvComponent";
+import autRetvComponent from "@/components/UnionForm/AutRetvComponent";
 import subInfoTitle from "@/components/common/SubInfoTitle";
 import buttonComponent from "@/components/common/ButtonComponent";
 import AgGridComponent from "@/components/common/AgGridComponent";

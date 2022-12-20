@@ -2,7 +2,7 @@
   <input
     :type="type"
     :class="inputClass"
-    v-model="value"
+    v-model="inputValue"
     :placeholder="placeholder"
     :disabled="disabled"
     :input="updateValue(value)"
@@ -15,7 +15,7 @@ export default {
   name: "InputComponent",
   data() {
     return {
-
+      inputValue:""
     };
   },
   props: {
@@ -58,6 +58,9 @@ export default {
       this.$emit("input", value);
     },
   },
+  beforeMount() {
+    this.inputValue = this.value;
+  }
 };
 </script>
 
@@ -80,13 +83,6 @@ input {
   align-items: center;
   text-align: left;
   color: #000;
-  width: v-bind('width');
-  height: v-bind('height');
-}
-.class2 {
-  background-color: black;
-  font-weight: bold;
-  color: red;
   width: v-bind('width');
   height: v-bind('height');
 }

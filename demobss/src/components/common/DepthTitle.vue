@@ -24,7 +24,7 @@ import menu from "../../../public/menu.json";
 
 export default {
   components: { ButtonComponent },
-  name: "TitleArea",
+  name: "DepthTitle",
   data() {
     return {
       menuDepth1: {},

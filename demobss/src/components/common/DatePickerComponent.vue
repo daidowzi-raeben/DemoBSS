@@ -139,8 +139,8 @@ select{
 }
 .v3dp__datepicker {
   /* datepicker 상세 스타일 */
-  --vdp-hover-bg-color: #434343;
-  --vdp-selected-bg-color: #2dbdb6;
+  --vdp-hover-bg-color: rgb(184,208,235);
+  --vdp-selected-bg-color: rgb(27,114,212);
   box-sizing: border-box;
 }
 .v3dp__clearable {
@@ -153,5 +153,6 @@ select{
 .v3dp__clearable > i{
   font-size: 12pt;
   font-weight: bold;
-  }
+  font-style: normal;
+}
 </style>

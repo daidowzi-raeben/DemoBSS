@@ -5,7 +5,6 @@
 </template>
 
 <script>
-import menu from "../../../public/menu.json";
 export default {
   data() {
     return {

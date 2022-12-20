@@ -87,7 +87,7 @@
 </template>
 
 <script>
-import autRetvComponent from "@/components/common/AutRetvComponent";
+import autRetvComponent from "@/components/UnionForm/AutRetvComponent";
 import pagingArea from "@/components/common/PagingArea";
 import selectBoxComponent from "@/components/common/SelectBoxComponent";
 import ButtonComponent from "@/components/common/ButtonComponent";

@@ -284,14 +284,14 @@
 
 <script>
 import AgGridComponent from "@/components/common/AgGridComponent";
-import CustRetvComponent from '@/components/common/CustRetvComponent.vue'
-import FormDataComponent from '@/components/common/FormDataComponent.vue'
+import CustRetvComponent from '@/components/UnionForm/CustRetvComponent.vue'
+import FormDataComponent from '@/components/UnionForm/FormDataComponent.vue'
 import SelectBoxComponent from "@/components/common/SelectBoxComponent";
 import InputComponent from "@/components/common/InputComponent";
 import msfTree from "@/components/common/TreeComponent/msf-tree";
 import SubInfoTitle from "@/components/common/SubInfoTitle";
 import ButtonComponent from "@/components/common/ButtonComponent";
-import BlcComponent from "@/components/common/BlcComponent";
+import BlcComponent from "@/components/UnionForm/BlcComponent";
 import LabelComponent from '@/components/common/LabelComponent.vue';
 import FunComp from "@/components/common/AgGridCellRender/FunComp";
 import ApiMixin from "@/service/common";
