@@ -39,11 +39,10 @@
             :classWrapper="'calender_input'"
             :width="'100%'"
             :height="'28px'"
-            :pPlaceholder="'2022.01.01'"
-            :pDate="date3"
+            :pDate="selectValues.subsStDt"
             @input="
               (value) => {
-                date3 = value;
+                selectValues.subsStDt = value;
               }
             "
           />
@@ -54,11 +53,10 @@
             :classWrapper="'calender_input'"
             :width="'100%'"
             :height="'28px'"
-            :pPlaceholder="'2022.01.01'"
-            :pDate="date4"
+            :pDate="selectValues.subsEndDt"
             @input="
               (value) => {
-                date4 = value;
+                selectValues.subsEndDt = value;
               }
             "
           />
@@ -275,6 +273,8 @@ export default {
         inputValue1 : null,
         inputValue2 : null,
         inputValue3 : null,
+        subsStDt :  new Date(),
+        subsEndDt : new Date("2023-01-31"),
       },
     };
   },
@@ -292,6 +292,8 @@ export default {
         this.selectValues.inputValue1= null;
         this.selectValues.inputValue2= null;
         this.selectValues.inputValue3= null;
+        this.selectValues.subsStDt = new Date();
+        this.selectValues.subsEndDt = new Date("9999-12-31");
     }
   },
   props: {
