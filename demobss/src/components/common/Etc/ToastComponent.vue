@@ -3,7 +3,7 @@
     <div class="wk-wrapper" :class="classes" v-show="showing" :ref="setRefNode">
       <span class="wk-content" v-html="options.message"></span>
       <a class="wk-close" v-if="options.closeable" v-on:click="close()">
-        <!-- <img src="../../assets/close.png" width="100%" /> -->
+        <!-- <img src="../../assets/img/close.png" width="100%" /> -->
       </a>
 
     </div>

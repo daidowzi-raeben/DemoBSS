@@ -62,7 +62,7 @@
 </template>
 
 <script>
-import { formatFileSize } from "@/service/FormatService.js";
+import { formatFileSize } from "@/service/formatService.js";
 const MAXSIZE = 10 * 1024 * 1024;
 const FILETYPE = ",xlsx,xls,docx,doc,pptx,ppt,txt,pdf,zip,jpg,jpeg,png,gif,"; //업로드 가능 유형
 

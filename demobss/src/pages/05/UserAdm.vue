@@ -464,7 +464,7 @@ import PagingArea from "@/components/common/PagingArea.vue";
 import LabelComponent from "@/components/common/LabelComponent.vue";
 import InputComponent from "@/components/common/InputComponent.vue";
 import RadioComponent from "@/components/common/RadioComponent.vue";
-import { formatTel } from "@/service/FormatService.js";
+import { formatTel } from "@/service/formatService.js";
 import PopupComponent from "@/components/common/PopupComponent.vue";
 import AgGridComponent from "@/components/common/AgGridComponent.vue";
 
