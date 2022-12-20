@@ -62,14 +62,14 @@ export default {
 .bookMarkIcon {
   height: 25px;
   width: 25px;
-  content: url(../../img/bookmarkedstar.png);
+  content: url(../../assets/img/bookmarkedstar.png);
   margin-right: 8px;
   cursor: pointer;
 }
 .icon {
   height: 25px;
   width: 25px;
-  content: url(../../img/star.png);
+  content: url(../../assets/img/star.png);
   margin-right: 8px;
   cursor: pointer;
 }

@@ -109,7 +109,7 @@ export default {
   width: v-bind("btnWidth");
   height: v-bind("btnHeight");
   display: flex;
-  content: url(../../img/arrow_left_white.png);
+  content: url(../../assets/img/arrow_left_white.png);
 }
 .btnRightImgClass {
   /* background-color: #5ad3cd; */
@@ -119,7 +119,7 @@ export default {
   width: v-bind("btnWidth");
   height: v-bind("btnHeight");
   display: flex;
-  content: url(../../img/arrow_right_white.png);
+  content: url(../../assets/img/arrow_right_white.png);
 }
 .btnDeleteImgClass {
   background-color: transparent;
@@ -129,16 +129,16 @@ export default {
   height: v-bind("btnHeight");
   display: flex;
   margin-top: 2px;
-  content: url(../../img/delete_white.png);
+  content: url(../../assets/img/delete_white.png);
 }
 
 .btnLeftImgClass:hover {
-  content: url(../../img/arrow_left_black.png);
+  content: url(../../assets/img/arrow_left_black.png);
 }
 .btnRightImgClass:hover {
-  content: url(../../img/arrow_right_black.png);
+  content: url(../../assets/img/arrow_right_black.png);
 }
 .btnDeleteImgClass:hover {
-  content: url(../../img/delete_black.png);
+  content: url(../../assets/img/delete_black.png);
 }
 </style>

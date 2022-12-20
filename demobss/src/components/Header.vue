@@ -54,10 +54,10 @@ export default {
     return {
       menuId: "L01",
       menuDepth1: [],
-      iconLogo:require('../img/icon_logo_cloud.png'),
-      iconSerch:require('../img/search_icon.svg'),
-      iconUser:require('../img/icon_user2.png'),
-      logoLogout:require('../img/logo_logout.png')
+      iconLogo:require('../assets/img/icon_logo_cloud.png'),
+      iconSerch:require('..//assets/img/search_icon.svg'),
+      iconUser:require('../assets/img/icon_user2.png'),
+      logoLogout:require('../assets/img/logo_logout.png')
     };
   },
   computed: {

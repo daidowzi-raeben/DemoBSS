@@ -7,7 +7,7 @@
         @click="tabIndex = 0"
       >
         <img
-          src="../img/arrow_left2.png"
+          src="../assets/img/arrow_left2.png"
           alt=""
           style="margin-top: 5px; width: 25px"
         />
@@ -90,9 +90,9 @@ export default {
       menuDepth3: [],
       selectedMenuId: "L01",
       tabIndex: 0,
-      menuIcon1: require("../img/menu_type_1.png"),
-      menuIcon2: require("../img/menu_type_2.png"),
-      menuIcon3: require("../img/menu_type_3.png"),
+      menuIcon1: require("../assets/img/menu_type_1.png"),
+      menuIcon2: require("../assets/img/menu_type_2.png"),
+      menuIcon3: require("../assets/img/menu_type_3.png"),
     };
   },
   computed: {
@@ -220,7 +220,7 @@ img {
   color: rgb(27, 114, 212) !important;
 }
 #nav > .area > ul > li #depth2:hover > img {
-  content: url("../img/menu_type_1.png");
+  content: url("../assets/img/menu_type_1.png");
 }
 
 #nav > .area > ul#depth2_list > li > ul#depth3_list {

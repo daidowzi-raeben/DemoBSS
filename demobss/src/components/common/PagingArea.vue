@@ -163,16 +163,16 @@ export default {
   cursor: pointer;
 }
 #paging_area > .page_navi .first {
-  background: url(../../img/icon_board_firstPage.png) no-repeat 50%;
+  background: url(../../assets/img/icon_board_firstPage.png) no-repeat 50%;
 }
 #paging_area > .page_navi .next_link {
-  background: url(../../img/icon_board_nextPage.png) no-repeat 50%;
+  background: url(../../assets/img/icon_board_nextPage.png) no-repeat 50%;
 }
 #paging_area > .page_navi .prev_link {
-  background: url(../../img/icon_board_prevPage.png) no-repeat 50%;
+  background: url(../../assets/img/icon_board_prevPage.png) no-repeat 50%;
 }
 #paging_area > .page_navi .last {
-  background: url(../../img/icon_board_lastPage.png) no-repeat 50%;
+  background: url(../../assets/img/icon_board_lastPage.png) no-repeat 50%;
 }
 #paging_area > .page_navi .current {
   background: #5e5e5e;

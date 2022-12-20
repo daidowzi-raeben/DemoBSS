@@ -3,7 +3,7 @@
     <header class="loginHeader">
       <div style="display: inline-block">
         <a @click="goLogin"
-          ><img style="width: 100px" src="../../img/logo_login.png"
+          ><img style="width: 100px" src="../../assets/img/logo_login.png"
         /></a>
       </div>
       <span style="font-size: 20px; margin-left: 90px; font-weight: bold"
@@ -20,12 +20,12 @@
     <div class="loginWrap">
       <div class="loginBox">
         <div>
-          <!-- <img src="../../img/login_word.png" alt="로그인 글자"> -->
+          <!-- <img src="../../assets/img/login_word.png" alt="로그인 글자"> -->
           <span> 로그인 </span>
 
           <img
             class="loginIcon"
-            src="../../img/icon_login.png"
+            src="../../assets/img/icon_login.png"
             alt="login icon"
           />
         </div>
@@ -56,12 +56,12 @@
         <div>
           <img
             class="captcha"
-            src="../../img/sample_captch.png"
+            src="../../assets/img/sample_captch.png"
             alt="captcha"
           />
           <input class="solve_captcha" type="text" placeholder="보안문자" />
-          <img class="icon1" src="../../img/icon_recursive.png" alt="재시도" />
-          <img class="icon2" src="../../img/icon_voice2.jpg" alt="청취" />
+          <img class="icon1" src="../../assets/img/icon_recursive.png" alt="재시도" />
+          <img class="icon2" src="../../assets/img/icon_voice2.jpg" alt="청취" />
         </div>
 
         <div>
@@ -299,7 +299,7 @@ export default {
   grid-column: 2/3;
   grid-row: 3;
   overflow: hidden;
-  background-image: url("../../img/login.png");
+  background-image: url("../../assets/img/login.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;

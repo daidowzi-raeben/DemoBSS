@@ -128,7 +128,7 @@ export default {
   font-size: 12px;
   color: #494949;
   padding: 0 22px 0 9px;
-  background: url(../../img/icon_form_calender.png) no-repeat;
+  background: url(../../assets/img/icon_form_calender.png) no-repeat;
   background-position: right 9px center;
   cursor: pointer;
 }

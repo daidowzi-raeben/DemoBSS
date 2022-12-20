@@ -97,7 +97,7 @@ select option:hover{
   height: 28px;
   color: #000000;
   padding: 1px 22px 0 9px;
-  background: #fff url(../../img/icon_form_arrow_02.png) no-repeat;
+  background: #fff url(../../assets/img/icon_form_arrow_02.png) no-repeat;
   background-position: right 11px center;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -111,7 +111,7 @@ select option:hover{
   width: 100%;
   color: #000;
   padding: 1px 22px 0 9px;
-  background: #fff url(../../img/icon_form_arrow_black_02.png) no-repeat;
+  background: #fff url(../../assets/img/icon_form_arrow_black_02.png) no-repeat;
   background-size: 12px;
   background-position: right 7px center;
   -webkit-appearance: none;
@@ -125,7 +125,7 @@ select option:hover{
   width: 100%;
   color: #000;
   padding: 1px 22px 0 4px;
-  background: #fff url(../../img/icon_form_arrow_black_02.png) no-repeat;
+  background: #fff url(../../assets/img/icon_form_arrow_black_02.png) no-repeat;
   background-size: 12px;
   background-position: right 7px center;
   -webkit-appearance: none;

@@ -142,8 +142,8 @@ export default {
       component: markRaw(
           defineAsyncComponent(() => import("../pages/01/Cus360.vue"))
       ),
-      iconDelWhite:require("../img/icon_delete_white.png"),
-      iconDelBlack:require("../img/icon_delete_black.png"),
+      iconDelWhite:require("../assets/img/icon_delete_white.png"),
+      iconDelBlack:require("../assets/img/icon_delete_black.png"),
       isModalShow :false,
     };
   },

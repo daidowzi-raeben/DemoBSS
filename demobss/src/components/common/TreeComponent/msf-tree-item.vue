@@ -220,12 +220,12 @@ export default {
   width: 30px;
   height: 15px;
   padding-bottom: 2px;
-  content: url("../../../img/icon_tree_idl.png");
+  content: url("../../../assets/img/icon_tree_idl.png");
 }
 .tree_state2{
   float:left;
   width: 30px;
   height: 15px;
-  content: url("../../../img/icon_tree_cloud.png");
+  content: url("../../../assets/img/icon_tree_cloud.png");
 }
 </style>

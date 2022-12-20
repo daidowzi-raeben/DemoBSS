@@ -185,7 +185,7 @@ export default {
   },
   data() {
     return {
-      logo_search: require("../../img/logo_search.png"),
+      logo_search: require("../../assets/img/logo_search.png"),
       contentTree: [
         {
           groupId: 0,

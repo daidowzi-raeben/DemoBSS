@@ -41,7 +41,6 @@ export default {
   color: #ffffff;
   height: 15px;
   width: 10px;
-  content: url(../../img/icon_form_arrow.png);
 }
 .subInfoTitle {
   font-size: 12pt;
