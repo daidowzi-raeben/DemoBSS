@@ -1,6 +1,6 @@
 import { createStore } from "vuex";
 
-import createPersistedState from "vuex-persistedstate";
+// import createPersistedState from "vuex-persistedstate";
 
 import L01Store from "@/store/modules/L01Store";
 import L02Store from "@/store/modules/L02Store";
@@ -41,5 +41,5 @@ export default createStore({
     L04Store,
     L05Store
   },
-  plugins: [createPersistedState()],
+  // plugins: [createPersistedState()],
 });
