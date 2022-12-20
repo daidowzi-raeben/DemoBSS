@@ -7,7 +7,7 @@
             :disabled="true"
             :is-disabled="true"
             :defaultValue="'조직 선택'"
-            @input=" (value) => { selValue = value;}"
+            @input=" (value) => { selectValues.selValue = value;}"
         />
       </span>
     <span>
@@ -17,7 +17,7 @@
             :disabled="true"
             :is-disabled="true"
             :defaultValue="'조직 선택'"
-            @input=" (value) => { selValue = value;}"
+            @input=" (value) => { selectValues.selValue = value;}"
         />
       </span>
     <span>
@@ -27,7 +27,7 @@
             :disabled="true"
             :is-disabled="true"
             :defaultValue="'조직 선택'"
-            @input=" (value) => { selValue = value;}"
+            @input=" (value) => { selectValues.selValue = value;}"
         />
       </span>
     <span>
@@ -35,8 +35,8 @@
             :type="'search'"
             :inputClass="'class4'"
             :placeholder="'사원명 입력'"
-            :value="searchValue"
-            v-model="searchValue"
+            :value="selectValues.searchValue"
+            v-model="selectValues.searchValue"
             style="width:100%; height:100%"
         />
       </span>
@@ -85,8 +85,10 @@ export default {
   },
   data(){
     return{
-      searchValue:null,
-      selValue:null,
+      selectValues: {     //조직 검색 탭
+        searchValue: null,
+        selValue: null,
+      },
       leftRowData: [
         {model1:"81215367", model2:"홍길*", model3:"재직",model4:"기업본부",model5:"팀원",model6:"시스템관리자"},
       ],
@@ -102,9 +104,9 @@ export default {
           cellStyle:{justifyContent: 'flex-start'},
           rowDragText: function(params, dragItemCount) { //드래그해서 이동될때 보이는 값
             if (dragItemCount > 1) {
-              return dragItemCount + ' athletes';
+              return dragItemCount + ' model1';
             }
-            return params.rowNode.data.athlete;
+            return params.rowNode.data.model1;
           },
         },
         {

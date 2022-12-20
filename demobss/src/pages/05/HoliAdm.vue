@@ -12,10 +12,10 @@
                  :height="'28px'"
                  :type="'month'"
                  :dateFormat="'yyyy-MM'"
-                 :pDate="holiStDt"
+                 :pDate="selectValues.holiStDt"
                  @input="
               (value) => {
-                holiStDt = value;
+                selectValues.holiStDt = value;
               }
             "
                />
@@ -28,10 +28,10 @@
                   :height="'28px'"
                   :type="'month'"
                   :dateFormat="'yyyy-MM'"
-                  :pDate="holiEndDt"
+                  :pDate="selectValues.holiEndDt"
                   @input="
               (value) => {
-                holiEndDt = value;
+                selectValues.holiEndDt = value;
               }
             "
               />
@@ -46,8 +46,8 @@
                   :cdGroup="'holiYn'"
                   :defaultValue="'휴일여부 선택'"
                   :isDisabled="true"
-                  :selectedValue="holiYn"
-                  @input="(value) => {holiYn = value;}"
+                  :selectedValue="selectValues.holiYn"
+                  @input="(value) => {selectValues.holiYn = value;}"
               />
             </td>
             <td class="emptyBox2"></td>
@@ -74,8 +74,8 @@
                   :cdGroup="'holiDiv'"
                   :defaultValue="'휴일구분 선택'"
                   :isDisabled="true"
-                  :selectedValue="holiDiv"
-                  @input="(value) => {holiDiv = value;}"
+                  :selectedValue="selectValues.holiDiv"
+                  @input="(value) => {selectValues.holiDiv = value;}"
               />
             </td>
 
@@ -150,10 +150,10 @@
               :width="100"
               :type="'year'"
               :date-format="'yyyy년'"
-              :pDate="caldrStDt"
+              :pDate="holiAdmObject.caldrStDt"
               @input="
               (value) => {
-                caldrStDt = value;
+                holiAdmObject.caldrStDt = value;
               }
             "
           />
@@ -165,10 +165,10 @@
               :width="100"
               :type="'year'"
               :date-format="'yyyy년'"
-              :pDate="caldrEndDt"
+              :pDate="holiAdmObject.caldrEndDt"
               @input="
               (value) => {
-                caldrEndDt = value;
+                holiAdmObject.caldrEndDt = value;
               }
             "
           />
@@ -254,28 +254,31 @@ export default {
           width: 200
         },
       ],
-      holiYn:null,        //휴일 여부
-      holiDiv:null,      //휴일 구분
-      holiStDt: null,   //조회시작년월
-      holiEndDt:null,   //조회종료년월
+      selectValues: {     //휴일 검색 탭
+        holiYn: null,        //휴일 여부
+        holiDiv: null,      //휴일 구분
+        holiStDt: null,   //조회시작년월
+        holiEndDt: null,   //조회종료년월
+      },
 
 
       isModalChgShow:false, //변경팝업
       isModalCretShow:false, //생성팝업
 
-
-      caldrStDt: new Date(),  //달력시작년
-      caldrEndDt: new Date()   //달력종료년
+      holiAdmObject: {
+        caldrStDt: new Date(),  //달력시작년
+        caldrEndDt: new Date()   //달력종료년
+      }
     }
   },
   methods:{
     reset(){
-      this.holiYn="";
-      this.holiDiv="";
+      this.selectValues.holiYn="";
+      this.selectValues.holiDiv="";
       let date = new Date();
       date.setMonth(date.getMonth() -1);
-      this.holiStDt=date;
-      this.holiEndDt=new Date();
+      this.selectValues.holiStDt=date;
+      this.selectValues.holiEndDt=new Date();
     },
     search(){
       this.$connect('application/json','/info','get','').then((res)=>{
@@ -289,8 +292,8 @@ export default {
     })
     let date = new Date();
     date.setMonth(date.getMonth() -1);
-    this.holiStDt=date;
-    this.holiEndDt=new Date();
+    this.selectValues.holiStDt=date;
+    this.selectValues.holiEndDt=new Date();
 
   }
 }

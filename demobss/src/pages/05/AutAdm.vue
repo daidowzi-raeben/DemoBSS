@@ -12,8 +12,8 @@
             :disabled="true"
             :is-disabled="true"
             :defaultValue="'권한유형 선택'"
-            :selected-value="autTypeSel"
-            @input=" (value) => { autTypeSel = value;}"
+            :selected-value="selectValues.autTypeSel"
+            @input=" (value) => { selectValues.autTypeSel = value;}"
         />
       </span>
         <span>
@@ -21,8 +21,8 @@
             :type="'search'"
             :inputClass="'class4'"
             :placeholder="'검색어 입력'"
-            :value="searchValue"
-            v-model="searchValue"
+            :value="selectValues.searchValue"
+            v-model="selectValues.searchValue"
             style="width:100%; height:100%"
         />
       </span>
@@ -35,8 +35,8 @@
             :cdGroup="'useYn'"
             :is-disabled="true"
             :defaultValue="'사용여부 선택'"
-            @input=" (value) => { useYn = value;}"
-            :selected-value="useYn"
+            @input=" (value) => { selectValues.useYn = value;}"
+            :selected-value="selectValues.useYn"
         />
       </span>
         <span>
@@ -157,13 +157,13 @@
             <tr>
               <th>권한ID</th>
               <td colspan="3">
-                <input-component :input-class="'class5 class5_long1'" :class="autChgConf===true ? 'input_disabled':'input'"  :long-width="'600px'" :disabled="disabled" v-model="this.autId" :value="this.autId" />
+                <input-component :input-class="'class5 class5_long1'" :class="autChgConf===true ? 'input_disabled':'input'"  :long-width="'600px'" :disabled="disabled" v-model="this.autAdmObject.autId" :value="this.autAdmObject.autId" />
               </td>
             </tr>
             <tr>
               <th>권한명</th>
               <td colspan="3">
-                <input-component class="input" :input-class="'class5 class5_long1'" :long-width="'600px'" v-model="this.autNm" :value="this.autNm" />
+                <input-component class="input" :input-class="'class5 class5_long1'" :long-width="'600px'" v-model="this.autAdmObject.autNm" :value="this.autAdmObject.autNm" />
               </td>
             </tr>
             <tr>
@@ -178,31 +178,31 @@
                     width: 120px;
                     height: 26px;
                     "
-                    :selected-value="autType"
+                    :selected-value="this.autAdmObject.autType"
                     :select_input3_marginLeft="0"
                     :defaultValue="'권한유형 선택'"
-                    @input=" (value) => { autType = value;}"
-                    v-model="autType"
+                    @input=" (value) => { this.autAdmObject.autType = value;}"
+                    v-model="this.autAdmObject.autType"
                   />
               </td>
               <th>사용여부</th>
               <td>
-                <span style="margin-right: 50px;"><input type="radio" v-model="useAble" value="use">사용</span>
-                <span><input type="radio" v-model="useAble" value="unuse">미사용</span>
+                <span style="margin-right: 50px;"><input type="radio" v-model="this.autAdmObject.useAble" value="use">사용</span>
+                <span><input type="radio" v-model="this.autAdmObject.useAble" value="unuse">미사용</span>
               </td>
             </tr>
             <tr>
               <th>등록자/등록일시</th>
               <td colspan="3">
-                <span><input-component :class="'input_disabled'" :input-class="'class5 class5_long1'" :long-width="'150px'" :disabled="true" :value="this.regr" /></span>
-                <span ><input-component :class="'input_disabled'" :input-class="'class5 class5_long1'" :long-width="'150px'"  :disabled="true" :value="this.regDt" /></span>
+                <span><input-component :class="'input_disabled'" :input-class="'class5 class5_long1'" :long-width="'150px'" :disabled="true" v-model="this.autAdmObject.regr" :value="this.autAdmObject.regr" /></span>
+                <span ><input-component :class="'input_disabled'" :input-class="'class5 class5_long1'" :long-width="'150px'"  :disabled="true" v-model="this.autAdmObject.regDt" :value="this.autAdmObject.regDt" /></span>
               </td>
             </tr>
             <tr>
               <th>수정자/수정일시</th>
               <td colspan="3">
-                <span><input-component :class="'input_disabled'" :input-class="'class5 class5_long1'" :long-width="'150px'"  :disabled="true" :value="this.amdr" /></span>
-                <span><input-component :class="'input_disabled'" :input-class="'class5 class5_long1'" :long-width="'150px'"  :disabled="true" :value="this.amdDt" /></span>
+                <span><input-component :class="'input_disabled'" :input-class="'class5 class5_long1'" :long-width="'150px'"  :disabled="true" v-model="this.autAdmObject.amdr" :value="this.autAdmObject.amdr" /></span>
+                <span><input-component :class="'input_disabled'" :input-class="'class5 class5_long1'" :long-width="'150px'"  :disabled="true" v-model="this.autAdmObject.amdDt" :value="this.autAdmObject.amdDt" /></span>
               </td>
 
             </tr>
@@ -249,27 +249,31 @@ export default {
   },
   data(){
     return{
-      RowData:[],
       isModalRegShow:false,    //등록 팝업
       isModalUpdateShow:false, //변경 팝업
       autChgConf:false,        //권한상세정보 변경관련 변수
       autRegConf:false,        //권한상세정보 등록관련 변수
       disabled:false,          //각 상세정보 input disabled 처리 변수
       autData:null,            //권한 리스트 클릭 데이터
-      useYn:null,              //사용여부 셀렉트박스
-      searchValue:null,        //검색어
-      autTypeSel:null,         //권한유형 셀렉트박스
+
+      selectValues: {     //권한 관리 검색 탭
+        useYn: null,              //사용여부 셀렉트박스
+        searchValue: null,        //검색어
+        autTypeSel: null,         //권한유형 셀렉트박스
+      },
       SearchNum:null,          //검색 건수
 
-      autId:null,     //권한ID
-      autNm:null,     //권한명
-      autType:null,   //권한유형    //현재 셀렉트json에 id값도 "조회" 이런식으로 들어가 있음.(매칭을위해) 추후 수정 필수
-      useAble:null,   //사용여부관련 라디오 변수
-      regr:null,      //등록자
-      regDt:null,   //등록일시
-      amdr:null,      //수정자
-      amdDt:null,   //수정일시
-
+      autAdmObject : {        //권한 상세 정보
+        autId: null,     //권한ID
+        autNm: null,     //권한명
+        autType: null,   //권한유형    //현재 셀렉트json에 id값도 "조회" 이런식으로 들어가 있음.(매칭을위해) 추후 수정 필수
+        useAble: null,   //사용여부관련 라디오 변수
+        regr: null,      //등록자
+        regDt: null,   //등록일시
+        amdr: null,      //수정자
+        amdDt: null,   //수정일시
+      },
+      RowData:[],
       columnDefs: [
         {
           headerName: "선택",
@@ -302,37 +306,37 @@ export default {
       this.autChgConf = true;
       this.autRegConf = false;
       this.disabled = true
-      this.autId = this.autData.model1;
-      this.autNm = this.autData.model2;
-      this.autType = this.autData.model3;
-      this.amdDt=new Date().toLocaleString();
-      if(this.autData.model4==='사용')this.useAble='use';
-      else this.useAble='unuse';
+      this.autAdmObject.autId = this.autData.model1;
+      this.autAdmObject.autNm = this.autData.model2;
+      this.autAdmObject.autType = this.autData.model3;
+      this.autAdmObject.amdDt=new Date().toLocaleString();
+      if(this.autData.model4==='사용')this.autAdmObject.useAble='use';
+      else this.autAdmObject.useAble='unuse';
     },
     autChg(){
       if(this.autData!==null) {
         this.autChgConf = true;
         this.autRegConf = false;
         this.disabled = true
-        this.autId = this.autData.model1;
-        this.autNm = this.autData.model2;
-        this.autType = this.autData.model3;
-        this.amdDt=new Date().toLocaleString();
-        if(this.autData.model4==='사용')this.useAble='use';
-        else this.useAble='unuse';
+        this.autAdmObject.autId = this.autData.model1;
+        this.autAdmObject.autNm = this.autData.model2;
+        this.autAdmObject.autType = this.autData.model3;
+        this.autAdmObject.amdDt=new Date().toLocaleString();
+        if(this.autData.model4==='사용')this.autAdmObject.useAble='use';
+        else this.autAdmObject.useAble='unuse';
       }
     },
     autReg(){
       if(this.autData!==null){
-        this.autId=null;
-        this.autNm=null;
-        this.autType="";
-        this.useAble=null;
+        this.autAdmObject.autId=null;
+        this.autAdmObject.autNm=null;
+        this.autAdmObject.autType="";
+        this.autAdmObject.useAble=null;
       }
-      this.regr="MIG";
-      this.amdr="12345678";
-      this.amdDt=new Date().toLocaleString();
-      this.regDt=new Date().toLocaleString();
+      this.autAdmObject.regr="MIG";
+      this.autAdmObject.amdr="12345678";
+      this.autAdmObject.amdDt=new Date().toLocaleString();
+      this.autAdmObject.regDt=new Date().toLocaleString();
       this.autRegConf=true;
       this.autChgConf=false;
       this.disabled=false
@@ -343,9 +347,9 @@ export default {
       })
     },
     resetSearch(){
-      this.autTypeSel="";
-      this.searchValue="";
-      this.useYn="";
+      this.selectValues.autTypeSel="";
+      this.selectValues.searchValue="";
+      this.selectValues.useYn="";
     }
   },
   async beforeMount() {

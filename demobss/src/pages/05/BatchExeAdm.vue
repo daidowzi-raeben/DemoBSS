@@ -13,8 +13,8 @@
                   :cdGroup="'jobNmSel'"
                   :defaultValue="'Job Name 선택'"
                   :isDisabled="true"
-                  :selectedValue="jobNm"
-                  @input="(value) => {jobNm = value;}"
+                  :selectedValue="selectValues.jobNm"
+                  @input="(value) => {selectValues.jobNm = value;}"
               />
             </td>
             <td class="emptyBox1"></td>
@@ -27,8 +27,8 @@
                   :cdGroup="'wrkSttusSel'"
                   :defaultValue="'작업상태 선택'"
                   :isDisabled="true"
-                  :selectedValue="wrkSttus"
-                  @input="(value) => {wrkSttus = value;}"
+                  :selectedValue="selectValues.wrkSttus"
+                  @input="(value) => {selectValues.wrkSttus = value;}"
               />
             </td>
             <td class="emptyBox1"></td>
@@ -39,10 +39,10 @@
                   :width="'200px'"
                   :height="'28px'"
                   :pPlaceholder="'2022.01.01'"
-                  :pDate="btStDt"
+                  :pDate="selectValues.btStDt"
                   @input="
               (value) => {
-                btStDt = value;
+                selectValues.btStDt = value;
               }
             "
               />
@@ -54,10 +54,10 @@
                   :width="'200px'"
                   :height="'28px'"
                   :pPlaceholder="'2022.01.01'"
-                  :pDate="btEndDt"
+                  :pDate="selectValues.btEndDt"
                   @input="
               (value) => {
-                btEndDt = value;
+                selectValues.btEndDt = value;
               }
             "
               />
@@ -84,8 +84,8 @@
                   :inputClass="'class4'"
                   :width="'200px'"
                   :placeholder="'작업순서 입력'"
-                  :value="wrkOdrg"
-                  v-model="wrkOdrg"
+                  :value="selectValues.wrkOdrg"
+                  v-model="selectValues.wrkOdrg"
               />
             </td>
             <td class="emptyBox1"></td>
@@ -97,8 +97,8 @@
                   :inputClass="'class4'"
                   :width="'200px'"
                   :placeholder="'Job Instance Id입력'"
-                  :value="jobInstId"
-                  v-model="jobInstId"
+                  :value="selectValues.jobInstId"
+                  v-model="selectValues.jobInstId"
               />
             </td>
             <td class="emptyBox1"></td>
@@ -111,8 +111,8 @@
                   :cdGroup="'wrkResltSel'"
                   :defaultValue="'작업결과 선택'"
                   :isDisabled="true"
-                  :selectedValue="wrkReslt"
-                  @input="(value) => {wrkReslt = value;}"
+                  :selectedValue="selectValues.wrkReslt"
+                  @input="(value) => {selectValues.wrkReslt = value;}"
               />
             </td>
             <td colspan="2"></td>
@@ -242,13 +242,15 @@ export default {
   },
   data(){
     return{
-      jobNm :null,                 //직업 이름
-      wrkSttus:null,               //작업상태
-      btStDt:null,               //배치 시작 시간
-      btEndDt:null,               //배치 기간 종료
-      wrkOdrg:null,                //작업순서
-      jobInstId:null,              //작업 인스턴스 id
-      wrkReslt:null,               //작업 결과
+      selectValues: {
+        jobNm: null,                 //직업 이름
+        wrkSttus: null,               //작업상태
+        btStDt: null,               //배치 시작 시간
+        btEndDt: null,               //배치 기간 종료
+        wrkOdrg: null,                //작업순서
+        jobInstId: null,              //작업 인스턴스 id
+        wrkReslt: null,               //작업 결과
+      },
       SearchNum:null,                 //건수
       btExeInfo:null,              //배치실행 정보
       isModelBtExeInfoShow:false,  //배치실행상세정보 팝업
@@ -290,15 +292,15 @@ export default {
   },
   methods:{
     reset() {
-      this.jobNm="";
-      this.wrkSttus="";
+      this.selectValues.jobNm="";
+      this.selectValues.wrkSttus="";
       let date = new Date();
       date.setMonth(date.getMonth() -1);
-      this.btStDt=date;
-      this.btEndDt=new Date();
-      this.wrkOdrg="";
-      this.jobInstId="";
-      this.wrkReslt="";
+      this.selectValues.btStDt=date;
+      this.selectValues.btEndDt=new Date();
+      this.selectValues.wrkOdrg="";
+      this.selectValues.jobInstId="";
+      this.selectValues.wrkReslt="";
     },
     //배치실행상세정보 팝업 닫기
     closeBtInfoModal(){
@@ -315,8 +317,8 @@ export default {
     })
     let date = new Date();
     date.setMonth(date.getMonth() -1);
-    this.btStDt=date;
-    this.btEndDt=new Date();
+    this.selectValues.btStDt=date;
+    this.selectValues.btEndDt=new Date();
   }
 }
 </script>

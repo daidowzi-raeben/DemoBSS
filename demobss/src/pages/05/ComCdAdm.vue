@@ -12,8 +12,8 @@
             :is-disabled="true"
             :disabled="true"
             :defaultValue="'코드구분선택'"
-            :selected-value="cdDivSel"
-            @input=" (value) => { cdDivSel = value;}"
+            :selected-value="selectValues.cdDivSel"
+            @input=" (value) => { selectValues.cdDivSel = value;}"
         />
       </span>
         <span>
@@ -21,8 +21,8 @@
             :type="'search'"
             :inputClass="'class4'"
             :placeholder="'검색어 입력'"
-            :value="searchValue"
-            v-model="searchValue"
+            :value="selectValues.searchValue"
+            v-model="selectValues.searchValue"
             style="width:100%; height:100%"
         />
       </span>
@@ -35,8 +35,8 @@
             :cdGroup="'useYn'"
             :is-disabled="true"
             :defaultValue="'사용여부 선택'"
-            @input=" (value) => { useYn = value;}"
-            :selected-value="useYn"
+            @input=" (value) => { selectValues.useYn = value;}"
+            :selected-value="selectValues.useYn"
         />
 
       </span>
@@ -238,10 +238,14 @@ export default {
       cdGroup:null,
       isModalCdShow : false,    //코드서버즉시 팝업
       isCdGpModalShow : false,  //코드그룹 리스트 등록/변경 팝업
-      cdDivSel:"",            //코드구분 select box
-      searchValue:"",         //검색 값
+
+      selectValues: {         //코드구분 검색 탭
+        cdDivSel:"",            //코드구분 select box
+        searchValue:"",         //검색 값
+        useYn:"",               //사용여부 select box
+      },
+
       SearchNum:null,         //검색 건수
-      useYn:"",               //사용여부 select box
       isCdLstModalShow : false, // 코드리스트 등록/변경 팝업
       cdGpType : null,
       cdLstType : null,
@@ -311,7 +315,7 @@ export default {
   },
   watch:{
     searchValue(newValue){
-      this.searchValue = newValue;
+      this.selectValues.searchValue = newValue;
     }
   },
   methods:{
@@ -358,9 +362,9 @@ export default {
       })
     },
     resetSearch(){    //리셋함수
-      this.cdDivSel="";
-      this.searchValue=null;
-      this.useYn="";
+      this.selectValues.cdDivSel="";
+      this.selectValues.searchValue=null;
+      this.selectValues.useYn="";
     }
   },
 

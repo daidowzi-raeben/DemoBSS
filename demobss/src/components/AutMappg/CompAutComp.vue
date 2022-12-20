@@ -4,8 +4,8 @@
       :sel-default-value="'조회기준 선택'"
       :cd-group="'retvBase'"
       @input="(value)=>{
-        this.searchValue = value[0];
-        this.selValue = value[1];
+        this.selectValues.searchValue = value[0];
+        this.selectValues.selValue = value[1];
       }"
   />
   <div class="ag-grid_sp">
@@ -80,8 +80,10 @@ export default {
   },
   data(){
     return{
-      searchValue:null,
-      selValue:null,
+      selectValues: {   //조회 검색 탭
+        searchValue: null,
+        selValue: null,
+      },
       isModalAutShow:false,
       upRowData:[],
       downRowData:[],

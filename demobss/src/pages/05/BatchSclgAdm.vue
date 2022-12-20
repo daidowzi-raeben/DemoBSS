@@ -12,8 +12,8 @@
             :disabled="true"
             :is-disabled="true"
             :defaultValue="'배치서버 선택'"
-            :selected-value="batchSrvrSel"
-            @input=" (value) => { batchSrvrSel = value;}"
+            :selected-value="selectValues.batchSrvrSel"
+            @input=" (value) => { selectValues.batchSrvrSel = value;}"
         />
       </span>
         <span>
@@ -25,8 +25,8 @@
             :cdGroup="'useYn'"
             :is-disabled="true"
             :defaultValue="'사용여부 선택'"
-            @input=" (value) => { useYnSel = value;}"
-            :selected-value="useYnSel"
+            @input=" (value) => { selectValues.useYnSel = value;}"
+            :selected-value="selectValues.useYnSel"
         />
       </span>
         <span>
@@ -148,56 +148,60 @@
             <tr>
               <th>스케줄링ID</th>
               <td >
-                <input-component :input-class="'class5 class5_long1'" :class="batchChgConf===true ? 'input_disabled':'input'"  :long-width="'600px'" :disabled="disabled" v-model="this.sclgId" :value="this.sclgId" />
+                <input-component :input-class="'class5 class5_long1'" :class="batchChgConf===true ? 'input_disabled':'input'"
+                                 :long-width="'600px'" :disabled="disabled" v-model="this.batchSclgAdmObject.sclgId" :value="this.batchSclgAdmObject.sclgId" />
               </td>
             </tr>
             <tr>
               <th>배치서버</th>
               <td>
-                <input-component class="input" :input-class="'class5 class5_long1'" :long-width="'600px'" v-model="this.batchSrvr" :value="this.batchSrvr" />
+                <input-component class="input" :input-class="'class5 class5_long1'" :long-width="'600px'" v-model="this.batchSclgAdmObject.batchSrvr"
+                                 :value="this.batchSclgAdmObject.batchSrvr" />
               </td>
             </tr>
             <tr>
               <th>스케줄링 그룹</th>
               <td>
-                <input-component class="input" :input-class="'class5 class5_long1'" :long-width="'600px'" v-model="this.sclgGp" :value="this.sclgGp" />
+                <input-component class="input" :input-class="'class5 class5_long1'" :long-width="'600px'" v-model="this.batchSclgAdmObject.sclgGp"
+                                 :value="this.batchSclgAdmObject.sclgGp" />
               </td>
             </tr>
             <tr>
               <th>파라미터(JSON)</th>
               <td>
                 <text-area-component
-                    :contents="this.param"
-                    v-model="this.param"
+                    :contents="this.batchSclgAdmObject.param"
+                    v-model="this.batchSclgAdmObject.param"
                 />
               </td>
             </tr>
             <tr>
               <th>실행주기(크론식)</th>
               <td>
-                <input-component class="input" :input-class="'class5 class5_long1'" :long-width="'600px'" v-model="this.exeCycl" :value="this.exeCycl" />
+                <input-component class="input" :input-class="'class5 class5_long1'" :long-width="'600px'" v-model="this.batchSclgAdmObject.exeCycl"
+                                 :value="this.batchSclgAdmObject.exeCycl" />
               </td>
             </tr>
             <tr>
               <th>사용여부</th>
               <td>
-                <span style="margin-right: 50px;"><input type="radio" v-model="useYn" value="use">사용</span>
-                <span><input type="radio" v-model="useYn"  value="unuse">미사용</span>
+                <span style="margin-right: 50px;"><input type="radio" v-model="this.batchSclgAdmObject.useYn" value="use">사용</span>
+                <span><input type="radio" v-model="this.batchSclgAdmObject.useYn"  value="unuse">미사용</span>
               </td>
             </tr>
             <tr>
             <th>적용여부</th>
             <td>
-              <span style="margin-right: 50px;"><input type="radio" v-model="aplyYn" value="aply">적용</span>
-              <span><input type="radio" v-model="aplyYn"  value="unaply">미적용</span>
+              <span style="margin-right: 50px;"><input type="radio" v-model="this.batchSclgAdmObject.aplyYn" value="aply">적용</span>
+              <span><input type="radio" v-model="this.batchSclgAdmObject.aplyYn"  value="unaply">미적용</span>
             </td>
             </tr>
             <tr>
               <th>설명</th>
               <td>
                 <text-area-component
-                    :contents="this.desc"
-                    v-model="this.desc"
+                    :contents="this.batchSclgAdmObject.desc"
+                    v-model="this.batchSclgAdmObject.desc"
                 />
               </td>
             </tr>
@@ -245,18 +249,22 @@ export default {
   },
   data(){
     return{
-      batchSrvrSel:null, //배치서버 선택
-      useYnSel: null,      //사용여부
+      selectValues: {
+        batchSrvrSel: null, //배치서버 선택
+        useYnSel: null,      //사용여부
+      },
       isModalUpdateShow:false, //변경 팝업
       isModalRegShow:false,     //등록팝업
-      sclgId:null,      //스케줄링ID
-      batchSrvr:null,   //배치서버
-      sclgGp:null,      //스케줄링그룹
-      param:"",       //파라미터
-      exeCycl:null,     //실행주기
-      useYn:null,       //사용여부
-      aplyYn:null,      //적용여부
-      desc:null,        //설명
+      batchSclgAdmObject: {
+        sclgId: null,      //스케줄링ID
+        batchSrvr: null,   //배치서버
+        sclgGp: null,      //스케줄링그룹
+        param: "",       //파라미터
+        exeCycl: null,     //실행주기
+        useYn: null,       //사용여부
+        aplyYn: null,      //적용여부
+        desc: null,        //설명
+      },
       SearchNum:null,   //검색 건수
       batchData:null,   //리스트 선택 데이터
       disabled:false,   //변경중 input disabled
@@ -302,51 +310,51 @@ export default {
       this.batchRegConf = false;
       this.batchChgConf = true;
       this.batchData = params.data;
-      this.batchSrvr = this.batchData.model2;
-      this.sclgGp = this.batchData.model3;
-      this.sclgId = this.batchData.model4;
+      this.batchSclgAdmObject.batchSrvr = this.batchData.model2;
+      this.batchSclgAdmObject.sclgGp = this.batchData.model3;
+      this.batchSclgAdmObject.sclgId = this.batchData.model4;
       this.disabled = true;
-      this.param = this.batchData.model5;
-      this.exeCycl = this.batchData.model6;
-      if(this.batchData.model7==='사용')this.useYn='use';
-      else this.useYn='unuse';
-      if(this.batchData.model8==='적용')this.aplyYn='aply';
-      else this.aplyYn='unaply';
-      this.desc = this.batchData.model9;
+      this.batchSclgAdmObject.param = this.batchData.model5;
+      this.batchSclgAdmObject.exeCycl = this.batchData.model6;
+      if(this.batchData.model7==='사용')this.batchSclgAdmObject.useYn='use';
+      else this.batchSclgAdmObject.useYn='unuse';
+      if(this.batchData.model8==='적용')this.batchSclgAdmObject.aplyYn='aply';
+      else this.batchSclgAdmObject.aplyYn='unaply';
+      this.batchSclgAdmObject.desc = this.batchData.model9;
     },
     batchChg(){
       if(this.batchData!==null){
         this.batchRegConf = false;
         this.batchChgConf = true;
-        this.batchSrvr = this.batchData.model2;
-        this.sclgGp = this.batchData.model3;
-        this.sclgId = this.batchData.model4;
+        this.batchSclgAdmObject.batchSrvr = this.batchData.model2;
+        this.batchSclgAdmObject.sclgGp = this.batchData.model3;
+        this.batchSclgAdmObject.sclgId = this.batchData.model4;
         this.disabled = true;
-        this.param = this.batchData.model5;
-        this.exeCycl = this.batchData.model6;
-        if(this.batchData.model7==='사용')this.useYn='use';
-        else this.useYn='unuse';
-        if(this.batchData.model8==='적용')this.aplyYn='aply';
-        else this.aplyYn='unaply';
-        this.desc = this.batchData.model9;
+        this.batchSclgAdmObject.param = this.batchData.model5;
+        this.batchSclgAdmObject.exeCycl = this.batchData.model6;
+        if(this.batchData.model7==='사용')this.batchSclgAdmObject.useYn='use';
+        else this.batchSclgAdmObject.useYn='unuse';
+        if(this.batchData.model8==='적용')this.batchSclgAdmObject.aplyYn='aply';
+        else this.batchSclgAdmObject.aplyYn='unaply';
+        this.batchSclgAdmObject.desc = this.batchData.model9;
       }
     },
     batchReg(){
       this.batchRegConf = true;
       this.batchChgConf = false;
-      this.batchSrvr = "";
-      this.sclgGp = "";
-      this.sclgId = "";
-      this.param = "";
-      this.exeCycl = "";
-      this.useYn="";
-      this.aplyYn="";
-      this.desc = "";
+      this.batchSclgAdmObject.batchSrvr = "";
+      this.batchSclgAdmObject.sclgGp = "";
+      this.batchSclgAdmObject.sclgId = "";
+      this.batchSclgAdmObject.param = "";
+      this.batchSclgAdmObject.exeCycl = "";
+      this.batchSclgAdmObject.useYn="";
+      this.batchSclgAdmObject.aplyYn="";
+      this.batchSclgAdmObject.desc = "";
       this.disabled = false;
     },
     reset(){
-      this.batchSrvrSel="";
-      this.useYnSel="";
+      this.selectValues.batchSrvrSel="";
+      this.selectValues.useYnSel="";
     },
     search(){
       this.$connect('application/json','/info','get','').then((res)=>{

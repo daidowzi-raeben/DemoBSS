@@ -4,8 +4,8 @@
       :sel-default-value="'조회기준 선택'"
       :cd-group="'orgBase'"
       @input="(value)=>{
-        this.searchValue = value[0];
-        this.selValue = value[1];
+        this.selectValues.searchValue = value[0];
+        this.selectValues.selValue = value[1];
       }"
   />
   <div class="ag-grid_sp">
@@ -37,8 +37,10 @@ export default {
   },
   data(){
     return{
-      searchValue:null,
-      selValue:null,
+      selectValues: {     //조회 검색 탭
+        searchValue: null,
+        selValue: null,
+      },
       leftRowData: [
         {model1:"ST00001",model2:"기업수납센터", model3:"본사", model4:"경영",model5:"사용"}
       ],
@@ -53,9 +55,9 @@ export default {
           cellStyle:{justifyContent: 'flex-start'},
           rowDragText: function(params, dragItemCount) { //드래그해서 이동될때 보이는 값
             if (dragItemCount > 1) {
-              return dragItemCount + ' athletes';
+              return dragItemCount + ' model1';
             }
-            return params.rowNode.data.athlete;
+            return params.rowNode.data.model1;
           },
         },
         {
