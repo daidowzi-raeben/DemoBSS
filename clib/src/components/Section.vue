@@ -63,7 +63,7 @@
           }"
           class="content">
       <!-- <title-area :currentMenu="currentMenu" :style=" !this.navOn ? 'margin-left:10%; width:82%;':'' "/> -->
-      <title-area2 
+      <page-title
       :currentMenu="currentMenu"
       :stateOfBookMark="bookMark.indexOf(currentMenu.menuNm) > -1  ?  true : false"
       @stateOfBookMark="stateOfBookMark = value"

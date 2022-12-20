@@ -1,10 +1,10 @@
-# kt cloud clib
+# kt cloud clib 프로젝트
 
-## Index
-- [kt cloud clib](#kt-cloud-clib)
-  - [Index](#index)
+## 목차
+- [kt cloud clib 프로젝트](#kt-cloud-clib-프로젝트)
+  - [목차](#목차)
   - [프로젝트 설치 및 실행](#프로젝트-설치-및-실행)
-  - [폴더구조](#폴더구조)
+  - [폴더 구조](#폴더-구조)
   - [컴포넌트](#컴포넌트)
     - [Common](#common)
       - [파일명](#파일명)
@@ -19,7 +19,7 @@
 프로젝트 실행 npm run serve
 ```
 
-## 폴더구조
+## 폴더 구조
 ```
 clib
 ├── node_modules
