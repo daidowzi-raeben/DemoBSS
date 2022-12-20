@@ -6,8 +6,8 @@
         :sel-default-value="'권한유형 선택'"
         :cd-group="'autType'"
         @input="(value)=>{
-        this.searchValue = value[0];
-        this.selValue = value[1];
+        this.selectValues.searchValue = value[0];
+        this.selectValues.selValue = value[1];
       }"
     />
     <div style="width: 100%; margin-top:20px;" >
@@ -114,12 +114,14 @@ export default {
       compId:"", //현재 컴포넌트 Id
       autComp:[], //컴포넌트 값을 넣는 배열
       autCompAddr:[], //컴포넌트 주소를 넣는 배열
-      RowData:[],
       autId:null,     //agGrid에서 선택된 row의 권한ID
-      searchValue:null, //검색어 값
-      selValue:null,    //select박스 선택값
       SearchNum:null,   //검색 건수
-      comp:"",
+      comp:"",      //컴포넌트 주소를 담을 임시 변수
+      selectValues: {     //권한 유형 검색 탭
+        searchValue: null, //검색어 값
+        selValue: null,    //select박스 선택값
+      },
+      RowData:[],
       columnDefs: [
         {
           headerName: "선택",
