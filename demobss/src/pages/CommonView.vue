@@ -252,7 +252,7 @@
     </div>
     <h1 style="font-size: 30px">ag grid Grid to Grid</h1>
     <div class="commondiv1">
-      <div style="width: 60%; height: 360px; margin: 10px">
+      <div style="width: 60%; height: 550px; margin: 10px">
         <AgGridComponent3
             :left-row-data="leftRowData"
             :right-row-data="rightRowData"
@@ -730,14 +730,14 @@ export default {
       pDisable: true,
       comp: "L01M05S01",
       leftRowData: [
-        {athlete:"Michael Phelps",sport:"Swi214312ming"},
-        {athlete:"Mic1123lps",sport:"Swi222ng"},
-        {athlete:"Mic455elps",sport:"Swimming"},
+        {model1:"Michael Phelps",sport:"Swi214312ming"},
+        {model1:"Mic1123lps",sport:"Swi222ng"},
+        {model1:"Mic455elps",sport:"Swimming"},
       ],
       rightRowData: [
-        {athlete:"233",sport:"Swimm22ing"},
-        {athlete:"Mic24521lps",sport:"Swi252151ming"},
-        {athlete:"111helps",sport:"Sw244512ng"},
+        {model1:"233",sport:"Swimm22ing"},
+        {model1:"Mic24521lps",sport:"Swi252151ming"},
+        {model1:"111helps",sport:"Sw244512ng"},
       ],
       GridToGridColumns: [
         {
@@ -746,9 +746,9 @@ export default {
           suppressMenu: true,
           rowDragText: function(params, dragItemCount) { //드래그해서 이동될때 보이는 값
             if (dragItemCount > 1) {
-              return dragItemCount + ' athletes';
+              return dragItemCount + ' model1';
             }
-            return params.rowNode.data.athlete;
+            return params.rowNode.data.model1;
           },
         },
         {
@@ -758,7 +758,7 @@ export default {
           suppressMenu: true,
           headerCheckboxSelection: true
         },
-        { field: "athlete" },
+        { field: "model1" },
         { field: "sport" }
       ],
       contentTree: [{

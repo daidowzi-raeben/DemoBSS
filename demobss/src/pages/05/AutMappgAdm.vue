@@ -147,13 +147,13 @@ export default {
     }
   },
   created() {
-    this.comp = markRaw(defineAsyncComponent(()=> import("../components/AutMappg/MenuAutComp.vue")));
+    this.comp = markRaw(defineAsyncComponent(()=> import("../../components/AutMappg/MenuAutComp.vue")));
     this.autCompAddr.push(this.comp);
-    this.comp = markRaw(defineAsyncComponent(()=> import("../components/AutMappg/CompAutComp.vue")));
+    this.comp = markRaw(defineAsyncComponent(()=> import("../../components/AutMappg/CompAutComp.vue")));
     this.autCompAddr.push(this.comp);
-    this.comp = markRaw(defineAsyncComponent(()=> import("../components/AutMappg/OrgAutComp.vue")));
+    this.comp = markRaw(defineAsyncComponent(()=> import("../../components/AutMappg/OrgAutComp.vue")));
     this.autCompAddr.push(this.comp);
-    this.comp = markRaw(defineAsyncComponent(()=> import("../components/AutMappg/UserAutComp.vue")));
+    this.comp = markRaw(defineAsyncComponent(()=> import("../../components/AutMappg/UserAutComp.vue")));
     this.autCompAddr.push(this.comp);
   },
   watch: {

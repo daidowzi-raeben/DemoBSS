@@ -379,16 +379,16 @@
 
 <script>
 import TextAreaComponent from "@/components/common/TextAreaComponent.vue";
-import AgGridComponent from "../components/common/AgGridComponent.vue";
-import ButtonComponent from "../components/common/ButtonComponent.vue";
-import DatePickerComponent from "../components/common/DatePickerComponent.vue";
-import InputComponent from "../components/common/InputComponent.vue";
-import LabelComponent from "../components/common/LabelComponent.vue";
-import PagingArea from "../components/common/PagingArea.vue";
-import RadioComponent from "../components/common/RadioComponent.vue";
-import SelectBoxComponent from "../components/common/SelectBoxComponent.vue";
-import SubInfoTitle from "../components/common/SubInfoTitle.vue";
-import ApiMixin from "../service/common.js";
+import AgGridComponent from "../../components/common/AgGridComponent.vue";
+import ButtonComponent from "../../components/common/ButtonComponent.vue";
+import DatePickerComponent from "../../components/common/DatePickerComponent.vue";
+import InputComponent from "../../components/common/InputComponent.vue";
+import LabelComponent from "../../components/common/LabelComponent.vue";
+import PagingArea from "../../components/common/PagingArea.vue";
+import RadioComponent from "../../components/common/RadioComponent.vue";
+import SelectBoxComponent from "../../components/common/SelectBoxComponent.vue";
+import SubInfoTitle from "../../components/common/SubInfoTitle.vue";
+import ApiMixin from "../../service/common.js";
 export default {
   mixins: [ApiMixin],
   components: {

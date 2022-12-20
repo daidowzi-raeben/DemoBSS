@@ -376,19 +376,19 @@
     ],
     "autTabData": [
       {
-        "menuId": "",
+        "menuId": "01",
         "menuNm": "메뉴권한"
       },
       {
-        "menuId": "",
+        "menuId": "02",
         "menuNm": "컴포넌트권한"
       },
       {
-        "menuId": "",
+        "menuId": "03",
         "menuNm": "조직권한"
       },
       {
-        "menuId": "",
+        "menuId": "04",
         "menuNm": "사용자권한"
       }
     ],
