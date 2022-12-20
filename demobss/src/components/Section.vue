@@ -140,7 +140,7 @@ export default {
       stateOfBookMark:'',
       compm2: [],
       component: markRaw(
-          defineAsyncComponent(() => import("../pages/Cus360.vue"))
+          defineAsyncComponent(() => import("../pages/01/Cus360.vue"))
       ),
       iconDelWhite:require("../img/icon_delete_white.png"),
       iconDelBlack:require("../img/icon_delete_black.png"),

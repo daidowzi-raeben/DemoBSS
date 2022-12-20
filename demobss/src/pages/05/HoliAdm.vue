@@ -12,10 +12,10 @@
                  :height="'28px'"
                  :type="'month'"
                  :dateFormat="'yyyy-MM'"
-                 :pDate="holiStDate"
+                 :pDate="holiStDt"
                  @input="
               (value) => {
-                holiStDate = value;
+                holiStDt = value;
               }
             "
                />
@@ -28,10 +28,10 @@
                   :height="'28px'"
                   :type="'month'"
                   :dateFormat="'yyyy-MM'"
-                  :pDate="holiEnDate"
+                  :pDate="holiEndDt"
                   @input="
               (value) => {
-                holiEnDate = value;
+                holiEndDt = value;
               }
             "
               />
@@ -150,10 +150,10 @@
               :width="100"
               :type="'year'"
               :date-format="'yyyy년'"
-              :pDate="caldrStDate"
+              :pDate="caldrStDt"
               @input="
               (value) => {
-                caldrStDate = value;
+                caldrStDt = value;
               }
             "
           />
@@ -165,10 +165,10 @@
               :width="100"
               :type="'year'"
               :date-format="'yyyy년'"
-              :pDate="caldrEnDate"
+              :pDate="caldrEndDt"
               @input="
               (value) => {
-                caldrEnDate = value;
+                caldrEndDt = value;
               }
             "
           />
@@ -256,16 +256,16 @@ export default {
       ],
       holiYn:null,        //휴일 여부
       holiDiv:null,      //휴일 구분
-      holiStDate: null,   //조회시작년월
-      holiEnDate:null,   //조회종료년월
+      holiStDt: null,   //조회시작년월
+      holiEndDt:null,   //조회종료년월
 
 
       isModalChgShow:false, //변경팝업
       isModalCretShow:false, //생성팝업
 
 
-      caldrStDate: new Date(),  //달력시작년
-      caldrEnDate: new Date()   //달력종료년
+      caldrStDt: new Date(),  //달력시작년
+      caldrEndDt: new Date()   //달력종료년
     }
   },
   methods:{
@@ -274,8 +274,8 @@ export default {
       this.holiDiv="";
       let date = new Date();
       date.setMonth(date.getMonth() -1);
-      this.holiStDate=date;
-      this.holiEnDate=new Date();
+      this.holiStDt=date;
+      this.holiEndDt=new Date();
     },
     search(){
       this.$connect('application/json','/info','get','').then((res)=>{
@@ -289,8 +289,8 @@ export default {
     })
     let date = new Date();
     date.setMonth(date.getMonth() -1);
-    this.holiStDate=date;
-    this.holiEnDate=new Date();
+    this.holiStDt=date;
+    this.holiEndDt=new Date();
 
   }
 }

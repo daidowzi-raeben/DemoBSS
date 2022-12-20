@@ -39,10 +39,10 @@
                   :width="'200px'"
                   :height="'28px'"
                   :pPlaceholder="'2022.01.01'"
-                  :pDate="btStDate"
+                  :pDate="btStDt"
                   @input="
               (value) => {
-                btStDate = value;
+                btStDt = value;
               }
             "
               />
@@ -54,10 +54,10 @@
                   :width="'200px'"
                   :height="'28px'"
                   :pPlaceholder="'2022.01.01'"
-                  :pDate="btEnDate"
+                  :pDate="btEndDt"
                   @input="
               (value) => {
-                btEnDate = value;
+                btEndDt = value;
               }
             "
               />
@@ -244,8 +244,8 @@ export default {
     return{
       jobNm :null,                 //직업 이름
       wrkSttus:null,               //작업상태
-      btStDate:null,               //배치 시작 시간
-      btEnDate:null,               //배치 기간 종료
+      btStDt:null,               //배치 시작 시간
+      btEndDt:null,               //배치 기간 종료
       wrkOdrg:null,                //작업순서
       jobInstId:null,              //작업 인스턴스 id
       wrkReslt:null,               //작업 결과
@@ -294,8 +294,8 @@ export default {
       this.wrkSttus="";
       let date = new Date();
       date.setMonth(date.getMonth() -1);
-      this.btStDate=date;
-      this.btEnDate=new Date();
+      this.btStDt=date;
+      this.btEndDt=new Date();
       this.wrkOdrg="";
       this.jobInstId="";
       this.wrkReslt="";
@@ -315,8 +315,8 @@ export default {
     })
     let date = new Date();
     date.setMonth(date.getMonth() -1);
-    this.btStDate=date;
-    this.btEnDate=new Date();
+    this.btStDt=date;
+    this.btEndDt=new Date();
   }
 }
 </script>

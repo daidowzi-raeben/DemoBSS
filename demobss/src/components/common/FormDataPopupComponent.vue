@@ -14,7 +14,7 @@
                 <table>
                   <tr v-for="item in OutputFormData" :key="item">
                     <th>
-                      {{ item.title }}
+                                    {{ item.title }}
                     </th>
                     <td>
                       <input

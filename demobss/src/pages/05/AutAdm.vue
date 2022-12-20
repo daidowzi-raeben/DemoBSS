@@ -195,14 +195,14 @@
               <th>등록자/등록일시</th>
               <td colspan="3">
                 <span><input-component :class="'input_disabled'" :input-class="'class5 class5_long1'" :long-width="'150px'" :disabled="true" :value="this.regr" /></span>
-                <span ><input-component :class="'input_disabled'" :input-class="'class5 class5_long1'" :long-width="'150px'"  :disabled="true" :value="this.regDate" /></span>
+                <span ><input-component :class="'input_disabled'" :input-class="'class5 class5_long1'" :long-width="'150px'"  :disabled="true" :value="this.regDt" /></span>
               </td>
             </tr>
             <tr>
               <th>수정자/수정일시</th>
               <td colspan="3">
                 <span><input-component :class="'input_disabled'" :input-class="'class5 class5_long1'" :long-width="'150px'"  :disabled="true" :value="this.amdr" /></span>
-                <span><input-component :class="'input_disabled'" :input-class="'class5 class5_long1'" :long-width="'150px'"  :disabled="true" :value="this.amdDate" /></span>
+                <span><input-component :class="'input_disabled'" :input-class="'class5 class5_long1'" :long-width="'150px'"  :disabled="true" :value="this.amdDt" /></span>
               </td>
 
             </tr>
@@ -266,9 +266,9 @@ export default {
       autType:null,   //권한유형    //현재 셀렉트json에 id값도 "조회" 이런식으로 들어가 있음.(매칭을위해) 추후 수정 필수
       useAble:null,   //사용여부관련 라디오 변수
       regr:null,      //등록자
-      regDate:null,   //등록일시
+      regDt:null,   //등록일시
       amdr:null,      //수정자
-      amdDate:null,   //수정일시
+      amdDt:null,   //수정일시
 
       columnDefs: [
         {
@@ -305,7 +305,7 @@ export default {
       this.autId = this.autData.model1;
       this.autNm = this.autData.model2;
       this.autType = this.autData.model3;
-      this.amdDate=new Date().toLocaleString();
+      this.amdDt=new Date().toLocaleString();
       if(this.autData.model4==='사용')this.useAble='use';
       else this.useAble='unuse';
     },
@@ -317,7 +317,7 @@ export default {
         this.autId = this.autData.model1;
         this.autNm = this.autData.model2;
         this.autType = this.autData.model3;
-        this.amdDate=new Date().toLocaleString();
+        this.amdDt=new Date().toLocaleString();
         if(this.autData.model4==='사용')this.useAble='use';
         else this.useAble='unuse';
       }
@@ -331,8 +331,8 @@ export default {
       }
       this.regr="MIG";
       this.amdr="12345678";
-      this.amdDate=new Date().toLocaleString();
-      this.regDate=new Date().toLocaleString();
+      this.amdDt=new Date().toLocaleString();
+      this.regDt=new Date().toLocaleString();
       this.autRegConf=true;
       this.autChgConf=false;
       this.disabled=false

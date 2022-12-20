@@ -1,5 +1,5 @@
 <template>
-  <article class="CustInfoRetvAdmView">
+  <article class="MaskRelesAdmView">
     <div class="item"> <!--1번 -->
       <div class="userSearch">
         <table>
@@ -37,10 +37,10 @@
                   :width="'200px'"
                   :height="'28px'"
                   :pPlaceholder="'2022.01.01'"
-                  :pDate="retvStDate"
+                  :pDate="retvStDt"
                   @input="
               (value) => {
-                retvStDate = value;
+                retvStDt = value;
               }
             "
               />
@@ -52,10 +52,10 @@
                   :width="'200px'"
                   :height="'28px'"
                   :pPlaceholder="'2022.01.01'"
-                  :pDate="retvEnDate"
+                  :pDate="retvEndDt"
                   @input="
               (value) => {
-                retvEnDate = value;
+                retvEndDt = value;
               }
             "
               />
@@ -140,7 +140,7 @@
     </div>
     <div class="item"> <!--2번 -->
       <div style="width: 100%">
-        <subInfoTitle :subInfoTitleNm="'고객정보 조회 이력'"/>
+        <subInfoTitle :subInfoTitleNm="'마스킹 해제이력'"/>
         <p style="margin-left:5px; display:inline-block;">(총 <label style="font-weight: bold">{{ total }}</label>건)</p>
 
         <span style="float: right">
@@ -162,10 +162,10 @@
       <div class="ag-grid_sp">
         <ag-grid-component
             :header-color="'rgb(239 245 252)'"
-            :rowData="CustRetvRowData"
-            :columnDefs="CustRetvColumnDefs"
+            :rowData="MaksRelesRowData"
+            :columnDefs="MaksRelesColumnDefs"
             :row-height="40"
-            :isWidthFit="false"
+            :isWidthFit="true"
             :overlayNoRowsTemplate="
           `<span> <br>` + '<br />조회 결과가 없습니다.' + ` </span>`
           "
@@ -219,7 +219,7 @@ import popupComponent from "@/components/common/PopupComponent";
 import ApiMixin from "@/service/common";
 export default {
   mixins:[ApiMixin],
-  name: "CustInfoRetvAdm",
+  name: "MaskRelesAdm",
   components:{
     buttonComponent,
     labelComponent,
@@ -235,35 +235,35 @@ export default {
     return{
       securRetv:null,        //조회 기준
       searchValues:null,     //검색어
-      retvStDate:null,       //조회 기간 시작
-      retvEnDate:null,       //조회 기간 끝
+      retvStDt:null,       //조회 기간 시작
+      retvEndDt:null,       //조회 기간 끝
       empNm:null,            //사원명
       selectValues:null,     //조직 선택
       isModalHideShow:false, //숨김해제 팝업
-      SearchNum:null,        //검색 건수
+      SearchNum :null,       //검색 건수
       pageableData1: {
         pageNumber: 1,
         currentMinPage: 1,
         currentMaxPage: 10,
         totalPages: 12,
       },
-      CustRetvRowData:[],
-      CustRetvColumnDefs:[
+      MaksRelesRowData:[],
+      MaksRelesColumnDefs:[
         {headerName:"순서", field :"model1", width:40},
         {headerName:"고객ID", field :"model2", width:120},
         {headerName:"청구계정ID", field :"model3", width:120},
         {headerName:"고객명", field :"model4", width:90},
-        {headerName:"서비스계약ID", field :"model5", width:120},
-        {headerName:"유형", field :"model6", width:90},
+        {headerName:"서비스계약ID", field :"model5", width:130},
+        {headerName:"유형", field :"model6", width:100},
         {headerName:"메뉴ID", field :"model7", width:90},
         {headerName:"메뉴명", field :"model8", width:110},
         {headerName:"URL", field :"model9", width:120},
         {headerName:"화면명", field :"model10", width:110},
         {headerName:"사용자ID", field :"model11", width:110},
         {headerName:"사용자명", field :"model12", width:90},
-        {headerName:"사용자IP", field :"model13", width:110},
-        {headerName:"파일명/데이터개수", field :"model14", width:150, cellStyle: {justifyContent: "flex-start"}},
-        {headerName:"작업일시", field :"model15", width:90, cellStyle: {'white-space': 'normal'}, autoHeight: true},
+        {headerName:"사용자IP", field :"model13", width:110 },
+        {headerName:"파일명/데이터개수", field :"model14", width:150,cellStyle: {justifyContent: "flex-start"}},
+        {headerName:"해제일시", field :"model15", width:90, cellStyle: {'white-space': 'normal'}, autoHeight: true},
       ],
     }
   },
@@ -273,10 +273,10 @@ export default {
       this.searchValues = "";
       let date = new Date();
       date.setMonth(date.getMonth() -1);
-      this.retvStDate = date;       //조회 기간 시작
-      this.retvEnDate = new Date();       //조회 기간 끝
-      this.selectValues = "";
+      this.retvStDt = date;       //조회 기간 시작
+      this.retvEndDt = new Date();       //조회 기간 끝
       this.empNm ="";
+      this.selectValues="";
     },
     search(){
       this.$connect('application/json','/info','get','').then((res)=>{
@@ -286,29 +286,30 @@ export default {
   },
   async beforeMount() {
     await this.$connect('application/json','/info','get','').then((res)=>{
-      this.CustRetvRowData = res.data.securRowData;
+      this.MaksRelesRowData = res.data.securRowData;
     })
     let date = new Date();
     date.setMonth(date.getMonth() -1);
-    this.retvStDate = date;       //조회 기간 시작
-    this.retvEnDate = new Date();       //조회 기간 끝
+    this.retvStDt = date;       //조회 기간 시작
+    this.retvEndDt = new Date();       //조회 기간 끝
   }
+
 }
 </script>
 
 <style scoped>
-.CustInfoRetvAdmView{
+.MaskRelesAdmView{
   display: grid;
   grid-template-columns: minmax(1580px,1fr);
   grid-template-rows: 100px minmax(640px, 1fr);
   gap: 20px 20px;
 }
 
-.CustInfoRetvAdmView > .item:nth-child(1) {
+.MaskRelesAdmView > .item:nth-child(1) {
   grid-column: 1;
   grid-row: 1;
 }
-.CustInfoRetvAdmView > .item:nth-child(2) {
+.MaskRelesAdmView > .item:nth-child(2) {
   grid-column: 1;
   grid-row: 2;
 }
