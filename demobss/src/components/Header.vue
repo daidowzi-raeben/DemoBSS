@@ -55,7 +55,7 @@ export default {
       menuId: "L01",
       menuDepth1: [],
       iconLogo:require('../assets/img/icon_logo_cloud.png'),
-      iconSerch:require('..//assets/img/search_icon.svg'),
+      iconSerch:require('../assets/img/search_icon.svg'),
       iconUser:require('../assets/img/icon_user2.png'),
       logoLogout:require('../assets/img/logo_logout.png')
     };
