@@ -4,8 +4,8 @@
       :sel-default-value="'조회기준 선택'"
       :cd-group="'retvBase'"
       @input="(value)=>{
-        this.searchValue = value[0];
-        this.selValue = value[1];
+        this.selectValues.searchValue = value[0];
+        this.selectValues.selValue = value[1];
       }"
     />
   <div class="ag-grid_sp">
@@ -37,8 +37,10 @@ export default {
   },
   data(){
     return{
-      searchValue:null,
-      selValue:null,
+      selectValues: {     //조회 검색 탭
+        searchValue: null,
+        selValue: null,
+      },
       leftRowData: [    //model1 중복된 값 있으면 안됨.
         {model1:"CONT_01_002",model2:"계약>계약정보>계약관리", model3:"사용"},
         {model1:"CONT_01_003",model2:"계약>계약정보>계약관리", model3:"사용"},

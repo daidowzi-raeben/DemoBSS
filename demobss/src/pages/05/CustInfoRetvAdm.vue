@@ -13,8 +13,8 @@
                   :cdGroup="'securRetv'"
                   :defaultValue="'조회기준 선택'"
                   :isDisabled="true"
-                  :selectedValue="securRetv"
-                  @input="(value) => {securRetv = value;}"
+                  :selectedValue="selectValues.securRetv"
+                  @input="(value) => {selectValues.securRetv = value;}"
               />
             </td>
             <td>
@@ -24,8 +24,8 @@
                   :inputClass="'class4'"
                   :placeholder="'검색어 입력'"
                   :width="'140px'"
-                  :value="searchValues"
-                  v-model="searchValues"
+                  :value="selectValues.searchValues"
+                  v-model="selectValues.searchValues"
               />
             </td>
             <td colspan="3"></td>
@@ -37,10 +37,10 @@
                   :width="'200px'"
                   :height="'28px'"
                   :pPlaceholder="'2022.01.01'"
-                  :pDate="retvStDt"
+                  :pDate="selectValues.retvStDt"
                   @input="
               (value) => {
-                retvStDt = value;
+                selectValues.retvStDt = value;
               }
             "
               />
@@ -52,10 +52,10 @@
                   :width="'200px'"
                   :height="'28px'"
                   :pPlaceholder="'2022.01.01'"
-                  :pDate="retvEndDt"
+                  :pDate="selectValues.retvEndDt"
                   @input="
               (value) => {
-                retvEndDt = value;
+                selectValues.retvEndDt = value;
               }
             "
               />
@@ -83,8 +83,8 @@
                   :cdGroup="'orgSelect'"
                   :defaultValue="'조직 선택'"
                   :isDisabled="true"
-                  :selectedValue="selectValues"
-                  @input="(value) => {selectValues = value;}"
+                  :selectedValue="selectValues.orgSel"
+                  @input="(value) => {selectValues.orgSel = value;}"
               />
             </td>
             <td>
@@ -95,8 +95,8 @@
                   :cdGroup="'orgSelect'"
                   :defaultValue="'조직 선택'"
                   :isDisabled="true"
-                  :selectedValue="selectValues"
-                  @input="(value) => {selectValues = value;}"
+                  :selectedValue="selectValues.orgSel"
+                  @input="(value) => {selectValues.orgSel = value;}"
               />
             </td>
             <td>
@@ -107,8 +107,8 @@
                   :cdGroup="'orgSelect'"
                   :defaultValue="'조직 선택'"
                   :isDisabled="true"
-                  :selectedValue="selectValues"
-                  @input="(value) => {selectValues = value;}"
+                  :selectedValue="selectValues.orgSel"
+                  @input="(value) => {selectValues.orgSel = value;}"
               />
             </td>
             <td>
@@ -118,8 +118,8 @@
                   :inputClass="'class4'"
                   :width="'200px'"
                   :placeholder="'사원명 입력'"
-                  :value="empNm"
-                  v-model="empNm"
+                  :value="selectValues.empNm"
+                  v-model="selectValues.empNm"
               />
             </td>
             <td colspan="6"></td>
@@ -233,12 +233,14 @@ export default {
   },
   data(){
     return{
-      securRetv:null,        //조회 기준
-      searchValues:null,     //검색어
-      retvStDt:null,       //조회 기간 시작
-      retvEndDt:null,       //조회 기간 끝
-      empNm:null,            //사원명
-      selectValues:null,     //조직 선택
+      selectValues: {     //고객 정보 조회 탭
+        securRetv: null,        //조회 기준
+        searchValues: null,     //검색어
+        retvStDt: null,       //조회 기간 시작
+        retvEndDt: null,       //조회 기간 끝
+        empNm: null,            //사원명
+        orgSel: null,     //조직 선택
+      },
       isModalHideShow:false, //숨김해제 팝업
       SearchNum:null,        //검색 건수
       pageableData1: {
@@ -269,14 +271,14 @@ export default {
   },
   methods:{
     reset(){
-      this.securRetv = "";
-      this.searchValues = "";
+      this.selectValues.securRetv = "";
+      this.selectValues.searchValues = "";
       let date = new Date();
       date.setMonth(date.getMonth() -1);
-      this.retvStDt = date;       //조회 기간 시작
-      this.retvEndDt = new Date();       //조회 기간 끝
-      this.selectValues = "";
-      this.empNm ="";
+      this.selectValues.retvStDt = date;       //조회 기간 시작
+      this.selectValues.retvEndDt = new Date();       //조회 기간 끝
+      this.selectValues.orgSel = "";
+      this.selectValues.empNm ="";
     },
     search(){
       this.$connect('application/json','/info','get','').then((res)=>{
@@ -290,8 +292,8 @@ export default {
     })
     let date = new Date();
     date.setMonth(date.getMonth() -1);
-    this.retvStDt = date;       //조회 기간 시작
-    this.retvEndDt = new Date();       //조회 기간 끝
+    this.selectValues.retvStDt = date;       //조회 기간 시작
+    this.selectValues.retvEndDt = new Date();       //조회 기간 끝
   }
 }
 </script>
