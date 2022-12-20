@@ -64,7 +64,7 @@ export default {
 <style scoped>
 @font-face {
   font-family: 'noto-sans-kr';
-  src: url('../../../public/fonts/NotoSansKR-Regular.otf');
+  src: url('@/assets/fonts/NotoSansKR-Regular.otf');
 }
 input {
   font-size: 10pt;

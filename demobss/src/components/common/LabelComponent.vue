@@ -20,16 +20,14 @@ export default {
 <style>
 @font-face {
   font-family: "noto-sans-kr";
-  src: url("../../../public/fonts/NotoSansKR-Regular.otf");
+  src: url("@/assets/fonts/NotoSansKR-Regular.otf");
 }
 * {
   font-family: "noto-sans-kr";
 }
 
 .label-type {
-  /* width: 89px; */
   width: 100%;
-  /* font-size: 12pt; */
   font-size: 10pt;
   font-weight: bold;
   text-align: left;

@@ -79,7 +79,6 @@ export default {
 </script>
 
 <style scoped>
-/* @import '../../css/popup.css'; */
 
 .cm_popup_overlay {
   background-color: rgba(0, 0, 0, 0.6);

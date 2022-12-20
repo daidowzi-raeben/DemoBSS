@@ -168,7 +168,7 @@ export default {
 }
 </script>
 <style>
-@import '../../../css/tree.css';
+@import '../../../assets/css/tree.css';
 .treeitem {
   width: 100%;
 }

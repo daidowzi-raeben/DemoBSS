@@ -19,8 +19,8 @@ export default {
         type:Boolean,
         default : true
       },
-      close : require("../../../img/icon_minus_2.png"),
-      open : require("../../../img/icon_plus_2.png"),
+      close : require("../../../assets/img/icon_minus_2.png"),
+      open : require("../../../assets/img/icon_plus_2.png"),
     }
   },
 

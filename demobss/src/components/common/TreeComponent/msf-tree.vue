@@ -347,5 +347,5 @@ export default {
 </script>
 
 <style scoped>
-@import '../../../css/tree.css';
+@import '../../../assets/css/tree.css';
 </style>
