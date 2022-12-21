@@ -293,7 +293,7 @@ import SubInfoTitle from "@/components/common/SubInfoTitle";
 import ButtonComponent from "@/components/common/ButtonComponent";
 import BlcComponent from "@/components/UnionForm/BlcComponent";
 import LabelComponent from '@/components/common/LabelComponent.vue';
-import FunComp from "@/components/common/AgGridCellRender/FunComp";
+import FunComp from "@/components/common/AgGridCellRender/BillChageDiv";
 import ApiMixin from "@/service/common";
 export default {
   mixins:[ApiMixin],

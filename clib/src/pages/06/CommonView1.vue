@@ -1,5 +1,275 @@
 <template>
   <div class="container">
+    <h1 style="font-size: 30px">InputComponent</h1>
+    <div class="commondiv1" >
+      <label-component label-nm="'class1'" />
+      &nbsp;&nbsp;
+      <input-component
+          :type="'search'"
+          :height="20"
+          :width="150"
+          :input-class="'class1'"
+          v-model="searchValue"
+          :placeholder="'class1'"
+          @input="
+          (value) => {
+            searchValue = value;
+          }
+        "
+      />
+      <p>- class1의 경우 입력받은 width와  height에 의해 가로 세로 길이가 정해짐 /*정보 스타일*/</p>
+      <br /><br />
+      <label-component label-nm="'class3'" />
+      &nbsp;&nbsp;
+      <input-component
+          :type="'search'"
+          :input-class="'class3'"
+          v-model="searchValue"
+          :placeholder="'class3'"
+          @input="
+          (value) => {
+            searchValue = value;
+          }
+        "
+      />
+      <p>- class3의 경우 가로 세로 길이는 고정 /*상단 메뉴 스타일*/</p>
+      <br /><br />
+      <label-component label-nm="'class4'" />
+      &nbsp;&nbsp;
+      <div style="width: 150px; height: 20px; display: inline-block">
+        <input-component
+            :input-class="'class4'"
+            :value="'class4 '"
+        />
+      </div>
+      <p>- class4의 경우 input 태그를 감싸는 div에 맞춰 크기 지정 width 100% height 100% /*상단 메뉴 스타일*/</p>
+      <br /> <br />
+      <label-component label-nm="'class5'" />
+      &nbsp;&nbsp;
+      <input-component
+          :input-class="'class5'"
+          :value="'class5 '"
+      />
+      |&nbsp;
+      <label-component label-nm="'class5 class5_short1'" />
+      &nbsp;&nbsp;
+      <input-component
+          :input-class="'class5 class5_short1'"
+          :value="'short1 '"
+      />
+      <br />
+      <label-component label-nm="'class5 class5_short2'" />
+      &nbsp;&nbsp;
+      <input-component
+          :input-class="'class5 class5_short2'"
+          :value="'short2'"
+      />
+      |&nbsp;
+      <label-component label-nm="'class5 class5_long1'" />
+      &nbsp;&nbsp;
+      <input-component
+          :input-class="'class5 class5_long1'"
+          :long-width="'200px'"
+          :value="'long1 '"
+      />
+      <p>- class5의 width: 140px height:24px을 기준</p>
+      <p>- class5 short1은 width: 80px을 기준</p>
+      <p>- class5 short2은 width: 64px을 기준</p>
+      <p>- class5 long1은 입력받은 longwidth 값에 의해 크기 지정</p>
+      <br /><br />
+      <label-component label-nm="'class6'" />
+      &nbsp;&nbsp;
+      <input-component
+          :input-class="'class6'"
+          :value="'class6 '"
+      />
+
+      <label-component label-nm="'class6 class6_2'" />
+      &nbsp;&nbsp;
+      <input-component
+          :input-class="'class6 class6_2'"
+          :value="'class6 class6_2'"
+      />
+      <p>- class6의 width는 입력받은 class6Width, height는 24px을 기준</p>
+      <p>- class6_2를 추가할 경우 배경색 변경</p>
+    </div>
+    <br /><br />
+
+    <h1 style="font-size: 30px">ButtonComponent</h1>
+    <div class="commondiv1">
+      <label-component label-nm="'btnClass1'" />
+      <ButtonComponent :btnClass="'btnClass1'" :btnName="'btnClass1'" />
+      <p>- btnClass1의 경우 오른쪽 정렬되어 있고 hover시 파란색 배경과 하얀색 글씨로 변경</p>
+      <br /><br />
+      <label-component label-nm="'btnClass3'" />
+      <ButtonComponent :btnClass="'btnclass3'" :btnName="'btnClass3'" btn-height="'30px'" />
+      <p>- btnClass3의 경우 입력받은 btnHeight에 의해 세로 길이가 정해짐</p>
+      <p>- hover 시 기존 색상에서 좀더 진한 배경색으로 변경</p>
+      <br /><br />
+      <label-component label-nm="'btnClass4'" />
+      <ButtonComponent :btnClass="'btnClass4'" :btnName="'btnClass4'" :btnFontWeight="'bold'" :btnWidth="'90px'" :btnHeight="'20px'"/>
+      <p>- btnClass4의 경우 입력받은 btnWitdh와 btnHeight에 의해 세로 가로 길이가 정해짐</p>
+      <p>- 글자 굵기의 경우 btnFontWeight에 의해 변경 가능</p>
+      <p>- hover시 연한 색상의 배경색으로 변경</p>
+      <br /><br />
+      <label-component label-nm="'btnClass5'" />
+      <ButtonComponent :btnClass="'btnClass5'" :btnName="'btnClass5'" btn-width="'100px'" btn-height="'24px'"   />
+      <p>- btnClass5의 경우 btnClass4와 비슷하지만 좀더 둥근 형태로 색상또한 하얀색 계열임</p>
+      <p>- 버튼 크기, 글자 굵기는 btnClass4와 같이 입력으로 변경 가능</p>
+    </div>
+    <br />
+
+    <h1 style="font-size: 30px">ChkBoxComponent</h1>
+    <div class="commondiv1" >
+      <ChkBoxComponent
+          :CheckOptions='["체크옵션1","체크옵션2","체크옵션3","체크옵션4","체크옵션5",]'
+          :check-box-size="'20px'"
+          :check-text-size="'10px'"
+      />
+      <p>- ChkBox의 경우 CheckOptions을 통해 보여줄 값을 배열의 형태로 입력 받는다.</p>
+      <p>- showCheckOpt 옵션의 true/false값에 따라 체크된 항목을 볼 수 있다.</p>
+      <p>- box의 크기와 글자 크기는 checkBoxSize와 checkTextSize 값을 입력하여 수정 가능</p>
+    </div>
+    <br />
+
+    <h1 style="font-size: 30px">LabelComponent</h1>
+    <div class="commondiv1" >
+      <LabelComponent
+          :label-nm="'Label 컴포넌트'"
+      />
+      <p>- Label의 경우 LabelClass로 스타일 지정이 가능하다. 현재는 기본값만 존재</p>
+      <p>- Label에 적을 내용은 labelNm을 통해 입력 가능</p>
+    </div>
+    <br />
+
+    <h1 style="font-size: 30px">SubInfoTitle</h1>
+    <div class="commondiv1">
+      <SubInfoTitle :subInfoTitleNm="'고객정보'" /> &emsp;
+      <SubInfoTitle :subInfoTitleNm="'요금정보'" :font-size="'30pt'" />
+      <p>- SubInfoTitle의 경우 subInfoTitleNm을 통해 제목명을 지정할 수 있다.</p>
+      <p>- 글자 크기의 경우 fontSize를 통해 지정가능하고 단위는 pt다.</p>
+    </div>
+    <br />
+
+    <h1 style="font-size: 30px">DragGrid</h1>
+    <div class="commondiv1">
+      <div style="width: 60%; height: 600px; margin: 10px">
+        <DragGrid
+            :left-row-data="leftRowData"
+            :right-row-data="rightRowData"
+            :Columns="GridToGridColumns"
+            :header-color="'blue'"
+            :overlayNoRowsTemplate="
+          `<span> <br>` + '<br />조회 결과가 없습니다.' + ` </span>`"
+        />
+      </div>
+      <p>- DragGrid의 경우 leftRowData에는 첫번째 Row데이터를 넣는다.</p>
+      <p>- rightRowData에는 두번째 Row데이터를 넣는다.</p>
+      <p>- Columns에는 공통으로 사용할 헤더정보를 넣는다.</p>
+      <p>- Gird간의 이동이 완료된 후에는 확정 버튼을 통해 이동된 Row데이터의 값을 바꿔줘야 한다.</p>
+      <p>- 헤더 색상의 경우 headerColor를 통해 변경 가능하다.</p>
+      <p>- overlayNoRowsTemplate는 데이터 값이 없을 때 보여주는 메시지를 지정한다.</p>
+    </div>
+
+    <h1 style="font-size: 30px">linkComponent</h1>
+    <div class="commondiv1" >
+      <link-component
+          :destination="'/'"
+          :linkNm="'링크 컴포넌트(mounse over)'"  />
+      <br />
+      <p>- LinkComponent의 경우 destination 옵션을 통해 이동할 url을 지정할 수 있다. </p>
+      <p>- linkNm은 링크명, textsize는 글자 크기를 지정 가능하다.</p>
+    </div>
+    <br />
+
+    <h1 style="font-size: 30px">PageTtile</h1>
+    <div class="commondiv1" >
+      <PageTitle
+          :current-menu="currentMenu"
+          :stateOfBookMark="false"
+          @stateOfBookMark="stateOfBookMark = value"
+        />
+      <br />
+      <p>- PageTitle의 경우 currentMenu를 통해 현재 보여줄 타이틀 제목을 지정해줄 수 있다. </p>
+      <p>- stateOfBookMark의 경우 현재 즐겨찾기 여부를 지정한다.</p>
+      <p>- @stateOfBookMark의 경우 클릭에 따른 즐겨찾기 여부를 부모 컴포넌트에 전달하기 위해 사용</p>
+    </div>
+    <br />
+
+    <h1 style="font-size: 30px">PopupComponent</h1>
+    <div class="commondiv1">
+      <button-component :btnClass="'btnClass5'" :btnName="'공통 PopUp'" @click="popup" :btnWidth="'90px'"/>
+
+      <popup-component
+          v-if="isModalShow"
+          @popup="isModalShow = false"
+          @AGREE = "''"
+          :popupmsg="'여기가 팝업 메세지 '"
+      />
+      <p>- 팝업의 경우 버튼 클릭 이벤트를 통해 팝업 출력 여부를 v-if를 통해 결정한다.</p>
+      <P>- 팝업 메세지의 경우에는 popupmsg를 통해 전달할 수 있다.</P>
+      <p>- 팝업 창에서 취소를 누를 경우 emit를 통해 @popup을 호출하여 창을 닫는다.</p>
+      <p>- 팝업 창에서 확인을 누를 경우 emit를 통해 @AGREE를 호출하여 @AGREE에서 받는 함수를 실행한다.</p>
+    </div>
+
+
+    <h1 style="font-size: 30px">TabComponent</h1>
+    <span></span>
+    <div
+        class="commondiv2"
+        style="width: 1000px; overflow: auto;"
+    >
+      <TabComponent
+          :menu-type="'Cont'"
+          :comp-array="compm"
+          :comp-name="comp"
+          :comp-value="component"
+      />
+    </div>
+    <p>- TabComponent의 경우 초기 화면 컴포넌트를 설정해 줘야 한다. </p>
+    <p>- 초기 화면 컴포넌트와 추후 추가될 컴포넌트는 같은 폴더에 위치해 있어야 한다.</p>
+    <p>- menuType은 폴더명과 동일해야 한다.</p>
+    <p>- 선택된 탭은 파란색, 비활성화된 탭은 하늘색이다.</p>
+    <br />
+
+
+    <h1 style="font-size: 30px">ag-cell-Render</h1>
+    <div class="commondiv1">
+      <div style="width: 90%; height: 100px; margin: 10px">
+        <ag-grid-component
+            :rowData="renderRowData"
+            :columnDefs="renderColumns"
+            :isWidthFit="false"
+        />
+        <p>- AutCdGpNm의 경우 RowData의 값이 코드그룹이면 코드그룹 셀렉트 박스 출력</p>
+        <p>- AutYn의 경우 라디오 박스인 적용 제외 출력</p>
+        <p>- HoliChageDiv의 경우 +버튼과 설치비 출력</p>
+        <p>- HOliDesc의 경우 input태그 출력</p>
+        <p>- HOliDiv의 경우 휴일구분선택 셀렉트박스 출력</p>
+        <p>- 사용법은 column배열의 각 필드 설정할때 CellRenderer 추가</p>
+        <p>- 데이터 반환은 cellRendererParams을 통해 반환 </p>
+      </div>
+
+    </div>
+      <br /><br /><br /><br /><br /><br />
+
+    <h1 style="font-size: 30px">TreeComponent</h1>
+    <span></span>
+    <div class="commondiv2">
+
+      <msf-tree :source="contentTree"
+                :activeItem="activeItemObj"
+                :selectedList="selectedItemList"
+                id-field="directoryName"
+                label-field="directoryName"
+                ref="tree"
+                @itemClick="treeItemClick"
+                style="width:100%; height:100%;font-size: 12pt;"
+      ></msf-tree>
+    </div>
+    <br /><br /><br />
+
+
     <h1 style="font-size: 30px">select box</h1>
     <div class="commondiv0">
       조회조건
@@ -250,38 +520,9 @@
       </div>
 
     </div>
-    <h1 style="font-size: 30px">ag grid Grid to Grid</h1>
-    <div class="commondiv1">
-      <div style="width: 60%; height: 550px; margin: 10px">
-        <AgGridComponent3
-            :left-row-data="leftRowData"
-            :right-row-data="rightRowData"
-            :Columns="GridToGridColumns"
-            :isWidthFit="false"
-        />
-      </div>
-    </div>
-      <h1 style="font-size: 30px">ButtonComponent</h1>
-    <span>각 버튼의 클래스 이름</span>
-    <div class="commondiv1">
-    <div> <ButtonComponent :btnClass="'btnClass1'" :btnName="'btnClass1'" /></div>
-    <div><ButtonComponent :btnClass="'btnclass2'" :btnName="'btnClass2'" /></div>
-    <div><ButtonComponent :btnClass="'btnClass3'" :btnName="'btnClass3'"   /></div>
-    <div><ButtonComponent :btnClass="'btnClass4'" :btnName="'btnClass4'" :btnFontWeight="'bold'" :btnWidth="'90px'" :btnHeight="'20px'"/></div>
-    <div><ButtonComponent :btnClass="'btnClass5'" :btnName="'btnClass5'"   /></div>
-    <ButtonComponent :btnClass="'btnLeftImgClass'"/>btnLeftImgClass &nbsp;
-    <ButtonComponent :btnClass="'btnRightImgClass'"/> btnRightImgClass&nbsp;
-    <ButtonComponent :btnClass="'btnDeleteImgClass'"/> btnDeleteImgClass &nbsp;
-    </div>
-    <br /><br />
 
-    <h1 style="font-size: 30px">subInfoTitle</h1>
-    <span></span>
-    <div class="commondiv1">
-      <SubInfoTitle :subInfoTitleNm="'고객정보'" /> &emsp;
-      <SubInfoTitle :subInfoTitleNm="'요금정보'" />
-      <br /><br /><br />
-    </div>
+
+
 
     <h1 style="font-size: 30px">FormDataComponent</h1>
     <div style="border-top: solid black 1px; margin: 10px; padding: 10px">
@@ -352,56 +593,6 @@
     </div>
     <br /><br />
 
-    <h1 style="font-size: 30px">InputComponent</h1>
-    <span></span>
-    <div class="commondiv1" >
-    <input-component
-        :type="'search'"
-        :height="20"
-        :width="150"
-        :input-class="'class2'"
-        v-model="searchValue"
-        :placeholder="'입력'"
-        @input="
-          (value) => {
-            searchValue = value;
-          }
-        "
-      />
-      <input-component
-        :type="'search'"
-        :height="20"
-        :width="150"
-        :input-class="'class1'"
-        v-model="searchValue"
-        :placeholder="'입력'"
-        @input="
-          (value) => {
-            searchValue = value;
-          }
-        "
-      />
-      <br>
-      <input-component
-      :input-class="'class3'"
-      :value="'input 컴포넌트 - class3 '"
-      />
-      <div>
-      <input-component
-      :input-class="'class4'"
-      :value="'input 컴포넌트 - class4 '"
-      />
-      </div>
-
-
-      <input-component
-      :input-class="'class5'"
-      :value="'input 컴포넌트 - class5 '"
-      />
-
-
-    </div>
-    <br /><br /><br />
 
 
     <h1 style="font-size: 30px">RangeComponent</h1>
@@ -411,14 +602,6 @@
     </div>
     <br /><br /><br />
 
-
-    <h1 style="font-size: 30px">linkComponent</h1>
-    <div class="commondiv1" >
-    <link-component
-    :destination="'/'"
-    :linkNm="'링크 컴포넌트(mounse over)'"  />
-    </div>
-    <br /><br /><br />
 
 
     <h1 style="font-size: 30px">PostCodeComponent</h1>
@@ -471,14 +654,6 @@
       />
       <br /><br /><br />
     </div>
-
-
-
-    <h1 style="font-size: 30px">ChkBoxComponent</h1>
-    <div class="commondiv1" >
-    <ChkBoxComponent :CheckOptions='["체크옵션1","체크옵션2","체크옵션3","체크옵션4","체크옵션5",]' />
-    </div>
-    <br /><br /><br />
 
     <h1 style="font-size: 30px">RadioComponent</h1>
     <div class="commondiv1" >
@@ -550,27 +725,14 @@
       />
     </div>
     <br /><br /><br />
-    <h1 style="font-size: 30px">TreeComponent</h1>
-    <span></span>
-    <div class="commondiv2">
 
-      <msf-tree :source="contentTree"
-                :activeItem="activeItemObj"
-                :selectedList="selectedItemList"
-                id-field="directoryName"
-                label-field="directoryName"
-                ref="tree"
-                @itemClick="treeItemClick"
-                style="width:100%; height:100%;font-size: 12pt;"
-      ></msf-tree>
-    </div>
-    <br /><br /><br />
     <h1 style="font-size: 30px">ValdtnComponent</h1>
     <span></span>
     <div class="commondiv2">
       <ValdtnComponent/>
     </div>
     <br /><br /><br />
+
     <h1 style="font-size: 30px">FloatingLabelsComponent</h1>
     <span></span>
     <div class="commondiv2">
@@ -581,6 +743,7 @@
       <FloatingLabelsComponent_2 />
     </div>
     <br /><br /><br />
+
     <h1 style="font-size: 30px">ToastComponent</h1>
     <span></span>
     <div class="commondiv2">
@@ -597,12 +760,14 @@
       />
     </div>
     <br /><br /><br />
+
     <h1 style="font-size: 30px">AtcRegComponent</h1>
     <span></span>
     <div class="commondiv2">
       <AtcRegComponent/>
     </div>
     <br /><br /><br />
+
     <h1 style="font-size: 30px">AtcListComponent</h1>
     <span></span>
     <div class="commondiv2">
@@ -623,20 +788,7 @@
       />
     </div>
     <br /><br /><br />
-    <h1 style="font-size: 30px">TabComponent</h1>
-    <span></span>
-    <div
-    class="commondiv2"
-    style="width: 1000px; overflow: auto;"
-    >
-      <TabComponent
-          :menu-type="'Cont'"
-          :comp-array="compm"
-          :comp-name="comp"
-          :comp-value="component"
-        />
-    </div>
-    <br /><br /><br />
+
 
 
   </div>
@@ -644,6 +796,7 @@
 
 <script>
 import PagingArea from "../../components/common/PagingArea.vue";
+import PageTitle from "@/components/common/PageTitle";
 import FileInputComponent from "../../components/common/FileInputComponent.vue";
 import DatePickerComponent from "../../components/common/DatePickerComponent.vue";
 import AgGridComponent from "../../components/common/AgGridComponent.vue";
@@ -676,13 +829,19 @@ import InputComponent from '@/components/common/InputComponent.vue';
 import LabelComponent from '@/components/common/LabelComponent.vue';
 import LoadingSpinnerComponent from "@/components/common/LoadingSpinnerComponent";
 import PostCodeComponent from '@/components/UnionForm/PostCodeComponent.vue';
-import AgGridComponent3 from "@/components/common/DragGrid";
+import DragGrid from "@/components/common/DragGrid";
+import AutCdGpNm from "@/components/common/AgGridCellRender/AutCdGpNm";
+import AutYn from "@/components/common/AgGridCellRender/AutYn";
+import BillChageDiv from "@/components/common/AgGridCellRender/BillChageDiv";
+import HoliDesc from "@/components/common/AgGridCellRender/HoliDesc";
+import HoliDiv from "@/components/common/AgGridCellRender/HoliDiv";
 
 export default {
   mixins:[ApiMixin],
   name: "CommonView",
   components: {
-    AgGridComponent3,
+    DragGrid,
+    PageTitle,
     LoadingSpinnerComponent,
     msfTree,
     PostCodeComponent,
@@ -714,6 +873,11 @@ export default {
     linkComponent,
     InputComponent,
     LabelComponent,
+    AutCdGpNm,
+    AutYn,
+    BillChageDiv,
+    HoliDesc,
+    HoliDiv
   },
   data() {
     return {
@@ -840,6 +1004,58 @@ export default {
           ],
         },
       ],
+      renderRowData:[
+        {
+          model1:"코드그룹명", model2:"2", model3:"3",model4:"4", model5:"5"
+        }
+      ],
+      renderColumns:[
+        {headerName:"AutCdGpNm" , field:"model1",
+          cellRenderer :'AutCdGpNm',
+          cellRendererParams: {
+            clicked: function (field) {
+              console.log(field);
+            }
+          },
+          width: 250
+        },
+        {headerName:"AutYn" , field:"model2",
+          cellRenderer :'AutYn',
+          cellRendererParams: {
+            clicked: function (field) {
+              console.log(field);
+            }
+          },
+          width: 150
+        },
+        {headerName:"BillChageDiv" , field:"model3",
+          cellRenderer :'BillChageDiv',
+          cellRendererParams: {
+            clicked: function (field) {
+              console.log(field);
+            }
+          },
+          width: 120
+        },
+        {headerName:"HoliDesc" , field:"model4",
+          cellRenderer :'HoliDesc',
+          cellRendererParams: {
+            clicked: function (field) {
+              console.log(field);
+            }
+          },
+          width: 400
+        },
+        {headerName:"HoliDiv" , field:"model5",
+          cellRenderer :'HoliDiv',
+          cellRendererParams: {
+            clicked: function (field) {
+              console.log(field);
+            }
+          },
+          width: 350
+        },
+      ],
       columns: [
         { label: "상품명", id: "name" },
         { label: "상품ID", id: "id" },
@@ -961,7 +1177,7 @@ export default {
 <style scoped>
 .container{
   display:grid;
-  grid-template-columns:minmax(860px, 1fr) ;
+  grid-template-columns:minmax(900px, 1fr) ;
 }
 
 .commondiv0{
@@ -971,7 +1187,6 @@ export default {
 }
 
 .commondiv1{
-  display: flex;
   border-top: solid black 1px;
   margin: 10px;
   padding: 10px;

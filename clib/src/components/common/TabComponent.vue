@@ -55,7 +55,7 @@ export default {
       default:null,
     },
     compValue:null, //컴포넌트 주소
-    compName:{      //컴포넌트 값
+    compName:{      //컴포넌트의 menuId
       type:String,
       default:null,
     }
