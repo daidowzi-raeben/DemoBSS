@@ -13,19 +13,15 @@ export default {
   },
   props:{
     subInfoTitleNm: String, // 부정보 제목명
-    subInfoTitleMark:       // 마크 클래스 지정
-    { 
-      type:String,
-      default:'subInfoTitleMark'
-    },
     subInfoTitle:             // 제목 클래스 지정
     { 
       type:String,
       default:'subInfoTitle'
     },
-    fontSize : String,        // 제목 글자 크기
-    markHeight: String,       // 마크 높이, 넓이
-    markWidth: String,
+    fontSize : {        // 제목 글자 크기
+      type:String,
+      default:'12pt'
+    }
   },
 }
 </script>
@@ -35,15 +31,8 @@ export default {
   display:inline-block; 
   margin-bottom: 4px;
 }
-.subInfoTitleMark {
-  background-color: #2dbdb6;
-  border-radius: 3px;
-  color: #ffffff;
-  height: 15px;
-  width: 10px;
-}
 .subInfoTitle {
-  font-size: 12pt;
+  font-size: v-bind('fontSize');
   font-weight: bold;
   color: #1b72d4;
 }

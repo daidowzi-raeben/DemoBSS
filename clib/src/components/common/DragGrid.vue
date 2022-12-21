@@ -52,6 +52,7 @@
               :modules="modules">
           </ag-grid-vue>
       </div>
+      <button @click="button">확정</button>
     </div>
   </div>
 
@@ -137,7 +138,6 @@ export default {
           }
 
       );
-
       api.addRowDropZone(dropZone);
     },
     onFirstDataRendered() {
@@ -149,46 +149,30 @@ export default {
       if (!this.isWidthFit) {
         //가로 스크롤 = autosize
         this.allColumnIds= [];
-        this.gridColumnApi.getColumns().forEach((column) => {
-          this.allColumnIds.push(column.colId);
-        });
+        // this.gridColumnApi.getColumns().forEach((column) => {
+        //   this.allColumnIds.push(column.colId);
+        // });
 
         // 여기 조율 필요합니다~~
         // this.gridColumnApi.autoSizeColumn(this.allColumnIds);            // 컬럼, data 전부 생략, 간격 맞춤  (스크롤바)
         // this.gridColumnApi.autoSizeAllColumns(this.allColumnIds);        // 컬럼은 생략됨 / data 전부 다 표시   (스크롤바)
         //this.gridColumnApi.autoSizeColumns(this.allColumnIds,false);     // 컬럼, data 전부 표시, 간격 맞춤 (스크롤바)
-        this.gridApi.sizeColumnsToFit(this.allColumnIds);                  // 컬럼, data 전부 생략, 간격 맞추고 테이블 크기 맞춤 (NO 스크롤)
+        //this.gridApi.sizeColumnsToFit(this.allColumnIds);                  // 컬럼, data 전부 생략, 간격 맞추고 테이블 크기 맞춤 (NO 스크롤)
         // this.gridApi.gridBodyCtrl.eBodyViewport.style = "border-bottom:0px;"; //안쪽
       } else {
         this.gridApi.sizeColumnsToFit(); //끝까지 맞춤
         // console.log("끝까지 맞춤 ");
       }
     },
+    button(){
+      let leftRows = [];
+      let rightRows = [];
+      this.leftApi.forEachNodeAfterFilter((rowNode) => leftRows.push(rowNode));
+      this.rightApi.forEachNodeAfterFilter((rowNode) => rightRows.push(rowNode));
+      console.log(leftRows);
+      console.log(rightRows);
+    },
     makeNoRows() {
-      if (this.rowData == null || this.rowData.length == 0) {
-        //데이터가 없는 경우
-        //overlayNoRowsTemplate 출력됨
-
-        // this.gridApi.gridBodyCtrl.eBodyViewport.style = "height:90px; ";
-        this.gridApi.gridBodyCtrl.eBodyViewport.style.height = "90px";
-        // border-bottom:#e4e4e4 solid 1px;
-
-        if (!this.isAutoHeight) {
-          this.gridApi.setDomLayout("normal");
-        }
-        // this.gridApi.showNoRowsOverlay();
-        // console.log("NO DATA");
-      }
-      // else {
-      //   //데이터가 있는 경우
-      //   this.gridApi.gridBodyCtrl.eBodyViewport.style.height = "";
-
-      //   if (this.isAutoHeight) {
-      //     this.gridApi.setDomLayout("autoHeight");
-      //   } else {
-      //     this.gridApi.setDomLayout("normal"); //정해진 만큼만 보이도록(스크롤)
-      //   }
-      // }
     },
   },
 };

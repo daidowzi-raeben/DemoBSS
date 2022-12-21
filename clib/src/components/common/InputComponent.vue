@@ -5,7 +5,6 @@
     v-model="inputValue"
     :placeholder="placeholder"
     :disabled="disabled"
-    :input="updateValue(value)"
   />
 </template>
 
@@ -52,13 +51,7 @@ export default {
       type:String,
     }
   },
-
-  methods: {
-    updateValue(value) {
-      this.$emit("input", value);
-    },
-  },
-  beforeMount() {
+  beforeUpdate() {
     this.inputValue = this.value;
   }
 };
