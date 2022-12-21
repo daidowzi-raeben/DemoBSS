@@ -60,6 +60,9 @@ export default {
   },
   beforeMount() {
     this.inputValue = this.value;
+  },
+  beforeUpdate() {
+    this.inputValue = this.value;
   }
 };
 </script>

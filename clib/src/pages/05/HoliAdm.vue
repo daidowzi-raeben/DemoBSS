@@ -41,8 +41,8 @@
             <td>
               <select-box-component
                   style="height: 28px"
-                  :selectClass="'select_input4'"
-                  :width="200"
+                   
+                  :width="'200px'"
                   :cdGroup="'holiYn'"
                   :defaultValue="'휴일여부 선택'"
                   :isDisabled="true"
@@ -69,8 +69,8 @@
             <td>
               <select-box-component
                   style="height: 28px"
-                  :selectClass="'select_input4'"
-                  :width="200"
+                   
+                  :width="'200px'"
                   :cdGroup="'holiDiv'"
                   :defaultValue="'휴일구분 선택'"
                   :isDisabled="true"
@@ -147,7 +147,7 @@
         <td>
           <date-picker-component
               :classWrapper="'calender_input'"
-              :width="100"
+              :width="'100px'"
               :type="'year'"
               :date-format="'yyyy년'"
               :pDate="holiAdmObject.caldrStDt"
@@ -162,7 +162,7 @@
         <td>
           <date-picker-component
               :classWrapper="'calender_input'"
-              :width="100"
+              :width="'100px'"
               :type="'year'"
               :date-format="'yyyy년'"
               :pDate="holiAdmObject.caldrEndDt"

@@ -21,7 +21,7 @@ import radioSelect from "../../../public/radioOption.json";
 
 export default {
   props: {
-    seletedRadio: {
+    selectedRadio: {
       type: String,
       default: "",
     },
@@ -54,13 +54,13 @@ export default {
     },
   },
   watch: {
-    seletedRadio(newseletedRadio) {
+    selectedRadio(newselectedRadio) {
       // 해당 셀렉트박스 옵션 중 선택 된 값이 있는지 판단 후,
       // 있다면 해당 값을 선택 값으로 올림, 그렇지 않으면 empty 문자열 반환하여 placeholder(disabled, hidden) 반환
       this.radioValue = this.radioOptions
         .map((n) => n.cdId)
-        .includes(newseletedRadio)
-        ? newseletedRadio
+        .includes(newselectedRadio)
+        ? newselectedRadio
         : "";
     },
     radioValue(newValue) {

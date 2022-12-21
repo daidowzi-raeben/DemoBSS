@@ -8,8 +8,8 @@
             <td>
               <select-box-component
                   style="height: 28px"
-                  :selectClass="'select_input4'"
-                  :width="200"
+                   
+                  :width="'200px'"
                   :cdGroup="'jobNmSel'"
                   :defaultValue="'Job Name 선택'"
                   :isDisabled="true"
@@ -22,8 +22,8 @@
             <td>
               <select-box-component
                   style="height: 28px"
-                  :selectClass="'select_input4'"
-                  :width="200"
+                   
+                  :width="'200px'"
                   :cdGroup="'wrkSttusSel'"
                   :defaultValue="'작업상태 선택'"
                   :isDisabled="true"
@@ -106,8 +106,8 @@
             <td colspan="2">
               <select-box-component
                   style="height: 28px"
-                  :selectClass="'select_input4'"
-                  :width="210"
+                   
+                  :width="'210px'"
                   :cdGroup="'wrkResltSel'"
                   :defaultValue="'작업결과 선택'"
                   :isDisabled="true"
@@ -174,7 +174,7 @@
       <div style="width: 100%">
         <span style="display: flex; float: left; padding-top: 20px;">
     <select-box-component
-        :selectClass="'select_input3'"
+        :selectClass="'select-type1'"
         :cdGroup="'optionSearchNum'"
         :is-disabled="true"
         :defaultValue="'선택'"

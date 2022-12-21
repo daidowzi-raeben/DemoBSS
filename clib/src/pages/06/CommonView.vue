@@ -37,7 +37,7 @@
       <br />
       <br />
       <select-box-component
-      :selectClass="'select_input3'"
+      :selectClass="'select-type1'"
       style="width:200px; height:30px;"
       :cdGroup="'optionsSearchDiv'"
       :defaultValue="'선택'"

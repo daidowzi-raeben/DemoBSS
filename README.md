@@ -86,7 +86,7 @@ clib
 │    │     │      ├── agGridCellRender
 │    │     │      ├── treeComponent
 │    │     │      ├── popupComponent
-│    │     │      └── etc
+│    │     │      └── etc                     # 아직 한 번도 쓰지 않은 컴포넌트
 │    │     │
 │    │     ├── autMappg                       #
 │    │     ├── cont                           #

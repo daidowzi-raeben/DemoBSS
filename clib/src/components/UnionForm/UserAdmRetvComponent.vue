@@ -6,8 +6,8 @@
         <td>
           <select-box-component
             style="height: 28px"
-            :selectClass="'select_input4'"
-            :width="140"
+             
+            :width="'140px'"
             :cdGroup="'dutySelect'"
             :defaultValue="'직무 선택'"
             :isDisabled="true"
@@ -22,8 +22,8 @@
         <td>
           <select-box-component
             style="height: 28px"
-            :selectClass="'select_input4'"
-            :width="200"
+             
+            :width="'200px'"
             :cdGroup="'rspof'"
             :defaultValue="'직책 선택'"
             :isDisabled="true"
@@ -49,8 +49,8 @@
         <td>
           <select-box-component
             style="height: 28px"
-            :selectClass="'select_input4'"
-            :width="140"
+             
+            :width="'140px'"
             :cdGroup="'orgSelect'"
             :defaultValue="'조직 선택1'"
             :isDisabled="true"
@@ -61,8 +61,8 @@
         <td>
           <select-box-component
             style="height: 28px"
-            :selectClass="'select_input4'"
-            :width="140"
+             
+            :width="'140px'"
             :cdGroup="'orgSelect'"
             :defaultValue="'조직 선택2'"
             :isDisabled="true"
@@ -73,8 +73,8 @@
         <td>
           <select-box-component
             style="height: 28px"
-            :selectClass="'select_input4'"
-            :width="140"
+             
+            :width="'140px'"
             :cdGroup="'orgSelect'"
             :defaultValue="'조직 선택3'"
             :isDisabled="true"
@@ -98,8 +98,8 @@
         <td>
           <select-box-component
             style="height: 28px"
-            :selectClass="'select_input4'"
-            :width="200"
+             
+            :width="'200px'"
             :cdGroup="'inOfficeSttus'"
             :defaultValue="'재직상태 선택'"
             :isDisabled="true"

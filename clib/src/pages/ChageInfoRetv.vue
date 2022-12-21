@@ -72,7 +72,7 @@
               </span>
               <span style="float: right">
               <select-box-component
-                :selectClass="'select_input3'"
+                :selectClass="'select-type1'"
                 style="
                 width: 120px;
                 height: 26px;

@@ -30,7 +30,7 @@
     <div style="width: 100%">
         <span style="display: flex; float: left; padding-top: 20px;">
     <select-box-component
-        :selectClass="'select_input3'"
+        :selectClass="'select-type1'"
         :cdGroup="'optionSearchNum'"
         :is-disabled="true"
         :defaultValue="'선택'"

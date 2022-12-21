@@ -26,8 +26,8 @@
       <div class="product_box_sel">
         <span>
           <select-box-component
-            :selectClass="'select_input3'"
-            :width="120"
+            :selectClass="'select-type1'"
+            :width="'120px'"
             :cdGroup="'optionsSearchDiv'"
             :defaultValue="'선택'"
             v-model="searchDiv1"
@@ -40,8 +40,8 @@
         </span>
         <span>
           <select-box-component
-            :selectClass="'select_input3'"
-            :width="120"
+            :selectClass="'select-type1'"
+            :width="'120px'"
             :cdGroup="'optionsSearchDiv'"
             :defaultValue="'선택'"
             v-model="searchDiv1"
@@ -54,8 +54,8 @@
         </span>
         <span>
           <select-box-component
-            :selectClass="'select_input3'"
-            :width="120"
+            :selectClass="'select-type1'"
+            :width="'120px'"
             :cdGroup="'optionsSearchDiv'"
             :defaultValue="'선택'"
             v-model="searchDiv1"

@@ -8,8 +8,8 @@
             <td>
               <select-box-component
                 style="height: 28px"
-                :selectClass="'select_input4'"
-                :width="200"
+                 
+                :width="'200px'"
                 :cdGroup="'msgRetv'"
                 :defaultValue="'조회기준 선택'"
                 :isDisabled="true"
@@ -71,8 +71,8 @@
             <td>
               <select-box-component
                 style="height: 28px"
-                :selectClass="'select_input4'"
-                :width="200"
+                 
+                :width="'200px'"
                 :cdGroup="'msgType'"
                 :defaultValue="'메시지유형 선택'"
                 :isDisabled="true"
@@ -87,8 +87,8 @@
             <td>
               <select-box-component
                 style="height: 28px"
-                :selectClass="'select_input4'"
-                :width="200"
+                 
+                :width="'200px'"
                 :cdGroup="'useYn'"
                 :defaultValue="'사용여부 선택'"
                 :isDisabled="true"
@@ -150,7 +150,7 @@
             <div>
               <select-box-component
                 class="pgSelectBox"
-                :selectClass="'select_input3'"
+                :selectClass="'select-type1'"
                 :cdGroup="'optionSearchNum'"
                 :defaultValue="'선택'"
                 :defaultcdId="showTheNum"
@@ -253,7 +253,7 @@
                         msgAdmObject.msgUseYn = radioValue;
                       }
                     "
-                    :seletedRadio="msgAdmObject.msgUseYn"
+                    :selectedRadio="msgAdmObject.msgUseYn"
                     :defaultcdId="msgAdmObject.msgUseYn"
                   />
                 </td>
@@ -294,8 +294,8 @@
                 <td class="td2">
                   <select-box-component
                     style="height: 28px"
-                    :selectClass="'select_input4'"
-                    :width="150"
+                     
+                    :width="'150px'"
                     :cdGroup="'msgType'"
                     :isDisabled="true"
                     :defaultValue="'메시지유형선택 선택'"
@@ -314,12 +314,12 @@
                 <td>
                   <!-- <select-box-component
                     style="height: 28px"
-                    :selectClass="'select_input4'"
+                     
                     :cdGroup="'rcvrOptions'"
                     :defaultValue="'수신자그룹제한'"
                     :defaultcdId="msgAdmObject.rcvrRstrtn"
                     :isDisabled="true"
-                    :width="185"
+                    :width="'185px'"
                     :selectedValue="msgAdmObject.rcvrRstrtn"
                     @input="
                       (value) => {

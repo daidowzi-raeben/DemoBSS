@@ -5,7 +5,7 @@
   <div v-else style="display: flex">
     <span>{{ displayValue }}</span>
     <select-box-component
-        :selectClass="'select_input3'"
+        :selectClass="'select-type1'"
         :cdGroup="'dtlCd'"
         :is-disabled="true"
         :defaultValue="'사용여부 선택'"

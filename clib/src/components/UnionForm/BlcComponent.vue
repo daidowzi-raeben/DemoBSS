@@ -10,7 +10,7 @@
     </span>
     <span style="float: right" v-show="selectBoxShow">
     <select-box-component
-        :selectClass="'select_input3'"
+        :selectClass="'select-type1'"
         :cdGroup="cdGroup"
         :defaultValue="'선택'"
         v-model="month"

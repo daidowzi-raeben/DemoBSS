@@ -8,8 +8,8 @@
             <td>
               <select-box-component
                   style="height: 28px"
-                  :selectClass="'select_input4'"
-                  :width="200"
+                   
+                  :width="'200px'"
                   :cdGroup="'securRetv'"
                   :defaultValue="'조회기준 선택'"
                   :isDisabled="true"
@@ -78,8 +78,8 @@
             <td>
               <select-box-component
                   style="height: 28px"
-                  :selectClass="'select_input4'"
-                  :width="200"
+                   
+                  :width="'200px'"
                   :cdGroup="'orgSelect'"
                   :defaultValue="'조직 선택'"
                   :isDisabled="true"
@@ -90,8 +90,8 @@
             <td>
               <select-box-component
                   style="height: 28px"
-                  :selectClass="'select_input4'"
-                  :width="200"
+                   
+                  :width="'200px'"
                   :cdGroup="'orgSelect'"
                   :defaultValue="'조직 선택'"
                   :isDisabled="true"
@@ -102,8 +102,8 @@
             <td>
               <select-box-component
                   style="height: 28px"
-                  :selectClass="'select_input4'"
-                  :width="200"
+                   
+                  :width="'200px'"
                   :cdGroup="'orgSelect'"
                   :defaultValue="'조직 선택'"
                   :isDisabled="true"
@@ -174,7 +174,7 @@
       <div style="width: 100%">
         <span style="display: flex; float: left; padding-top: 20px;">
     <select-box-component
-        :selectClass="'select_input3'"
+        :selectClass="'select-type1'"
         :cdGroup="'optionSearchNum'"
         :is-disabled="true"
         :defaultValue="'선택'"

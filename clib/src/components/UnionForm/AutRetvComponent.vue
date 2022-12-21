@@ -5,7 +5,7 @@
       </span>
     <span>
         <select-box-component
-            :selectClass="'select_input3'"
+            :selectClass="'select-type1'"
             :cdGroup="this.cdGroup"
             :disabled="true"
             :is-disabled="true"

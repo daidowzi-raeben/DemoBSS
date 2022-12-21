@@ -162,13 +162,13 @@
               <td><radio-component 
                     :RadioOption="'useNouse'" 
                     @radioEmit="(radioValue) => { menuAdmObject.menuShowYn = radioValue }"
-                    :seletedRadio="menuAdmObject.menuShowYn"
+                    :selectedRadio="menuAdmObject.menuShowYn"
                     :defaultcdId="menuAdmObject.menuShowYn" /></td>
               <th><label-component :labelNm="'메뉴사용여부'" /></th>
               <td><radio-component 
                     :RadioOption="'useNouse'" 
                     @radioEmit="(radioValue) => { menuAdmObject.menuUseYn = radioValue }"
-                    :seletedRadio="menuAdmObject.menuUseYn"
+                    :selectedRadio="menuAdmObject.menuUseYn"
                     :defaultcdId="menuAdmObject.menuUseYn" /></td>
             </tr>
 
@@ -248,8 +248,8 @@
                 />
                 <select-box-component
                   style="height: 28px; margin-right: 6px;"
-                  :width="140"
-                  :selectClass="'select_input4'"
+                  :width="'140px'"
+                   
                   :cdGroup="'wjtOptions'"
                   :isDisabled="true"
                   :defaultValue="'업무유형 선택'"
@@ -260,8 +260,8 @@
                 <select-box-component
                   v-if="menuAdmObject.wjtOption1==='butt'"
                   style="height: 28px"
-                  :width="140"
-                  :selectClass="'select_input4'"
+                  :width="'140px'"
+                   
                   :cdGroup="'wjtButtOptions'"
                   :isDisabled="true"
                   :defaultValue="'버튼 선택'"
@@ -277,7 +277,6 @@
                   :value="menuAdmObject.wjtOption2"
                   v-model="menuAdmObject.wjtOption2"
                 />
-                <div>{{menuAdmObject.wjtOption1}}</div>
               </td>
             </tr>
             <tr>
@@ -309,7 +308,7 @@
               <radio-component 
                     :RadioOption="'useNouse'" 
                     @radioEmit="(radioValue) => { menuAdmObject.UseYn = radioValue }"
-                    :seletedRadio="menuAdmObject.UseYn"
+                    :selectedRadio="menuAdmObject.UseYn"
                     :defaultcdId="menuAdmObject.UseYn" />
               </td>
             </tr>
@@ -320,7 +319,7 @@
                 <radio-component 
                   :RadioOption="'aplyExpt'" 
                   @radioEmit="(radioValue) => { menuAdmObject.aplyExpt = radioValue }"
-                  :seletedRadio="menuAdmObject.aplyExpt"
+                  :selectedRadio="menuAdmObject.aplyExpt"
                   :defaultcdId="menuAdmObject.aplyExpt" />
               </td>
             </tr>

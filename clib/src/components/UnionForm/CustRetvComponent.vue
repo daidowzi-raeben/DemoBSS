@@ -3,7 +3,7 @@
     <span> 고객검색 </span>
     <span>
       <select-box-component
-        :selectClass="'select_input3'"
+        :selectClass="'select-type1'"
         :cdGroup="cdGroup"
         :defaultValue="'선택'"
         @input="

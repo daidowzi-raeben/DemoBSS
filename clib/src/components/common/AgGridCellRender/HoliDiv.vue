@@ -2,8 +2,8 @@
 <div>
   <select-box-component
       style="height: 30px"
-      :selectClass="'select_input4'"
-      :width="250"
+       
+      :width="'250px'"
       :cdGroup="'holiDiv'"
       :defaultValue="'휴일구분 선택'"
       :isDisabled="true"

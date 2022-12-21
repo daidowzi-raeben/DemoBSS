@@ -115,7 +115,7 @@
                 <div>
                   <select-box-component
                     class="pcSelectBox"
-                    :selectClass="'select_input3'"
+                    :selectClass="'select-type1'"
                     :cdGroup="'optionSearchNum'"
                     :defaultValue="'선택'"
                     :defaultcdId="showTheNum"

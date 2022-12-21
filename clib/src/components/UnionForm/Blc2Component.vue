@@ -11,7 +11,7 @@
     </span>
     <span style="float: right">
       <select-box-component
-        :selectClass="'select_input3'"
+        :selectClass="'select-type1'"
         :cdGroup="'optionSearchNum'"
         :defaultValue="'선택'"
         v-model="month"

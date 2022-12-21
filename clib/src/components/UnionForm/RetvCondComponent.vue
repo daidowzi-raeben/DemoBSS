@@ -4,8 +4,8 @@
     <span>
       <select-box-component
         style="height: 28px"
-        :width="140"
-        :selectClass="'select_input4'"
+        :width="'140px'"
+         
         :cdGroup="selectCdGroup"
         :isDisabled="true"
         :defaultValue="selectDefltValue"
@@ -31,8 +31,8 @@
     <span>
       <select-box-component
         style="height: 28px"
-        :width="140"
-        :selectClass="'select_input4'"
+        :width="'140px'"
+         
         :cdGroup="'useYn'"
         :isDisabled="true"
         :defaultValue="'사용여부 선택'"

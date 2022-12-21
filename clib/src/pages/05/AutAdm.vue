@@ -7,7 +7,7 @@
       </span>
         <span>
         <select-box-component
-            :selectClass="'select_input3'"
+            :selectClass="'select-type1'"
             :cdGroup="'codeDiv'"
             :disabled="true"
             :is-disabled="true"
@@ -31,7 +31,7 @@
         </span>
         <span>
         <select-box-component
-            :selectClass="'select_input3'"
+            :selectClass="'select-type1'"
             :cdGroup="'useYn'"
             :is-disabled="true"
             :defaultValue="'사용여부 선택'"
@@ -106,7 +106,7 @@
       <div style="width: 100%">
         <span style="display: flex; float: left; padding-top: 20px;">
     <select-box-component
-        :selectClass="'select_input3'"
+        :selectClass="'select-type1'"
         :cdGroup="'optionSearchNum'"
         :is-disabled="true"
         :defaultValue="'선택'"
@@ -170,16 +170,15 @@
               <th>권한유형</th>
               <td>
                 <select-box-component
-                    :selectClass="'select_input3'"
+                     
                     :cdGroup="'autType'"
-                    :disabled="true"
+                    
                     :is-disabled="true"
                     style="
                     width: 120px;
                     height: 26px;
                     "
                     :selected-value="this.autAdmObject.autType"
-                    :select_input3_marginLeft="0"
                     :defaultValue="'권한유형 선택'"
                     @input=" (value) => { this.autAdmObject.autType = value;}"
                     v-model="this.autAdmObject.autType"

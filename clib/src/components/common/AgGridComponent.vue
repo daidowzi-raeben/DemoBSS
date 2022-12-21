@@ -46,7 +46,7 @@ export default {
       // pinnedBottomRowData: null,
       paginationPageSize: null,
       servState :["사용중","예약(기설중)","정지","해지"],
-      seletedRowData:''
+      selectedRowData:''
     };
   },
   props: {
@@ -205,7 +205,7 @@ export default {
     },
     deselectAll(registerState){
       if (registerState==1 ){
-        // this.$emit('seletedRowData', 'register');
+        // this.$emit('selectedRowData', 'register');
         this.gridApi.deselectAll();
       }
     },

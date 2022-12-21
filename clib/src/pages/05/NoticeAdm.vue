@@ -8,8 +8,8 @@
           <td>
             <select-box-component
               style="height: 28px"
-              :selectClass="'select_input4'"
-              :width="200"
+               
+              :width="'200px'"
               :cdGroup="'ntfRetv'"
               :defaultValue="'조회기준 선택'"
               :isDisabled="true"
@@ -67,8 +67,8 @@
           <td>
             <select-box-component
               style="height: 28px"
-              :selectClass="'select_input4'"
-              :width="200"
+               
+              :width="'200px'"
               :cdGroup="'ntfType'"
               :defaultValue="'공지유형 선택'"
               :isDisabled="true"
@@ -83,8 +83,8 @@
           <td>
             <select-box-component
               style="height: 28px"
-              :selectClass="'select_input4'"
-              :width="200"
+               
+              :width="'200px'"
               :cdGroup="'useYn'"
               :defaultValue="'사용여부 선택'"
               :isDisabled="true"
@@ -151,7 +151,7 @@
             <div>
               <select-box-component
                 class="pgSelectBox"
-                :selectClass="'select_input3'"
+                :selectClass="'select-type1'"
                 :cdGroup="'optionSearchNum'"
                 :defaultValue="'선택'"
                 :defaultcdId="showTheNum"
@@ -230,7 +230,7 @@
               <radio-component 
                     :RadioOption="'useNouse'" 
                     @radioEmit="(radioValue) => { noticeAdmObject.ntfStYn = radioValue }"
-                    :seletedRadio="noticeAdmObject.ntfStYn"
+                    :selectedRadio="noticeAdmObject.ntfStYn"
                     :defaultcdId="noticeAdmObject.ntfStYn" />
               </td>
               <th >
@@ -262,7 +262,7 @@
               <radio-component 
                     :RadioOption="'useNouse'" 
                     @radioEmit="(radioValue) => { noticeAdmObject.popupYn = radioValue }"
-                    :seletedRadio="noticeAdmObject.popupYn"
+                    :selectedRadio="noticeAdmObject.popupYn"
                     :defaultcdId="noticeAdmObject.popupYn" />
               </td>
               <th style="width: 35px">
@@ -292,8 +292,8 @@
               <td>
                 <select-box-component
                   style="height: 28px"
-                  :selectClass="'select_input4'"
-                  :width="150"
+                   
+                  :width="'150px'"
                   :cdGroup="'ntfType'"
                   :isDisabled="true"
                   :defaultValue="'공지유형선택 선택'"
@@ -310,12 +310,12 @@
               <td>
                 <select-box-component
                   style="height: 28px"
-                  :selectClass="'select_input4'"
+                   
                   :cdGroup="'rcvrOptions'"
                   :defaultValue="'수신자그룹제한'"
                   :defaultcdId="noticeAdmObject.rcvrRstrtn"
                   :isDisabled="true"
-                  :width="185"
+                  :width="'185px'"
                   :selectedValue="noticeAdmObject.rcvrRstrtn"
                   @input="
                     (value) => {
@@ -361,7 +361,7 @@
                 <radio-component 
                   :RadioOption="'scrtOptions'" 
                   @radioEmit="(radioValue) => { noticeAdmObject.scrt = radioValue }"
-                  :seletedRadio="noticeAdmObject.scrt"
+                  :selectedRadio="noticeAdmObject.scrt"
                   :defaultcdId="noticeAdmObject.scrt" />
               </td>
             </tr>
@@ -573,14 +573,14 @@ import ApiMixin from "../../service/common.js"
   },
   methods:{
     ntfLstRowClicked(params){
-      let seletedRowData = params.api.getSelectedRows();
+      let selectedRowData = params.api.getSelectedRows();
       if(this.noticeAdmObject.ntfSttus=="register") {       // 사용자관리 상태가 등록일 경우,
         this.isNtfLstModalShow= true;                 //row 클릭 될 경우 팝업 띄우고 
         this.$refs.agGridComponent.deselectAll(1);     // 이전에 클릭 된 row 클릭 해제                   
-      }else if(seletedRowData == ""){
+      }else if(selectedRowData == ""){
         this.selectedNtfData = "empty";                // 동일한 row 클릭 시, 해당 row 클릭 해제, 해당 객체 데이터 비우도록 emit
       }else{
-        this.selectedNtfData = seletedRowData[0];      // 다른 row 클릭 시 달라진 값 객체 데이터에 전달 
+        this.selectedNtfData = selectedRowData[0];      // 다른 row 클릭 시 달라진 값 객체 데이터에 전달 
       }
 
     },

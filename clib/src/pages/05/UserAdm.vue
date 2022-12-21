@@ -7,7 +7,8 @@
       <div>
         <sub-info-title :subInfoTitleNm="subInfoTitleNm_Item2" />
         <p style="margin-left: 5px; display: inline-block">
-          (총 <label style="font-weight: bold">{{ total }}</label>건)
+          (총 <label style="font-weight: bold">{{ total }}</label
+          >건)
         </p>
         <span style="float: right">
           <button-component
@@ -38,22 +39,31 @@
           <div>
             <select-box-component
               class="pgSelectBox"
-              :selectClass="'select_input3'"
+              :selectClass="'select-type1'"
               :cdGroup="'optionSearchNum'"
               :defaultValue="'선택'"
               :defaultcdId="showTheNum"
               :isDisabled="true"
               v-model="showTheNum"
-              @input="(value) => {selectValue = value;}"
+              @input="
+                (value) => {
+                  selectValue = value;
+                }
+              "
             />
           </div>
           <div>
+            {{ userAdmObject }}
             <paging-area
               class="pgPagingArea"
               ref="PagingArea"
               :pageableData="pageableData"
               style="padding: 0"
-              @currentPage=" (value) => {currentPage = value;}"
+              @currentPage="
+                (value) => {
+                  currentPage = value;
+                }
+              "
             />
           </div>
         </div>
@@ -82,15 +92,14 @@
                   :class6Width="'180px'"
                   :input-class="userAdmObject.inputClass"
                   :disabled="userAdmObject.isDisabled"
-                  :value="userAdmObject.cmpno"
-                  v-model="userAdmObject.cmpno"
+                  :value="userAdmObject.cmpNo"
+                  v-model="userAdmObject.cmpNo"
                   :placeholder="'사번 입력'"
                 />
               </td>
               <th><label-component :labelNm="'재직상태'" /></th>
               <td>
                 <select-box-component
-                  :selectClass="'select_input4'"
                   :cdGroup="'inOfficeSttus2'"
                   :defaultValue="'재직상태'"
                   :defaultcdId="
@@ -104,7 +113,7 @@
                       userAdmObject.inOfficeSttus2 = value;
                     }
                   "
-                  :width="100"
+                  :width="'100px'"
                   :selectedValue="userAdmObject.inOfficeSttus2"
                   style="height: 28px"
                 />
@@ -123,10 +132,18 @@
                 />
               </td>
               <th><label-component :labelNm="'사용여부'" /></th>
-              <td><radio-component :RadioOption="'useNouse'" 
-                    @radioEmit="(radioValue) => { userAdmObject.useYn = radioValue }"
-                    :selectedRadio="userAdmObject.useYn"
-                    :defaultcdId="userAdmObject.useYn" /></td>
+              <td>
+                <radio-component
+                  :RadioOption="'useNouse'"
+                  @radioEmit="
+                    (radioValue) => {
+                      userAdmObject.useYn = radioValue;
+                    }
+                  "
+                  :selectedRadio="userAdmObject.useYn"
+                  :defaultcdId="userAdmObject.useYn"
+                />
+              </td>
             </tr>
 
             <tr>
@@ -134,21 +151,31 @@
               <td>
                 <select-box-component
                   style="height: 28px"
-                  :selectClass="'select_input4'"
-                  :width="185"
+                  :width="'185px'"
                   :cdGroup="'ntcMeth'"
                   :defaultValue="'알림방법 선택'"
                   :defaultcdId="userAdmObject.ntcMeth"
                   :selectedValue="userAdmObject.ntcMeth"
                   :isDisabled="true"
-                  @input=" (value) => { userAdmObject.ntcMeth = value;}"
+                  @input="
+                    (value) => {
+                      userAdmObject.ntcMeth = value;
+                    }
+                  "
                 />
               </td>
               <th><label-component :labelNm="'OTP사용여부'" /></th>
-              <td><radio-component 
-                    :RadioOption="'useNouse'" 
-                    @radioEmit="(radioValue) => { userAdmObject.otpYn = radioValue }"
-                    :selectedRadio="userAdmObject.otpYn" /></td>
+              <td>
+                <radio-component
+                  :RadioOption="'useNouse'"
+                  @radioEmit="
+                    (radioValue) => {
+                      userAdmObject.otpYn = radioValue;
+                    }
+                  "
+                  :selectedRadio="userAdmObject.otpYn"
+                />
+              </td>
             </tr>
 
             <tr>
@@ -179,8 +206,7 @@
               <td>
                 <select-box-component
                   style="height: 28px"
-                  :selectClass="'select_input4'"
-                  :width="185"
+                  :width="'185px'"
                   :cdGroup="'rspof'"
                   :isDisabled="true"
                   :defaultValue="'직책 선택'"
@@ -197,12 +223,11 @@
               <td>
                 <select-box-component
                   style="height: 28px"
-                  :selectClass="'select_input4'"
                   :cdGroup="'dutySelect'"
                   :defaultValue="'직무선택'"
                   :defaultcdId="userAdmObject.dutySelect"
                   :isDisabled="true"
-                  :width="185"
+                  :width="'185px'"
                   :selectedValue="userAdmObject.dutySelect"
                   @input="
                     (value) => {
@@ -226,12 +251,11 @@
                 <span style="margin-right: 10px">@</span>
                 <select-box-component
                   style="height: 28px"
-                  :selectClass="'select_input4'"
                   :cdGroup="'emailDomain'"
                   :defaultValue="'도메인 선택'"
                   :defaultcdId="userAdmObject.emailDomain"
                   :isDisabled="true"
-                  :width="185"
+                  :width="'185px'"
                   :selectedValue="userAdmObject.emailDomain"
                   @input="
                     (value) => {
@@ -436,7 +460,7 @@
             </tr>
           </table>
         </form>
-        {{ selectedUserData }}
+        {{ selectedUserData }}aaa
         <popup-component
           v-if="isModalShow"
           :popupmsg="popupMsg"
@@ -485,11 +509,11 @@ export default {
   data() {
     return {
       selectedUserData: "",
-      noRowTemplateMsg : `<span> <strong>  조회 결과가 없습니다. </strong> <br><br><br> </span>`,
+      noRowTemplateMsg: `<span> <strong>  조회 결과가 없습니다. </strong> <br><br><br> </span>`,
       subInfoTitleNm_Item2: "사용자 리스트",
       subInfoTitleNm_Item3: "사용자 상세정보",
       total: "65",
-      popupMsg:"",
+      popupMsg: "",
       btnName1: "등록",
       btnName2: "변경",
       btnName3: "숨김해제",
@@ -509,7 +533,7 @@ export default {
         },
         {
           headerName: "사번",
-          field: "cmpno",
+          field: "cmpNo",
           width: 110,
           cellClass: '"cell"-span',
         },
@@ -555,7 +579,7 @@ export default {
         sttus: "amend",
         inputClass: "class6 class6_2",
         isDisabled: true,
-        cmpno: "사번",
+        cmpNo: "사번",
         inOfficeSttus2: "inOffice",
         userNm: "홍길동",
         useYn: "01",
@@ -576,7 +600,7 @@ export default {
         amdrDt: new Date("2022-12-24").toLocaleString(),
       },
       isModalShow: false, // popup 조건
-      isUserLstModalShow:false,
+      isUserLstModalShow: false,
     };
   },
   async beforeMount() {
@@ -600,26 +624,26 @@ export default {
     selectedUserData: {
       // 사용자리스트(ag-grid) row가 선택 되었을 때, 해당 데이터를 기반으로 사용자 상세정보 변경
       deep: true,
-      handler(newSeletedUserData) {
-        console.log("newSeletedUserData", newSeletedUserData);
-        if (newSeletedUserData == "empty") {
+      handler(newSelectedUserData) {
+        console.log("newSelectedUserData", newSelectedUserData);
+        if (newSelectedUserData == "empty") {
           this.emptyUserAdmObject(this.userAdmObject);
-        } 
-        // else if (newSeletedUserData == "register") {
+        }
+        // else if (newSelectedUserData == "register") {
         //   this.userLstPopup()
-        // } 
+        // }
         else {
-          this.userAdmObject.cmpno = newSeletedUserData.cmpno;
-          this.userAdmObject.userNm = newSeletedUserData.userNm;
-          this.userAdmObject.inOfficeSttus2 = newSeletedUserData.inofficeSttus;
-          this.userAdmObject.rspof = newSeletedUserData.rspof;
-          this.userAdmObject.dutySelect = newSeletedUserData.dutySelect;
-          this.userAdmObject.org = newSeletedUserData.org;
-          this.userAdmObject.ntcMeth = newSeletedUserData.ntcMeth;
-          this.userAdmObject.useYn = newSeletedUserData.useYn;
-          this.userAdmObject.otpYn = newSeletedUserData.otpYn;
-          this.userAdmObject.email = newSeletedUserData.email;
-          this.userAdmObject.emailDomain = newSeletedUserData.emailDomain;
+          this.userAdmObject.cmpNo = newSelectedUserData.cmpNo;
+          this.userAdmObject.userNm = newSelectedUserData.userNm;
+          this.userAdmObject.inOfficeSttus2 = newSelectedUserData.inofficeSttus;
+          this.userAdmObject.rspof = newSelectedUserData.rspof;
+          this.userAdmObject.dutySelect = newSelectedUserData.dutySelect;
+          this.userAdmObject.org = newSelectedUserData.org;
+          this.userAdmObject.ntcMeth = newSelectedUserData.ntcMeth;
+          this.userAdmObject.useYn = newSelectedUserData.useYn;
+          this.userAdmObject.otpYn = newSelectedUserData.otpYn;
+          this.userAdmObject.email = newSelectedUserData.email;
+          this.userAdmObject.emailDomain = newSelectedUserData.emailDomain;
         }
       },
     },
@@ -633,7 +657,7 @@ export default {
       this.userAdmObject.isDisabled = false;
       this.emptyUserAdmObject(this.userAdmObject);
       this.$refs.agGridComponent.deselectAll(1);
-      this.selectedUserData = "register"
+      this.selectedUserData = "register";
     },
     clickUserAmend() {
       if (this.userAdmObject.sttus == "register") {
@@ -647,7 +671,7 @@ export default {
       console.log(formatTel(num));
     },
     emptyUserAdmObject(userObject) {
-      userObject.cmpno = null;
+      userObject.cmpNo = null;
       userObject.inOfficeSttus2 = "";
       userObject.userNm = null;
       userObject.ntcMeth = "";
@@ -663,45 +687,50 @@ export default {
       userObject.failLogIn = null;
       userObject.regrDt = null;
       userObject.amdrDt = null;
-      userObject.useYn =null;
+      userObject.useYn = null;
       userObject.otpYn = null;
       userObject.emailDomain = null;
     },
-    popup( msg ) {
+    popup(msg) {
       if (this.isModalShow == false) this.isModalShow = true;
       else this.isModalShow = false;
-      
-      if(msg=='sttus') this.popupMsg = this.userAdmObject.sttus == 'amend' ? '변경하시겠습니까?' : '등록하시겠습니까?';
+
+      if (msg == "sttus")
+        this.popupMsg =
+          this.userAdmObject.sttus == "amend"
+            ? "변경하시겠습니까?"
+            : "등록하시겠습니까?";
       else this.popupMsg = msg;
     },
     popupAgree() {
-      if (this.userAdmObject.sttus == "amend" ) {
+      if (this.userAdmObject.sttus == "amend") {
         // 수정 팝업 확인 버튼 함수
-        if(this.popupMsg=="변경하시겠습니까?") console.log("변경 완료");
-        else console.log("비밀번호 변경 완료")
-      }else if (this.userAdmObject.sttus == "register") {
+        if (this.popupMsg == "변경하시겠습니까?") console.log("변경 완료");
+        else console.log("비밀번호 변경 완료");
+      } else if (this.userAdmObject.sttus == "register") {
         //  등록 팝업 확인 버튼 함수
         console.log("등록 완료");
       }
     },
-    userLstPopup(){
+    userLstPopup() {
       if (this.isUserLstModalShow == false) this.isUserLstModalShow = true;
       else this.isUserLstModalShow = false;
     },
-    userLstpopupAgree(){
-      console.log("유저리스트 팝업동의")
+    userLstpopupAgree() {
+      console.log("유저리스트 팝업동의");
     },
-    userLstRowClicked(params){
+    userLstRowClicked(params) {
       let selectedRowData = params.api.getSelectedRows();
-      if(this.userAdmObject.sttus=="register") {       // 사용자관리 상태가 등록일 경우,
-        this.isUserLstModalShow= true;                 //row 클릭 될 경우 팝업 띄우고 
-        this.$refs.agGridComponent.deselectAll(1);     // 이전에 클릭 된 row 클릭 해제                   
-      }else if(selectedRowData == ""){
-        this.selectedUserData = "empty";                // 동일한 row 클릭 시, 해당 row 클릭 해제, 해당 객체 데이터 비우도록 emit
-      }else{
-        this.selectedUserData = selectedRowData[0];      // 다른 row 클릭 시 달라진 값 객체 데이터에 전달 
+      if (this.userAdmObject.sttus == "register") {
+        // 사용자관리 상태가 등록일 경우,
+        this.isUserLstModalShow = true; //row 클릭 될 경우 팝업 띄우고
+        this.$refs.agGridComponent.deselectAll(1); // 이전에 클릭 된 row 클릭 해제
+      } else if (selectedRowData == "") {
+        this.selectedUserData = "empty"; // 동일한 row 클릭 시, 해당 row 클릭 해제, 해당 객체 데이터 비우도록 emit
+      } else {
+        this.selectedUserData = selectedRowData[0]; // 다른 row 클릭 시 달라진 값 객체 데이터에 전달
       }
-    }
+    },
   },
 };
 </script>

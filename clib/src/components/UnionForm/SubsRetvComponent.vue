@@ -6,9 +6,8 @@
         <td>
           <select-box-component
             style="height: 28px"
-            :width="140"
-            :selectClass="'select_input3'"
-            :select_input3_marginLeft="'0px'"
+            :width="'140px'"
+             
             :cdGroup="'dummyOptions'"
             :isDisabled="true"
             :defaultValue="'선택'"
@@ -70,9 +69,8 @@
         <td>
           <select-box-component
             style="height: 28px"
-            :width="140"
-            :selectClass="'select_input3'"
-            :select_input3_marginLeft="'0px'"
+            :width="'140px'"
+             
             :cdGroup="'dummyOptions'"
             :isDisabled="true"
             :defaultValue="'선택'"
@@ -87,9 +85,8 @@
         <td>
           <select-box-component
             style="height: 28px"
-            :width="140"
-            :selectClass="'select_input3'"
-            :select_input3_marginLeft="'0px'"
+            :width="'140px'"
+             
             :cdGroup="'dummyOptions'"
             :isDisabled="true"
             :defaultValue="'선택'"
@@ -117,9 +114,8 @@
         <td colspan="2">
           <select-box-component
             style="height: 28px"
-            :width="140"
-            :selectClass="'select_input3'"
-            :select_input3_marginLeft="'0px'"
+            :width="'140px'"
+             
             :cdGroup="'dummyOptions'"
             :isDisabled="true"
             :defaultValue="'선택'"
@@ -134,9 +130,8 @@
         <td>
           <select-box-component
             style="height: 28px"
-            :width="140"
-            :selectClass="'select_input3'"
-            :select_input3_marginLeft="'0px'"
+            :width="'140px'"
+             
             :cdGroup="'dummyOptions'"
             :isDisabled="true"
             :defaultValue="'선택'"
@@ -176,9 +171,8 @@
         <td>
           <select-box-component
             style="height: 28px"
-            :width="140"
-            :selectClass="'select_input3'"
-            :select_input3_marginLeft="'0px'"
+            :width="'140px'"
+             
             :cdGroup="'dummyOptions'"
             :isDisabled="true"
             :defaultValue="'선택'"
@@ -193,9 +187,8 @@
         <td>
           <select-box-component
             style="height: 28px"
-            :width="140"
-            :selectClass="'select_input3'"
-            :select_input3_marginLeft="'0px'"
+            :width="'140px'"
+             
             :cdGroup="'dummyOptions'"
             :isDisabled="true"
             :defaultValue="'선택'"
@@ -210,9 +203,8 @@
         <td>
           <select-box-component
             style="height: 28px"
-            :width="140"
-            :selectClass="'select_input3'"
-            :select_input3_marginLeft="'0px'"
+            :width="'140px'"
+             
             :cdGroup="'dummyOptions'"
             :isDisabled="true"
             :defaultValue="'선택'"

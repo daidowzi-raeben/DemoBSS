@@ -735,7 +735,7 @@
       />
         <div style="float: right;">
           <SelectBoxComponent
-          :selectClass="'select_input3'"
+          :selectClass="'select-type1'"
           :cdGroup="'optionsSearchDiv'"
           :defaultValue="'선택'"
           v-model="searchDiv1"
@@ -778,7 +778,7 @@
       />
         <div style="display:inline-block; float:right;" >
           <SelectBoxComponent
-          :selectClass="'select_input3'"
+          :selectClass="'select-type1'"
           :cdGroup="'optionsSearchDiv'"
           :defaultValue="'선택'"
           v-model="searchDiv1"

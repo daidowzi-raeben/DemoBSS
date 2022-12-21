@@ -21,8 +21,8 @@
       <div class="product_box_sel">
         <span>
         <select-box-component
-            :selectClass="'select_input3'"
-            :width="120"
+            :selectClass="'select-type1'"
+            :width="'120px'"
             :cdGroup="'optionsSearchDiv'"
             :defaultValue="'청구계정(전체)'"
             v-model="searchDiv1"
@@ -103,8 +103,8 @@
       <div class="product_box_sel" style="background-color: white">
         <div style="display: flex; width: 100%">
         <select-box-component
-            :selectClass="'select_input3'"
-            :width="120"
+            :selectClass="'select-type1'"
+            :width="'120px'"
             :cdGroup="'optionsSearchDiv'"
             :defaultValue="'선택'"
             style="float: left"
