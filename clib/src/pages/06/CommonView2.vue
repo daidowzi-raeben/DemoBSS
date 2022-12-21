@@ -4,10 +4,10 @@
     <div class="commondiv1">
       <div>
         select Box componenet 
+        <p>  </p>
       </div>
 
       <div> 
-        <p> optional 셀렉트 박스 ( 버튼 선택 시, 두번째 박스 활성화 )</p>
         <select-box-component
         :selectClass="'select-type1'"
         :cdGroup="'wjtOptions'"
@@ -17,7 +17,7 @@
         :defaultValue="'업무유형 선택'"
         :defaultcdId="selectBoxCompData.Option1"
         :selectedValue="selectBoxCompData.Option1"
-        @input="(value) => {selectBoxCompData.Option1 = value;}"
+        @emitValue="(value) => {selectBoxCompData.Option1 = value;}"
         />
       
         <select-box-component
@@ -30,20 +30,72 @@
         :defaultValue="'버튼 선택'"
         :defaultcdId="selectBoxCompData.Option2"
         :selectedValue="selectBoxCompData.Option2"
-        @input="(value) => {selectBoxCompData.Option2 = value;}"
-        />
-        <p v-if="selectBoxCompData.Option1"> [Option1 값 : {{ selectBoxCompData.Option1 }}]  &nbsp; [Option2 값 :  {{ selectBoxCompData.Option2 }}] </p>
+        @emitValue="(value) => {selectBoxCompData.Option2 = value;}"
+        /> <br /><br />
+        <p v-if="selectBoxCompData.Option1"> [Option1 값 : {{ selectBoxCompData.Option1 }}]  &nbsp; <span v-if="selectBoxCompData.Option2"> [Option2 값 :  {{ selectBoxCompData.Option2 }}] </span></p>
+        <p> * optional 셀렉트 박스 ( 버튼 선택 시, 두번째 박스 활성화 )</p>
+        <p> * disabled : true --> 특정 값 선택 시, 기본 값(버튼 선택) hidden 처리 및 선택 불가</p>
+        
       </div>
       <div>
         <select-box-component
         :cdGroup="'emailDomain'"
         :width="'170px'"
         :height="'30px'"
-        :isDisabled="true"
-        :defaultValue="'select_input4'"
+        :defaultValue="'기본 선택'"
         :defaultcdId="selectBoxCompData.Option3"
         :selectedValue="selectBoxCompData.Option3"
-        @input="(value) => {selectBoxCompData.Option3 = value;}"
+        @emitValue="(value) => {selectBoxCompData.Option3 = value;}"
+        />
+        <p v-if="selectBoxCompData.Option3"> [Option3 값 : {{ selectBoxCompData.Option3 }}]  </p>
+      </div>
+    </div>
+
+    <div class="commondiv0">
+      <div>
+        select Box componenet 
+        <p>  </p>
+      </div>
+
+      <div> 
+        <select-box-component
+        :selectClass="'select-type1'"
+        :cdGroup="'wjtOptions'"
+        :width="'150px'"
+        :height="'25px'"
+        :isDisabled="true"
+        :defaultValue="'업무유형 선택'"
+        :defaultcdId="selectBoxCompData.Option1"
+        :selectedValue="selectBoxCompData.Option1"
+        @emitValue="(value) => {selectBoxCompData.Option1 = value;}"
+        />
+      
+        <select-box-component
+        v-if="selectBoxCompData.Option1==='butt'"
+        :selectClass="'select-type1'"
+        :width="'120px'"
+        :height="'25px'"
+        :cdGroup="'wjtButtOptions'"
+        :isDisabled="true"
+        :defaultValue="'버튼 선택'"
+        :defaultcdId="selectBoxCompData.Option2"
+        :selectedValue="selectBoxCompData.Option2"
+        @emitValue="(value) => {selectBoxCompData.Option2 = value;}"
+        /> <br /><br />
+        <p v-if="selectBoxCompData.Option1"> [Option1 값 : {{ selectBoxCompData.Option1 }}]  &nbsp; <span v-if="selectBoxCompData.Option2"> [Option2 값 :  {{ selectBoxCompData.Option2 }}] </span></p>
+        <p> * optional 셀렉트 박스 ( 버튼 선택 시, 두번째 박스 활성화 )</p>
+        <p> * disabled : true --> 특정 값 선택 시, 기본 값(버튼 선택) hidden 처리 및 선택 불가</p>
+        
+      </div>
+      <div>
+        <select-box-component
+        :cdGroup="'emailDomain'"
+        :width="'170px'"
+        :height="'30px'"
+        :defaultValue="'기본 선택'"
+        :defaultcdId="selectBoxCompData.Option3"
+        :selectedValue="selectBoxCompData.Option3"
+        @emitValue="(value) => {selectBoxCompData.Option3 = value;}"
         />
         <p v-if="selectBoxCompData.Option3"> [Option3 값 : {{ selectBoxCompData.Option3 }}]  </p>
       </div>
@@ -101,7 +153,7 @@
             :width="'200px'"
             :pPlaceholder="'2022.01.01'"
             :pDate="date1"
-            @input="
+            @emitValue="
               (value) => {
                 date1 = value;
               }
@@ -116,7 +168,7 @@
             :type="'month'"
             :dateFormat="'yyyy-MM'"
             :pDate="date2"
-            @input="
+            @emitValue="
               (value) => {
                 date2 = value;
               }
@@ -130,7 +182,7 @@
               :width="150"
               :time-show=true
               :pDate="date2"
-              @input="
+              @emitValue="
               (value) => {
                 date2 = value;
               }
@@ -145,7 +197,7 @@
             :width="'200px'"
             :pPlaceholder="'2022.01.01'"
             :pDate="date3"
-            @input="
+            @emitValue="
               (value) => {
                 date3 = value;
               }
@@ -157,7 +209,7 @@
             :width="'200px'"
             :pPlaceholder="'2022.01.01'"
             :pDate="date4"
-            @input="
+            @emitValue="
               (value) => {
                 date4 = value;
               }
@@ -496,6 +548,7 @@ export default {
 }
 
 .commondiv0{
+  display: inline-block;
   border-top: solid black 1px;
   margin: 10px;
   padding: 10px

@@ -442,7 +442,7 @@
             :width="200"
             :pPlaceholder="'2022.01.01'"
             :pDate="date3"
-            @input="
+            @emitValue="
               (value) => {
                 date3 = value;
               }
@@ -454,7 +454,7 @@
             :width="200"
             :pPlaceholder="'2022.01.01'"
             :pDate="date4"
-            @input="
+            @emitValue="
               (value) => {
                 date4 = value;
               }

@@ -9,7 +9,7 @@
         :cdGroup="'optionsSearchDiv'"
         :defaultValue="'선택'"
         v-model="selectBox1"
-        @input="
+        @emitValue="
           (value) => {
             selectBox1 = value;
           }
@@ -25,7 +25,7 @@
       :width="200"
       :defaultValue="'선택'"
       v-model="selectBox2"
-      @input="
+      @emitValue="
         (value) => {
           selectBox2 = value;
         }
@@ -42,7 +42,7 @@
       :cdGroup="'optionsSearchDiv'"
       :defaultValue="'선택'"
       v-model="selectBox3"
-      @input="
+      @emitValue="
         (value) => {
           selectBox3 = value;
         }
@@ -60,7 +60,7 @@
         :defaultValue="'선택'"
         :defaultcdId="'05'"
         v-model="selectBox4"
-        @input="
+        @emitValue="
           (value) => {
             selectBox4 = value;
           }
@@ -80,7 +80,7 @@
           :defaultNum="3"
           :secndShow="true"
           v-model="searchDiv2"
-          @input="
+          @emitValue="
           (value) => {
             searchDiv2 = value;
           }
@@ -99,7 +99,7 @@
           :defaultNum="3"
           :dcidShow="true"
           v-model="searchDiv2"
-          @input="
+          @emitValue="
           (value) => {
             searchDiv2 = value;
           }

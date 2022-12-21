@@ -200,7 +200,7 @@ clib
 **컴포넌트간 데이터 송수신**
 ```
 - 송신 : this.$emit("emitValue",자식변수)  
-- 수신 : @emitValue = "(자식변수)=> { 부모변수 = 자식변수}" 
+- 수신 : @emitValue = "(자식변수)=> { 부모변수 = 자식변수}"
 ```
 
 ###  InputComponent
@@ -218,8 +218,17 @@ clib
 - 입력창 스타일 (`class1`, `class3`, `class4`, `class5`, `class6 class6_2`)
 ##
 ### SelectBoxComponent
-**props:**
-- 예시
+**props**
+- selectedValue :
+- cdGroup       : 선택 사항(option) 지정하는 변수
+- selectClass   : 셀렉트박스 스타일 지정을 위한 클래스
+- defaultValue  : 기본 선택 사항을 지정하는 변수(placeholder 역할)
+- defaultcdId   : 기본 선택 값(코드)을 지정하는 변수    ( cdId)
+- selectedValue : 부모 컴포넌트에서 선택 된 데이터를 전달받아 출력하기 위한 변수
+- width         : 가로 크기 지정 ( 기본 값 : 100%)
+- height        : 세로 크기 지정 ( 기본 값 : 100%)
+- isDisabled    : 셀렉트박스 선택 사항 클릭 시, 기본 선택 사항(placeholder) 선택 불가 및 hidden 처리에 대한 여부
+- selectType1MarginLeft : 셀렉트박스 스타일 클래스 select-type1에 margin-left 적용  ( default : 10px)
 
 **emit:**
 - 예시
@@ -250,7 +259,7 @@ clib
 **주요특징:**
 - 예시
 
-## 
+##
 
 ### ChkBoxComponent
 **props:**
@@ -388,7 +397,7 @@ clib
 
 **emit:**
 - @popup : 취소 버튼 클릭 시 호출 되어 창을 닫을 수 있게 변수에 false값 전달
-- @AGREE : 확인 버튼 클릭 시 변수 전달은 없지만 연결된 함수 호출 
+- @AGREE : 확인 버튼 클릭 시 변수 전달은 없지만 연결된 함수 호출
 
 **주요특징:**
 - v-if를 통해 팝업 출력 여부를 결정
@@ -421,8 +430,8 @@ clib
 
 ### ag-cell-Render
 ```
-Ag-Grid 내부 cell에 글자가 아닌 input, selectBox, button 등의 
-컴포넌트를 넣기 위한 문법 
+Ag-Grid 내부 cell에 글자가 아닌 input, selectBox, button 등의
+컴포넌트를 넣기 위한 문법
 데이터를 반환받을때는 cellRendererParams를 통해 데이터를 반환 받는다.
 ```
 ### ag-cell-Render > AutCdGpNm

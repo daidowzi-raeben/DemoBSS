@@ -12,7 +12,7 @@
             :isDisabled="true"
             :defaultValue="'선택'"
             :selectedValue="selectValues.selectValue1"
-            @input="
+            @emitValue="
               (value) => {
                 selectValues.selectValue1 = value;
               }
@@ -39,7 +39,7 @@
             :width="'100%'"
             :height="'28px'"
             :pDate="selectValues.subsStDt"
-            @input="
+            @emitValue="
               (value) => {
                 selectValues.subsStDt = value;
               }
@@ -53,7 +53,7 @@
             :width="'100%'"
             :height="'28px'"
             :pDate="selectValues.subsEndDt"
-            @input="
+            @emitValue="
               (value) => {
                 selectValues.subsEndDt = value;
               }
@@ -75,7 +75,7 @@
             :isDisabled="true"
             :defaultValue="'선택'"
             :selectedValue="selectValues.selectValue2"
-            @input="
+            @emitValue="
               (value) => {
                 selectValues.selectValue2 = value;
               }
@@ -91,7 +91,7 @@
             :isDisabled="true"
             :defaultValue="'선택'"
             :selectedValue="selectValues.selectValue3"
-            @input="
+            @emitValue="
               (value) => {
                 selectValues.selectValue3 = value;
               }
@@ -120,7 +120,7 @@
             :isDisabled="true"
             :defaultValue="'선택'"
             :selectedValue="selectValues.selectValue4"
-            @input="
+            @emitValue="
               (value) => {
                 selectValues.selectValue4 = value;
               }
@@ -136,7 +136,7 @@
             :isDisabled="true"
             :defaultValue="'선택'"
             :selectedValue="selectValues.selectValue8"
-            @input="
+            @emitValue="
               (value) => {
                 selectValues.selectValue8 = value;
               }
@@ -177,7 +177,7 @@
             :isDisabled="true"
             :defaultValue="'선택'"
             :selectedValue="selectValues.selectValue5"
-            @input="
+            @emitValue="
               (value) => {
                 selectValues.selectValue5 = value;
               }
@@ -193,7 +193,7 @@
             :isDisabled="true"
             :defaultValue="'선택'"
             :selectedValue="selectValues.selectValue6"
-            @input="
+            @emitValue="
               (value) => {
                 selectValues.selectValue6 = value;
               }
@@ -209,7 +209,7 @@
             :isDisabled="true"
             :defaultValue="'선택'"
             :selectedValue="selectValues.selectValue7"
-            @input="
+            @emitValue="
               (value) => {
                 selectValues.selectValue7 = value;
               }

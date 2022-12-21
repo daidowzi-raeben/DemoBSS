@@ -31,7 +31,7 @@
             :cdGroup="'optionsSearchDiv'"
             :defaultValue="'선택'"
             v-model="searchDiv1"
-            @input="
+            @emitValue="
               (value) => {
                 searchDiv1 = value;
               }
@@ -45,7 +45,7 @@
             :cdGroup="'optionsSearchDiv'"
             :defaultValue="'선택'"
             v-model="searchDiv1"
-            @input="
+            @emitValue="
               (value) => {
                 searchDiv1 = value;
               }
@@ -59,7 +59,7 @@
             :cdGroup="'optionsSearchDiv'"
             :defaultValue="'선택'"
             v-model="searchDiv1"
-            @input="
+            @emitValue="
               (value) => {
                 searchDiv1 = value;
               }
@@ -105,7 +105,7 @@
       <form-data-component
         :FormDataclass="'infoOfAccount'"
         :subInfoTitleNm="'청구 계정 정보'"
-        @input="addComp"
+        @emitValue="addComp"
         @modalShow="FormPopup"
       />
     </div>

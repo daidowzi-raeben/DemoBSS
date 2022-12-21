@@ -13,7 +13,7 @@
             :is-disabled="true"
             :defaultValue="'배치서버 선택'"
             :selected-value="selectValues.batchSrvrSel"
-            @input=" (value) => { selectValues.batchSrvrSel = value;}"
+            @emitValue=" (value) => { selectValues.batchSrvrSel = value;}"
         />
       </span>
         <span>
@@ -25,7 +25,7 @@
             :cdGroup="'useYn'"
             :is-disabled="true"
             :defaultValue="'사용여부 선택'"
-            @input=" (value) => { selectValues.useYnSel = value;}"
+            @emitValue=" (value) => { selectValues.useYnSel = value;}"
             :selected-value="selectValues.useYnSel"
         />
       </span>
@@ -106,7 +106,7 @@
         width: 120px;
         height: 26px;
         margin-right: 15px;"
-        @input="
+        @emitValue="
           (value) => {
             SearchNum = value;
           }

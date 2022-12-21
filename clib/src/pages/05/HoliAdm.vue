@@ -47,7 +47,7 @@
                   :defaultValue="'휴일여부 선택'"
                   :isDisabled="true"
                   :selectedValue="selectValues.holiYn"
-                  @input="(value) => {selectValues.holiYn = value;}"
+                  @emitValue="(value) => {selectValues.holiYn = value;}"
               />
             </td>
             <td class="emptyBox2"></td>
@@ -75,7 +75,7 @@
                   :defaultValue="'휴일구분 선택'"
                   :isDisabled="true"
                   :selectedValue="selectValues.holiDiv"
-                  @input="(value) => {selectValues.holiDiv = value;}"
+                  @emitValue="(value) => {selectValues.holiDiv = value;}"
               />
             </td>
 

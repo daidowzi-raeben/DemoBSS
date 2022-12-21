@@ -30,11 +30,11 @@ export default {
     };
   },
   props: {
-    selectedValue: String,
     cdGroup: String,
     selectClass: String,
-    defaultValue: null,
     defaultcdId: String,
+    defaultValue: null,
+    selectedValue: String,
     width: { 
       type: String,
       default: '100%'
@@ -47,7 +47,7 @@ export default {
       type: Boolean,
       default: false,
     },
-    selectBoxMarginLeft: {
+    selectType1MarginLeft: {
       type: String,
       default: "10px",
     },
@@ -78,7 +78,7 @@ export default {
   },
   methods: {
     updateValue(value) {
-      this.$emit("input", value);
+      this.$emit("emitValue", value);
     },
   },
 };
@@ -100,6 +100,6 @@ select {
   -moz-appearance: none;      /* 셀렉트박스 화살표 숨김 */
 }
 .select-type1 {
-  margin-left: v-bind(selectBoxMarginLeft);
+  margin-left: v-bind(selectType1MarginLeft);
 }
 </style>

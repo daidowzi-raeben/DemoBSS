@@ -45,7 +45,7 @@
               :defaultcdId="showTheNum"
               :isDisabled="true"
               v-model="showTheNum"
-              @input="
+              @emitValue="
                 (value) => {
                   selectValue = value;
                 }
@@ -108,7 +108,7 @@
                       : ''
                   "
                   :isDisabled="true"
-                  @input="
+                  @emitValue="
                     (value) => {
                       userAdmObject.inOfficeSttus2 = value;
                     }
@@ -157,7 +157,7 @@
                   :defaultcdId="userAdmObject.ntcMeth"
                   :selectedValue="userAdmObject.ntcMeth"
                   :isDisabled="true"
-                  @input="
+                  @emitValue="
                     (value) => {
                       userAdmObject.ntcMeth = value;
                     }
@@ -212,7 +212,7 @@
                   :defaultValue="'직책 선택'"
                   :defaultcdId="userAdmObject.rspof"
                   :selectedValue="userAdmObject.rspof"
-                  @input="
+                  @emitValue="
                     (value) => {
                       userAdmObject.rspof = value;
                     }
@@ -229,7 +229,7 @@
                   :isDisabled="true"
                   :width="'185px'"
                   :selectedValue="userAdmObject.dutySelect"
-                  @input="
+                  @emitValue="
                     (value) => {
                       userAdmObject.dutySelect = value;
                     }
@@ -257,7 +257,7 @@
                   :isDisabled="true"
                   :width="'185px'"
                   :selectedValue="userAdmObject.emailDomain"
-                  @input="
+                  @emitValue="
                     (value) => {
                       userAdmObject.emailDomain = value;
                     }

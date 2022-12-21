@@ -26,7 +26,7 @@
             :cdGroup="'optionsSearchDiv'"
             :defaultValue="'청구계정(전체)'"
             v-model="searchDiv1"
-            @input="
+            @emitValue="
           (value) => {
             searchDiv1 = value;
           }
@@ -109,7 +109,7 @@
             :defaultValue="'선택'"
             style="float: left"
             v-model="searchDiv1"
-            @input="
+            @emitValue="
           (value) => {
             searchDiv1 = value;
           }
