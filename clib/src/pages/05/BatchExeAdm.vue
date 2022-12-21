@@ -14,7 +14,7 @@
                   :defaultValue="'Job Name 선택'"
                   :isDisabled="true"
                   :selectedValue="selectValues.jobNm"
-                  @input="(value) => {selectValues.jobNm = value;}"
+                  @emitValue="(value) => {selectValues.jobNm = value;}"
               />
             </td>
             <td class="emptyBox1"></td>
@@ -28,7 +28,7 @@
                   :defaultValue="'작업상태 선택'"
                   :isDisabled="true"
                   :selectedValue="selectValues.wrkSttus"
-                  @input="(value) => {selectValues.wrkSttus = value;}"
+                  @emitValue="(value) => {selectValues.wrkSttus = value;}"
               />
             </td>
             <td class="emptyBox1"></td>
@@ -40,7 +40,7 @@
                   :height="'28px'"
                   :pPlaceholder="'2022.01.01'"
                   :pDate="selectValues.btStDt"
-                  @input="
+                  @emitValue="
               (value) => {
                 selectValues.btStDt = value;
               }
@@ -55,7 +55,7 @@
                   :height="'28px'"
                   :pPlaceholder="'2022.01.01'"
                   :pDate="selectValues.btEndDt"
-                  @input="
+                  @emitValue="
               (value) => {
                 selectValues.btEndDt = value;
               }
@@ -112,7 +112,7 @@
                   :defaultValue="'작업결과 선택'"
                   :isDisabled="true"
                   :selectedValue="selectValues.wrkReslt"
-                  @input="(value) => {selectValues.wrkReslt = value;}"
+                  @emitValue="(value) => {selectValues.wrkReslt = value;}"
               />
             </td>
             <td colspan="2"></td>
@@ -183,7 +183,7 @@
         width: 120px;
         height: 26px;
         margin-right: 15px;"
-        @input="
+        @emitValue="
           (value) => {
             SearchNum = value;
           }

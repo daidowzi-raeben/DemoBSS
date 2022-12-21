@@ -255,7 +255,7 @@
                   :defaultValue="'업무유형 선택'"
                   :defaultcdId="menuAdmObject.wjtOption1"
                   :selectedValue="menuAdmObject.wjtOption1"
-                  @input="(value) => {menuAdmObject.wjtOption1 = value;}"
+                  @emitValue="(value) => {menuAdmObject.wjtOption1 = value;}"
                 />
                 <select-box-component
                   v-if="menuAdmObject.wjtOption1==='butt'"
@@ -267,7 +267,7 @@
                   :defaultValue="'버튼 선택'"
                   :defaultcdId="menuAdmObject.wjtOption2"
                   :selectedValue="menuAdmObject.wjtOption2"
-                  @input="(value) => {menuAdmObject.wjtOption2 = value;}"
+                  @emitValue="(value) => {menuAdmObject.wjtOption2 = value;}"
                 />
                 <input-component
                   v-else-if="menuAdmObject.wjtOption1==='comCd'"

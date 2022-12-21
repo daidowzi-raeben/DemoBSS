@@ -8,13 +8,12 @@
             <td>
               <select-box-component
                 style="height: 28px"
-                 
                 :width="'200px'"
                 :cdGroup="'msgRetv'"
                 :defaultValue="'조회기준 선택'"
                 :isDisabled="true"
                 :selectedValue="selectValues.selectValueOfRetv"
-                @input="
+                @emitValue="
                   (value) => {
                     selectValues.selectValueOfRetv = value;
                   }
@@ -77,7 +76,7 @@
                 :defaultValue="'메시지유형 선택'"
                 :isDisabled="true"
                 :selectedValue="selectValues.selectValueOfMsgType"
-                @input="(value) => {selectValues.selectValueOfMsgType = value;}"
+                @emitValue="(value) => {selectValues.selectValueOfMsgType = value;}"
               />
             </td>
             <td colspan="3"></td>
@@ -93,7 +92,7 @@
                 :defaultValue="'사용여부 선택'"
                 :isDisabled="true"
                 :selectedValue="selectValues.selectValueOfUseYn"
-                @input=" (value) => {selectValues.selectValueOfUseYn = value;}"
+                @emitValue=" (value) => {selectValues.selectValueOfUseYn = value;}"
               />
             </td>
             <td class="emptyBox2"></td>
@@ -156,7 +155,7 @@
                 :defaultcdId="showTheNum"
                 :isDisabled="true"
                 v-model="showTheNum"
-                @input="
+                @emitValue="
                   (value) => {
                     selectValue = value;
                   }
@@ -301,7 +300,7 @@
                     :defaultValue="'메시지유형선택 선택'"
                     :defaultcdId="msgAdmObject.msgType"
                     :selectedValue="msgAdmObject.msgType"
-                    @input="
+                    @emitValue="
                       (value) => {
                         msgAdmObject.msgType = value;
                       }

@@ -14,7 +14,7 @@
               :defaultValue="'조회기준 선택'"
               :isDisabled="true"
               :selectedValue="selectValues.selectValueOfRetv"
-              @input="(value) => {selectValues.selectValueOfRetv = value;}"
+              @emitValue="(value) => {selectValues.selectValueOfRetv = value;}"
             />
           </td>
           <td>
@@ -73,7 +73,7 @@
               :defaultValue="'공지유형 선택'"
               :isDisabled="true"
               :selectedValue="selectValues.selectValueOfNtfType"
-              @input="(value) => {selectValues.selectValueOfNtfType = value;}"
+              @emitValue="(value) => {selectValues.selectValueOfNtfType = value;}"
             />
           </td>
           <td colspan="3"> </td>
@@ -89,7 +89,7 @@
               :defaultValue="'사용여부 선택'"
               :isDisabled="true"
               :selectedValue="selectValues.selectValueOfUseYn"
-              @input="(value) => {selectValues.selectValueOfUseYn = value;}"
+              @emitValue="(value) => {selectValues.selectValueOfUseYn = value;}"
               />
           </td>
           <td class="emptyBox2"></td>
@@ -157,7 +157,7 @@
                 :defaultcdId="showTheNum"
                 :isDisabled="true"
                 v-model="showTheNum"
-                @input="(value) => {selectValue = value;}"
+                @emitValue="(value) => {selectValue = value;}"
               />
             </div>
             <div>
@@ -299,7 +299,7 @@
                   :defaultValue="'공지유형선택 선택'"
                   :defaultcdId="noticeAdmObject.ntfType"
                   :selectedValue="noticeAdmObject.ntfType"
-                  @input="
+                  @emitValue="
                     (value) => {
                       noticeAdmObject.ntfType = value;
                     }
@@ -317,7 +317,7 @@
                   :isDisabled="true"
                   :width="'185px'"
                   :selectedValue="noticeAdmObject.rcvrRstrtn"
-                  @input="
+                  @emitValue="
                     (value) => {
                       noticeAdmObject.rcvrRstrtn = value;
                     }

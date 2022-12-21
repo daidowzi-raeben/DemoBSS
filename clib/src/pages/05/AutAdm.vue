@@ -13,7 +13,7 @@
             :is-disabled="true"
             :defaultValue="'권한유형 선택'"
             :selected-value="selectValues.autTypeSel"
-            @input=" (value) => { selectValues.autTypeSel = value;}"
+            @emitValue=" (value) => { selectValues.autTypeSel = value;}"
         />
       </span>
         <span>
@@ -35,7 +35,7 @@
             :cdGroup="'useYn'"
             :is-disabled="true"
             :defaultValue="'사용여부 선택'"
-            @input=" (value) => { selectValues.useYn = value;}"
+            @emitValue=" (value) => { selectValues.useYn = value;}"
             :selected-value="selectValues.useYn"
         />
       </span>
@@ -115,7 +115,7 @@
         width: 120px;
         height: 26px;
         margin-right: 15px;"
-        @input="
+        @emitValue="
           (value) => {
             SearchNum = value;
           }
@@ -180,7 +180,7 @@
                     "
                     :selected-value="this.autAdmObject.autType"
                     :defaultValue="'권한유형 선택'"
-                    @input=" (value) => { this.autAdmObject.autType = value;}"
+                    @emitValue=" (value) => { this.autAdmObject.autType = value;}"
                     v-model="this.autAdmObject.autType"
                   />
               </td>

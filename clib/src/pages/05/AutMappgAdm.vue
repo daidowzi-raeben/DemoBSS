@@ -5,7 +5,7 @@
         :title="'권한유형'"
         :sel-default-value="'권한유형 선택'"
         :cd-group="'autType'"
-        @input="(value)=>{
+        @emitValue="(value)=>{
         this.selectValues.searchValue = value[0];
         this.selectValues.selValue = value[1];
       }"
@@ -39,7 +39,7 @@
         width: 120px;
         height: 26px;
         margin-right: 15px;"
-        @input="
+        @emitValue="
           (value) => {
             SearchNum = value;
           }

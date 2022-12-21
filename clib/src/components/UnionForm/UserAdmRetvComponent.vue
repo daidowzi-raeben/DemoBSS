@@ -12,7 +12,7 @@
             :defaultValue="'직무 선택'"
             :isDisabled="true"
             :selectedValue="selectValues.selectValueOfDuty"
-            @input="(value) => {selectValues.selectValueOfDuty = value;}"
+            @emitValue="(value) => {selectValues.selectValueOfDuty = value;}"
           />
         </td>
         <td colspan="3"></td>
@@ -28,7 +28,7 @@
             :defaultValue="'직책 선택'"
             :isDisabled="true"
             :selectedValue="selectValues.selectValueOfRspof"
-            @input="(value) => {selectValues.selectValueOfRspof = value;}"
+            @emitValue="(value) => {selectValues.selectValueOfRspof = value;}"
           />
         </td>
         <td class="emptyBox2"></td>
@@ -55,7 +55,7 @@
             :defaultValue="'조직 선택1'"
             :isDisabled="true"
             :selectedValue="selectValues.selectValueOfOrg1"
-            @input="(value) => {selectValues.selectValueOfOrg1 = value;}"
+            @emitValue="(value) => {selectValues.selectValueOfOrg1 = value;}"
           />
         </td>
         <td>
@@ -67,7 +67,7 @@
             :defaultValue="'조직 선택2'"
             :isDisabled="true"
             :selectedValue="selectValues.selectValueOfOrg2"
-            @input="(value) => {selectValues.selectValueOfOrg2 = value;}"
+            @emitValue="(value) => {selectValues.selectValueOfOrg2 = value;}"
           />
         </td>
         <td>
@@ -79,7 +79,7 @@
             :defaultValue="'조직 선택3'"
             :isDisabled="true"
             :selectedValue="selectValues.selectValueOfOrg3"
-            @input="(value) => {selectValues.selectValueOfOrg3 = value;}"
+            @emitValue="(value) => {selectValues.selectValueOfOrg3 = value;}"
           />
         </td>
         <td>
@@ -104,7 +104,7 @@
             :defaultValue="'재직상태 선택'"
             :isDisabled="true"
             :selectedValue="selectValues.selectValueOfinOfficeSttus"
-            @input="(value) => {selectValues.selectValueOfinOfficeSttus = value;}"
+            @emitValue="(value) => {selectValues.selectValueOfinOfficeSttus = value;}"
             />
         </td>
         <td class="emptyBox2"></td>

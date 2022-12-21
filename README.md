@@ -213,9 +213,20 @@ clib
 **주요특징:**
 - 예시
 
+*** 
+
 ### SelectBoxComponent
-**props:**
-- 예시
+**props**
+- selectedValue : 
+- cdGroup       : 선택 사항(option) 지정하는 변수
+- selectClass   : 셀렉트박스 스타일 지정을 위한 클래스
+- defaultValue  : 기본 선택 사항을 지정하는 변수(placeholder 역할)
+- defaultcdId   : 기본 선택 값(코드)을 지정하는 변수    ( cdId) 
+- selectedValue : 부모 컴포넌트에서 선택 된 데이터를 전달받아 출력하기 위한 변수
+- width         : 가로 크기 지정 ( 기본 값 : 100%)
+- height        : 세로 크기 지정 ( 기본 값 : 100%)
+- isDisabled    : 셀렉트박스 선택 사항 클릭 시, 기본 선택 사항(placeholder) 선택 불가 및 hidden 처리에 대한 여부 
+- selectType1MarginLeft : 셀렉트박스 스타일 클래스 select-type1에 margin-left 적용  ( default : 10px)
 
 **emit:**
 - 예시

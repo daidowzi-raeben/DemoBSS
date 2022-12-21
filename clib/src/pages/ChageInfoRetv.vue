@@ -80,7 +80,7 @@
                 :cdGroup="'optionsSearchDiv'"
                 :defaultValue="'선택'"
                 v-model="searchDiv"
-                @input="
+                @emitValue="
                   (value) => {
                     searchDiv = value;
                   }

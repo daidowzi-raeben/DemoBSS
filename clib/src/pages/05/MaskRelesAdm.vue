@@ -14,7 +14,7 @@
                   :defaultValue="'조회기준 선택'"
                   :isDisabled="true"
                   :selectedValue="selectValues.securRetv"
-                  @input="(value) => {selectValues.securRetv = value;}"
+                  @emitValue="(value) => {selectValues.securRetv = value;}"
               />
             </td>
             <td>
@@ -84,7 +84,7 @@
                   :defaultValue="'조직 선택'"
                   :isDisabled="true"
                   :selectedValue="selectValues.orgSel"
-                  @input="(value) => {selectValues.orgSel = value;}"
+                  @emitValue="(value) => {selectValues.orgSel = value;}"
               />
             </td>
             <td>
@@ -96,7 +96,7 @@
                   :defaultValue="'조직 선택'"
                   :isDisabled="true"
                   :selectedValue="selectValues.orgSel"
-                  @input="(value) => {selectValues.orgSel = value;}"
+                  @emitValue="(value) => {selectValues.orgSel = value;}"
               />
             </td>
             <td>
@@ -108,7 +108,7 @@
                   :defaultValue="'조직 선택'"
                   :isDisabled="true"
                   :selectedValue="selectValues.orgSel"
-                  @input="(value) => {selectValues.orgSel = value;}"
+                  @emitValue="(value) => {selectValues.orgSel = value;}"
               />
             </td>
             <td>
@@ -183,7 +183,7 @@
         width: 120px;
         height: 26px;
         margin-right: 15px;"
-        @input="
+        @emitValue="
           (value) => {
             SearchNum = value;
           }

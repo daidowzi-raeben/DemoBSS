@@ -172,7 +172,7 @@
             :width="200"
             :pPlaceholder="'2022.01.01'"
             :pDate="date3"
-            @input="
+            @emitValue="
               (value) => {
                 date3 = value;
               }
@@ -184,7 +184,7 @@
             :width="200"
             :pPlaceholder="'2022.01.01'"
             :pDate="date4"
-            @input="
+            @emitValue="
               (value) => {
                 date4 = value;
               }
@@ -362,7 +362,7 @@
         :input-class="'class2'"
         v-model="searchValue"
         :placeholder="'입력'"
-        @input="
+        @emitValue="
           (value) => {
             searchValue = value;
           }
@@ -375,7 +375,7 @@
         :input-class="'class1'"
         v-model="searchValue"
         :placeholder="'입력'"
-        @input="
+        @emitValue="
           (value) => {
             searchValue = value;
           }
