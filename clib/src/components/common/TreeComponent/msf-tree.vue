@@ -14,10 +14,10 @@ export default {
   name: 'msf-tree',
   components: {MsfTreeItem},
   props: {
-    source: Array,
+    source: Array,            //트리 데이터
     filterFunction: Function,
-    labelField: String,
-    idField: String,
+    labelField: String,       //출력 내용필드명
+    idField: String,          //id 필드명
     selectedList: Array,
     activeItem: Object,
     expandDepth: {

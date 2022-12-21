@@ -260,121 +260,75 @@
       <msf-tree :source="contentTree"
                 :activeItem="activeItemObj"
                 :selectedList="selectedItemList"
-                id-field="directoryName"
                 label-field="directoryName"
                 ref="tree"
-                @itemClick="treeItemClick"
+                @itemClick="(value)=>{treeItemClick = value}"
                 style="width:100%; height:100%;font-size: 12pt;"
       ></msf-tree>
+      <br />
+      <p>- source에 들어갈 데이터는 json 형태의 데이터로 children 필드의 값이 하위 트리가 된다.</p>
+      <p>- labelFiled에 들어간 필드명이 트리의 내용이 된다.</p>
+      <p>- @itemClick과 연결된 함수에서 클릭된 트리에 대한 행 데이터와 후처리가 가능하다.</p>
     </div>
     <br /><br /><br />
 
-
-    <h1 style="font-size: 30px">select box</h1>
-    <div class="commondiv0">
-      조회조건
-      <select-box-component
-        :selectClass="'select_input'"
-        :width="400"
-        :cdGroup="'optionsSearchDiv'"
-        :defaultValue="'선택'"
-        v-model="selectBox1"
-        @input="
-          (value) => {
-            selectBox1 = value;
-          }
-        "
+    <h1 style="font-size: 30px">PopupComponent Form</h1>
+    <span></span>
+    <div class="commondiv2">
+      <label-component label-nm="'BtExeInfoPopup'" />
+      <buttonComponent
+          :btnClass="'btnClass3'"
+          :btnName="'배치실행 상세정보'"
+          :btnWidth="'auto'"
+          @click="isModelBtExeInfoShow=true"
       />
-      : {{ selectBox1 }}
-      <br />
-      <br />
-      <br />
-      <select-box-component
-      :selectClass="'select_input2'"
-      :cdGroup="'optionsSearchDiv'"
-      :width="200"
-      :defaultValue="'선택'"
-      v-model="selectBox2"
-      @input="
-        (value) => {
-          selectBox2 = value;
-        }
-        "
+      &nbsp;&nbsp;
+      <BtExeInfoPopup
+          v-if="isModelBtExeInfoShow"
+          :value="null"
+          @close="closeBtInfoModal"
       />
-      : {{ selectBox2 }}
-
+      <p>- 정보를 보여주기 위한 팝업이라 별도의 확인버튼은 존재하지 않는다. </p>
+      <p>- 정보의 경우 전달된 value를 통해 팝업 내부에서 axios통신을 통해 DB에서 받아 출력할 예정</p>
       <br />
-      <br />
-      <br />
-      <select-box-component
-      :selectClass="'select-type1'"
-      style="width:200px; height:30px;"
-      :cdGroup="'optionsSearchDiv'"
-      :defaultValue="'선택'"
-      v-model="selectBox3"
-      @input="
-        (value) => {
-          selectBox3 = value;
-        }
-        "
+      <label-component label-nm="'CdGpLstPopup'" />
+      <buttonComponent
+          :btnClass="'btnClass3'"
+          :btnName="'코드그룹리스트'"
+          :btnWidth="'auto'"
+          @click="isCdGpModalShow=true"
       />
-      : {{ selectBox3 }}
-      <br />
-      <br />
-      <br />
-      조회조건 (default 값 청구계정ID)
-      <select-box-component
-        :selectClass="'select_input'"
-        :width="250"
-        :cdGroup="'optionsSearchDiv'"
-        :defaultValue="'선택'"
-        :defaultcdId="'05'"
-        v-model="selectBox4"
-        @input="
-          (value) => {
-            selectBox4 = value;
-          }
-        "
-      />
-      : {{ selectBox4 }}
-      <br />
-      <br />
-      <br />
-
-      조회조건 값에 따른 추가 selectBox 추가(값에 따라 생겨남)
-      <select-box-component
-          :selectClass="'select_input'"
-          :width="250"
-          :cdGroup="'optionsSearchDiv'"
-          :defaultValue="'선택'"
-          :defaultNum="3"
-          :secndShow="true"
-          v-model="searchDiv2"
-          @input="
-          (value) => {
-            searchDiv2 = value;
-          }
-        "
+      &nbsp;&nbsp;
+      <CdGpLstPopup
+          v-if="isCdGpModalShow"
+          :type="1"
+          :value="null"
+          @close="closeCdGpModal"
+          @submit="''"
+          @update="''"
         />
+      <p>- type 값에 따라 등록 / 변경으로 Form이 바뀐다.</p>
+      <p>- 변경의 경우 일부 입력창이 disabled 되서 입력 불가 상태가 된다.</p>
+      <p>- value의 경우 Json 형태의 데이터를 받는다.</p>
+      <p>- 등록의 경우 @submit와 연결된 함수가 실행되고 변경의 경우 @update에 연결된 함수가 실행된다.</p>
       <br />
-      <br />
-      <br />
-
-      조회조건 값에 따른 추가 selectBox 추가(기존에 존재함)
-      <select-box-component
-          :selectClass="'select_input'"
-          :width="250"
-          :cdGroup="'optionsSearchDiv'"
-          :defaultValue="'선택'"
-          :defaultNum="3"
-          :dcidShow="true"
-          v-model="searchDiv2"
-          @input="
-          (value) => {
-            searchDiv2 = value;
-          }
-        "
+      <label-component label-nm="'CdLstPopup'" />
+      <buttonComponent
+          :btnClass="'btnClass3'"
+          :btnName="'코드리스트'"
+          :btnWidth="'auto'"
+          @click="isCdLstModalShow=true"
       />
+      &nbsp;&nbsp;
+      <CdLstPopup
+          v-if="isCdLstModalShow"
+          :type="1"
+          :value="null"
+          @close="closeCdLstModal"
+          @submit="''"
+      />
+      <p>- 코드그룹리스트와 로직은 동일하다. </p>
+      <p>- 입력 형태와 value의 값만 다르다.</p>
     </div>
 
     <h1 style="font-size: 30px">date picker</h1>
@@ -595,71 +549,8 @@
 
 
 
-    <h1 style="font-size: 30px">RangeComponent</h1>
-    <span></span>
-    <div class="commondiv1" >
-    <RangeComponent />
-    </div>
-    <br /><br /><br />
 
 
-
-    <h1 style="font-size: 30px">PostCodeComponent</h1>
-    <span></span>
-    <div class="commondiv1">
-      <div>
-        <table style="border:1px solid" >
-          <tr>
-            <th> <label-component :labelNm="'우편번호'" /> </th>
-            <td> <input-component :inputClass="'class5_short1'" :value="postCodeObj.zipNo" /> </td>
-          </tr>
-          <tr>
-            <th> <label-component :labelNm="'도로명주소'" /> </th>
-            <td> <input-component :inputClass="'class5_long1'" :value="postCodeObj.roadAddr" /> </td>
-          </tr>
-          <tr>
-            <th> <label-component :labelNm="'지번주소'" />   </th>
-            <td> <input-component :inputClass="'class5_long1'" :value="postCodeObj.jibunAddr" /> </td>
-          </tr>
-          <tr>
-            <th> <label-component :labelNm="'상세주소'" /> </th>
-            <td> <input-component :inputClass="'class5_long1'" :value="postCodeObj.detailPostAddress" /> </td>
-          </tr>
-        </table>
-      </div>
-      </div><div>
-      <span> 주소 검색  </span>
-      <input-component
-      :inputClass="'class5'"
-      style="width:210px; margin:0 3px;"
-      :height="'30px'"
-      :placeholder="'주소를 입력해 주세요.'"
-      @click="postCodePopup"
-      />
-      <button-component
-      @click="postCodePopup"
-      :btnClass="'btnClass3'"
-      :btnName="'주소 검색'"
-      :btnHeight="'30px'"
-      />
-      <post-code-component
-      @FormPopup="isPostCodeModalShow = false"
-      @selected-juso-data="selectedJuso"
-      :formDataPopupFrameWidth="'800px'"
-      :PopupTitleMsg="'주소 검색'"
-      :reqtype="'searchPostCode'"
-      ref="PostCodeComponent"
-      v-if="isPostCodeModalShow"
-      :btnClicked ="0"
-      />
-      <br /><br /><br />
-    </div>
-
-    <h1 style="font-size: 30px">RadioComponent</h1>
-    <div class="commondiv1" >
-    <RadioComponent :RadioOptions='["radio1","radio2","radio3","radio4","radio5",]' />
-    </div>
-    <br /><br /><br />
 
     <h1 style="font-size: 30px">CustInfoComponent</h1>
     <div
@@ -694,20 +585,6 @@
       "
     >
       <CustRetvComponent :cdGroup="'optionsSearchDiv'" />
-    </div>
-    <br /><br /><br />
-
-    <h1 style="font-size: 30px">DepthTitleComponent</h1>
-    <span></span>
-    <div class="commondiv1" style="width:1960px;" >
-      <title-area :currentMenu="currentMenu" />
-    </div>
-    <br /><br /><br />
-
-    <h1 style="font-size: 30px">LodingSpinnerComponent</h1>
-    <span></span>
-    <div class="commondiv1"  >
-      <LoadingSpinnerComponent />
     </div>
     <br /><br /><br />
 
@@ -835,13 +712,18 @@ import AutYn from "@/components/common/AgGridCellRender/AutYn";
 import BillChageDiv from "@/components/common/AgGridCellRender/BillChageDiv";
 import HoliDesc from "@/components/common/AgGridCellRender/HoliDesc";
 import HoliDiv from "@/components/common/AgGridCellRender/HoliDiv";
-
+import BtExeInfoPopup from "@/components/common/PopupComponent/BtExeInfoPopup";
+import CdGpLstPopup from "@/components/common/PopupComponent/CdGpLstPopup";
+import CdLstPopup from "@/components/common/PopupComponent/CdLstPopup";
 export default {
   mixins:[ApiMixin],
   name: "CommonView",
   components: {
     DragGrid,
     PageTitle,
+    CdGpLstPopup,
+    CdLstPopup,
+    BtExeInfoPopup,
     LoadingSpinnerComponent,
     msfTree,
     PostCodeComponent,
@@ -882,6 +764,9 @@ export default {
   data() {
     return {
       chk:false,
+      isModelBtExeInfoShow: false,
+      isCdGpModalShow : false,
+      isCdLstModalShow : false,
       selectBox1 : null,
       selectBox2 : null,
       selectBox3 : null,
@@ -1142,6 +1027,19 @@ export default {
   methods: {
     fileDisable() {
       this.pDisable = !this.pDisable;
+    },
+    closeBtInfoModal(){
+      this.isModelBtExeInfoShow = false;
+    },
+    //코드 그룹 팝업 닫기
+    closeCdGpModal(){
+      this.isCdGpModalShow = false;
+      this.cdGpType = null;
+    },
+    //코드리스트 팝업 닫기
+    closeCdLstModal(){
+      this.isCdLstModalShow = false;
+      this.cdLstType = null;
     },
     postCodePopup(){
       if (this.isPostCodeModalShow == false) this.isPostCodeModalShow = true

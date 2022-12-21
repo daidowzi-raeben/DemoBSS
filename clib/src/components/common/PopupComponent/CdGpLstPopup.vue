@@ -23,7 +23,7 @@
               :btn-name ="'등록'"
               :btnHeight="'28px'"
               :btnWidth ="'100px'"
-              @click="$emit('close')"
+              @click="[$emit('close'),$emit('submit')]"
           />
           <button-component
               v-if="type===2"
@@ -32,7 +32,7 @@
               :btn-name ="'변경'"
               :btnHeight="'28px'"
               :btnWidth ="'100px'"
-              @click="$emit('close')"
+              @click="[$emit('close'),$emit('update')]"
           />
         </span>
         <br><br><br>
