@@ -203,6 +203,7 @@ clib
 - 수신 : @emitValue = "(자식변수)=> { 부모변수 = 자식변수}" 
 ```
 
+##
 ###  InputComponent
 **props:**
 - placeholder : 입력 전 예시 값
@@ -227,6 +228,7 @@ clib
 **주요특징:**
 - 예시
 
+##
 ### ButtonComponent
 
 **props:**
@@ -240,6 +242,7 @@ clib
 **주요특징:**
 - 버튼 스타일 (`btnClass1`, `btnClass3`, `btnClass4`, `btnClass5`)
 
+##
 ### AgGridComponent
 **props:**
 - 예시
@@ -250,8 +253,7 @@ clib
 **주요특징:**
 - 예시
 
-## 
-
+##
 ### ChkBoxComponent
 **props:**
 - CheckOptions : 체크박스로 보여줄 데이터 배열
@@ -285,6 +287,7 @@ clib
 **주요특징:**
 - 주로 table의 th 부분에서 많이 사용됨.
 
+##
 ### DatePickerComponent
 **props:**
 - 예시
@@ -295,6 +298,7 @@ clib
 **주요특징:**
 - 예시
 
+##
 ### SubInfoTitle
 **props:**
 - subInfoTitleNm : 제목 명 지정
@@ -304,6 +308,7 @@ clib
 **주요특징:**
 - 각 Object마다의 서브 제목으로 사용
 
+##
 ### DepthTitle
 **props:**
 - 예시
@@ -314,6 +319,7 @@ clib
 **주요특징:**
 - 예시
 
+##
 ### DragGrid
 **props:**
 - leftRowData : 첫번째 Row데이터 값
@@ -328,6 +334,7 @@ clib
 - 좌측에 위치한 드래그 버튼을 통해 Grid 간 데이터 이동 가능
 - 확정 버튼을 통해 Grid 간의 이동을 확정한다.
 
+##
 ### FileInputComponent
 **props:**
 - 예시
@@ -338,6 +345,7 @@ clib
 **주요특징:**
 - 예시
 
+##
 ### linkComponent
 **props:**
 - destination : 이동할 url
@@ -347,6 +355,7 @@ clib
 **주요특징:**
 - hover 시 파란색 글자에 밑줄이 생긴다.
 
+##
 ### LoadingSpinnerComponent
 **props:**
 - 예시
@@ -357,6 +366,7 @@ clib
 **주요특징:**
 - 예시
 
+##
 ### PageTitle
 **props:**
 - currentMenu : Menu.json에 있는 메뉴 정보
@@ -369,6 +379,7 @@ clib
 - 각 페이지마다 보여지는 페이지 제목
 - 아이콘을 통해 즐겨찾기 추가 가능, 추가시 아이콘 색상 변경
 
+##
 ### PagingArea
 **props:**
 - 예시
@@ -379,6 +390,7 @@ clib
 **주요특징:**
 - 예시
 
+##
 ### PopupComponent
 **props:**
 - popupOverlay : 팝업창 이외의 영역에 대한 스타일 지정
@@ -395,6 +407,7 @@ clib
 - @AGREE에 함수 입력해야 확인버튼 클릭시 함수 호출 가능
 - poupOverlay를 별도로 입력하지 않을 시 팝업창 이외 영역 클릭시 창 닫힘
 
+##
 ### RadioComponent
 **props:**
 - 예시
@@ -405,7 +418,7 @@ clib
 **주요특징:**
 - 예시
 
-
+##
 ### TabComponent
 **props:**
 - menuType : 탭으로 불어와야될 폴더이름
@@ -419,6 +432,7 @@ clib
 - 다른 탭으로 이동해도 기존 탭 상태 유지
 - 메뉴나 버튼 클릭을 통해 탭을 추가함
 
+##
 ### ag-cell-Render
 ```
 Ag-Grid 내부 cell에 글자가 아닌 input, selectBox, button 등의 
@@ -444,35 +458,56 @@ Ag-Grid 내부 cell에 글자가 아닌 input, selectBox, button 등의
 ### ag-cell-Render > HoliDiv
 - 휴일구분 선택 셀렉트박스 출력
 
+##
 ### treeComponent
 ```
-
+JSON 형태의 데이터를 입력받아 트리 형태로 보여주기 위한 컴포넌트
+입력값에 따라 뱃지 형태의 라벨 출력 가능
+현재 1depth 형태로 사용중 
 ```
 
 ### treeComponent > msf-tree
 **props:**
-
+- source : 트리에 넣을 데이터
+- idFiled : source에 있는 데이터 중 id 필드
+- labelField : source에 있는 데이터 중 출력할 제목 필드
+- isBadgeShow : 우측에 위치한 배찌를 보여줄건지에 대한 값 true/false
+- expandDepth : 트리의 최대 깊이
 **emit:**
-
+- itemClick 함수를 통해 클릭된 행에 대한 데이터를 가져오고 @itemClick과 연결된 함수를 통해 후처리
+- itemDblClick 함수를 통해 +, - 버튼을 눌러 트리 구조 처럼 행을 접었다 필수 있음.
 **주요특징:**
-
+- 트리를 출력하는 부분이 아닌 트리생성을 위한 데이터를 가공하고 처리하는 컴포넌트
 ### treeComponent > msf-tree-item
-설명
+- msf-tree에서 가공된 데이터를 기반으로 트리를 만들어 출력하는 컴포넌트
 
+##
 ### popupComponent
-설명
+```
+확인 취소 뿐만이 아닌 Form 형태를 지니고 있는 Popup
+입력창 혹은 정보를 출력하는 형태로 구성되어 있다.
+```
 
 ### popupComponent > BtExeInfoPopup
-설명
+- 배치 실행 내역을 보여주기 위한 팝업창
+- 클릭시 팝업이 나오고 DB와 통신후 배치실행에 대한 스탭과 파라미터 출력
 
 ### popupComponent > CdGpLstPopup
-설명
+- 코드그룹 리스트 등록 변경을 위한 팝업창
+- Type값 1/2에 따라 등록 변경으로 전환
+- 변경이 될 경우 input 태그 중 disabled 처리된 부분 생성
 
 ### popupComponent > CdLstPopup
-설명
+- 코드 리스트 등록 변경을 위한 팝업창
+- 코드그룹 리스트 팝업과 방식은 동일
 
+##
 ### etc
-설명
+```
+공통 기능으로 만들어놨지만 
+현재 페이지 시안을 만들면서 아직 사용하지 
+않은 컴포넌트
+```
 
 ### etc > AtcLstComponent
 설명
