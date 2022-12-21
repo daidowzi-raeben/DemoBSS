@@ -217,7 +217,7 @@ import AgGridComponent from "@/components/common/AgGridComponent";
 import InputComponent from "@/components/common/InputComponent";
 import SubInfoTitle from "@/components/common/SubInfoTitle";
 import ApiMixin from "@/service/common";
-import CodeGroupPopup from "@/components/common/PopupComponent/CdGroupLstPopup";
+import CodeGroupPopup from "@/components/common/PopupComponent/CdGpLstPopup";
 import CdLstPopup from "@/components/common/PopupComponent/CdLstPopup";
 export default {
   mixins:[ApiMixin],
