@@ -1,5 +1,5 @@
 <template>
-  <div id="paging_area">
+  <div id="paging-component">
     <div class="page_navi">
       <a class="arrow last" @click="moveToFirstPage"
         ><span class="txt-hidden">첫페이지</span></a
@@ -34,7 +34,7 @@
 
 <script>
 export default {
-  name: "PagingArea",
+  name: "PagingComponent",
   data() {
     return {
       pageNumber: 1, // 현재 페이지
@@ -137,20 +137,20 @@ export default {
 };
 </script>
 <style>
-#paging_area {
+#paging-component {
   position: relative;
   padding: 20px 0px 25px 0px;
 }
-#paging_area > .page_navi {
+#paging-component > .page_navi {
   position: relative;
   text-align: center;
 }
 
-#paging_area > .page_navi > a {
+#paging-component > .page_navi > a {
   margin: 0 2px;
 }
 
-#paging_area > .page_navi > a,
+#paging-component > .page_navi > a,
 .page_navi > strong {
   display: inline-block;
   width: 22px;
@@ -162,23 +162,23 @@ export default {
   vertical-align: middle;
   cursor: pointer;
 }
-#paging_area > .page_navi .first {
+#paging-component > .page_navi .first {
   background: url(../../assets/img/icon_board_firstPage.png) no-repeat 50%;
 }
-#paging_area > .page_navi .next_link {
+#paging-component > .page_navi .next_link {
   background: url(../../assets/img/icon_board_nextPage.png) no-repeat 50%;
 }
-#paging_area > .page_navi .prev_link {
+#paging-component > .page_navi .prev_link {
   background: url(../../assets/img/icon_board_prevPage.png) no-repeat 50%;
 }
-#paging_area > .page_navi .last {
+#paging-component > .page_navi .last {
   background: url(../../assets/img/icon_board_lastPage.png) no-repeat 50%;
 }
-#paging_area > .page_navi .current {
+#paging-component > .page_navi .current {
   background: #5e5e5e;
   color: #fff;
 }
-#paging_area .txt-hidden {
+#paging-component .txt-hidden {
   font-size: 0;
   text-indent: -1000em;
 }

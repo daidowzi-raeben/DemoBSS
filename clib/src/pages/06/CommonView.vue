@@ -223,12 +223,12 @@
     <h1 style="font-size: 30px">paging</h1>
     <div class="commondiv0">
       page size 10 페이징 데이터 {{ pageableData1 }} 현재페이지 : {{ page1 }}
-      <paging-area
+      <paging-component
         :pageableData="pageableData1"
         @currentPage="(value) => {page1 = value;}"
       />
       page size 5 페이징 데이터 {{ pageableData2 }} 현재페이지 : {{ page2 }}
-      <paging-area
+      <paging-component
         :pageableData="pageableData2"
         :pageSize="2"
         @currentPage="(value) => {page2 = value;}"
@@ -643,7 +643,7 @@
 </template>
 
 <script>
-import PagingArea from "../../components/common/PagingArea.vue";
+import PagingComponent from "@/components/common/PagingComponent.vue";
 import FileInputComponent from "../../components/common/FileInputComponent.vue";
 import DatePickerComponent from "../../components/common/DatePickerComponent.vue";
 import AgGridComponent from "../../components/common/AgGridComponent.vue";
@@ -694,7 +694,7 @@ export default {
     FloatingLabelsComponent_2,
     FloatingLabelsComponent,
     ValdtnComponent,
-    PagingArea,
+    PagingComponent,
     FileInputComponent,
     DatePickerComponent,
     AgGridComponent,

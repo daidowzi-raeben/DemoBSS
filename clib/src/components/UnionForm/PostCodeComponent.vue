@@ -1,174 +1,175 @@
 <template>
   <div>
-  <transition appear> <div class="cm_popup_overlay"></div> </transition>
-  <!-- 오버레이 -->
+    <transition appear> <div class="cm_popup_overlay"></div> </transition>
+    <!-- 오버레이 -->
 
-  <div class="searchPostCode">
-    <transition appear>
-      <div class="formDataPopupFrame">
-        <h1>{{ PopupTitleMsg }}</h1>
-        <article>
-          <!-- 팝업 메세지 내용 -->
-          <div class="formDataBind">
-            <label-component :labelNm="'주소 검색 : '" />
-            <input-component
-              :inputClass="'class4'"
-              :type="'search'"
-              :height="'30px'"
-              :placeholder="'주소를 입력해 주세요.'"
-              style="width: 200px; margin: 0 3px"
-              @keypress.enter="getPostData()"
-            />
-            <button-component
-              :btnClass="'btnClass3'"
-              :btnName="'주소 검색'"
-              :btnHeight="'30px'"
-              @click="getPostData()"
-            />
-            <form v-if="postCodeNums > 0">
-              <table>
-                <tr>
-                  <th style="width: 5%">
-                    <label-component
-                      :labelNm="'우편번호'"
-                      :labelClass="'label-type'"
-                    />
-                  </th>
-                  <th style="width: 35%">
-                    <label-component
-                      :labelNm="'도로명주소  '"
-                      :labelClass="'label-type'"
-                    />
-                  </th>
-                  <th style="width: 40%">
-                    <label-component
-                      :labelNm="'지번주소'"
-                      :labelClass="'label-type'"
-                    />
-                  </th>
-                  <th style="width: 10%">
-                    <label-component
-                      :labelNm="'상세주소'"
-                      :labelClass="'label-type'"
-                    />
-                  </th>
-                  <th style="width: 5%">선택</th>
-                </tr>
-                <tr v-for="item in currentPostCodeData" :key="item">
-                  <td>
-                    <input-component
-                      style="width: 90%; text-align: center"
-                      :input-class="'class5 class5_short2'"
-                      :disabled="true"
-                      :value="item.zipNo"
-                    />
-                  </td>
-                  <td>
-                    <input-component
-                      style="width: 98%"
-                      :input-class="'class5 class5_long1'"
-                      :disabled="true"
-                      :value="item.roadAddr"
-                    />
-                  </td>
-                  <td>
-                    <input-component
-                      style="width: 98%"
-                      :input-class="'class5 class5_long1'"
-                      :disabled="true"
-                      :value="item.jibunAddr"
-                    />
-                  </td>
-                  <td>
-                    <input-component
-                      style="width: 90%"
-                      :input-class="'class5'"
-                      v-model="detailPostAddress"
-                    />
-                  </td>
-                  <td>
-                    <button-component
-                      :btnClass="'btnclass3'"
-                      :btnName="'선택'"
-                      style="width: 100%; height: 100%"
-                      @click="selectPostCode(item, detailPostAddress)"
-                    />
-                  </td>
-                </tr>
-              </table>
+    <div class="searchPostCode">
+      <transition appear>
+        <div class="formDataPopupFrame">
+          <h1>{{ PopupTitleMsg }}</h1>
+          <article>
+            <!-- 팝업 메세지 내용 -->
+            <div class="formDataBind">
+              <label-component :labelNm="'주소 검색 : '" />
+              <input-component
+                :inputClass="'class4'"
+                :type="'search'"
+                :height="'30px'"
+                :placeholder="'주소를 입력해 주세요.'"
+                :value="searchWordOfPostCode"
+                v-model="searchWordOfPostCode"
+                style="width: 200px; margin: 0 3px"
+                @keypress.enter="getPostData()"
+              />
+              <button-component
+                :btnClass="'btnClass3'"
+                :btnName="'주소 검색'"
+                :btnHeight="'30px'"
+                @click="getPostData()"
+              />
+              <form v-if="postCodeNums > 0">
+                <table>
+                  <tr>
+                    <th style="width: 5%">
+                      <label-component
+                        :labelNm="'우편번호'"
+                        :labelClass="'label-type'"
+                      />
+                    </th>
+                    <th style="width: 35%">
+                      <label-component
+                        :labelNm="'도로명주소  '"
+                        :labelClass="'label-type'"
+                      />
+                    </th>
+                    <th style="width: 40%">
+                      <label-component
+                        :labelNm="'지번주소'"
+                        :labelClass="'label-type'"
+                      />
+                    </th>
+                    <th style="width: 10%">
+                      <label-component
+                        :labelNm="'상세주소'"
+                        :labelClass="'label-type'"
+                      />
+                    </th>
+                    <th style="width: 5%">선택</th>
+                  </tr>
+                  <tr v-for="item in currentPostCodeData" :key="item">
+                    <td>
+                      <input-component
+                        style="width: 90%; text-align: center"
+                        :input-class="'class5 class5_short2'"
+                        :disabled="true"
+                        :value="item.zipNo"
+                      />
+                    </td>
+                    <td>
+                      <input-component
+                        style="width: 98%"
+                        :input-class="'class5 class5_long1'"
+                        :disabled="true"
+                        :value="item.roadAddr"
+                      />
+                    </td>
+                    <td>
+                      <input-component
+                        style="width: 98%"
+                        :input-class="'class5 class5_long1'"
+                        :disabled="true"
+                        :value="item.jibunAddr"
+                      />
+                    </td>
+                    <td>
+                      <input-component
+                        style="width: 90%"
+                        :input-class="'class5'"
+                        v-model="detailPostAddress"
+                      />
+                    </td>
+                    <td>
+                      <button-component
+                        :btnClass="'btnclass3'"
+                        :btnName="'선택'"
+                        style="width: 100%; height: 100%"
+                        @click="selectPostCode(item, detailPostAddress)"
+                      />
+                    </td>
+                  </tr>
+                </table>
 
-              <div class="pcSelectAndPagingFlex">
-                <div>
-                  <paging-area
-                    class="pcPagingArea"
-                    ref="PagingArea"
-                    :pageableData="pageableData"
-                    :pageSize="5"
-                    style="padding: 0"
-                    @currentPage="
-                      (value) => {
-                        currentPage = value;
-                      }
-                    "
-                  />
+                <div class="pcSelectAndPagingFlex">
+                  <div>
+                    <paging-component
+                      ref="PagingComponent"
+                      :pageableData="pageableData"
+                      :pageSize="5"
+                      style="padding: 0"
+                      @currentPage="
+                        (value) => {
+                          currentPage = value;
+                        }
+                      "
+                    />
+                  </div>
+                  <div>
+                    <select-box-component
+                      :selectClass="'select-type1'"
+                      :cdGroup="'optionSearchNum'"
+                      :defaultValue="'선택'"
+                      :defaultcdId="showTheNum"
+                      :isDisabled="true"
+                      v-model="showTheNum"
+                      @emitValue="
+                        (value) => {
+                          showTheNum = value;
+                        }
+                      "
+                      style="width: 100px; height: 22px"
+                    />
+                  </div>
                 </div>
-                <div>
-                  <select-box-component
-                    class="pcSelectBox"
-                    :selectClass="'select-type1'"
-                    :cdGroup="'optionSearchNum'"
-                    :defaultValue="'선택'"
-                    :defaultcdId="showTheNum"
-                    :isDisabled="true"
-                    v-model="showTheNum"
-                    @input="
-                      (value) => {
-                        showTheNum = value;
-                      }
-                    "
-                    style="width: 100px; height: 22px"
-                  />
-                </div>
-              </div>
-            </form>
-
-            <form v-else-if="searchBtnClicked > 0">
-              <table>
-                <tr>
-                  <th><p>검색 결과가 없습니다.</p></th>
-                </tr>
-              </table>
-            </form>
-          </div>
-          <div class="btn_area">
-            <!-- 확인/취소 영역 -->
-            <div>{{ popupmsg }}</div>
-            <!-- 팝업 메세지 -->
-            <button
-              type="button"
-              class="button_05"
-              @click="[$emit('FormPopup', true), $emit('AGREE')]"
-            >
-              확인
-            </button>
-            <!-- 확인을 누르면, emit으로 formpopup이라는 변수에다가 true라는 값을 전달하며, agree라는 함수도 호출 -->
-            &nbsp;&nbsp;
-            <button type="button" class="button_04" @click="$emit('FormPopup')">
-              취소
-            </button>
-          </div>
-        </article>
-      </div>
-    </transition>
+              </form>
+              <form v-else-if="searchBtnClicked > 0">
+                <table>
+                  <tr>
+                    <th><p>검색 결과가 없습니다.</p></th>
+                  </tr>
+                </table>
+              </form>
+            </div>
+            <div class="btn_area">
+              <div>{{ popupmsg }}</div>
+              <button
+                type="button"
+                class="button_05"
+                @click="[$emit('FormPopup', true), $emit('AGREE')]"
+              >
+                확인
+              </button>
+              <!-- 확인을 누르면, emit으로 formpopup이라는 변수에다가 true라는 값을 전달하며, agree라는 함수도 호출 -->
+              &nbsp;&nbsp;
+              <button
+                type="button"
+                class="button_04"
+                @click="$emit('FormPopup')"
+              >
+                취소
+              </button>
+            </div>
+          </article>
+        </div>
+      </transition>
+    </div>
   </div>
-</div>
 </template>
 
 <script>
 import ButtonComponent from "../common/ButtonComponent.vue";
 import InputComponent from "../common/InputComponent.vue";
 import LabelComponent from "../common/LabelComponent.vue";
-import PagingArea from "../common/PagingArea.vue";
+import PagingComponent from "../common/PagingComponent.vue";
 import RadioComponent from "../common/RadioComponent.vue";
 import SelectBoxComponent from "../common/SelectBoxComponent.vue";
 
@@ -177,13 +178,14 @@ export default {
     ButtonComponent,
     InputComponent,
     RadioComponent,
-    PagingArea,
+    PagingComponent,
     LabelComponent,
     SelectBoxComponent,
   },
   name: "CommonPopup",
   data() {
     return {
+      searchWordOfPostCode: "",
       col_1: "8.33%",
       col_2: "16.66%",
       detailPostAddress: "",
@@ -230,7 +232,7 @@ export default {
     showTheNum(newOne, oldOne) {
       if (newOne != oldOne) {
         this.showTheNum = newOne;
-        this.$refs.PagingArea.resetPageableData();
+        this.$refs.PagingComponent.resetPageableData();
         this.CalcPostCodeData();
       }
     },

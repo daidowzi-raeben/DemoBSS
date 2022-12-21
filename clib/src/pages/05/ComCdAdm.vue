@@ -133,7 +133,7 @@
     />
       </span>
         <span style="display: flex; justify-content: center">
-          <paging-area
+          <paging-component
               :pageableData="pageableData1"
               />
         </span>
@@ -209,7 +209,7 @@
 </template>
 
 <script>
-import pagingArea from "@/components/common/PagingArea";
+import pagingComponent from "@/components/common/PagingComponent";
 import popupComponent from "@/components/common/PopupComponent";
 import selectBoxComponent from "@/components/common/SelectBoxComponent";
 import ButtonComponent from "@/components/common/ButtonComponent";
@@ -226,7 +226,7 @@ export default {
     CdLstPopup,
     popupComponent,
     CodeGroupPopup,
-    pagingArea,
+    pagingComponent,
     selectBoxComponent,
     ButtonComponent,
     AgGridComponent,

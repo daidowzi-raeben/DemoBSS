@@ -161,9 +161,9 @@
               />
             </div>
             <div>
-              <paging-area
-                class="pgPagingArea"
-                ref="PagingArea"
+              <paging-component
+                class="pgPagingComponent"
+                ref="PagingComponent"
                 :pageableData="pageableData"
                 style="padding: 0"
                 @currentPage=" (value) => {currentPage = value;}"
@@ -405,14 +405,14 @@ import ButtonComponent from '../../components/common/ButtonComponent.vue'
 import DatePickerComponent from '../../components/common/DatePickerComponent.vue'
 import InputComponent from '../../components/common/InputComponent.vue'
 import LabelComponent from '../../components/common/LabelComponent.vue'
-import PagingArea from '../../components/common/PagingArea.vue'
+import PagingComponent from '../../components/common/PagingComponent.vue'
 import RadioComponent from '../../components/common/RadioComponent.vue'
 import SelectBoxComponent from '../../components/common/SelectBoxComponent.vue'
 import SubInfoTitle from '../../components/common/SubInfoTitle.vue'
 import ApiMixin from "../../service/common.js"
   export default {
   mixins:[ApiMixin],
-  components: { SelectBoxComponent, LabelComponent, ButtonComponent, DatePickerComponent, InputComponent, SubInfoTitle, AgGridComponent, PagingArea, RadioComponent, TextAreaComponent },
+  components: { SelectBoxComponent, LabelComponent, ButtonComponent, DatePickerComponent, InputComponent, SubInfoTitle, AgGridComponent, PagingComponent, RadioComponent, TextAreaComponent },
   data(){
     return{
       selectValues:{

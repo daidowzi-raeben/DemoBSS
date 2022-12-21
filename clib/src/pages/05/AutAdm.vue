@@ -123,7 +123,7 @@
     />
       </span>
         <span style="display: flex; justify-content: center">
-          <paging-area
+          <paging-component
               :pageableData="pageableData1"
           />
         </span>
@@ -226,7 +226,7 @@
 </template>
 
 <script>
-import pagingArea from "@/components/common/PagingArea";
+import pagingComponent from "@/components/common/PagingComponent";
 import selectBoxComponent from "@/components/common/SelectBoxComponent";
 import ButtonComponent from "@/components/common/ButtonComponent";
 import AgGridComponent from "@/components/common/AgGridComponent";
@@ -239,7 +239,7 @@ export default {
   name: "AutAdm",
   components: {
     PopupComponent,
-    pagingArea,
+    pagingComponent,
     selectBoxComponent,
     ButtonComponent,
     AgGridComponent,

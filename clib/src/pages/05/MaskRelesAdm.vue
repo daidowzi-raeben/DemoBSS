@@ -191,7 +191,7 @@
     />
       </span>
         <span style="display: flex; justify-content: center">
-          <paging-area
+          <paging-component
               :pageableData="pageableData1"
           />
         </span>
@@ -213,7 +213,7 @@ import inputComponent from "@/components/common/InputComponent";
 import datePickerComponent from "@/components/common/DatePickerComponent";
 import agGridComponent from "@/components/common/AgGridComponent";
 import subInfoTitle from "@/components/common/SubInfoTitle";
-import pagingArea from "@/components/common/PagingArea";
+import pagingComponent from "@/components/common/PagingComponent";
 import labelComponent from "@/components/common/LabelComponent";
 import popupComponent from "@/components/common/PopupComponent";
 import ApiMixin from "@/service/common";
@@ -226,7 +226,7 @@ export default {
     popupComponent,
     selectBoxComponent,
     inputComponent,
-    pagingArea,
+    pagingComponent,
     datePickerComponent,
     agGridComponent,
     subInfoTitle

@@ -23,13 +23,13 @@
 <script>
 import ApiMixin from "@/service/common.js";
 import SubsRetvComponent from "@/components/UnionForm/SubsRetvComponent.vue";
-import PagingArea from "@/components/common/PagingArea.vue";
+import PagingComponent from "@/components/common/PagingComponent.vue";
 import Blc2Component from '@/components/UnionForm/Blc2Component.vue';
 
 export default {
   mixins: [ApiMixin],
   name: "SubsLst",
-  components: { Blc2Component, SubsRetvComponent, PagingArea },
+  components: { Blc2Component, SubsRetvComponent, PagingComponent },
   data() {
     return {
       custInfo: [],

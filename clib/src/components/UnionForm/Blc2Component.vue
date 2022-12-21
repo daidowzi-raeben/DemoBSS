@@ -27,7 +27,7 @@
     :rowData="rowData" 
     :columnDefs="columnDefs" />
     <div>
-      <paging-area
+      <paging-component
         :pageableData="pageableData"
         @currentPage=" (value) => { page = value;}"
       />
@@ -40,7 +40,7 @@ import SelectBoxComponent from "@/components/common/SelectBoxComponent";
 import ButtonComponent from "@/components/common/ButtonComponent.vue";
 import SubInfoTitle from "@/components/common/SubInfoTitle";
 import ApiMixin from "@/service/common";
-import PagingArea from "@/components/common/PagingArea.vue";
+import PagingComponent from "@/components/common/PagingComponent.vue";
 import AgGridComponent from "@/components/common/AgGridComponent.vue";
 
 export default {
@@ -50,7 +50,7 @@ export default {
     SelectBoxComponent,
     ButtonComponent,
     SubInfoTitle,
-    PagingArea,
+    PagingComponent,
     AgGridComponent,
   },
   data() {

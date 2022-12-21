@@ -2,9 +2,9 @@
   <input
     :type="type"
     :class="inputClass"
-    v-model="inputValue"
     :placeholder="placeholder"
     :disabled="disabled"
+    v-model="inputValue"
   />
 </template>
 

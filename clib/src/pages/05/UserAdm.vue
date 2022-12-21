@@ -54,9 +54,9 @@
           </div>
           <div>
             {{ userAdmObject }}
-            <paging-area
-              class="pgPagingArea"
-              ref="PagingArea"
+            <paging-component
+              class="pgPagingComponent"
+              ref="PagingComponent"
               :pageableData="pageableData"
               style="padding: 0"
               @currentPage="
@@ -484,7 +484,7 @@ import ApiMixin from "@/service/common.js";
 import SubInfoTitle from "@/components/common/SubInfoTitle.vue";
 import ButtonComponent from "@/components/common/ButtonComponent.vue";
 import SelectBoxComponent from "@/components/common/SelectBoxComponent.vue";
-import PagingArea from "@/components/common/PagingArea.vue";
+import PagingComponent from "@/components/common/PagingComponent.vue";
 import LabelComponent from "@/components/common/LabelComponent.vue";
 import InputComponent from "@/components/common/InputComponent.vue";
 import RadioComponent from "@/components/common/RadioComponent.vue";
@@ -499,7 +499,7 @@ export default {
     SubInfoTitle,
     ButtonComponent,
     SelectBoxComponent,
-    PagingArea,
+    PagingComponent,
     LabelComponent,
     InputComponent,
     RadioComponent,

@@ -32,7 +32,7 @@
     - [linkComponent](#linkcomponent)
     - [LoadingSpinnerComponent](#loadingspinnercomponent)
     - [PageTitle](#pagetitle)
-    - [PagingArea](#pagingarea)
+    - [PagingComponent](#pagingarea)
     - [PopupComponent](#popupcomponent)
     - [RadioComponent](#radiocomponent)
     - [TabComponent](#tabcomponent)
@@ -171,7 +171,7 @@ clib
     - [linkComponent](#linkcomponent)
     - [LoadingSpinnerComponent](#loadingspinnercomponent)
     - [PageTitle](#pagetitle)
-    - [PagingArea](#pagingarea)
+    - [PagingComponent](#pagingarea)
     - [PopupComponent](#popupcomponent)
     - [RadioComponent](#radiocomponent)
     - [TabComponent](#tabcomponent)
@@ -394,7 +394,7 @@ clib
 - 각 페이지마다 보여지는 페이지 제목
 - 아이콘을 통해 즐겨찾기 추가 가능, 추가시 아이콘 색상 변경
 
-### PagingArea
+### PagingComponent
 **props:**
 - 예시
 
