@@ -1,63 +1,9 @@
 <template>
   <div class="container">
-    <h1 style="font-size: 30px">select box</h1>
-    <div class="commondiv1">
-      <div>
-        select Box componenet 
-        <p>  </p>
-      </div>
-
-      <div> 
-        <select-box-component
-        :selectClass="'select-type1'"
-        :cdGroup="'wjtOptions'"
-        :width="'150px'"
-        :height="'25px'"
-        :isDisabled="true"
-        :defaultValue="'업무유형 선택'"
-        :defaultcdId="selectBoxCompData.Option1"
-        :selectedValue="selectBoxCompData.Option1"
-        @emitValue="(value) => {selectBoxCompData.Option1 = value;}"
-        />
-      
-        <select-box-component
-        v-if="selectBoxCompData.Option1==='butt'"
-        :selectClass="'select-type1'"
-        :width="'120px'"
-        :height="'25px'"
-        :cdGroup="'wjtButtOptions'"
-        :isDisabled="true"
-        :defaultValue="'버튼 선택'"
-        :defaultcdId="selectBoxCompData.Option2"
-        :selectedValue="selectBoxCompData.Option2"
-        @emitValue="(value) => {selectBoxCompData.Option2 = value;}"
-        /> <br /><br />
-        <p v-if="selectBoxCompData.Option1"> [Option1 값 : {{ selectBoxCompData.Option1 }}]  &nbsp; <span v-if="selectBoxCompData.Option2"> [Option2 값 :  {{ selectBoxCompData.Option2 }}] </span></p>
-        <p> * optional 셀렉트 박스 ( 버튼 선택 시, 두번째 박스 활성화 )</p>
-        <p> * disabled : true --> 특정 값 선택 시, 기본 값(버튼 선택) hidden 처리 및 선택 불가</p>
-        
-      </div>
-      <div>
-        <select-box-component
-        :cdGroup="'emailDomain'"
-        :width="'170px'"
-        :height="'30px'"
-        :defaultValue="'기본 선택'"
-        :defaultcdId="selectBoxCompData.Option3"
-        :selectedValue="selectBoxCompData.Option3"
-        @emitValue="(value) => {selectBoxCompData.Option3 = value;}"
-        />
-        <p v-if="selectBoxCompData.Option3"> [Option3 값 : {{ selectBoxCompData.Option3 }}]  </p>
-      </div>
-    </div>
 
     <div class="commondiv0">
-      <div>
-        select Box componenet 
-        <p>  </p>
-      </div>
-
-      <div> 
+      <h1 style="font-size: 30px">select box</h1>
+      <label-component label-nm="'select'" />&nbsp;&nbsp;
         <select-box-component
         :selectClass="'select-type1'"
         :cdGroup="'wjtOptions'"
@@ -81,13 +27,13 @@
         :defaultcdId="selectBoxCompData.Option2"
         :selectedValue="selectBoxCompData.Option2"
         @emitValue="(value) => {selectBoxCompData.Option2 = value;}"
-        /> <br /><br />
+        /> <br />
         <p v-if="selectBoxCompData.Option1"> [Option1 값 : {{ selectBoxCompData.Option1 }}]  &nbsp; <span v-if="selectBoxCompData.Option2"> [Option2 값 :  {{ selectBoxCompData.Option2 }}] </span></p>
-        <p> * optional 셀렉트 박스 ( 버튼 선택 시, 두번째 박스 활성화 )</p>
+        <p> * optional 셀렉트 박스 ( 버튼 선택 시, 두번째 박스 활성화 ) -->  두번재 select box에서 첫번째 셀렉트박스의 emitValue에서 받는 변수 조건문에따라 출력 </p>
         <p> * disabled : true --> 특정 값 선택 시, 기본 값(버튼 선택) hidden 처리 및 선택 불가</p>
-        
-      </div>
-      <div>
+        <p> width, height 기본 값으로 부모 tag의 100%로 지정되어 있기때문에 별도의 :width, :height로 사이즈 지정 필요.</p>
+        <br/><br/>
+        <label-component label-nm="'select-type1'" />&nbsp;&nbsp;
         <select-box-component
         :cdGroup="'emailDomain'"
         :width="'170px'"
@@ -96,14 +42,29 @@
         :defaultcdId="selectBoxCompData.Option3"
         :selectedValue="selectBoxCompData.Option3"
         @emitValue="(value) => {selectBoxCompData.Option3 = value;}"
-        />
+        /> <br/>
         <p v-if="selectBoxCompData.Option3"> [Option3 값 : {{ selectBoxCompData.Option3 }}]  </p>
-      </div>
+        <p> * disabled : false --> 특정 값 선택에도 기본 값(기본 선택) 선택 가능 </p>
+        <br/><br/>
+
+        
+        <label-component label-nm="'select-type1'" />&nbsp;&nbsp;
+        <select-box-component
+        :cdGroup="'dutySelect'"
+        :width="'170px'"
+        :height="'30px'"
+        :defaultValue="'기본 선택'"
+        :defaultcdId="'role2'"
+        :selectedValue="selectBoxCompData.Option4"
+        @emitValue="(value) => {selectBoxCompData.Option4 = value;}"
+        /><br/>
+        <p v-if="selectBoxCompData.Option4"> [Option4 값 : {{ selectBoxCompData.Option4 }}]  </p>
+        <p> *defaultcdId 지정 시, 처음 기본 값을 해당 코드를 가진 값 출력 </p>
+        <p> 사용자관리(UserAdm.vue) 데이터 클릭부터 출력까지의 로직 참고</p>
     </div>
 
-
-    <h1 style="font-size: 30px">ag grid</h1>
     <div class="commondiv1">
+      <h1 style="font-size: 30px">ag grid</h1>
       <div style="width: 60%; height: 360px; margin: 10px">
         <ag-grid-component
           :rowData="rowData1"
@@ -117,34 +78,27 @@
       </div>
     </div>
 
+    <div class="commondiv0" >
+      <h1 style="font-size: 30px">TextAreaComponent</h1>
+      <TextAreaComponent
+      :textAreaHeight="'100px'"
+      :textAreaWidth="'600px'"
+      :maxlength="70"
+      :placeholder="'내용 입력'"
+      :contents="textAreaData"
+      v-model="textAreaData"
+      />
+      <p> textAreaData : {{ textAreaData }} </p>
+      <p> textAreaData 변수에 값이 없을 경우 placeholder props 값 출력 </p>
+      <p> textAreaData 변수에 기본 값 or 변경 있을 경우 해당 값 출력 </p>
+      <p> v-model : 해당 변수(textAreaData)에 연결하여 입력 값에 따라 동기화 </p>
+      <p> contents : 해당 변수 값을 textArea컴포넌트로 전송하여 출력. </p>
+      <br /><br /><br />
+    </div>
     
-    <h1 style="font-size: 30px">TextAreaComponent</h1>
-    <div
-      class="commondiv2"
-      style="height: 100px;  "
-      >
-        <TextAreaComponent
-            :rows="10"
-            :placeholder="'내용을 입력'"
-            :maxlength="10"
-        />
-        <br /><br /><br />
-      </div>
     
-    
-    <h1 style="font-size: 30px">Date Picker</h1>
-    <div class="commondiv0">
-      <a
-        href="https://icehaunter.github.io/vue3-datepicker/examples.html"
-        style="width: 100%"
-        target="_blank"
-        > <p> https://icehaunter.github.io/vue3-datepicker/examples.html </p>
-      </a>
-      <br />
-      css : classWrapper *수정*
-      <br />
-      <br />
-      <br />
+    <div class="commondiv0"> 
+      <h1 style="font-size: 30px">Date Picker</h1>
       <div style="display: flex">
         <div style="display: flex">
           <span style="padding: 5px 10px">일력</span>
@@ -222,13 +176,14 @@
       </div>
     </div>
 
-
-    <h1 style="font-size: 30px">DepthTitleComponent</h1>
-    <span></span>
-    <div class="commondiv1" style="width:1960px;" >
+    <div class="commondiv0" >
+      <h1 style="font-size: 30px">DepthTitleComponent</h1>
+      <label-component label-nm="DepthTitleComponent" />&nbsp;&nbsp;
       <DepthTitle :currentMenu="currentMenu" />
+      <p> * DepthTitle의 경우 currentMenu를 통해 메뉴의 최상단 Depth부터 현재 보여줄 타이틀 제목까지 3Depth를 출력</p>
+      <p> * 현재는 PageTitle 사용.</p>
+      <br/><br/>
     </div>
-    <br /><br /><br />
     
 
     <h1 style="font-size: 30px">FileInputComponent</h1>
@@ -411,9 +366,10 @@ export default {
       selectBoxCompData:{
         Option1:"",
         Option2:"",
-        Option3:""
+        Option3:"",
+        Option4:""
       },
-      chk:false,
+      textAreaData:"기본 글 입니다.",
       date1: new Date(2021, 9, 5),
       date2: new Date(),
       date3: new Date(),
@@ -549,14 +505,14 @@ export default {
 
 .commondiv0{
   display: inline-block;
-  border-top: solid black 1px;
+  border-bottom: solid black 1px;
   margin: 10px;
   padding: 10px
 }
 
 .commondiv1{
   display: flex;
-  border-top: solid black 1px;
+  border-bottom: solid black 1px;
   margin: 10px;
   padding: 10px;
 }
@@ -566,11 +522,9 @@ export default {
 }
 
 .commondiv2{
-  width: 80%;
   margin: 10px;
   padding: 10px;
-  height: 300px;
   display: inline-block;
-  border-top: solid black 1px;
+  border-bottom: solid black 1px;
 }
 </style>

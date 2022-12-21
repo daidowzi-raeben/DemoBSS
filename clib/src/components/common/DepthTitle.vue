@@ -5,7 +5,7 @@
       {{ menuDepth1.menuNm }} > {{ menuDepth2.menuNm }} >
       <span> {{ currentMenu.menuNm }} [{{ currentMenu.menuId }}]</span>
     </h1>
-    <div class="right">
+    <!-- <div class="right">
       <button-component
         :btnClass="'btnClass1'"
         :btnName="'홈화면설정'"
@@ -14,7 +14,7 @@
         :btnClass="'btnClass1'"
         :btnName="'화면초기화'"
       ></button-component>
-    </div>
+    </div> -->
   </div>
 </template>
 

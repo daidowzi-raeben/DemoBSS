@@ -5,19 +5,28 @@
   - [목차](#목차)
   - [프로젝트 설치 및 실행](#프로젝트-설치-및-실행)
   - [폴더 구조](#폴더-구조)
+  - [](#)
   - [컴포넌트](#컴포넌트)
   - [common](#common)
     - [InputComponent](#inputcomponent)
+  - [](#-1)
     - [SelectBoxComponent](#selectboxcomponent)
     - [ButtonComponent](#buttoncomponent)
     - [AgGridComponent](#aggridcomponent)
-  - [](#)
+  - [](#-2)
     - [ChkBoxComponent](#chkboxcomponent)
+  - [](#-3)
     - [TextAreaComponent](#textareacomponent)
+  - [**주요특징:**](#주요특징)
+  - [](#-4)
     - [LabelComponent](#labelcomponent)
+  - [](#-5)
     - [DatePickerComponent](#datepickercomponent)
+  - [](#-6)
     - [SubInfoTitle](#subinfotitle)
+  - [](#-7)
     - [DepthTitle](#depthtitle)
+  - [](#-8)
     - [DragGrid](#draggrid)
     - [FileInputComponent](#fileinputcomponent)
     - [linkComponent](#linkcomponent)
@@ -127,7 +136,7 @@ clib
 ├── babel.config.js
 └── README.md
 ```
-***
+## 
 
 ## 컴포넌트
 
@@ -135,19 +144,28 @@ clib
   - [목차](#목차)
   - [프로젝트 설치 및 실행](#프로젝트-설치-및-실행)
   - [폴더 구조](#폴더-구조)
+  - [](#)
   - [컴포넌트](#컴포넌트)
   - [common](#common)
     - [InputComponent](#inputcomponent)
+  - [](#-1)
     - [SelectBoxComponent](#selectboxcomponent)
     - [ButtonComponent](#buttoncomponent)
     - [AgGridComponent](#aggridcomponent)
-  - [](#)
+  - [](#-2)
     - [ChkBoxComponent](#chkboxcomponent)
+  - [](#-3)
     - [TextAreaComponent](#textareacomponent)
+  - [**주요특징:**](#주요특징)
+  - [](#-4)
     - [LabelComponent](#labelcomponent)
+  - [](#-5)
     - [DatePickerComponent](#datepickercomponent)
+  - [](#-6)
     - [SubInfoTitle](#subinfotitle)
+  - [](#-7)
     - [DepthTitle](#depthtitle)
+  - [](#-8)
     - [DragGrid](#draggrid)
     - [FileInputComponent](#fileinputcomponent)
     - [linkComponent](#linkcomponent)
@@ -231,7 +249,7 @@ clib
 - selectType1MarginLeft : 셀렉트박스 스타일 클래스 select-type1에 margin-left 적용  ( default : 10px)
 
 **emit:**
-- 예시
+- emitValue : 선택 값의 code를 부모 컴포넌트에게 반환.
 
 **주요특징:**
 - 예시
@@ -277,15 +295,16 @@ clib
 ##
 ### TextAreaComponent
 **props:**
-- 예시
-
-**emit:**
-- 예시
+- contents      : 글 작성 내용. 기본 값/변경 있을 경우 해당 props값 출력
+- placeholder   : contents가 비어있을 때, 해당 값 출력
+- maxlength     : 글자 길이 최댓값
+- textAreaHeight: textArea의 높이 지정
+- textAreaWidth : textArea의 너비 지정
 
 **주요특징:**
-- 예시
+- 
 
-##
+## 
 ### LabelComponent
 **props:**
 - labelNm : 라벨 이름
@@ -293,7 +312,7 @@ clib
 
 **주요특징:**
 - 주로 table의 th 부분에서 많이 사용됨.
-
+## 
 ### DatePickerComponent
 **props:**
 - 예시
@@ -303,7 +322,7 @@ clib
 
 **주요특징:**
 - 예시
-
+## 
 ### SubInfoTitle
 **props:**
 - subInfoTitleNm : 제목 명 지정
@@ -312,17 +331,14 @@ clib
 
 **주요특징:**
 - 각 Object마다의 서브 제목으로 사용
-
+## 
 ### DepthTitle
 **props:**
-- 예시
-
-**emit:**
-- 예시
+- currentMenu : 메뉴의 최상단 Depth부터 현재 보여줄 타이틀 제목까지 3Depth 
 
 **주요특징:**
-- 예시
-
+- 현재 PageTitle 사용.
+##  
 ### DragGrid
 **props:**
 - leftRowData : 첫번째 Row데이터 값

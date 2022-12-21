@@ -54,7 +54,7 @@ export default {
   beforeUpdate() {
     this.inputValue = this.value;
   },
-  beforeUpdate() {
+  beforeMount() {
     this.inputValue = this.value;
   }
 };

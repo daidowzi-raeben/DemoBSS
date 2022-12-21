@@ -1,9 +1,5 @@
 <template>
-  <select
-    :class="selectClass"
-    v-model="value"
-    @change="updateValue(value)"
-  >
+  <select :class="selectClass" v-model="value" @change="updateValue(value)">
     <option
       v-if="defaultValue != null"
       :value="''"
@@ -35,13 +31,13 @@ export default {
     defaultcdId: String,
     defaultValue: null,
     selectedValue: String,
-    width: { 
+    width: {
       type: String,
-      default: '100%'
+      default: "100%",
     },
-    height:{ 
+    height: {
       type: String,
-      default: '100%'
+      default: "100%",
     },
     isDisabled: {
       type: Boolean,
@@ -96,10 +92,10 @@ select {
   height: v-bind(height);
   padding: 1px 22px 0 9px;
   width: v-bind(width);
-  -webkit-appearance: none;        
-  -moz-appearance: none;      /* 셀렉트박스 화살표 숨김 */
+  -webkit-appearance: none;
+  -moz-appearance: none; /* 셀렉트박스 화살표 숨김 */
 }
 .select-type1 {
-  margin-left: v-bind(selectType1MarginLeft);
+  margin-left: v-bind("selectType1MarginLeft");
 }
 </style>

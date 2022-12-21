@@ -347,7 +347,6 @@
                 <td colspan="3">
                   <TextAreaComponent
                     :textAreaHeight="'200px'"
-                    :rows="10"
                     :placeholder="'내용 입력'"
                     :maxlength="10"
                     :contents="msgAdmObject.msgContent"
