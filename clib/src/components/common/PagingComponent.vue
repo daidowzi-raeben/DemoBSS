@@ -1,13 +1,13 @@
 <template>
   <div id="paging-component">
     <div class="page_navi">
-      <a class="arrow last" @click="moveToFirstPage"
-        ><span class="txt-hidden">첫페이지</span></a
+      <button type="button" class="arrow last" @click="moveToFirstPage"
+        ><span class="txt-hidden">첫페이지</span></button
       >
-      <a class="arrow next_link" @click="moveToBeforePage"
-        ><span class="txt-hidden">이전 목록</span></a
+      <button type="button" class="arrow next_link" @click="moveToBeforePage"
+        ><span class="txt-hidden">이전 목록</span></button
       >
-      <a
+      <button type="button"
         v-for="page in currentMaxPage"
         :key="page"
         :class="page == pageNumber ? 'current' : 'page'"
@@ -20,14 +20,14 @@
           </span>
         </strong>
         <span v-else>{{ page }}</span>
-      </a>
+      </button>
 
-      <a class="arrow prev_link" @click="moveToNextPage">
+      <button type="button" class="arrow prev_link" @click="moveToNextPage">
         <span class="txt-hidden">다음 목록</span>
-      </a>
-      <a class="arrow first" @click="moveToLastPage">
+      </button>
+      <button type="button" class="arrow first" @click="moveToLastPage">
         <span class="txt-hidden">마지막페이지</span>
-      </a>
+      </button>
     </div>
   </div>
 </template>
@@ -146,20 +146,19 @@ export default {
   text-align: center;
 }
 
-#paging-component > .page_navi > a {
+#paging-component > .page_navi > button {
   margin: 0 2px;
 }
 
-#paging-component > .page_navi > a,
+#paging-component > .page_navi > button,
 .page_navi > strong {
   display: inline-block;
-  width: 22px;
-  height: 22px;
+  width: 25px;
+  height: 25px;
   border: 1px solid #d7d7d7;
   border-radius: 4px;
-  line-height: 22px;
-  font-size: 11px;
-  vertical-align: middle;
+  text-align: center;
+  font-size: 9pt;
   cursor: pointer;
 }
 #paging-component > .page_navi .first {

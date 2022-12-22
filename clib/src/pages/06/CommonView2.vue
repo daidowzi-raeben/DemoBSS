@@ -1,7 +1,8 @@
 <template>
   <div class="container">
+    <div class="commondiv0"></div>
     <div class="commondiv0"> <!--[O] select Box -->
-      <h1 style="font-size: 30px">select box</h1>
+      <h1 class='commondiv-title'>select box</h1>
       <label-component label-nm="'select'" />&nbsp;&nbsp;
       <select-box-component
         :selectClass="'select-type1'"
@@ -100,8 +101,10 @@
       <p>사용자관리(UserAdm.vue) 데이터 클릭부터 출력까지의 로직 참고</p>
     </div>
 
-    <div class="commondiv1"> <!-- ag grid -->
-      <h1 style="font-size: 30px">ag grid</h1>
+    <div class="commondiv0"> <!-- ag grid -->
+      <h1 class='commondiv-title'>ag grid</h1>
+      <br>
+      <div style="display:flex;">
       <div style="width: 60%; height: 360px; margin: 10px">
         <ag-grid-component
           :rowData="rowData1"
@@ -114,9 +117,10 @@
         <ag-grid-component :rowData="rowData2" :columnDefs="columnDefs2" />
       </div>
     </div>
+    </div>
 
     <div class="commondiv0"> <!--[O] textArea -->
-      <h1 style="font-size: 30px">TextAreaComponent</h1>
+      <h1 class='commondiv-title'>TextAreaComponent</h1>
       <TextAreaComponent
         :textAreaHeight="'100px'"
         :textAreaWidth="'600px'"
@@ -134,58 +138,41 @@
     </div>
 
     <div class="commondiv0"> <!-- Date Picker -->
-      <h1 style="font-size: 30px">Date Picker</h1>
+      <h1 class='commondiv-title'>Date Picker</h1>
       <div style="display: flex">
-        <div style="display: flex">
-          <span style="padding: 5px 10px">일력</span>
-          <date-picker-component
-            :classWrapper="'calender_input'"
-            :width="'200px'"
-            :pPlaceholder="'2022.01.01'"
-            :pDate="date1"
-            @emitValue="
-              (value) => {
-                date1 = value;
-              }
-            "
-          />
-        </div>
-        <div style="display: flex">
-          <span style="padding: 5px 10px">월력</span>
-          <date-picker-component
-            :classWrapper="'calender_input'"
+          <span> <label-component label-nm="월력" />&nbsp;&nbsp;</span>
+          <div style="display: inline-block">
+            <date-picker-component
             :width="150"
-            :type="'month'"
             :dateFormat="'yyyy-MM'"
-            :pDate="date2"
-            @emitValue="
-              (value) => {
-                date2 = value;
-              }
-            "
-          />
-        </div>
-        <div style="display: flex">
-          <span style="padding: 5px 10px">일력시분</span>
-          <date-picker-component
-            :classWrapper="'calender_input'"
-            :width="150"
-            :time-show="true"
-            :pDate="date2"
-            @emitValue="
-              (value) => {
-                date2 = value;
-              }
-            "
-          />
-        </div>
+            :type="'month'"
+            :pPlaceholder="'2022-12-23'"
+            :p-date="date1"
+            @emitValue="(value) => {date1 = value;}"
+            /><br/><br/>
+          </div>
+          <span style="margin-left:20px;"> {{ new Date(date1).toLocaleString() }} </span>
       </div>
       <div style="display: flex">
-        <span style="padding: 5px 10px">날짜</span>
-        <date-picker-component
-          :classWrapper="'calender_input'"
-          :width="'200px'"
+        <span> <label-component label-nm="일력" />&nbsp;&nbsp;</span>
+        <div style="display: inline-block">
+          <date-picker-component
           :pPlaceholder="'2022.01.01'"
+          :p-date="date2"
+          :width="'200px'"
+          @emitValue="(value) => {date2 = value;}"
+          />
+          <br/><br/>
+        </div>
+          <span style="margin-left:20px;"> {{ new Date(date2).toLocaleString() }} </span>
+      </div>
+
+      <div style="display: flex">
+        <span> <label-component label-nm="일력 시 분" />&nbsp;&nbsp;</span>
+        <date-picker-component
+          :width="150"
+          :type="'time'"
+          :dateFormat="'yyyy-MM-dd HH:mm'"
           :pDate="date3"
           @emitValue="
             (value) => {
@@ -193,30 +180,54 @@
             }
           "
         />
-        <span style="padding: 5px 10px">~</span>
-        <date-picker-component
-          :classWrapper="'calender_input'"
+          <span style="margin-left:20px;"> {{ new Date(date3).toLocaleString() }} </span>
+        </div><br/><br/>
+      <div>
+        <span> <label-component label-nm="기간" />&nbsp;&nbsp;</span>
+        <div style="display: inline-block">
+          <date-picker-component
+          :p-date="date4"
+          @emitValue="(value) => {date4 = value;}"
+          />
+        </div>
+        <span> ~ </span>
+        <div style="display: inline-block">
+          <date-picker-component
+          :calenderBackgroundColor="'rgb(247, 247, 248)'"
+          :p-date="date5"
+          @emitValue="(value) => {date5 = value;}"
+          />
+        </div>
+        <span> 날짜간의 차이 일수 {{ getDiffDate(date4, date5) }}</span>
+      </div><br/><br/>
+
+      
+      <div style="display: flex">
+        <span> <label-component label-nm="일력( 날짜 제한 )" />&nbsp;&nbsp;</span>
+        <div style="display: inline-block">
+          <date-picker-component
+          :pPlaceholder="'2023.01.01'"
+          :p-date="date6"
+          :isMinDate="new Date('2023.01.03')"
+          :isMaxDate="new Date('2023.01.15')"
           :width="'200px'"
-          :pPlaceholder="'2022.01.01'"
-          :pDate="date4"
-          @emitValue="
-            (value) => {
-              date4 = value;
-            }
-          "
-        />
-        <span
-          >&nbsp;&nbsp;날짜간의 차이 일수 {{ getDiffDate(date3, date4) }}</span
-        >
+          @emitValue="(value) => {date6 = value;}"
+          />
+          <br/><br/>
+        </div>
+          <span style="margin-left:20px;"> {{ new Date(date6).toLocaleString() }} </span>
       </div>
-      <div style="width: 420px; height: 50px">
-        {{ date1 }} <br />{{ date2 }}
-      </div>
+      <p>* date picker는 block형식이므로 두 개의 date picker 사용 시, inline-block 또는 flex 사용 해야합니다. </p>
+      <p>* background color, width, height 설정으로 크기 및 색상 조절  </p>
+      <p> *emitValue로 date-picker에서 변경한 날짜 값을 data 변수에 저장 필요.</p>
+      <p> *x버튼 (clear) 클릭 시, pPlaceholder로 설정한 값을 표시합니다.</p>
+      <p> * type props를 이용해서 월/일/시분 력 선택 가능 </p>
+      <p> * isMinDate / isMaxDate 를 이용해서 특정 날짜 구간 지정 가능 ( 두개의 props 모두 사용해야 가능합니다.)</p>
+
     </div>
 
     <div class="commondiv0"> <!--[O] DepthTitleComponent  -->
-      <h1 style="font-size: 30px">DepthTitleComponent</h1>
-      <label-component label-nm="DepthTitleComponent" />&nbsp;&nbsp;
+      <h1 class='commondiv-title'>DepthTitleComponent</h1>
       <DepthTitle :currentMenu="currentMenu" />
       <p>
         * DepthTitle의 경우 currentMenu를 통해 메뉴의 최상단 Depth부터 현재
@@ -227,7 +238,7 @@
     </div>
 
     <div class="commondiv0"> <!-- FileInputComponent  -->
-    <h1 style="font-size: 30px">FileInputComponent</h1>
+    <h1 class='commondiv-title'>FileInputComponent</h1>
     <div style="width: 70%">
         <input type="file" /> adsfsdf
 
@@ -247,27 +258,41 @@
     </div>
 
     <div class="commondiv0"> <!-- paging  -->
-      <h1 style="font-size: 30px">paging</h1>
-      page size 10 페이징 데이터 {{ pageableData1 }} 현재페이지 : {{ page1 }}
+      <h1 class='commondiv-title'>paging</h1>
+      <p> page size 10</p>
+      <p> 페이징 props 객체 데이터</p>  
+      <p>{{ pageableData1 }} </P> 
+      <P>현재페이지 : {{ page1 }}</p>
+        <div>
+
       <paging-component
-        :pageableData="pageableData1"
-        @currentPage=" (value) => {  page1 = value; } "
+      style="float:left;"
+      :pageableData="pageableData1"
+      @currentPage=" (value) => {  page1 = value; } "
       />
-      page size 5 페이징 데이터 {{ pageableData2 }} 현재페이지 : {{ page2 }}
+    </div>
+      <br/><br/><br/><br/>
+      
+      <p> page size 5</p>
+      <p> 페이징 props 객체 데이터</p>  
+      <p>{{ pageableData2 }} </P> 
+      <P>현재페이지 : {{ page2 }}</p>
       <paging-component
-        :pageableData="pageableData2"
-        :pageSize="2"
+      style="float:left;"
+      :pageableData="pageableData2"
+      :pageSize="5"
         @currentPage="
           (value) => {
             page2 = value;
           }
         "
       />
+      
     </div>
 
     <div class="commondiv0"> <!-- PostCode Component  -->
       <div>
-        <h1 style="font-size: 30px">PostCodeComponent</h1>
+        <h1 class='commondiv-title'>PostCodeComponent</h1>
         <div>
           <table style="border: 1px solid">
             <tr>
@@ -343,7 +368,7 @@
     </div>
 
     <div class="commondiv0"> <!--[O] LodingSpinnerComponent -->
-      <h1 style="font-size: 30px">LodingSpinnerComponent</h1>
+      <h1 class='commondiv-title'>LodingSpinnerComponent</h1>
       <p>* 로딩 화면</p>
       <LoadingSpinnerComponent style="width: 300px; height: 400px" />
 
@@ -438,6 +463,8 @@ export default {
       date2: new Date(),
       date3: new Date(),
       date4: new Date(),
+      date5: new Date(2022,11,31),
+      date6: new Date(2023,0,1),
       pDisable: true,
       comp: "L01M05S01",
 
@@ -458,14 +485,10 @@ export default {
       },
       pageableData1: {
         pageNumber: 1,
-        currentMinPage: 1,
-        currentMaxPage: 10,
         totalPages: 12,
       },
       pageableData2: {
-        pageNumber: 1,
-        currentMinPage: 1,
-        currentMaxPage: 5,
+        pageNumber: 3,
         totalPages: 16,
       },
       page1: 1,
@@ -590,5 +613,11 @@ export default {
   padding: 10px;
   display: inline-block;
   border-bottom: solid black 1px;
+}
+
+.commondiv-title{
+  display: block;
+  font-size: 30px;
+  margin-bottom:15px;
 }
 </style>

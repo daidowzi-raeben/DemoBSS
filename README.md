@@ -5,34 +5,24 @@
   - [목차](#목차)
   - [프로젝트 설치 및 실행](#프로젝트-설치-및-실행)
   - [폴더 구조](#폴더-구조)
-  - [](#)
   - [컴포넌트](#컴포넌트)
   - [common](#common)
     - [InputComponent](#inputcomponent)
-  - [](#-1)
     - [SelectBoxComponent](#selectboxcomponent)
     - [ButtonComponent](#buttoncomponent)
     - [AgGridComponent](#aggridcomponent)
-  - [](#-2)
     - [ChkBoxComponent](#chkboxcomponent)
-  - [](#-3)
-    - [TextAreaComponent](#textareacomponent)
   - [**주요특징:**](#주요특징)
-  - [](#-4)
     - [LabelComponent](#labelcomponent)
-  - [](#-5)
     - [DatePickerComponent](#datepickercomponent)
-  - [](#-6)
     - [SubInfoTitle](#subinfotitle)
-  - [](#-7)
     - [DepthTitle](#depthtitle)
-  - [](#-8)
     - [DragGrid](#draggrid)
     - [FileInputComponent](#fileinputcomponent)
     - [linkComponent](#linkcomponent)
     - [LoadingSpinnerComponent](#loadingspinnercomponent)
     - [PageTitle](#pagetitle)
-    - [PagingComponent](#pagingarea)
+    - [PagingComponent](#pagingcomponent)
     - [PopupComponent](#popupcomponent)
     - [RadioComponent](#radiocomponent)
     - [TabComponent](#tabcomponent)
@@ -136,7 +126,7 @@ clib
 ├── babel.config.js
 └── README.md
 ```
-##
+*** 
 
 ## 컴포넌트
 
@@ -144,34 +134,24 @@ clib
   - [목차](#목차)
   - [프로젝트 설치 및 실행](#프로젝트-설치-및-실행)
   - [폴더 구조](#폴더-구조)
-  - [](#)
   - [컴포넌트](#컴포넌트)
   - [common](#common)
     - [InputComponent](#inputcomponent)
-  - [](#-1)
     - [SelectBoxComponent](#selectboxcomponent)
     - [ButtonComponent](#buttoncomponent)
     - [AgGridComponent](#aggridcomponent)
-  - [](#-2)
     - [ChkBoxComponent](#chkboxcomponent)
-  - [](#-3)
-    - [TextAreaComponent](#textareacomponent)
   - [**주요특징:**](#주요특징)
-  - [](#-4)
     - [LabelComponent](#labelcomponent)
-  - [](#-5)
     - [DatePickerComponent](#datepickercomponent)
-  - [](#-6)
     - [SubInfoTitle](#subinfotitle)
-  - [](#-7)
     - [DepthTitle](#depthtitle)
-  - [](#-8)
     - [DragGrid](#draggrid)
     - [FileInputComponent](#fileinputcomponent)
     - [linkComponent](#linkcomponent)
     - [LoadingSpinnerComponent](#loadingspinnercomponent)
     - [PageTitle](#pagetitle)
-    - [PagingComponent](#pagingarea)
+    - [PagingComponent](#pagingcomponent)
     - [PopupComponent](#popupcomponent)
     - [RadioComponent](#radiocomponent)
     - [TabComponent](#tabcomponent)
@@ -221,7 +201,7 @@ clib
 - 수신 : @emitValue = "(자식변수)=> { 부모변수 = 자식변수}"
 ```
 
-##
+*** 
 ###  InputComponent
 **props:**
 - placeholder : 입력 전 예시 값
@@ -235,7 +215,7 @@ clib
 **주요특징:**
 - emit가 아닌 v-model을 통해 데이터 송수신
 - 입력창 스타일 (`class1`, `class3`, `class4`, `class5`, `class6 class6_2`)
-##
+*** 
 ### SelectBoxComponent
 **props**
 - selectedValue :
@@ -255,7 +235,7 @@ clib
 **주요특징:**
 - 예시
 
-##
+*** 
 ### ButtonComponent
 
 **props:**
@@ -269,7 +249,7 @@ clib
 **주요특징:**
 - 버튼 스타일 (`btnClass1`, `btnClass3`, `btnClass4`, `btnClass5`)
 
-##
+*** 
 ### AgGridComponent
 **props:**
 - 예시
@@ -280,7 +260,7 @@ clib
 **주요특징:**
 - 예시
 
-##
+*** 
 ### ChkBoxComponent
 **props:**
 - CheckOptions : 체크박스로 보여줄 데이터 배열
@@ -294,8 +274,7 @@ clib
 
 **주요특징:**
 - 누른 순서대로 checkedValues 변수에 들어간다.
-##
-### TextAreaComponent
+***### TextAreaComponent
 **props:**
 - contents      : 글 작성 내용. 기본 값/변경 있을 경우 해당 props값 출력
 - placeholder   : contents가 비어있을 때, 해당 값 출력
@@ -306,7 +285,7 @@ clib
 **주요특징:**
 -
 
-##
+*** 
 ### LabelComponent
 **props:**
 - labelNm : 라벨 이름
@@ -315,18 +294,29 @@ clib
 **주요특징:**
 - 주로 table의 th 부분에서 많이 사용됨.
 
-##
+*** 
 ### DatePickerComponent
+
 **props:**
-- 예시
+- classWrapper            : DatePicker css  클래스 지정 (기본 값 유지)
+- calenderBackgroundColor : 배경색 지정 ( 기본 값: white)
+- pDate                   : 특정 출력 날짜 지정 
+- isMinDate / isMaxDate   : 최소 / 최대 날짜 : 두 날짜 선택 시, 두 날짜 내의 기간만 선택 가능
+- width                   : DatePicker 너비 지정 (기본 값 : 140px)
+- height                  : DatePicker 높이 지정 (기본 값 : 34px )
+- pPlaceholder            : 날짜 지정 안했을 경우 출력할 날짜 혹은 문구 
+- dateFormat              : 출력 날짜 형식 지정 ('yyyy-MM', 'yyyy-MM-dd', 'yyyy-MM-dd HH:mm' )
+- type                    : 월력/일력/시분 지정 ( month, day, time )
+- timeShow                : 일력 출력 2번째 방법
 
 **emit:**
-- 예시
+- this.$emit("emitValue", value); : emitValue라는 이벤트로 해당 date 부모 컴포넌트에게 전달.
 
 **주요특징:**
-- 예시
+- [ref] https://icehaunter.github.io/vue3-datepicker/config.html#props 
 
-##
+
+*** 
 ### SubInfoTitle
 **props:**
 - subInfoTitleNm : 제목 명 지정
@@ -336,7 +326,7 @@ clib
 **주요특징:**
 - 각 Object마다의 서브 제목으로 사용
 
-##
+*** 
 ### DepthTitle
 **props:**
 - currentMenu : 메뉴의 최상단 Depth부터 현재 보여줄 타이틀 제목까지 3Depth
@@ -344,7 +334,7 @@ clib
 **주요특징:**
 - 예시
 
-##
+*** 
 ### DragGrid
 **props:**
 - leftRowData : 첫번째 Row데이터 값
@@ -359,7 +349,7 @@ clib
 - 좌측에 위치한 드래그 버튼을 통해 Grid 간 데이터 이동 가능
 - 확정 버튼을 통해 Grid 간의 이동을 확정한다.
 
-##
+*** 
 ### FileInputComponent
 **props:**
 - 예시
@@ -370,7 +360,7 @@ clib
 **주요특징:**
 - 예시
 
-##
+*** 
 ### linkComponent
 **props:**
 - destination : 이동할 url
@@ -380,18 +370,13 @@ clib
 **주요특징:**
 - hover 시 파란색 글자에 밑줄이 생긴다.
 
-##
+*** 
 ### LoadingSpinnerComponent
-**props:**
-- 예시
-
-**emit:**
-- 예시
 
 **주요특징:**
-- 예시
+- 로딩 화면
 
-##
+*** 
 ### PageTitle
 **props:**
 - currentMenu : Menu.json에 있는 메뉴 정보
@@ -406,7 +391,10 @@ clib
 
 ### PagingComponent
 **props:**
-- 예시
+- pageSize     : 화면에 보여지는 페이지 개수
+- pageableData : 페이지 객체 데이터
+  - pageNumber  : 첫 페이지 지정 
+  - totalPages  : 전체 페이지 개수
 
 **emit:**
 - 예시
@@ -414,7 +402,7 @@ clib
 **주요특징:**
 - 예시
 
-##
+*** 
 ### PopupComponent
 **props:**
 - popupOverlay : 팝업창 이외의 영역에 대한 스타일 지정
@@ -431,7 +419,7 @@ clib
 - @AGREE에 함수 입력해야 확인버튼 클릭시 함수 호출 가능
 - poupOverlay를 별도로 입력하지 않을 시 팝업창 이외 영역 클릭시 창 닫힘
 
-##
+*** 
 ### RadioComponent
 **props:**
 - 예시
@@ -442,7 +430,7 @@ clib
 **주요특징:**
 - 예시
 
-##
+*** 
 ### TabComponent
 **props:**
 - menuType : 탭으로 불어와야될 폴더이름
@@ -456,7 +444,7 @@ clib
 - 다른 탭으로 이동해도 기존 탭 상태 유지
 - 메뉴나 버튼 클릭을 통해 탭을 추가함
 
-##
+*** 
 ### ag-cell-Render
 ```
 Ag-Grid 내부 cell에 글자가 아닌 input, selectBox, button 등의
@@ -482,7 +470,7 @@ Ag-Grid 내부 cell에 글자가 아닌 input, selectBox, button 등의
 ### ag-cell-Render > HoliDiv
 - 휴일구분 선택 셀렉트박스 출력
 
-##
+*** 
 ### treeComponent
 ```
 JSON 형태의 데이터를 입력받아 트리 형태로 보여주기 위한 컴포넌트
@@ -505,7 +493,7 @@ JSON 형태의 데이터를 입력받아 트리 형태로 보여주기 위한 �
 ### treeComponent > msf-tree-item
 - msf-tree에서 가공된 데이터를 기반으로 트리를 만들어 출력하는 컴포넌트
 
-##
+*** 
 ### popupComponent
 ```
 확인 취소 뿐만이 아닌 Form 형태를 지니고 있는 Popup
@@ -525,7 +513,7 @@ JSON 형태의 데이터를 입력받아 트리 형태로 보여주기 위한 �
 - 코드 리스트 등록 변경을 위한 팝업창
 - 코드그룹 리스트 팝업과 방식은 동일
 
-##
+*** 
 ### etc
 ```
 공통 기능으로 만들어놨지만

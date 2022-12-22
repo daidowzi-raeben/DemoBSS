@@ -195,8 +195,6 @@ export default {
       postCodeNums: 0, // 주소 개수
       pageableData: {
         pageNumber: 1,
-        currentMinPage: 1,
-        currentMaxPage: 5,
         totalPages: 0,
       },
       currentPostCodeData: [],

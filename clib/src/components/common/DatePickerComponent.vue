@@ -1,7 +1,6 @@
 <template>
   <datepicker
   :style="{'background-color': calenderBackgroundColor}"
-  v-model="date"
   :class="classWrapper"
   :locale="lang"
   :minimumView="type"
@@ -9,21 +8,30 @@
   :typeable="true"
   :placeholder="pPlaceholder"
   :input="updateDate(date)"
-  :min-date="new Date(isMinDate)"
+  :lower-limit="isMinDate"
+  :upper-limit="isMaxDate"
   :clearable="true"
   ref="datepicker"
+  v-model="date"
   >
+  <template v-slot:clear="{ onClear }">
+    <button @click="[onClear(), getClearDate()]">x</button>
+  </template>
   </datepicker>
+  
+
   <select v-show="timeShow">
     <option v-for="ho in hour()" :key="ho">
       {{ho}}시
     </option>
   </select>
+
   <select v-show="timeShow">
     <option v-for="min in minutes()" :key="min">
       {{min}}분
     </option>
   </select>
+
 </template>
 
 <script>
@@ -49,7 +57,15 @@ export default {
     };
   },
   props: {
+    pDate: Date,
+    classWrapper: {
+      default:"calender_input"
+    },
     isMinDate:{
+      type: String,
+      default:null
+    },
+    isMaxDate:{
       type: String,
       default:null
     },
@@ -57,7 +73,6 @@ export default {
       type:String,
       default:'white'
     },
-    pDate: Date,
     width:{
       type:String,
       default:'140px'
@@ -66,7 +81,6 @@ export default {
       type:String,
       default:'34px'
     },
-    classWrapper: null,
     type: {
       //일력 월력 시분
       type: String,
@@ -80,12 +94,11 @@ export default {
       type: String,
       default: "yyyy-MM-dd",
     },
-    // pPlaceholder: {
-    //   //부모에서 받아올 placeholder
-    //   type: String,
-    //   default: new Date(),
-    // },
-    pPlaceholder: String,
+    pPlaceholder: {
+      //부모에서 받아올 placeholder
+      type: String,
+      default: new Date(2022,11,31).toLocaleDateString(),
+    },
   },
   components: {
     Datepicker,
@@ -112,6 +125,9 @@ export default {
       //부모에서 date셋팅
       this.date = value;
     },
+    getClearDate(){
+      this.date = new Date(this.pPlaceholder);
+    }
   },
 };
 </script>
@@ -150,9 +166,12 @@ select{
   left: unset;
 }
 
-.v3dp__clearable > i{
+.v3dp__clearable > button{
+  background-color: v-bind('calenderBackgroundColor');
+  border: none;
   font-size: 12pt;
   font-weight: bold;
   font-style: normal;
 }
+
 </style>

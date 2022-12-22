@@ -107,8 +107,6 @@
         </tr>
         </table>
       </div>
-
-
       <div class="item2"> 
         <div>
         <sub-info-title :subInfoTitleNm="'공지사항 리스트'" />
@@ -239,6 +237,8 @@
                 <div style="display: inline-block">
                   <date-picker-component
                   :p-date="noticeAdmObject.ntfStDt"
+                  :p-placeholder="new Date()"
+                  :dateFormat="'yyyy-MM-dd'"
                   @emitValue="(value) => {noticeAdmObject.ntfStDt = value;}"
                   :classWrapper="'calender_input'"
                   :calenderBackgroundColor="'rgb(247, 247, 248)'"
@@ -292,7 +292,6 @@
               <td>
                 <select-box-component
                   style="height: 28px"
-                   
                   :width="'150px'"
                   :cdGroup="'ntfType'"
                   :isDisabled="true"
