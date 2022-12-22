@@ -12,7 +12,7 @@
     - [ButtonComponent](#buttoncomponent)
     - [AgGridComponent](#aggridcomponent)
     - [ChkBoxComponent](#chkboxcomponent)
-  - [**주요특징:**](#주요특징)
+    - [TextAreaComponent](#textareacomponent)
     - [LabelComponent](#labelcomponent)
     - [DatePickerComponent](#datepickercomponent)
     - [SubInfoTitle](#subinfotitle)
@@ -43,7 +43,6 @@
     - [etc \> AtcLstComponent](#etc--atclstcomponent)
     - [etc \> AtcRegComponent](#etc--atcregcomponent)
     - [etc \> FloatingLabelsComponent](#etc--floatinglabelscomponent)
-    - [etc \> FloatingLabelsComponent2](#etc--floatinglabelscomponent2)
     - [etc \> RangeComponent](#etc--rangecomponent)
     - [etc \> ToastComponent](#etc--toastcomponent)
     - [etc \> ValdtnComponent](#etc--valdtncomponent)
@@ -142,7 +141,7 @@ clib
     - [ButtonComponent](#buttoncomponent)
     - [AgGridComponent](#aggridcomponent)
     - [ChkBoxComponent](#chkboxcomponent)
-  - [**주요특징:**](#주요특징)
+    - [TextAreaComponent](#textareacomponent)
     - [LabelComponent](#labelcomponent)
     - [DatePickerComponent](#datepickercomponent)
     - [SubInfoTitle](#subinfotitle)
@@ -173,7 +172,6 @@ clib
     - [etc \> AtcLstComponent](#etc--atclstcomponent)
     - [etc \> AtcRegComponent](#etc--atcregcomponent)
     - [etc \> FloatingLabelsComponent](#etc--floatinglabelscomponent)
-    - [etc \> FloatingLabelsComponent2](#etc--floatinglabelscomponent2)
     - [etc \> RangeComponent](#etc--rangecomponent)
     - [etc \> ToastComponent](#etc--toastcomponent)
     - [etc \> ValdtnComponent](#etc--valdtncomponent)
@@ -253,12 +251,13 @@ clib
 ### AgGridComponent
 **props:**
 - rowData       : (중요 1) row에 들어갈 데이터 지정 
-- columnDefs    : (중요 2) column에 들어갈 데이터 지정 및 설정 ( headerName : 컬럼 헤더 이름, filed: rowData의 데이터 key 값, width : 너비 .. 등 지정  )
+- columnDefs    : (중요 2) column에 들어갈 데이터 지정 및 설정 
+  - [headerName : 컬럼 헤더 이름, filed: rowData의 데이터 key 값, width : 너비  등 지정]
 - gridOptions   : 합계에 사용 ?
 - rowClicked    : 행 클릭 이벤트
-- noWidthScroll : 가로 스크롤 표시하지 않는지 ( false : 가로스크롤 표시(기본 값) / true : 가로 스크롤 표시하지 않음 )
-- isAutoHeight  : 세로 스크롤 표시하지 않는지 ( false : 가로스크롤 표시(기본 값) / true : 가로 스크롤 표시하지 않음 )
-- - isAutoSize    : ag-grid 감싸고 있는 박스 크기에 맞출지 여부 및 타입 결정하는 배열 데이터 [Boolean, String]
+- noWidthScroll : 가로 스크롤 표시하지 않는지 (true:스크롤 표시하지 않음 / false:스크롤 표시(기본 값) )
+- isAutoHeight  : 세로 스크롤 표시하는지
+- isAutoSize    : ag-grid 감싸고 있는 박스 크기에 맞출지 여부 및 타입 결정하는 배열 데이터 [Boolean, String]
   - isAutoSize[0] = 감싸고 있는 박스 크기에 자동 fit 하는 함수 사용할 것인지에 대한 boolean 값 ( true: 동의, false: 거부. columnDefs에서 지정한 wiedth에 맞춘 크기 사용)
   - isAutoSize[1] = 자동 fit 하는 함수 사용하지 않을 경우(columnDefs에서 지정한 width에 따라 출력할 경우), 타입 선택 ( type 1, 2,3 )
 - isDeselect    : 여러 row 클릭 가능하게 할 지 여부 (여기서 기능은 같은 row를 2번 클릭하면 해당 row 클릭 해제가 됩니다.)
@@ -285,16 +284,14 @@ clib
 
 **주요특징:**
 - 누른 순서대로 checkedValues 변수에 들어간다.
-***### TextAreaComponent
+***
+### TextAreaComponent
 **props:**
 - contents      : 글 작성 내용. 기본 값/변경 있을 경우 해당 props값 출력
 - placeholder   : contents가 비어있을 때, 해당 값 출력
 - maxlength     : 글자 길이 최댓값
 - textAreaHeight: textArea의 높이 지정
 - textAreaWidth : textArea의 너비 지정
-
-**주요특징:**
--
 
 *** 
 ### LabelComponent
@@ -326,7 +323,6 @@ clib
 **주요특징:**
 - [ref] https://icehaunter.github.io/vue3-datepicker/config.html#props 
 
-
 *** 
 ### SubInfoTitle
 **props:**
@@ -341,10 +337,6 @@ clib
 ### DepthTitle
 **props:**
 - currentMenu : 메뉴의 최상단 Depth부터 현재 보여줄 타이틀 제목까지 3Depth
-
-**주요특징:**
-- 예시
-
 *** 
 ### DragGrid
 **props:**
@@ -399,7 +391,7 @@ clib
 **주요특징:**
 - 각 페이지마다 보여지는 페이지 제목
 - 아이콘을 통해 즐겨찾기 추가 가능, 추가시 아이콘 색상 변경
-
+*** 
 ### PagingComponent
 **props:**
 - pageSize     : 화면에 보여지는 페이지 개수
@@ -408,10 +400,7 @@ clib
   - totalPages  : 전체 페이지 개수
 
 **emit:**
-- 예시
-
-**주요특징:**
-- 예시
+- 현재 페이지 ( pageNumber) emit으로 부모에게 전달
 
 *** 
 ### PopupComponent
