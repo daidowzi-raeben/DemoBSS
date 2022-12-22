@@ -102,6 +102,28 @@
       <p>사용자관리(UserAdm.vue) 데이터 클릭부터 출력까지의 로직 참고</p>
     </div>
 
+    <div class="commondiv0"> <!-- Radio Component  -->
+      <div style="height:150px;">
+        <h1 class="commondiv-title">RadioComponent</h1>
+        <div style="width:500px; height:100px;">
+          <br/><br/><br/>
+          <radio-component 
+          :RadioOption="'RmnyOpt'" 
+          :selectedRadio="radioData1"
+          :defaultcdId="radioData1" 
+          @radioEmit="(radioValue) => { radioData1 = radioValue }"
+          />
+          <br/><br/><br/>
+          <radio-component 
+          :RadioOption="'scrtOptions'" 
+          @radioEmit="(radioValue) => {radioData2 = radioValue }"
+          :selectedRadio="radioData2"
+          :defaultcdId="radioData2" />
+          
+        </div>
+      </div><br/><br/><br/>
+    </div>
+
     <div class="commondiv0">
       <!-- ag grid -->
       <h1 class="commondiv-title">ag grid</h1>
@@ -311,25 +333,28 @@
       <br /><br />
     </div>
 
-    <div class="commondiv0">
-      <!-- FileInputComponent  -->
+    <div class="commondiv0"> <!-- FileInputComponent  -->
       <h1 class="commondiv-title">FileInputComponent</h1>
       <div style="width: 70%">
-        <input type="file" /> adsfsdf
+        <input type="file" style="border: 1px solid #bdbdbd" /> 
+        <p>* 기본 input 태그의 file 타입  </p>
+        <br/><br/>
 
-        <file-input-component
-          :atcNoti="'첨부파일은 최대 10MB 이내로 첨부 가능합니다.'"
-        />
+        <label-component label-nm="파일 컴포넌트 (1)" />
+        <file-input-component :atcNoti="'첨부파일은 최대 10MB 이내로 첨부 가능합니다.'" />
       </div>
 
+      <br/><br/>
       <div style="width: 70%; margin: 10px 0">
-        <button @click="fileDisable">file input disable</button>
-        {{ pDisable }}
-        <file-input-component
-          :atcNoti="'버튼을 눌러 파일업로드 비활성화 가능'"
-          :pDisable="pDisable"
-        />
+        <button @click="fileDisable">file input disable</button> {{ pDisable ? "업로드 불가":" 업로드 가능" }}
+        <file-input-component :atcNoti="'버튼을 눌러 파일업로드 비활성화 가능'" :pDisable="pDisable" />
       </div>
+      
+      <p> * 파일 업로드시, 파일명.확장자(크기) 로 출력  </p>
+      <p> * 파일 업로드시, 업로드 불가 파일의 경우 팝업 생성  </p>
+      <p> * 파일 업로드 후 x버튼 클릭 시, 해당 파일 삭제  </p>
+      <p> * 파일 업로드 시 add로 파일 리스트에 추가  (초기화 X )</p>
+      <p> * 버튼을 통해 파일 업로드 가능 여부 상태 기능  </p>
     </div>
 
     <div class="commondiv0">
@@ -369,82 +394,6 @@
       <p>* emitValue로 변하는 값 전달</p>
     </div>
 
-    <div class="commondiv0"> <!-- PostCode Component  -->
-      <div>
-        <h1 class="commondiv-title">PostCodeComponent</h1>
-        <div>
-          <table style="border: 1px solid">
-            <tr>
-              <th><label-component :labelNm="'우편번호'" /></th>
-              <td>
-                <input-component
-                  :inputClass="'class5_short1'"
-                  :value="postCodeObj.zipNo"
-                  v-model="postCodeObj.zipNo"
-                />
-              </td>
-            </tr>
-            <tr>
-              <th><label-component :labelNm="'도로명주소'" /></th>
-              <td>
-                <input-component
-                  :inputClass="'class5_long1'"
-                  :value="postCodeObj.roadAddr"
-                  v-model="postCodeObj.roadAddr"
-                />
-              </td>
-            </tr>
-            <tr>
-              <th><label-component :labelNm="'지번주소'" /></th>
-              <td>
-                <input-component
-                  :inputClass="'class5_long1'"
-                  :value="postCodeObj.jibunAddr"
-                  v-model="postCodeObj.jibunAddr"
-                />
-              </td>
-            </tr>
-            <tr>
-              <th><label-component :labelNm="'상세주소'" /></th>
-              <td>
-                <input-component
-                  :inputClass="'class5_long1'"
-                  :value="postCodeObj.detailPostAddress"
-                  v-model="postCodeObj.detailPostAddress"
-                />
-              </td>
-            </tr>
-          </table>
-        </div>
-      </div>
-      <div>
-        <span> 주소 검색 </span>
-        <input-component
-          :inputClass="'class5'"
-          style="width: 210px; margin: 0 3px"
-          :height="'30px'"
-          :placeholder="'주소를 입력해 주세요.'"
-          @click="postCodePopup"
-        />
-        <button-component
-          @click="postCodePopup"
-          :btnClass="'btnClass3'"
-          :btnName="'주소 검색'"
-          :btnHeight="'30px'"
-        />
-        <post-code-component
-          @FormPopup="isPostCodeModalShow = false"
-          @selected-juso-data="selectedJuso"
-          :formDataPopupFrameWidth="'800px'"
-          :PopupTitleMsg="'주소 검색'"
-          :reqtype="'searchPostCode'"
-          ref="PostCodeComponent"
-          v-if="isPostCodeModalShow"
-          :btnClicked="0"
-        />
-        <br /><br /><br />
-      </div>
-    </div>
 
     <div class="commondiv0">
       <!--[O] LodingSpinnerComponent -->
@@ -538,6 +487,8 @@ export default {
         Option3: "",
         Option4: "",
       },
+      radioData1:"01",
+      radioData2:"02",
       textAreaData: "기본 글 입니다.",
       date: {
         date1: new Date(2021, 9, 5),
