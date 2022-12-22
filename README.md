@@ -460,9 +460,8 @@ clib
 ##
 ### ag-cell-Render
 ```
-Ag-Grid 내부 cell에 글자가 아닌 input, selectBox, button 등의
-컴포넌트를 넣기 위한 문법
-데이터를 반환받을때는 cellRendererParams를 통해 데이터를 반환 받는다.
+- Ag-Grid 내부 cell에 글자가 아닌 input, selectBox, button 등의 컴포넌트를 넣기 위한 문법
+- 데이터를 반환받을때는 cellRendererParams를 통해 데이터를 반환 받는다.
 ```
 ### ag-cell-Render > AutCdGpNm
 - Rowdata의 필드값이 코드그룹일 경우 코드그룹 셀렉트 박스 출력
@@ -486,17 +485,17 @@ Ag-Grid 내부 cell에 글자가 아닌 input, selectBox, button 등의
 ##
 ### treeComponent
 ```
-JSON 형태의 데이터를 입력받아 트리 형태로 보여주기 위한 컴포넌트
-입력값에 따라 뱃지 형태의 라벨 출력 가능
-현재 1depth 형태로 사용중
+- JSON 형태의 데이터를 입력받아 트리 형태로 보여주기 위한 컴포넌트 입력값에 따라 뱃지 형태의 라벨 출력 가능 
+- 현재 1depth 형태로 사용중에 있음.
 ```
 
 ### treeComponent > msf-tree
 **props:**
 - source : 트리에 넣을 데이터
 - idFiled : source에 있는 데이터 중 id 필드
-- labelField : source에 있는 데이터 중 출력할 제목 필드
+- labelField : source에 있는 데이터 중 출력할 필드명
 - isBadgeShow : 우측에 위치한 배찌를 보여줄건지에 대한 값 true/false
+- filterFunction : 함수를 값으로 받는다. 받은 함수에 각 행의 데이터를 매개변수로 보낸후 필터를 통해 통과하면 true 실패하면  false를 반환 false일 경우 출력내용에서 제외된다.
 - expandDepth : 트리의 최대 깊이
 **emit:**
 - itemClick 함수를 통해 클릭된 행에 대한 데이터를 가져오고 @itemClick과 연결된 함수를 통해 후처리
@@ -509,8 +508,7 @@ JSON 형태의 데이터를 입력받아 트리 형태로 보여주기 위한 �
 ##
 ### popupComponent
 ```
-확인 취소 뿐만이 아닌 Form 형태를 지니고 있는 Popup
-입력창 혹은 정보를 출력하는 형태로 구성되어 있다.
+- 확인 취소 뿐만이 아닌 Form 형태를 지니고 있는 Popup 입력창 혹은 정보를 출력하는 형태로 구성되어 있다.
 ```
 
 ### popupComponent > BtExeInfoPopup
@@ -529,50 +527,91 @@ JSON 형태의 데이터를 입력받아 트리 형태로 보여주기 위한 �
 ##
 ### etc
 ```
-공통 기능으로 만들어놨지만
-현재 페이지 시안을 만들면서 아직 사용하지
-않은 컴포넌트
+- 공통 기능으로 만들어놨지만 현재 페이지 시안을 만들면서 아직 사용하지 않은 컴포넌트
 ```
 
 ### etc > AtcLstComponent
-설명
+**props**
+- WrkjobNm : 첨부파일 목록 제목
+- data : 파일유형, 등록일자, 파일, 비고로 이루어진 데이터
+
+**주요특징**
+- 목록을 보여주는 용도로 사용될 컴포넌트
+- 추후 파일명 클릭시 다운로드 가능하도록 수정할 예정
 
 ### etc > AtcRegComponent
-설명
+**props**
+- WrkjobNm : 첨부파일 등록 제목
+- data : 파일유형, 필수여부로 이루어진 데이터
+
+**주요특징**
+- 첨부파일을 받아야되는 페이지에서 사용될 컴포넌트
 
 ### etc > FloatingLabelsComponent
-설명
+**props**
+- placeholder : active 되지 않은 상태의 글자
+- value : 사전에 입력할 글자
+- maxlength : 입력되는 글자 최대 크기
+- type : 입력창의 종류 (text, password)
+- textColor : 입력되는 글자 색상
+- lineColor : 밑줄의 색상
+- closeBtnColor : x 표시의 색상
+- placeholderColor : active 되지 않은 상태의 글자 색상
+- fontSzie : 글자 사이즈 지정
+- textOffsetBot : 밑줄과의 간격을 조정하기 위한 margin-top 값
 
-### etc > FloatingLabelsComponent2
-설명
+**emit**
+- @emitValue를 통해 입력값 변수로 전달 받는다.
+
+**주요특징**
+- x를 누르면 자동으로 다시 입력탭에 포커스가 된다.
+- input 컴포넌트 대신 사용 가능, 사용시 위로 플로팅 되는 부분까지 생각하여 폼 구축 해야함.
 
 ### etc > RangeComponent
-설명
+- 슬라이더를 통해 범위 조절이 가능한 컴포넌트
 
 ### etc > ToastComponent
-설명
+**props**
+- id : Toast 메시지에 대한 고유한 값
+- className : 배경색을 지정하기 위한 클래스(wk-alert, wk-warn, wk-info)
+- horizontalPosition : 세로 위치 지정을 위한 값 (top, bottom)
+- verticalPosition : 가로 위치 지정을 위한 값(left, right)
+- transition : 애니메이션을 위한 transition name 지정을 위한 값('slide-down', 'slide-up', 'slide-left', 'slide-right', 'fade')
+- duration : 자동 삭제 시간
+- message : 메시지에서 보여줄 값
+- closeable : 클릭으로 삭제할지에 대한 true/false
+
+**주요특징**
+- 출력 위치 조절가능 
+- className에 따라 스티커 색상 변경 가능
+- 일정 시간 뒤 자동 삭제 가능
 
 ### etc > ValdtnComponent
-설명
+- 가져다 쓰는 컴포넌트보다는 사용법에 대한 예시 컴포넌트
+- 사용시 form태그로 입력 영역을 묶어야 한다.
+- 등록, 확인 등의 버튼은 정합성이 다 통과되야 홣성화 된다.
 
 ---
 
 ## unionForm
-
+```
+- 하나의 컴포넌트가 아닌 다양한 컴포넌트를 조합하여 검색폼 or 입력폼을 만든 컴포넌트
+- 자세한 형태는 공통화면의 조합화면참고
+```
 ### AutRetvComponent
-설명
+- 권한 매핑 관리 페이지의 메뉴권한, 컴포넌트 권한, 조직권한, 사용자권한 컴포넌트에서 검색에 사용하는 조회 폼
 
 ### Blc2Component
-설명
+- 청약리스트 페이지에서 검색 폼 밑에 존재하는 청약리스트 테이블 폼
 
 ### BlcComponent
-설명
+- AgGrid와 제목, 버튼을 포함한 정보 출력 폼
 
 ### CustInfoComponent
-설명
+- 고객에 대한 정보를 보여주는 고객 정보 출력 테이블 폼
 
 ### CustRetvComponent
-설명
+- 고객에 대한 정보를 조회하기 위한 고객 조회 폼
 
 ### FormDataComponent
 설명
@@ -581,16 +620,16 @@ JSON 형태의 데이터를 입력받아 트리 형태로 보여주기 위한 �
 설명
 
 ### PostCodeComponent
-설명
+- 주소 검색을 위해 만든 주소 조회 폼
 
 ### RetvCondComponent
-설명
+- 메뉴 관리 페이지에서 사용한 메뉴 조회 폼
 
 ### SubsRetvComponent
-설명
+- 청약 리스트 페이지에서 사용한 청약 조회 폼
 
 ### UserAdmRetvComponent
-설명
+- 사용자관리 페이지에서 사용한 사용자 조회 폼
 
 ---
 
@@ -599,5 +638,6 @@ JSON 형태의 데이터를 입력받아 트리 형태로 보여주기 위한 �
 ## 참고
 ```
 ag - grid : https://www.ag-grid.com/vue-data-grid/getting-started/
+Vulidation : https://vuelidate-next.netlify.app/validators.html#minvalue
 폴더 구조 : https://joshua1988.github.io/web-development/vuejs/vue-structure/
 ```

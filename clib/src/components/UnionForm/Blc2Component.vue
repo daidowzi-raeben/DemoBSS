@@ -75,12 +75,10 @@ export default {
     rowData: "",
     subInfoTitleNm: null,
     selectBoxShow: null,
-    gridOptions: null,
     cdGroup: null,
     btnName1: String,
     btnName2: String,
     btnName3: String,
-    total: null,
   },
 };
 </script>

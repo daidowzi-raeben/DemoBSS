@@ -574,11 +574,7 @@
     <h1 style="font-size: 30px">FloatingLabelsComponent</h1>
     <span></span>
     <div class="commondiv2">
-      <FloatingLabelsComponent>
-        <input  type="text" placeholder="Label">
-      </FloatingLabelsComponent>
-      <br>
-      <FloatingLabelsComponent_2 />
+      <FloatingLabelsComponent />
     </div>
     <br /><br /><br />
     <h1 style="font-size: 30px">ToastComponent</h1>
@@ -662,7 +658,6 @@ import ChkBoxComponent from '../../components/common/ChkBoxComponent.vue';
 import RadioComponent from '../../components/common/RadioComponent.vue'
 import ValdtnComponent from "@/components/common/Etc/ValdtnComponent";
 import FloatingLabelsComponent from "@/components/common/Etc/FloatingLabelsComponent";
-import FloatingLabelsComponent_2 from "@/components/common/Etc/FloatingLabelsComponent_2";
 import ToastComponent from "@/components/common/Etc/ToastComponent";
 import linkComponent from '@/components/common/linkComponent.vue';
 import AtcRegComponent from "@/components/common/Etc/AtcRegComponent";
@@ -691,7 +686,6 @@ export default {
     AtcListComponent,
     AtcRegComponent,
     ToastComponent,
-    FloatingLabelsComponent_2,
     FloatingLabelsComponent,
     ValdtnComponent,
     PagingArea,

@@ -769,6 +769,12 @@
       "cmpnId": "06/CommonView2"
     },
     {
+      "menuId": "L06M01S04",
+      "menuNm": "조합화면참고",
+      "upMenuId": "L06M01",
+      "cmpnId": "06/UnionView"
+    },
+    {
       "menuId": "L06M01S02",
       "menuNm": "로그인화면",
       "upMenuId": "L06M01",

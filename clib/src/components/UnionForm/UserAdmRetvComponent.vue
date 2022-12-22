@@ -158,7 +158,6 @@ export default {
   },
   props: {
     cdGroup: null,
-    titleShow: null,
   },
   methods:{
     async resetRetvCond(){

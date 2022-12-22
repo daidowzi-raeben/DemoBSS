@@ -56,7 +56,7 @@ table{
   border-collapse: collapse;
 }
 table tr th{
-  background-color: #2dbdb6;
+  background-color: rgb(113,156,205);
   color: white;
   height: 20%;
   border: 1px solid #444444;

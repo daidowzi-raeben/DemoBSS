@@ -1,140 +1,143 @@
 <template>
-  <div class="vfl-has-label" >
-    <label class="vfl-label" :class="classObject" :for="inputId">
-      {{ floatLabel }}
-    </label>
-    <slot></slot>
+  <div class="magic_input_wapper" v-if="unActive!=null">
+    <div class="placeholder" :style="{'color': placeholderColor, 'fontSize': unActive? fontSize+'px':'', 'marginTop': unActive? textOffsetBot +'px':''}" :class="{placeholder_active:unActive}">{{placeholder}}</div>
+    <input style="display:none">
+    <input :style="{'color': textColor, borderColor: lineColor, fontSize: fontSize +'px'}" autocomplete="off" v-if="type=='text'" ref='input' type="text" :maxlength="maxlength" v-model="inputValue" @focus="handleInputFocus(false)" @blur="handleInputFocus(true)">
+    <input :style="{'color': textColor, borderColor: lineColor, fontSize: fontSize +'px'}" autocomplete="off" v-if="type=='password'" ref='input' type="password" :maxlength="maxlength" v-model="inputValue" @focus="handleInputFocus(false)" @blur="handleInputFocus(true)">
+    <i :style="{'color': closeBtnColor}" v-if="closeShow" @click="handleClear">×</i>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'FloatingLabelsComponent',
-  props: {
-    on: {
-      type: Boolean,
-      default: true
-    },
-    fixed: {
-      type: Boolean,
-      default: false
-    },
-    label: {
-      type: String,
-      default: ''
-    },
-    dispatch: {
-      type: Boolean,
-      default: true
-    },
-    for: {
-      type: String,
-      default: null
-    }
-  },
-  data () {
+  name: 'FloatingLabelsComponent_2',
+  data() {
     return {
-      formEl: undefined,
-      labelEl: undefined,
-      isActive: false,
-      isFocused: false
-    }
+      unActive: null,
+      inputValue: '',
+      closeShow: false,
+    };
   },
-  mounted () {
-    this.formEl = this.$el.querySelector('input, textarea, select')
-    this.formEl.addEventListener('input', this.updateIsActive)
-    this.formEl.addEventListener('input', this.updateIsFocused)
-    this.formEl.addEventListener('blur', this.updateIsFocused)
-    this.formEl.addEventListener('focus', this.updateIsFocused)
-    if (!this.for) {
-      this.labelEl = this.$el.querySelector('label')
-      this.labelEl.addEventListener('click', this.focusFormEl)
-    }
-    this.dispatchInput()
+  props: {
+    placeholder: {
+      type: String,
+      default: 'Type here',
+    },
+    value: {
+      type:String,
+      default:null,
+    },
+    maxlength: {
+      type: Number,
+      default: 11,
+    },
+    type: {
+      type: String,
+      default: 'text',
+    },
+    textColor: {
+      type: String,
+      default: 'blue',
+    },
+    lineColor: {
+      type: String,
+      default: 'blue',
+    },
+    closeBtnColor: {
+      type: String,
+      default: 'blue',
+    },
+    placeholderColor: {
+      type: String,
+      default: 'blue',
+    },
+    fontSize: {           //unactive 상태일때 글자 크기
+      type: Number,
+      default: 30,
+    },
+    textOffsetBot: {      //밑줄과의 간격을 위한 margin-top, 해당 값은 unactive 상태일때 margin-top에 대입된다.
+      type: Number,
+      default: 18,
+    },
   },
-  beforeDestroy () {
-    this.formEl.removeEventListener('input', this.updateIsActive)
-    this.formEl.removeEventListener('input', this.updateIsFocused)
-    this.formEl.removeEventListener('blur', this.updateIsFocused)
-    this.formEl.removeEventListener('focus', this.updateIsFocused)
+  created() {
+    this.inputValue = '';
+  },
+  watch: {
+    inputValue(value) {
+      this.$emit('emitValue', value);
+      this.handleCloseBtn(value);
+    },
+  },
+  mounted() {
+    if(this.value!==null) this.inputValue = this.value;
+    this.handleCloseBtn(this.inputValue);
+    this.unActive = this.inputValue === '';
   },
   methods: {
-    dispatchInput () {
-      if (this.dispatch) {
-        const event = document.createEvent('HTMLEvents')
-        event.initEvent('input', true, false)
-        this.formEl.dispatchEvent(event)
-      }
+    handleInputFocus(flag) {      //input이 포커스 됫을때 값여부에 따른 active / unactive
+      this.unActive = this.inputValue === '' && flag;
     },
-    focusFormEl () {
-      this.formEl.focus()
+    handleCloseBtn(data) {       //현재 입력값이 있는지 확인하는 함수
+      this.closeShow = (data !== '');
     },
-    updateIsActive (e) {
-      this.isActive = e.target.value.length > 0
+    handleClear() {             //x 버튼 눌럿을때 호출되는 함수
+      this.inputValue = '';
+      this.$refs.input.focus();
     },
-    updateIsFocused (e) {
-      this.isFocused = e.target === document.activeElement && this.isActive
-    }
   },
-  computed: {
-    inputId () {
-      return this.for
-    },
-    classObject () {
-      return {
-        'vfl-label-on-input': this.on && (this.isActive || this.fixed),
-        'vfl-label-on-focus': this.isFocused
-      }
-    },
-    formElType () {
-      return this.formEl ? this.formEl.tagName.toLowerCase() : ''
-    },
-    floatLabel () {
-      if (this.label) return this.label
-      switch (this.formElType) {
-        case 'input':
-        case 'textarea':
-          return this.formEl.placeholder
-        case 'select':
-          return this.formEl.querySelector('option[disabled][selected]').innerHTML
-        default:
-          return ''
-      }
-    }
-  }
-}
+};
 </script>
 
-<style>
-.vfl-has-label {
+<style scoped>
+.magic_input_wapper i {
+  cursor: pointer;
   position: relative;
+  z-index: 3;
+  margin-top: -35px;
+  transform: translateX(0px);
+  float: right;
+  display: block;
+  height: 16px;
+  width: 16px;
+  font-size: 22px;
+  transition: .3s all ease-in-out;
+  background-size: contain;
+  background-repeat: no-repeat;
+  font-style: normal;
+  background-position: center center;
 }
-.vfl-label {
+.magic_input_wapper input {
+  font-size: 25px;
+  padding-right: 30px;
+  text-indent: 0;
+  letter-spacing: 1px;
+}
+.placeholder {
+  transition: .3s all ease-in-out;
   position: absolute;
-  top: 0;
-  right: 0;
-  left: 0.1em;
-  overflow: hidden;
-  font-family: sans-serif;
-  font-size: 0.8em;
-  color: #aaa;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  pointer-events: none;
-  opacity: 0;
-  transition: all 0.2s ease-out;
+  transform: translateY(-20px);
+  z-index: 1;
+  color: royalblue;
+  opacity: .7;
+  font-style: normal;
 }
-.vfl-label-on-input {
-  top: -1.3em;
-  pointer-events: all;
+.placeholder_active {
   opacity: 1;
 }
-.vfl-label-on-focus {
-  color: #0074d9;
+input:-webkit-autofill {
+  background-color: transparent !important;
 }
-.vfl-has-label input:focus,
-.vfl-has-label textarea:focus,
-.vfl-has-label select:focus {
-  outline: 0;
+input[type="text"],
+input[type="password"] {
+  display: block;
+  border: none;
+  background-color: transparent;
+  border-bottom: 2px solid royalblue;
+  width: 70%;
+  color: royalblue;
+  outline: none;
+  z-index: 2;
+  position: relative;
 }
 </style>

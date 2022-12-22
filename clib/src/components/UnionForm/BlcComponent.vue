@@ -83,7 +83,6 @@ export default {
     gridOptions: null,
     cdGroup: null,
     btnName : null,
-    total:null,
   },
   methods:{
     clickedRow(params){

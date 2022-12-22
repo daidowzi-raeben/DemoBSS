@@ -43,7 +43,7 @@ export default defineComponent({
       showing: false,
       timer: null,
     });
-    const classes = computed(() => {
+    const classes = computed(() => {      //입력받은 props를 기반으로 토스트에 적용할 클래스 조합
       let clazz = [];
       let className = options.className;
       let horizontalPosition = options.horizontalPosition;
@@ -89,11 +89,11 @@ export default defineComponent({
         }, options.duration);
       }
     };
-    const close = () => {
+    const close = () => {           //토스트 닫기, 타이머 초기화
       closed.value = true;
       state.timer = null;
     };
-    const removeHandler = () => {
+    const removeHandler = () => {    //기존에 존재했던 id에 대한 핸들러 제거
       state.showing = false;
       document.body.removeChild(document.getElementById(props.id));
       refNode.removeEventListener("transitionend", removeHandler, false);
@@ -178,6 +178,7 @@ export default defineComponent({
   top: auto;
   bottom: 40px;
 }
+
 .wk-wrapper.wk-alert {
   background-color: rgba(189, 19, 19, 0.7);
 }
@@ -187,7 +188,7 @@ export default defineComponent({
 .wk-wrapper.wk-info {
   background-color: rgba(32, 83, 201, 0.7);
 }
-/* animation */
+/* animation + transition */
 .slide-down-enter-active {
   transition: all 0.3s ease-out;
 }
