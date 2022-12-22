@@ -6,7 +6,7 @@
         :selectClass="'select-type1'"
         :cdGroup="cdGroup"
         :defaultValue="'선택'"
-        @input="
+        @emitValue="
           (value) => {
             searchDiv = value;
           }
@@ -19,7 +19,7 @@
         :type="'search'"
         :inputClass="'class4'"
         :placeholder="'검색어 입력'"
-        @input="
+        @emitValue="
           (value) => {
             searchValue = value;
           }

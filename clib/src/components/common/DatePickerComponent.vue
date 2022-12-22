@@ -106,7 +106,7 @@ export default {
   },
   methods: {
     updateDate(value) {
-      this.$emit("input", value);
+      this.$emit("emitValue", value);
     },
     setDate(value) {
       //부모에서 date셋팅

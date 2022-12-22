@@ -13,7 +13,7 @@
                  :type="'month'"
                  :dateFormat="'yyyy-MM'"
                  :pDate="selectValues.holiStDt"
-                 @input="
+                 @emitValue="
               (value) => {
                 selectValues.holiStDt = value;
               }
@@ -29,7 +29,7 @@
                   :type="'month'"
                   :dateFormat="'yyyy-MM'"
                   :pDate="selectValues.holiEndDt"
-                  @input="
+                  @emitValue="
               (value) => {
                 selectValues.holiEndDt = value;
               }
@@ -151,7 +151,7 @@
               :type="'year'"
               :date-format="'yyyy년'"
               :pDate="holiAdmObject.caldrStDt"
-              @input="
+              @emitValue="
               (value) => {
                 holiAdmObject.caldrStDt = value;
               }
@@ -166,7 +166,7 @@
               :type="'year'"
               :date-format="'yyyy년'"
               :pDate="holiAdmObject.caldrEndDt"
-              @input="
+              @emitValue="
               (value) => {
                 holiAdmObject.caldrEndDt = value;
               }

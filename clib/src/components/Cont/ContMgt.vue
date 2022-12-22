@@ -85,7 +85,7 @@
               :cdGroup="'optionsSearchDiv'"
               :defaultValue="'선택'"
               v-model="searchDiv1"
-              @input="
+              @emitValue="
                 (value) => {
                   searchDiv1 = value;
                 }
@@ -99,7 +99,7 @@
               :cdGroup="'optionsSearchDiv'"
               :defaultValue="'선택'"
               v-model="searchDiv1"
-              @input="
+              @emitValue="
                 (value) => {
                   searchDiv1 = value;
                 }
@@ -113,7 +113,7 @@
               :cdGroup="'optionsSearchDiv'"
               :defaultValue="'선택'"
               v-model="searchDiv1"
-              @input="
+              @emitValue="
                 (value) => {
                   searchDiv1 = value;
                 }

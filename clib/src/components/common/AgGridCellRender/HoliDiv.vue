@@ -8,7 +8,7 @@
       :defaultValue="'휴일구분 선택'"
       :isDisabled="true"
       :selectedValue="selValues"
-      @input="(value) => {selValues = value;}"
+      @emitValue="(value) => {selValues = value;}"
       />
 </div>
 </template>

@@ -79,14 +79,14 @@
                 <td><date-picker-component
                     :classWrapper="'calender_input'"
                     :pDate ="this.efctStDate"
-                    @input="
+                    @emitValue="
                     (value) => {this.efctStDate = value}"
                 /></td>
                 <th>유효종료일자</th>
                 <td><date-picker-component
                     :classWrapper="'calender_input'"
                     :pDate="this.efctFnsDate"
-                    @input="
+                    @emitValue="
                     (value) => {this.efctFnsDate = value}"
                 /></td>
               </tr>

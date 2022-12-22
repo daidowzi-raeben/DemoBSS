@@ -17,7 +17,7 @@
         v-model="month"
         style="width: 80px; height: 26px; margin-right: 15px"
         v-show="selectBoxShow"
-        @input=" (value) => { month = value; }"
+        @emitValue=" (value) => { month = value; }"
       />
     </span>
   </div>

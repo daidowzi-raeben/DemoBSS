@@ -18,7 +18,7 @@
         width: 120px;
         height: 26px;
         margin-right: 15px;"
-        @input="
+        @emitValue="
           (value) => {
             month = value;
           }

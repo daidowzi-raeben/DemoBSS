@@ -128,7 +128,7 @@
             :width="200"
             :pPlaceholder="'2022.01.01'"
             :pDate="date1"
-            @input="
+            @emitValue="
               (value) => {
                 date1 = value;
               }
@@ -143,7 +143,7 @@
             :type="'month'"
             :dateFormat="'yyyy-MM'"
             :pDate="date2"
-            @input="
+            @emitValue="
               (value) => {
                 date2 = value;
               }
@@ -157,7 +157,7 @@
               :width="150"
               :time-show=true
               :pDate="date2"
-              @input="
+              @emitValue="
               (value) => {
                 date2 = value;
               }
@@ -172,7 +172,7 @@
             :width="200"
             :pPlaceholder="'2022.01.01'"
             :pDate="date3"
-            @input="
+            @emitValue="
               (value) => {
                 date3 = value;
               }
@@ -184,7 +184,7 @@
             :width="200"
             :pPlaceholder="'2022.01.01'"
             :pDate="date4"
-            @input="
+            @emitValue="
               (value) => {
                 date4 = value;
               }

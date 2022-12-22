@@ -38,7 +38,7 @@
                   :height="'28px'"
                   :pPlaceholder="'2022.01.01'"
                   :pDate="selectValues.retvStDt"
-                  @input="
+                  @emitValue="
               (value) => {
                 selectValues.retvStDt = value;
               }
@@ -53,7 +53,7 @@
                   :height="'28px'"
                   :pPlaceholder="'2022.01.01'"
                   :pDate="selectValues.retvEndDt"
-                  @input="
+                  @emitValue="
               (value) => {
                 selectValues.retvEndDt = value;
               }

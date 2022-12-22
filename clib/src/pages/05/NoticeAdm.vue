@@ -35,7 +35,7 @@
             <div style="display: inline-block">
                   <date-picker-component
                   :p-date="selectValues.StDt"
-                  @input="(value) => {selectValues.StDt = value;}"
+                  @emitValue="(value) => {selectValues.StDt = value;}"
                   :date-format="'yyyy-MM-dd'"
                   :classWrapper="'calender_input'"
                   />
@@ -45,7 +45,7 @@
                   <date-picker-component
                   :isMinDate="selectValues.MinDt"
                   :pDate="selectValues.EndDt"
-                  @input="(value) => {selectValues.EndDt = value;}"
+                  @emitValue="(value) => {selectValues.EndDt = value;}"
                   :classWrapper="'calender_input'"
                   />
                 </div>
@@ -239,7 +239,7 @@
                 <div style="display: inline-block">
                   <date-picker-component
                   :p-date="noticeAdmObject.ntfStDt"
-                  @input="(value) => {noticeAdmObject.ntfStDt = value;}"
+                  @emitValue="(value) => {noticeAdmObject.ntfStDt = value;}"
                   :classWrapper="'calender_input'"
                   :calenderBackgroundColor="'rgb(247, 247, 248)'"
                   />
@@ -248,7 +248,7 @@
                 <div style="display: inline-block">
                   <date-picker-component
                   :p-date="noticeAdmObject.ntfEndDt"
-                  @input="(value) => {noticeAdmObject.ntfEndDt = value;}"
+                  @emitValue="(value) => {noticeAdmObject.ntfEndDt = value;}"
                   :classWrapper="'calender_input'"
                   :calenderBackgroundColor="'rgb(247, 247, 248)'"
                   />
@@ -271,7 +271,7 @@
                 <div style="display: inline-block">
                   <date-picker-component
                   :p-date="noticeAdmObject.popupStDt"
-                  @input="(value) => {noticeAdmObject.popupStDt = value;}"
+                  @emitValue="(value) => {noticeAdmObject.popupStDt = value;}"
                   :classWrapper="'calender_input'"
                   :calenderBackgroundColor="'rgb(247, 247, 248)'"
                   />
@@ -280,7 +280,7 @@
                 <div style="display: inline-block">
                   <date-picker-component
                   :p-date="noticeAdmObject.popupEndDt"
-                  @input="(value) => {noticeAdmObject.popupEndDt = value;}"
+                  @emitValue="(value) => {noticeAdmObject.popupEndDt = value;}"
                   :classWrapper="'calender_input'"
                   :calenderBackgroundColor="'rgb(247, 247, 248)'"
                   />
@@ -421,7 +421,7 @@ import ApiMixin from "../../service/common.js"
         selectValueOfNtfType : '공지유형',
         selectValueOfUseYn : '사용여부',
         StDt: new Date(),
-        MinDt : this.StDt,
+        // MinDt : this.StDt,
         EndDt: new Date("2022-12-31"),
       },
       noticeAdmObject:{

@@ -7,7 +7,7 @@
             :disabled="true"
             :is-disabled="true"
             :defaultValue="'조직 선택'"
-            @input=" (value) => { selectValues.selValue = value;}"
+            @emitValue=" (value) => { selectValues.selValue = value;}"
         />
       </span>
     <span>
@@ -17,7 +17,7 @@
             :disabled="true"
             :is-disabled="true"
             :defaultValue="'조직 선택'"
-            @input=" (value) => { selectValues.selValue = value;}"
+            @emitValue=" (value) => { selectValues.selValue = value;}"
         />
       </span>
     <span>
@@ -27,7 +27,7 @@
             :disabled="true"
             :is-disabled="true"
             :defaultValue="'조직 선택'"
-            @input=" (value) => { selectValues.selValue = value;}"
+            @emitValue=" (value) => { selectValues.selValue = value;}"
         />
       </span>
     <span>

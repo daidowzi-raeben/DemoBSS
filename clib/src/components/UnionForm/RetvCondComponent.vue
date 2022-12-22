@@ -10,7 +10,7 @@
         :isDisabled="true"
         :defaultValue="selectDefltValue"
         :selectedValue="selectValues.selectValueOfRetv"
-        @input="
+        @emitValue="
           (value) => {
             selectValues.selectValueOfRetv = value;
           }
@@ -37,7 +37,7 @@
         :isDisabled="true"
         :defaultValue="'사용여부 선택'"
         :selectedValue="selectValues.selectValueOfUseYn"
-        @input="
+        @emitValue="
           (value) => {
             selectValues.selectValueOfUseYn = value;
           }

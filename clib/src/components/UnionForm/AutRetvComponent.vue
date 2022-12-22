@@ -10,7 +10,7 @@
             :disabled="true"
             :is-disabled="true"
             :defaultValue="this.selDefaultValue"
-            @input=" (value) => { selValue = value;}"
+            @emitValue=" (value) => { selValue = value;}"
         />
       </span>
     <span>

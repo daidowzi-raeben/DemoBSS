@@ -40,7 +40,7 @@
                   :p-date="selectValues.StDt"
                   :date-format="'yyyy-MM-dd'"
                   :classWrapper="'calender_input'"
-                  @input="(value) => {selectValues.StDt = value;}"
+                  @emitValue="(value) => {selectValues.StDt = value;}"
                 />
               </div>
               <span> ~ </span>
@@ -49,7 +49,7 @@
                   :isMinDate="selectValues.MinDt"
                   :pDate="selectValues.EndDt"
                   :classWrapper="'calender_input'"
-                  @input="(value) => {selectValues.EndDt = value;}"
+                  @emitValue="(value) => {selectValues.EndDt = value;}"
                 />
               </div>
             </td>
@@ -263,7 +263,7 @@
                   <div style="display: inline-block">
                     <date-picker-component
                       :p-date="msgAdmObject.msgStDt"
-                      @input="
+                      @emitValue="
                         (value) => {
                           msgAdmObject.msgStDt = value;
                         }
@@ -276,7 +276,7 @@
                   <div style="display: inline-block">
                     <date-picker-component
                       :p-date="msgAdmObject.msgEndDt"
-                      @input="
+                      @emitValue="
                         (value) => {
                           msgAdmObject.msgEndDt = value;
                         }
@@ -320,7 +320,7 @@
                     :isDisabled="true"
                     :width="'185px'"
                     :selectedValue="msgAdmObject.rcvrRstrtn"
-                    @input="
+                    @emitValue="
                       (value) => {
                         msgAdmObject.rcvrRstrtn = value;
                       }
@@ -409,7 +409,7 @@ export default {
         selectValueOfMsgType: "공지유형",
         selectValueOfUseYn: "사용여부",
         StDt: new Date(),
-        MinDt: this.StDt,
+        // MinDt: this.StDt,
         EndDt: new Date("2022-12-31"),
       },
       msgAdmObject: {

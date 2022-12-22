@@ -139,7 +139,7 @@
                 <div style="display: inline-block">
                   <date-picker-component
                   :p-date="menuAdmObject.menuDtlStDt"
-                  @input="(value) => {menuAdmObject.menuDtlStDt = value;}"
+                  @emitValue="(value) => {menuAdmObject.menuDtlStDt = value;}"
                   :date-format="'yyyy-MM-dd'"
                   :classWrapper="'calender_input'"
                   :calenderBackgroundColor="'rgb(247, 247, 248)'"
@@ -150,7 +150,7 @@
                   <date-picker-component
                   :isMinDate="menuAdmObject.menuDtlMinDt"
                   :pDate="menuAdmObject.menuDtlEndDt"
-                  @input="(value) => {menuAdmObject.menuDtlEndDt = value;}"
+                  @emitValue="(value) => {menuAdmObject.menuDtlEndDt = value;}"
                   :classWrapper="'calender_input'"
                   :calenderBackgroundColor="'rgb(247, 247, 248)'"
                   />
@@ -285,7 +285,7 @@
                 <div style="display: inline-block">
                   <date-picker-component
                   :p-date="menuAdmObject.trtStDt"
-                  @input="(value) => {menuAdmObject.trtStDt = value;}"
+                  @emitValue="(value) => {menuAdmObject.trtStDt = value;}"
                   :classWrapper="'calender_input'"
                   :calenderBackgroundColor="'rgb(247, 247, 248)'"
                   />
@@ -294,8 +294,8 @@
                 <div style="display: inline-block">
                   <date-picker-component
                   :p-date="menuAdmObject.trtEndDt"
-                  :isMinDate="menuAdmObject.trtStDt"
-                  @input="(value) => {menuAdmObject.trtEndDt = value;}"
+                  :isMinDate="menuAdmObject.trtMinDt"
+                  @emitValue="(value) => {menuAdmObject.trtEndDt = value;}"
                   :classWrapper="'calender_input'"
                   :calenderBackgroundColor="'rgb(247, 247, 248)'"
                   />
@@ -407,7 +407,7 @@ export default {
         sortingCond:"",
         url:"",
         menuDtlStDt : new Date(), 
-        menuDtlMinDt : this.menuDtlStDt,
+        // menuDtlMinDt : this.menuDtlStDt,
         menuDtlEndDt : new Date('9999-12-31'),
         menuShowYn: "01",
         menuUseYn: "01",
@@ -420,7 +420,7 @@ export default {
         wjtOption1:"",
         wjtOption2:"",
         trtStDt : new Date(), 
-        trtMinDt : this.trtStDt,
+        // trtMinDt : this.trtStDt,
         trtEndDt : new Date('9999-12-31'),
         UseYn: "01",
         aplyExpt:"01",

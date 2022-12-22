@@ -9,7 +9,7 @@
         :cdGroup="'dtlCd'"
         :is-disabled="true"
         :defaultValue="'사용여부 선택'"
-        @input=" (value) => { cdGpValue = value;}"
+        @emitValue=" (value) => { cdGpValue = value;}"
         :selected-value="cdGpValue"
     />
     &nbsp;&nbsp;&nbsp;
