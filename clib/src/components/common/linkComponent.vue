@@ -1,7 +1,5 @@
 <template>
-  <div>
-    <a class="link" :href="destination"> {{ linkNm }}</a>
-  </div>
+    <a class="link" :href="destination" target="_blank"> <strong> {{ linkNm }} </strong> </a>
 </template>
 
 <script>
@@ -22,6 +20,7 @@ export default {
 
 <style>
 .link {
+  display: inline-block;
   font-size: v-bind("textsize");
   font-weight: normal;
   cursor: pointer;
