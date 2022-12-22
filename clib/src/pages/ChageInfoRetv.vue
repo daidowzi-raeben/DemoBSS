@@ -91,7 +91,7 @@
               <ag-grid-component
                 :rowData="rowData"
                 :columnDefs="columnDefs"
-                :isWidthFit="false"
+                
               />
             </div>
           </div>

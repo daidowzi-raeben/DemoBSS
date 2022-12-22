@@ -15,7 +15,7 @@
   v-model="date"
   >
   <template v-slot:clear="{ onClear }">
-    <button @click="[onClear(), getClearDate()]">x</button>
+    <button type="button" @click="[onClear(), getClearDate()]">x</button>
   </template>
   </datepicker>
   
@@ -79,7 +79,7 @@ export default {
     },
     height:{
       type:String,
-      default:'34px'
+      default:'28px'
     },
     type: {
       //일력 월력 시분
@@ -141,7 +141,7 @@ export default {
   /* background-color: v-bind('calenderBackgroundColor'); */
   /* background-color: red; */
   border: #b6b6b6 solid 1px;
-  font-size: 12px;
+  font-size: 10pt;
   color: #494949;
   padding: 0 22px 0 9px;
   background: url(../../assets/img/icon_form_calender.png) no-repeat;
@@ -161,17 +161,21 @@ select{
 }
 .v3dp__clearable {
   position: absolute;
-  right: 40px;
-  margin: 3px 0;
+  right: 35px;
+  top: 1px;
+  /* margin: 2px 0; */
+  vertical-align: center;
   left: unset;
 }
 
 .v3dp__clearable > button{
   background-color: v-bind('calenderBackgroundColor');
   border: none;
-  font-size: 12pt;
+  font-size: 10pt;
   font-weight: bold;
   font-style: normal;
+  vertical-align: middle;
+  cursor: pointer;
 }
 
 </style>

@@ -31,7 +31,7 @@
         :header-color="headerColor"
         :rowData="this.rowData"
         :columnDefs="this.columnDefs"
-        :isWidthFit="false"
+        
     />
   </div>
   <div class="ag-grid_sp2" v-if="bill">
@@ -40,7 +40,7 @@
         :rowData="this.rowData"
         :rowClicked="clickedRow"
         :columnDefs="this.columnDefs"
-        :isWidthFit="false"
+        
     />
   </div>
 </template>

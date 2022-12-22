@@ -64,8 +64,9 @@
 
 ## 프로젝트 설치 및 실행
 ```
-프로젝트 설치 npm install
-프로젝트 실행 npm run serve
+프로젝트 설치 : npm install
+프로젝트 실행 : npm run serve
+json-server  : json-server --watch info.json --port 8080 
 ```
 
 ## 폴더 구조
@@ -245,20 +246,30 @@ clib
 - btnHeight : 버튼 세로 크기 (지정안할 시 기본 값 25px)
 - btnFontWeight : 버튼 이름 굵기 (지정안할 시 기본)
 
-
 **주요특징:**
 - 버튼 스타일 (`btnClass1`, `btnClass3`, `btnClass4`, `btnClass5`)
 
 *** 
 ### AgGridComponent
 **props:**
-- 예시
-
-**emit:**
-- 예시
+- rowData       : (중요 1) row에 들어갈 데이터 지정 
+- columnDefs    : (중요 2) column에 들어갈 데이터 지정 및 설정 ( headerName : 컬럼 헤더 이름, filed: rowData의 데이터 key 값, width : 너비 .. 등 지정  )
+- gridOptions   : 합계에 사용 ?
+- rowClicked    : 행 클릭 이벤트
+- noWidthScroll : 가로 스크롤 표시하지 않는지 ( false : 가로스크롤 표시(기본 값) / true : 가로 스크롤 표시하지 않음 )
+- isAutoHeight  : 세로 스크롤 표시하지 않는지 ( false : 가로스크롤 표시(기본 값) / true : 가로 스크롤 표시하지 않음 )
+- - isAutoSize    : ag-grid 감싸고 있는 박스 크기에 맞출지 여부 및 타입 결정하는 배열 데이터 [Boolean, String]
+  - isAutoSize[0] = 감싸고 있는 박스 크기에 자동 fit 하는 함수 사용할 것인지에 대한 boolean 값 ( true: 동의, false: 거부. columnDefs에서 지정한 wiedth에 맞춘 크기 사용)
+  - isAutoSize[1] = 자동 fit 하는 함수 사용하지 않을 경우(columnDefs에서 지정한 width에 따라 출력할 경우), 타입 선택 ( type 1, 2,3 )
+- isDeselect    : 여러 row 클릭 가능하게 할 지 여부 (여기서 기능은 같은 row를 2번 클릭하면 해당 row 클릭 해제가 됩니다.)
+- headerColor   : column 헤더의 색 지정
+- headerHeight  : column 헤더의 높이 지정
+- rowHeight     : row 높이 지정 
+- overlayNoRowsTemplate : rowData 없을 경우 출력되는 기본 메세지 템플릿 
 
 **주요특징:**
-- 예시
+- clib에서 사용되는 테이블에 거의 모두 AgGrid 사용합니다.
+- emit은 따로 없지만, 각 페이지 컴포넌트에서 rowClick 시 param을 매개변수로 받을 수 있어 해당 함수를 사용하여 데이터를 받아옵니다.
 
 *** 
 ### ChkBoxComponent

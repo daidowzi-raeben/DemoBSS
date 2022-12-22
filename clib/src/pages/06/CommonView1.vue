@@ -239,7 +239,7 @@
         <ag-grid-component
             :rowData="renderRowData"
             :columnDefs="renderColumns"
-            :isWidthFit="false"
+
         />
         <p>- AutCdGpNm의 경우 RowData의 값이 코드그룹이면 코드그룹 셀렉트 박스 출력</p>
         <p>- AutYn의 경우 라디오 박스인 적용 제외 출력</p>

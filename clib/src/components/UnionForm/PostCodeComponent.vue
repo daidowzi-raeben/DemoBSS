@@ -85,6 +85,7 @@
                       <input-component
                         style="width: 90%"
                         :input-class="'class5'"
+                        :value="detailPostAddress"
                         v-model="detailPostAddress"
                       />
                     </td>

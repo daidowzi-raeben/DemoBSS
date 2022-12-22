@@ -1,8 +1,9 @@
 <template>
   <div class="container">
     <div class="commondiv0"></div>
-    <div class="commondiv0"> <!--[O] select Box -->
-      <h1 class='commondiv-title'>select box</h1>
+    <div class="commondiv0">
+      <!--[O] select Box -->
+      <h1 class="commondiv-title">select box</h1>
       <label-component label-nm="'select'" />&nbsp;&nbsp;
       <select-box-component
         :selectClass="'select-type1'"
@@ -101,26 +102,57 @@
       <p>사용자관리(UserAdm.vue) 데이터 클릭부터 출력까지의 로직 참고</p>
     </div>
 
-    <div class="commondiv0"> <!-- ag grid -->
-      <h1 class='commondiv-title'>ag grid</h1>
-      <br>
-      <div style="display:flex;">
-      <div style="width: 60%; height: 360px; margin: 10px">
-        <ag-grid-component
-          :rowData="rowData1"
-          :columnDefs="columnDefs1"
-          :isWidthFit="false"
-        />
-      </div>
+    <div class="commondiv0">
+      <!-- ag grid -->
+      <h1 class="commondiv-title">ag grid</h1>
+      <br />
+      <div class="commondiv1" style="width: 100%; height: 800px; border:none;">
+        <div style="height: 300px">
+          <ag-grid-component
+            :header-color="'rgb(239 245 252)'"
+            :rowData="rowData0"
+            :columnDefs="columnDefs0"
+            :row-height="40"
+            :overlayNoRowsTemplate="
+              `<span> <br>` + '<br />조회 결과가 없습니다.' + ` </span>`
+            "
+          />
+          <br />
+          <div class="commondiv1" style="border:none;"> 
+          <div class="commondiv0" style="height: 400px; width:800px; border:none;">
+            <ag-grid-component
+              ref="agGridComponent"
+              :rowData="rowData1"
+              :columnDefs="columnDefs1"
+              :rowHeight="40"
+              :isDeselect="true"
+              :isAutoSize="[false,'type1']"
+              :headerHeight="60"
+              :rowClicked="agGridRowClicked"
+              :overlayNoRowsTemplate="noRowTemplateMsg"
+            />
+            <span>
+          </span>
+          
+        </div>
+          
+          <div> <br /> 
+            <p> * 위쪽 ag-grid는 박스 크기에 맞춰 테이블 출력  </p>
+            <p> * 왼쪽 ag-grid는 지정된 width에 맞춰 테이블 출력 (isAutoSize props) 예시 :  </p>
+            <p> * isDeselect = true 일 경우, 클릭 했던 row 클릭 취소 가능 </p>
+            <p> * columnDefs에서 컬럼명, 너비, css style 클래스 등 다양한 속성 사용 가능.  </p>
+            <p> * 참고 : <span> <link-component :destination="'https://www.ag-grid.com/vue-data-grid/getting-started'" :linkNm="'(링크) ag-grid Docs'" /> </span></p>
+            <p> * 왼쪽 ag-grid 클릭 데이터 :  {{ selectedData }} </p>
+          </div>
+        </div>
 
-      <div style="width: 30%; height: 360px; margin: 10px">
-        <ag-grid-component :rowData="rowData2" :columnDefs="columnDefs2" />
+        </div>
       </div>
     </div>
-    </div>
 
-    <div class="commondiv0"> <!--[O] textArea -->
-      <h1 class='commondiv-title'>TextAreaComponent</h1>
+    <div class="commondiv0">
+      <!--[O] textArea -->
+      <h1 class="commondiv-title">TextAreaComponent</h1>
       <TextAreaComponent
         :textAreaHeight="'100px'"
         :textAreaWidth="'600px'"
@@ -137,34 +169,47 @@
       <br /><br /><br />
     </div>
 
-    <div class="commondiv0"> <!-- Date Picker -->
-      <h1 class='commondiv-title'>Date Picker</h1>
+    <div class="commondiv0">
+      <!-- Date Picker -->
+      <h1 class="commondiv-title">Date Picker</h1>
       <div style="display: flex">
-          <span> <label-component label-nm="월력" />&nbsp;&nbsp;</span>
-          <div style="display: inline-block">
-            <date-picker-component
+        <span> <label-component label-nm="월력" />&nbsp;&nbsp;</span>
+        <div style="display: inline-block">
+          <date-picker-component
             :width="150"
             :dateFormat="'yyyy-MM'"
             :type="'month'"
             :pPlaceholder="'2022-12-23'"
-            :p-date="date1"
-            @emitValue="(value) => {date1 = value;}"
-            /><br/><br/>
-          </div>
-          <span style="margin-left:20px;"> {{ new Date(date1).toLocaleString() }} </span>
+            :p-date="date.date1"
+            @emitValue="
+              (value) => {
+                date.date1 = value;
+              }
+            "
+          /><br /><br />
+        </div>
+        <span style="margin-left: 20px">
+          {{ new Date(date.date1).toLocaleString() }}
+        </span>
       </div>
       <div style="display: flex">
         <span> <label-component label-nm="일력" />&nbsp;&nbsp;</span>
         <div style="display: inline-block">
           <date-picker-component
-          :pPlaceholder="'2022.01.01'"
-          :p-date="date2"
-          :width="'200px'"
-          @emitValue="(value) => {date2 = value;}"
+            :pPlaceholder="'2022.01.01'"
+            :p-date="date.date2"
+            :width="'200px'"
+            @emitValue="
+              (value) => {
+                date.date2 = value;
+              }
+            "
           />
-          <br/><br/>
+          <br /><br />
         </div>
-          <span style="margin-left:20px;"> {{ new Date(date2).toLocaleString() }} </span>
+        <span style="margin-left: 20px">
+          {{ new Date(date.date2).toLocaleString() }}
+        </span>
       </div>
 
       <div style="display: flex">
@@ -173,61 +218,90 @@
           :width="150"
           :type="'time'"
           :dateFormat="'yyyy-MM-dd HH:mm'"
-          :pDate="date3"
+          :pDate="date.date3"
           @emitValue="
             (value) => {
-              date3 = value;
+              date.date3 = value;
             }
           "
         />
-          <span style="margin-left:20px;"> {{ new Date(date3).toLocaleString() }} </span>
-        </div><br/><br/>
+        <span style="margin-left: 20px">
+          {{ new Date(date.date3).toLocaleString() }}
+        </span>
+      </div>
+      <br /><br />
       <div>
         <span> <label-component label-nm="기간" />&nbsp;&nbsp;</span>
         <div style="display: inline-block">
           <date-picker-component
-          :p-date="date4"
-          @emitValue="(value) => {date4 = value;}"
+            :p-date="date.date4"
+            @emitValue="
+              (value) => {
+                date.date4 = value;
+              }
+            "
           />
         </div>
         <span> ~ </span>
         <div style="display: inline-block">
           <date-picker-component
-          :calenderBackgroundColor="'rgb(247, 247, 248)'"
-          :p-date="date5"
-          @emitValue="(value) => {date5 = value;}"
+            :calenderBackgroundColor="'rgb(247, 247, 248)'"
+            :p-date="date.date5"
+            @emitValue="
+              (value) => {
+                date.date5 = value;
+              }
+            "
           />
         </div>
-        <span> 날짜간의 차이 일수 {{ getDiffDate(date4, date5) }}</span>
-      </div><br/><br/>
+        <span>
+          날짜간의 차이 일수 {{ getDiffDate(date.date4, date.date5) }}</span
+        >
+      </div>
+      <br /><br />
 
-      
       <div style="display: flex">
-        <span> <label-component label-nm="일력( 날짜 제한 )" />&nbsp;&nbsp;</span>
+        <span>
+          <label-component label-nm="일력( 날짜 제한 )" />&nbsp;&nbsp;</span
+        >
         <div style="display: inline-block">
           <date-picker-component
-          :pPlaceholder="'2023.01.01'"
-          :p-date="date6"
-          :isMinDate="new Date('2023.01.03')"
-          :isMaxDate="new Date('2023.01.15')"
-          :width="'200px'"
-          @emitValue="(value) => {date6 = value;}"
+            :pPlaceholder="'2023.01.01'"
+            :p-date="date.date6"
+            :isMinDate="new Date('2023.01.03')"
+            :isMaxDate="new Date('2023.01.15')"
+            :width="'200px'"
+            @emitValue="
+              (value) => {
+                date.date6 = value;
+              }
+            "
           />
-          <br/><br/>
+          <br /><br />
         </div>
-          <span style="margin-left:20px;"> {{ new Date(date6).toLocaleString() }} </span>
+        <span style="margin-left: 20px">
+          {{ new Date(date.date6).toLocaleString() }}
+        </span>
       </div>
-      <p>* date picker는 block형식이므로 두 개의 date picker 사용 시, inline-block 또는 flex 사용 해야합니다. </p>
-      <p>* background color, width, height 설정으로 크기 및 색상 조절  </p>
-      <p> *emitValue로 date-picker에서 변경한 날짜 값을 data 변수에 저장 필요.</p>
-      <p> *x버튼 (clear) 클릭 시, pPlaceholder로 설정한 값을 표시합니다.</p>
-      <p> * type props를 이용해서 월/일/시분 력 선택 가능 </p>
-      <p> * isMinDate / isMaxDate 를 이용해서 특정 날짜 구간 지정 가능 ( 두개의 props 모두 사용해야 가능합니다.)</p>
-
+      <p>
+        * date picker는 block형식이므로 두 개의 date picker 사용 시,
+        inline-block 또는 flex 사용 해야합니다.
+      </p>
+      <p>* background color, width, height 설정으로 크기 및 색상 조절</p>
+      <p>
+        *emitValue로 date-picker에서 변경한 날짜 값을 data 변수에 저장 필요.
+      </p>
+      <p>*x버튼 (clear) 클릭 시, pPlaceholder로 설정한 값을 표시합니다.</p>
+      <p>* type props를 이용해서 월/일/시분 력 선택 가능</p>
+      <p>
+        * isMinDate / isMaxDate 를 이용해서 특정 날짜 구간 지정 가능 ( 두개의
+        props 모두 사용해야 가능합니다.)
+      </p>
     </div>
 
-    <div class="commondiv0"> <!--[O] DepthTitleComponent  -->
-      <h1 class='commondiv-title'>DepthTitleComponent</h1>
+    <div class="commondiv0">
+      <!--[O] DepthTitleComponent  -->
+      <h1 class="commondiv-title">DepthTitleComponent</h1>
       <DepthTitle :currentMenu="currentMenu" />
       <p>
         * DepthTitle의 경우 currentMenu를 통해 메뉴의 최상단 Depth부터 현재
@@ -237,15 +311,16 @@
       <br /><br />
     </div>
 
-    <div class="commondiv0"> <!-- FileInputComponent  -->
-    <h1 class='commondiv-title'>FileInputComponent</h1>
-    <div style="width: 70%">
+    <div class="commondiv0">
+      <!-- FileInputComponent  -->
+      <h1 class="commondiv-title">FileInputComponent</h1>
+      <div style="width: 70%">
         <input type="file" /> adsfsdf
 
         <file-input-component
           :atcNoti="'첨부파일은 최대 10MB 이내로 첨부 가능합니다.'"
         />
-    </div>
+      </div>
 
       <div style="width: 70%; margin: 10px 0">
         <button @click="fileDisable">file input disable</button>
@@ -257,42 +332,46 @@
       </div>
     </div>
 
-    <div class="commondiv0"> <!-- paging  -->
-      <h1 class='commondiv-title'>paging</h1>
-      <p> page size 10</p>
-      <p> 페이징 props 객체 데이터</p>  
-      <p>{{ pageableData1 }} </P> 
-      <P>현재페이지 : {{ page1 }}</p>
-        <div>
+    <div class="commondiv0">
+      <!-- paging  -->
+      <h1 class="commondiv-title">paging</h1>
+      <p>pageSize: 10</p>
+      <p>pageableData : {{ pageableData1 }}</p>
+      <P>현재페이지 : {{ page1 }}</P>
+      <div>
+        <paging-component
+          style="float: left"
+          :pageableData="pageableData1"
+          @currentPage="
+            (value) => {
+              page1 = value;
+            }
+          "
+        />
+      </div>
+      <br /><br /><br /><br />
 
+      <p>pageSize: 5</p>
+      <p>pageableData : {{ pageableData2 }}</p>
+      <P>현재페이지 : {{ page2 }} </P> 
       <paging-component
-      style="float:left;"
-      :pageableData="pageableData1"
-      @currentPage=" (value) => {  page1 = value; } "
-      />
-    </div>
-      <br/><br/><br/><br/>
-      
-      <p> page size 5</p>
-      <p> 페이징 props 객체 데이터</p>  
-      <p>{{ pageableData2 }} </P> 
-      <P>현재페이지 : {{ page2 }}</p>
-      <paging-component
-      style="float:left;"
-      :pageableData="pageableData2"
-      :pageSize="5"
+        style="float: left"
+        :pageableData="pageableData2"
+        :pageSize="5"
         @currentPage="
           (value) => {
             page2 = value;
           }
         "
       />
-      
+      <br/><br/><br/><br/>
+      <p>* pageSize, pageableData(페이징 데이터 객체) props에 해당하는 데이터 지정하여 컴포넌트로 전달</p>
+      <p>* emitValue로 변하는 값 전달</p>
     </div>
 
     <div class="commondiv0"> <!-- PostCode Component  -->
       <div>
-        <h1 class='commondiv-title'>PostCodeComponent</h1>
+        <h1 class="commondiv-title">PostCodeComponent</h1>
         <div>
           <table style="border: 1px solid">
             <tr>
@@ -367,8 +446,9 @@
       </div>
     </div>
 
-    <div class="commondiv0"> <!--[O] LodingSpinnerComponent -->
-      <h1 class='commondiv-title'>LodingSpinnerComponent</h1>
+    <div class="commondiv0">
+      <!--[O] LodingSpinnerComponent -->
+      <h1 class="commondiv-title">LodingSpinnerComponent</h1>
       <p>* 로딩 화면</p>
       <LoadingSpinnerComponent style="width: 300px; height: 400px" />
 
@@ -411,6 +491,7 @@ import LabelComponent from "@/components/common/LabelComponent.vue";
 import LoadingSpinnerComponent from "@/components/common/LoadingSpinnerComponent";
 import PostCodeComponent from "@/components/UnionForm/PostCodeComponent.vue";
 import AgGridComponent3 from "@/components/common/DragGrid";
+import LinkComponent from '../../components/common/linkComponent.vue';
 
 export default {
   mixins: [ApiMixin],
@@ -447,6 +528,7 @@ export default {
     linkComponent,
     InputComponent,
     LabelComponent,
+    LinkComponent,
   },
   data() {
     return {
@@ -457,12 +539,14 @@ export default {
         Option4: "",
       },
       textAreaData: "기본 글 입니다.",
-      date1: new Date(2021, 9, 5),
-      date2: new Date(),
-      date3: new Date(),
-      date4: new Date(),
-      date5: new Date(2022,11,31),
-      date6: new Date(2023,0,1),
+      date: {
+        date1: new Date(2021, 9, 5),
+        date2: new Date(),
+        date3: new Date(),
+        date4: new Date(),
+        date5: new Date(2022, 11, 31),
+        date6: new Date(2023, 0, 1),
+      },
       pDisable: true,
       comp: "L01M05S01",
 
@@ -491,51 +575,109 @@ export default {
       },
       page1: 1,
       page2: 1,
+      columnDefs0: [
+        { headerName: "순서", field: "model1", width: 40 },
+        { headerName: "고객ID", field: "model2", width: 120 },
+        { headerName: "청구계정ID", field: "model3", width: 120 },
+        { headerName: "고객명", field: "model4", width: 90 },
+        { headerName: "서비스계약ID", field: "model5", width: 120 },
+        { headerName: "유형", field: "model6", width: 90 },
+        { headerName: "메뉴ID", field: "model7", width: 90 },
+        { headerName: "메뉴명", field: "model8", width: 110 },
+        { headerName: "URL", field: "model9", width: 120 },
+        { headerName: "화면명", field: "model10", width: 110 },
+        { headerName: "사용자ID", field: "model11", width: 110 },
+        { headerName: "사용자명", field: "model12", width: 90 },
+        { headerName: "사용자IP", field: "model13", width: 110 },
+        {
+          headerName: "파일명/데이터개수",
+          field: "model14",
+          width: 150,
+          cellStyle: { justifyContent: "flex-start" },
+        },
+        {
+          headerName: "작업일시",
+          field: "model15",
+          width: 90,
+          cellStyle: { "white-space": "normal" },
+          autoHeight: true,
+        },
+      ],
+      rowData0: [],
       columnDefs1: [
         {
-          headerName: "Make",
-          field: "make",
-          cellStyle: {
-            "border-left": "0px",
+          headerName: "선택",
+          field: "select",
+          width: 64,
+          cellClass: "agCellStyle ",
+          checkboxSelection: true,
+          cellStyle: () => {
+            return { "pointer-events": "none" };
           },
-          headerClass: "ag-header-first-child",
-          rowDrag: true,
         },
-        { headerName: "Model", field: "model" },
-        { headerName: "Price", field: "price" },
-      ],
-      rowData1: [
-        { make: "Toyota", model: "Celica", price: 35000 },
-        { make: "Ford", model: "Mondeo", price: 32000 },
-        { make: "Porsche", model: "Boxster", price: 72000 },
-      ],
-      columnDefs2: [
         {
-          headerName: "Make",
-          field: "make",
-          cellStyle: {
-            "border-left": "0px",
-          },
-          headerClass: "ag-header-first-child",
+          headerName: "메시지ID",
+          field: "msgId",
+          width: 100,
+          cellClass: '"cell"-span',
         },
-        { headerName: "Model", field: "model" },
-        { headerName: "Price", field: "price" },
-        { headerName: "Price", field: "price" },
-        { headerName: "Price", field: "price" },
+        {
+          headerName: "메시지유형",
+          field: "msgType",
+          width: 150,
+          cellClass: "agCellStyle ",
+        },
+        {
+          headerName: "메시지제목",
+          field: "msgTitle",
+          width: 400,
+          cellClass: "agCellStyle ",
+        },
+        {
+          headerName: "회신번호",
+          field: "msgCallBack",
+          width: 90,
+          cellClass: "agCellStyle ",
+        },
+        {
+          headerName: "유효시작일시",
+          field: "msgStDt",
+          width: 100,
+          cellClass: "agCellStyle ",
+        },
+        {
+          headerName: "유효종료일시",
+          field: "msgEndDt",
+          width: 100,
+          cellClass: "agCellStyle ",
+        },
+        {
+          headerName: "작성자",
+          field: "msgRegr",
+          width: 100,
+          cellClass: "agCellStyle ",
+        },
+        {
+          headerName: "작성일자",
+          field: "msgRegrDt",
+          width: 100,
+          cellClass: "agCellStyle ",
+        },
       ],
-      rowData2: [
-        { make: "Toyota", model: "Celica", price: 35000 },
-        { make: "Ford", model: "Mondeo", price: 32000 },
-        { make: "Porsche", model: "Boxster", price: 72000 },
-      ],
+      rowData1:[],
+      noRowTemplateMsg: `<span> <strong>  조회 결과가 없습니다. </strong> <br><br><br> </span>`,
       isModalShow: false, // popup 조건
-      isFormModalShow: false, // Form Data popup 조건
-      isFormModalShow2: false, // Form Data popup 조건
       isPostCodeModalShow: false,
       OutputFormData: [],
-      SubmitFormData: [],
       postCodeObj: {},
+      selectedData:"",
     };
+  },
+  async beforeMount() {
+    await this.$connect("application/json", "/info", "get", "").then((res) => {
+      this.rowData0 = res.data.securRowData;
+      this.rowData1 = res.data.msgRowData;
+    });
   },
   watch: {
     selectBoxCompData: {
@@ -561,25 +703,15 @@ export default {
       this.postCodeObj["detailPostAddress"] = detailPostAddress;
       this.isPostCodeModalShow = false;
     },
-    popup() {
-      if (this.isModalShow == false) this.isModalShow = true;
-      else this.isModalShow = false;
-    },
-    FormPopup1() {
-      if (this.isFormModalShow == false) this.isFormModalShow = true;
-      else this.isFormModalShow = false;
-      // this.$refs.form-data-popup-component.GetOutputFormData()
-    },
-    FormPopup2() {
-      if (this.isFormModalShow2 == false) this.isFormModalShow2 = true;
-      else this.isFormModalShow2 = false;
-      // this.$refs.form-data-popup-component.GetSubmitFormData()
-    },
     getDiffDate(st, fns) {
       return this.diffDate(st, fns);
     },
-  },
-};
+    agGridRowClicked(params){
+      let selectedRowData = params.api.getSelectedRows();
+        this.selectedData = selectedRowData[0];
+      }
+    },
+  };
 </script>
 
 <style scoped>
@@ -613,9 +745,9 @@ export default {
   border-bottom: solid black 1px;
 }
 
-.commondiv-title{
+.commondiv-title {
   display: block;
   font-size: 30px;
-  margin-bottom:15px;
+  margin-bottom: 15px;
 }
 </style>

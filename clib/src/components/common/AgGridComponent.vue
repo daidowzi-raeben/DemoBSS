@@ -7,15 +7,15 @@
     :grid-options="gridOptions"
     :rowMultiSelectWithClick="isDeselect"
     :rowClassRules="rowClassRules"
-    :suppressMovableColumns="true"
-    :suppressRowTransform="true"
-    :suppressHorizontalScroll="isWidthFit"
+    :suppressHorizontalScroll="noWidthScroll"
     :rowHeight="rowHeight"
     :headerHeight="headerHeight"
     :columnDefs="columnDefs"
     :rowData="rowData"
     :overlayNoRowsTemplate="overlayNoRowsTemplate"
     :overlayLoadingTemplate="overlayLoadingTemplate"
+    :suppressMovableColumns="true"
+    :suppressRowTransform="true"
     :debounceVerticalScrollbar="true"
     :suppressColumnVirtualisation="true"
     :suppressRowVirtualisation="true"
@@ -44,7 +44,6 @@ export default {
       allColumnIds:[],
       overlayLoadingTemplate: `<div class="ag-overlay-loading-center"> Loading... </div>`,
       // pinnedBottomRowData: null,
-      paginationPageSize: null,
       servState :["사용중","예약(기설중)","정지","해지"],
       selectedRowData:''
     };
@@ -81,10 +80,10 @@ export default {
       type: Function,
       default: function () {},
     },
-    isWidthFit: {
+    noWidthScroll: {
       //sizeColumnsToFit = 가로 스크롤 표시하지 않도록
       type: Boolean,
-      default: true,
+      default: false,
     },
     isAutoHeight: {
       //auto height = 세로 스크롤 표시하지 않도록
@@ -112,8 +111,6 @@ export default {
   created() {
     this.pinnedBottomRowData = [{
     }];
-    
-    this.paginationPageSize = 7*2;
   },
   methods: {
     loading() {
@@ -147,7 +144,7 @@ export default {
       }
     },
     makeAutoWidth(autoSizeType) {
-      if (!this.isWidthFit) {
+      if (!this.noWidthScroll) {
         //가로 스크롤 = autosize
         this.allColumnIds= [];
         this.gridColumnApi.getColumns().forEach((column) => {
@@ -397,17 +394,6 @@ export default {
   /* border-bottom: #e4e4e4 solid 1px; */
   /* border-top: #e4e4e4 solid 1px; */
   z-index: 1;
-}
-
-.ag-overlay-loading-center {
-  width: 100%;
-  height: 100%;
-  justify-content: center;
-  text-align: center;
-  display: flex;
-  background-color: #f8f8f8cc;
-  align-items: center;
-  font-weight: 600;
 }
 .ag-grid .ag-cell {
   border-bottom: #efefef solid 1px;

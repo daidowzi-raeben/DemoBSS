@@ -139,7 +139,7 @@
             :rowHeight="ntfLstRowHeight"
             :isDeselect="true"
             :isAutoSize="[false,'type1']"
-            :isWidthFit="false"
+            
             :headerHeight="60"
             :rowClicked="ntfLstRowClicked"
             :overlayNoRowsTemplate="noRowTemplateMsg"
