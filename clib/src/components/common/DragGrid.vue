@@ -146,7 +146,7 @@ export default {
       this.makeAutoWidth();
     },
     makeAutoWidth() {
-      if (!this.isWidthFit) {
+      if (!this.noWidthScroll) {
         //가로 스크롤 = autosize
         this.allColumnIds= [];
         // this.gridColumnApi.getColumns().forEach((column) => {

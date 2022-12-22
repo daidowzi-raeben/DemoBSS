@@ -88,7 +88,7 @@
             :row-height="40"
             :rowClicked="clickedRow"
             :is-auto-size="'Type2'"
-            :isWidthFit="false"
+            
             :overlayNoRowsTemplate="
           `<span> <br>` + '<br />조회 결과가 없습니다.' + ` </span>`
           "

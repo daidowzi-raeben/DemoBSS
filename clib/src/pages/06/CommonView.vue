@@ -241,7 +241,7 @@
         <ag-grid-component
           :rowData="rowData1"
           :columnDefs="columnDefs1"
-          :isWidthFit="false"
+          
         />
       </div>
 
@@ -257,7 +257,7 @@
             :left-row-data="leftRowData"
             :right-row-data="rightRowData"
             :Columns="GridToGridColumns"
-            :isWidthFit="false"
+            
         />
       </div>
     </div>

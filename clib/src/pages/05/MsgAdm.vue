@@ -140,7 +140,7 @@
             :rowHeight="msgLstRowHeight"
             :isDeselect="true"
             :isAutoSize="[false,'type1']"
-            :isWidthFit="false"
+            
             :headerHeight="60"
             :rowClicked="msgLstRowClicked"
             :overlayNoRowsTemplate="noRowTemplateMsg"

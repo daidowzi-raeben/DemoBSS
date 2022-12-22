@@ -274,7 +274,6 @@ export default {
       ],
       activeItemObj: {}, // 활성화 시킬 객체
       selectedItemList: [], // 선택시킬 객체
-      gridOptions: null,
       tableData: [
         {
           name: "인말새트 C국내협력점",

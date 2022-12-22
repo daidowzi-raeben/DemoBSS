@@ -19,7 +19,7 @@
           :rowData="upRowData"
           :columnDefs="upColumnDefs"
           :row-height="40"
-          :isWidthFit="false"
+          
           :overlayNoRowsTemplate="
           `<span> <br>` + '<br />조회 결과가 없습니다.' + ` </span>`
           "
@@ -41,7 +41,7 @@
         :header-color="'rgb(239 245 252)'"
         :rowData="downRowData"
         :columnDefs="downColumnDefs"
-        :isWidthFit="false"
+        
         :row-height="40"
         :overlayNoRowsTemplate="
           '<span> <br>' + '<br />조회 결과가 없습니다.' + '</span>'

@@ -165,7 +165,7 @@
             :rowData="MaksRelesRowData"
             :columnDefs="MaksRelesColumnDefs"
             :row-height="40"
-            :isWidthFit="true"
+            :noWidthScroll="true"
             :overlayNoRowsTemplate="
           `<span> <br>` + '<br />조회 결과가 없습니다.' + ` </span>`
           "

@@ -16,7 +16,7 @@
         :left-row-data="leftRowData"
         :right-row-data="rightRowData"
         :Columns="GridToGridColumns"
-        :isWidthFit="false"
+        
         :overlayNoRowsTemplate="
           `<span> <br>` + '<br />조회 결과가 없습니다.' + ` </span>`
           "
