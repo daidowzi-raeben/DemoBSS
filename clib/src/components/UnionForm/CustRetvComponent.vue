@@ -72,7 +72,6 @@ export default {
   },
   props: {
     cdGroup: null,
-    titleShow: null,
   },
 };
 </script>

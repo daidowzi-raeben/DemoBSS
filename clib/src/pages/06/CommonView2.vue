@@ -397,7 +397,6 @@ import ChkBoxComponent from "../../components/common/ChkBoxComponent.vue";
 import RadioComponent from "../../components/common/RadioComponent.vue";
 import ValdtnComponent from "@/components/common/Etc/ValdtnComponent";
 import FloatingLabelsComponent from "@/components/common/Etc/FloatingLabelsComponent";
-import FloatingLabelsComponent_2 from "@/components/common/Etc/FloatingLabelsComponent_2";
 import ToastComponent from "@/components/common/Etc/ToastComponent";
 import linkComponent from "@/components/common/linkComponent.vue";
 import AtcRegComponent from "@/components/common/Etc/AtcRegComponent";
@@ -426,7 +425,6 @@ export default {
     AtcListComponent,
     AtcRegComponent,
     ToastComponent,
-    FloatingLabelsComponent_2,
     FloatingLabelsComponent,
     ValdtnComponent,
     PagingComponent,

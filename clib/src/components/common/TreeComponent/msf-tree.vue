@@ -79,7 +79,7 @@ export default {
     }
   },
   methods: {      //obj가 각 트리 데이터
-    addItem: function (items, obj, depth, parent, chk) {
+    addItem: function (items, obj, depth, parent, chk) {      //트리데이터를 넣는 부분 자식의 경우 재귀를 통해 넣는다.
       obj.depth = depth
       obj.expanded = false
       let expandAll = this.expandDepth === 0 && obj.hasOwnProperty('children') && obj.children && obj.children.length > 0
@@ -110,9 +110,8 @@ export default {
     setCheckedData: function (item, field) {
       let value = field === 'checked' ? this.selectedList : this.activeList
       item[field] = false
-
+      console.log("test:",item);
       if (!value || value.length < 1) { return }
-
       for (let j = 0; j < value.length; j++) {
         if (value[j] && value[j].id === item.id) {
           item[field] = true
@@ -138,8 +137,9 @@ export default {
       }
       return null
     },
-    hasChild: function (data) {
+    hasChild: function (data) {     // 해당 데이터에 자식 프로퍼티가 있는지 확인
       return data && data.hasOwnProperty('children') && data.children && data.children.length > 0
+      // hasOwnProperty를 통해 data내에 children 프로퍼팉를 가지고 있는지 확인.
     },
     treeFilter: function (item) {
       var returnValue = false
@@ -171,6 +171,7 @@ export default {
           let child = children[i]
           returnVal = returnVal || this.isFilteredData(child)
         }
+
         return returnVal
       }
       return item.isFiltered
@@ -206,7 +207,7 @@ export default {
       }
       this.refresh()
     },
-    clearCheck: function () {
+    clearCheck: function () {     //아이템의 checked값 false로 만들어 초기화
       for (let i = 0; i < this.items.length; i++) {
         let item = this.items[i]
         item.checked = false

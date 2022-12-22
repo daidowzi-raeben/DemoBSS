@@ -158,7 +158,7 @@
             :left-row-data="leftRowData"
             :right-row-data="rightRowData"
             :Columns="GridToGridColumns"
-            :header-color="'blue'"
+            :header-color="'rgb(113,156,205)'"
             :overlayNoRowsTemplate="
           `<span> <br>` + '<br />조회 결과가 없습니다.' + ` </span>`"
         />
@@ -258,8 +258,6 @@
     <div class="commondiv2">
 
       <msf-tree :source="contentTree"
-                :activeItem="activeItemObj"
-                :selectedList="selectedItemList"
                 label-field="directoryName"
                 ref="tree"
                 @itemClick="(value)=>{treeItemClick = value}"
@@ -269,6 +267,8 @@
       <p>- source에 들어갈 데이터는 json 형태의 데이터로 children 필드의 값이 하위 트리가 된다.</p>
       <p>- labelFiled에 들어간 필드명이 트리의 내용이 된다.</p>
       <p>- @itemClick과 연결된 함수에서 클릭된 트리에 대한 행 데이터와 후처리가 가능하다.</p>
+      <p>- filterFunction은 출력된 내용중 필터를 통해 출력할 내용을 정하는 것으로 함수는 트리를 호출하는 곳에서 정의한다. 반환값은 true/ false이고 매개변수로는 각행에대한 데이터를 받는다.</p>
+      <p>- 뱃지의 경우 데이터의 필드 중 chk와 chk2의 true/false에 따라 출력된다</p>
     </div>
     <br /><br /><br />
 
@@ -331,300 +331,48 @@
       <p>- 입력 형태와 value의 값만 다르다.</p>
     </div>
 
-    <h1 style="font-size: 30px">date picker</h1>
-    <div class="commondiv0">
-      <a
-        href="https://icehaunter.github.io/vue3-datepicker/examples.html"
-        style="width: 100%"
-        target="_blank"
-        > <p> https://icehaunter.github.io/vue3-datepicker/examples.html </p>
-      </a>
-      <br />
-      css : classWrapper *수정*
-      <br />
-      <br />
-      <br />
-      <div style="display: flex">
-        <div style="display: flex">
-          <span style="padding: 5px 10px">일력</span>
-          <date-picker-component
-            :classWrapper="'calender_input'"
-            :width="200"
-            :pPlaceholder="'2022.01.01'"
-            :pDate="date1"
-            @emitValue="
-              (value) => {
-                date1 = value;
-              }
-            "
-          />
-        </div>
-        <div style="display: flex">
-          <span style="padding: 5px 10px">월력</span>
-          <date-picker-component
-            :classWrapper="'calender_input'"
-            :width="150"
-            :type="'month'"
-            :dateFormat="'yyyy-MM'"
-            :pDate="date2"
-            @emitValue="
-              (value) => {
-                date2 = value;
-              }
-            "
-          />
-        </div>
-        <div style="display: flex">
-          <span style="padding: 5px 10px">일력시분</span>
-          <date-picker-component
-              :classWrapper="'calender_input'"
-              :width="150"
-              :time-show=true
-              :pDate="date2"
-              @input="
-              (value) => {
-                date2 = value;
-              }
-            "
-          />
-        </div>
-      </div>
-      <div style="display: flex">
-        <span style="padding: 5px 10px">날짜</span>
-        <date-picker-component
-            :classWrapper="'calender_input'"
-            :width="200"
-            :pPlaceholder="'2022.01.01'"
-            :pDate="date3"
-            @emitValue="
-              (value) => {
-                date3 = value;
-              }
-            "
-        />
-        <span style="padding: 5px 10px">~</span>
-        <date-picker-component
-            :classWrapper="'calender_input'"
-            :width="200"
-            :pPlaceholder="'2022.01.01'"
-            :pDate="date4"
-            @emitValue="
-              (value) => {
-                date4 = value;
-              }
-            "
-        />
-        <span>&nbsp;&nbsp;날짜간의 차이 일수 {{getDiffDate(date3,date4)}}</span>
-      </div>
-      <div style="width: 420px; height: 50px">
-        {{ date1 }} <br />{{ date2 }}
-      </div>
-    </div>
-
-    <h1 style="font-size: 30px">file input</h1>
-    <div class="commondiv0">
-      <div style="width: 70%">
-        <input type="file"> adsfsdf
-
-        <file-input-component
-          :atcNoti="'첨부파일은 최대 10MB 이내로 첨부 가능합니다.'"
-        />
-      </div>
-
-      <div style="width: 70%; margin: 10px 0">
-        <button @click="fileDisable">file input disable</button>
-        {{ pDisable }}
-        <file-input-component
-          :atcNoti="'버튼을 눌러 파일업로드 비활성화 가능'"
-          :pDisable="pDisable"
-        />
-      </div>
-    </div>
-
-
-
-
-    <h1 style="font-size: 30px">paging</h1>
-    <div class="commondiv0">
-      page size 10 페이징 데이터 {{ pageableData1 }} 현재페이지 : {{ page1 }}
-      <paging-component
-        :pageableData="pageableData1"
-        @currentPage="(value) => {page1 = value;}"
-      />
-      page size 5 페이징 데이터 {{ pageableData2 }} 현재페이지 : {{ page2 }}
-      <paging-component
-        :pageableData="pageableData2"
-        :pageSize="2"
-        @currentPage="(value) => {page2 = value;}"
-      />
-    </div>
-
-    <h1 style="font-size: 30px">ag grid</h1>
-    <div class="commondiv1">
-      <div style="width: 60%; height: 360px; margin: 10px">
-        <ag-grid-component
-          :rowData="rowData1"
-          :columnDefs="columnDefs1"
-          :isWidthFit="false"
-        />
-      </div>
-
-      <div style="width: 30%; height: 360px; margin: 10px">
-        <ag-grid-component :rowData="rowData2" :columnDefs="columnDefs2" />
-      </div>
-
-    </div>
-
-
-
-
-    <h1 style="font-size: 30px">FormDataComponent</h1>
-    <div style="border-top: solid black 1px; margin: 10px; padding: 10px">
-      <form-data-component
-      :FormDataclass="'infoOfCust'"
-      :subInfoTitleNm="'고객 정보'"
-      />
-      <br>
-      <form-data-component
-      :FormDataclass="'infoOfCont'"
-      :subInfoTitleNm="'계약 정보'"
-      />
-      <br>
-      <form-data-component
-      :FormDataclass="'infoOfAccount'"
-      :subInfoTitleNm="'청구 계정 정보'"
-      />
-      <br>
-      <form-data-component
-      :FormDataclass="'infoOfSubs'"
-      :subInfoTitleNm="'신청자 정보'"
-      />
-      <br>
-      <form-data-component
-      :FormDataclass="'infoOfOrg'"
-      :subInfoTitleNm="'영업 조직 정보'"
-      />
-      <br>
-
-    </div>
-
-    <h1 style="font-size: 30px">PopupComponent</h1>
-    <div class="commondiv1">
-    <button-component :btnClass="'btnClass5'" :btnName="'공통 PopUp'" @click="popup" :btnWidth="'90px'"/>
-
-    <popup-component
-      v-if="isModalShow"
-      @popup="isModalShow = false"
-      @AGREE = "''"
-      :popupmsg="'데이터바인딩: isModalShow,  함수 : popup() '"
-    />
-
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-    <FormDataPopupComponent
-      v-if="isFormModalShow"
-      ref="form-data-popup-component"
-      @FormPopup="isFormModalShow = false"
-      @AGREE = "''"
-      :popupmsg="' '"
-      :reqtype="'1'"
-    />
-    <button-component :btnClass="'btnClass4'" :btnName="'출력 PopUp'" :btnWidth="'120px'" @click="FormPopup1"/>
-
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-    <FormDataPopupComponent
-      ref="form-data-popup-component"
-      v-if="isFormModalShow2"
-      @FormPopup="isFormModalShow2 = false"
-      @AGREE = "''"
-      :popupmsg="' '"
-      :reqtype="'2'"
-    />
-    <button-component :btnClass="'btnClass3'" :btnName="'입력 PopUp'" @click="FormPopup2"/>
-      <br />
-      <p>화면 전체를 회색으로 감싸려면 z-index:7을 주면 적용</p>
-    </div>
-    <br /><br />
-
-
-
-
-
-
-    <h1 style="font-size: 30px">CustInfoComponent</h1>
-    <div
-      style="
-        display: inline-block;
-        border-top: solid black 1px;
-        margin: 10px;
-        padding: 10px;
-        height: auto;
-        width: 100%;
-        margin: 10px;
-      "
-    >
-      <form-data-component
-      :FormDataclass="'infoOfCust'"
-      :subInfoTitleNm="'고객 정보'"
-      />
-    </div>
-    <br /><br /><br />
-
-    <h1 style="font-size: 30px">CustRetvComponent</h1>
-    <span></span>
-    <div
-      style="
-        display: inline-block;
-        border-top: solid black 1px;
-        margin: 10px;
-        padding: 10px;
-        height: auto;
-        width: 86%;
-        margin: 10px;
-      "
-    >
-      <CustRetvComponent :cdGroup="'optionsSearchDiv'" />
-    </div>
-    <br /><br /><br />
-
-    <h1 style="font-size: 30px">BlcComponent</h1>
+    <h1 style="font-size: 30px">AtcListComponent</h1>
     <span></span>
     <div class="commondiv2">
-      <BlcComponent
-        :sub-info-title-nm="'청구목록'"
-        :column-defs="columnDefs1"
-        :row-data="rowData1"
-        :select-box-show="true"
-        :total="'3'"
-        :cdGroup="'optionsSearchDiv'"
-        :btnName="'엑셀다운'"
-      />
+      <AtcListComponent/>
+      <p>- 첨부된 파일들의 정보를 보여주기 위한 컴포넌트</p>
     </div>
     <br /><br /><br />
 
-    <h1 style="font-size: 30px">ValdtnComponent</h1>
+    <h1 style="font-size: 30px">AtcRegComponent</h1>
     <span></span>
     <div class="commondiv2">
-      <ValdtnComponent/>
+      <AtcRegComponent/>
+      <p>- 파일을 첨부해야 하는 페이지에서 사용될 컴포넌트</p>
     </div>
     <br /><br /><br />
+
 
     <h1 style="font-size: 30px">FloatingLabelsComponent</h1>
     <span></span>
-    <div class="commondiv2">
-      <FloatingLabelsComponent>
-        <input  type="text" placeholder="Label">
-      </FloatingLabelsComponent>
-      <br>
-      <FloatingLabelsComponent_2 />
+    <div class="commondiv1">
+
+      <FloatingLabelsComponent
+        :placeholder="'입력'"
+        @emitValue="(value) =>{data = value}"
+      />
+      <br />
+      <p>- 값을 입력하지 않아도 focus에 따라 필드명이 위로 떠오른다.</p>
     </div>
-    <br /><br /><br />
+    <br />
+
+    <h1 style="font-size: 30px">RangeComponent</h1>
+    <span></span>
+    <div class="commondiv1" >
+      <RangeComponent />
+      <p>-슬라이더를 통해 1~100까지의 값 조절 가능</p>
+    </div>
+    <br />
 
     <h1 style="font-size: 30px">ToastComponent</h1>
     <span></span>
-    <div class="commondiv2">
-      <ButtonComponent @click="chk=true" :btnClass="'btnClass1'" :btnName="'btnClass1'" />
+    <div class="commondiv1">
+      <ButtonComponent @click="ToastCall" :btnClass="'btnClass3'" :btnName="'Toast버튼'" />
       <ToastComponent
           v-if="chk"
           :message="'hello'"
@@ -635,36 +383,23 @@
           :duration="2000"
           :transition="'slide-right'"
       />
+      <p>- position값 조정해서 출력 위치 조정 가능</p>
+      <p>- duration값 조정해서 일정 시간 뒤 자동 삭제</p>
+      <p>- 클래스 지정 방식은 입력받은 postion값을 wk-{position}의 형태로 만든후 join하여 class변수에 입력</p>
+      <p>- className : wk-alert ,wk-warn, wk-info  </p>
+      <p>- transition : 'slide-down', 'slide-up', 'slide-left', 'slide-right', 'fade'</p>
+    </div>
+    <br />
+
+    <h1 style="font-size: 30px">ValdtnComponent</h1>
+    <span></span>
+    <div class="commondiv1">
+      <ValdtnComponent/>
     </div>
     <br /><br /><br />
 
-    <h1 style="font-size: 30px">AtcRegComponent</h1>
-    <span></span>
-    <div class="commondiv2">
-      <AtcRegComponent/>
-    </div>
-    <br /><br /><br />
 
-    <h1 style="font-size: 30px">AtcListComponent</h1>
-    <span></span>
-    <div class="commondiv2">
-      <AtcListComponent/>
-    </div>
-    <br /><br /><br />
 
-    <h1 style="font-size: 30px">TextAreaComponent</h1>
-    <span></span>
-    <div
-    class="commondiv2"
-    style="height: 100px;  "
-    >
-      <TextAreaComponent
-          :rows="10"
-          :placeholder="'내용을 입력'"
-          :maxlength="10"
-      />
-    </div>
-    <br /><br /><br />
 
 
 
@@ -692,7 +427,6 @@ import ChkBoxComponent from '../../components/common/ChkBoxComponent.vue';
 import RadioComponent from '../../components/common/RadioComponent.vue'
 import ValdtnComponent from "@/components/common/Etc/ValdtnComponent";
 import FloatingLabelsComponent from "@/components/common/Etc/FloatingLabelsComponent";
-import FloatingLabelsComponent_2 from "@/components/common/Etc/FloatingLabelsComponent_2";
 import ToastComponent from "@/components/common/Etc/ToastComponent";
 import linkComponent from '@/components/common/linkComponent.vue';
 import AtcRegComponent from "@/components/common/Etc/AtcRegComponent";
@@ -732,7 +466,6 @@ export default {
     AtcListComponent,
     AtcRegComponent,
     ToastComponent,
-    FloatingLabelsComponent_2,
     FloatingLabelsComponent,
     ValdtnComponent,
     PagingComponent,
@@ -830,6 +563,10 @@ export default {
             {groupId: 4, directoryName: '요금제명(서비스계약ID)2022-10-13~2022-10-15서울시 강남구 학동로 111',chk:true, chk2:true}
           ]},
         {groupId: 6, directoryName: '청구계정ID 홍길* 은행계좌자동이체'}
+      ],
+      contentTree2: [{
+
+      }
       ],
       activeItemObj: {}, // 활성화 시킬 객체
       selectedItemList: [], // 선택시킬 객체
@@ -1025,6 +762,15 @@ export default {
   created() {
   },
   methods: {
+    filter(param){
+      console.log(param);
+      if(param.directoryName === "요금제명(서비스계약ID)2022-10-13~2022-10-15서울시 강남구 학동로 1123")return true;
+      else return false;
+    },
+    ToastCall(){
+      if(this.chk===true)this.chk=false;
+      else this.chk=true;
+    },
     fileDisable() {
       this.pDisable = !this.pDisable;
     },

@@ -1,48 +1,52 @@
 <template>
   <form @submit.prevent="onSubmit">
     <!-- Email -->
-    <div class="form-group" :class="{ error: v$.form.email.$errors.length }">
-      <label for="">Email</label>
+    <div :class="{ error: v$.form.email.$errors.length }">
+      <label-component label-nm="'Email'" />
       <input :class="{
         ch1 : v$.form.email.$errors.length ===0,
         ch2 : v$.form.email.$errors.length >0
       }" placeholder="Enter your username" type="email" v-model="v$.form.email.$model">
-      <div class="pre-icon os-icon os-icon-user-male-circle"></div>
       <!-- error message -->
-      <div class="input-errors" v-for="(error, index) of v$.form.email.$errors" :key="index">
-        <div class="error-msg">{{ error.$message }}</div>
+      <div v-for="(error, index) of v$.form.email.$errors" :key="index">
+        <div>발생한 에러 : {{ error.$message }}</div>
       </div>
     </div>
-
+    <p>- 입력여부 확인 및 이메일 형식 확인</p>
     <!-- password -->
-    <div class="form-group" :class="{ error: v$.form.password.$errors.length }">
-      <label for="">Password</label>
+    <div :class="{ error: v$.form.password.$errors.length }">
+      <label-component label-nm="'Password'" />
       <input :class="{
         ch1 : v$.form.password.$errors.length ===0,
         ch2 : v$.form.password.$errors.length >0
       }" placeholder="Enter your password" type="password" v-model="v$.form.password.$model">
 
-      <div class="pre-icon os-icon os-icon-fingerprint"></div>
       <!-- error message -->
-      <div class="input-errors" v-for="(error, index) of v$.form.password.$errors" :key="index">
-        <div class="error-msg">{{ error.$message }}</div>
+      <div v-for="(error, index) of v$.form.password.$errors" :key="index">
+        <div>{{ error.$message }}</div>
       </div>
     </div>
-
+    <p>- 입력여부 확인 및 최소 글자수 제한</p>
     <!-- Submit Button -->
-    <div class="buttons-w">
-      <button :disabled="v$.form.$invalid" class="btn btn-primary">Login</button>
+    <div >
+      <button :disabled="v$.form.$invalid" >Login</button>
     </div>
-
   </form>
+  <p>- helpers.withMessage를 통한 에러 메세지 지정가능</p>
+  <p>- 에러가 발생하면 입력 라인 red</p>
+  <p>- 에러가 발생하게 되면 해당 에러는 v$.form.type(email or password).$erros에 들어간다.</p>
+  <p>- 변수를 선언할때는 form 객체 안에 정의해야 한다.</p>
 </template>
 
 <script>
 import useVuelidate from '@vuelidate/core'
 import {required, email, minLength, helpers} from '@vuelidate/validators'
-
+import labelComponent from "@/components/common/LabelComponent";
 export default {
   name: "ValidateExampleComponent",
+  components:{
+    labelComponent
+  },
   setup(){
     return {v$: useVuelidate()}
   },
@@ -57,13 +61,13 @@ export default {
   validations(){
     return {
       form:{
-        email:{
-          required:helpers.withMessage('입력하세요.',required),
-          email : helpers.withMessage('이메일로 입력',email)
+        email:{     //helpers.withMessage를 통한 에러 메세지 지정
+          required:helpers.withMessage('필수사항으로 입력하셔야합니다.',required),
+          email : helpers.withMessage('이메일형식이 아닙니다.',email)
         },
         password: {
-          required:helpers.withMessage('입력하세요.',required),
-          minLength : helpers.withMessage('최소 6자이상',minLength(6)),
+          required:helpers.withMessage('필수사항으로 입력하셔야합니다.',required),
+          minLength : helpers.withMessage('최소 글자수는 6자입니다.',minLength(6)),
         }
       }
     }
