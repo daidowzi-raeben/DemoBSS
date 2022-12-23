@@ -6,7 +6,6 @@
         <td>
           <select-box-component
             style="height: 28px"
-             
             :width="'140px'"
             :cdGroup="'dutySelect'"
             :defaultValue="'직무 선택'"
@@ -22,7 +21,6 @@
         <td>
           <select-box-component
             style="height: 28px"
-             
             :width="'200px'"
             :cdGroup="'rspof'"
             :defaultValue="'직책 선택'"
@@ -49,7 +47,6 @@
         <td>
           <select-box-component
             style="height: 28px"
-             
             :width="'140px'"
             :cdGroup="'orgSelect'"
             :defaultValue="'조직 선택1'"
@@ -61,7 +58,6 @@
         <td>
           <select-box-component
             style="height: 28px"
-             
             :width="'140px'"
             :cdGroup="'orgSelect'"
             :defaultValue="'조직 선택2'"
@@ -73,7 +69,6 @@
         <td>
           <select-box-component
             style="height: 28px"
-             
             :width="'140px'"
             :cdGroup="'orgSelect'"
             :defaultValue="'조직 선택3'"
@@ -98,7 +93,6 @@
         <td>
           <select-box-component
             style="height: 28px"
-             
             :width="'200px'"
             :cdGroup="'inOfficeSttus'"
             :defaultValue="'재직상태 선택'"

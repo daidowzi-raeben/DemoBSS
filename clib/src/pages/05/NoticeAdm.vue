@@ -217,7 +217,7 @@
                   :input-class="'class6 class6_2'"
                   :disabled="true"
                   :placeholder="'  '"
-                  :value="noticeAdmObject.ntfRegrDt"
+                  :value="noticeAdmObject.ntfRegrDt.toLocaleString()"
                 />
               </td>
             </tr>
@@ -347,7 +347,7 @@
                 <TextAreaComponent
                 :textAreaHeight="'80px'"
                 :placeholder="'내용 입력'"
-                :maxlength="10"
+                :maxlength="500"
                 :contents="noticeAdmObject.ntfContent"
                 v-model="noticeAdmObject.ntfContent"
                 />
@@ -369,7 +369,7 @@
                 <TextAreaComponent
                 :textAreaHeight="'80px'"
                 :placeholder="'내용 입력'"
-                :maxlength="10"
+                :maxlength="500"
                 :contents="noticeAdmObject.ansSbst"
                 v-model="noticeAdmObject.ansSbst"
                 />
@@ -427,7 +427,7 @@ import ApiMixin from "../../service/common.js"
         ntfSttus : 'amend',
         ntfTitle:'',
         ntfRegr : '',
-        ntfRegrDt : new Date().toLocaleString(),
+        ntfRegrDt : new Date(),
         ntfStYn: "01",                      // 공지게시
         ntfStDt : new Date(),               // 공지게시 일자
         ntfEndDt : new Date("2023-12-31"),  // 공지게시 일자

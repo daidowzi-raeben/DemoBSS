@@ -1558,6 +1558,24 @@
         "msgRegrDt": "2024-12-31",
         "msgContent": "메시지 내용 7 입니다."
       }
+    ],
+    "fileRowData":[
+      {
+        "fileNm":"가나다라.pdf",
+        "fileByte":"65byte"
+      },
+      {
+        "fileNm":"가나다라1.pdf",
+        "fileByte":"652byte"
+      },
+      {
+        "fileNm":"abcd.pdf",
+        "fileByte":"825byte"
+      },
+      {
+        "fileNm":"wow.pdf",
+        "fileByte":"765byte"
+      }
     ]
   }
 }

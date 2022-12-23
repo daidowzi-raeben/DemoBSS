@@ -400,7 +400,7 @@ export default {
   data() {
     return {
       menuAdmObject: {
-        ntfSttus: "amend",
+        menuSttus: "amend",
         menuId:"",
         upMenuId:"",
         menuNm:"",

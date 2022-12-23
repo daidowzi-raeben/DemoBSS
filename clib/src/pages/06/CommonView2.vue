@@ -1,5 +1,21 @@
 <template>
   <div class="container">
+    
+    <div class="commondiv0">
+    <h1 style="font-size: 30px">FileAgGridComponent</h1>
+      <div style="width: 600px;  height: 400px;">
+        <FileAgGridComponent />
+      
+      </div>
+
+
+      <p>- 파일 ag - grid  </p>
+      <p>- cdGroup : 셀렉트 박스에 넣을 데이터에 대한 코드그룹</p>
+    </div>
+
+
+
+    
     <div class="commondiv0"></div>
     <div class="commondiv0">
       <!--[O] select Box -->
@@ -357,7 +373,7 @@
       <br/><br/>
       <div style="width: 70%; margin: 10px 0">
         <button @click="fileDisable">file input disable</button> {{ pDisable ? "업로드 불가":" 업로드 가능" }}
-        <file-input-component :atcNoti="'버튼을 눌러 파일업로드 비활성화 가능'" :pDisable="pDisable" />
+        <file-input-component :fileBoxWidth="'200px'" :atcNoti="'버튼을 눌러 파일업로드 비활성화 가능'" :pDisable="pDisable" />
       </div>
       
       <p> * 파일 업로드시, 파일명.확장자(크기) 로 출력  </p>
@@ -422,73 +438,29 @@ import FileInputComponent from "../../components/common/FileInputComponent.vue";
 import DatePickerComponent from "../../components/common/DatePickerComponent.vue";
 import AgGridComponent from "../../components/common/AgGridComponent.vue";
 import SelectBoxComponent from "../../components/common/SelectBoxComponent.vue";
-import ButtonComponent from "@/components/common/ButtonComponent.vue";
-import SubInfoTitle from "@/components/common/SubInfoTitle.vue";
 import DepthTitle from "@/components/common/DepthTitle";
-import PopupComponent from "@/components/common/PopupComponent.vue";
-import CustInfoComponent from "@/components/UnionForm/CustInfoComponent";
-import CustRetvComponent from "@/components/UnionForm/CustRetvComponent";
-import BlcComponent from "@/components/UnionForm/BlcComponent";
-import FormDataComponent from "@/components/UnionForm/FormDataComponent.vue";
-import FormDataPopupComponent from "../../components/UnionForm/FormDataPopupComponent.vue";
-import RangeComponent from "../../components/common/Etc/RangeComponent.vue";
-import ChkBoxComponent from "../../components/common/ChkBoxComponent.vue";
 import RadioComponent from "../../components/common/RadioComponent.vue";
-import ValdtnComponent from "@/components/common/Etc/ValdtnComponent";
-import FloatingLabelsComponent from "@/components/common/Etc/FloatingLabelsComponent";
-import ToastComponent from "@/components/common/Etc/ToastComponent";
-import linkComponent from "@/components/common/linkComponent.vue";
-import AtcRegComponent from "@/components/common/Etc/AtcRegComponent";
-import AtcListComponent from "@/components/common/Etc/AtcListComponent";
 import TextAreaComponent from "@/components/common/TextAreaComponent";
 import { defineAsyncComponent, markRaw } from "vue";
-import TabComponent from "@/components/common/TabComponent";
 import ApiMixin from "@/service/common.js";
-import msfTree from "@/components/common/TreeComponent/msf-tree";
-import InputComponent from "@/components/common/InputComponent.vue";
-import LabelComponent from "@/components/common/LabelComponent.vue";
 import LoadingSpinnerComponent from "@/components/common/LoadingSpinnerComponent";
-import PostCodeComponent from "@/components/UnionForm/PostCodeComponent.vue";
-import AgGridComponent3 from "@/components/common/DragGrid";
-import LinkComponent from '../../components/common/linkComponent.vue';
+import FileAgGridComponent from "@/components/UnionForm/FileAgGridComponent.vue";
 
 export default {
   mixins: [ApiMixin],
   name: "CommonView",
   components: {
-    AgGridComponent3,
-    LoadingSpinnerComponent,
-    msfTree,
-    PostCodeComponent,
-    TabComponent,
-    TextAreaComponent,
-    AtcListComponent,
-    AtcRegComponent,
-    ToastComponent,
-    FloatingLabelsComponent,
-    ValdtnComponent,
+    SelectBoxComponent,
     PagingComponent,
     FileInputComponent,
     DatePickerComponent,
     AgGridComponent,
-    SelectBoxComponent,
-    ButtonComponent,
-    SubInfoTitle,
-    DepthTitle,
-    PopupComponent,
-    CustInfoComponent,
-    CustRetvComponent,
-    BlcComponent,
-    FormDataComponent,
-    FormDataPopupComponent,
-    RangeComponent,
-    ChkBoxComponent,
     RadioComponent,
-    linkComponent,
-    InputComponent,
-    LabelComponent,
-    LinkComponent,
-  },
+    TextAreaComponent,
+    DepthTitle,
+    LoadingSpinnerComponent,
+    FileAgGridComponent
+},
   data() {
     return {
       selectBoxCompData: {
@@ -571,6 +543,7 @@ export default {
           field: "select",
           width: 64,
           cellClass: "agCellStyle ",
+          headerCheckboxSelection: true,
           checkboxSelection: true,
           cellStyle: () => {
             return { "pointer-events": "none" };

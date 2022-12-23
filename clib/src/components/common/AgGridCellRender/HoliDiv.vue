@@ -2,7 +2,6 @@
 <div>
   <select-box-component
       style="height: 30px"
-       
       :width="'250px'"
       :cdGroup="'holiDiv'"
       :defaultValue="'휴일구분 선택'"

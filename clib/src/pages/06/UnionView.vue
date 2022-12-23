@@ -185,6 +185,7 @@
     </div>
     <br />
 
+
   </div>
 </template>
 
@@ -202,6 +203,7 @@ import buttonComponent from "@/components/common/ButtonComponent";
 import retvCondComponent from "@/components/UnionForm/RetvCondComponent";
 import subsRetvComponent from "@/components/UnionForm/SubsRetvComponent";
 import userAdmRetvComponent from "@/components/UnionForm/UserAdmRetvComponent";
+import FileAgGridComponent from "@/components/UnionForm/FileAgGridComponent.vue";
 export default {
   mixins:[ApiMixin],
   name: "CommonView",
@@ -211,14 +213,15 @@ export default {
     subsRetvComponent,
     retvCondComponent,
     custRetvComponent,
-  AutRetvComponent,
+    AutRetvComponent,
     blc2Component,
     blcComponent,
     inputComponent,
     postCodeComponent,
     labelComponent,
-    buttonComponent
-  },
+    buttonComponent,
+    FileAgGridComponent
+},
   data() {
     return {
       columnDefs: [],

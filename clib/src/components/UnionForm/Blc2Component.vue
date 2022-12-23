@@ -1,4 +1,5 @@
 <template>
+  <div>
   <div style="width: 100%">
     <SubInfoTitle :subInfoTitleNm="subInfoTitleNm" />
     <p style="margin-left: 5px; display: inline-block">
@@ -33,6 +34,7 @@
       />
     </div>
   </div>
+</div>
 </template>
 
 <script>

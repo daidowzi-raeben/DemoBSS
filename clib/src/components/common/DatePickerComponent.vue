@@ -171,6 +171,7 @@ select{
 .v3dp__clearable > button{
   background-color: v-bind('calenderBackgroundColor');
   border: none;
+  height: 20px;
   font-size: 10pt;
   font-weight: bold;
   font-style: normal;
