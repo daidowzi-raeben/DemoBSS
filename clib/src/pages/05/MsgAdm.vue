@@ -237,7 +237,7 @@
                     :input-class="'class6 class6_2'"
                     :disabled="true"
                     :placeholder="'  '"
-                    :value="msgAdmObject.msgRegrDt"
+                    :value="msgAdmObject.msgRegrDt.toLocaleString()"
                   />
                 </td>
               </tr>
@@ -417,7 +417,7 @@ export default {
         msgId: "",
         msgTitle: "",
         msgRegr: "",
-        msgRegrDt: new Date().toLocaleString(),
+        msgRegrDt: new Date(),
         msgStDt: new Date(), // 공지게시 일자
         msgEndDt: new Date("2023-12-31"), // 공지게시 일자
         msgUseYn: "01", // 팝업게시
@@ -522,7 +522,7 @@ export default {
       ntfObject.msgTitle = "";
       ntfObject.msgRegr = null;
       ntfObject.msgRegrDt = new Date();
-      ntfObject.msgStDt =   new Date()           ;
+      ntfObject.msgStDt =   new Date();           ;
       ntfObject.msgEndDt =  new Date("2023-12-31");
       ntfObject.msgUseYn = "";
       ntfObject.msgType =  "";

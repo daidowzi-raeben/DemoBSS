@@ -7,7 +7,7 @@
     >
       <input
         type="radio"
-        :id="radioOpt"
+        :id="radioOpt.cdId"
         :value="radioOpt.cdId"
         v-model="radioValue"
         @change="updateValue(radioValue)"
@@ -21,15 +21,15 @@ import radioSelect from "../../../public/radioOption.json";
 
 export default {
   props: {
+    RadioOption: {
+      type: String,
+      default: "defaultRadio",
+    },
     selectedRadio: {
       type: String,
       default: "",
     },
     defaultcdId: String,
-    RadioOption: {
-      type: String,
-      default: "defaultRadio",
-    },
   },
   data() {
     return {
@@ -55,8 +55,7 @@ export default {
   },
   watch: {
     selectedRadio(newselectedRadio) {
-      // 해당 셀렉트박스 옵션 중 선택 된 값이 있는지 판단 후,
-      // 있다면 해당 값을 선택 값으로 올림, 그렇지 않으면 empty 문자열 반환하여 placeholder(disabled, hidden) 반환
+      // 해당 라디오 옵션 중 선택 된 값이 있다면 처음 출력 값을 선택 값으로 출력
       this.radioValue = this.radioOptions
         .map((n) => n.cdId)
         .includes(newselectedRadio)
@@ -82,69 +81,4 @@ export default {
   cursor: pointer;
 }
 
-.container {
-  display: inline-block;
-  position: relative;
-  /* padding-left: 35px;
-  margin-bottom: 12px; */
-  cursor: pointer;
-  font-size: 22px;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-/* Hide the browser's default radio button */
-.container input {
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
-  height: 0;
-  width: 0;
-}
-
-/* Create a custom radio button */
-.radiomark {
-  position: absolute;
-  /* top: 0;
-  left: 0; */
-  /* margin:auto; */
-  height: 15px;
-  width: 15px;
-  background-color: #eee;
-  border-radius: 50%;
-}
-
-/* On mouse-over, add a grey background color */
-.container:hover input ~ .radiomark {
-  background-color: #ccc;
-}
-
-/* When the radio button is checked, add a blue background */
-.container input:checked ~ .radiomark {
-  background-color: #2196f3;
-}
-
-/* Create the indicator (the dot/circle - hidden when not checked) */
-.radiomark:after {
-  content: "";
-  position: absolute;
-  display: none;
-}
-
-/* Show the indicator (dot/circle) when checked */
-.container input:checked ~ .radiomark:after {
-  display: block;
-}
-
-/* Style the indicator (dot/circle) */
-.container .radiomark:after {
-  top: 9px;
-  left: 9px;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: white;
-}
 </style>

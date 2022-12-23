@@ -405,7 +405,7 @@ clib
   - totalPages  : 전체 페이지 개수
 
 **emit:**
-- 현재 페이지 ( pageNumber) emit으로 부모에게 전달
+- @currentPage :  현재 페이지(pageNumber)를 emit으로 부모에게 전달
 
 *** 
 ### PopupComponent
@@ -427,13 +427,12 @@ clib
 *** 
 ### RadioComponent
 **props:**
-- 예시
+- RadioOption   : 라디오 선택 리스트(옵션) 지정 
+- selectedRadio : 라디오 데이터 값 변경 시 적용하는 props
+- defaultcdId   : 기본 값 적용 시 출력하는 props 
 
 **emit:**
-- 예시
-
-**주요특징:**
-- 예시
+- @radioValue : 선택 값의 code (cdId)를 부모 컴포넌트에 전달
 
 *** 
 ### TabComponent

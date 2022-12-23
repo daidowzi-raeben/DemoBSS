@@ -102,26 +102,36 @@
       <p>사용자관리(UserAdm.vue) 데이터 클릭부터 출력까지의 로직 참고</p>
     </div>
 
-    <div class="commondiv0"> <!-- Radio Component  -->
-      <div style="height:150px;">
+    <div class="commondiv0" style="padding-bottom:30px;"> <!-- Radio Component  -->
+      <div>
         <h1 class="commondiv-title">RadioComponent</h1>
-        <div style="width:500px; height:100px;">
-          <br/><br/><br/>
+        <div>
+          <br/>
           <radio-component 
           :RadioOption="'RmnyOpt'" 
           :selectedRadio="radioData1"
           :defaultcdId="radioData1" 
           @radioEmit="(radioValue) => { radioData1 = radioValue }"
-          />
+          /> 
+          <br/>
+          <p v-show="radioData1"> 선택 값 : {{ radioData1 }}</p>
+          <p> * RadioOption으로 라디오 선택 옵션 선택 (현재는 json)  </p>
+          <p> * defultcdId 주어지지 않아서 기본 값 선택 X  </p>
           <br/><br/><br/>
+
           <radio-component 
           :RadioOption="'scrtOptions'" 
-          @radioEmit="(radioValue) => {radioData2 = radioValue }"
           :selectedRadio="radioData2"
-          :defaultcdId="radioData2" />
-          
+          :defaultcdId="radioData2"
+          @radioEmit="(radioValue) => {radioData2 = radioValue }" />
+          <br/>
+          <p> 선택 값 : {{ radioData2 }}</p>
+          <p> * defaultcdId props를 이용해 특정 값의 코드(ex 공개(02))를 데이터로 넣어 줄 경우, 해당 값 선택되어 출력</p>
+          <p> * selectedRadio props를 이용해 table에서 데이터 클릭 등 데이터가 변경 되는 경우에 변경 데이터를 컴포넌트로 보내어 값 변경 </p>
+
+
         </div>
-      </div><br/><br/><br/>
+      </div>
     </div>
 
     <div class="commondiv0">
@@ -487,7 +497,7 @@ export default {
         Option3: "",
         Option4: "",
       },
-      radioData1:"01",
+      radioData1:"",
       radioData2:"02",
       textAreaData: "기본 글 입니다.",
       date: {
