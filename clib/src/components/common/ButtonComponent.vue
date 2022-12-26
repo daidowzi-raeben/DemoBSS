@@ -45,6 +45,27 @@ export default {
   background-color: rgb(27, 114, 212);
   color: white;
 }
+.btnClass2 {
+  height: v-bind("btnHeight");
+  width: v-bind("btnWidth");
+  font-size: 9pt;
+  color: black;
+  font-weight: v-bind("btnFontWeight");
+  cursor: pointer;
+  background: linear-gradient(to bottom, #ffffff, rgb(240, 240, 240));
+  border: 0.5px solid #dbdbdb;
+  border-radius: 3px;
+}
+.btnClass2:hover {
+  color: grey;
+}
+.btnClass2:active {
+  color: grey;
+  -webkit-transform: scale(0.98);
+  transform: scale(0.98);
+}
+
+
 .btnClass3 {
   background-color: rgb(114, 148, 187);
   border-radius: 3px;
@@ -76,26 +97,6 @@ export default {
 }
 .btnClass4:active {
   color: rgb(27, 114, 212);
-  -webkit-transform: scale(0.98);
-  transform: scale(0.98);
-}
-
-.btnClass5 {
-  height: v-bind("btnHeight");
-  width: v-bind("btnWidth");
-  font-size: 9pt;
-  color: black;
-  font-weight: v-bind("btnFontWeight");
-  cursor: pointer;
-  background: linear-gradient(to bottom, #ffffff, rgb(240, 240, 240));
-  border: 0.5px solid #dbdbdb;
-  border-radius: 3px;
-}
-.btnClass5:hover {
-  color: grey;
-}
-.btnClass5:active {
-  color: grey;
   -webkit-transform: scale(0.98);
   transform: scale(0.98);
 }

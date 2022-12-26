@@ -46,5 +46,7 @@ export default {
 </script>
 
 <style scoped>
-
+div{
+  align-items: center;
+}
 </style>

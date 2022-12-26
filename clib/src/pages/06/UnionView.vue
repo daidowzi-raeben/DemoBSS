@@ -30,9 +30,10 @@
             :btnName1="'일괄정지 신청'"
             :btnName2="'숨김해제'"
             :btnName3="'엑셀 다운로드'"
-            :agGirdHeight="'60%'"
+            :agGirdHeight="'500px'"
           />
       </div>
+      <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
       <p>- 청약리스트 페이지에서 사용된 청약리스트 테이블 폼 </p>
       <p>- subInfoTitleNm : 해당 오브젝트에 대한 제목명</p>
       <p>- rowData : Ag Grid에 들어갈 행 데이터</p>
@@ -81,7 +82,7 @@
     </div>
     <br />
 
-    <h1 style="font-size: 30px">custInfoComponent</h1>
+    <h1 style="font-size: 30px">custRetvComponent</h1>
     <div class="commondiv1">
       <div style="width: 1000px;  height: 50px;">
         <cust-retv-component />

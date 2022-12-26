@@ -268,7 +268,7 @@
     <div><ButtonComponent :btnClass="'btnclass2'" :btnName="'btnClass2'" /></div>
     <div><ButtonComponent :btnClass="'btnClass3'" :btnName="'btnClass3'"   /></div>
     <div><ButtonComponent :btnClass="'btnClass4'" :btnName="'btnClass4'" :btnFontWeight="'bold'" :btnWidth="'90px'" :btnHeight="'20px'"/></div>
-    <div><ButtonComponent :btnClass="'btnClass5'" :btnName="'btnClass5'"   /></div>
+    <div><ButtonComponent :btnClass="'btnClass2'" :btnName="'btnClass2'"   /></div>
     <ButtonComponent :btnClass="'btnLeftImgClass'"/>btnLeftImgClass &nbsp;
     <ButtonComponent :btnClass="'btnRightImgClass'"/> btnRightImgClass&nbsp;
     <ButtonComponent :btnClass="'btnDeleteImgClass'"/> btnDeleteImgClass &nbsp;
@@ -315,7 +315,7 @@
 
     <h1 style="font-size: 30px">PopupComponent</h1>
     <div class="commondiv1">
-    <button-component :btnClass="'btnClass5'" :btnName="'공통 PopUp'" @click="popup" :btnWidth="'90px'"/>
+    <button-component :btnClass="'btnClass2'" :btnName="'공통 PopUp'" @click="popup" :btnWidth="'90px'"/>
 
     <popup-component
       v-if="isModalShow"

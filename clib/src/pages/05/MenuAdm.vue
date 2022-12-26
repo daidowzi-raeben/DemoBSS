@@ -65,7 +65,7 @@
         <sub-info-title :subInfoTitleNm="'메뉴 상세정보'" />
         <span style="float: right">
           <button-component
-            :btnClass="'btnClass5'"
+            :btnClass="'btnClass2'"
             :btnWidth="'60px'"
             :btnName="menuAdmObject.ntfSttus == 'amend' ? '변경' : '등록'"
             @click="popup"
@@ -226,7 +226,7 @@
         <sub-info-title :subInfoTitleNm="'업무처리 정보'" />
         <span style="float: right">
           <button-component
-            :btnClass="'btnClass5'"
+            :btnClass="'btnClass2'"
             :btnWidth="'60px'"
             :btnName="'추가'"
             @click="popup"
