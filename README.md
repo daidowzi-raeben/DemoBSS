@@ -335,11 +335,11 @@ clib
 
 -이동 전
 
-<img src="./readMeImg/dragGrid-1.png" width="500" height="300">
+<img src="/readMeImg/dragGrid-1.png" width="500" height="300">
 
 -이동 후
 
-<img src="./readMeImg/dragGrid-2.png" width="500" height="300">
+<img src="/readMeImg/dragGrid-2.png" width="500" height="300">
 
 ***
 ### FileInputComponent
@@ -534,7 +534,7 @@ clib
 ```
 **예시**
 
-<img src="./readMeImg/ag-Cell-Render.PNG" width="1000px" height="60px">
+<img src="./readMeImg/ag-Cell-Render.png" width="1000px" height="60px">
 
 ### ag-cell-Render > AutCdGpNm
 - Rowdata의 필드값이 코드그룹일 경우 코드그룹 셀렉트 박스 출력
@@ -542,7 +542,7 @@ clib
 
 **예시**
 
-<img src="./readMeImg/ag-Cell-Render-1.PNG" width="1000px" height="60px">
+<img src="./readMeImg/ag-Cell-Render-1.png" width="1000px" height="60px">
 
 ### ag-cell-Render > AutYn
 - 라디오 박스형태 데이터 출력
@@ -550,7 +550,7 @@ clib
 
 **예시**
 
-<img src="./readMeImg/ag-Cell-Render-2.PNG" width="1000px" height="60px">
+<img src="./readMeImg/ag-Cell-Render-2.png" width="1000px" height="60px">
 
 ### ag-cell-Render > BillChageDiv
 - 버튼 형태의 데이터와 내용 출력
@@ -558,7 +558,7 @@ clib
 
 **예시**
 
-<img src="./readMeImg/ag-Cell-Render-3.PNG" width="1000px" height="60px">
+<img src="./readMeImg/ag-Cell-Render-3.png" width="1000px" height="60px">
 
 ### ag-cell-Render > HoliDesc
 - 내용을 적을 수 있는 input박스 출력
@@ -566,14 +566,14 @@ clib
 
 **예시**
 
-<img src="./readMeImg/ag-Cell-Render-4.PNG" width="1000px" height="60px">
+<img src="./readMeImg/ag-Cell-Render-4.png" width="1000px" height="60px">
 
 ### ag-cell-Render > HoliDiv
 - 휴일구분 선택 셀렉트박스 출력
 
 **예시**
 
-<img src="./readMeImg/ag-Cell-Render-5.PNG" width="1000px" height="60px">
+<img src="./readMeImg/ag-Cell-Render-5.png" width="1000px" height="60px">
 
 ***
 ### treeComponent
@@ -616,7 +616,7 @@ clib
 
 **예시**
 
-<img src="./readMeImg/tree.PNG" width="600px" height="300px">
+<img src="./readMeImg/tree.png" width="600px" height="300px">
 
 ### treeComponent > msf-tree-item
 - msf-tree에서 가공된 데이터를 기반으로 트리를 만들어 출력하는 컴포넌트
@@ -645,7 +645,7 @@ clib
 
 **예시**
 
-<img src="./readMeImg/BtExeInfoPopup.PNG" width="400px" height="300px">
+<img src="./readMeImg/BtExeInfoPopup.png" width="400px" height="300px">
 
 ***
 ### popupComponent > CdGpLstPopup
@@ -669,7 +669,7 @@ clib
 
 **예시**
 
-<img src="./readMeImg/CdGpLstPopup.PNG" width="400px" height="200px">
+<img src="./readMeImg/CdGpLstPopup.png" width="400px" height="200px">
 
 ***
 ### popupComponent > CdLstPopup
@@ -689,7 +689,7 @@ clib
 
 **예시**
 
-<img src="./readMeImg/cdLstPopup.PNG" width="400px" height="200px">
+<img src="./readMeImg/cdLstPopup.png" width="400px" height="200px">
 
 ***
 ### etc
@@ -717,7 +717,7 @@ clib
 
 **예시**
 
-<img src="./readMeImg/atcList.PNG" width="1000px" height="200px">
+<img src="./readMeImg/atcList.png" width="1000px" height="200px">
 
 ***
 ### etc > AtcRegComponent
@@ -738,7 +738,7 @@ clib
 
 **예시**
 
-<img src="./readMeImg/atcReg.PNG" width="1000px" height="200px">
+<img src="./readMeImg/atcReg.png" width="1000px" height="200px">
 
 ***
 ### etc > FloatingLabelsComponent
@@ -772,9 +772,9 @@ clib
 **예시**
 
 -입력 전
-<img src="./readMeImg/floatingLabels-1.PNG" width="800px" height="50px">
+<img src="./readMeImg/floatingLabels-1.png" width="800px" height="50px">
 -입력 후
-<img src="./readMeImg/floatingLabels-2.PNG" width="800px" height="50px">
+<img src="./readMeImg/floatingLabels-2.png" width="800px" height="50px">
 
 ***
 ### etc > RangeComponent
@@ -786,7 +786,7 @@ clib
 ```
 
 **예시**
-<img src="./readMeImg/range.PNG" width="800px" height="50px">
+<img src="./readMeImg/range.png" width="800px" height="50px">
 
 ***
 ### etc > ToastComponent
@@ -826,7 +826,7 @@ clib
 
 **예시**
 
-<img src="./readMeImg/toast.PNG" width="200px" height="50px">
+<img src="./readMeImg/toast.png" width="200px" height="50px">
 
 ***
 ### etc > ValdtnComponent
@@ -838,15 +838,15 @@ clib
 
 -입력 전
 
-<img src="./readMeImg/validation-1.PNG" width="300px" height="100px">
+<img src="./readMeImg/validation-1.png" width="300px" height="100px">
 
 -입력 후 에러및 에러메시지
 
-<img src="./readMeImg/validation-2.PNG" width="300px" height="100px">
+<img src="./readMeImg/validation-2.png" width="300px" height="100px">
 
 -정상 입력
 
-<img src="./readMeImg/validation-3.PNG" width="300px" height="100px">
+<img src="./readMeImg/validation-3.png" width="300px" height="100px">
 ---
 
 ***
@@ -878,7 +878,7 @@ clib
 ```
 
 **예시**
-<img src="./readMeImg/autRetvComponent.PNG" width="1000px" height="50px">
+<img src="./readMeImg/autRetvComponent.png" width="1000px" height="50px">
 
 ***
 ### Blc2Component
@@ -908,7 +908,7 @@ clib
 
 **예시**
 
-<img src="./readMeImg/blc2.PNG" width="1000px" height="500px">
+<img src="./readMeImg/blc2.png" width="1000px" height="500px">
 
 ***
 ### BlcComponent
@@ -938,7 +938,7 @@ clib
 
 **예시**
 
-<img src="./readMeImg/blc.PNG" width="1000px" height="300px">
+<img src="./readMeImg/blc.png" width="1000px" height="300px">
 
 ***
 ### CustInfoComponent
@@ -954,7 +954,7 @@ clib
 
 **예시**
 
-<img src="./readMeImg/custInfo.PNG" width="1000px" height="100px">
+<img src="./readMeImg/custInfo.png" width="1000px" height="100px">
 
 ***
 ### CustRetvComponent
@@ -969,7 +969,7 @@ clib
 
 **예시**
 
-<img src="./readMeImg/custRetv.PNG" width="800px" height="50px">
+<img src="./readMeImg/custRetv.png" width="800px" height="50px">
 
 ### FormDataComponent
 설명
@@ -1001,19 +1001,19 @@ clib
 
 -초기상태
 
-<img src="./readMeImg/postCode-1.PNG" width="500px" height="150px">
+<img src="./readMeImg/postCode-1.png" width="500px" height="150px">
 
 -주소 검색
 
-<img src="./readMeImg/postCode-2.PNG" width="500px" height="150px">
+<img src="./readMeImg/postCode-2.png" width="500px" height="150px">
 
 -검색 결과
 
-<img src="./readMeImg/postCode-3.PNG" width="500px" height="150px">
+<img src="./readMeImg/postCode-3.png" width="500px" height="150px">
 
 -결과 선택
 
-<img src="./readMeImg/postCode-4.PNG" width="500px" height="150px">
+<img src="./readMeImg/postCode-4.png" width="500px" height="150px">
 
 
 ***
@@ -1034,7 +1034,7 @@ clib
 
 **예시**
 
-<img src="./readMeImg/retvCond.PNG" width="1000px" height="50px">
+<img src="./readMeImg/retvCond.png" width="1000px" height="50px">
 
 ***
 ### SubsRetvComponent
@@ -1050,7 +1050,7 @@ clib
 
 **예시**
 
-<img src="./readMeImg/subsRetv.PNG" width="1000px" height="100px">
+<img src="./readMeImg/subsRetv.png" width="1000px" height="100px">
 
 ***
 ### UserAdmRetvComponent
@@ -1065,7 +1065,7 @@ clib
 
 **예시**
 
-<img src="./readMeImg/userAdmRetv.PNG" width="1000px" height="100px">
+<img src="./readMeImg/userAdmRetv.png" width="1000px" height="100px">
 
 ---
 
