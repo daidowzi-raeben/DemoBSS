@@ -64,17 +64,17 @@
               <tr>
                 <th>코드명</th>
                 <td>
-                  <input-component class="input" :input-class="'class5 class5_long1'" :long-width="'220px'" v-model="this.cdNm" :value="this.cdNm" />
+                  <input-component class="input" :input-class="'class5 '" :class5Width="'220px'" v-model="this.cdNm" :value="this.cdNm" />
                 </td>
                 <th>표준코드ID</th>
                 <td>
-                  <input-component :class="this.type===2 ? 'input_disabled':'input'" :input-class="'class5 class5_long1'" :disabled="disabled" :long-width="'220px'" v-model="this.stdCdId" :value="this.stdCdId" />
+                  <input-component :class="this.type===2 ? 'input_disabled':'input'" :input-class="'class5 '" :disabled="disabled" :class5Width="'220px'" v-model="this.stdCdId" :value="this.stdCdId" />
                 </td>
               </tr>
               <tr>
                 <th>코드설명</th>
                 <td colspan="3">
-                  <input-component class="input" :input-class="'class5 class5_long1'" :long-width="'625px'" v-model="this.cdDesc" :value="this.cdDesc" />
+                  <input-component class="input" :input-class="'class5 '" :class5Width="'625px'" v-model="this.cdDesc" :value="this.cdDesc" />
                 </td>
               </tr>
               <tr>

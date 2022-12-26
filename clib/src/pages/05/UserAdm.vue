@@ -90,7 +90,8 @@
               <td>
                 <input-component
                   :class6Width="'180px'"
-                  :input-class="userAdmObject.inputClass"
+                  :input-class="'class6'"
+                  :class6-background-color="userAdmObject.sttus == 'amend'? 'rgb(251, 253, 255)' : 'white'"
                   :disabled="userAdmObject.isDisabled"
                   :value="userAdmObject.cmpNo"
                   v-model="userAdmObject.cmpNo"
@@ -182,7 +183,8 @@
               <th><label-component :labelNm="'조직'" /></th>
               <td colspan="2">
                 <input-component
-                  :input-class="'class6 class6_2'"
+                  :input-class="'class6'"
+                  :class6-background-color="'rgb(251, 253, 255)'"
                   :class6Width="'180px'"
                   :disabled="true"
                   :value="userAdmObject.org"
@@ -344,7 +346,8 @@
               <th><label-component :labelNm="'비밀번호'" /></th>
               <td colspan="3">
                 <input-component
-                  :input-class="userAdmObject.inputClass"
+                  :input-class="'class6'"
+                  :class6-background-color="userAdmObject.sttus == 'amend'? 'rgb(251, 253, 255)' : 'white'"
                   :disabled="userAdmObject.isDisabled"
                   :class6Width="'180px'"
                   :value="userAdmObject.pwd"
@@ -371,14 +374,16 @@
               <th><label-component :labelNm="'비밀번호변경일'" /></th>
               <td colspan="3">
                 <input-component
-                  :input-class="'class6 class6_2'"
+                  :input-class="'class6'"
+                  :class6-background-color="'rgb(251, 253, 255)'"
                   :class6Width="'180px'"
                   :disabled="true"
                   :value="' PW'"
                   :placeholder="' - '"
                 />
                 <input-component
-                  :input-class="'class6 class6_2'"
+                  :input-class="'class6'"
+                  :class6-background-color="'rgb(251, 253, 255)'"
                   :class6Width="'180px'"
                   :disabled="true"
                   :value="userAdmObject.pwdChgDt"
@@ -391,7 +396,8 @@
               <th><label-component :labelNm="'최종로그인일시'" /></th>
               <td colspan="3">
                 <input-component
-                  :input-class="'class6 class6_2'"
+                  :input-class="'class6'"
+                  :class6-background-color="'rgb(251, 253, 255)'"
                   :class6Width="'180px'"
                   :disabled="true"
                   :value="userAdmObject.lastLogIn"
@@ -404,7 +410,8 @@
               <th><label-component :labelNm="'로그인실패'" /></th>
               <td colspan="3">
                 <input-component
-                  :input-class="'class6 class6_2'"
+                  :input-class="'class6'"
+                  :class6-background-color="'rgb(251, 253, 255)'"
                   :class6Width="'40px'"
                   :disabled="true"
                   style="text-align: center"
@@ -413,7 +420,8 @@
                 />
 
                 <input-component
-                  :input-class="'class6 class6_2'"
+                  :input-class="'class6'"
+                  :class6-background-color="'rgb(251, 253, 255)'"
                   :class6Width="'180px'"
                   :disabled="true"
                   :value="userAdmObject.failLogIn"
@@ -426,13 +434,15 @@
               <th><label-component :labelNm="'등록자/등록일시'" /></th>
               <td colspan="3">
                 <input-component
-                  :input-class="'class6 class6_2'"
+                  :input-class="'class6'"
+                  :class6-background-color="'rgb(251, 253, 255)'"
                   :class6Width="'180px'"
                   :disabled="true"
                   :value="'김케이티'"
                 />
                 <input-component
-                  :input-class="'class6 class6_2'"
+                  :input-class="'class6'"
+                  :class6-background-color="'rgb(251, 253, 255)'"
                   :class6Width="'180px'"
                   :disabled="true"
                   :value="userAdmObject.regrDt"
@@ -444,14 +454,16 @@
               <th><label-component :labelNm="'수정자/수정일시'" /></th>
               <td colspan="3">
                 <input-component
-                  :input-class="'class6 class6_2'"
+                  :input-class="'class6'"
+                  :class6-background-color="'rgb(251, 253, 255)'"
                   :class6Width="'180px'"
                   :disabled="true"
                   :value="' 김클라우드  '"
                 />
 
                 <input-component
-                  :input-class="'class6 class6_2'"
+                  :input-class="'class6'"
+                  :class6-background-color="'rgb(251, 253, 255)'"
                   :class6Width="'180px'"
                   :disabled="true"
                   :value="userAdmObject.amdrDt"
@@ -577,7 +589,6 @@ export default {
       currentPage: "",
       userAdmObject: {
         sttus: "amend",
-        inputClass: "class6 class6_2",
         isDisabled: true,
         cmpNo: "사번",
         inOfficeSttus2: "inOffice",
@@ -653,7 +664,6 @@ export default {
     clickUserRegister() {
       // if (this.userAdmObject.sttus == "amend") {
       this.userAdmObject.sttus = "register";
-      this.userAdmObject.inputClass = "class6";
       this.userAdmObject.isDisabled = false;
       this.emptyUserAdmObject(this.userAdmObject);
       this.$refs.agGridComponent.deselectAll(1);
@@ -662,7 +672,6 @@ export default {
     clickUserAmend() {
       if (this.userAdmObject.sttus == "register") {
         this.userAdmObject.sttus = "amend";
-        this.userAdmObject.inputClass = "class6 class6_2";
         this.userAdmObject.isDisabled = true;
       }
     },

@@ -60,7 +60,9 @@
                     <td>
                       <input-component
                         style="width: 90%; text-align: center"
-                        :input-class="'class5 class5_short2'"
+                        :input-class="'class5'"
+                        :class5-width="'64px'"
+                        :class5-margin-right="'3px'"
                         :disabled="true"
                         :value="item.zipNo"
                       />
@@ -68,16 +70,18 @@
                     <td>
                       <input-component
                         style="width: 98%"
-                        :input-class="'class5 class5_long1'"
+                        :input-class="'class5 '"
                         :disabled="true"
+                        :class5Width="'330px'"
                         :value="item.roadAddr"
                       />
                     </td>
                     <td>
                       <input-component
                         style="width: 98%"
-                        :input-class="'class5 class5_long1'"
+                        :input-class="'class5 '"
                         :disabled="true"
+                        :class5Width="'330px'"
                         :value="item.jibunAddr"
                       />
                     </td>

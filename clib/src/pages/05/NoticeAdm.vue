@@ -204,7 +204,8 @@
               <td>
                 <input-component
                   :class6Width="'150px'"
-                  :input-class="'class6 class6_2'"
+                  :input-class="'class6'"
+                  :class6-background-color="'rgb(251, 253, 255)'"
                   :disabled="true"
                   :placeholder="'System'"
                   :value="noticeAdmObject.ntfRegr"
@@ -214,7 +215,8 @@
               <td>
                 <input-component
                   :class6Width="'200px'"
-                  :input-class="'class6 class6_2'"
+                  :input-class="'class6'"
+                  :class6-background-color="'rgb(251, 253, 255)'"
                   :disabled="true"
                   :placeholder="'  '"
                   :value="noticeAdmObject.ntfRegrDt.toLocaleString()"

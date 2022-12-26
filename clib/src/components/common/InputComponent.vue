@@ -31,9 +31,13 @@ export default {
       type:String,
       default:'140px'
     },
-    longWidth :{
+    class5Width :{
       type: String,
-      default:'330px'
+      default:'140px'
+    },
+    class5MarginRight:{
+      type:String,
+      default:'11px'
     },
     height: {
       type:String,
@@ -49,6 +53,9 @@ export default {
     },
     value:{
       type:String,
+    },
+    class6BackgroundColor:{
+      default:'white'
     }
   },
   beforeUpdate() {
@@ -102,45 +109,25 @@ input {
 }
 
 .class5{
-  width: 140px;
+  width: v-bind('class5Width');
   /* font-size: 12pt; */
   font-size: 10pt;
   font-weight: normal;
   color: #000;
   background-color: rgb(251, 253, 255);
   border: 1px solid #e4e4e4;
-  margin-right: 11px;
+  margin-right: v-bind('class5MarginRight');
   height: 24px;
-}
-
-.class5_short1{
-  width: 80px;
-  margin-right: 3px;
-
-}
-
-.class5_short2{
-  width: 64px;
-  margin-right: 3px;
-
-}
-
-.class5_long1{
-  width: v-bind('longWidth');
 }
 
 .class6{
   width: v-bind("class6Width");
-  /* font-size: 12pt; */
+  height: 24px;
   font-size: 10pt;
   font-weight: normal;
   color: #000;
-  background-color: white;
+  background-color: v-bind("class6BackgroundColor");
   border: 1px solid #e4e4e4;
   margin-right: 11px;
-  height: 24px;
-}
-.class6_2{
-  background-color: rgb(251, 253, 255);
 }
 </style>

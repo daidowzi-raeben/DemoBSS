@@ -213,7 +213,7 @@ clib
 
 **주요특징:**
 - emit가 아닌 v-model을 통해 데이터 송수신
-- 입력창 스타일 (`class1`, `class3`, `class4`, `class5`, `class6 class6_2`)
+- 입력창 스타일 (`class1`, `class3`, `class4`, `class5`, `class6`)
 *** 
 ### SelectBoxComponent
 **props**

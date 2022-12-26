@@ -148,21 +148,21 @@
             <tr>
               <th>스케줄링ID</th>
               <td >
-                <input-component :input-class="'class5 class5_long1'" :class="batchChgConf===true ? 'input_disabled':'input'"
-                                 :long-width="'600px'" :disabled="disabled" v-model="this.batchSclgAdmObject.sclgId" :value="this.batchSclgAdmObject.sclgId" />
+                <input-component :input-class="'class5 '" :class="batchChgConf===true ? 'input_disabled':'input'"
+                                 :class5Width="'600px'" :disabled="disabled" v-model="this.batchSclgAdmObject.sclgId" :value="this.batchSclgAdmObject.sclgId" />
               </td>
             </tr>
             <tr>
               <th>배치서버</th>
               <td>
-                <input-component class="input" :input-class="'class5 class5_long1'" :long-width="'600px'" v-model="this.batchSclgAdmObject.batchSrvr"
+                <input-component class="input" :input-class="'class5 '" :class5Width="'600px'" v-model="this.batchSclgAdmObject.batchSrvr"
                                  :value="this.batchSclgAdmObject.batchSrvr" />
               </td>
             </tr>
             <tr>
               <th>스케줄링 그룹</th>
               <td>
-                <input-component class="input" :input-class="'class5 class5_long1'" :long-width="'600px'" v-model="this.batchSclgAdmObject.sclgGp"
+                <input-component class="input" :input-class="'class5 '" :class5Width="'600px'" v-model="this.batchSclgAdmObject.sclgGp"
                                  :value="this.batchSclgAdmObject.sclgGp" />
               </td>
             </tr>
@@ -178,7 +178,7 @@
             <tr>
               <th>실행주기(크론식)</th>
               <td>
-                <input-component class="input" :input-class="'class5 class5_long1'" :long-width="'600px'" v-model="this.batchSclgAdmObject.exeCycl"
+                <input-component class="input" :input-class="'class5 '" :class5Width="'600px'" v-model="this.batchSclgAdmObject.exeCycl"
                                  :value="this.batchSclgAdmObject.exeCycl" />
               </td>
             </tr>

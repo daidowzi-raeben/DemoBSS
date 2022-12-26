@@ -184,9 +184,9 @@
                     :labelClass="'label-type'"/>
                 </th>
                 <td colspan="2">
-                  <input-component :input-class="'class5 class5_short1'" :disabled="true" :value="'801212' " />
+                  <input-component :input-class="'class5'" :class5Width="'80px'" :class5MarginRight="'3px'" :disabled="true" :value="'801212' " />
                   -
-                  <input-component :input-class="'class5 class5_short1'" :disabled="true" :value="'1*****' " />
+                  <input-component :input-class="'class5'" :class5Width="'80px'" :class5MarginRight="'3px'" :disabled="true" :value="'1*****' " />
                 </td>
                 <td colspan="5"></td>
               </tr>
@@ -222,8 +222,8 @@
                     :labelClass="'label-type'"/>
                 </th>
                 <td colspan="5">
-                  <input-component :input-class="'class5 class5_short1'" :disabled="true" :value="'12345'" />
-                  <input-component :input-class="'class5 class5_long1'" :disabled="true" :value="'서울시 강남구 학동로 111'" />
+                  <input-component :input-class="'class5'" :class5Width="'80px'" :class5MarginRight="'3px'" :disabled="true" :value="'12345'" />
+                  <input-component :input-class="'class5'" :class5Width="'330px'" :disabled="true" :value="'서울시 강남구 학동로 111'" />
                   <input-component :input-class="'class5'" style="margin-right: 0; width: 284px;" :disabled="true" :value="'상세주소'" />
                 </td>
               </tr>
@@ -235,10 +235,10 @@
                 </th>
                 <td colspan="5">
                   <input-component :input-class="'class5'" :disabled="true" :value="'신용카드 자동이체' " />
-                  <input-component :input-class="'class5 class5_short1'" :disabled="true" :value="'매월말일'" />
-                  <input-component :input-class="'class5 class5_short1'" :disabled="true" :value="'국민카드'" />
+                  <input-component :input-class="'class5'" :class5Width="'80px'" :class5MarginRight="'3px'" :disabled="true" :value="'매월말일'" />
+                  <input-component :input-class="'class5'" :class5Width="'80px'" :class5MarginRight="'3px'" :disabled="true" :value="'국민카드'" />
                   <input-component :input-class="'class5'" :disabled="true" :value="'1234567891****' " />
-                  <input-component :input-class="'class5 class5_short1'" :disabled="true" :value="'홍길*' " />
+                  <input-component :input-class="'class5'" :class5Width="'80px'" :class5MarginRight="'3px'" :disabled="true" :value="'홍길*' " />
                   <input-component :input-class="'class5'" :disabled="true" :value="'11월/2024년' " />
                 </td>
               </tr>

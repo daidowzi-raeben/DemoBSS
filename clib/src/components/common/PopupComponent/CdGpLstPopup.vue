@@ -54,17 +54,17 @@
               <tr>
                 <th>코드그룹명</th>
                 <td>
-                  <input-component class="input" :input-class="'class5 class5_long1'" :long-width="'220px'" v-model="this.cdGpNm" :value="this.cdGpNm" />
+                  <input-component class="input" :input-class="'class5 '" :class5Width="'220px'" v-model="this.cdGpNm" :value="this.cdGpNm" />
                 </td>
                 <th>코드그룹영문명</th>
                 <td>
-                  <input-component class="input" :input-class="'class5 class5_long1'" :long-width="'220px'" v-model="this.cdGpEngNm" :value="this.cdGpEngNm" />
+                  <input-component class="input" :input-class="'class5 '" :class5Width="'220px'" v-model="this.cdGpEngNm" :value="this.cdGpEngNm" />
                 </td>
               </tr>
               <tr>
                 <th>코드그룹 설명</th>
                 <td colspan="3">
-                  <input-component class="input" :input-class="'class5 class5_long1'" :long-width="'625px'" v-model="this.cdGpDesc" :value="this.cdGpDesc" />
+                  <input-component class="input" :input-class="'class5 '" :class5Width="'625px'" v-model="this.cdGpDesc" :value="this.cdGpDesc" />
                 </td>
               </tr>
               <tr>

@@ -198,7 +198,8 @@
                 <td colspan="3">
                   <input-component
                     :class6Width="'150px'"
-                    :input-class="'class6 class6_2'"
+                    :input-class="'class6'"
+                    :class6-background-color="'rgb(251, 253, 255)'"
                     :disabled="true"
                     :placeholder="'Message ID'"
                     :value="msgAdmObject.msgId"
@@ -223,7 +224,8 @@
                 <td class="td2">
                   <input-component
                     :class6Width="'150px'"
-                    :input-class="'class6 class6_2'"
+                    :input-class="'class6'"
+                    :class6-background-color="'rgb(251, 253, 255)'"
                     :disabled="true"
                     :placeholder="'System'"
                     :value="msgAdmObject.msgRegr"
@@ -233,7 +235,8 @@
                 <td>
                   <input-component
                     :class6Width="'200px'"
-                    :input-class="'class6 class6_2'"
+                    :input-class="'class6'"
+                    :class6-background-color="'rgb(251, 253, 255)'"
                     :disabled="true"
                     :placeholder="'  '"
                     :value="msgAdmObject.msgRegrDt.toLocaleString()"

@@ -80,7 +80,8 @@
               <td>
                 <input-component
                   :class6Width="'180px'"
-                  :input-class="'class6 class6_2'"
+                  :input-class="'class6'"
+                  :class6-background-color="'rgb(251, 253, 255)'"
                   :disabled="true"
                   :placeholder="'메뉴ID'"
                   :value="menuAdmObject.menuId"
@@ -90,7 +91,8 @@
               <td>
                 <input-component
                   :class6Width="'180px'"
-                  :input-class="'class6 class6_2'"
+                  :input-class="'class6'"
+                  :class6-background-color="'rgb(251, 253, 255)'"
                   :disabled="true"
                   :placeholder="'상위메뉴ID'"
                   :value="menuAdmObject.upperMenuId"
@@ -176,13 +178,15 @@
               <th><label-component :labelNm="'등록자/등록일시'" /></th>
               <td colspan="3">
                 <input-component
-                  :input-class="'class6 class6_2'"
+                  :input-class="'class6'"
+                  :class6-background-color="'rgb(251, 253, 255)'"
                   :class6Width="'180px'"
                   :disabled="true"
                   :value="menuAdmObject.dtlRegrNm"
                 />
                 <input-component
-                  :input-class="'class6 class6_2'"
+                  :input-class="'class6'"
+                  :class6-background-color="'rgb(251, 253, 255)'"
                   :class6Width="'180px'"
                   :disabled="true"
                   :value="menuAdmObject.dtlRegrDt"
@@ -194,13 +198,15 @@
               <th><label-component :labelNm="'수정자/수정일시'" /></th>
               <td colspan="3">
                 <input-component
-                  :input-class="'class6 class6_2'"
+                  :input-class="'class6'"
+                  :class6-background-color="'rgb(251, 253, 255)'"
                   :class6Width="'180px'"
                   :disabled="true"
                   :value="menuAdmObject.dtlAmdrNm"
                 />
                 <input-component
-                  :input-class="'class6 class6_2'"
+                  :input-class="'class6'"
+                  :class6-background-color="'rgb(251, 253, 255)'"
                   :class6Width="'180px'"
                   :disabled="true"
                   :value="menuAdmObject.dtlAmdrDt"
@@ -241,7 +247,8 @@
               <td colspan="3">
                 <input-component
                   :class6Width="'140px'"
-                  :input-class="'class6 class6_2'"
+                  :input-class="'class6'"
+                  :class6-background-color="'rgb(251, 253, 255)'"
                   :disabled="true"
                   :value="menuAdmObject.wjtTypeId"
                   :placeholder="'업무유형'"
@@ -328,13 +335,15 @@
               <th><label-component :labelNm="'등록자/등록일시'" /></th>
               <td colspan="3">
                 <input-component
-                  :input-class="'class6 class6_2'"
+                  :input-class="'class6'"
+                  :class6-background-color="'rgb(251, 253, 255)'"
                   :class6Width="'180px'"
                   :disabled="true"
                   :value="menuAdmObject.trtRegrNm"
                 />
                 <input-component
-                  :input-class="'class6 class6_2'"
+                  :input-class="'class6'"
+                  :class6-background-color="'rgb(251, 253, 255)'"
                   :class6Width="'180px'"
                   :disabled="true"
                   :value="menuAdmObject.trtRegrDt"
@@ -346,14 +355,16 @@
               <th><label-component :labelNm="'수정자/수정일시'" /></th>
               <td colspan="3">
                 <input-component
-                  :input-class="'class6 class6_2'"
+                  :input-class="'class6'"
+                  :class6-background-color="'rgb(251, 253, 255)'"
                   :class6Width="'180px'"
                   :disabled="true"
                   :value="menuAdmObject.trtAmdrNm"
                 />
 
                 <input-component
-                  :input-class="'class6 class6_2'"
+                  :input-class="'class6'"
+                  :class6-background-color="'rgb(251, 253, 255)'"
                   :class6Width="'180px'"
                   :disabled="true"
                   :value="menuAdmObject.trtAmdrDt"

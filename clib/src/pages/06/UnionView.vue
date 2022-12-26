@@ -99,19 +99,19 @@
         <table style="border:1px solid" >
           <tr>
             <th> <label-component :labelNm="'우편번호'" /> </th>
-            <td> <input-component :inputClass="'class5_short1'" :value="postCodeObj.zipNo" /> </td>
+            <td> <input-component :value="postCodeObj.zipNo" /> </td>
           </tr>
           <tr>
             <th> <label-component :labelNm="'도로명주소'" /> </th>
-            <td> <input-component :inputClass="'class5_long1'" :value="postCodeObj.roadAddr" /> </td>
+            <td> <input-component :value="postCodeObj.roadAddr" /> </td>
           </tr>
           <tr>
             <th> <label-component :labelNm="'지번주소'" />   </th>
-            <td> <input-component :inputClass="'class5_long1'" :value="postCodeObj.jibunAddr" /> </td>
+            <td> <input-component :value="postCodeObj.jibunAddr" /> </td>
           </tr>
           <tr>
             <th> <label-component :labelNm="'상세주소'" /> </th>
-            <td> <input-component :inputClass="'class5_long1'" :value="postCodeObj.detailPostAddress" /> </td>
+            <td> <input-component :value="postCodeObj.detailPostAddress" /> </td>
           </tr>
         </table>
       </div>

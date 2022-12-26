@@ -51,17 +51,19 @@
           :value="'class5 '"
       />
       |&nbsp;
-      <label-component label-nm="'class5 class5_short1'" />
+      <label-component label-nm="'class5'" />
       &nbsp;&nbsp;
       <input-component
-          :input-class="'class5 class5_short1'"
+          :input-class="'class5'"
           :value="'short1 '"
       />
       <br />
-      <label-component label-nm="'class5 class5_short2'" />
+      <label-component label-nm="'class5'" />
       &nbsp;&nbsp;
       <input-component
-          :input-class="'class5 class5_short2'"
+          :input-class="'class5'"
+          :class5-width="'64px'"
+          :class5-margin-right="'3px'"
           :value="'short2'"
       />
       |&nbsp;
@@ -69,7 +71,7 @@
       &nbsp;&nbsp;
       <input-component
           :input-class="'class5 class5_long1'"
-          :long-width="'200px'"
+          :class5Width="'200px'"
           :value="'long1 '"
       />
       <p>- class5의 width: 140px height:24px을 기준</p>
@@ -84,14 +86,15 @@
           :value="'class6 '"
       />
 
-      <label-component label-nm="'class6 class6_2'" />
+      <label-component label-nm="'class6'" />
       &nbsp;&nbsp;
       <input-component
-          :input-class="'class6 class6_2'"
-          :value="'class6 class6_2'"
+          :input-class="'class6'"
+          :value="'class6'"
+          :class6-background-color="'rgb(251, 253, 255)'"
       />
       <p>- class6의 width는 입력받은 class6Width, height는 24px을 기준</p>
-      <p>- class6_2를 추가할 경우 배경색 변경</p>
+      <p>- class6-background-color를 추가하여 경우 배경색 변경</p>
     </div>
     <br /><br />
 
