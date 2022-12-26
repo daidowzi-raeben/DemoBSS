@@ -60,6 +60,7 @@
           [Option2 값 : {{ selectBoxCompData.Option2 }}]
         </span>
       </p>
+      <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
       <p>
         * optional 셀렉트 박스 ( 버튼 선택 시, 두번째 박스 활성화 ) --> 두번재
         select box에서 첫번째 셀렉트박스의 emitValue에서 받는 변수 조건문에따라
@@ -473,7 +474,7 @@ export default {
       radioData2:"02",
       textAreaData: "기본 글 입니다.",
       date: {
-        date1: new Date(2021, 9, 5),
+        date1: new Date(2023, 1, 25),
         date2: new Date(),
         date3: new Date(),
         date4: new Date(),

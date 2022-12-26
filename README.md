@@ -234,6 +234,12 @@ clib
 **주요특징:**
 - 예시
 
+<p align="center">
+  <img width="130" height="180" src="./readMeImg/selectBox-default.png" title="selectBox-default"> &nbsp;
+  <img width="130" height="150" src="./readMeImg/selectBox-hidden.png" title="selectBox-hidden">&nbsp;
+  <img width="130" height="100" src="./readMeImg/selectBox.png" title="selectBox">
+  
+</p>
 *** 
 ### ButtonComponent
 
