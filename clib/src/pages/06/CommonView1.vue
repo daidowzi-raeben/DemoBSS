@@ -358,6 +358,15 @@
       <br/>
       <FloatingLabelsComponent
         :placeholder="'입력'"
+        :value="'label'"
+        :maxlength="10"
+        :type="'text'"
+        :text-color="'red'"
+        :line-color="'blue'"
+        :close-btn-color="'black'"
+        :placeholder-color="'blue'"
+        :font-size="20"
+        :text-offset-bot="18"
         @emitValue="(value) =>{data = value}"
       />
       <br />
