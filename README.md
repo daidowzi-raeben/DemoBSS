@@ -335,11 +335,11 @@ clib
 
 -이동 전
 
-<img src="/readMeImg/dragGrid-1.png" width="500" height="300">
+<img src="./readMeImg/dragGrid-1.png" width="500" height="300">
 
 -이동 후
 
-<img src="/readMeImg/dragGrid-2.png" width="500" height="300">
+<img src="./readMeImg/dragGrid-2.png" width="500" height="300">
 
 ***
 ### FileInputComponent
@@ -377,7 +377,7 @@ clib
 
 **예시**
 
-<img src="./readMeImg/link.png" width="100px" height="30px"> : 마우스 호버 상태
+<img src="./readMeImg/link.png" width="100px" height="20px"> : 마우스 호버 상태
 
 ***
 ### LoadingSpinnerComponent
@@ -517,7 +517,7 @@ clib
         />
 ------------------------------------------------------------------
         renderColumns:[
-        {headerName:"AutCdGpNm" , field:"model1",
+        {headerName: "AutCdGpNm" ,field: "model1",
           cellRenderer :'AutCdGpNm',           <- AutCdGpNm 컴포넌트 렌더
           cellRendererParams: {                <- 컴포넌트 렌더에 대한 반환값
             clicked: function (field) {
@@ -645,7 +645,7 @@ clib
 
 **예시**
 
-<img src="./readMeImg/BtExeInfoPopup.png" width="400px" height="300px">
+<img src="./readMeImg/btExeInfoPopup.png" width="400px" height="300px">
 
 ***
 ### popupComponent > CdGpLstPopup
@@ -669,7 +669,7 @@ clib
 
 **예시**
 
-<img src="./readMeImg/CdGpLstPopup.png" width="400px" height="200px">
+<img src="./readMeImg/cdGpLstPopup.png" width="400px" height="200px">
 
 ***
 ### popupComponent > CdLstPopup
