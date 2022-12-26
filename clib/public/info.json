@@ -1394,20 +1394,20 @@
   ],
   "fileRowData":[
     {
-      "fileNm":"가나다라.pdf",
-      "fileByte":"65byte"
+      "name":"가나다라.pdf",
+      "size":"65byte"
     },
     {
-      "fileNm":"가나다라1.pdf",
-      "fileByte":"652byte"
+      "name":"가나다라1.pdf",
+      "size":"652byte"
     },
     {
-      "fileNm":"abcd.pdf",
-      "fileByte":"825byte"
+      "name":"abcd.pdf",
+      "size":"825byte"
     },
     {
-      "fileNm":"wow.pdf",
-      "fileByte":"765byte"
+      "name":"wow.pdf",
+      "size":"765byte"
     }
   ]
 }
