@@ -377,7 +377,9 @@ clib
 
 **예시**
 
-<img src="./readMeImg/link.png" width="100px" height="20px"> : 마우스 호버 상태
+-마우스 호버 상태
+
+<img src="./readMeImg/link.png" width="100px" height="20px">
 
 ***
 ### LoadingSpinnerComponent
@@ -412,9 +414,13 @@ clib
 
 **예시**
 
-<img src="./readMeImg/pageTitle-1.png" width="100px" height="30px"> : default
+-default
 
-<img src="./readMeImg/pageTitle-2.png" width="100px" height="30px"> : 즐겨찾기 추가
+<img src="./readMeImg/pageTitle-1.png" width="100px" height="30px"> 
+
+-즐겨찾기 추가
+
+<img src="./readMeImg/pageTitle-2.png" width="100px" height="30px"> 
 
 ***
 ### PagingComponent
@@ -772,8 +778,11 @@ clib
 **예시**
 
 -입력 전
+
 <img src="./readMeImg/floatingLabels-1.png" width="800px" height="50px">
+
 -입력 후
+
 <img src="./readMeImg/floatingLabels-2.png" width="800px" height="50px">
 
 ***
