@@ -104,6 +104,11 @@
       <ButtonComponent :btnClass="'btnClass1'" :btnName="'btnClass1'" />
       <p>- btnClass1의 경우 오른쪽 정렬되어 있고 hover시 파란색 배경과 하얀색 글씨로 변경</p>
       <br /><br />
+      <label-component label-nm="'btnClass2'" />
+      <ButtonComponent :btnClass="'btnClass2'" :btnName="'btnClass2'" btn-width="'100px'" btn-height="'24px'"   />
+      <p>- btnClass2의 경우 btnClass4와 비슷하지만 좀더 둥근 형태로 색상또한 하얀색 계열임</p>
+      <p>- 버튼 크기, 글자 굵기는 btnClass4와 같이 입력으로 변경 가능</p>
+      <br /><br />
       <label-component label-nm="'btnClass3'" />
       <ButtonComponent :btnClass="'btnclass3'" :btnName="'btnClass3'" btn-height="'30px'" />
       <p>- btnClass3의 경우 입력받은 btnHeight에 의해 세로 길이가 정해짐</p>
@@ -114,11 +119,6 @@
       <p>- btnClass4의 경우 입력받은 btnWitdh와 btnHeight에 의해 세로 가로 길이가 정해짐</p>
       <p>- 글자 굵기의 경우 btnFontWeight에 의해 변경 가능</p>
       <p>- hover시 연한 색상의 배경색으로 변경</p>
-      <br /><br />
-      <label-component label-nm="'btnClass5'" />
-      <ButtonComponent :btnClass="'btnClass5'" :btnName="'btnClass5'" btn-width="'100px'" btn-height="'24px'"   />
-      <p>- btnClass5의 경우 btnClass4와 비슷하지만 좀더 둥근 형태로 색상또한 하얀색 계열임</p>
-      <p>- 버튼 크기, 글자 굵기는 btnClass4와 같이 입력으로 변경 가능</p>
     </div>
     <br />
 
@@ -201,7 +201,7 @@
 
     <h1 style="font-size: 30px">PopupComponent</h1>
     <div class="commondiv1">
-      <button-component :btnClass="'btnClass5'" :btnName="'공통 PopUp'" @click="popup" :btnWidth="'90px'"/>
+      <button-component :btnClass="'btnClass2'" :btnName="'공통 PopUp'" @click="popup" :btnWidth="'90px'"/>
 
       <popup-component
           v-if="isModalShow"
@@ -242,7 +242,8 @@
         <ag-grid-component
             :rowData="renderRowData"
             :columnDefs="renderColumns"
-
+            :isWidthFit="false"
+            :row-height="40"
         />
         <p>- AutCdGpNm의 경우 RowData의 값이 코드그룹이면 코드그룹 셀렉트 박스 출력</p>
         <p>- AutYn의 경우 라디오 박스인 적용 제외 출력</p>
@@ -273,7 +274,7 @@
       <p>- filterFunction은 출력된 내용중 필터를 통해 출력할 내용을 정하는 것으로 함수는 트리를 호출하는 곳에서 정의한다. 반환값은 true/ false이고 매개변수로는 각행에대한 데이터를 받는다.</p>
       <p>- 뱃지의 경우 데이터의 필드 중 chk와 chk2의 true/false에 따라 출력된다</p>
     </div>
-    <br /><br /><br />
+    <br /><br /><br /> <br /><br />
 
     <h1 style="font-size: 30px">PopupComponent Form</h1>
     <span></span>
@@ -354,7 +355,7 @@
     <h1 style="font-size: 30px">FloatingLabelsComponent</h1>
     <span></span>
     <div class="commondiv1">
-
+      <br/>
       <FloatingLabelsComponent
         :placeholder="'입력'"
         @emitValue="(value) =>{data = value}"
