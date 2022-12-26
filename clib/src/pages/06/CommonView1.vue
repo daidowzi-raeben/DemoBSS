@@ -101,7 +101,7 @@
     <h1 style="font-size: 30px">ButtonComponent</h1>
     <div class="commondiv1">
       <label-component label-nm="'btnClass1'" />
-      <ButtonComponent :btnClass="'btnClass1'" :btnName="'btnClass1'" />
+      <ButtonComponent :btnClass="'btnClass1'" :btnName="'btnClass1'" style="float:none;"/>
       <p>- btnClass1의 경우 오른쪽 정렬되어 있고 hover시 파란색 배경과 하얀색 글씨로 변경</p>
       <br /><br />
       <label-component label-nm="'btnClass2'" />

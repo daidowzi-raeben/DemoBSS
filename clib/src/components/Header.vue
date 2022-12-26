@@ -20,10 +20,13 @@
             <div>
               &nbsp;&nbsp;
               <input-component
-                  :width="150"
-                  :height="10"
-                  :placeholder="'메뉴검색'"
-                  :input-class="'class3'"
+                :width="150"
+                :height="10"
+                :placeholder="'메뉴검색'"
+                :input-class="'class3'"
+                :value="menuSearch"
+                v-model="menuSearch"
+                  
                 
               />
               &nbsp;
@@ -53,6 +56,7 @@ export default {
   data() {
     return {
       menuId: "L01",
+      menuSearch:"",
       menuDepth1: [],
       iconLogo:require('../assets/img/icon_logo_cloud.png'),
       iconSerch:require('../assets/img/search_icon.svg'),
