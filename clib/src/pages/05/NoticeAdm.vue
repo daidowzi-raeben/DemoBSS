@@ -190,8 +190,8 @@
               <th><label-component :labelNm="'제목'" /></th>
               <td colspan="3">
                 <input-component
-                  :input-class="'class6'"
-                  :class6Width="'300px'"
+                  :input-class="'class2'"
+                  :class2Width="'300px'"
                   :placeholder="'공지사항 제목'"
                   :value="noticeAdmObject.ntfTitle"
                   v-model="noticeAdmObject.ntfTitle"
@@ -203,9 +203,9 @@
               <th><label-component :labelNm="'작성자'" /></th>
               <td>
                 <input-component
-                  :class6Width="'150px'"
-                  :input-class="'class6'"
-                  :class6-background-color="'rgb(251, 253, 255)'"
+                  :class2Width="'150px'"
+                  :input-class="'class2'"
+                  :class2-background-color="'rgb(251, 253, 255)'"
                   :disabled="true"
                   :placeholder="'System'"
                   :value="noticeAdmObject.ntfRegr"
@@ -214,9 +214,9 @@
               <th><label-component :labelNm="'작성일자'" /></th>
               <td>
                 <input-component
-                  :class6Width="'200px'"
-                  :input-class="'class6'"
-                  :class6-background-color="'rgb(251, 253, 255)'"
+                  :class2Width="'200px'"
+                  :input-class="'class2'"
+                  :class2-background-color="'rgb(251, 253, 255)'"
                   :disabled="true"
                   :placeholder="'  '"
                   :value="noticeAdmObject.ntfRegrDt.toLocaleString()"

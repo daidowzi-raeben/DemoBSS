@@ -27,7 +27,7 @@ export default {
       type:String,
       default:'150px'
     },
-    class6Width:{
+    class2Width:{
       type:String,
       default:'140px'
     },
@@ -54,7 +54,7 @@ export default {
     value:{
       type:String,
     },
-    class6BackgroundColor:{
+    class2BackgroundColor:{
       default:'white'
     }
   },
@@ -89,6 +89,16 @@ input {
   width: v-bind('width');
   height: v-bind('height');
 }
+.class2{
+  width: v-bind("class2Width");
+  height: 24px;
+  font-size: 10pt;
+  font-weight: normal;
+  color: #000;
+  background-color: v-bind("class2BackgroundColor");
+  border: 1px solid #e4e4e4;
+  margin-right: 11px;
+}
 /*상단 메뉴 스타일 */
 .class3{
   margin-top: 7px;
@@ -120,14 +130,4 @@ input {
   height: 24px;
 }
 
-.class6{
-  width: v-bind("class6Width");
-  height: 24px;
-  font-size: 10pt;
-  font-weight: normal;
-  color: #000;
-  background-color: v-bind("class6BackgroundColor");
-  border: 1px solid #e4e4e4;
-  margin-right: 11px;
-}
 </style>

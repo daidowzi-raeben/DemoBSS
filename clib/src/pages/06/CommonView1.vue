@@ -79,22 +79,22 @@
       <p>- class5 short2은 width: 64px을 기준</p>
       <p>- class5 long1은 입력받은 longwidth 값에 의해 크기 지정</p>
       <br /><br />
-      <label-component label-nm="'class6'" />
+      <label-component label-nm="'class2'" />
       &nbsp;&nbsp;
       <input-component
-          :input-class="'class6'"
-          :value="'class6 '"
+          :input-class="'class2'"
+          :value="'class2 '"
       />
 
-      <label-component label-nm="'class6'" />
+      <label-component label-nm="'class2'" />
       &nbsp;&nbsp;
       <input-component
-          :input-class="'class6'"
-          :value="'class6'"
-          :class6-background-color="'rgb(251, 253, 255)'"
+          :input-class="'class2'"
+          :value="'class2'"
+          :class2-background-color="'rgb(251, 253, 255)'"
       />
-      <p>- class6의 width는 입력받은 class6Width, height는 24px을 기준</p>
-      <p>- class6-background-color를 추가하여 경우 배경색 변경</p>
+      <p>- class2의 width는 입력받은 class2Width, height는 24px을 기준</p>
+      <p>- class2-background-color를 추가하여 경우 배경색 변경</p>
     </div>
     <br /><br />
 
