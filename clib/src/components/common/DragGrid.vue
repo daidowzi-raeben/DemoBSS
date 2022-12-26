@@ -69,10 +69,9 @@ export default {
   data: function () {
     return {
       windowWidth :window.innerWidth,
-      modules: AllCommunityModules,
-      leftApi: null,
-      rightApi: null,
-      gridApi: null,
+      modules: AllCommunityModules,         //Grid간의 이동을 위한 모듈들을 담는 변수.  import로 받는다.
+      leftApi: null,                        //첫번째 Grid에 대한 Api
+      rightApi: null,                       //두번째 Grid에 대한 Api
       gridColumnApi: null,
       rowClassRules: null,
       defaultColDef: {
@@ -84,20 +83,20 @@ export default {
     };
   },
   props:{
-    leftRowData : Object,
-    rightRowData : Object,
-    Columns:{
+    leftRowData : Object,          //첫 번째 Grid에 대한 데이터
+    rightRowData : Object,         //두 번째 Grid에 대한 데이터
+    Columns:{                      //Grid에 대한 헤더 정보 및 컬럼 데이터
       type:Array,
-      default:''
+      default:null
     },
-    leftTitle:null,
-    rightTitle:null,
+    leftTitle:null,                 //첫 번째 Grid에 대한 제목
+    rightTitle:null,                //두 번째 Grid에 대한 제목
 
-    headerColor:{
+    headerColor:{                   //헤더의 색상
       type:String,
       default:"#f8f8f8"
     },
-    overlayNoRowsTemplate: {
+    overlayNoRowsTemplate: {        //데이터가 없을 때 호출되는 변수
       type: String,
       default: `<span class="red"> <br><br>검색 결과가 없습니다. </span>`,
     },
@@ -107,11 +106,11 @@ export default {
     subInfoTitle
   },
   methods: {
-    getRowNodeId(data) {
+    getRowNodeId(data) {            // 이동을 위한 행데이터 반환 현재 model1을 반환함
       return data.model1;
     },
 
-    onGridReady(params, side) {
+    onGridReady(params, side) {     // Grid 준비 단계 각 Grid에 대한 api를 분배 후 데이터 추가
       const api = params.api;
       if(side === 0){
         this.leftApi = api;
@@ -126,19 +125,19 @@ export default {
     },
 
     addGridDropZone(side, api) {
-      const dropApi = side === 0 ? this.rightApi : this.leftApi;
+      const dropApi = side === 0 ? this.rightApi : this.leftApi;    //이동 된 Grid에 값을 넣고 기존 Grid에서 삭제하기위해 입력된 api와 반대의 api를 받는다.
       const dropZone = dropApi.getRowDropZoneParams({
             onDragStop: params => {
               var nodes = params.nodes;
                 api.applyTransaction({
-                  remove: nodes.map(function(node) { return node.data; })
+                  remove: nodes.map(function(node) { return node.data; })     // 기존의 데이터에서 이동된 데이터 삭제
                 });
 
             }
           }
 
       );
-      api.addRowDropZone(dropZone);
+      api.addRowDropZone(dropZone);     //새로운 Grid에 이동된 데이터 추가
     },
     onFirstDataRendered() {
       // console.log("onFirstDataRendered");
@@ -164,11 +163,11 @@ export default {
         // console.log("끝까지 맞춤 ");
       }
     },
-    button(){
-      let leftRows = [];
-      let rightRows = [];
-      this.leftApi.forEachNodeAfterFilter((rowNode) => leftRows.push(rowNode));
-      this.rightApi.forEachNodeAfterFilter((rowNode) => rightRows.push(rowNode));
+    button(){                         // Grid 간의 이동이 완료된 후 데이터를 서버에 업데이트 하기 위한 함수
+      let leftRows = [];              //첫번째 Grid의 이동된 Row 데이터를 담을 변수
+      let rightRows = [];             //두번째 Grid의 이동된 Row 데이터를 담을 변수
+      this.leftApi.forEachNodeAfterFilter((rowNode) => leftRows.push(rowNode)); //첫번째 Grid의 데이터를 가져온다. forEachNodeAfterFilter는 내장함수
+      this.rightApi.forEachNodeAfterFilter((rowNode) => rightRows.push(rowNode)); //두번째 Grid의 데이터를 가져온다.
       console.log(leftRows);
       console.log(rightRows);
     },

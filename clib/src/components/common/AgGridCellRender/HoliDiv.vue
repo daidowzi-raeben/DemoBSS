@@ -24,7 +24,7 @@ export default {
   },
   watch:{
     selValues(){
-      this.params.clicked(this.selValues);
+      this.params.clicked(this.selValues); //cellRendererParams의 clicked와 매핑되어 값을 전달한다.
     }
   }
 }

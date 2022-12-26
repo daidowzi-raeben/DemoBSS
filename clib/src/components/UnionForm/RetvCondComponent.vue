@@ -62,6 +62,7 @@
         :btn-name="'검색'"
         :btnHeight="'28px'"
         :btnWidth="'100px'"
+        @click="search"
       />
     </span>
   </div>
@@ -91,6 +92,7 @@ export default {
         inputValueOfRetv: null,
         selectValueOfUseYn:"",
       },
+      totalValue:[]
     };
   },
   methods:{
@@ -98,6 +100,12 @@ export default {
         this.selectValues.selectValueOfRetv= "";
         this.selectValues.inputValueOfRetv= null;
         this.selectValues.selectValueOfUseYn="";
+    },
+    search(){
+      this.totalValue.push(this.selectValues.selectValueOfRetv);
+      this.totalValue.push(this.selectValues.inputValueOfRetv);
+      this.totalValue.push(this.selectValues.selectValueOfUseYn);
+      this.$emit("emitValue",this.totalValue);
     }
 
   }

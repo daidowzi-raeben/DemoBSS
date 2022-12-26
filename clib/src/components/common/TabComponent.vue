@@ -39,14 +39,14 @@ export default {
   data() {
     return {
       comp: "",     //컴포넌트 이름
-      cur_num: 0,
+      cur_num: 0,   //현재 컴포넌트의 index
       compm2:[],    //컴포넌트 주소를 넣는 배열
       compm:[],     //컴포넌트 값를 넣는 배열
       component:"", //컴포넌트 주소
     };
   },
   props:{
-    menuType:{
+    menuType:{        //AddComponent의 defineAsyncComponent에서 컴포넌트를 호출할 위치를 지정하기 위한 변수
       type:String,
       default:"Cont",
     },
@@ -61,7 +61,7 @@ export default {
     }
   },
   watch: {
-    cur_num: function (newVal, oldVal) {
+    cur_num: function (newVal, oldVal) {      //탭의 이동을 감지하여 컴포넌트를 변경하는 함수
       this.comp = this.compm[newVal].menuId;
       this.component = this.compm2[this.cur_num];
     },
@@ -81,21 +81,21 @@ export default {
     },
   },
   methods: {
-    ChageComponent: function (componentName, index) {
+    ChageComponent: function (componentName, index) {             //클릭된 컴포넌트로 이동
       this.comp = componentName;
       this.cur_num = index;
     },
-    AllDeleteComponent() {
+    AllDeleteComponent() {                                        //탭을 전체 삭제
       var component_length = this.compm.length;
       this.compm.splice(1, component_length - 1);
       this.compm2.splice(1, component_length - 1);
       this.cur_num = 0;
     },
-    DeleteComponent: function (index) {
+    DeleteComponent: function (index) {                     // 탭을 삭제하는 함수.
       if (index != 0) {
-        this.compm.splice(index, 1);
+        this.compm.splice(index, 1);              //splic를 통해 현재 삭제할 컴포넌트의 인덱스를 기준으로 삭제
         this.compm2.splice(index, 1);
-        if (
+        if (                                                //삭제 후 현재 보여줄 탭을 지정하기 위한 조건
             index == this.cur_num ||
             (index < this.cur_num && index <= this.compm.length)
         ) {
@@ -103,28 +103,27 @@ export default {
         }
       }
     },
-    AddComponent: function (param) {
+    AddComponent: function (param) {                          //탭에 컴포넌트를 추가하는 함수
       if (param.menuId != "" && param.menuId != null) {
-        const st = this.compm.find(
+        const st = this.compm.find(                           //동일한 컴포넌트가 탭내에 존재하는지 확인
             (element) => element.menuId === param.menuId
         );
         console.log(st);
-        if (st != null) {
+        if (st != null) {                                     //동일한 컴포넌트가 존재할시 해당 컴포넌트의 탭으로 이동.
           var i = this.compm.indexOf(st);
           this.cur_num = i;
 
 
-        } else {
+        } else {                                              //동일한 컴포넌트가 존재하지 않을 경우 컴포넌트 추가
           if (this.compm.length < 10) {
-            this.compm.push(param);
-            this.cur_num = this.compm.length - 1;
-            this.component = markRaw(
+            this.compm.push(param);                           //클릭된 컴포넌트의 정보를 compm 변수에 넣는다.
+            this.cur_num = this.compm.length - 1;             //현재 추가되는 컴포넌트의 index 번호를 지정
+            this.component = markRaw(                         //추가될 컴포넌트를 import를 통해 불러온다. 고정된 컴포넌트의 경우 이방식을 통해 사전에 불러와야한다.
                 defineAsyncComponent(() =>
                     import("../" +this.menuType +"/" + this.compm[this.cur_num].cmpnId + ".vue")
                 )
             );
-            console.log("../" +this.menuType +"/" + this.compm[this.cur_num].cmpnId + ".vue");
-            this.compm2.push(this.component);
+            this.compm2.push(this.component);                  //불러온 컴포넌트를 compm2 배열에 넣는다.
           } else {
             console.log("10개를 넘었습니다.");
           }

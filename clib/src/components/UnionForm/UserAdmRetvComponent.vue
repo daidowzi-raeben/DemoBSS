@@ -38,6 +38,7 @@
             :btn-name="'검색'"
             :btnHeight="'28px'"
             :btnWidth="'78px'"
+            @click="search"
           />
         </td>
       </tr>
@@ -147,14 +148,15 @@ export default {
       selectValueOfOrg3 : "",
       inputValueOfEmpNm : "",
       selectValueOfinOfficeSttus : "",
-      }
+      },
+      totalValue:[],
     };
   },
   props: {
     cdGroup: null,
   },
   methods:{
-    async resetRetvCond(){
+     resetRetvCond(){
       console.log(this.selectValues);
       this.selectValues.selectValueOfDuty = "" ;
       this.selectValues.selectValueOfRspof = "" ;
@@ -164,7 +166,17 @@ export default {
       this.selectValues.inputValueOfEmpNm = "" ;
       this.selectValues.selectValueOfinOfficeSttus = "";
       console.log(this.selectValues);
-    }
+    },
+    search(){
+       this.totalValue.push(this.selectValues.selectValueOfDuty);
+       this.totalValue.push(this.selectValues.selectValueOfRspof);
+       this.totalValue.push(this.selectValues.selectValueOfOrg1);
+       this.totalValue.push(this.selectValues.selectValueOfOrg2);
+       this.totalValue.push(this.selectValues.selectValueOfOrg3);
+       this.totalValue.push(this.selectValues.inputValueOfEmpNm);
+       this.totalValue.push(this.selectValues.selectValueOfinOfficeSttus);
+       this.$emit("emitValue",this.totalValue);
+     }
   },
   watch:{
     selectValues(newSelectedValue){

@@ -163,6 +163,7 @@
             :btn-name="'검색'"
             :btnHeight="'28px'"
             :btnWidth="'78px'"
+            @click="search"
           />
         </td>
       </tr>
@@ -268,6 +269,7 @@ export default {
         subsStDt :  new Date(),
         subsEndDt : new Date("2023-01-31"),
       },
+      totalValue:[]
     };
   },
   methods:{
@@ -286,6 +288,24 @@ export default {
         this.selectValues.inputValue3= null;
         this.selectValues.subsStDt = new Date();
         this.selectValues.subsEndDt = new Date("9999-12-31");
+    },
+    search(){
+      this.totalValue.push(this.selectValues.selectValue1);
+      this.totalValue.push(this.selectValues.selectValue2);
+      this.totalValue.push(this.selectValues.selectValue3);
+      this.totalValue.push(this.selectValues.selectValue4);
+      this.totalValue.push(this.selectValues.selectValue5);
+      this.totalValue.push(this.selectValues.selectValue6);
+      this.totalValue.push(this.selectValues.selectValue7);
+      this.totalValue.push(this.selectValues.selectValue8);
+      this.totalValue.push(this.selectValues.selectValue9);
+      this.totalValue.push(this.selectValues.inputValue1);
+      this.totalValue.push(this.selectValues.inputValue2);
+      this.totalValue.push(this.selectValues.inputValue3);
+      this.totalValue.push(this.selectValues.subsStDt);
+      this.totalValue.push(this.selectValues.subsEndDt);
+      this.$emit("emitValue",this.totalValue);
+
     }
   },
   props: {

@@ -84,7 +84,7 @@ export default {
         searchValue: null,
         selValue: null,
       },
-      isModalAutShow:false,
+      isModalAutShow:false,   //팝업창 출력 변수
       upRowData:[],
       downRowData:[],
       upColumnDefs: [
@@ -103,12 +103,12 @@ export default {
       { headerName: "사용여부", field: "model3", width:100 }
     ],
       downColumnDefs:[
-        { headerName: "컴포넌트ID", field: "model1",width:120, cellStyle:{justifyContent: "flex-start"}},
-        { headerName: "업무유형", field: "model2", width:120,cellStyle:{justifyContent: "flex-start"}},
+        { headerName: "컴포넌트ID", field: "model1",width:120, cellStyle:{justifyContent: "flex-start"}}, //justifyContent 정렬을 위한 style
+        { headerName: "업무유형", field: "model2", width:120,cellStyle:{justifyContent: "flex-start"}},   // flex-start는 왼쪽, flex-end는 오른쪽
         { headerName: "업무상세유형", field: "model3", width: 300,
-          cellRenderer:'AutCdGpNm',
-          cellRendererParams: { //업무유형이 공통코드일때 셀렉트반환값
-            clicked: function (field) {
+          cellRenderer:'AutCdGpNm',         //컴포넌트처럼 import 하여 Grid 내부에 버튼등의 컴포넌트를 넣기위한 설정
+          cellRendererParams: {             //업무유형이 공통코드일때 셀렉트반환값
+            clicked: function (field) {     //clicked로 cellRender에서 지정한 컴포넌트와 매칭하여 값을 받아온다.
               // console.log(field);
             }
           },
