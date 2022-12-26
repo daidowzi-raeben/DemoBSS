@@ -60,7 +60,6 @@
           [Option2 값 : {{ selectBoxCompData.Option2 }}]
         </span>
       </p>
-      <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
       <p>
         * optional 셀렉트 박스 ( 버튼 선택 시, 두번째 박스 활성화 ) --> 두번재
         select box에서 첫번째 셀렉트박스의 emitValue에서 받는 변수 조건문에따라
@@ -210,7 +209,7 @@
         :contents="textAreaData"
         v-model="textAreaData"
       />
-      <p>textAreaData : {{ textAreaData }}</p>
+      <p>textAreaData 출력 값 : {{ textAreaData }}</p>
       <p>textAreaData 변수에 값이 없을 경우 placeholder props 값 출력</p>
       <p>textAreaData 변수에 기본 값 or 변경 있을 경우 해당 값 출력</p>
       <p>v-model : 해당 변수(textAreaData)에 연결하여 입력 값에 따라 동기화</p>
@@ -230,12 +229,9 @@
             :type="'month'"
             :pPlaceholder="'2022-12-23'"
             :p-date="date.date1"
-            @emitValue="
-              (value) => {
-                date.date1 = value;
-              }
-            "
-          /><br /><br />
+            @emitValue="(value) => {date.date1 = value;}"
+          />
+          <br /><br />
         </div>
         <span style="margin-left: 20px">
           {{ new Date(date.date1).toLocaleString() }}
@@ -248,11 +244,7 @@
             :pPlaceholder="'2022.01.01'"
             :p-date="date.date2"
             :width="'200px'"
-            @emitValue="
-              (value) => {
-                date.date2 = value;
-              }
-            "
+            @emitValue="(value) => {date.date2 = value;}"
           />
           <br /><br />
         </div>
@@ -268,10 +260,7 @@
           :type="'time'"
           :dateFormat="'yyyy-MM-dd HH:mm'"
           :pDate="date.date3"
-          @emitValue="
-            (value) => {
-              date.date3 = value;
-            }
+          @emitValue=" (value) => {date.date3 = value;}
           "
         />
         <span style="margin-left: 20px">

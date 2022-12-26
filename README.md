@@ -20,7 +20,6 @@
     - [DragGrid](#draggrid)
     - [FileInputComponent](#fileinputcomponent)
     - [linkComponent](#linkcomponent)
-    - [LoadingSpinnerComponent](#loadingspinnercomponent)
     - [PageTitle](#pagetitle)
     - [PagingComponent](#pagingcomponent)
     - [PopupComponent](#popupcomponent)
@@ -125,6 +124,7 @@ clib
 ├── .gitignore
 ├── dist
 ├── babel.config.js
+├── readMeImg                                # ReadMe 이미지 폴더
 └── README.md
 ```
 ***
@@ -168,6 +168,7 @@ clib
 
 **emit:**
 - emitValue : 선택 값의 code를 부모 컴포넌트에게 반환.
+- width, height 기본 값으로 부모 tag의 100%로 지정되어 있기때문에 별도의 props( :width, :height )로 사이즈 지정 필요.
 
 **주요특징:**
 - 예시
@@ -175,10 +176,23 @@ clib
 <p align="center">
   <img width="130" height="180" src="./readMeImg/selectBox-default.png" title="selectBox-default"> &nbsp;
   <img width="130" height="150" src="./readMeImg/selectBox-hidden.png" title="selectBox-hidden">&nbsp;
-  <img width="130" height="100" src="./readMeImg/selectBox.png" title="selectBox">
-  
 </p>
-*** 
+
+- 1) disabled : false --> 특정 값 선택에도 기본 값(기본 선택) 선택 가능
+- 2) defaultcdId 지정 시, 처음 기본 값을 해당 코드를 가진 값 (예시에서 **개발관리**) 출력.
+사용자관리(UserAdm.vue) 데이터 클릭부터 출력까지의 로직 참고
+
+
+<p align="center">
+  <img width="130" height="100" src="./readMeImg/selectBox-first.png" title="selectBox-first">
+  <img width="260" height="100" src="./readMeImg/selectBox-second.png" title="selectBox-second">
+</p>
+
+- disabled : true --> 특정 값 선택 시, 기본 값(업무유형 선택) hidden 처리 및 선택 불가
+- optional 셀렉트 박스 ( 목록 중 **버튼** 선택 시, 두번째 박스 활성화 )
+두번재 select box에서 첫번째 셀렉트박스의 emitValue에서 받는 변수 조건문에따라 출력
+
+***
 ### ButtonComponent
 
 **props:**
@@ -211,8 +225,59 @@ clib
 - overlayNoRowsTemplate : rowData 없을 경우 출력되는 기본 메세지 템플릿
 
 **주요특징:**
-- clib에서 사용되는 테이블에 거의 모두 AgGrid 사용합니다.
+- clib에서 사용되는 테이블에 거의 모두 AgGrid 사용
 - emit은 따로 없지만, 각 페이지 컴포넌트에서 rowClick 시 param을 매개변수로 받을 수 있어 해당 함수를 사용하여 데이터를 받아옵니다.
+- isDeselect = true 일 경우, 클릭 했던 row 클릭 취소 가능
+- columnDefs에서 컬럼명, 너비, css style 클래스 등 다양한 속성 사용 가능.
+
+
+**ag-grid 호출 1)**
+```
+
+<ag-grid-component
+  :rowData="testRowData"                                # rowData 객체
+  :columnDefs="testColumnDefs"                          # 컬럼 속성 정의 객체  
+  :rowHeight="testRowHeight"                            # 각 row의 높이 지정
+  :isDeselect="true"                                    # 여러 row 클릭 가능하게 할 지 여부
+  :isAutoSize="[false,'type1']"                         # [박스 크기에 맞출지 여부(bool), 타입(type 1, 2, 3)] 결정하는 배열   | 박스 크기에 맞춘다면 해당 props default값 으로 지정 ( 아래 ag-grid 호출 2 참고 )
+  :headerHeight="60"                                    # header row의 높이
+  :rowClicked="testLstRowClicked"                       # row 클릭 시, 실행시킬 함수 지정
+  :overlayNoRowsTemplate="noRowTemplateMsg"             # rowData가 없을 경우 출력 할 템플릿
+  />
+
+------------------------------------------------------------------------------------
+참고 파일 : commonView2.vue
+
+
+```
+
+**예시**
+<p align="left">
+  <img width="47%" height="220" src="./readMeImg/ag-grid2-1.png" title="ag-grid2-1">
+  <img width="47%" height="220" src="./readMeImg/ag-grid2-2.png" title="ag-grid2-2"> &nbsp;
+</p>
+
+
+**ag-grid 호출 2)**
+```
+
+<ag-grid-component
+  :header-color="'rgb(239 245 252)'"         # header Color 지정
+  :rowData="testRowData"                     # rowData 지정
+  :columnDefs="testColumnDefs"               # columnDefs 지정
+  :row-height="40"                           # 각 row 높이 지정
+  :overlayNoRowsTemplate="noRowTemplateMsg"  # rowData가 없을 경우 출력 할 템플릿
+/>
+-------------------------------------------------------------------------------
+참고 파일 : commonView2.vue
+```
+
+**예시**
+
+<p align="center">
+  <img width="100%" height="220" src="./readMeImg/ag-grid1.png" title="ag-grid1"> &nbsp;
+</p>
+
 
 ***
 ### ChkBoxComponent
@@ -236,6 +301,30 @@ clib
 - maxlength     : 글자 길이 최댓값
 - textAreaHeight: textArea의 높이 지정
 - textAreaWidth : textArea의 너비 지정
+
+**주요특징**
+- textAreaData 변수에 값이 없을 경우 placeholder props 값 출력
+- textAreaData 변수에 기본 값 or 변경 있을 경우 해당 값 출력
+- v-model : 해당 변수(textAreaData)에 연결하여 입력 값에 따라 동기화
+- contents : 해당 변수 값을 textArea컴포넌트로 전송하여 출력.
+
+**호출 코드**
+```
+<TextAreaComponent
+  :textAreaHeight="'200px'"               # textArea 컴포넌트 높이
+  :placeholder="'내용 입력'"
+  :maxlength="200"                        # 최대 입력 글자 수
+  :contents="msgContent"                  # 입력 내용을 자식 컴포넌트에 전달
+  v-model="msgContent"                    # 입력 내용 데이터 바인딩
+/>
+```
+
+**예시**
+
+<p align="left">
+  <img width="80%" height="130" src="./readMeImg/textArea.png" title="textArea"> &nbsp;
+</p>
+
 
 ***
 ### LabelComponent
@@ -272,6 +361,20 @@ clib
 - x버튼 (clear) 클릭 시, pPlaceholder로 설정한 값을 표시
 - type props를 이용해서 월/일/시분 력 선택 가능
 - isMinDate / isMaxDate 를 이용해서 특정 날짜 구간 지정 가능 ( 두개의 props 모두 사용해야 가능합니다.)
+
+**호출 코드**
+```
+<date-picker-component
+  :width="150"                                  # 가로 길이
+  :dateFormat="'yyyy-MM'"                       # 데이터 출력 형태 (yyyy-MM-dd , yyyy-MM-dd HH:mm)      
+  :type="'month'"                               # 월력(month), 일력(date), 시간(time)  
+  :pPlaceholder="'2022-12-25'"                  # 날짜 공백 시 출력하는 일자
+  :p-date="date"                                # 특정 일자 지정
+  :isMinDate="new Date('2023.01.03')"           # 제약 - 기한 시작 날짜
+  :isMaxDate="new Date('2023.01.15')"           # 제약 - 기한 마지막 날짜
+  @emitValue="(value) => {date = value;}" # date-picker 컴포넌트로부터 선택 날짜 받아오는 emit 함수
+  />
+```
 
 **예시**
 <p align="center">
@@ -319,16 +422,16 @@ clib
 - 헤더 색상의 경우 headerColor를 통해 변경 가능하다.
 - overlayNoRowsTemplate는 데이터 값이 없을 때 보여주는 메시지를 지정한다.
 
-**호출소스**
+**호출코드**
 ```aidl
-        <DragGrid
-            :left-row-data="leftRowData"
-            :right-row-data="rightRowData"
-            :Columns="GridToGridColumns"
-            :header-color="'rgb(113,156,205)'"
-            :overlayNoRowsTemplate="
-          `<span> <br>` + '<br />조회 결과가 없습니다.' + ` </span>`"
-        />
+<DragGrid
+  :left-row-data="leftRowData"
+  :right-row-data="rightRowData"
+  :Columns="GridToGridColumns"
+  :header-color="'rgb(113,156,205)'"
+  :overlayNoRowsTemplate="
+`<span> <br>` + '<br />조회 결과가 없습니다.' + ` </span>`"
+/>
 ```
 
 **예시**
@@ -357,6 +460,20 @@ clib
 - 파일 업로드 시 add로 파일 리스트에 추가 (초기화 X )
 - 버튼을 통해 파일 업로드 가능 여부 상태 기능
 
+**호출코드**
+```
+<file-input-component
+  :fileBoxWidth="'200px'"
+  :atcNoti="'버튼을 눌러 파일업로드 비활성화 가능'"
+  :pDisable="pDisable"                               
+  />
+```
+
+**예시**
+<p align="center">
+  <img width="80%" height="60" src="./readMeImg/fileInput.png" title="fileInput"> &nbsp;
+</p>
+
 ***
 ### linkComponent
 **props:**
@@ -368,7 +485,7 @@ clib
 - hover 시 파란색 글자에 밑줄이 생긴다.
 - LinkComponent의 경우 destination 옵션을 통해 이동할 url을 지정할 수 있다.
 
-**호출 소스**
+**호출 코드**
 ```aidl
       <link-component
           :destination="'/'"
@@ -376,18 +493,10 @@ clib
 ```
 
 **예시**
-
--마우스 호버 상태
-
-<img src="./readMeImg/link.png" width="100px" height="20px">
+<img src="./readMeImg/link.png" width="200px" height="20px"> : 마우스 호버 상태
 
 ***
-### LoadingSpinnerComponent
 
-**주요특징:**
-- 로딩 화면
-
-***
 ### PageTitle
 **props:**
 - currentMenu : Menu.json에 있는 메뉴 정보
@@ -403,24 +512,24 @@ clib
 - stateOfBookMark의 경우 현재 즐겨찾기 여부를 지정한다.
 - @stateOfBookMark의 경우 클릭에 따른 즐겨찾기 여부를 부모 컴포넌트에 전달하기 위해 사용
 
-**호출소스**
-```aidl
-      <PageTitle
-          :current-menu="currentMenu"
-          :stateOfBookMark="false"
-          @stateOfBookMark="stateOfBookMark = value"
-        />
+**호출코드**
+```
+<PageTitle
+  :current-menu="currentMenu"
+  :stateOfBookMark="false"
+  @stateOfBookMark="stateOfBookMark = value"
+  />
 ```
 
 **예시**
 
 -default
 
-<img src="./readMeImg/pageTitle-1.png" width="100px" height="30px"> 
+<img src="./readMeImg/pageTitle-1.png" width="100px" height="30px">
 
 -즐겨찾기 추가
 
-<img src="./readMeImg/pageTitle-2.png" width="100px" height="30px"> 
+<img src="./readMeImg/pageTitle-2.png" width="100px" height="30px">
 
 ***
 ### PagingComponent
@@ -432,6 +541,35 @@ clib
 
 **emit:**
 - @currentPage :  현재 페이지(pageNumber)를 emit으로 부모에게 전달
+
+**호출 코드**
+```
+<paging-component
+  ref="PagingComponent"
+  :pageableData="pageableData"                      
+  :pageSize="10"                                    # pageSize : 한 화면에 출력 될 페이지 개수 지정
+  @currentPage="(value) => {currentPage = value;}"  # 현재 페이지 emit으로 자식 컴포넌트에서 전송받음.
+/>
+------------------------------------------------
+pageableData: {
+  pageNumber: 1,
+  totalPages: 16,
+},
+
+```
+
+**예시**
+
+<p align="left">
+  <img width="70%" height="50" src="./readMeImg/paging-10.png" title="textArea"> &nbsp;
+  <span> pageSize = 10 , 한번에 10개 페이지씩 출력 </span>
+</p>
+
+
+<p align="left">
+  <img width="40%" height="40" src="./readMeImg/paging-5.png" title="textArea"> &nbsp;
+  <span> pageSize = 5 , 한번에 5개 페이지씩 출력 </span>
+</p>
 
 ***
 ### PopupComponent
@@ -450,14 +588,14 @@ clib
 - @AGREE에 함수 입력해야 확인버튼 클릭시 함수 호출 가능
 - poupOverlay를 별도로 입력하지 않을 시 팝업창 이외 영역 클릭시 창 닫힘
 
-**호출소스**
+**호출코드**
 ```
 <popup-component
-          v-if="isModalShow"
-          @popup="isModalShow = false"
-          @AGREE = "''"
-          :popupmsg="'여기가 팝업 메세지 '"
-      />
+  v-if="isModalShow"
+  @popup="isModalShow = false"
+  @AGREE = "''"
+  :popupmsg="'여기가 팝업 메세지 '"
+  />
 ```
 
 
@@ -477,6 +615,22 @@ clib
 **emit:**
 - @radioValue : 선택 값의 code (cdId)를 부모 컴포넌트에 전달
 
+**호출코드**
+```
+<radio-component
+  :RadioOption="'useNouse'"                               # radio 선택 옵션 메뉴 지정  
+  :defaultcdId="isShowYn"                                 # 기본 선택 값(코드 값) 지정
+  :selectedRadio="isShowYn"                               # 변경 된 선택 값 컴포넌트에 반영(props)
+  @radioEmit="(radioValue) => { isShowYn = radioValue }"  # 반영 된 값의 코드 값 반환
+  />
+```
+
+**예시**
+<img width="260" height="40" src="./readMeImg/radio1.png" title="radio1"> &emsp; - 기본 선택 값 (defaultcdId ) 미지정
+
+<img width="130" height="40" src="./readMeImg/radio2.png" title="radio2">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; - 기본 선택 값 (defaultcdId ) 지정
+
+
 ***
 ### TabComponent
 **props:**
@@ -491,7 +645,7 @@ clib
 - 다른 탭으로 이동해도 기존 탭 상태 유지
 - 메뉴나 버튼 클릭을 통해 탭을 추가함
 
-**호출소스**
+**호출코드**
 ```aidl
       <TabComponent
           :menu-type="'Cont'"      <- 폴더명
@@ -514,7 +668,7 @@ clib
 - 데이터를 반환받을때는 cellRendererParams를 통해 데이터를 반환 받는다.
 ```
 
-**호출소스**
+**호출코드**
 ```aidl
         <ag-grid-component
             :rowData="renderRowData"
@@ -609,7 +763,7 @@ clib
 - filterFunction은 출력된 내용중 필터를 통해 출력할 내용을 정하는 것으로 함수는 트리를 호출하는 곳에서 정의한다. 반환값은 true/ false이고 매개변수로는 각행에대한 데이터를 받는다.
 - 뱃지의 경우 데이터의 필드 중 chk와 chk2의 true/false에 따라 출력된다.
 
-**호출소스**
+**호출코드**
 
 ```aidl
       <msf-tree :source="contentTree"
@@ -640,7 +794,7 @@ clib
 - 정보를 보여주기 위한 팝업이라 별도의 확인버튼은 존재하지 않는다.
 - 정보의 경우 전달된 value를 통해 팝업 내부에서 axios통신을 통해 DB에서 받아 출력
 
-**호출소스**
+**호출코드**
 ```aidl
       <BtExeInfoPopup
           v-if="isModelBtExeInfoShow"
@@ -661,7 +815,7 @@ clib
 - value의 경우 Json 형태의 데이터를 받는다.
 - 등록의 경우 @submit와 연결된 함수가 실행되고 변경의 경우 @update에 연결된 함수가 실행된다.
 
-**호출소스**
+**호출코드**
 ```
       <CdGpLstPopup
           v-if="isCdGpModalShow"
@@ -682,7 +836,7 @@ clib
 - 코드 리스트 등록 변경을 위한 팝업창
 - 코드그룹 리스트 팝업과 방식은 동일
 
-**호출소스**
+**호출코드**
 ```aidl
       <CdLstPopup
           v-if="isCdLstModalShow"
@@ -713,7 +867,7 @@ clib
 - 목록을 보여주는 용도로 사용될 컴포넌트
 - 추후 파일명 클릭시 다운로드 가능하도록 수정할 예정
 
-**호출소스**
+**호출코드**
 ```aidl
  <AtcListComponent
     :WrkjobNm="'업무명들어갈자리'"
@@ -734,7 +888,7 @@ clib
 **주요특징**
 - 첨부파일을 받아야되는 페이지에서 사용될 컴포넌트
 
-**호출소스**
+**호출코드**
 ```aidl
 <AtcRegComponent
     :WrkjobNm="'업무명들어갈자리'"
@@ -767,7 +921,7 @@ clib
 - x를 누르면 자동으로 다시 입력탭에 포커스가 된다.
 - input 컴포넌트 대신 사용 가능, 사용시 위로 플로팅 되는 부분까지 생각하여 폼 구축 해야함.
 
-**호출소스**
+**호출코드**
 ```aidl
       <FloatingLabelsComponent
         :placeholder="'입력'"
@@ -789,7 +943,7 @@ clib
 ### etc > RangeComponent
 - 슬라이더를 통해 범위 조절이 가능한 컴포넌트
 
-**호출소스**
+**호출코드**
 ```aidl
 <RangeComponent />
 ```
@@ -819,7 +973,7 @@ clib
 - className : wk-alert ,wk-warn, wk-info  
 - transition : 'slide-down', 'slide-up', 'slide-left', 'slide-right', 'fade'
 
-**호출소스**
+**호출코드**
 ```aidl
       <ToastComponent
           v-if="chk"
@@ -873,7 +1027,7 @@ clib
 - cdGroup : 셀렉트 박스에 넣을 데이터에 대한 코드그룹
 - @input : 컴포넌트 내의 값들을 받기 위한 함수
 
-**호출소스**
+**호출코드**
 ```aidl
       <aut-retv-component
           :title="'조회기준'"
@@ -900,7 +1054,7 @@ clib
 - cdGroup : 셀렉트 박스에 넣을 데이터에 대한 코드그룹
 - btnName1~3 : 버튼 3개에 대한 버튼명
 
-**호출소스**
+**호출코드**
 ```aidl
         <blc2-component
             :sub-info-title-nm="'청약리스트'"
@@ -931,7 +1085,7 @@ clib
 - headerColor: Ag Grid 헤더 색상
 - btnName : 버튼에 대한 버튼명
 
-**호출소스**
+**호출코드**
 
 ```aidl
         <blc-component
@@ -954,7 +1108,7 @@ clib
 - 고객에 대한 정보를 보여주는 고객 정보 출력 테이블 폼
 - custInfo : 고객에 대한 정보를 담은 객체
 
-**호출소스**
+**호출코드**
 ```aidl
  <cust-info-component
     :custInfo="custInfo"
@@ -969,7 +1123,7 @@ clib
 ### CustRetvComponent
 - 고객에 대한 정보를 조회하기 위한 고객 조회 폼
 - cdGroup : 셀렉트 박스에 넣을 데이터에 대한 코드그룹
-**호출소스**
+**호출코드**
 ```aidl
 <cust-retv-component
     :cdGroup="cdGroup"
@@ -992,7 +1146,7 @@ clib
 - 주소를 검색하여 선택하면 상단의 테이블에 데이터가 들어가게 된다.
 - 데이터는 @selectedJusoData를 통해 전달받는다. 전달받은 데이터는 selectedJuso 함수에서 변수에 넣어진다.
 
-**호출소스**
+**호출코드**
 ```aidl
     <post-code-component
         @FormPopup="isPostCodeModalShow = false"
@@ -1032,7 +1186,7 @@ clib
 - selectCdGroup : 셀렉트 박스에 넣을 데이터에 대한 코드그룹
 - selectDefltValue: 셀렉트 박스 기본 값
 
-**호출소스**
+**호출코드**
 ```aidl
         <retv-cond-component
             :retvCondNm="'조회기준'"
@@ -1050,7 +1204,7 @@ clib
 - 청약 리스트 페이지에서 사용한 청약 조회 폼
 - cdGroup : 셀렉트 박스에 넣을 데이터에 대한 코드그룹
 
-**호출소스**
+**호출코드**
 ```aidl
         <subs-retv-component
             cd-group="'retvCond'"
@@ -1065,7 +1219,7 @@ clib
 ### UserAdmRetvComponent
 - 사용자관리 페이지에서 사용한 사용자 조회 폼
 
-**호출소스**
+**호출코드**
 ```aidl
  <user-adm-retv-component
     :cdGroup="cdGroup"
