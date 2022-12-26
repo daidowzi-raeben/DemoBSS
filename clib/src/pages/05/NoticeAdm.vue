@@ -96,7 +96,7 @@
 
           <td>
             <button-component
-              :btnClass="'btnClass5'"
+              :btnClass="'btnClass2'"
               :btnHeight="'28px'"
               :btnWidth="'78px'"
               :btnFontWeight="'bold'"
@@ -176,7 +176,7 @@
         <sub-info-title :subInfoTitleNm="'공지사항 상세정보'" />
         <span style="float: right">
           <button-component
-            :btnClass="'btnClass5'"
+            :btnClass="'btnClass2'"
             :btnWidth="'60px'"
             :btnName="noticeAdmObject.sttus == 'amend' ? '변경' : '등록'"
             @click="popup"

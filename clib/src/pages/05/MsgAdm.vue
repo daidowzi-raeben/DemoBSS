@@ -99,7 +99,7 @@
 
             <td>
               <button-component
-                :btnClass="'btnClass5'"
+                :btnClass="'btnClass2'"
                 :btnHeight="'28px'"
                 :btnWidth="'78px'"
                 :btnFontWeight="'bold'"
@@ -183,7 +183,7 @@
           <sub-info-title :subInfoTitleNm="'메시지 상세정보'" />
           <span style="float: right">
             <button-component
-              :btnClass="'btnClass5'"
+              :btnClass="'btnClass2'"
               :btnWidth="'60px'"
               :btnName="msgAdmObject.msgSttus == 'amend' ? '변경' : '등록'"
               @click="popup"

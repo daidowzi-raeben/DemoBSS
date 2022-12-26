@@ -192,7 +192,7 @@
                 />
                 <span style="margin-left: 30px">
                   <button-component
-                    :btnClass="'btnClass5'"
+                    :btnClass="'btnClass2'"
                     :btnHeight="'28px'"
                     :btnWidth="'100px'"
                     :btnFontWeight="'normal'"
@@ -359,7 +359,7 @@
 
                 <span>
                   <button-component
-                    :btnClass="'btnClass5'"
+                    :btnClass="'btnClass2'"
                     :btnHeight="'28px'"
                     :btnWidth="'140px'"
                     :btnFontWeight="'normal'"

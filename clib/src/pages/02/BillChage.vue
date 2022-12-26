@@ -65,37 +65,37 @@
         />
         <button-component
             :btn-name="'즉시수납'"
-            :btn-class="'btnClass5'"
+            :btn-class="'btnClass2'"
             style="float: right;"
             :btnWidth="'auto'"
         />
         <button-component
             :btn-name="'수납이력'"
-            :btn-class="'btnClass5'"
+            :btn-class="'btnClass2'"
             style="float: right;"
             :btnWidth="'auto'"
         />
         <button-component
             :btn-name="'요금조정'"
-            :btn-class="'btnClass5'"
+            :btn-class="'btnClass2'"
             style="float: right;"
             :btnWidth="'auto'"
         />
         <button-component
             :btn-name="'가상계좌'"
-            :btn-class="'btnClass5'"
+            :btn-class="'btnClass2'"
             style="float: right;"
             :btnWidth="'auto'"
         />
         <button-component
             :btn-name="'실시간 요금'"
-            :btn-class="'btnClass5'"
+            :btn-class="'btnClass2'"
             style="float: right;"
             :btnWidth="'auto'"
         />
         <button-component
             :btn-name="'해지 예상요금'"
-            :btn-class="'btnClass5'"
+            :btn-class="'btnClass2'"
             style="float: right;"
             :btnWidth="'auto'"
         />
