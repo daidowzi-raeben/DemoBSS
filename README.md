@@ -561,14 +561,15 @@ pageableData: {
 **예시**
 
 <p align="left">
-  <img width="70%" height="50" src="./readMeImg/paging-10.png" title="textArea"> &nbsp;
-  <span> pageSize = 10 , 한번에 10개 페이지씩 출력 </span>
+  <img width="55%" height="40" src="./readMeImg/paging-10.png" title="textArea"> 
+  <span style="font-size:9pt;"> pageSize = 10 , 한번에 10개 페이지씩 출력 </span>
+  
 </p>
 
 
 <p align="left">
   <img width="40%" height="40" src="./readMeImg/paging-5.png" title="textArea"> &nbsp;
-  <span> pageSize = 5 , 한번에 5개 페이지씩 출력 </span>
+  <span style="font-size:9pt;"> pageSize = 5 , 한번에 5개 페이지씩 출력</span>
 </p>
 
 ***
