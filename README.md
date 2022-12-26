@@ -422,16 +422,16 @@ clib
 - 헤더 색상의 경우 headerColor를 통해 변경 가능하다.
 - overlayNoRowsTemplate는 데이터 값이 없을 때 보여주는 메시지를 지정한다.
 
-**호출코드**
-```aidl
-<DragGrid
-  :left-row-data="leftRowData"
-  :right-row-data="rightRowData"
-  :Columns="GridToGridColumns"
-  :header-color="'rgb(113,156,205)'"
-  :overlayNoRowsTemplate="
-`<span> <br>` + '<br />조회 결과가 없습니다.' + ` </span>`"
-/>
+**호출소스**
+```
+        <DragGrid
+            :left-row-data="leftRowData"        #첫번째 Grid의 행 데이터
+            :right-row-data="rightRowData"      #두번째 Grid의 행 데이터
+            :Columns="GridToGridColumns"        #두 Grid의 열 데이터 및 헤더 정보
+            :header-color="'rgb(113,156,205)'"  #헤더의 색상 지정
+            :overlayNoRowsTemplate="            #데이터가 없을때 출력 내용
+          `<span> <br>` + '<br />조회 결과가 없습니다.' + ` </span>`"
+        />
 ```
 
 **예시**
@@ -485,11 +485,12 @@ clib
 - hover 시 파란색 글자에 밑줄이 생긴다.
 - LinkComponent의 경우 destination 옵션을 통해 이동할 url을 지정할 수 있다.
 
-**호출 코드**
-```aidl
+**호출 소스**
+```
       <link-component
-          :destination="'/'"
-          :linkNm="'링크 컴포넌트(mounse over)'"  />
+          :destination="'/'"                    #link에 대한 url
+          :linkNm="'링크 컴포넌트(mounse over)'"  #link명  
+      />
 ```
 
 **예시**
@@ -512,13 +513,13 @@ clib
 - stateOfBookMark의 경우 현재 즐겨찾기 여부를 지정한다.
 - @stateOfBookMark의 경우 클릭에 따른 즐겨찾기 여부를 부모 컴포넌트에 전달하기 위해 사용
 
-**호출코드**
+**호출소스**
 ```
-<PageTitle
-  :current-menu="currentMenu"
-  :stateOfBookMark="false"
-  @stateOfBookMark="stateOfBookMark = value"
-  />
+      <PageTitle
+          :current-menu="currentMenu"                   #json파일에 있는 메뉴 정보들
+          :stateOfBookMark="false"                      #즐겨찾기 등록 여부
+          @stateOfBookMark="stateOfBookMark = value"    #제목 클릭에 따른 즐겨찾기 등록 변경 함수
+        />
 ```
 
 **예시**
@@ -592,11 +593,11 @@ pageableData: {
 **호출코드**
 ```
 <popup-component
-  v-if="isModalShow"
-  @popup="isModalShow = false"
-  @AGREE = "''"
-  :popupmsg="'여기가 팝업 메세지 '"
-  />
+          v-if="isModalShow"                #팝업 출력 여부 true면 출력 false면 출력하지 않음
+          @popup="isModalShow = false"      #팝업 창에서 취소 버튼 클릭시 호출되는 함수
+          @AGREE = "''"                     #팝업 창에서 확인 버튼 클릭시 호출되는 함수
+          :popupmsg="'여기가 팝업 메세지 '"    #팝업 창에서 보여줄 메시지의 내용
+      />
 ```
 
 
@@ -646,16 +647,19 @@ pageableData: {
 - 다른 탭으로 이동해도 기존 탭 상태 유지
 - 메뉴나 버튼 클릭을 통해 탭을 추가함
 
-**호출코드**
-```aidl
+**호출소스**
+```
       <TabComponent
-          :menu-type="'Cont'"      <- 폴더명
-          :comp-array="compm"
-          :comp-name="comp"
-          :comp-value="component"
+          :menu-type="'Cont'"      #탭으로 호출될 컴포넌트들을 담은 폴더 명
+          :comp-array="compm"      #menuID, menuNm, upMenuId, cmpnId와 같은 컴포넌트에 대한 정보들을 담고 있는 배열
+          :comp-name="comp"        #컴포넌트의 menuId     
+          :comp-value="component"  #defineAsyncComponent를 통해 불러온 컴포넌트에 대한 주소
       />
 ```
-
+"menuId": "L01M05S01",
+"menuNm": "청약정보",
+"upMenuId": "L01M05S00",
+"cmpnId": "ContMgt"
 
 **예시**
 
@@ -669,23 +673,23 @@ pageableData: {
 - 데이터를 반환받을때는 cellRendererParams를 통해 데이터를 반환 받는다.
 ```
 
-**호출코드**
-```aidl
+**호출소스**
+```
         <ag-grid-component
-            :rowData="renderRowData"
-            :columnDefs="renderColumns"
-            :row-height="40"
+            :rowData="renderRowData"        #출력할 행에 대한 데이터
+            :columnDefs="renderColumns"     #출력한 열에 대한 데이터 및 cellRender에 대한 설정
+            :row-height="40"                #행의 높이
         />
 ------------------------------------------------------------------
         renderColumns:[
         {headerName: "AutCdGpNm" ,field: "model1",
-          cellRenderer :'AutCdGpNm',           <- AutCdGpNm 컴포넌트 렌더
-          cellRendererParams: {                <- 컴포넌트 렌더에 대한 반환값
-            clicked: function (field) {
+          cellRenderer :'AutCdGpNm',                # AutCdGpNm 컴포넌트 렌더
+          cellRendererParams: {                     # 컴포넌트 렌더에 대한 반환값
+            clicked: function (field) {             # 반환값을 받기 위한 매칭 함수
               console.log(field);
             }
           },
-          width: 250
+          width: 250                                # 해당 열의 가로 길이
         },
       ],
 ------------------------------------------------------------------      
@@ -766,12 +770,13 @@ pageableData: {
 
 **호출코드**
 
-```aidl
-      <msf-tree :source="contentTree"
-                label-field="directoryName"
-                ref="tree"
-                @itemClick="(value)=>{treeItemClick = value}"
-                style="width:100%; height:100%;font-size: 12pt;"
+```
+      <msf-tree
+                :source="contentTree"                              #트리에 넣을 데이터
+                label-field="directoryName"                        #트리에서 호출할 필드명
+                ref="tree"                                         #부모에서 자식접근을 위한 참조변수
+                @itemClick="(value)=>{treeItemClick = value}"      #행 클릭에 대해 처리하는 함수
+                style="width:100%; height:100%;font-size: 12pt;"    
       ></msf-tree>
 ```
 
@@ -795,12 +800,12 @@ pageableData: {
 - 정보를 보여주기 위한 팝업이라 별도의 확인버튼은 존재하지 않는다.
 - 정보의 경우 전달된 value를 통해 팝업 내부에서 axios통신을 통해 DB에서 받아 출력
 
-**호출코드**
-```aidl
+**호출소스**
+```
       <BtExeInfoPopup
-          v-if="isModelBtExeInfoShow"
-          :value="null"
-          @close="closeBtInfoModal"
+          v-if="isModelBtExeInfoShow"       #팝업 출력을 위한 조건
+          :value="null"                     #팝업창에서 보여줄 데이터의 값
+          @close="closeBtInfoModal"         #X표시를 눌렀을 때 호출되는 함수
       />
 ```
 
@@ -819,12 +824,12 @@ pageableData: {
 **호출코드**
 ```
       <CdGpLstPopup
-          v-if="isCdGpModalShow"
-          :type="1"
-          :value="null"
-          @close="closeCdGpModal"
-          @submit="''"
-          @update="''"
+          v-if="isCdGpModalShow"            #팝업 출력을 위한 조건
+          :type="1"                         #등록/변경 로직 처리를 위한 타입값
+          :value="null"                     #팝업창에 넣을 데이터
+          @close="closeCdGpModal"           #x를 눌렀을 때 호출되는 함수
+          @submit="''"                      #등록 버튼을 눌렀을때 호출되는 함수
+          @update="''"                      #변경 버튼을 눌렀을때 호출되는 함수
         />
 ```
 
@@ -837,14 +842,15 @@ pageableData: {
 - 코드 리스트 등록 변경을 위한 팝업창
 - 코드그룹 리스트 팝업과 방식은 동일
 
-**호출코드**
-```aidl
+**호출소스**
+```
       <CdLstPopup
-          v-if="isCdLstModalShow"
-          :type="1"
-          :value="null"
-          @close="closeCdLstModal"
-          @submit="''"
+          v-if="isCdLstModalShow"             #팝업 출력을 위한 조건   
+          :type="1"                           #등록/변경 로직 처리를 위한 타입값
+          :value="null"                       #팝업창에 넣을 데이터
+          @close="closeCdLstModal"            #x를 눌렀을 때 호출되는 함수
+          @submit="''"                        #등록 버튼을 눌렀을때 호출되는 함수
+          @update="''"                        #변경 버튼을 눌렀을때 호출되는 함수
       />
 ```
 
@@ -868,11 +874,11 @@ pageableData: {
 - 목록을 보여주는 용도로 사용될 컴포넌트
 - 추후 파일명 클릭시 다운로드 가능하도록 수정할 예정
 
-**호출코드**
-```aidl
+**호출소스**
+```
  <AtcListComponent
-    :WrkjobNm="'업무명들어갈자리'"
-    :data="data"
+    :WrkjobNm="'업무명들어갈자리'"          #제목명
+    :data="data"                         #표에 들어갈 데이터
  />
 ```
 
@@ -889,11 +895,11 @@ pageableData: {
 **주요특징**
 - 첨부파일을 받아야되는 페이지에서 사용될 컴포넌트
 
-**호출코드**
-```aidl
+**호출소스**
+```
 <AtcRegComponent
-    :WrkjobNm="'업무명들어갈자리'"
-    :data="data"
+    :WrkjobNm="'업무명들어갈자리'"          #제목명
+    :data="data"                         #표에 들어갈 데이터
 />
 ```
 
@@ -924,9 +930,18 @@ pageableData: {
 
 **호출코드**
 ```aidl
-      <FloatingLabelsComponent
-        :placeholder="'입력'"
-        @emitValue="(value) =>{data = value}"
+       <FloatingLabelsComponent
+        :placeholder="'입력'"                    #active되지 않은 상태의 글
+        :value="'label'"                        #active된 상태의 글
+        :maxlength="10"                         #입력 가능한 최대 글자 수
+        :type="'text'"                          #입력 타입
+        :text-color="'red'"                     #글자 색상
+        :line-color="'blue'"                    #밑줄 색상
+        :close-btn-color="'black'"              #X버튼 색상
+        :placeholder-color="'blue'"             #active되지 않은 상태의 글 색상
+        :font-size="20"                         #글자 크기
+        :text-offset-bot="18"                   #밑줄과의 간격을 조정하기 위한 margin-top 값
+        @emitValue="(value) =>{data = value}"   #입력받은 값 반환을 위한 함수
       />
 ```
 
@@ -944,8 +959,8 @@ pageableData: {
 ### etc > RangeComponent
 - 슬라이더를 통해 범위 조절이 가능한 컴포넌트
 
-**호출코드**
-```aidl
+**호출소스**
+```
 <RangeComponent />
 ```
 
@@ -974,17 +989,18 @@ pageableData: {
 - className : wk-alert ,wk-warn, wk-info  
 - transition : 'slide-down', 'slide-up', 'slide-left', 'slide-right', 'fade'
 
-**호출코드**
-```aidl
+**호출소스**
+```
       <ToastComponent
           v-if="chk"
-          :message="'hello'"
-          :vertical-position="'bottom'"
-          :horizontal-position="'right'"
-          :class-name="'wk-info'"
-          :closeable="true"
-          :duration="2000"
-          :transition="'slide-right'"
+          :id="id"                              #Toast 메시지에 대한 고유 ID
+          :message="'hello'"                    #Toast 메시지의 내용
+          :vertical-position="'bottom'"         #세로 위치 지정을 위한 값 (top, bottom)
+          :horizontal-position="'right'"        #가로 위치 지정을 위한 값(left, right)
+          :class-name="'wk-info'"               #배경색을 지정하기 위한 클래스(wk-alert, wk-warn, wk-info)
+          :closeable="true"                     #클릭으로 삭제할지에 대한 true/false
+          :duration="2000"                      #메시지가 자동으로 삭제되는 시간
+          :transition="'slide-right'"           #애니메이션을 위한 transition name 지정을 위한 값('slide-down', 'slide-up', 'slide-left', 'slide-right', 'fade')
       />
 ```
 
@@ -1028,13 +1044,13 @@ pageableData: {
 - cdGroup : 셀렉트 박스에 넣을 데이터에 대한 코드그룹
 - @input : 컴포넌트 내의 값들을 받기 위한 함수
 
-**호출코드**
-```aidl
+**호출소스**
+```
       <aut-retv-component
-          :title="'조회기준'"
-          :sel-default-value="'조회기준 선택'"
-          :cd-group="'orgBase'"
-          @input="(value)=>{
+          :title="'조회기준'"                       #제목 명
+          :sel-default-value="'조회기준 선택'"       #셀렉트 박스의 기본 값
+          :cd-group="'orgBase'"                    #셀렉트 박스의 코드그룹지정을 위한 값
+          @input="(value)=>{                       #컴포넌트 내의 선택한 값들을 받기 위한 함수
         this.selectValues.searchValue = value[0];
         this.selectValues.selValue = value[1];
       }"
@@ -1049,24 +1065,24 @@ pageableData: {
 - 청약리스트 페이지에서 검색 폼 밑에 존재하는 청약리스트 테이블 폼
 - subInfoTitleNm : 해당 오브젝트에 대한 제목명
 - rowData : Ag Grid에 들어갈 행 데이터
-- columnDefs : Ag Grid에 들어갈 컬럼 데이터
+- columnDefs : Ag Grid에 들어갈 열 데이터
 - selectBoxShow : 셀렉트 박스 출력 여부
 - agGirdHeight : Ag Grid 셀의 높이
 - cdGroup : 셀렉트 박스에 넣을 데이터에 대한 코드그룹
 - btnName1~3 : 버튼 3개에 대한 버튼명
 
-**호출코드**
-```aidl
+**호출소스**
+```
         <blc2-component
-            :sub-info-title-nm="'청약리스트'"
-            :row-data="rowData"
-            :column-defs="columnDefs"
-            :select-box-show="false"
-            :cdGroup="'optionsSearchDiv'"
-            :btnName1="'일괄정지 신청'"
-            :btnName2="'숨김해제'"
-            :btnName3="'엑셀 다운로드'"
-            :agGirdHeight="'500px'"
+            :sub-info-title-nm="'청약리스트'"     #제목명
+            :row-data="rowData"                 #Ag Grid에 들어갈 행 데이터
+            :column-defs="columnDefs"           #Ag Grid에 들어갈 열 데이터 및 헤더 정보
+            :select-box-show="false"            #select box 출력 여부
+            :cdGroup="'optionsSearchDiv'"       #셀렉트 박스의 코드그룹지정을 위한 값
+            :btnName1="'일괄정지 신청'"           #첫번째 버튼 명
+            :btnName2="'숨김해제'"               #두번째 버튼 명
+            :btnName3="'엑셀 다운로드'"           #세번째 버튼 명
+            :agGirdHeight="'500px'"             #Ag Grid 셀의 높이
           />
 ```
 
@@ -1079,7 +1095,7 @@ pageableData: {
 - AgGrid와 제목, 버튼을 포함한 정보 출력 폼
 - subInfoTitleNm : 해당 오브젝트에 대한 제목명
 - rowData : Ag Grid에 들어갈 행 데이터
-- columnDefs : Ag Grid에 들어갈 컬럼 데이터
+- columnDefs : Ag Grid에 들어갈 열 데이터
 - selectBoxShow : 셀렉트 박스 출력 여부
 - agGirdHeight : Ag Grid 셀의 높이
 - cdGroup : 셀렉트 박스에 넣을 데이터에 대한 코드그룹
@@ -1088,15 +1104,15 @@ pageableData: {
 
 **호출코드**
 
-```aidl
+```
         <blc-component
-            :sub-info-title-nm="'요금정보'"
-            :row-data="rowData"
-            :column-defs="columnDefs"
-            :select-box-show="false"
-            :cdGroup="'optionsSearchDiv'"
-            :btnName="'엑셀다운'"
-            style="height: 110%"
+            :sub-info-title-nm="'요금정보'"      #제목명
+            :row-data="rowData"                 #Ag Grid에 들어갈 행 데이터
+            :column-defs="columnDefs"           #Ag Grid에 들어갈 열 데이터
+            :select-box-show="false"            #셀렉트 박스 출력 여부
+            :cdGroup="'optionsSearchDiv'"       #셀렉트 박스의 코드그룹 지정을 위한 값
+            :btnName="'엑셀다운'"                 #버튼 명
+            style="height: 110%"        
         />
 ```
 
@@ -1109,10 +1125,10 @@ pageableData: {
 - 고객에 대한 정보를 보여주는 고객 정보 출력 테이블 폼
 - custInfo : 고객에 대한 정보를 담은 객체
 
-**호출코드**
-```aidl
+**호출소스**
+```
  <cust-info-component
-    :custInfo="custInfo"
+    :custInfo="custInfo"    #고객 정보를 담은 데이터
  />
 ```
 
@@ -1123,11 +1139,11 @@ pageableData: {
 ***
 ### CustRetvComponent
 - 고객에 대한 정보를 조회하기 위한 고객 조회 폼
-- cdGroup : 셀렉트 박스에 넣을 데이터에 대한 코드그룹
-**호출코드**
-```aidl
+- cdGroup : 셀렉트 박스에 넣을 코드그룹을 지정하는 값
+**호출소스**
+```
 <cust-retv-component
-    :cdGroup="cdGroup"
+    :cdGroup="cdGroup"    #셀렉트 박스에 넣을 코드그룹을 지정하는 값
 />
 ```
 
@@ -1147,17 +1163,17 @@ pageableData: {
 - 주소를 검색하여 선택하면 상단의 테이블에 데이터가 들어가게 된다.
 - 데이터는 @selectedJusoData를 통해 전달받는다. 전달받은 데이터는 selectedJuso 함수에서 변수에 넣어진다.
 
-**호출코드**
-```aidl
+**호출소스**
+```
     <post-code-component
-        @FormPopup="isPostCodeModalShow = false"
-        @selected-juso-data="selectedJuso"
-        :formDataPopupFrameWidth="'800px'"
-        :PopupTitleMsg="'주소 검색'"
-        :reqtype="'searchPostCode'"
-        ref="PostCodeComponent"
-        v-if="isPostCodeModalShow"
-        :btnClicked ="0"
+        @FormPopup="isPostCodeModalShow = false"    #취소 버튼을 눌렀을 때 호출되는 함수
+        @selected-juso-data="selectedJuso"          #주소 선택시 호출되는 함수, 선택된 행에 대한 데이터도 같이 반환
+        :formDataPopupFrameWidth="'800px'"          #팝업 창의 가로 길이
+        :PopupTitleMsg="'주소 검색'"                  #팝업 창의 제목명
+        :reqtype="'searchPostCode'"                 #
+        ref="PostCodeComponent"                     #부모에서 자식 접근을 위한 참조
+        v-if="isPostCodeModalShow"                  #팝업 창의 출력 여부
+        :btnClicked ="0"                            #
     />
 ```
 
@@ -1183,16 +1199,16 @@ pageableData: {
 ***
 ### RetvCondComponent
 - 메뉴 관리 페이지에서 사용한 메뉴 조회 폼
-- retvCondNm : 셀렉트 박스에 넣을 데이터에 대한 코드그룹
+- retvCondNm : 박스에 대한 제목명
 - selectCdGroup : 셀렉트 박스에 넣을 데이터에 대한 코드그룹
 - selectDefltValue: 셀렉트 박스 기본 값
 
-**호출코드**
-```aidl
+**호출소스**
+```
         <retv-cond-component
-            :retvCondNm="'조회기준'"
-            :selectCdGroup="'retvCond'"
-            :selectDefltValue="'조회기준 선택'"
+            :retvCondNm="'조회기준'"              #셀렉트박스에 대한 제목명
+            :selectCdGroup="'retvCond'"         #셀렉트 박스에 넣을 코드그룹을 지정하는 값
+            :selectDefltValue="'조회기준 선택'"   #셀렉트 박스의 기본 값
         />
 ```
 
@@ -1205,10 +1221,10 @@ pageableData: {
 - 청약 리스트 페이지에서 사용한 청약 조회 폼
 - cdGroup : 셀렉트 박스에 넣을 데이터에 대한 코드그룹
 
-**호출코드**
-```aidl
+**호출소스**
+```
         <subs-retv-component
-            cd-group="'retvCond'"
+            cd-group="'retvCond'"   #셀렉트 박스에 넣을 코드그룹을 지정하는 값
         />
 ```
 
@@ -1220,10 +1236,10 @@ pageableData: {
 ### UserAdmRetvComponent
 - 사용자관리 페이지에서 사용한 사용자 조회 폼
 
-**호출코드**
-```aidl
+**호출소스**
+```
  <user-adm-retv-component
-    :cdGroup="cdGroup"
+    :cdGroup="cdGroup"              #셀렉트 박스에 넣을 코드그룹을 지정하는 값
  />
 ```
 
