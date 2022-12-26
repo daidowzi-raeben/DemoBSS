@@ -14,7 +14,7 @@
         :btnName1="'일괄정지 신청'"
         :btnName2="'숨김해제'"
         :btnName3="'엑셀 다운로드'"
-        :agGirdHeight="'60%'"
+        :agGirdHeight="'500px'"
       />
     </div>
   </div>

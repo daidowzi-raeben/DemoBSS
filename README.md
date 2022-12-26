@@ -322,6 +322,23 @@ clib
 
 **주요특징:**
 - [ref] https://icehaunter.github.io/vue3-datepicker/config.html#props 
+-  date picker는 block형식이므로 두 개의 date picker 사용 시, inline-block 또는 flex 사용 해야합니다.
+- background color, width, height 설정으로 크기 및 색상 조절
+- emitValue로 date-picker에서 변경한 날짜 값을 data 변수에 저장 필요.
+- x버튼 (clear) 클릭 시, pPlaceholder로 설정한 값을 표시
+- type props를 이용해서 월/일/시분 력 선택 가능
+- isMinDate / isMaxDate 를 이용해서 특정 날짜 구간 지정 가능 ( 두개의 props 모두 사용해야 가능합니다.)
+
+**예시**
+<p align="center">
+  <img width="200" height="150" src="./readMeImg/datePickerMonthly.png" title="datePickerMonthly"> &nbsp;
+  <img width="200" height="40" src="./readMeImg/datePickerDuration.png" title="datePickerDuration">
+</p>
+<p align="center">
+  <img width="220" height="200" src="./readMeImg/datePickerDaily.png"  title="datePickerDaily">&nbsp;
+  <img width="200" height="200" src="./readMeImg/datePickerMinutes.png" title="datePickerMinutes" >&nbsp;
+  <img width="200" height="200" src="./readMeImg/datePickerConstraint.png" title="datePickerConstraint" > &nbsp;
+</p>
 
 *** 
 ### SubInfoTitle
