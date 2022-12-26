@@ -20,7 +20,7 @@ export default {
   name: "HoliDesc",
   components: {inputComponent},
   setup(props){
-    const holiChk = props.params.data.model2==='일요일' || props.params.data.model2==='토요일' ? true : false;
+    const holiChk = props.params.data.model2==='일요일' || props.params.data.model2==='토요일' ? true : false;  //props.params를 통해 부모의 값을 변수에 넣는다.
     console.log(props.params.data.model2);
     return {
       holiChk
@@ -28,7 +28,7 @@ export default {
   },
   watch:{
     descValue(){
-      this.params.clicked(this.descValue);
+      this.params.clicked(this.descValue); //cellRendererParams의 clicked와 매핑되어 값을 전달한다.
     }
   },
   data(){

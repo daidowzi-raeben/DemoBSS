@@ -6,7 +6,7 @@
       :key="radioOpt"
     >
       <input
-        type="radio"
+        type=radio
         :id="radioOpt"
         :value="radioOpt.cdId"
         v-model="radioValue"

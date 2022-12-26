@@ -26,7 +26,7 @@ export default {
 
   methods:{
     Click(){
-      this.params.clicked(this.params.value);
+      this.params.clicked(this.params.value); //cellRendererParams의 clicked와 매핑되어 값을 전달한다.
       if(this.expend==true)this.expend=false;
       else this.expend = true;
     }

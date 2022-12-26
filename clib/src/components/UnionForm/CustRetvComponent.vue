@@ -35,6 +35,7 @@
         :btn-name="'검색'"
         :btnHeight="'28px'"
         :btnWidth="'78px'"
+        @click="search"
       />
     </span>
     <span>
@@ -68,11 +69,19 @@ export default {
     return {
       searchDiv: null,
       searchValue: null,
+      totalValue:[]
     };
   },
   props: {
     cdGroup: null,
   },
+  methods:{
+    search(){
+      this.totalValue.push(this.searchDiv);
+      this.totalValue.push(this.searchValue);
+      this.$emit("emitValue",this.totalValue);
+    }
+  }
 };
 </script>
 

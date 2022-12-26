@@ -23,8 +23,8 @@ export default {
   components:{
     selectBoxComponent
   },
- setup(props){
-   const displayValue = props.params.value;
+ setup(props){        //부모에서 값을 받기 위한 props
+   const displayValue = props.params.value;   //props.params.value를 통해 부모의 값을 변수에 넣는다.
    return {
      displayValue
    }
@@ -36,7 +36,7 @@ export default {
   },
   watch:{
     cdGpValue(){
-      this.params.clicked(this.cdGpValue);
+      this.params.clicked(this.cdGpValue);      //cellRendererParams의 clicked와 매핑되어 값을 전달한다.
     }
   },
   beforeMount() {

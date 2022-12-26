@@ -18,7 +18,7 @@ export default {
   },
   watch:{
     value(){
-      this.params.clicked(this.value);
+      this.params.clicked(this.value); //cellRendererParams의 clicked와 매핑되어 값을 전달한다.
     }
   }
 

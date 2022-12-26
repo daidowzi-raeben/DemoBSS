@@ -300,7 +300,7 @@ export default {
     }
   },
   methods:{
-    clickedRow(params){
+    clickedRow(params){                 //Grid 행 클릭 이벤트
       this.autData = params.data;
       this.autChgConf = true;
       this.autRegConf = false;
