@@ -145,7 +145,7 @@ clib
   <컴포넌트명
     :props
     />
-    
+
 </template>
 
 import 컴포넌트명 from "컴포넌트주소";
@@ -182,7 +182,7 @@ export default {
             :input-class="'class1'"         #입력창의 스타일 지정 클래스
             :value="value"                  #입력 값
             v-model="store"                 #입력한 내용을 저장할 변수
-            :placeholder="'010-11**-****'"  #입력 전 예시 
+            :placeholder="'010-11**-****'"  #입력 전 예시
             :disabled="true"                #입력 가능 여부
         />
 ```
@@ -452,9 +452,9 @@ export default {
 
 **호출소스**
 ```
-<SubInfoTitle 
-  :subInfoTitleNm="'요금정보'"        #제목에 대한 이름 
-  :sub-info-title="'subInfoTitle'"   #제목에 대한 스타일 지정 
+<SubInfoTitle
+  :subInfoTitleNm="'요금정보'"        #제목에 대한 이름
+  :sub-info-title="'subInfoTitle'"   #제목에 대한 스타일 지정
   :font-size="'30pt'"                #제목의 글자 크기
 />
 ```
@@ -475,7 +475,7 @@ export default {
 **호출소스**
 
 ```
-  <DepthTitle 
+  <DepthTitle
   :currentMenu="currentMenu"  #현재 메뉴의 id, 이름, 상단메뉴, 컴포넌트id를 담고 있다.
   />
 ```
@@ -1118,11 +1118,11 @@ pageableData: {
     <p>- 입력여부 확인 및 이메일 형식 확인</p>
    </form>
  </template>
- 
+
  <script>
    import useVuelidate from '@vuelidate/core'                           #vuelidate를 쓰기위한 core호출
    import {required, email, minLength, helpers} from '@vuelidate/validators'  #vuelidate의 에러 양식들을 불러온다.
-   
+
    export default {
     setup(){
     return {v$: useVuelidate()}           # 호출한 core를 $v로 치환하여 쓰기
@@ -1138,14 +1138,14 @@ pageableData: {
       form:{
         email:{             #helpers.withMessage를 통한 에러 메세지 지정, 해당 줄의 email은 변수
           required:helpers.withMessage('필수사항으로 입력하셔야합니다.',required), # 필수입력을 위한 에러 발생 지정
-          email : helpers.withMessage('이메일형식이 아닙니다.',email)   #이메일 형식을  확인하기 위한 에러 발생지정 
-                                                                    # 위의 줄의 email은 에러 형식 
+          email : helpers.withMessage('이메일형식이 아닙니다.',email)   #이메일 형식을  확인하기 위한 에러 발생지정
+                                                                    # 위의 줄의 email은 에러 형식
         },
        }
      }
   },
-    
-   
+
+
    }
 
 ```
