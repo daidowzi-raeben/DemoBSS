@@ -110,7 +110,6 @@ export default {
     setCheckedData: function (item, field) {
       let value = field === 'checked' ? this.selectedList : this.activeList
       item[field] = false
-      console.log("test:",item);
       if (!value || value.length < 1) { return }
       for (let j = 0; j < value.length; j++) {
         if (value[j] && value[j].id === item.id) {

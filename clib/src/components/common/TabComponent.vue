@@ -104,6 +104,7 @@ export default {
       }
     },
     AddComponent: function (param) {                          //탭에 컴포넌트를 추가하는 함수
+      console.log(param);
       if (param.menuId != "" && param.menuId != null) {
         const st = this.compm.find(                           //동일한 컴포넌트가 탭내에 존재하는지 확인
             (element) => element.menuId === param.menuId
@@ -118,6 +119,7 @@ export default {
           if (this.compm.length < 10) {
             this.compm.push(param);                           //클릭된 컴포넌트의 정보를 compm 변수에 넣는다.
             this.cur_num = this.compm.length - 1;             //현재 추가되는 컴포넌트의 index 번호를 지정
+            // cmpnId 가공하기 
             this.component = markRaw(                         //추가될 컴포넌트를 import를 통해 불러온다. 고정된 컴포넌트의 경우 이방식을 통해 사전에 불러와야한다.
                 defineAsyncComponent(() =>
                     import("../" +this.menuType +"/" + this.compm[this.cur_num].cmpnId + ".vue")
