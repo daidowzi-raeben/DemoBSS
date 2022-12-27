@@ -19,6 +19,23 @@
       />
       <p>- class1의 경우 입력받은 width와  height에 의해 가로 세로 길이가 정해짐 /*정보 스타일*/</p>
       <br /><br />
+      <label-component label-nm="'class2'" />
+      &nbsp;&nbsp;
+      <input-component
+          :input-class="'class2'"
+          :value="'class2 '"
+      />
+
+      <label-component label-nm="'class2'" />
+      &nbsp;&nbsp;
+      <input-component
+          :input-class="'class2'"
+          :value="'class2'"
+          :class2-background-color="'rgb(251, 253, 255)'"
+      />
+      <p>- class2의 width는 입력받은 class2Width, height는 24px을 기준</p>
+      <p>- class2-background-color를 추가하여 경우 배경색 변경</p>
+      <br /><br />
       <label-component label-nm="'class3'" />
       &nbsp;&nbsp;
       <input-component
@@ -79,22 +96,7 @@
       <p>- class5 short2은 width: 64px을 기준</p>
       <p>- class5 long1은 입력받은 longwidth 값에 의해 크기 지정</p>
       <br /><br />
-      <label-component label-nm="'class2'" />
-      &nbsp;&nbsp;
-      <input-component
-          :input-class="'class2'"
-          :value="'class2 '"
-      />
 
-      <label-component label-nm="'class2'" />
-      &nbsp;&nbsp;
-      <input-component
-          :input-class="'class2'"
-          :value="'class2'"
-          :class2-background-color="'rgb(251, 253, 255)'"
-      />
-      <p>- class2의 width는 입력받은 class2Width, height는 24px을 기준</p>
-      <p>- class2-background-color를 추가하여 경우 배경색 변경</p>
     </div>
     <br /><br />
 
@@ -147,7 +149,7 @@
 
     <h1 style="font-size: 30px">SubInfoTitle</h1>
     <div class="commondiv1">
-      <SubInfoTitle :subInfoTitleNm="'고객정보'" /> &emsp;
+      <SubInfoTitle :subInfoTitleNm="'고객정보'" />
       <SubInfoTitle :subInfoTitleNm="'요금정보'" :font-size="'30pt'" />
       <p>- SubInfoTitle의 경우 subInfoTitleNm을 통해 제목명을 지정할 수 있다.</p>
       <p>- 글자 크기의 경우 fontSize를 통해 지정가능하고 단위는 pt다.</p>

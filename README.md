@@ -138,6 +138,26 @@ clib
 - 수신 : @emitValue = "(자식변수)=> { 부모변수 = 자식변수}"
 ```
 
+**컴포넌트 호출 및 사용방법**
+```
+<template>
+
+  <컴포넌트명
+    :props
+    />
+    
+</template>
+
+import 컴포넌트명 from "컴포넌트주소";
+
+export default {
+  components:{
+  컴포넌트명
+  }
+}
+
+```
+
 ***
 ###  InputComponent
 **props:**
@@ -152,7 +172,27 @@ clib
 **주요특징:**
 - emit가 아닌 v-model을 통해 데이터 송수신
 - 입력창 스타일 (`class1`, `class3`, `class4`, `class5`, `class6`)
+
+**호출소스***
+```
+        <input-component
+            :type="'text'"                  #입력 폼 타입
+            :height="'28px'"                #입력창의 높이
+            :width="'140px'"                #입력창의 가로길이
+            :input-class="'class1'"         #입력창의 스타일 지정 클래스
+            :value="value"                  #입력 값
+            v-model="store"                 #입력한 내용을 저장할 변수
+            :placeholder="'010-11**-****'"  #입력 전 예시 
+            :disabled="true"                #입력 가능 여부
+        />
+```
+
+**예시**
+
+<img width="400" height="400" src="./readMeImg/input.png" title="selectBox-first">
+
 ***
+
 ### SelectBoxComponent
 **props**
 - selectedValue :
@@ -217,7 +257,8 @@ clib
 - isAutoHeight  : 세로 스크롤 표시하는지
 - isAutoSize    : ag-grid 감싸고 있는 박스 크기에 맞출지 여부 및 타입 결정하는 배열 데이터 [Boolean, String]
   - isAutoSize[0] = 감싸고 있는 박스 크기에 자동 fit 하는 함수 사용할 것인지에 대한 boolean 값 ( true: 동의, false: 거부. columnDefs에서 지정한 wiedth에 맞춘 크기 사용)
-  - isAutoSize[1] = 자동 fit 하는 함수 사용하지 않을 경우(columnDefs에서 지정한 width에 따라 출력할 경우), 타입 선택 ( type 1, 2,3 )
+  - isAutoSize[1] = 자동 fit 하는 함수 사용하지 않을 경
+  - 우(columnDefs에서 지정한 width에 따라 출력할 경우), 타입 선택 ( type 1, 2,3 )
 - isDeselect    : 여러 row 클릭 가능하게 할 지 여부 (여기서 기능은 같은 row를 2번 클릭하면 해당 row 클릭 해제가 됩니다.)
 - headerColor   : column 헤더의 색 지정
 - headerHeight  : column 헤더의 높이 지정
@@ -330,10 +371,22 @@ clib
 ### LabelComponent
 **props:**
 - labelNm : 라벨 이름
-- labelClass : 라벨의 스타일 지정 클래스
+- labelClass : 라벨의 스타일 지정 클래스(label-type)
 
 **주요특징:**
 - 주로 table의 th 부분에서 많이 사용됨.
+
+**호출소스:**
+```
+<LabelComponent
+          :label-nm="'Label 컴포넌트'"    #라벨에 대한 이름 지정
+          :labelClass="'label-type'"     #라벨에 대한 스타일 지정
+      />
+```
+
+**예시**
+
+<img width="200" height="50" src="./readMeImg/label.png"  title="datePickerDaily">&nbsp;
 
 ***
 ### DatePickerComponent
@@ -391,16 +444,46 @@ clib
 ### SubInfoTitle
 **props:**
 - subInfoTitleNm : 제목 명 지정
-- subInfoTitle : 제목 스타일 지정 클래스
+- subInfoTitle : 제목 스타일 지정 클래스(subInfoTitle)
 - fontSize : 제목 글자 크기
 
 **주요특징:**
 - 각 Object마다의 서브 제목으로 사용
 
+**호출소스**
+```
+<SubInfoTitle 
+  :subInfoTitleNm="'요금정보'"        #제목에 대한 이름 
+  :sub-info-title="'subInfoTitle'"   #제목에 대한 스타일 지정 
+  :font-size="'30pt'"                #제목의 글자 크기
+/>
+```
+
+
+**출력예시**
+
+<img width="200" height="60" src="./readMeImg/subInfo.png" title="fileInput"> &nbsp;
+
 ***
 ### DepthTitle
 **props:**
-- currentMenu : 메뉴의 최상단 Depth부터 현재 보여줄 타이틀 제목까지 3Depth
+- currentMenu : 현재 메뉴에 대한 정보를 담고 있는 변수
+
+**주요특징**
+- currentMenu에 있는 upMenuId를 통해 상단의 메뉴로 올라가  depth 및 제목들을 파악한다.
+
+**호출소스**
+
+```
+  <DepthTitle 
+  :currentMenu="currentMenu"  #현재 메뉴의 id, 이름, 상단메뉴, 컴포넌트id를 담고 있다.
+  />
+```
+
+**출력예시**
+
+<img width="300" height="40" src="./readMeImg/depthTitle.png" title="fileInput"> &nbsp;
+
 ***
 ### DragGrid
 **props:**
@@ -485,7 +568,7 @@ clib
 - hover 시 파란색 글자에 밑줄이 생긴다.
 - LinkComponent의 경우 destination 옵션을 통해 이동할 url을 지정할 수 있다.
 
-**호출 소스**
+**호출 코드**
 ```
       <link-component
           :destination="'/'"                    #link에 대한 url
@@ -513,7 +596,7 @@ clib
 - stateOfBookMark의 경우 현재 즐겨찾기 여부를 지정한다.
 - @stateOfBookMark의 경우 클릭에 따른 즐겨찾기 여부를 부모 컴포넌트에 전달하기 위해 사용
 
-**호출소스**
+**호출코드**
 ```
       <PageTitle
           :current-menu="currentMenu"                   #json파일에 있는 메뉴 정보들
@@ -563,12 +646,14 @@ pageableData: {
 
 <p align="left">
   <img width="70%" height="50" src="./readMeImg/paging-10.png" title="textArea"> &nbsp;
+<br />
   <span> pageSize = 10 , 한번에 10개 페이지씩 출력 </span>
 </p>
 
 
 <p align="left">
   <img width="40%" height="40" src="./readMeImg/paging-5.png" title="textArea"> &nbsp;
+<br />
   <span> pageSize = 5 , 한번에 5개 페이지씩 출력 </span>
 </p>
 
@@ -627,6 +712,7 @@ pageableData: {
 ```
 
 **예시**
+
 <img width="260" height="40" src="./readMeImg/radio1.png" title="radio1"> &emsp; - 기본 선택 값 (defaultcdId ) 미지정
 
 <img width="130" height="40" src="./readMeImg/radio2.png" title="radio2">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; - 기본 선택 값 (defaultcdId ) 지정
@@ -646,7 +732,7 @@ pageableData: {
 - 다른 탭으로 이동해도 기존 탭 상태 유지
 - 메뉴나 버튼 클릭을 통해 탭을 추가함
 
-**호출소스**
+**호출코드**
 ```
       <TabComponent
           :menu-type="'Cont'"      #탭으로 호출될 컴포넌트들을 담은 폴더 명
@@ -672,7 +758,7 @@ pageableData: {
 - 데이터를 반환받을때는 cellRendererParams를 통해 데이터를 반환 받는다.
 ```
 
-**호출소스**
+**호출코드**
 ```
         <ag-grid-component
             :rowData="renderRowData"        #출력할 행에 대한 데이터
@@ -799,7 +885,7 @@ pageableData: {
 - 정보를 보여주기 위한 팝업이라 별도의 확인버튼은 존재하지 않는다.
 - 정보의 경우 전달된 value를 통해 팝업 내부에서 axios통신을 통해 DB에서 받아 출력
 
-**호출소스**
+**호출코드**
 ```
       <BtExeInfoPopup
           v-if="isModelBtExeInfoShow"       #팝업 출력을 위한 조건
@@ -841,7 +927,7 @@ pageableData: {
 - 코드 리스트 등록 변경을 위한 팝업창
 - 코드그룹 리스트 팝업과 방식은 동일
 
-**호출소스**
+**호출코드**
 ```
       <CdLstPopup
           v-if="isCdLstModalShow"             #팝업 출력을 위한 조건   
@@ -873,7 +959,7 @@ pageableData: {
 - 목록을 보여주는 용도로 사용될 컴포넌트
 - 추후 파일명 클릭시 다운로드 가능하도록 수정할 예정
 
-**호출소스**
+**호출코드**
 ```
  <AtcListComponent
     :WrkjobNm="'업무명들어갈자리'"          #제목명
@@ -894,7 +980,7 @@ pageableData: {
 **주요특징**
 - 첨부파일을 받아야되는 페이지에서 사용될 컴포넌트
 
-**호출소스**
+**호출코드**
 ```
 <AtcRegComponent
     :WrkjobNm="'업무명들어갈자리'"          #제목명
@@ -958,7 +1044,7 @@ pageableData: {
 ### etc > RangeComponent
 - 슬라이더를 통해 범위 조절이 가능한 컴포넌트
 
-**호출소스**
+**호출코드**
 ```
 <RangeComponent />
 ```
@@ -988,7 +1074,7 @@ pageableData: {
 - className : wk-alert ,wk-warn, wk-info  
 - transition : 'slide-down', 'slide-up', 'slide-left', 'slide-right', 'fade'
 
-**호출소스**
+**호출코드**
 ```
       <ToastComponent
           v-if="chk"
@@ -1012,6 +1098,57 @@ pageableData: {
 - 가져다 쓰는 컴포넌트보다는 사용법에 대한 예시 컴포넌트
 - 사용시 form태그로 입력 영역을 묶어야 한다.
 - 등록, 확인 등의 버튼은 정합성이 다 통과되야 홣성화 된다.
+
+**호출예시**
+```
+<template>
+ <form @submit.prevent="onSubmit">        #입력을 위한 form @submit는 버튼의 타입이 submit인 경우 호출되는 함수
+    <!-- Email -->
+    <div :class="{ error: v$.form.email.$errors.length }">    #v$.form.email.$errors.length는 현재 발생한 에러의 길이 = 발생한 에러의 갯수
+      <label-component label-nm="'Email'" />                  # 라벨 명 지정
+      <input :class="{                                        # 입력창의 스타일 지정을 위한 다중 클래스
+        ch1 : v$.form.email.$errors.length ===0,              # 에러가 발생하지 않았을 경우 평상시 상태
+        ch2 : v$.form.email.$errors.length >0                 # 에러가 발생하여 테두리가 빨간색으로 변경된 상태
+      }" placeholder="Enter your username" type="email" v-model="v$.form.email.$model">  #v-model에 데이터에 있는 form.email을 연결
+      <!-- error message -->
+      <div v-for="(error, index) of v$.form.email.$errors" :key="index">  #v$.form.email.$errors-> email폼에서 발생한 에러들
+        <div>발생한 에러 : {{ error.$message }}</div>                       #에러에 대한 메시지
+      </div>
+    </div>
+    <p>- 입력여부 확인 및 이메일 형식 확인</p>
+   </form>
+ </template>
+ 
+ <script>
+   import useVuelidate from '@vuelidate/core'                           #vuelidate를 쓰기위한 core호출
+   import {required, email, minLength, helpers} from '@vuelidate/validators'  #vuelidate의 에러 양식들을 불러온다.
+   
+   export default {
+    setup(){
+    return {v$: useVuelidate()}           # 호출한 core를 $v로 치환하여 쓰기
+     },
+    data(){
+      return {
+        form:{
+          email :'',                      # form에 들어간 input의 v-model에 연결된 변수
+      }
+    },
+   validations(){                         # vuelidate에 있는 내장 메소드
+    return {
+      form:{
+        email:{             #helpers.withMessage를 통한 에러 메세지 지정, 해당 줄의 email은 변수
+          required:helpers.withMessage('필수사항으로 입력하셔야합니다.',required), # 필수입력을 위한 에러 발생 지정
+          email : helpers.withMessage('이메일형식이 아닙니다.',email)   #이메일 형식을  확인하기 위한 에러 발생지정 
+                                                                    # 위의 줄의 email은 에러 형식 
+        },
+       }
+     }
+  },
+    
+   
+   }
+
+```
 
 **예시**
 
@@ -1043,7 +1180,7 @@ pageableData: {
 - cdGroup : 셀렉트 박스에 넣을 데이터에 대한 코드그룹
 - @input : 컴포넌트 내의 값들을 받기 위한 함수
 
-**호출소스**
+**호출코드**
 ```
       <aut-retv-component
           :title="'조회기준'"                       #제목 명
@@ -1070,7 +1207,7 @@ pageableData: {
 - cdGroup : 셀렉트 박스에 넣을 데이터에 대한 코드그룹
 - btnName1~3 : 버튼 3개에 대한 버튼명
 
-**호출소스**
+**호출코드**
 ```
         <blc2-component
             :sub-info-title-nm="'청약리스트'"     #제목명
@@ -1124,7 +1261,7 @@ pageableData: {
 - 고객에 대한 정보를 보여주는 고객 정보 출력 테이블 폼
 - custInfo : 고객에 대한 정보를 담은 객체
 
-**호출소스**
+**호출코드**
 ```
  <cust-info-component
     :custInfo="custInfo"    #고객 정보를 담은 데이터
@@ -1139,7 +1276,7 @@ pageableData: {
 ### CustRetvComponent
 - 고객에 대한 정보를 조회하기 위한 고객 조회 폼
 - cdGroup : 셀렉트 박스에 넣을 코드그룹을 지정하는 값
-**호출소스**
+**호출코드**
 ```
 <cust-retv-component
     :cdGroup="cdGroup"    #셀렉트 박스에 넣을 코드그룹을 지정하는 값
@@ -1162,7 +1299,7 @@ pageableData: {
 - 주소를 검색하여 선택하면 상단의 테이블에 데이터가 들어가게 된다.
 - 데이터는 @selectedJusoData를 통해 전달받는다. 전달받은 데이터는 selectedJuso 함수에서 변수에 넣어진다.
 
-**호출소스**
+**호출코드**
 ```
     <post-code-component
         @FormPopup="isPostCodeModalShow = false"    #취소 버튼을 눌렀을 때 호출되는 함수
@@ -1202,7 +1339,7 @@ pageableData: {
 - selectCdGroup : 셀렉트 박스에 넣을 데이터에 대한 코드그룹
 - selectDefltValue: 셀렉트 박스 기본 값
 
-**호출소스**
+**호출코드**
 ```
         <retv-cond-component
             :retvCondNm="'조회기준'"              #셀렉트박스에 대한 제목명
@@ -1220,7 +1357,7 @@ pageableData: {
 - 청약 리스트 페이지에서 사용한 청약 조회 폼
 - cdGroup : 셀렉트 박스에 넣을 데이터에 대한 코드그룹
 
-**호출소스**
+**호출코드**
 ```
         <subs-retv-component
             cd-group="'retvCond'"   #셀렉트 박스에 넣을 코드그룹을 지정하는 값
@@ -1235,7 +1372,7 @@ pageableData: {
 ### UserAdmRetvComponent
 - 사용자관리 페이지에서 사용한 사용자 조회 폼
 
-**호출소스**
+**호출코드**
 ```
  <user-adm-retv-component
     :cdGroup="cdGroup"              #셀렉트 박스에 넣을 코드그룹을 지정하는 값
