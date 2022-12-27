@@ -111,6 +111,7 @@ export default {
     },
 
     onGridReady(params, side) {     // Grid 준비 단계 각 Grid에 대한 api를 분배 후 데이터 추가
+      console.log("나와ㅛㅇ용",params)
       const api = params.api;
       if(side === 0){
         this.leftApi = api;
@@ -126,18 +127,18 @@ export default {
 
     addGridDropZone(side, api) {
       const dropApi = side === 0 ? this.rightApi : this.leftApi;    //이동 된 Grid에 값을 넣고 기존 Grid에서 삭제하기위해 입력된 api와 반대의 api를 받는다.
-      const dropZone = dropApi.getRowDropZoneParams({
+      const dropZone = dropApi.getRowDropZoneParams({               //dropZone변수는 드래그한 Grid의 삭제값을 변수에 담는다.
             onDragStop: params => {
               var nodes = params.nodes;
                 api.applyTransaction({
-                  remove: nodes.map(function(node) { return node.data; })     // 기존의 데이터에서 이동된 데이터 삭제
+                  remove: nodes.map(function(node) { return node.data; })     // 기존의 데이터에서 이동된 데이터 map함수로 돌면서 찾아서 삭제
                 });
 
             }
           }
 
       );
-      api.addRowDropZone(dropZone);     //새로운 Grid에 이동된 데이터 추가
+      api.addRowDropZone(dropZone);     //위에서 삭제하여 담은 dropZone변수를 새로운 Grid에 데이터로 추가
     },
     onFirstDataRendered() {
       // console.log("onFirstDataRendered");

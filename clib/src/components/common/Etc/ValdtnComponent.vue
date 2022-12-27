@@ -39,8 +39,8 @@
 </template>
 
 <script>
-import useVuelidate from '@vuelidate/core'
-import {required, email, minLength, helpers} from '@vuelidate/validators'
+import useVuelidate from '@vuelidate/core'                                    
+import {required, email, minLength, helpers} from '@vuelidate/validators'     // validators 문서 참고하여 형식 추가 가능 
 import labelComponent from "@/components/common/LabelComponent";
 export default {
   name: "ValidateExampleComponent",
@@ -48,7 +48,7 @@ export default {
     labelComponent
   },
   setup(){
-    return {v$: useVuelidate()}
+    return {v$: useVuelidate()}           // import한 컴포넌트 변수로 축약 
   },
   data(){
     return {
@@ -61,9 +61,9 @@ export default {
   validations(){
     return {
       form:{
-        email:{     //helpers.withMessage를 통한 에러 메세지 지정
-          required:helpers.withMessage('필수사항으로 입력하셔야합니다.',required),
-          email : helpers.withMessage('이메일형식이 아닙니다.',email)
+        email:{     // data에서 선언한 변수  helpers.withMessage를 통한 에러 메세지 지정
+          required:helpers.withMessage('필수사항으로 입력하셔야합니다.',required),    // validators에서 import한 email 에러 형식을 의미 
+          email : helpers.withMessage('이메일형식이 아닙니다.',email)                 // validators에서 import한 email 에러 형식을 의미
         },
         password: {
           required:helpers.withMessage('필수사항으로 입력하셔야합니다.',required),

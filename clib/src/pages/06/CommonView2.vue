@@ -30,11 +30,7 @@
         :defaultValue="'업무유형 선택'"
         :defaultcdId="selectBoxCompData.Option1"
         :selectedValue="selectBoxCompData.Option1"
-        @emitValue="
-          (value) => {
-            selectBoxCompData.Option1 = value;
-          }
-        "
+        @emitValue=" (value) => { selectBoxCompData.Option1 = value;}"
       />
 
       <select-box-component
