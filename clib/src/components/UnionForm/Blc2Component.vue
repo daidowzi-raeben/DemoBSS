@@ -24,7 +24,6 @@
   </div>
   <div class="ag-grid_sp">
     <Ag-grid-component
-    :overlayNoRowsTemplate="noRowTemplateMsg"
     :rowData="rowData" 
     :columnDefs="columnDefs" />
     <div>
@@ -57,7 +56,6 @@ export default {
   },
   data() {
     return {
-      noRowTemplateMsg: `<span> <strong>  조회 결과가 없습니다. </strong> <br><br><br> </span>`,
       month: 0,
       pageableData: {
         pageNumber: 1,

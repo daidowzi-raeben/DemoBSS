@@ -166,9 +166,7 @@
             :columnDefs="CustRetvColumnDefs"
             :row-height="40"
             
-            :overlayNoRowsTemplate="
-          `<span> <br>` + '<br />조회 결과가 없습니다.' + ` </span>`
-          "
+            
         />
       </div>
       <div style="width: 100%">

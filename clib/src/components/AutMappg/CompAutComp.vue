@@ -19,10 +19,6 @@
           :rowData="upRowData"
           :columnDefs="upColumnDefs"
           :row-height="40"
-          
-          :overlayNoRowsTemplate="
-          `<span> <br>` + '<br />조회 결과가 없습니다.' + ` </span>`
-          "
       />
     </div>
   <div style="width: 100%; margin-top: 15px">
@@ -41,11 +37,7 @@
         :header-color="'rgb(239 245 252)'"
         :rowData="downRowData"
         :columnDefs="downColumnDefs"
-        
         :row-height="40"
-        :overlayNoRowsTemplate="
-          '<span> <br>' + '<br />조회 결과가 없습니다.' + '</span>'
-         "
     />
   </div>
   </div>

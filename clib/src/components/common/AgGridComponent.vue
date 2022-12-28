@@ -96,7 +96,7 @@ export default {
     },
     overlayNoRowsTemplate: {
       type: String,
-      default: `<span class="red"> <br><br>검색 결과가 없습니다. </span>`,
+      default: `<span>  <br/> <strong>  조회 결과가 없습니다. </strong> <br> </span>`
     },
   },
   components: {

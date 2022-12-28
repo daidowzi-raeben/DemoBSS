@@ -36,7 +36,6 @@
       :rowHeight="rowHeight"
       :rowSelection="'multiple'"
       :rowClicked="fileAgGridRowClicked"
-      :overlayNoRowsTemplate="noRowTemplateMsg"
       :isDeselect="true"
       :isAutoSize="[false, 'type1']"
       @getGridApi="(value) => { gridApi = value;}" 
@@ -104,7 +103,6 @@ export default {
           width: 150,
         },
       ],
-      noRowTemplateMsg: `<span> <strong>  조회 결과가 없습니다. </strong> <br><br><br> </span>`,
       files: [],
       deleteFiles: [], //지울 파일 번호
       prevFiles: [],   //이전 파일

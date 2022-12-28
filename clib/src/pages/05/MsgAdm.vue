@@ -142,7 +142,7 @@
             :isAutoSize="[false,'type1']"
             :headerHeight="60"
             :rowClicked="msgLstRowClicked"
-            :overlayNoRowsTemplate="noRowTemplateMsg"
+            
           />
           <div class="pgSelectAndPagingFlex">
             <div>
@@ -495,7 +495,6 @@ export default {
       ],
       isMsgLstModalShow:false,
       rowData: [],
-      noRowTemplateMsg: `<span> <strong>  조회 결과가 없습니다. </strong> <br><br><br> </span>`,
       pageableData: {
         pageNumber: 1,
         currentMinPage: 1,
