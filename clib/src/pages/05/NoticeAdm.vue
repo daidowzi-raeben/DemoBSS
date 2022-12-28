@@ -382,8 +382,7 @@
     </div>
     
       <div class="item4">
-        
-        <p v-for="uploadFile in uploadFiles" :key="uploadFile"> {{ uploadFile.name }}</p>
+        <!-- <p v-for="uploadFile in uploadFiles" :key="uploadFile"> {{ uploadFile.name }}</p> -->
           <file-ag-grid-component
           @emitUploadFile="(value) => { 
             uploadFiles = [];
