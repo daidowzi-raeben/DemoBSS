@@ -66,7 +66,6 @@
         <div class="formDataPopupFrame" v-if="reqtype == '2'">
           <h1>
             {{ PopupTitleMsg }}
-            <!-- <ButtonComponent @click="GetSubmitFormData" :btnClass="'btnclass2'" :btnName="'입력 형식 출력'" style=" float:right;"/> -->
           </h1>
           <!-- 팝업 메세지 내용 -->
           <article>

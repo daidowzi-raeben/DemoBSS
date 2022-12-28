@@ -9,8 +9,6 @@
         <select-box-component
             :selectClass="'select-type1'"
             :cdGroup="'codeDiv'"
-            :is-disabled="true"
-            :disabled="true"
             :defaultValue="'코드구분선택'"
             :selected-value="selectValues.cdDivSel"
             @emitValue=" (value) => { selectValues.cdDivSel = value;}"

@@ -2,22 +2,22 @@
   <div class="container">
     <h1 style="font-size: 30px">InputComponent</h1>
     <div class="commondiv1" >
-      <label-component label-nm="'class1'" />
+      <label-component label-nm="'label-type'" />
       &nbsp;&nbsp;
       <input-component
           :type="'search'"
           :height="20"
           :width="150"
-          :input-class="'class1'"
+          :input-class="'input-type'"
           v-model="searchValue"
-          :placeholder="'class1'"
+          :placeholder="'input-type'"
           @input="
           (value) => {
             searchValue = value;
           }
         "
       />
-      <p>- class1의 경우 입력받은 width와  height에 의해 가로 세로 길이가 정해짐 /*정보 스타일*/</p>
+      <p>- input-type의 경우 입력받은 width와  height에 의해 가로 세로 길이가 정해짐 /*정보 스타일*/</p>
       <br /><br />
       <label-component label-nm="'class2'" />
       &nbsp;&nbsp;

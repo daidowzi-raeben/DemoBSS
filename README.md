@@ -31,11 +31,11 @@
     - [ag-cell-Render \> BillChageDiv](#ag-cell-render--billchagediv)
     - [ag-cell-Render \> HoliDesc](#ag-cell-render--holidesc)
     - [ag-cell-Render \> HoliDiv](#ag-cell-render--holidiv)
-    - [AutMappg](#autMappg)
-    - [AutMappg \> MenuAutComp](#MenuAutComp)
-    - [AutMappg \> CompAutComp](#CompAutComp)
-    - [AutMappg \> OrgAutComp](#OrgAutComp)
-    - [AutMappg \> UseAutComp](#UseAutComp)
+    - [AutMappg](#autmappg)
+    - [AutMappg \> MenuAutComp](#autmappg--menuautcomp)
+    - [AutMappg \> CompAutComp](#autmappg--compautcomp)
+    - [AutMappg \> OrgAutComp](#autmappg--orgautcomp)
+    - [AutMappg \> UserAutComp](#autmappg--userautcomp)
     - [treeComponent](#treecomponent)
     - [treeComponent \> msf-tree](#treecomponent--msf-tree)
     - [treeComponent \> msf-tree-item](#treecomponent--msf-tree-item)
@@ -170,13 +170,13 @@ export default {
 - type : 입력창의 타입 (ex. text, search)
 - width : 입력창 가로 길이 (기본 : 150px)
 - height :  입력창 세로 길이 (기본 : 20px)
-- inputClass : 입력창 스타일 지정을 위한 클래스 (기본 : class1)
+- inputClass : 입력창 스타일 지정을 위한 클래스 (기본 : input-type)
 - disabled : 입력창 입력 불가 여부 (기본 : false)
 - value : 입력창 값
 
 **주요특징:**
 - emit가 아닌 v-model을 통해 데이터 송수신
-- 입력창 스타일 (`class1`, `class3`, `class4`, `class5`, `class6`)
+- 입력창 스타일 (`input-type`, `class3`, `class4`, `class5`, `class6`)
 
 **호출소스***
 ```
@@ -184,7 +184,7 @@ export default {
             :type="'text'"                  #입력 폼 타입
             :height="'28px'"                #입력창의 높이
             :width="'140px'"                #입력창의 가로길이
-            :input-class="'class1'"         #입력창의 스타일 지정 클래스
+            :input-class="'input-type'"         #입력창의 스타일 지정 클래스
             :value="value"                  #입력 값
             v-model="store"                 #입력한 내용을 저장할 변수
             :placeholder="'010-11**-****'"  #입력 전 예시
