@@ -776,7 +776,13 @@
     },
     {
       "menuId": "L06M01S04",
-      "menuNm": "고정된 멀티 탭 화면",
+      "menuNm": "Grid 적용 예시 화면 ",
+      "upMenuId": "L06M01",
+      "cmpnId": "06/PageTemplate"
+    },
+    {
+      "menuId": "L06M01S05",
+      "menuNm": "고정된 멀티 탭 예시 화면",
       "upMenuId": "L06M01",
       "cmpnId": "06/FiexedMultiTab"
     },
