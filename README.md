@@ -19,7 +19,6 @@
     - [DepthTitle](#depthtitle)
     - [DragGrid](#draggrid)
     - [FileInputComponent](#fileinputcomponent)
-    - [FileAgGridComponent](#fileaggridcomponent)
     - [linkComponent](#linkcomponent)
     - [PageTitle](#pagetitle)
     - [PagingComponent](#pagingcomponent)
@@ -32,6 +31,11 @@
     - [ag-cell-Render \> BillChageDiv](#ag-cell-render--billchagediv)
     - [ag-cell-Render \> HoliDesc](#ag-cell-render--holidesc)
     - [ag-cell-Render \> HoliDiv](#ag-cell-render--holidiv)
+    - [AutMappg](#autMappg)
+    - [AutMappg \> MenuAutComp](#MenuAutComp)
+    - [AutMappg \> CompAutComp](#CompAutComp)
+    - [AutMappg \> OrgAutComp](#OrgAutComp)
+    - [AutMappg \> UseAutComp](#UseAutComp)
     - [treeComponent](#treecomponent)
     - [treeComponent \> msf-tree](#treecomponent--msf-tree)
     - [treeComponent \> msf-tree-item](#treecomponent--msf-tree-item)
@@ -284,7 +288,7 @@ export default {
   :isAutoSize="[false,'type1']"                         # [박스 크기에 맞출지 여부(bool), 타입(type 1, 2, 3)] 결정하는 배열   | 박스 크기에 맞춘다면 해당 props default값 으로 지정 ( 아래 ag-grid 호출 2 참고 )
   :headerHeight="60"                                    # header row의 높이
   :rowClicked="testLstRowClicked"                       # row 클릭 시, 실행시킬 함수 지정
-  :overlayNoRowsTemplate="noRowTemplateMsg"             # rowData가 없을 경우 출력 할 템플릿 지정
+  :overlayNoRowsTemplate="noRowTemplateMsg"             # rowData가 없을 경우 출력 할 템플릿
   />
 
 ------------------------------------------------------------------------------------
@@ -308,7 +312,7 @@ export default {
   :rowData="testRowData"                     # rowData 지정
   :columnDefs="testColumnDefs"               # columnDefs 지정
   :row-height="40"                           # 각 row 높이 지정
-  :overlayNoRowsTemplate="noRowTemplateMsg"  # rowData가 없을 경우 출력 할 템플릿 지정
+  :overlayNoRowsTemplate="noRowTemplateMsg"  # rowData가 없을 경우 출력 할 템플릿
 />
 -------------------------------------------------------------------------------
 참고 파일 : commonView2.vue
@@ -526,14 +530,14 @@ export default {
 
 **호출소스**
 ```
-<DragGrid 
-  :left-row-data="leftRowData"        #첫번째 Grid의 행 데이터
-  :right-row-data="rightRowData"      #두번째 Grid의 행 데이터
-  :Columns="GridToGridColumns"        #두 Grid의 열 데이터 및 헤더 정보
-  :header-color="'rgb(113,156,205)'"  #헤더의 색상 지정
-  :overlayNoRowsTemplate="            #데이터가 없을때 출력 내용
-    `<span> <br>` + '<br />조회 결과가 없습니다.' + ` </span>`"
-/>
+        <DragGrid
+            :left-row-data="leftRowData"        #첫번째 Grid의 행 데이터
+            :right-row-data="rightRowData"      #두번째 Grid의 행 데이터
+            :Columns="GridToGridColumns"        #두 Grid의 열 데이터 및 헤더 정보
+            :header-color="'rgb(113,156,205)'"  #헤더의 색상 지정
+            :overlayNoRowsTemplate="            #데이터가 없을때 출력 내용
+          `<span> <br>` + '<br />조회 결과가 없습니다.' + ` </span>`"
+        />
 ```
 
 **예시**
@@ -575,35 +579,6 @@ export default {
 <p align="center">
   <img width="80%" height="60" src="./readMeImg/fileInput.png" title="fileInput"> &nbsp;
 </p>
-
-***
-### FileAgGridComponent
-**props:**
-- pPrevFiles : 이전 파일
-- liClass    : 스타일 클래스 지정 
-
-**emit:**
-- @emitUploadFile : emit으로 현재 업로드 된 파일 정보를 부모에게 전달
-
-**주요특징:**
-- ag-grid를 이용한 파일 목록.
-- 여러 파일 동시 첨부/삭제 가능 및 적용
-- 전체 파일 체크, 삭제 가능
-- this.grid를 이용해 각 row를 이용할 수 있음.
-
-**호출 코드**
-```
-<file-ag-grid-component
-  @emitUploadFile="(value) => { 
-    uploadFiles = [];
-    uploadFiles = value;  }"  
-/>
-```
-
-**예시**
-<img src="./readMeImg/FileAgGrid-empty.png" width="400px" height="150px"> : 기본 파일 첨부 목록
-<img src="./readMeImg/FileAgGrid.png" width="400px" height="150px"> : 파일 첨부 된 목록 
-
 
 ***
 ### linkComponent
@@ -875,6 +850,106 @@ pageableData: {
 <img src="./readMeImg/ag-Cell-Render-5.png" width="1000px" height="60px">
 
 ***
+
+### AutMappg
+```
+- 권한매핑페이지에서 사용된 고정 탭을 활용한 컴포넌트 호출
+- Tab 컴포넌트와 비슷하면서 다른 로직으로 작동한다.
+```
+
+**호출코드**
+```
+--------탭을 생성하는 코드--------------------------------------------------
+        #탭의 정보(menuId, menuNm)들을 담고있는 변수 autComp를 활용해 탭을 생성
+        <div v-for="(item, index) in autComp" v-bind:key="index">   
+          <div
+              :class="{     # 현재 선택하여 활성화된 탭과 비활성된 탭을 구분하기 위해 class를 나눔
+              tabon: this.compId === item.menuId,
+              taboff: this.compId !== item.menuId,
+              menu_tab: true,
+            }"
+              # 다른 탭을 눌렀을 때 호출되는 함수 누른 탭의 menuId와 탭의 Index를 같이 넘긴다.
+              @click="ChageComponent(item.menuId, index)"
+          >
+            <span id="tab_nm">
+              {{ item.menuNm }}   #탭의 정보에 들어있는 탭의 이름을 출력한다.
+            </span>
+          </div>
+        </div>
+--------------------------------------------------------------------------
+--------컴포넌트를 생성하는 코드----------------------------------------------
+         # 호출하여 가져온 컴포넌트 오브젝트들을 담고 있는 autCompAddr
+<div v-for="(item, index) in autCompAddr" :key="item" style="margin-top: 20px;">
+      <div v-show="index === this.cur_num"> #현재 클릭된 탭과 컴포넌트의 index가 일치할때 출력
+      <component
+          v-bind:is="this.autCompAddr[index]"
+          :autId="autId"
+       />
+      </div>
+    </div>
+--------------------------------------------------------------------------  
+--------컴포넌트를 호출하여 변수에 넣는 코드------------------------------------
+  created() { #defineAsyncComponent을 통해 컴포넌트 호출
+    this.comp = markRaw(defineAsyncComponent(()=> import("../../components/AutMappg/MenuAutComp.vue")));    //컴포넌트에 대한 오브젝트
+    this.autCompAddr.push(this.comp);     //컴포넌트에 대한 오브젝트들을 담고 있는 배열
+    this.comp = markRaw(defineAsyncComponent(()=> import("../../components/AutMappg/CompAutComp.vue")));
+    this.autCompAddr.push(this.comp);
+    this.comp = markRaw(defineAsyncComponent(()=> import("../../components/AutMappg/OrgAutComp.vue")));
+    this.autCompAddr.push(this.comp);
+    this.comp = markRaw(defineAsyncComponent(()=> import("../../components/AutMappg/UserAutComp.vue")));
+    this.autCompAddr.push(this.comp);
+  },
+-------------------------------------------------------------------------- 
+--------탭을 눌렀을 때 컴포넌트를 변경하는 코드---------------------------------
+  watch: {  #밑의 함수에서 cur_num이 변경되면 호출되어 compId를 추가로 바꿔 실시간으로 바꾼다.
+    cur_num: function (newVal) {  
+      this.compId = this.autComp[newVal].menuId;
+    },
+  },
+  methods:{   
+    ChageComponent: function (componentName, index) {  #다른탭을 클릭했을때 호출 
+      this.compId = componentName;    #클릭한 탭의 컴포넌트Id
+      this.cur_num = index;           #클릭한 탭의 index
+    },
+   }
+--------------------------------------------------------------------------    
+```
+
+***예시***
+
+<img src="./readMeImg/autMappg.png" width="800" height="500">
+
+### AutMappg > MenuAutComp
+- Grid 좌측에 위치한 아이콘을 통해 대상메뉴에서 권한적용메뉴로 메뉴를 이동시킬 수 있다.
+- 확정 버튼을 누르면 서버에 데이터를 업데이트하여 권한 적용을 완료한다(DB미연결로 미구현)
+
+***예시***
+
+<img src="./readMeImg/autMappg.png" width="800" height="500">
+
+### AutMappg > CompAutComp
+- 하단의 Grid에서 권한에 있는 라이도 버튼을 통해 해당 컴포넌트에 권한 적용할 건지 정할수 있다.(기능미구현)
+- 권한 등록/해제 버튼 클릭시 데이터를 서버에 업데이트하여 권한 등록/해제를 완료한다.(DB미연결로 미구현)
+***예시***
+
+<img src="./readMeImg/compAutComp.png" width="800" height="500">
+
+### AutMappg > OrgAutComp
+- Grid 좌측에 위치한 아이콘을 통해 대상조직에서 권한적용조직으로 조직을 이동시킬 수 있다.
+- 확정 버튼을 누르면 데이터를 서버에 업데이트하여 권한 적용을 완료한다(DB미연결로 미구현)
+***예시***
+
+<img src="./readMeImg/orgAutComp.png" width="800" height="500">
+
+### AutMappg > UserAutComp
+- Grid 좌측에 위치한 아이콘을 통해 대상사원에서 권한적용사원으로 사원을 이동시킬 수 있다.
+- 확정 버튼을 누르면 서버에 데이터를 업데이트하여 권한 적용을 완료한다(DB미연결로 미구현)
+***예시***
+
+<img src="./readMeImg/userAutComp.png" width="800" height="500">
+
+***
+
 ### treeComponent
 ```
 - JSON 형태의 데이터를 입력받아 트리 형태로 보여주기 위한 컴포넌트 입력값에 따라 뱃지 형태의 라벨 출력 가능
