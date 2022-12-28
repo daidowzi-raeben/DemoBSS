@@ -49,7 +49,7 @@
           :rowHeight="rowHeight"
           :isDeselect="true"
           :rowClicked="userLstRowClicked"
-          :overlayNoRowsTemplate="noRowTemplateMsg"
+          
         /> -->
 
 

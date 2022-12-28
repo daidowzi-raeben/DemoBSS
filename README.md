@@ -19,6 +19,7 @@
     - [DepthTitle](#depthtitle)
     - [DragGrid](#draggrid)
     - [FileInputComponent](#fileinputcomponent)
+    - [FileAgGridComponent](#fileaggridcomponent)
     - [linkComponent](#linkcomponent)
     - [PageTitle](#pagetitle)
     - [PagingComponent](#pagingcomponent)
@@ -283,7 +284,7 @@ export default {
   :isAutoSize="[false,'type1']"                         # [박스 크기에 맞출지 여부(bool), 타입(type 1, 2, 3)] 결정하는 배열   | 박스 크기에 맞춘다면 해당 props default값 으로 지정 ( 아래 ag-grid 호출 2 참고 )
   :headerHeight="60"                                    # header row의 높이
   :rowClicked="testLstRowClicked"                       # row 클릭 시, 실행시킬 함수 지정
-  :overlayNoRowsTemplate="noRowTemplateMsg"             # rowData가 없을 경우 출력 할 템플릿
+  :overlayNoRowsTemplate="noRowTemplateMsg"             # rowData가 없을 경우 출력 할 템플릿 지정
   />
 
 ------------------------------------------------------------------------------------
@@ -307,7 +308,7 @@ export default {
   :rowData="testRowData"                     # rowData 지정
   :columnDefs="testColumnDefs"               # columnDefs 지정
   :row-height="40"                           # 각 row 높이 지정
-  :overlayNoRowsTemplate="noRowTemplateMsg"  # rowData가 없을 경우 출력 할 템플릿
+  :overlayNoRowsTemplate="noRowTemplateMsg"  # rowData가 없을 경우 출력 할 템플릿 지정
 />
 -------------------------------------------------------------------------------
 참고 파일 : commonView2.vue
@@ -525,14 +526,14 @@ export default {
 
 **호출소스**
 ```
-        <DragGrid
-            :left-row-data="leftRowData"        #첫번째 Grid의 행 데이터
-            :right-row-data="rightRowData"      #두번째 Grid의 행 데이터
-            :Columns="GridToGridColumns"        #두 Grid의 열 데이터 및 헤더 정보
-            :header-color="'rgb(113,156,205)'"  #헤더의 색상 지정
-            :overlayNoRowsTemplate="            #데이터가 없을때 출력 내용
-          `<span> <br>` + '<br />조회 결과가 없습니다.' + ` </span>`"
-        />
+<DragGrid 
+  :left-row-data="leftRowData"        #첫번째 Grid의 행 데이터
+  :right-row-data="rightRowData"      #두번째 Grid의 행 데이터
+  :Columns="GridToGridColumns"        #두 Grid의 열 데이터 및 헤더 정보
+  :header-color="'rgb(113,156,205)'"  #헤더의 색상 지정
+  :overlayNoRowsTemplate="            #데이터가 없을때 출력 내용
+    `<span> <br>` + '<br />조회 결과가 없습니다.' + ` </span>`"
+/>
 ```
 
 **예시**
@@ -574,6 +575,35 @@ export default {
 <p align="center">
   <img width="80%" height="60" src="./readMeImg/fileInput.png" title="fileInput"> &nbsp;
 </p>
+
+***
+### FileAgGridComponent
+**props:**
+- pPrevFiles : 이전 파일
+- liClass    : 스타일 클래스 지정 
+
+**emit:**
+- @emitUploadFile : emit으로 현재 업로드 된 파일 정보를 부모에게 전달
+
+**주요특징:**
+- ag-grid를 이용한 파일 목록.
+- 여러 파일 동시 첨부/삭제 가능 및 적용
+- 전체 파일 체크, 삭제 가능
+- this.grid를 이용해 각 row를 이용할 수 있음.
+
+**호출 코드**
+```
+<file-ag-grid-component
+  @emitUploadFile="(value) => { 
+    uploadFiles = [];
+    uploadFiles = value;  }"  
+/>
+```
+
+**예시**
+<img src="./readMeImg/FileAgGrid-empty.png" width="400px" height="150px"> : 기본 파일 첨부 목록
+<img src="./readMeImg/FileAgGrid.png" width="400px" height="150px"> : 파일 첨부 된 목록 
+
 
 ***
 ### linkComponent

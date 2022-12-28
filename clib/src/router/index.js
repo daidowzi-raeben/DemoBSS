@@ -73,12 +73,6 @@ const routes = [
     component: () =>
         import(/* webpackChunkName: "about" */ "../pages/05/BatchExeAdm.vue"),
   },
-  {
-    path: "/common",
-    name: "Common",
-    component: () =>
-      import(/* webpackChunkName: "about" */ "../pages/06/CommonView.vue"),
-  },
 ];
 
 const router = createRouter({

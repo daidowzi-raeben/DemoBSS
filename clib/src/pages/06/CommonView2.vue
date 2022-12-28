@@ -3,9 +3,13 @@
     
     <div class="commondiv0">
     <h1 style="font-size: 30px">FileAgGridComponent</h1>
-      <div style="width: 600px;  height: 400px;">
-        <FileAgGridComponent />
-      
+      <div style="width: 700px;  height: 400px;">
+        <FileAgGridComponent 
+          @emitUploadFile="(value) => { 
+            uploadFiles = [];
+            uploadFiles = value;  }"  
+        />
+        <p v-for="uploadFile in uploadFiles" :key="uploadFile"> emit Files 객체 : {{ uploadFile}} &emsp; 파일명 : {{ uploadFile.name }} </p>
       </div>
 
 
@@ -30,11 +34,7 @@
         :defaultValue="'업무유형 선택'"
         :defaultcdId="selectBoxCompData.Option1"
         :selectedValue="selectBoxCompData.Option1"
-        @emitValue="
-          (value) => {
-            selectBoxCompData.Option1 = value;
-          }
-        "
+        @emitValue=" (value) => { selectBoxCompData.Option1 = value;}"
       />
 
       <select-box-component
@@ -178,6 +178,7 @@
               :headerHeight="60"
               :rowClicked="agGridRowClicked"
               :overlayNoRowsTemplate="noRowTemplateMsg"
+              
             />
             <span>
           </span>
@@ -438,7 +439,7 @@ import FileAgGridComponent from "@/components/UnionForm/FileAgGridComponent.vue"
 
 export default {
   mixins: [ApiMixin],
-  name: "CommonView",
+  name: "CommonView2",
   components: {
     SelectBoxComponent,
     PagingComponent,
@@ -453,6 +454,8 @@ export default {
 },
   data() {
     return {
+      uploadFiles:[],
+      noRowTemplateMsg: `<span> <strong>  조회 결과가 없습니다. </strong> <br><br><br> </span>`,
       selectBoxCompData: {
         Option1: "",
         Option2: "",
@@ -483,9 +486,9 @@ export default {
       ],
 
       currentMenu: {
-        cmpnId: "CommonView",
-        menuId: "L06M01S01",
-        menuNm: "공통화면참고",
+        cmpnId: "CommonView2",
+        menuId: "L06M01S02",
+        menuNm: "공통화면참고2",
         upMenuId: "L06M01",
       },
       pageableData1: {
@@ -589,7 +592,6 @@ export default {
         },
       ],
       rowData1:[],
-      noRowTemplateMsg: `<span> <strong>  조회 결과가 없습니다. </strong> <br><br><br> </span>`,
       isModalShow: false, // popup 조건
       isPostCodeModalShow: false,
       OutputFormData: [],

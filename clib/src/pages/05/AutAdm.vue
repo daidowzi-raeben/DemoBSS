@@ -259,15 +259,15 @@ export default {
       },
       SearchNum:null,          //검색 건수
 
-      autAdmObject : {        //권한 상세 정보
+      autAdmObject : {   //권한 상세 정보
         autId: null,     //권한ID
         autNm: null,     //권한명
         autType: null,   //권한유형    //현재 셀렉트json에 id값도 "조회" 이런식으로 들어가 있음.(매칭을위해) 추후 수정 필수
         useAble: null,   //사용여부관련 라디오 변수
         regr: null,      //등록자
-        regDt: null,   //등록일시
+        regDt: null,     //등록일시
         amdr: null,      //수정자
-        amdDt: null,   //수정일시
+        amdDt: null,     //수정일시
       },
       RowData:[],
       columnDefs: [

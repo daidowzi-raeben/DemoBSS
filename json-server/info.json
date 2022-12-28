@@ -1559,22 +1559,22 @@
         "msgContent": "메시지 내용 7 입니다."
       }
     ],
-    "fileRowData":[
+    "fileRowData":[ 
       {
-        "fileNm":"가나다라.pdf",
-        "fileByte":"65byte"
+        "name":"가나다라.pdf",
+        "size":56
       },
       {
-        "fileNm":"가나다라1.pdf",
-        "fileByte":"652byte"
+        "name":"가나다라1.pdf",
+        "size":652
       },
       {
-        "fileNm":"abcd.pdf",
-        "fileByte":"825byte"
+        "name":"abcd.pdf",
+        "size":825
       },
       {
-        "fileNm":"wow.pdf",
-        "fileByte":"765byte"
+        "name":"wow.pdf",
+        "size":765
       }
     ]
   }

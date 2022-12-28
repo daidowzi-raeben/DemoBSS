@@ -19,7 +19,7 @@
     :debounceVerticalScrollbar="true"
     :suppressColumnVirtualisation="true"
     :suppressRowVirtualisation="true"
-    :rowSelection="'single'"
+    :rowSelection="rowSelection"
     :suppressCellSelection="true"
     :suppressMaxRenderedRowRestriction="true"
     :enableCellTextSelection="true"
@@ -49,6 +49,10 @@ export default {
     };
   },
   props: {
+    rowSelection:{
+      type:String,
+      default:"single"
+    },
     isAutoSize:{
       type:Array,
       default:[true, 'type1']
@@ -92,7 +96,7 @@ export default {
     },
     overlayNoRowsTemplate: {
       type: String,
-      default: `<span class="red"> <br><br>검색 결과가 없습니다. </span>`,
+      default: `<span>  <br/> <strong>  조회 결과가 없습니다. </strong> <br> </span>`
     },
   },
   components: {
@@ -117,10 +121,10 @@ export default {
       // console.log("loading");
       // if (this.gridApi != null) this.gridApi.showLoadingOverlay();
     },
-    onGridReady(params) {
-      // console.log("onGridReady");
+    onGridReady(params) {;
       this.gridApi = params.api;
       this.gridColumnApi = params.columnApi;
+      this.$emit("getGridApi",this.gridApi)
       if (this.isAutoHeight) this.gridApi.setDomLayout("autoHeight");
       else {
         this.gridApi.setDomLayout("normal"); //정해진 만큼만 보이도록(+스크롤)

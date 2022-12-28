@@ -33,7 +33,7 @@
           :rowHeight="rowHeight"
           :isDeselect="true"
           :rowClicked="userLstRowClicked"
-          :overlayNoRowsTemplate="noRowTemplateMsg"
+          
         />
         <div class="pgSelectAndPagingFlex">
           <div>
@@ -521,7 +521,6 @@ export default {
   data() {
     return {
       selectedUserData: "",
-      noRowTemplateMsg: `<span> <strong>  조회 결과가 없습니다. </strong> <br><br><br> </span>`,
       subInfoTitleNm_Item2: "사용자 리스트",
       subInfoTitleNm_Item3: "사용자 상세정보",
       total: "65",

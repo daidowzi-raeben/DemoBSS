@@ -41,7 +41,7 @@
             <td>
               <select-box-component
                   style="height: 28px"
-                   
+
                   :width="'200px'"
                   :cdGroup="'holiYn'"
                   :defaultValue="'휴일여부 선택'"
@@ -69,7 +69,7 @@
             <td>
               <select-box-component
                   style="height: 28px"
-                   
+
                   :width="'200px'"
                   :cdGroup="'holiDiv'"
                   :defaultValue="'휴일구분 선택'"
