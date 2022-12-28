@@ -129,7 +129,7 @@ export default {
     };
   },
   beforeMount() {
-    if(this.type===2) {
+    if(this.type===2) {                     // type 1 : 등록 / 2 변경 
       this.disabled = true;
       if (this.value !== null) {           //초기값 셋팅
         this.cdGpId = this.value.model2;
