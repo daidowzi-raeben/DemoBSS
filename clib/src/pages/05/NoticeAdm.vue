@@ -8,7 +8,6 @@
           <td>
             <select-box-component
               style="height: 28px"
-               
               :width="'200px'"
               :cdGroup="'ntfRetv'"
               :defaultValue="'조회기준 선택'"
@@ -83,7 +82,6 @@
           <td>
             <select-box-component
               style="height: 28px"
-               
               :width="'200px'"
               :cdGroup="'useYn'"
               :defaultValue="'사용여부 선택'"
@@ -139,10 +137,9 @@
             :rowHeight="ntfLstRowHeight"
             :isDeselect="true"
             :isAutoSize="[false,'type1']"
-            
             :headerHeight="60"
             :rowClicked="ntfLstRowClicked"
-            :overlayNoRowsTemplate="noRowTemplateMsg"
+            
 
           />
           <div class="pgSelectAndPagingFlex">
@@ -339,7 +336,7 @@
                 :isDeselect="true"
                 :headerHeight="30"
                 :rowClicked="ntfDtlRowClicked"
-                :overlayNoRowsTemplate="noRowTemplateMsg"
+                
                 />
               </td>
             </tr>
@@ -380,6 +377,11 @@
           </table>
         </form>
 
+      </div>
+      
+    </div>
+      <div class="item4">
+          <file-ag-grid-component/>
         <popup-component
           v-if="isModalShow"
           :popupmsg="`${
@@ -388,9 +390,7 @@
           @popup="isModalShow = false"
           @AGREE="popupAgree()"
         />
-      </div>
-      
-    </div>
+        </div>
 
     </article>
   
@@ -411,9 +411,10 @@ import RadioComponent from '../../components/common/RadioComponent.vue'
 import SelectBoxComponent from '../../components/common/SelectBoxComponent.vue'
 import SubInfoTitle from '../../components/common/SubInfoTitle.vue'
 import ApiMixin from "../../service/common.js"
+import FileAgGridComponent from '../../components/UnionForm/FileAgGridComponent.vue'
   export default {
   mixins:[ApiMixin],
-  components: { SelectBoxComponent, LabelComponent, ButtonComponent, DatePickerComponent, InputComponent, SubInfoTitle, AgGridComponent, PagingComponent, RadioComponent, TextAreaComponent },
+  components: { SelectBoxComponent, LabelComponent, ButtonComponent, DatePickerComponent, InputComponent, SubInfoTitle, AgGridComponent, PagingComponent, RadioComponent, TextAreaComponent, FileAgGridComponent },
   data(){
     return{
       selectValues:{
@@ -556,7 +557,6 @@ import ApiMixin from "../../service/common.js"
       ],
       rowData:[],
       rcvrRowData:[],
-      noRowTemplateMsg : `<span> <strong>  조회 결과가 없습니다. </strong> <br><br><br> </span>`,
       pageableData: {
         pageNumber: 1,
         currentMinPage: 1,
@@ -677,7 +677,7 @@ import ApiMixin from "../../service/common.js"
   .thisContainer {
     display: grid;
     grid-template-columns: 800px 750px 1fr;
-    grid-template-rows: 100px 640px 1fr;
+    grid-template-rows: 100px 590px 250px 1fr;
     gap: 20px 30px;
   }
   
@@ -694,6 +694,10 @@ import ApiMixin from "../../service/common.js"
     grid-column: 2;
   }
 
+  .thisContainer > .item4 {
+    grid-row: 3;
+    grid-column: 2;
+  }
   
 .ntfSearch {
   width: 100%;

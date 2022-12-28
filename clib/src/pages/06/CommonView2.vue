@@ -174,6 +174,7 @@
               :headerHeight="60"
               :rowClicked="agGridRowClicked"
               :overlayNoRowsTemplate="noRowTemplateMsg"
+              
             />
             <span>
           </span>
@@ -449,6 +450,7 @@ export default {
 },
   data() {
     return {
+      noRowTemplateMsg: `<span> <strong>  조회 결과가 없습니다. </strong> <br><br><br> </span>`,
       selectBoxCompData: {
         Option1: "",
         Option2: "",
@@ -585,7 +587,6 @@ export default {
         },
       ],
       rowData1:[],
-      noRowTemplateMsg: `<span> <strong>  조회 결과가 없습니다. </strong> <br><br><br> </span>`,
       isModalShow: false, // popup 조건
       isPostCodeModalShow: false,
       OutputFormData: [],
