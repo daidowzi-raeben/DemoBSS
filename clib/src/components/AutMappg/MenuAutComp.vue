@@ -55,7 +55,7 @@ export default {
         {
           rowDrag: true,
           maxWidth: 50,
-          suppressMenu: true,
+          suppressMenu: true,   //헤더에 메뉴 노출 여부, true인 경우 칼럼 메뉴가 사라진다.
           rowDragText: function(params, dragItemCount) { //드래그해서 이동될때 보이는 값
             if (dragItemCount > 1) {
               return dragItemCount + ' model1';

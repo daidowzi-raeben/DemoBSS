@@ -248,7 +248,7 @@ export default {
         btStDt: null,               //배치 시작 시간
         btEndDt: null,               //배치 기간 종료
         wrkOdrg: null,                //작업순서
-        jobInstId: null,              //작업 인스턴스 id
+        jobInstId: null,              //job 인스턴스 id
         wrkReslt: null,               //작업 결과
       },
       SearchNum:null,                 //건수

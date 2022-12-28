@@ -334,6 +334,23 @@ export default {
 
 **주요특징:**
 - 누른 순서대로 checkedValues 변수에 들어간다.
+
+**호출소스**
+```
+      <ChkBoxComponent
+          :CheckOptions='["체크옵션1","체크옵션2","체크옵션3","체크옵션4","체크옵션5",]'    #체크박스로 보여줄 데이터배열
+          :check-box-size="'20px'"                                  #체크박스의 박스 크기 지정      
+          :check-text-size="'10px'"                                 #체크박스의 글자 크기 지정
+          :showCheckOpt="true"                                      #체크박스 선택한 내역 출력 여부
+          :checkBoxColor="'#eee'"                                   #체크박스 색상 지정
+      />
+```
+
+**예시**
+
+<img width="100" height="150" src="./readMeImg/chkBox-1.png" title="textArea"> 
+<img width="300" height="150" src="./readMeImg/chkBox-2.png" title="textArea">
+
 ***
 ### TextAreaComponent
 **props:**
@@ -342,6 +359,7 @@ export default {
 - maxlength     : 글자 길이 최댓값
 - textAreaHeight: textArea의 높이 지정
 - textAreaWidth : textArea의 너비 지정
+- 
 
 **주요특징**
 - textAreaData 변수에 값이 없을 경우 placeholder props 값 출력
@@ -577,6 +595,7 @@ export default {
 ```
 
 **예시**
+
 <img src="./readMeImg/link.png" width="200px" height="20px"> : 마우스 호버 상태
 
 ***
@@ -723,7 +742,7 @@ pageableData: {
 **props:**
 - menuType : 탭으로 불어와야될 폴더이름
 - compArray : 컴포넌트 값을 넣는 배열
-- compValue : 처음 보여줄 컴포넌트의 주소
+- compValue : 처음 보여줄 컴포넌트의 오브젝트값
 - compName : 현재 컴포넌트의 menuId
 
 

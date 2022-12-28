@@ -113,7 +113,7 @@ export default {
       cur_num:0, //현재 탭 인덱스
       compId:"", //현재 컴포넌트 Id
       autComp:[], //컴포넌트 값을 넣는 배열
-      autCompAddr:[], //컴포넌트 주소를 넣는 배열
+      autCompAddr:[], //컴포넌트 주소를 통해 불러온 컴포넌트를 넣는 배열
       autId:null,     //agGrid에서 선택된 row의 권한ID
       SearchNum:null,   //검색 건수
       comp:"",      //컴포넌트 주소를 담을 임시 변수
@@ -149,8 +149,8 @@ export default {
     }
   },
   created() {
-    this.comp = markRaw(defineAsyncComponent(()=> import("../../components/AutMappg/MenuAutComp.vue")));
-    this.autCompAddr.push(this.comp);
+    this.comp = markRaw(defineAsyncComponent(()=> import("../../components/AutMappg/MenuAutComp.vue")));    //컴포넌트에 대한 오브젝트
+    this.autCompAddr.push(this.comp);     //컴포넌트에 대한 오브젝트들을 담고 있는 배열
     this.comp = markRaw(defineAsyncComponent(()=> import("../../components/AutMappg/CompAutComp.vue")));
     this.autCompAddr.push(this.comp);
     this.comp = markRaw(defineAsyncComponent(()=> import("../../components/AutMappg/OrgAutComp.vue")));
@@ -159,9 +159,8 @@ export default {
     this.autCompAddr.push(this.comp);
   },
   watch: {
-    cur_num: function (newVal, oldVal) {
+    cur_num: function (newVal) {
       this.compId = this.autComp[newVal].menuId;
-      this.component = this.autCompAddr[this.cur_num];
     },
   },
   methods:{

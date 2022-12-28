@@ -235,7 +235,6 @@ export default {
   },
   data(){
     return{
-      cdGroup:null,
       isModalCdShow : false,    //코드서버즉시 팝업
       isCdGpModalShow : false,  //코드그룹 리스트 등록/변경 팝업
 
@@ -319,7 +318,7 @@ export default {
     }
   },
   methods:{
-    cdGpChg(){  //코드그룹변경
+    cdGpChg(){  //코드그룹 팝업 호출함수
       if(this.cdGpData!=null){
         this.isCdGpModalShow=true;
         this.cdGpType=2;
@@ -328,7 +327,7 @@ export default {
         this.isCdGpModalShow=false;
       }
     },
-    cdLstChg(){
+    cdLstChg(){   //코드리스트  팝업 호출 함수
       if(this.cdLstData!=null){
         this.isCdLstModalShow = true;
         this.cdLstType=2;

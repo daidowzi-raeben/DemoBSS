@@ -1,11 +1,11 @@
 <template>
   <article class="AutAdmView">
-    <div class="item"> <!--1번 -->
+    <div class="item"> <!--1번 상단의 권한 유형 검색 -->
       <div class="AutType">
       <span>
         권한유형
       </span>
-        <span>
+        <span><!--권한 유형 검색 셀렉트 박스 / 매칭변수 : selectValues.autTypeSel -->
         <select-box-component
             :selectClass="'select-type1'"
             :cdGroup="'codeDiv'"
@@ -16,7 +16,7 @@
             @emitValue=" (value) => { selectValues.autTypeSel = value;}"
         />
       </span>
-        <span>
+        <span><!--검색어 입력창 / 매칭변수 : selectValues.searchValue -->
         <input-component
             :type="'search'"
             :inputClass="'class4'"
@@ -29,7 +29,7 @@
         <span>
           사용여부
         </span>
-        <span>
+        <span><!--사용여부 입력창 / 매칭변수 : selectValues.useYn -->
         <select-box-component
             :selectClass="'select-type1'"
             :cdGroup="'useYn'"
@@ -39,7 +39,7 @@
             :selected-value="selectValues.useYn"
         />
       </span>
-        <span>
+        <span><!--권한 유형 검색창에 대한 초기화 버튼 / 매칭함수 : resetSearch / 클릭시 검색창 내부에 있는 셀렉트박스, 인풋박스 초기화 -->
         <button-component
             :btn-class="'btnClass4'"
             :btnFontWeight="'bold'"
@@ -49,7 +49,7 @@
             @click="resetSearch"
         />
       </span>
-        <span>
+        <span><!--권한 유형 검색창에 검색버튼 / 매칭함수 : autLstSearch / 클릭시 검색창에서 선택된 값을 기준으로 autLstSearch 실행  -->
         <button-component
             :btn-class="'btnClass4'"
             :btnFontWeight="'bold'"
@@ -61,7 +61,7 @@
       </span>
       </div>
     </div>
-    <div class="item"> <!--2번 -->
+    <div class="item"> <!--2번 권한 리스트-->
       <div style="width: 100%;" >
         <SubInfoTitle :subInfoTitleNm="'권한 리스트'"/>
         <p style="margin-left:5px; display:inline-block;">(총 <label style="font-weight: bold">{{ total }}</label>건)</p>
@@ -73,7 +73,7 @@
           :btnWidth="'auto'"
       />
         </span>
-        <span style="float: right">
+        <span style="float: right"><!-- 리스트에 있는 행 선택 혹은 행 선택 후 변경 클릭시 상세정보에 대한 행에 대한 정보 입력 -->
       <ButtonComponent
           :btnClass="'btnClass3'"
           :btnName="'변경'"
@@ -81,7 +81,7 @@
           @click="autChg"
       />
         </span>
-        <span style="float: right">
+        <span style="float: right"><!--클릭시 등록을 위한 초기상태로 전환 등록일시와 수정 일시는 금일로 지정  등록자 수정자의 경우 더미값으로 넣어놈-->
       <ButtonComponent
           :btnClass="'btnClass3'"
           :btnName="'등록'"
@@ -90,21 +90,20 @@
       />
         </span>
       </div>
-      <div class="ag-grid_sp">
+      <div class="ag-grid_sp"><!--권한 리스트 초기 페이지 진입시 전체 출력, 검색시 검색결과 출력-->
         <ag-grid-component
             :header-color="'rgb(239 245 252)'"
             :rowData="RowData"
             :columnDefs="columnDefs"
             :row-height="40"
             :rowClicked="clickedRow"
-            
             :overlayNoRowsTemplate="
           `<span> <br>` + '<br />조회 결과가 없습니다.' + ` </span>`
           "
         />
       </div>
       <div style="width: 100%">
-        <span style="display: flex; float: left; padding-top: 20px;">
+        <span style="display: flex; float: left; padding-top: 20px;"> <!--Ag Grid 내의 페이지당 출력 행의 갯수 지정 -->
     <select-box-component
         :selectClass="'select-type1'"
         :cdGroup="'optionSearchNum'"
@@ -129,11 +128,11 @@
         </span>
       </div>
     </div>
-    <div class="item"> <!--3번 -->
+    <div class="item"> <!--3번 2번에서 고른 내용을 기반으로 상세정보를 출력-->
       <div style="width: 100%; height: 100%;">
         <div>
           <sub-info-title :subInfoTitleNm="'권한 상세정보'"/>
-          <span style="float: right">
+          <span style="float: right"> <!-- 2번에서 누른 등록, 변경에 따라 하단의 버튼또한 변경됨 -->
         <button-component
             :btnClass="'btnClass4'"
             :btnName="'등록'"
@@ -152,8 +151,8 @@
             />
       </span>
         </div>
-        <div class="content_area">
-          <table>
+        <div class="content_area">    <!--선택된 행에 대한 데이터를 v-model과 :value를 통해 주입한다. v-model은 변경을 감지하기 위함 -->
+          <table>                     <!--:value는 선택된 행에 대한 데이터를 입력하기 위함 -->
             <tr>
               <th>권한ID</th>
               <td colspan="3">
@@ -170,9 +169,7 @@
               <th>권한유형</th>
               <td>
                 <select-box-component
-                     
                     :cdGroup="'autType'"
-                    
                     :is-disabled="true"
                     style="
                     width: 120px;
@@ -208,7 +205,7 @@
           </table>
         </div>
       </div>
-    </div>
+    </div><!-- 변경과 등록에 대한 팝업창 -->
     <popup-component
         v-if="isModalUpdateShow"
         @popup="isModalUpdateShow = false"
@@ -277,16 +274,16 @@ export default {
         {
           headerName: "선택",
           field: '',
-          checkboxSelection: true,
-          showDisabledCheckboxes: true,
+          checkboxSelection: true,        //Ag Grid 체크박스 관련 설정
+          showDisabledCheckboxes: true,   //Ag Grid 체크박스 관련 설정
           width: 30,
           cellStyle: () =>{    //체크 박스 해제되는 것을 막기 위해 pointer events 수정
-            return {'pointer-events' : "none"}
+            return {'pointer-events' : "none"}    //poninter-event : none을 통해 체크박스 해제를 막을 수 있음.
           }
         },
         { headerName: "권한ID", field: "model1", width : 130},
-        { headerName: "권한명", field: "model2", width : 110, cellStyle:{justifyContent: "flex-start"}  },
-        { headerName: "권한유형", field: "model3", width : 70 },
+        { headerName: "권한명", field: "model2", width : 110, cellStyle:{justifyContent: "flex-start"}  }, //justifyContent 정렬을 위한 스타일 flex-start는 왼쪽정렬
+        { headerName: "권한유형", field: "model3", width : 70 },                                           //flex-end는 오른쪽 정렬
         { headerName: "사용여부", field: "model4", width : 70, },
         { headerName: "메뉴", field: "model5", width : 70,},
         { headerName: "조직", field: "model6", width : 70,},
@@ -302,15 +299,15 @@ export default {
   methods:{
     clickedRow(params){                 //Grid 행 클릭 이벤트
       this.autData = params.data;
-      this.autChgConf = true;
-      this.autRegConf = false;
-      this.disabled = true
-      this.autAdmObject.autId = this.autData.model1;
-      this.autAdmObject.autNm = this.autData.model2;
-      this.autAdmObject.autType = this.autData.model3;
-      this.autAdmObject.amdDt=new Date().toLocaleString();
-      if(this.autData.model4==='사용')this.autAdmObject.useAble='use';
-      else this.autAdmObject.useAble='unuse';
+      this.autChgConf = true;     //권한 상세 변경 버튼 활성
+      this.autRegConf = false;    //권한 상세 등록 버튼 비활성
+      this.disabled = true        //권한 상세의 변경사항 중 변경 불가 항목 불가처리
+      this.autAdmObject.autId = this.autData.model1;        //선택된 데이터 입력
+      this.autAdmObject.autNm = this.autData.model2;        //선택된 데이터 입력
+      this.autAdmObject.autType = this.autData.model3;      //선택된 데이터 입력
+      this.autAdmObject.amdDt=new Date().toLocaleString();  //금일로 날짜 지정
+      if(this.autData.model4==='사용')this.autAdmObject.useAble='use';  //선택된 데이터 입력
+      else this.autAdmObject.useAble='unuse'; //선택된 데이터 입력
     },
     autChg(){
       if(this.autData!==null) {
