@@ -3,9 +3,13 @@
     
     <div class="commondiv0">
     <h1 style="font-size: 30px">FileAgGridComponent</h1>
-      <div style="width: 600px;  height: 400px;">
-        <FileAgGridComponent />
-      
+      <div style="width: 700px;  height: 400px;">
+        <FileAgGridComponent 
+          @emitUploadFile="(value) => { 
+            uploadFiles = [];
+            uploadFiles = value;  }"  
+        />
+        <p v-for="uploadFile in uploadFiles" :key="uploadFile"> emit Files 객체 : {{ uploadFile}} &emsp; 파일명 : {{ uploadFile.name }} </p>
       </div>
 
 
@@ -450,6 +454,7 @@ export default {
 },
   data() {
     return {
+      uploadFiles:[],
       noRowTemplateMsg: `<span> <strong>  조회 결과가 없습니다. </strong> <br><br><br> </span>`,
       selectBoxCompData: {
         Option1: "",

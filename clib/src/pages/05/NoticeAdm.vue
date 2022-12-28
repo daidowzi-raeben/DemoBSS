@@ -380,8 +380,14 @@
       </div>
       
     </div>
+    
       <div class="item4">
-          <file-ag-grid-component/>
+        
+        <p v-for="uploadFile in uploadFiles" :key="uploadFile"> {{ uploadFile.name }}</p>
+          <file-ag-grid-component
+          @emitUploadFile="(value) => { 
+            uploadFiles = [];
+            uploadFiles = value;  }"  />
         <popup-component
           v-if="isModalShow"
           :popupmsg="`${
@@ -417,6 +423,7 @@ import FileAgGridComponent from '../../components/UnionForm/FileAgGridComponent.
   components: { SelectBoxComponent, LabelComponent, ButtonComponent, DatePickerComponent, InputComponent, SubInfoTitle, AgGridComponent, PagingComponent, RadioComponent, TextAreaComponent, FileAgGridComponent },
   data(){
     return{
+      uploadFiles:[],
       selectValues:{
         selectValueOfRetv : '조회기준 선택',
         inputValueOfWord : '',

@@ -31,7 +31,7 @@
     <ag-grid-component
       ref="agGridComponent"
       :style="{height:agGridHeightByRow}"
-      :rowData="fileLstRowData"
+      :rowData="fileRowData"
       :columnDefs="fileColumnDefs"
       :rowHeight="rowHeight"
       :rowSelection="'multiple'"
@@ -47,7 +47,6 @@
           <strong class="txt"> {{ getFileSize(file.size) }}</strong>
           <a class="delete" @click="deleteFile(file)">X</a>
         </li>
-      <br/><br/><br/><br/><br/>
   </div>
 </template>
 
@@ -55,7 +54,7 @@
 import AgGridComponent from "../common/AgGridComponent.vue";
 import ButtonComponent from "../common/ButtonComponent.vue";
 import SubInfoTitle from "../common/SubInfoTitle.vue";
-import FileLst from "@/components/common/AgGridCellRender/FileLst";
+import FileLst from "@/components/common/AgGridCellRender/FileLst.vue";
 import ApiMixin from "@/service/common.js";
 import { formatFileSize } from "@/service/formatService.js";
 
@@ -68,7 +67,6 @@ export default {
   components: { AgGridComponent, SubInfoTitle, ButtonComponent,FileLst },
   data() {
     return {
-      fileLstRowData: Object,
       rowHeight: 40,
       headerHeight:40,
       agGridHeightByRow: '180px',
@@ -84,7 +82,7 @@ export default {
         {
           headerName: "파일명",
           field: "name",
-          width: 400,
+          width: 500,
           cellClass: '"cell"-span',
           cellRenderer:'FileLst',
           cellRendererParams: { //업무유형이 공통코드일때 셀렉트반환값
@@ -105,6 +103,7 @@ export default {
       isModalShow: false,
       selectedData : "",
       gridApi: "",
+      emitFileData:[],
     };
   },
   props:{
@@ -164,6 +163,7 @@ export default {
       } //크기 초과, 업로드할 수 없는 유형
 
       this.$el.querySelector("#file").value = "";
+      this.emitFiles();
     },
     loadFile() {
       // 파일 불러오기 클릭
@@ -180,12 +180,16 @@ export default {
         // console.log("idx", index);
         if (index != -1)  this.fileRowData.splice(index, 1);
       }
-      // this.fileLstRowData = this.fileRowData;
       
-      setTimeout(() => {
+      await setTimeout(() => {
         this.gridApi.applyTransaction({remove: removeFile });   // 선택 된 파일 삭제 
-      }, 100)
-
+        this.emitFiles();
+      }, 100);
+    },
+    emitFiles(){
+      let emitFileData2 = [];
+      this.gridApi.forEachNodeAfterFilter(node => emitFileData2.push(node.data)) ;
+      this.$emit( "emitUploadFile" ,emitFileData2) ;    // ag-grid 모든 데이터 가져오기 
     },
     // deleteFileNo(file) {
     //   //이미 가지고있던 파일에서 삭제했을때 --atcOdrg사용
@@ -217,7 +221,6 @@ export default {
   },
   created(){
     this.prevFiles = this.pPrevFiles;
-    this.fileLstRowData= this.fileRowData
   },
 };
 </script>
