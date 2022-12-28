@@ -288,7 +288,7 @@ export default {
       0px,
       15%
     );
-  grid-template-rows: 120px 36px 500px minmax(70px, 1fr);
+  grid-template-rows: 200px 36px 500px minmax(70px, 1fr);
 }
 .loginHeader {
   grid-column: 2/3;

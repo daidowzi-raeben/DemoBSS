@@ -68,15 +68,21 @@
       "cmpnId": ""
     },
     {
-      "menuId": "L01M05S03",
-      "menuNm": "청약 리스트",
-      "upMenuId": "L01M05S00",
-      "cmpnId": "01/SubsLst"
-    },
-    {
       "menuId": "L01M06S00",
       "menuNm": "청약관리",
       "upMenuId": "L01",
+      "cmpnId": ""
+    },
+    {
+      "menuId": "L01M06S01",
+      "menuNm": "청약 리스트",
+      "upMenuId": "L01M06S00",
+      "cmpnId": "01/SubsLst"
+    },
+    {
+      "menuId": "L01M06S02",
+      "menuNm": "청약 승인/반려",
+      "upMenuId": "L01M06S00",
       "cmpnId": ""
     },
     {
@@ -767,6 +773,18 @@
       "menuNm": "조합화면참고",
       "upMenuId": "L06M01",
       "cmpnId": "06/UnionView"
+    },
+    {
+      "menuId": "L06M01S04",
+      "menuNm": "Grid 적용 예시 화면 ",
+      "upMenuId": "L06M01",
+      "cmpnId": "06/PageTemplate"
+    },
+    {
+      "menuId": "L06M01S05",
+      "menuNm": "고정된 멀티 탭 예시 화면",
+      "upMenuId": "L06M01",
+      "cmpnId": "06/FiexedMultiTab"
     },
     {
       "menuId": "L06M02S01",
