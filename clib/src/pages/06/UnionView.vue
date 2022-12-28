@@ -207,7 +207,7 @@ import userAdmRetvComponent from "@/components/UnionForm/UserAdmRetvComponent";
 import FileAgGridComponent from "@/components/UnionForm/FileAgGridComponent.vue";
 export default {
   mixins:[ApiMixin],
-  name: "CommonView",
+  name: "UnionView",
   components: {
     custInfoComponent,
     userAdmRetvComponent,

@@ -439,7 +439,7 @@ import FileAgGridComponent from "@/components/UnionForm/FileAgGridComponent.vue"
 
 export default {
   mixins: [ApiMixin],
-  name: "CommonView",
+  name: "CommonView2",
   components: {
     SelectBoxComponent,
     PagingComponent,
@@ -486,9 +486,9 @@ export default {
       ],
 
       currentMenu: {
-        cmpnId: "CommonView",
-        menuId: "L06M01S01",
-        menuNm: "공통화면참고",
+        cmpnId: "CommonView2",
+        menuId: "L06M01S02",
+        menuNm: "공통화면참고2",
         upMenuId: "L06M01",
       },
       pageableData1: {

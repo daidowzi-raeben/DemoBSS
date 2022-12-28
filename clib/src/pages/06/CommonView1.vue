@@ -466,7 +466,7 @@ import CdGpLstPopup from "@/components/common/PopupComponent/CdGpLstPopup";
 import CdLstPopup from "@/components/common/PopupComponent/CdLstPopup";
 export default {
   mixins:[ApiMixin],
-  name: "CommonView",
+  name: "CommonView1",
   components: {
     DragGrid,
     PageTitle,
@@ -708,9 +708,9 @@ export default {
         phoneNumber: "01012345678",
       },
       currentMenu: {
-        cmpnId: "CommonView",
+        cmpnId: "CommonView1",
         menuId: "L06M01S01",
-        menuNm: "공통화면참고",
+        menuNm: "공통화면참고1",
         upMenuId: "L06M01",
       },
       pageableData1: {
