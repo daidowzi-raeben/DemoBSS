@@ -628,13 +628,15 @@
       {
         "groupId": 0,
         "directoryName": "청구계정ID 홍길* 은행계좌자동이체",
-        "chk": true,
+        "badge0": true,
         "children": [
           {
             "groupId": 1,
             "directoryName": "요금제명(서비스계약ID)2022-10-13~2022-10-15서울시 강남구 학동로 111",
-            "chk": true,
-            "chk2": false
+            "badge1": false,
+            "badge2": true,
+            "badge3": true,
+            "badge4": false
           }
         ]
       },
@@ -645,56 +647,74 @@
           {
             "groupId": 2,
             "directoryName": "요금제명(서비스계약ID)2022-10-13~2022-10-15서울시 강남구 학동로 111",
-            "chk": false,
-            "chk2": true
+            "badge1": true,
+            "badge2": false,
+            "badge3": true,
+            "badge4": false
           },
           {
             "groupId": 3,
             "directoryName": "요금제명(서비스계약ID)2022-10-13~2022-10-15서울시 강남구 학동로 1123",
-            "chk": true,
-            "chk2": true
+            "badge1": false,
+            "badge2": false,
+            "badge3": true,
+            "badge4": false
           },
           {
             "groupId": 4,
             "directoryName": "요금제명(서비스계약ID)2022-10-13~2022-10-15서울시 강남구 학동로 111",
-            "chk": true,
-            "chk2": true
+            "badge1": true,
+            "badge2": false,
+            "badge3": true,
+            "badge4": true
           },
           {
             "groupId": 2,
             "directoryName": "요금제명(서비스계약ID)2022-10-13~2022-10-15서울시 강남구 학동로 111",
-            "chk": false,
-            "chk2": true
+            "badge1": false,
+            "badge2": false,
+            "badge3": true,
+            "badge4": false
           },
           {
             "groupId": 3,
             "directoryName": "요금제명(서비스계약ID)2022-10-13~2022-10-15서울시 강남구 학동로 111",
-            "chk": true,
-            "chk2": true
+            "badge1": true,
+            "badge2": false,
+            "badge3": true,
+            "badge4": true
           },
           {
             "groupId": 4,
             "directoryName": "요금제명(서비스계약ID)2022-10-13~2022-10-15서울시 강남구 학동로 111",
-            "chk": true,
-            "chk2": true
+            "badge1": true,
+            "badge2": true,
+            "badge3": true,
+            "badge4": true
           },
           {
             "groupId": 2,
             "directoryName": "요금제명(서비스계약ID)2022-10-13~2022-10-15서울시 강남구 학동로 111",
-            "chk": false,
-            "chk2": true
+            "badge1": false,
+            "badge2": false,
+            "badge3": true,
+            "badge4": false
           },
           {
             "groupId": 3,
             "directoryName": "요금제명(서비스계약ID)2022-10-13~2022-10-15서울시 강남구 학동로 111",
-            "chk": true,
-            "chk2": true
+            "badge1": true,
+            "badge2": false,
+            "badge3": true,
+            "badge4": true
           },
           {
             "groupId": 4,
             "directoryName": "요금제명(서비스계약ID)2022-10-13~2022-10-15서울시 강남구 학동로 111",
-            "chk": true,
-            "chk2": true
+            "badge1": true,
+            "badge2": true,
+            "badge3": true,
+            "badge4": false
           }
         ]
       },
