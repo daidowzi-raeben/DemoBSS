@@ -31,7 +31,7 @@
       </span>
         <span>
         <button-component
-            :btn-class="'btnClass4'"
+            :btn-class="'btn-type4'"
             :btnFontWeight="'bold'"
             :btn-name ="'초기화'"
             :btnHeight="'28px'"
@@ -41,7 +41,7 @@
       </span>
         <span>
         <button-component
-            :btn-class="'btnClass4'"
+            :btn-class="'btn-type4'"
             :btnFontWeight="'bold'"
             :btn-name ="'검색'"
             :btnHeight="'28px'"
@@ -58,14 +58,14 @@
 
         <span style="float: right">
       <buttonComponent
-          :btnClass="'btnClass3'"
+          :btnClass="'btn-type3'"
           :btnName="'엑셀다운로드'"
           :btnWidth="'auto'"
       />
         </span>
         <span style="float: right">
       <buttonComponent
-          :btnClass="'btnClass3'"
+          :btnClass="'btn-type3'"
           :btnName="'변경'"
           :btnWidth="'auto'"
           @click="batchChg"
@@ -73,7 +73,7 @@
         </span>
         <span style="float: right">
       <buttonComponent
-          :btnClass="'btnClass3'"
+          :btnClass="'btn-type3'"
           :btnName="'등록'"
           :btnWidth="'auto'"
           @click="batchReg"
@@ -124,7 +124,7 @@
           <sub-info-title :subInfoTitleNm="'배치 상세정보'"/>
           <span style="float: right">
         <button-component
-            :btnClass="'btnClass4'"
+            :btnClass="'btn-type4'"
             :btnName="'등록'"
             :btnHeight="'28px'"
             :btnWidth ="'100px'"
@@ -132,7 +132,7 @@
             @click="isModalRegShow=true"
         />
             <button-component
-                :btnClass="'btnClass4'"
+                :btnClass="'btn-type4'"
                 :btnName="'변경'"
                 :btnHeight="'28px'"
                 :btnWidth ="'100px'"

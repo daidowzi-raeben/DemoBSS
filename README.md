@@ -249,7 +249,7 @@ export default {
 - btnFontWeight : 버튼 이름 굵기 (지정안할 시 기본)
 
 **주요특징:**
-- 버튼 스타일 (`btnClass1`, `btnClass2`,`btnClass3`, `btnClass4`)
+- 버튼 스타일 (`btn-type`, `btn-type2`,`btn-type3`, `btn-type4`)
 
 ***
 ### AgGridComponent

@@ -98,23 +98,23 @@
 
     <h1 style="font-size: 30px">ButtonComponent</h1>
     <div class="commondiv1">
-      <label-component label-nm="'btnClass1'" />
-      <ButtonComponent :btnClass="'btnClass1'" :btnName="'btnClass1'" style="float:none;"/>
-      <p>- btnClass1의 경우 오른쪽 정렬되어 있고 hover시 파란색 배경과 하얀색 글씨로 변경</p>
+      <label-component label-nm="'btn-type'" />
+      <ButtonComponent :btnClass="'btn-type'" :btnName="'btn-type'" style="float:none;"/>
+      <p>- btn-type의 경우 오른쪽 정렬되어 있고 hover시 파란색 배경과 하얀색 글씨로 변경</p>
       <br /><br />
-      <label-component label-nm="'btnClass2'" />
-      <ButtonComponent :btnClass="'btnClass2'" :btnName="'btnClass2'" btn-width="'100px'" btn-height="'24px'"   />
-      <p>- btnClass2의 경우 btnClass4와 비슷하지만 좀더 둥근 형태로 색상또한 하얀색 계열임</p>
-      <p>- 버튼 크기, 글자 굵기는 btnClass4와 같이 입력으로 변경 가능</p>
+      <label-component label-nm="'btn-type2'" />
+      <ButtonComponent :btnClass="'btn-type2'" :btnName="'btn-type2'" btn-width="'100px'" btn-height="'24px'"   />
+      <p>- btn-type2의 경우 btn-type4와 비슷하지만 좀더 둥근 형태로 색상또한 하얀색 계열임</p>
+      <p>- 버튼 크기, 글자 굵기는 btn-type4와 같이 입력으로 변경 가능</p>
       <br /><br />
-      <label-component label-nm="'btnClass3'" />
-      <ButtonComponent :btnClass="'btnclass3'" :btnName="'btnClass3'" btn-height="'30px'" />
-      <p>- btnClass3의 경우 입력받은 btnHeight에 의해 세로 길이가 정해짐</p>
+      <label-component label-nm="'btn-type3'" />
+      <ButtonComponent :btnClass="'btnclass3'" :btnName="'btn-type3'" btn-height="'30px'" />
+      <p>- btn-type3의 경우 입력받은 btnHeight에 의해 세로 길이가 정해짐</p>
       <p>- hover 시 기존 색상에서 좀더 진한 배경색으로 변경</p>
       <br /><br />
-      <label-component label-nm="'btnClass4'" />
-      <ButtonComponent :btnClass="'btnClass4'" :btnName="'btnClass4'" :btnFontWeight="'bold'" :btnWidth="'90px'" :btnHeight="'20px'"/>
-      <p>- btnClass4의 경우 입력받은 btnWitdh와 btnHeight에 의해 세로 가로 길이가 정해짐</p>
+      <label-component label-nm="'btn-type4'" />
+      <ButtonComponent :btnClass="'btn-type4'" :btnName="'btn-type4'" :btnFontWeight="'bold'" :btnWidth="'90px'" :btnHeight="'20px'"/>
+      <p>- btn-type4의 경우 입력받은 btnWitdh와 btnHeight에 의해 세로 가로 길이가 정해짐</p>
       <p>- 글자 굵기의 경우 btnFontWeight에 의해 변경 가능</p>
       <p>- hover시 연한 색상의 배경색으로 변경</p>
     </div>
@@ -199,7 +199,7 @@
 
     <h1 style="font-size: 30px">PopupComponent</h1>
     <div class="commondiv1">
-      <button-component :btnClass="'btnClass2'" :btnName="'공통 PopUp'" @click="popup" :btnWidth="'90px'"/>
+      <button-component :btnClass="'btn-type2'" :btnName="'공통 PopUp'" @click="popup" :btnWidth="'90px'"/>
 
       <popup-component
           v-if="isModalShow"
@@ -279,7 +279,7 @@
     <div class="commondiv2">
       <label-component label-nm="'BtExeInfoPopup'" />
       <buttonComponent
-          :btnClass="'btnClass3'"
+          :btnClass="'btn-type3'"
           :btnName="'배치실행 상세정보'"
           :btnWidth="'auto'"
           @click="isModelBtExeInfoShow=true"
@@ -295,7 +295,7 @@
       <br />
       <label-component label-nm="'CdGpLstPopup'" />
       <buttonComponent
-          :btnClass="'btnClass3'"
+          :btnClass="'btn-type3'"
           :btnName="'코드그룹리스트'"
           :btnWidth="'auto'"
           @click="isCdGpModalShow=true"
@@ -316,7 +316,7 @@
       <br />
       <label-component label-nm="'CdLstPopup'" />
       <buttonComponent
-          :btnClass="'btnClass3'"
+          :btnClass="'btn-type3'"
           :btnName="'코드리스트'"
           :btnWidth="'auto'"
           @click="isCdLstModalShow=true"
@@ -383,7 +383,7 @@
     <h1 style="font-size: 30px">ToastComponent</h1>
     <span></span>
     <div class="commondiv1">
-      <ButtonComponent @click="ToastCall" :btnClass="'btnClass3'" :btnName="'Toast버튼'" />
+      <ButtonComponent @click="ToastCall" :btnClass="'btn-type3'" :btnName="'Toast버튼'" />
       <ToastComponent
           v-if="chk"
           :message="'hello'"

@@ -56,7 +56,7 @@
 
             <td class="btnBox">
               <button-component
-                :btn-class="'btnClass4'"
+                :btn-class="'btn-type4'"
                 :btnFontWeight="'bold'"
                 :btn-name="'검색'"
                 :btnHeight="'28px'"
@@ -99,7 +99,7 @@
 
             <td>
               <button-component
-                :btnClass="'btnClass2'"
+                :btnClass="'btn-type2'"
                 :btnHeight="'28px'"
                 :btnWidth="'78px'"
                 :btnFontWeight="'bold'"
@@ -119,16 +119,16 @@
           </p>
           <span style="float: right">
             <button-component
-              :btnClass="'btnClass3'"
+              :btnClass="'btn-type3'"
               :btnName="btnNames[0]"
               @click="clickMsgRegister"
             />
             <button-component
-              :btnClass="'btnClass3'"
+              :btnClass="'btn-type3'"
               :btnName="btnNames[1]"
               @click="clickMsgAmend"
             />
-            <button-component :btnClass="'btnClass3'" :btnName="btnNames[2]" />
+            <button-component :btnClass="'btn-type3'" :btnName="btnNames[2]" />
           </span>
         </div>
 
@@ -183,7 +183,7 @@
           <sub-info-title :subInfoTitleNm="'메시지 상세정보'" />
           <span style="float: right">
             <button-component
-              :btnClass="'btnClass2'"
+              :btnClass="'btn-type2'"
               :btnWidth="'60px'"
               :btnName="msgAdmObject.msgSttus == 'amend' ? '변경' : '등록'"
               @click="popup"

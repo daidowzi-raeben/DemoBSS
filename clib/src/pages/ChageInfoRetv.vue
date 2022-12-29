@@ -17,12 +17,12 @@
       />
       <button-component
           :btn-name="'전체펼치기'"
-          :btn-class="'btnClass3'"
+          :btn-class="'btn-type3'"
           style="float: right;"
       />
       <button-component
           :btn-name="'전체접기'"
-          :btn-class="'btnClass3'"
+          :btn-class="'btn-type3'"
           style="float: right;"
       />
       <div class="cont_list">
@@ -65,10 +65,10 @@
                 >62</label
     >건)
             <span style="float: right">
-            <button-component :btn-class="'btnClass3'" :btnName="'엑셀다운'" />
-            <button-component :btn-class="'btnClass3'" :btnName="'선박발송'" />
-            <button-component :btn-class="'btnClass3'" :btnName="'선박별 상세'" />
-            <button-component :btn-class="'btnClass3'" :btnName="'선박별 요약'" />
+            <button-component :btn-class="'btn-type3'" :btnName="'엑셀다운'" />
+            <button-component :btn-class="'btn-type3'" :btnName="'선박발송'" />
+            <button-component :btn-class="'btn-type3'" :btnName="'선박별 상세'" />
+            <button-component :btn-class="'btn-type3'" :btnName="'선박별 요약'" />
               </span>
               <span style="float: right">
               <select-box-component

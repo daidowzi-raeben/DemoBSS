@@ -40,7 +40,7 @@
       </span>
         <span>
         <button-component
-            :btn-class="'btnClass4'"
+            :btn-class="'btn-type4'"
             :btnFontWeight="'bold'"
             :btn-name ="'초기화'"
             :btnHeight="'28px'"
@@ -50,7 +50,7 @@
       </span>
         <span>
         <button-component
-            :btn-class="'btnClass4'"
+            :btn-class="'btn-type4'"
             :btnFontWeight="'bold'"
             :btn-name ="'검색'"
             :btnHeight="'28px'"
@@ -68,14 +68,14 @@
 
         <span style="float: right">
       <ButtonComponent
-          :btnClass="'btnClass3'"
+          :btnClass="'btn-type3'"
           :btnName="'엑셀다운로드'"
           :btnWidth="'auto'"
       />
         </span>
         <span style="float: right">
       <ButtonComponent
-          :btnClass="'btnClass3'"
+          :btnClass="'btn-type3'"
           :btnName="'변경'"
           :btnWidth="'auto'"
           @click="cdGpChg"
@@ -83,7 +83,7 @@
         </span>
         <span style="float: right">
       <ButtonComponent
-          :btnClass="'btnClass3'"
+          :btnClass="'btn-type3'"
           :btnName="'신규등록'"
           :btnWidth="'auto'"
           @click="isCdGpModalShow=true; cdGpType=1;"
@@ -91,7 +91,7 @@
         </span>
         <span style="float: right">
       <ButtonComponent
-          :btnClass="'btnClass3'"
+          :btnClass="'btn-type3'"
           :btnName="'코드서버즉시적용'"
           :btnWidth="'auto'"
           @click="isModalCdShow=true;"
@@ -143,14 +143,14 @@
 
         <span style="float: right">
       <ButtonComponent
-          :btnClass="'btnClass3'"
+          :btnClass="'btn-type3'"
           :btnName="'엑셀다운로드'"
           :btnWidth="'auto'"
       />
         </span>
         <span style="float: right">
       <ButtonComponent
-          :btnClass="'btnClass3'"
+          :btnClass="'btn-type3'"
           :btnName="'변경'"
           :btnWidth="'auto'"
           @click="cdLstChg"
@@ -158,7 +158,7 @@
         </span>
         <span style="float: right">
       <ButtonComponent
-          :btnClass="'btnClass3'"
+          :btnClass="'btn-type3'"
           :btnName="'신규등록'"
           :btnWidth="'auto'"
           @click="isCdLstModalShow=true; cdLstType=1;"

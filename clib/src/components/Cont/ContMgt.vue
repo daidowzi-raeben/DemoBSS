@@ -73,7 +73,7 @@
           <sub-info-title :subInfoTitleNm="'보유상품'" />
           <button-component
             :btn-name="'청약등록'"
-            :btn-class="'btnClass3'"
+            :btn-class="'btn-type3'"
             style="float: right"
           />
         </div>

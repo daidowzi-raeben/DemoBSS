@@ -191,7 +191,7 @@
             :btn-name="'고객정보수정'"
             :btn-height="'24px'"
             :btn-width="'80px'"
-            :btn-class="'btnClass1'"
+            :btn-class="'btn-type'"
         />
       </td>
     </tr>

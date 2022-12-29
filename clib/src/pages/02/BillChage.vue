@@ -65,37 +65,37 @@
         />
         <button-component
             :btn-name="'즉시수납'"
-            :btn-class="'btnClass2'"
+            :btn-class="'btn-type2'"
             style="float: right;"
             :btnWidth="'auto'"
         />
         <button-component
             :btn-name="'수납이력'"
-            :btn-class="'btnClass2'"
+            :btn-class="'btn-type2'"
             style="float: right;"
             :btnWidth="'auto'"
         />
         <button-component
             :btn-name="'요금조정'"
-            :btn-class="'btnClass2'"
+            :btn-class="'btn-type2'"
             style="float: right;"
             :btnWidth="'auto'"
         />
         <button-component
             :btn-name="'가상계좌'"
-            :btn-class="'btnClass2'"
+            :btn-class="'btn-type2'"
             style="float: right;"
             :btnWidth="'auto'"
         />
         <button-component
             :btn-name="'실시간 요금'"
-            :btn-class="'btnClass2'"
+            :btn-class="'btn-type2'"
             style="float: right;"
             :btnWidth="'auto'"
         />
         <button-component
             :btn-name="'해지 예상요금'"
-            :btn-class="'btnClass2'"
+            :btn-class="'btn-type2'"
             style="float: right;"
             :btnWidth="'auto'"
         />
@@ -118,20 +118,20 @@
 
         <button-component
             :btn-name="'E-mail 발송 현황'"
-            :btn-class="'btnClass3'"
+            :btn-class="'btn-type3'"
             style="float: right; width: 170px;"
         />
 
         <button-component
             :btn-name="'명세서이미지'"
-            :btn-class="'btnClass3'"
+            :btn-class="'btn-type3'"
             style="float: right; width: 120px;"
         />
 
 
         <button-component
             :btn-name="'엑셀 다운로드'"
-            :btn-class="'btnClass3'"
+            :btn-class="'btn-type3'"
             style="float: right; width: 130px; margin-right: 10px;"
         />
 
@@ -153,7 +153,7 @@
             <SubInfoTitle :subInfoTitleNm="'청구계정정보'"/>
             <div style="display:inline-block; float:right;" >
               <ButtonComponent
-                  :btnClass="'btnClass3'"
+                  :btnClass="'btn-type3'"
                   :btnName="'이력보기'"
               />
             </div>

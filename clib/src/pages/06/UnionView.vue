@@ -127,7 +127,7 @@
     />
     <button-component
         @click="postCodePopup"
-        :btnClass="'btnClass3'"
+        :btnClass="'btn-type3'"
         :btnName="'주소 검색'"
         :btnHeight="'30px'"
     />

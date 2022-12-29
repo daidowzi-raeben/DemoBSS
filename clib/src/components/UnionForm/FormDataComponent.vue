@@ -4,11 +4,11 @@
       <div>
         <SubInfoTitle :subInfoTitleNm="subInfoTitleNm" />
         <div class="infoDataTableUpperButtons">
-          <ButtonComponent :btnClass="'btnClass3'" :btnName="'숨김해제'" />
-          <ButtonComponent :btnClass="'btnClass3'" :btnName="'청약이력보기'" />
-          <ButtonComponent :btnClass="'btnClass3'" :btnName="'고객등록'" />
+          <ButtonComponent :btnClass="'btn-type3'" :btnName="'숨김해제'" />
+          <ButtonComponent :btnClass="'btn-type3'" :btnName="'청약이력보기'" />
+          <ButtonComponent :btnClass="'btn-type3'" :btnName="'고객등록'" />
           <ButtonComponent
-            :btnClass="'btnClass3'"
+            :btnClass="'btn-type3'"
             :btnName="'고객정보수정'"
             :btnWidth="'auto'"
           />
@@ -340,7 +340,7 @@
             <td colspan="6" class="infoDataTableButtons">
               <span>
                 <ButtonComponent
-                  :btnClass="'btnClass2'"
+                  :btnClass="'btn-type2'"
                   :btnWidth="'auto'"
                   :btnName="'이력보기'"
                   @click="modalShow"
@@ -348,35 +348,35 @@
               </span>
               <span>
                 <ButtonComponent
-                  :btnClass="'btnClass2'"
+                  :btnClass="'btn-type2'"
                   :btnWidth="'auto'"
                   :btnName="'상세조회'"
                 />
               </span>
               <span>
                 <ButtonComponent
-                  :btnClass="'btnClass2'"
+                  :btnClass="'btn-type2'"
                   :btnWidth="'auto'"
                   :btnName="'계약변경'"
                 />
               </span>
               <span>
                 <ButtonComponent
-                  :btnClass="'btnClass2'"
+                  :btnClass="'btn-type2'"
                   :btnWidth="'auto'"
                   :btnName="'명의변경'"
                 />
               </span>
               <span>
                 <ButtonComponent
-                  :btnClass="'btnClass2'"
+                  :btnClass="'btn-type2'"
                   :btnWidth="'auto'"
                   :btnName="'정지/부활'"
                 />
               </span>
               <span>
                 <ButtonComponent
-                  :btnClass="'btnClass2'"
+                  :btnClass="'btn-type2'"
                   :btnWidth="'auto'"
                   :btnName="'해지'"
                   :menu="'bill_01_01_01'"
@@ -394,8 +394,8 @@
       <div>
         <SubInfoTitle :subInfoTitleNm="subInfoTitleNm" />
         <div style="display: inline-block; float: right">
-          <ButtonComponent :btnClass="'btnClass3'" :btnName="'이력보기'" />
-          <ButtonComponent :btnClass="'btnClass3'" :btnName="'청구계정등록'" />
+          <ButtonComponent :btnClass="'btn-type3'" :btnName="'이력보기'" />
+          <ButtonComponent :btnClass="'btn-type3'" :btnName="'청구계정등록'" />
         </div>
       </div>
       <div class="infoDataTable">
@@ -503,7 +503,7 @@
             <td colspan="8" class="infoDataTableButtons">
               <span>
                 <ButtonComponent
-                  :btnClass="'btnClass2'"
+                  :btnClass="'btn-type2'"
                   :btnWidth="'auto'"
                   :btnName="'상세조회'"
                   @click="modalShow"
@@ -511,28 +511,28 @@
               </span>
               <span>
                 <ButtonComponent
-                  :btnClass="'btnClass2'"
+                  :btnClass="'btn-type2'"
                   :btnWidth="'auto'"
                   :btnName="'청구정보수정'"
                 />
               </span>
               <span>
                 <ButtonComponent
-                  :btnClass="'btnClass2'"
+                  :btnClass="'btn-type2'"
                   :btnWidth="'auto'"
                   :btnName="'청구지변경'"
                 />
               </span>
               <span>
                 <ButtonComponent
-                  :btnClass="'btnClass2'"
+                  :btnClass="'btn-type2'"
                   :btnWidth="'auto'"
                   :btnName="'청구분리'"
                 />
               </span>
               <span>
                 <ButtonComponent
-                  :btnClass="'btnClass2'"
+                  :btnClass="'btn-type2'"
                   :btnWidth="'auto'"
                   :btnName="'청구통합'"
                   @click="addComp('L01M02S02')"
@@ -591,7 +591,7 @@
       <div>
         <SubInfoTitle :subInfoTitleNm="subInfoTitleNm" />
         <div style="display: inline-block; float: right">
-          <ButtonComponent :btnClass="'btnClass3'" :btnName="'이력보기'" />
+          <ButtonComponent :btnClass="'btn-type3'" :btnName="'이력보기'" />
         </div>
       </div>
       <div class="infoDataTable">

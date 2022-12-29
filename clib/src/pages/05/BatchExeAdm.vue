@@ -65,7 +65,7 @@
             <td class="emptyBox2"></td>
             <td class="btnBox">
               <button-component
-                  :btn-class="'btnClass4'"
+                  :btn-class="'btn-type4'"
                   :btnFontWeight="'bold'"
                   :btn-name="'검색'"
                   :btnHeight="'28px'"
@@ -118,7 +118,7 @@
             <td colspan="2"></td>
             <td>
               <button-component
-                  :btnClass="'btnClass2'"
+                  :btnClass="'btn-type2'"
                   :btnHeight="'28px'"
                   :btnWidth="'78px'"
                   :btnFontWeight="'bold'"
@@ -137,14 +137,14 @@
 
         <span style="float: right">
       <buttonComponent
-          :btnClass="'btnClass3'"
+          :btnClass="'btn-type3'"
           :btnName="'엑셀다운로드'"
           :btnWidth="'auto'"
       />
         </span>
         <span style="float: right">
       <buttonComponent
-          :btnClass="'btnClass3'"
+          :btnClass="'btn-type3'"
           :btnName="'배치실행'"
           :btnWidth="'auto'"
           @click="isModalBtExeShow=true"
@@ -152,7 +152,7 @@
         </span>
         <span style="float: right">
       <buttonComponent
-          :btnClass="'btnClass3'"
+          :btnClass="'btn-type3'"
           :btnName="'배치실행 상세정보'"
           :btnWidth="'auto'"
           @click="isModelBtExeInfoShow=true"

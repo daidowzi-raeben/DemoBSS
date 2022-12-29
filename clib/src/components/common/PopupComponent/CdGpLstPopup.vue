@@ -18,7 +18,7 @@
         <span style="float: right">
           <button-component
               v-if="type===1"
-              :btn-class="'btnClass4'"
+              :btn-class="'btn-type4'"
               :btnFontWeight="'bold'"
               :btn-name ="'등록'"
               :btnHeight="'28px'"
@@ -27,7 +27,7 @@
           />
           <button-component
               v-if="type===2"
-              :btn-class="'btnClass4'"
+              :btn-class="'btn-type4'"
               :btnFontWeight="'bold'"
               :btn-name ="'변경'"
               :btnHeight="'28px'"

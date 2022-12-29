@@ -4,7 +4,7 @@
     <p style="margin-left:5px; display:inline-block;">(총 <label style="font-weight: bold">{{total}}</label>건)</p>
     <span style="float: right">
   <ButtonComponent
-      :btnClass="'btnClass3'"
+      :btnClass="'btn-type3'"
       :btnName="btnName"
       />
     </span>

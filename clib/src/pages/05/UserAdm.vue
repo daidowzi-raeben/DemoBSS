@@ -12,17 +12,17 @@
         </p>
         <span style="float: right">
           <button-component
-            :btnClass="'btnClass3'"
+            :btnClass="'btn-type3'"
             :btnName="btnName1"
             @click="clickUserRegister()"
           />
           <button-component
-            :btnClass="'btnClass3'"
+            :btnClass="'btn-type3'"
             :btnName="btnName2"
             @click="clickUserAmend()"
           />
-          <button-component :btnClass="'btnClass3'" :btnName="btnName3" />
-          <button-component :btnClass="'btnClass3'" :btnName="btnName4" />
+          <button-component :btnClass="'btn-type3'" :btnName="btnName3" />
+          <button-component :btnClass="'btn-type3'" :btnName="btnName4" />
         </span>
       </div>
       <div>
@@ -75,7 +75,7 @@
         <sub-info-title :subInfoTitleNm="subInfoTitleNm_Item3" />
         <span style="float: right">
           <button-component
-            :btnClass="'btnClass3'"
+            :btnClass="'btn-type3'"
             :btnName="userAdmObject.sttus == 'amend' ? '변경' : '등록'"
             @click="popup('sttus')"
           />
@@ -192,7 +192,7 @@
                 />
                 <span style="margin-left: 30px">
                   <button-component
-                    :btnClass="'btnClass2'"
+                    :btnClass="'btn-type2'"
                     :btnHeight="'28px'"
                     :btnWidth="'100px'"
                     :btnFontWeight="'normal'"
@@ -359,7 +359,7 @@
 
                 <span>
                   <button-component
-                    :btnClass="'btnClass2'"
+                    :btnClass="'btn-type2'"
                     :btnHeight="'28px'"
                     :btnWidth="'140px'"
                     :btnFontWeight="'normal'"
