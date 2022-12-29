@@ -56,7 +56,7 @@
 
             <td class="btnBox">
               <button-component
-                :btn-class="'btnClass4'"
+                :btn-class="'btn-type4'"
                 :btnFontWeight="'bold'"
                 :btn-name="'검색'"
                 :btnHeight="'28px'"
@@ -99,7 +99,7 @@
 
             <td>
               <button-component
-                :btnClass="'btnClass2'"
+                :btnClass="'btn-type2'"
                 :btnHeight="'28px'"
                 :btnWidth="'78px'"
                 :btnFontWeight="'bold'"
@@ -119,16 +119,16 @@
           </p>
           <span style="float: right">
             <button-component
-              :btnClass="'btnClass3'"
+              :btnClass="'btn-type3'"
               :btnName="btnNames[0]"
               @click="clickMsgRegister"
             />
             <button-component
-              :btnClass="'btnClass3'"
+              :btnClass="'btn-type3'"
               :btnName="btnNames[1]"
               @click="clickMsgAmend"
             />
-            <button-component :btnClass="'btnClass3'" :btnName="btnNames[2]" />
+            <button-component :btnClass="'btn-type3'" :btnName="btnNames[2]" />
           </span>
         </div>
 
@@ -183,7 +183,7 @@
           <sub-info-title :subInfoTitleNm="'메시지 상세정보'" />
           <span style="float: right">
             <button-component
-              :btnClass="'btnClass2'"
+              :btnClass="'btn-type2'"
               :btnWidth="'60px'"
               :btnName="msgAdmObject.msgSttus == 'amend' ? '변경' : '등록'"
               @click="popup"
@@ -197,9 +197,9 @@
                 <th><label-component :labelNm="'메시지ID'" /></th>
                 <td colspan="3">
                   <input-component
-                    :class2Width="'150px'"
-                    :input-class="'class2'"
-                    :class2-background-color="'rgb(251, 253, 255)'"
+                    :width="'150px'"
+                    :input-class="'input-type2'"
+                    :inputType2BackgroundColor="'rgb(251, 253, 255)'"
                     :disabled="true"
                     :placeholder="'Message ID'"
                     :value="msgAdmObject.msgId"
@@ -210,8 +210,8 @@
                 <th><label-component :labelNm="'메시지제목'" /></th>
                 <td colspan="3">
                   <input-component
-                    :input-class="'class2'"
-                    :class2Width="'500px'"
+                    :input-class="'input-type2'"
+                    :width="'500px'"
                     :placeholder="'메시지 제목'"
                     :value="msgAdmObject.msgTitle"
                     v-model="msgAdmObject.msgTitle"
@@ -223,9 +223,9 @@
                 <th><label-component :labelNm="'작성자'" /></th>
                 <td class="td2">
                   <input-component
-                    :class2Width="'150px'"
-                    :input-class="'class2'"
-                    :class2-background-color="'rgb(251, 253, 255)'"
+                    :width="'150px'"
+                    :input-class="'input-type2'"
+                    :inputType2BackgroundColor="'rgb(251, 253, 255)'"
                     :disabled="true"
                     :placeholder="'System'"
                     :value="msgAdmObject.msgRegr"
@@ -234,9 +234,9 @@
                 <th><label-component :labelNm="'작성일자'" /></th>
                 <td>
                   <input-component
-                    :class2Width="'200px'"
-                    :input-class="'class2'"
-                    :class2-background-color="'rgb(251, 253, 255)'"
+                    :width="'200px'"
+                    :input-class="'input-type2'"
+                    :inputType2BackgroundColor="'rgb(251, 253, 255)'"
                     :disabled="true"
                     :placeholder="'  '"
                     :value="msgAdmObject.msgRegrDt.toLocaleString()"
@@ -335,8 +335,8 @@
                 <th><label-component :labelNm="'회신번호'" /></th>
                 <td colspan="3">
                   <input-component
-                    :input-class="'class2'"
-                    :class2Width="'500px'"
+                    :input-class="'input-type2'"
+                    :width="'500px'"
                     :placeholder="'회신번호'"
                     :value="msgAdmObject.msgCallBack"
                     v-model="msgAdmObject.msgCallBack"

@@ -2,99 +2,95 @@
   <div class="container">
     <h1 style="font-size: 30px">InputComponent</h1>
     <div class="commondiv1" >
-      <label-component label-nm="'label-type'" />
+      <label-component label-nm="'input-type'" />
       &nbsp;&nbsp;
       <input-component
-          :type="'search'"
-          :height="20"
-          :width="150"
+          :type="'text'"
+          :height="'20px'"
+          :width="'150px'"
           :input-class="'input-type'"
-          v-model="searchValue"
           :placeholder="'input-type'"
-          @input="
-          (value) => {
-            searchValue = value;
-          }
-        "
+          :value="inputValue"
+          v-model="inputValue"
       />
       <p>- input-type의 경우 입력받은 width와  height에 의해 가로 세로 길이가 정해짐 /*정보 스타일*/</p>
       <br /><br />
-      <label-component label-nm="'class2'" />
+      <label-component label-nm="'input-type2'" />
       &nbsp;&nbsp;
       <input-component
-          :input-class="'class2'"
-          :value="'class2 '"
+          :input-class="'input-type2'"
+          :placeholder="'input-type2 '"
+          :value="inputValue2"
+          v-model="inputValue2"
       />
 
-      <label-component label-nm="'class2'" />
+      <label-component label-nm="'input-type2'" />
       &nbsp;&nbsp;
       <input-component
-          :input-class="'class2'"
-          :value="'class2'"
-          :class2-background-color="'rgb(251, 253, 255)'"
+          :input-class="'input-type2'"
+          :placeholder="'input-type2'"
+          :inputType2BackgroundColor="'rgb(251, 253, 255)'"
+          :value="inputValue22"
+          v-model="inputValue22"
       />
-      <p>- class2의 width는 입력받은 class2Width, height는 24px을 기준</p>
-      <p>- class2-background-color를 추가하여 경우 배경색 변경</p>
+      <p>- input-type2의 width는 입력받은 width, height는 24px을 기준</p>
+      <p>- inputType2BackgroundColor를 추가하여 경우 배경색 변경</p>
       <br /><br />
-      <label-component label-nm="'class3'" />
+      <label-component label-nm="'input-type3'" />
       &nbsp;&nbsp;
       <input-component
           :type="'search'"
-          :input-class="'class3'"
-          v-model="searchValue"
-          :placeholder="'class3'"
-          @input="
-          (value) => {
-            searchValue = value;
-          }
-        "
+          :input-class="'input-type3'"
+          :placeholder="'input-type3'"
+          :value="inputValue3"
+          v-model="inputValue3"
       />
-      <p>- class3의 경우 가로 세로 길이는 고정 /*상단 메뉴 스타일*/</p>
+      <p>- input-type3의 경우 가로 세로 길이는 고정 /*상단 메뉴 스타일*/</p>
       <br /><br />
       <label-component label-nm="'class4'" />
       &nbsp;&nbsp;
       <div style="width: 150px; height: 20px; display: inline-block">
         <input-component
-            :input-class="'class4'"
-            :value="'class4 '"
+          :input-class="'class4'"
+          :placeholder="'class4 '"
+          :value="inputValue4"
+          v-model="inputValue4"
         />
       </div>
       <p>- class4의 경우 input 태그를 감싸는 div에 맞춰 크기 지정 width 100% height 100% /*상단 메뉴 스타일*/</p>
       <br /> <br />
-      <label-component label-nm="'class5'" />
+      <label-component label-nm="'input-type5'" />
       &nbsp;&nbsp;
       <input-component
-          :input-class="'class5'"
-          :value="'class5 '"
-      />
-      |&nbsp;
-      <label-component label-nm="'class5'" />
-      &nbsp;&nbsp;
-      <input-component
-          :input-class="'class5'"
-          :value="'short1 '"
+          :input-class="'input-type5'"
+          :placeholder="'input-type5 '"
+          :value="inputValue5"
+          v-model="inputValue5"
       />
       <br />
-      <label-component label-nm="'class5'" />
+      <label-component label-nm="'input-type5 short1'" />
       &nbsp;&nbsp;
       <input-component
-          :input-class="'class5'"
-          :class5-width="'64px'"
-          :class5-margin-right="'3px'"
-          :value="'short2'"
+          :input-class="'input-type5'"
+          :width="'64px'"
+          :inputType5MarginRight="'30px'"
+          :placeholder="'short'"
+          :value="inputValue5Short"
+          v-model="inputValue5Short"
       />
       |&nbsp;
-      <label-component label-nm="'class5 class5_long1'" />
+      <label-component label-nm="'input-type5'" />
       &nbsp;&nbsp;
       <input-component
-          :input-class="'class5 class5_long1'"
-          :class5Width="'200px'"
-          :value="'long1 '"
+          :input-class="'input-type5'"
+          :width="'200px'"
+          :placeholder="'long'"
+          :value="inputValue5Long"
+          v-model="inputValue5Long"
       />
-      <p>- class5의 width: 140px height:24px을 기준</p>
-      <p>- class5 short1은 width: 80px을 기준</p>
-      <p>- class5 short2은 width: 64px을 기준</p>
-      <p>- class5 long1은 입력받은 longwidth 값에 의해 크기 지정</p>
+      <p>- input-type5의 width: 140px height:24px을 기준</p>
+      <p>- input-type5 short은 입력받은 width: 64px을 기준</p>
+      <p>- input-type5 long은 입력받은 width : 200px 값에 의해 크기 지정</p>
       <br /><br />
 
     </div>
@@ -102,23 +98,23 @@
 
     <h1 style="font-size: 30px">ButtonComponent</h1>
     <div class="commondiv1">
-      <label-component label-nm="'btnClass1'" />
-      <ButtonComponent :btnClass="'btnClass1'" :btnName="'btnClass1'" style="float:none;"/>
-      <p>- btnClass1의 경우 오른쪽 정렬되어 있고 hover시 파란색 배경과 하얀색 글씨로 변경</p>
+      <label-component label-nm="'btn-type'" />
+      <ButtonComponent :btnClass="'btn-type'" :btnName="'btn-type'" style="float:none;"/>
+      <p>- btn-type의 경우 오른쪽 정렬되어 있고 hover시 파란색 배경과 하얀색 글씨로 변경</p>
       <br /><br />
-      <label-component label-nm="'btnClass2'" />
-      <ButtonComponent :btnClass="'btnClass2'" :btnName="'btnClass2'" btn-width="'100px'" btn-height="'24px'"   />
-      <p>- btnClass2의 경우 btnClass4와 비슷하지만 좀더 둥근 형태로 색상또한 하얀색 계열임</p>
-      <p>- 버튼 크기, 글자 굵기는 btnClass4와 같이 입력으로 변경 가능</p>
+      <label-component label-nm="'btn-type2'" />
+      <ButtonComponent :btnClass="'btn-type2'" :btnName="'btn-type2'" btn-width="'100px'" btn-height="'24px'"   />
+      <p>- btn-type2의 경우 btn-type4와 비슷하지만 좀더 둥근 형태로 색상또한 하얀색 계열임</p>
+      <p>- 버튼 크기, 글자 굵기는 btn-type4와 같이 입력으로 변경 가능</p>
       <br /><br />
-      <label-component label-nm="'btnClass3'" />
-      <ButtonComponent :btnClass="'btnclass3'" :btnName="'btnClass3'" btn-height="'30px'" />
-      <p>- btnClass3의 경우 입력받은 btnHeight에 의해 세로 길이가 정해짐</p>
+      <label-component label-nm="'btn-type3'" />
+      <ButtonComponent :btnClass="'btnclass3'" :btnName="'btn-type3'" btn-height="'30px'" />
+      <p>- btn-type3의 경우 입력받은 btnHeight에 의해 세로 길이가 정해짐</p>
       <p>- hover 시 기존 색상에서 좀더 진한 배경색으로 변경</p>
       <br /><br />
-      <label-component label-nm="'btnClass4'" />
-      <ButtonComponent :btnClass="'btnClass4'" :btnName="'btnClass4'" :btnFontWeight="'bold'" :btnWidth="'90px'" :btnHeight="'20px'"/>
-      <p>- btnClass4의 경우 입력받은 btnWitdh와 btnHeight에 의해 세로 가로 길이가 정해짐</p>
+      <label-component label-nm="'btn-type4'" />
+      <ButtonComponent :btnClass="'btn-type4'" :btnName="'btn-type4'" :btnFontWeight="'bold'" :btnWidth="'90px'" :btnHeight="'20px'"/>
+      <p>- btn-type4의 경우 입력받은 btnWitdh와 btnHeight에 의해 세로 가로 길이가 정해짐</p>
       <p>- 글자 굵기의 경우 btnFontWeight에 의해 변경 가능</p>
       <p>- hover시 연한 색상의 배경색으로 변경</p>
     </div>
@@ -203,7 +199,7 @@
 
     <h1 style="font-size: 30px">PopupComponent</h1>
     <div class="commondiv1">
-      <button-component :btnClass="'btnClass2'" :btnName="'공통 PopUp'" @click="popup" :btnWidth="'90px'"/>
+      <button-component :btnClass="'btn-type2'" :btnName="'공통 PopUp'" @click="popup" :btnWidth="'90px'"/>
 
       <popup-component
           v-if="isModalShow"
@@ -284,7 +280,7 @@
     <div class="commondiv2">
       <label-component label-nm="'BtExeInfoPopup'" />
       <buttonComponent
-          :btnClass="'btnClass3'"
+          :btnClass="'btn-type3'"
           :btnName="'배치실행 상세정보'"
           :btnWidth="'auto'"
           @click="isModelBtExeInfoShow=true"
@@ -300,7 +296,7 @@
       <br />
       <label-component label-nm="'CdGpLstPopup'" />
       <buttonComponent
-          :btnClass="'btnClass3'"
+          :btnClass="'btn-type3'"
           :btnName="'코드그룹리스트'"
           :btnWidth="'auto'"
           @click="isCdGpModalShow=true"
@@ -321,7 +317,7 @@
       <br />
       <label-component label-nm="'CdLstPopup'" />
       <buttonComponent
-          :btnClass="'btnClass3'"
+          :btnClass="'btn-type3'"
           :btnName="'코드리스트'"
           :btnWidth="'auto'"
           @click="isCdLstModalShow=true"
@@ -388,7 +384,7 @@
     <h1 style="font-size: 30px">ToastComponent</h1>
     <span></span>
     <div class="commondiv1">
-      <ButtonComponent @click="ToastCall" :btnClass="'btnClass3'" :btnName="'Toast버튼'" />
+      <ButtonComponent @click="ToastCall" :btnClass="'btn-type3'" :btnName="'Toast버튼'" />
       <ToastComponent
           v-if="chk"
           :message="'hello'"
@@ -521,6 +517,14 @@ export default {
       selectBox3 : null,
       selectBox4 : null,
       searchValue: null,
+      inputValue: "",
+      inputValue2: "",
+      inputValue22: "",
+      inputValue3: "",
+      inputValue4: "",
+      inputValue5: "",
+      inputValue5Short: "",
+      inputValue5Long: "",
       date1: new Date(2021, 9, 5),
       date2: new Date(),
       date3: new Date(),

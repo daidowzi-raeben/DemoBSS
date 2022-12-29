@@ -4,11 +4,11 @@
       <div>
         <SubInfoTitle :subInfoTitleNm="subInfoTitleNm" />
         <div class="infoDataTableUpperButtons">
-          <ButtonComponent :btnClass="'btnClass3'" :btnName="'숨김해제'" />
-          <ButtonComponent :btnClass="'btnClass3'" :btnName="'청약이력보기'" />
-          <ButtonComponent :btnClass="'btnClass3'" :btnName="'고객등록'" />
+          <ButtonComponent :btnClass="'btn-type3'" :btnName="'숨김해제'" />
+          <ButtonComponent :btnClass="'btn-type3'" :btnName="'청약이력보기'" />
+          <ButtonComponent :btnClass="'btn-type3'" :btnName="'고객등록'" />
           <ButtonComponent
-            :btnClass="'btnClass3'"
+            :btnClass="'btn-type3'"
             :btnName="'고객정보수정'"
             :btnWidth="'auto'"
           />
@@ -22,7 +22,7 @@
             </th>
             <td>
               <input-component
-                :input-class="'class5'"
+                :input-class="'input-type5'"
                 :disabled="true"
                 :value="'CC100001671'"
               />
@@ -32,7 +32,7 @@
             </th>
             <td>
               <input-component
-                :input-class="'class5'"
+                :input-class="'input-type5'"
                 :disabled="true"
                 :value="'(주)ANC컴퍼***'"
               />
@@ -42,7 +42,7 @@
             </th>
             <td>
               <input-component
-                :input-class="'class5'"
+                :input-class="'input-type5'"
                 :disabled="true"
                 :value="'법인사업자'"
               />
@@ -52,7 +52,7 @@
             </th>
             <td>
               <input-component
-                :input-class="'class5'"
+                :input-class="'input-type5'"
                 :disabled="true"
                 :value="'Major Corporate'"
               />
@@ -62,7 +62,7 @@
             </th>
             <td style="width: 422px">
               <input-component
-                :input-class="'class5'"
+                :input-class="'input-type5'"
                 :disabled="true"
                 :value="'국내'"
               />
@@ -75,7 +75,7 @@
             </th>
             <td>
               <input-component
-                :input-class="'class5'"
+                :input-class="'input-type5'"
                 :disabled="true"
                 :value="'110136-0027690'"
               />
@@ -86,7 +86,7 @@
             </th>
             <td>
               <input-component
-                :input-class="'class5'"
+                :input-class="'input-type5'"
                 :disabled="true"
                 :value="'104-82-*****'"
               />
@@ -96,7 +96,7 @@
             </th>
             <td>
               <input-component
-                :input-class="'class5'"
+                :input-class="'input-type5'"
                 :disabled="true"
                 :value="'협동조합'"
               />
@@ -106,7 +106,7 @@
             </th>
             <td>
               <input-component
-                :input-class="'class5'"
+                :input-class="'input-type5'"
                 :disabled="true"
                 :value="'공공, 개인'"
               />
@@ -117,7 +117,7 @@
           :labelClass="'label-type'"/> -->
             </th>
             <td>
-              <!-- <input-component :input-class="'class5'" :disabled="true" :value="''" />  -->
+              <!-- <input-component :input-class="'input-type5'" :disabled="true" :value="''" />  -->
             </td>
           </tr>
 
@@ -127,7 +127,7 @@
             </th>
             <td>
               <input-component
-                :input-class="'class5'"
+                :input-class="'input-type5'"
                 :disabled="true"
                 :value="'이배*'"
               />
@@ -137,7 +137,7 @@
             </th>
             <td>
               <input-component
-                :input-class="'class5'"
+                :input-class="'input-type5'"
                 :disabled="true"
                 :value="'이동*'"
               />
@@ -147,17 +147,17 @@
             </th>
             <td colspan="3">
               <input-component
-                :input-class="'class5'"
-                :class5-width="'64px'"
-                :class5-margin-right="'3px'"
+                :input-class="'input-type5'"
+                :width="'64px'"
+                :inputType5MarginRight="'3px'"
                 :disabled="true"
                 :value="'12345'"
               />
               <input-component
-                :input-class="'class5 '"
+                :input-class="'input-type5 '"
                 :disabled="true"
                 :value="'서울특별시 강남구 도산대로19길 10 (신사동, 현우빌딩)'"
-                :class5Width="'335px'"
+                :width="'335px'"
               />
             </td>
             <th>
@@ -165,7 +165,7 @@
             </th>
             <td>
               <input-component
-                :input-class="'class5'"
+                :input-class="'input-type5'"
                 :disabled="true"
                 :value="'010-1111-2222'"
               />
@@ -187,7 +187,7 @@
             </th>
             <td>
               <input-component
-                :input-class="'class5'"
+                :input-class="'input-type5'"
                 :disabled="true"
                 :value="'P100002214'"
               />
@@ -197,7 +197,7 @@
             </th>
             <td>
               <input-component
-                :input-class="'class5'"
+                :input-class="'input-type5'"
                 :disabled="true"
                 :value="'------'"
               />
@@ -207,7 +207,7 @@
             </th>
             <td>
               <input-component
-                :input-class="'class5'"
+                :input-class="'input-type5'"
                 :disabled="true"
                 :value="'이용중'"
               />
@@ -220,7 +220,7 @@
             </th>
             <td>
               <input-component
-                :input-class="'class5'"
+                :input-class="'input-type5'"
                 :disabled="true"
                 :value="'일반'"
               />
@@ -231,13 +231,13 @@
             </th>
             <td colspan="4">
               <input-component
-                :input-class="'class5'"
-                :class5-width="'64px'"
+                :input-class="'input-type5'"
+                :width="'64px'"
                 :disabled="true"
                 :value="'IDC'"
               />
               <input-component
-                :input-class="'class5 '"
+                :input-class="'input-type5 '"
                 :disabled="true"
                 :value="'사용중인요금제명'"
               />
@@ -250,7 +250,7 @@
             </th>
             <td>
               <input-component
-                :input-class="'class5'"
+                :input-class="'input-type5'"
                 :disabled="true"
                 :value="'김포지점'"
               />
@@ -261,7 +261,7 @@
             </th>
             <td>
               <input-component
-                :input-class="'class5'"
+                :input-class="'input-type5'"
                 :disabled="true"
                 :value="'2022-10-12'"
               />
@@ -272,7 +272,7 @@
             </th>
             <td>
               <input-component
-                :input-class="'class5'"
+                :input-class="'input-type5'"
                 :disabled="true"
                 :value="'2022-10-13'"
               />
@@ -285,7 +285,7 @@
             </th>
             <td>
               <input-component
-                :input-class="'class5'"
+                :input-class="'input-type5'"
                 :disabled="true"
                 :value="'36개월'"
               />
@@ -296,7 +296,7 @@
             </th>
             <td>
               <input-component
-                :input-class="'class5'"
+                :input-class="'input-type5'"
                 :disabled="true"
                 :value="'1개월 7일'"
               />
@@ -307,7 +307,7 @@
             </th>
             <td>
               <input-component
-                :input-class="'class5'"
+                :input-class="'input-type5'"
                 :disabled="true"
                 :value="'2025-10-12'"
               />
@@ -320,7 +320,7 @@
             </th>
             <td>
               <input-component
-                :input-class="'class5'"
+                :input-class="'input-type5'"
                 :disabled="true"
                 :value="'26,790원'"
                 style="text-align: right"
@@ -328,11 +328,11 @@
             </td>
             <th><label-component :labelNm="'  '" :labelClass="'label-type'" /></th>
             <td>
-              <!-- <input-component :input-class="'class5'" :disabled="true" :value="''" />  -->
+              <!-- <input-component :input-class="'input-type5'" :disabled="true" :value="''" />  -->
             </td>
             <th><label-component :labelNm="'  '" :labelClass="'label-type'" /></th>
             <td>
-              <!-- <input-component :input-class="'class5'" :disabled="true" :value="''" />  -->
+              <!-- <input-component :input-class="'input-type5'" :disabled="true" :value="''" />  -->
             </td>
           </tr>
 
@@ -340,7 +340,7 @@
             <td colspan="6" class="infoDataTableButtons">
               <span>
                 <ButtonComponent
-                  :btnClass="'btnClass2'"
+                  :btnClass="'btn-type2'"
                   :btnWidth="'auto'"
                   :btnName="'이력보기'"
                   @click="modalShow"
@@ -348,35 +348,35 @@
               </span>
               <span>
                 <ButtonComponent
-                  :btnClass="'btnClass2'"
+                  :btnClass="'btn-type2'"
                   :btnWidth="'auto'"
                   :btnName="'상세조회'"
                 />
               </span>
               <span>
                 <ButtonComponent
-                  :btnClass="'btnClass2'"
+                  :btnClass="'btn-type2'"
                   :btnWidth="'auto'"
                   :btnName="'계약변경'"
                 />
               </span>
               <span>
                 <ButtonComponent
-                  :btnClass="'btnClass2'"
+                  :btnClass="'btn-type2'"
                   :btnWidth="'auto'"
                   :btnName="'명의변경'"
                 />
               </span>
               <span>
                 <ButtonComponent
-                  :btnClass="'btnClass2'"
+                  :btnClass="'btn-type2'"
                   :btnWidth="'auto'"
                   :btnName="'정지/부활'"
                 />
               </span>
               <span>
                 <ButtonComponent
-                  :btnClass="'btnClass2'"
+                  :btnClass="'btn-type2'"
                   :btnWidth="'auto'"
                   :btnName="'해지'"
                   :menu="'bill_01_01_01'"
@@ -394,8 +394,8 @@
       <div>
         <SubInfoTitle :subInfoTitleNm="subInfoTitleNm" />
         <div style="display: inline-block; float: right">
-          <ButtonComponent :btnClass="'btnClass3'" :btnName="'이력보기'" />
-          <ButtonComponent :btnClass="'btnClass3'" :btnName="'청구계정등록'" />
+          <ButtonComponent :btnClass="'btn-type3'" :btnName="'이력보기'" />
+          <ButtonComponent :btnClass="'btn-type3'" :btnName="'청구계정등록'" />
         </div>
       </div>
       <div class="infoDataTable">
@@ -406,7 +406,7 @@
             </th>
             <td>
               <input-component
-                :input-class="'class5'"
+                :input-class="'input-type5'"
                 :disabled="true"
                 :value="'999900005'"
               />
@@ -416,7 +416,7 @@
             </th>
             <td>
               <input-component
-                :input-class="'class5'"
+                :input-class="'input-type5'"
                 :disabled="true"
                 :value="'김포파인쇼****'"
               />
@@ -431,14 +431,14 @@
             </th>
             <td colspan="3">
               <input-component
-                :input-class="'class5'"
+                :input-class="'input-type5'"
                 :disabled="true"
                 :value="'은행계좌 자동이체'"
               />
               <input-component
-                :input-class="'class5'"
-                :class5-width="'80px'"
-                :class5-margin-right="'3px'"
+                :input-class="'input-type5'"
+                :width="'80px'"
+                :inputType5MarginRight="'3px'"
                 :disabled="true"
                 :value="'매월 25일'"
               />
@@ -450,19 +450,19 @@
             </th>
             <td colspan="4">
               <input-component
-                :input-class="'class5'"
-                :class5-width="'80px'"
-                :class5-margin-right="'3px'"
+                :input-class="'input-type5'"
+                :width="'80px'"
+                :inputType5MarginRight="'3px'"
                 :disabled="true"
                 :value="'신한은행'"
               />
               <input-component
-                :input-class="'class5'"
+                :input-class="'input-type5'"
                 :disabled="true"
                 :value="'2415621*******'"
               />
               <input-component
-                :input-class="'class5'"
+                :input-class="'input-type5'"
                 :disabled="true"
                 :value="'김포파인쇼***'"
               />
@@ -475,7 +475,7 @@
             </th>
             <td>
               <input-component
-                :input-class="'class5'"
+                :input-class="'input-type5'"
                 :disabled="true"
                 :value="'우편(종이)'"
               />
@@ -486,14 +486,14 @@
             </th>
             <td colspan="3">
               <input-component
-                :input-class="'class5'"
-                :class5-width="'64px'"
+                :input-class="'input-type5'"
+                :width="'64px'"
                 :disabled="true"
                 :value="'06037'"
               />
               <input-component
-                :input-class="'class5 '"
-                :class5Width="'310px'"
+                :input-class="'input-type5 '"
+                :width="'310px'"
                 :disabled="true"
                 :value="'서울특별시 강남구 도산대로19길 10 (신사동, 현우빌딩)'"
               />
@@ -503,7 +503,7 @@
             <td colspan="8" class="infoDataTableButtons">
               <span>
                 <ButtonComponent
-                  :btnClass="'btnClass2'"
+                  :btnClass="'btn-type2'"
                   :btnWidth="'auto'"
                   :btnName="'상세조회'"
                   @click="modalShow"
@@ -511,28 +511,28 @@
               </span>
               <span>
                 <ButtonComponent
-                  :btnClass="'btnClass2'"
+                  :btnClass="'btn-type2'"
                   :btnWidth="'auto'"
                   :btnName="'청구정보수정'"
                 />
               </span>
               <span>
                 <ButtonComponent
-                  :btnClass="'btnClass2'"
+                  :btnClass="'btn-type2'"
                   :btnWidth="'auto'"
                   :btnName="'청구지변경'"
                 />
               </span>
               <span>
                 <ButtonComponent
-                  :btnClass="'btnClass2'"
+                  :btnClass="'btn-type2'"
                   :btnWidth="'auto'"
                   :btnName="'청구분리'"
                 />
               </span>
               <span>
                 <ButtonComponent
-                  :btnClass="'btnClass2'"
+                  :btnClass="'btn-type2'"
                   :btnWidth="'auto'"
                   :btnName="'청구통합'"
                   @click="addComp('L01M06S01')"
@@ -555,7 +555,7 @@
             </th>
             <td>
               <input-component
-                :input-class="'class5'"
+                :input-class="'input-type5'"
                 :disabled="true"
                 :value="'9900000221'"
               />
@@ -565,7 +565,7 @@
             </th>
             <td>
               <input-component
-                :input-class="'class5'"
+                :input-class="'input-type5'"
                 :disabled="true"
                 :value="'cloud@kt.com'"
               />
@@ -575,7 +575,7 @@
             </th>
             <td>
               <input-component
-                :input-class="'class5'"
+                :input-class="'input-type5'"
                 :disabled="true"
                 :value="'010-0001-0002'"
               />
@@ -591,7 +591,7 @@
       <div>
         <SubInfoTitle :subInfoTitleNm="subInfoTitleNm" />
         <div style="display: inline-block; float: right">
-          <ButtonComponent :btnClass="'btnClass3'" :btnName="'이력보기'" />
+          <ButtonComponent :btnClass="'btn-type3'" :btnName="'이력보기'" />
         </div>
       </div>
       <div class="infoDataTable">
@@ -602,7 +602,7 @@
             </th>
             <td>
               <input-component
-                :input-class="'class5'"
+                :input-class="'input-type5'"
                 :disabled="true"
                 :value="'기업고객팀'"
               />
@@ -612,7 +612,7 @@
             </th>
             <td>
               <input-component
-                :input-class="'class5'"
+                :input-class="'input-type5'"
                 :disabled="true"
                 :value="'김영업'"
               />
@@ -622,7 +622,7 @@
             </th>
             <td>
               <input-component
-                :input-class="'class5'"
+                :input-class="'input-type5'"
                 :disabled="true"
                 :value="'승인'"
               />
@@ -637,7 +637,7 @@
             </th>
             <td>
               <input-component
-                :input-class="'class5'"
+                :input-class="'input-type5'"
                 :disabled="true"
                 :value="'AA고객팀'"
               />
@@ -647,14 +647,14 @@
             </th>
             <td>
               <input-component
-                :input-class="'class5'"
+                :input-class="'input-type5'"
                 :disabled="true"
                 :value="'이영업'"
               />
             </td>
             <th><label-component :labelNm="''" :labelClass="'label-type'" /></th>
             <td>
-              <!-- <input-component :input-class="'class5'" :disabled="true" :value="''" />  -->
+              <!-- <input-component :input-class="'input-type5'" :disabled="true" :value="''" />  -->
             </td>
           </tr>
         </table>

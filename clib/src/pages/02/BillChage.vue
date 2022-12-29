@@ -65,37 +65,37 @@
         />
         <button-component
             :btn-name="'즉시수납'"
-            :btn-class="'btnClass2'"
+            :btn-class="'btn-type2'"
             style="float: right;"
             :btnWidth="'auto'"
         />
         <button-component
             :btn-name="'수납이력'"
-            :btn-class="'btnClass2'"
+            :btn-class="'btn-type2'"
             style="float: right;"
             :btnWidth="'auto'"
         />
         <button-component
             :btn-name="'요금조정'"
-            :btn-class="'btnClass2'"
+            :btn-class="'btn-type2'"
             style="float: right;"
             :btnWidth="'auto'"
         />
         <button-component
             :btn-name="'가상계좌'"
-            :btn-class="'btnClass2'"
+            :btn-class="'btn-type2'"
             style="float: right;"
             :btnWidth="'auto'"
         />
         <button-component
             :btn-name="'실시간 요금'"
-            :btn-class="'btnClass2'"
+            :btn-class="'btn-type2'"
             style="float: right;"
             :btnWidth="'auto'"
         />
         <button-component
             :btn-name="'해지 예상요금'"
-            :btn-class="'btnClass2'"
+            :btn-class="'btn-type2'"
             style="float: right;"
             :btnWidth="'auto'"
         />
@@ -118,20 +118,20 @@
 
         <button-component
             :btn-name="'E-mail 발송 현황'"
-            :btn-class="'btnClass3'"
+            :btn-class="'btn-type3'"
             style="float: right; width: 170px;"
         />
 
         <button-component
             :btn-name="'명세서이미지'"
-            :btn-class="'btnClass3'"
+            :btn-class="'btn-type3'"
             style="float: right; width: 120px;"
         />
 
 
         <button-component
             :btn-name="'엑셀 다운로드'"
-            :btn-class="'btnClass3'"
+            :btn-class="'btn-type3'"
             style="float: right; width: 130px; margin-right: 10px;"
         />
 
@@ -153,7 +153,7 @@
             <SubInfoTitle :subInfoTitleNm="'청구계정정보'"/>
             <div style="display:inline-block; float:right;" >
               <ButtonComponent
-                  :btnClass="'btnClass3'"
+                  :btnClass="'btn-type3'"
                   :btnName="'이력보기'"
               />
             </div>
@@ -167,14 +167,14 @@
                       :labelClass="'label-type'"/>
                 </th>
                 <td>
-                  <input-component :input-class="'class5'" :disabled="true" :value="'999900005' " />
+                  <input-component :input-class="'input-type5'" :disabled="true" :value="'999900005' " />
                 </td>
                 <th> <label-component
                     :labelNm="'청구고객명'"
                     :labelClass="'label-type'"/>
                 </th>
                 <td>
-                  <input-component :input-class="'class5'" :disabled="true" :value="'김포파인쇼****' " />
+                  <input-component :input-class="'input-type5'" :disabled="true" :value="'김포파인쇼****' " />
                 </td>
                 <td style="width: 187px;"></td>
                 <!-- <th style="background-color:white; width:90px; border:none;"></th> -->
@@ -184,9 +184,9 @@
                     :labelClass="'label-type'"/>
                 </th>
                 <td colspan="2">
-                  <input-component :input-class="'class5'" :class5Width="'80px'" :class5MarginRight="'3px'" :disabled="true" :value="'801212' " />
+                  <input-component :input-class="'input-type5'" :width="'80px'" :inputType5MarginRight="'3px'" :disabled="true" :value="'801212' " />
                   -
-                  <input-component :input-class="'class5'" :class5Width="'80px'" :class5MarginRight="'3px'" :disabled="true" :value="'1*****' " />
+                  <input-component :input-class="'input-type5'" :width="'80px'" :inputType5MarginRight="'3px'" :disabled="true" :value="'1*****' " />
                 </td>
                 <td colspan="5"></td>
               </tr>
@@ -196,23 +196,23 @@
                     :labelClass="'label-type'"/>
                 </th>
                 <td>
-                  <input-component :input-class="'class5'" :disabled="true" :value="'이메일' " />
+                  <input-component :input-class="'input-type5'" :disabled="true" :value="'이메일' " />
                 </td>
                 <th> <label-component
                     :labelNm="'이메일'"
                     :labelClass="'label-type'"/>
                 </th>
                 <td colspan="2">
-                  <input-component :input-class="'class5'" :disabled="true" :value="'aaa***' " />
+                  <input-component :input-class="'input-type5'" :disabled="true" :value="'aaa***' " />
                   <span style="margin-right: 6px;">@</span>
-                  <input-component :input-class="'class5'" :disabled="true" :value="'kt.com' " />
+                  <input-component :input-class="'input-type5'" :disabled="true" :value="'kt.com' " />
                 </td>
                 <th> <label-component
                     :labelNm="'청구서 언어'"
                     :labelClass="'label-type'"/>
                 </th>
                 <td>
-                  <input-component :input-class="'class5'" :disabled="true" :value="'한글' " />
+                  <input-component :input-class="'input-type5'" :disabled="true" :value="'한글' " />
                 </td>
                 <td style="width: 20px"></td>
               </tr>
@@ -222,9 +222,9 @@
                     :labelClass="'label-type'"/>
                 </th>
                 <td colspan="5">
-                  <input-component :input-class="'class5'" :class5Width="'80px'" :class5MarginRight="'3px'" :disabled="true" :value="'12345'" />
-                  <input-component :input-class="'class5'" :class5Width="'330px'" :disabled="true" :value="'서울시 강남구 학동로 111'" />
-                  <input-component :input-class="'class5'" style="margin-right: 0; width: 284px;" :disabled="true" :value="'상세주소'" />
+                  <input-component :input-class="'input-type5'" :width="'80px'" :inputType5MarginRight="'3px'" :disabled="true" :value="'12345'" />
+                  <input-component :input-class="'input-type5'" :width="'330px'" :disabled="true" :value="'서울시 강남구 학동로 111'" />
+                  <input-component :input-class="'input-type5'" style="margin-right: 0; width: 284px;" :disabled="true" :value="'상세주소'" />
                 </td>
               </tr>
 
@@ -234,12 +234,12 @@
                     :labelClass="'label-type'"/>
                 </th>
                 <td colspan="5">
-                  <input-component :input-class="'class5'" :disabled="true" :value="'신용카드 자동이체' " />
-                  <input-component :input-class="'class5'" :class5Width="'80px'" :class5MarginRight="'3px'" :disabled="true" :value="'매월말일'" />
-                  <input-component :input-class="'class5'" :class5Width="'80px'" :class5MarginRight="'3px'" :disabled="true" :value="'국민카드'" />
-                  <input-component :input-class="'class5'" :disabled="true" :value="'1234567891****' " />
-                  <input-component :input-class="'class5'" :class5Width="'80px'" :class5MarginRight="'3px'" :disabled="true" :value="'홍길*' " />
-                  <input-component :input-class="'class5'" :disabled="true" :value="'11월/2024년' " />
+                  <input-component :input-class="'input-type5'" :disabled="true" :value="'신용카드 자동이체' " />
+                  <input-component :input-class="'input-type5'" :width="'80px'" :inputType5MarginRight="'3px'" :disabled="true" :value="'매월말일'" />
+                  <input-component :input-class="'input-type5'" :width="'80px'" :inputType5MarginRight="'3px'" :disabled="true" :value="'국민카드'" />
+                  <input-component :input-class="'input-type5'" :disabled="true" :value="'1234567891****' " />
+                  <input-component :input-class="'input-type5'" :width="'80px'" :inputType5MarginRight="'3px'" :disabled="true" :value="'홍길*' " />
+                  <input-component :input-class="'input-type5'" :disabled="true" :value="'11월/2024년' " />
                 </td>
               </tr>
             </table>

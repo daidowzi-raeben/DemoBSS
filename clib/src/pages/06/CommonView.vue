@@ -264,11 +264,11 @@
       <h1 style="font-size: 30px">ButtonComponent</h1>
     <span>각 버튼의 클래스 이름</span>
     <div class="commondiv1">
-    <div> <ButtonComponent :btnClass="'btnClass1'" :btnName="'btnClass1'" /></div>
-    <div><ButtonComponent :btnClass="'btnclass2'" :btnName="'btnClass2'" /></div>
-    <div><ButtonComponent :btnClass="'btnClass3'" :btnName="'btnClass3'"   /></div>
-    <div><ButtonComponent :btnClass="'btnClass4'" :btnName="'btnClass4'" :btnFontWeight="'bold'" :btnWidth="'90px'" :btnHeight="'20px'"/></div>
-    <div><ButtonComponent :btnClass="'btnClass2'" :btnName="'btnClass2'"   /></div>
+    <div> <ButtonComponent :btnClass="'btn-type'" :btnName="'btn-type'" /></div>
+    <div><ButtonComponent :btnClass="'btnclass2'" :btnName="'btn-type2'" /></div>
+    <div><ButtonComponent :btnClass="'btn-type3'" :btnName="'btn-type3'"   /></div>
+    <div><ButtonComponent :btnClass="'btn-type4'" :btnName="'btn-type4'" :btnFontWeight="'bold'" :btnWidth="'90px'" :btnHeight="'20px'"/></div>
+    <div><ButtonComponent :btnClass="'btn-type2'" :btnName="'btn-type2'"   /></div>
     <ButtonComponent :btnClass="'btnLeftImgClass'"/>btnLeftImgClass &nbsp;
     <ButtonComponent :btnClass="'btnRightImgClass'"/> btnRightImgClass&nbsp;
     <ButtonComponent :btnClass="'btnDeleteImgClass'"/> btnDeleteImgClass &nbsp;
@@ -315,7 +315,7 @@
 
     <h1 style="font-size: 30px">PopupComponent</h1>
     <div class="commondiv1">
-    <button-component :btnClass="'btnClass2'" :btnName="'공통 PopUp'" @click="popup" :btnWidth="'90px'"/>
+    <button-component :btnClass="'btn-type2'" :btnName="'공통 PopUp'" @click="popup" :btnWidth="'90px'"/>
 
     <popup-component
       v-if="isModalShow"
@@ -334,7 +334,7 @@
       :popupmsg="' '"
       :reqtype="'1'"
     />
-    <button-component :btnClass="'btnClass4'" :btnName="'출력 PopUp'" :btnWidth="'120px'" @click="FormPopup1"/>
+    <button-component :btnClass="'btn-type4'" :btnName="'출력 PopUp'" :btnWidth="'120px'" @click="FormPopup1"/>
 
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
@@ -346,7 +346,7 @@
       :popupmsg="' '"
       :reqtype="'2'"
     />
-    <button-component :btnClass="'btnClass3'" :btnName="'입력 PopUp'" @click="FormPopup2"/>
+    <button-component :btnClass="'btn-type3'" :btnName="'입력 PopUp'" @click="FormPopup2"/>
       <br />
       <p>화면 전체를 회색으로 감싸려면 z-index:7을 주면 적용</p>
     </div>
@@ -359,7 +359,7 @@
         :type="'search'"
         :height="20"
         :width="150"
-        :input-class="'class2'"
+        :input-class="'input-type2'"
         v-model="searchValue"
         :placeholder="'입력'"
         @input="
@@ -383,8 +383,8 @@
       />
       <br>
       <input-component
-      :input-class="'class3'"
-      :value="'input 컴포넌트 - class3 '"
+      :input-class="'input-type3'"
+      :value="'input 컴포넌트 - input-type3 '"
       />
       <div>
       <input-component
@@ -395,8 +395,8 @@
 
 
       <input-component
-      :input-class="'class5'"
-      :value="'input 컴포넌트 - class5 '"
+      :input-class="'input-type5'"
+      :value="'input 컴포넌트 - input-type5 '"
       />
 
 
@@ -447,7 +447,7 @@
       </div><div>
       <span> 주소 검색  </span>
       <input-component
-      :inputClass="'class5'"
+      :inputClass="'input-type5'"
       style="width:210px; margin:0 3px;"
       :height="'30px'"
       :placeholder="'주소를 입력해 주세요.'"
@@ -455,7 +455,7 @@
       />
       <button-component
       @click="postCodePopup"
-      :btnClass="'btnClass3'"
+      :btnClass="'btn-type3'"
       :btnName="'주소 검색'"
       :btnHeight="'30px'"
       />
@@ -580,7 +580,7 @@
     <h1 style="font-size: 30px">ToastComponent</h1>
     <span></span>
     <div class="commondiv2">
-      <ButtonComponent @click="chk=true" :btnClass="'btnClass1'" :btnName="'btnClass1'" />
+      <ButtonComponent @click="chk=true" :btnClass="'btn-type'" :btnName="'btn-type'" />
       <ToastComponent
           v-if="chk"
           :message="'hello'"

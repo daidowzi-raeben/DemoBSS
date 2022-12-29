@@ -148,7 +148,7 @@
         <!--empty 280px -->
         <td class="btnBox">
           <button-component
-            :btnClass="'btnClass2'"
+            :btnClass="'btn-type2'"
             :btnHeight="'28px'"
             :btnWidth="'78px'"
             :btnFontWeight="'bold'"
@@ -158,7 +158,7 @@
         </td>
         <td class="btnBox">
           <button-component
-            :btn-class="'btnClass4'"
+            :btn-class="'btn-type4'"
             :btnFontWeight="'bold'"
             :btn-name="'검색'"
             :btnHeight="'28px'"

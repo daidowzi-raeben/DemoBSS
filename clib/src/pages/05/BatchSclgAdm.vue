@@ -31,7 +31,7 @@
       </span>
         <span>
         <button-component
-            :btn-class="'btnClass4'"
+            :btn-class="'btn-type4'"
             :btnFontWeight="'bold'"
             :btn-name ="'초기화'"
             :btnHeight="'28px'"
@@ -41,7 +41,7 @@
       </span>
         <span>
         <button-component
-            :btn-class="'btnClass4'"
+            :btn-class="'btn-type4'"
             :btnFontWeight="'bold'"
             :btn-name ="'검색'"
             :btnHeight="'28px'"
@@ -58,14 +58,14 @@
 
         <span style="float: right">
       <buttonComponent
-          :btnClass="'btnClass3'"
+          :btnClass="'btn-type3'"
           :btnName="'엑셀다운로드'"
           :btnWidth="'auto'"
       />
         </span>
         <span style="float: right">
       <buttonComponent
-          :btnClass="'btnClass3'"
+          :btnClass="'btn-type3'"
           :btnName="'변경'"
           :btnWidth="'auto'"
           @click="batchChg"
@@ -73,7 +73,7 @@
         </span>
         <span style="float: right">
       <buttonComponent
-          :btnClass="'btnClass3'"
+          :btnClass="'btn-type3'"
           :btnName="'등록'"
           :btnWidth="'auto'"
           @click="batchReg"
@@ -124,7 +124,7 @@
           <sub-info-title :subInfoTitleNm="'배치 상세정보'"/>
           <span style="float: right">
         <button-component
-            :btnClass="'btnClass4'"
+            :btnClass="'btn-type4'"
             :btnName="'등록'"
             :btnHeight="'28px'"
             :btnWidth ="'100px'"
@@ -132,7 +132,7 @@
             @click="isModalRegShow=true"
         />
             <button-component
-                :btnClass="'btnClass4'"
+                :btnClass="'btn-type4'"
                 :btnName="'변경'"
                 :btnHeight="'28px'"
                 :btnWidth ="'100px'"
@@ -146,21 +146,21 @@
             <tr>
               <th>스케줄링ID</th>
               <td >
-                <input-component :input-class="'class5 '" :class="batchChgConf===true ? 'input_disabled':'input'"
-                                 :class5Width="'600px'" :disabled="disabled" v-model="this.batchSclgAdmObject.sclgId" :value="this.batchSclgAdmObject.sclgId" />
+                <input-component :input-class="'input-type5 '" :class="batchChgConf===true ? 'input_disabled':'input'"
+                                 :width="'600px'" :disabled="disabled" v-model="this.batchSclgAdmObject.sclgId" :value="this.batchSclgAdmObject.sclgId" />
               </td>
             </tr>
             <tr>
               <th>배치서버</th>
               <td>
-                <input-component class="input" :input-class="'class5 '" :class5Width="'600px'" v-model="this.batchSclgAdmObject.batchSrvr"
+                <input-component class="input" :input-class="'input-type5 '" :width="'600px'" v-model="this.batchSclgAdmObject.batchSrvr"
                                  :value="this.batchSclgAdmObject.batchSrvr" />
               </td>
             </tr>
             <tr>
               <th>스케줄링 그룹</th>
               <td>
-                <input-component class="input" :input-class="'class5 '" :class5Width="'600px'" v-model="this.batchSclgAdmObject.sclgGp"
+                <input-component class="input" :input-class="'input-type5 '" :width="'600px'" v-model="this.batchSclgAdmObject.sclgGp"
                                  :value="this.batchSclgAdmObject.sclgGp" />
               </td>
             </tr>
@@ -176,7 +176,7 @@
             <tr>
               <th>실행주기(크론식)</th>
               <td>
-                <input-component class="input" :input-class="'class5 '" :class5Width="'600px'" v-model="this.batchSclgAdmObject.exeCycl"
+                <input-component class="input" :input-class="'input-type5 '" :width="'600px'" v-model="this.batchSclgAdmObject.exeCycl"
                                  :value="this.batchSclgAdmObject.exeCycl" />
               </td>
             </tr>

@@ -6,9 +6,9 @@
       (총 <label style="font-weight: bold">{{ total }}</label>건)
     </p>
     <span style="float: right">
-      <button-component :btnClass="'btnClass3'" :btnName="btnName1" />
-      <button-component :btnClass="'btnClass3'" :btnName="btnName2" />
-      <button-component :btnClass="'btnClass3'" :btnName="btnName3" />
+      <button-component :btnClass="'btn-type3'" :btnName="btnName1" />
+      <button-component :btnClass="'btn-type3'" :btnName="btnName2" />
+      <button-component :btnClass="'btn-type3'" :btnName="btnName3" />
     </span>
     <span style="float: right">
       <select-box-component

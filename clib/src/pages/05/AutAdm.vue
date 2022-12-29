@@ -41,7 +41,7 @@
       </span>
         <span><!--권한 유형 검색창에 대한 초기화 버튼 / 매칭함수 : resetSearch / 클릭시 검색창 내부에 있는 셀렉트박스, 인풋박스 초기화 -->
         <button-component
-            :btn-class="'btnClass4'"
+            :btn-class="'btn-type4'"
             :btnFontWeight="'bold'"
             :btn-name ="'초기화'"
             :btnHeight="'28px'"
@@ -51,7 +51,7 @@
       </span>
         <span><!--권한 유형 검색창에 검색버튼 / 매칭함수 : autLstSearch / 클릭시 검색창에서 선택된 값을 기준으로 autLstSearch 실행  -->
         <button-component
-            :btn-class="'btnClass4'"
+            :btn-class="'btn-type4'"
             :btnFontWeight="'bold'"
             :btn-name ="'검색'"
             :btnHeight="'28px'"
@@ -68,14 +68,14 @@
 
         <span style="float: right">
       <ButtonComponent
-          :btnClass="'btnClass3'"
+          :btnClass="'btn-type3'"
           :btnName="'엑셀다운로드'"
           :btnWidth="'auto'"
       />
         </span>
         <span style="float: right"><!-- 리스트에 있는 행 선택 혹은 행 선택 후 변경 클릭시 상세정보에 대한 행에 대한 정보 입력 -->
       <ButtonComponent
-          :btnClass="'btnClass3'"
+          :btnClass="'btn-type3'"
           :btnName="'변경'"
           :btnWidth="'auto'"
           @click="autChg"
@@ -83,7 +83,7 @@
         </span>
         <span style="float: right"><!--클릭시 등록을 위한 초기상태로 전환 등록일시와 수정 일시는 금일로 지정  등록자 수정자의 경우 더미값으로 넣어놈-->
       <ButtonComponent
-          :btnClass="'btnClass3'"
+          :btnClass="'btn-type3'"
           :btnName="'등록'"
           :btnWidth="'auto'"
           @click="autReg"
@@ -134,7 +134,7 @@
           <sub-info-title :subInfoTitleNm="'권한 상세정보'"/>
           <span style="float: right"> <!-- 2번에서 누른 등록, 변경에 따라 하단의 버튼또한 변경됨 -->
         <button-component
-            :btnClass="'btnClass4'"
+            :btnClass="'btn-type4'"
             :btnName="'등록'"
             :btnHeight="'28px'"
             :btnWidth ="'100px'"
@@ -142,7 +142,7 @@
             @click="isModalRegShow=true"
         />
             <button-component
-                :btnClass="'btnClass4'"
+                :btnClass="'btn-type4'"
                 :btnName="'변경'"
                 :btnHeight="'28px'"
                 :btnWidth ="'100px'"
@@ -156,13 +156,13 @@
             <tr>
               <th>권한ID</th>
               <td colspan="3">
-                <input-component :input-class="'class5 '" :class="autChgConf===true ? 'input_disabled':'input'"  :class5Width="'600px'" :disabled="disabled" v-model="this.autAdmObject.autId" :value="this.autAdmObject.autId" />
+                <input-component :input-class="'input-type5 '" :class="autChgConf===true ? 'input_disabled':'input'"  :width="'600px'" :disabled="disabled" v-model="this.autAdmObject.autId" :value="this.autAdmObject.autId" />
               </td>
             </tr>
             <tr>
               <th>권한명</th>
               <td colspan="3">
-                <input-component class="input" :input-class="'class5 '" :class5Width="'600px'" v-model="this.autAdmObject.autNm" :value="this.autAdmObject.autNm" />
+                <input-component class="input" :input-class="'input-type5 '" :width="'600px'" v-model="this.autAdmObject.autNm" :value="this.autAdmObject.autNm" />
               </td>
             </tr>
             <tr>
@@ -190,15 +190,15 @@
             <tr>
               <th>등록자/등록일시</th>
               <td colspan="3">
-                <span><input-component :class="'input_disabled'" :input-class="'class5 '" :class5Width="'150px'" :disabled="true" v-model="this.autAdmObject.regr" :value="this.autAdmObject.regr" /></span>
-                <span ><input-component :class="'input_disabled'" :input-class="'class5 '" :class5Width="'150px'"  :disabled="true" v-model="this.autAdmObject.regDt" :value="this.autAdmObject.regDt" /></span>
+                <span><input-component :class="'input_disabled'" :input-class="'input-type5 '" :width="'150px'" :disabled="true" v-model="this.autAdmObject.regr" :value="this.autAdmObject.regr" /></span>
+                <span ><input-component :class="'input_disabled'" :input-class="'input-type5 '" :width="'150px'"  :disabled="true" v-model="this.autAdmObject.regDt" :value="this.autAdmObject.regDt" /></span>
               </td>
             </tr>
             <tr>
               <th>수정자/수정일시</th>
               <td colspan="3">
-                <span><input-component :class="'input_disabled'" :input-class="'class5 '" :class5Width="'150px'"  :disabled="true" v-model="this.autAdmObject.amdr" :value="this.autAdmObject.amdr" /></span>
-                <span><input-component :class="'input_disabled'" :input-class="'class5 '" :class5Width="'150px'"  :disabled="true" v-model="this.autAdmObject.amdDt" :value="this.autAdmObject.amdDt" /></span>
+                <span><input-component :class="'input_disabled'" :input-class="'input-type5 '" :width="'150px'"  :disabled="true" v-model="this.autAdmObject.amdr" :value="this.autAdmObject.amdr" /></span>
+                <span><input-component :class="'input_disabled'" :input-class="'input-type5 '" :width="'150px'"  :disabled="true" v-model="this.autAdmObject.amdDt" :value="this.autAdmObject.amdDt" /></span>
               </td>
 
             </tr>

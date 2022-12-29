@@ -68,8 +68,9 @@
 
 ## 프로젝트 설치 및 실행
 ```
-프로젝트 설치 : npm install
-프로젝트 실행 : npm run serve
+프로젝트 폴더 이동 :    ....cd clib
+프로젝트 modules 설치 : npm install
+프로젝트 실행 :         npm run serve
 json-server  : json-server --watch info.json --port 8080
 ```
 
@@ -168,7 +169,7 @@ export default {
 **props:**
 - placeholder : 입력 전 예시 값
 - type : 입력창의 타입 (ex. text, search)
-- width : 입력창 가로 길이 (기본 : 150px)
+- width : 입력창 가로 길이 (기본 : 140px)
 - height :  입력창 세로 길이 (기본 : 20px)
 - inputClass : 입력창 스타일 지정을 위한 클래스 (기본 : input-type)
 - disabled : 입력창 입력 불가 여부 (기본 : false)
@@ -176,7 +177,7 @@ export default {
 
 **주요특징:**
 - emit가 아닌 v-model을 통해 데이터 송수신
-- 입력창 스타일 (`input-type`, `class3`, `class4`, `class5`, `class6`)
+- 입력창 스타일 (`input-type`, `input-type2`, `input-type3`, `input-type4`, `input-type5`)
 
 **호출소스***
 ```
@@ -185,8 +186,8 @@ export default {
             :height="'28px'"                #입력창의 높이
             :width="'140px'"                #입력창의 가로길이
             :input-class="'input-type'"         #입력창의 스타일 지정 클래스
-            :value="value"                  #입력 값
-            v-model="store"                 #입력한 내용을 저장할 변수
+            :value="inputValue"                  # 입력 값 ( input component에 전달하는 입력 값)
+            v-model="inputValue"                 # 입력한 내용을 저장할 변수 (해당 컴포넌트)
             :placeholder="'010-11**-****'"  #입력 전 예시
             :disabled="true"                #입력 가능 여부
         />
@@ -248,7 +249,7 @@ export default {
 - btnFontWeight : 버튼 이름 굵기 (지정안할 시 기본)
 
 **주요특징:**
-- 버튼 스타일 (`btnClass1`, `btnClass2`,`btnClass3`, `btnClass4`)
+- 버튼 스타일 (`btn-type`, `btn-type2`,`btn-type3`, `btn-type4`)
 
 ***
 ### AgGridComponent

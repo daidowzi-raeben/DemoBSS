@@ -7,11 +7,11 @@
     </h1>
     <!-- <div class="right">
       <button-component
-        :btnClass="'btnClass1'"
+        :btnClass="'btn-type'"
         :btnName="'홈화면설정'"
       ></button-component>
       <button-component
-        :btnClass="'btnClass1'"
+        :btnClass="'btn-type'"
         :btnName="'화면초기화'"
       ></button-component>
     </div> -->

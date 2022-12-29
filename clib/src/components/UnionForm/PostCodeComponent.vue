@@ -22,7 +22,7 @@
                 @keypress.enter="getPostData()"
               />
               <button-component
-                :btnClass="'btnClass3'"
+                :btnClass="'btn-type3'"
                 :btnName="'주소 검색'"
                 :btnHeight="'30px'"
                 @click="getPostData()"
@@ -60,9 +60,9 @@
                     <td>
                       <input-component
                         style="width: 90%; text-align: center"
-                        :input-class="'class5'"
-                        :class5-width="'64px'"
-                        :class5-margin-right="'3px'"
+                        :input-class="'input-type5'"
+                        :width="'64px'"
+                        :inputType5MarginRight="'3px'"
                         :disabled="true"
                         :value="item.zipNo"
                       />
@@ -70,25 +70,25 @@
                     <td>
                       <input-component
                         style="width: 98%"
-                        :input-class="'class5 '"
+                        :input-class="'input-type5 '"
                         :disabled="true"
-                        :class5Width="'330px'"
+                        :width="'330px'"
                         :value="item.roadAddr"
                       />
                     </td>
                     <td>
                       <input-component
                         style="width: 98%"
-                        :input-class="'class5 '"
+                        :input-class="'input-type5 '"
                         :disabled="true"
-                        :class5Width="'330px'"
+                        :width="'330px'"
                         :value="item.jibunAddr"
                       />
                     </td>
                     <td>
                       <input-component
                         style="width: 90%"
-                        :input-class="'class5'"
+                        :input-class="'input-type5'"
                         :value="detailPostAddress"
                         v-model="detailPostAddress"
                       />

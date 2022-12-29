@@ -25,23 +25,18 @@ export default {
     },
     width: {
       type:String,
-      default:'150px'
-    },
-    class2Width:{
-      type:String,
       default:'140px'
-    },
-    class5Width :{
-      type: String,
-      default:'140px'
-    },
-    class5MarginRight:{
-      type:String,
-      default:'11px'
     },
     height: {
       type:String,
       default: '20px',
+    },
+    inputType2BackgroundColor:{
+      default:'white'
+    },
+    inputType5MarginRight:{
+      type:String,
+      default:'11px'
     },
     inputClass: {
       type:String,
@@ -54,9 +49,6 @@ export default {
     value:{
       type:String,
     },
-    class2BackgroundColor:{
-      default:'white'
-    }
   },
   beforeUpdate() {
     this.inputValue = this.value;
@@ -89,18 +81,18 @@ input {
   width: v-bind('width');
   height: v-bind('height');
 }
-.class2{
-  width: v-bind("class2Width");
+.input-type2{
+  width: v-bind("width");
   height: 24px;
   font-size: 10pt;
   font-weight: normal;
   color: #000;
-  background-color: v-bind("class2BackgroundColor");
+  background-color: v-bind("inputType2BackgroundColor");
   border: 1px solid #e4e4e4;
   margin-right: 11px;
 }
 /*상단 메뉴 스타일 */
-.class3{
+.input-type3{
   margin-top: 7px;
   font-size: 10pt;
   vertical-align: top;
@@ -109,7 +101,7 @@ input {
   font-weight: normal;
   color: white;
 }
-.class3:focus{
+.input-type3:focus{
   outline:none;
 }
 .class4 {
@@ -118,15 +110,15 @@ input {
   border:1px solid #bdbdbd;
 }
 
-.class5{
-  width: v-bind('class5Width');
+.input-type5{
+  width: v-bind('width');
   /* font-size: 12pt; */
   font-size: 10pt;
   font-weight: normal;
   color: #000;
   background-color: rgb(251, 253, 255);
   border: 1px solid #e4e4e4;
-  margin-right: v-bind('class5MarginRight');
+  margin-right: v-bind('inputType5MarginRight');
   height: 24px;
 }
 

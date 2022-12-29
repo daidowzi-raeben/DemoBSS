@@ -31,7 +31,7 @@ export default {
 </script>
 
 <style scoped>
-.btnClass1 {
+.btn-type {
   float: right;
   padding: 2px;
   font-size: 12pt;
@@ -41,11 +41,11 @@ export default {
   margin: 0px 0px 0px 3px;
   background-color: rgb(251, 251, 251);
 }
-.btnClass1:hover {
+.btn-type:hover {
   background-color: rgb(27, 114, 212);
   color: white;
 }
-.btnClass2 {
+.btn-type2 {
   height: v-bind("btnHeight");
   width: v-bind("btnWidth");
   font-size: 9pt;
@@ -56,17 +56,17 @@ export default {
   border: 0.5px solid #dbdbdb;
   border-radius: 3px;
 }
-.btnClass2:hover {
+.btn-type2:hover {
   color: grey;
 }
-.btnClass2:active {
+.btn-type2:active {
   color: grey;
   -webkit-transform: scale(0.98);
   transform: scale(0.98);
 }
 
 
-.btnClass3 {
+.btn-type3 {
   background-color: rgb(114, 148, 187);
   border-radius: 3px;
   border: 0.5px solid #dbdbdb;
@@ -76,13 +76,13 @@ export default {
   font-weight: normal;
   height: v-bind("btnHeight");
 }
-.btnClass3:hover {
+.btn-type3:hover {
   background-color: rgb(28, 113, 209);
 }
-.btnClass3:active {
+.btn-type3:active {
   background-color: rgb(28, 113, 209);
 }
-.btnClass4 {
+.btn-type4 {
   width: v-bind("btnWidth");
   height: v-bind("btnHeight");
   font-size: 10pt;
@@ -92,10 +92,10 @@ export default {
   color: white;
   border: 0.5px solid #bdbdbd;
 }
-.btnClass4:hover {
+.btn-type4:hover {
   background-color: rgb(27, 114, 212, 0.7);
 }
-.btnClass4:active {
+.btn-type4:active {
   color: rgb(27, 114, 212);
   -webkit-transform: scale(0.98);
   transform: scale(0.98);

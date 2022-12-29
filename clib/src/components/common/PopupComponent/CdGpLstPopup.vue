@@ -18,7 +18,7 @@
         <span style="float: right">
           <button-component
               v-if="type===1"
-              :btn-class="'btnClass4'"
+              :btn-class="'btn-type4'"
               :btnFontWeight="'bold'"
               :btn-name ="'등록'"
               :btnHeight="'28px'"
@@ -27,7 +27,7 @@
           />
           <button-component
               v-if="type===2"
-              :btn-class="'btnClass4'"
+              :btn-class="'btn-type4'"
               :btnFontWeight="'bold'"
               :btn-name ="'변경'"
               :btnHeight="'28px'"
@@ -44,27 +44,27 @@
               <tr>
                 <th>코드그룹ID</th>
                 <td>
-                  <input-component :input-class="'class5'" :class="this.type===2 ? 'input_disabled':'input'" :disabled="disabled" v-model="this.cdGpId" :value="this.cdGpId" />
+                  <input-component :input-class="'input-type5'" :class="this.type===2 ? 'input_disabled':'input'" :disabled="disabled" v-model="this.cdGpId" :value="this.cdGpId" />
                 </td>
                 <th>상위코드그룹ID</th>
                 <td>
-                  <input-component :input-class="'class5'" :class="this.type===2 ? 'input_disabled':'input'" :disabled="disabled" v-model="this.upCdGpId" :value="this.upCdGpId" />
+                  <input-component :input-class="'input-type5'" :class="this.type===2 ? 'input_disabled':'input'" :disabled="disabled" v-model="this.upCdGpId" :value="this.upCdGpId" />
                 </td>
               </tr>
               <tr>
                 <th>코드그룹명</th>
                 <td>
-                  <input-component class="input" :input-class="'class5 '" :class5Width="'220px'" v-model="this.cdGpNm" :value="this.cdGpNm" />
+                  <input-component class="input" :input-class="'input-type5 '" :width="'220px'" v-model="this.cdGpNm" :value="this.cdGpNm" />
                 </td>
                 <th>코드그룹영문명</th>
                 <td>
-                  <input-component class="input" :input-class="'class5 '" :class5Width="'220px'" v-model="this.cdGpEngNm" :value="this.cdGpEngNm" />
+                  <input-component class="input" :input-class="'input-type5 '" :width="'220px'" v-model="this.cdGpEngNm" :value="this.cdGpEngNm" />
                 </td>
               </tr>
               <tr>
                 <th>코드그룹 설명</th>
                 <td colspan="3">
-                  <input-component class="input" :input-class="'class5 '" :class5Width="'625px'" v-model="this.cdGpDesc" :value="this.cdGpDesc" />
+                  <input-component class="input" :input-class="'input-type5 '" :width="'625px'" v-model="this.cdGpDesc" :value="this.cdGpDesc" />
                 </td>
               </tr>
               <tr>

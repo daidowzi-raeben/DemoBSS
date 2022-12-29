@@ -18,7 +18,7 @@
         <span style="float: right">
           <button-component
               v-if="type===1"
-              :btn-class="'btnClass4'"
+              :btn-class="'btn-type4'"
               :btnFontWeight="'bold'"
               :btn-name ="'등록'"
               :btnHeight="'28px'"
@@ -27,7 +27,7 @@
           />
           <button-component
               v-if="type===2"
-              :btn-class="'btnClass4'"
+              :btn-class="'btn-type4'"
               :btnFontWeight="'bold'"
               :btn-name ="'변경'"
               :btnHeight="'28px'"
@@ -44,37 +44,37 @@
               <tr>
                 <th>코드그룹ID</th>
                 <td>
-                  <input-component :class="this.type===2 ? 'input_disabled':'input'" :input-class="'class5'" :disabled="disabled" v-model="this.cdGpId" :value="this.cdGpId" />
+                  <input-component :class="this.type===2 ? 'input_disabled':'input'" :input-class="'input-type5'" :disabled="disabled" v-model="this.cdGpId" :value="this.cdGpId" />
                 </td>
                 <th>상위코드그룹ID</th>
                 <td>
-                  <input-component :class="this.type===2 ? 'input_disabled':'input'" :input-class="'class5'" :disabled="disabled" v-model="this.upCdGpId" :value="this.upCdGpId" />
+                  <input-component :class="this.type===2 ? 'input_disabled':'input'" :input-class="'input-type5'" :disabled="disabled" v-model="this.upCdGpId" :value="this.upCdGpId" />
                 </td>
               </tr>
               <tr>
                 <th>코드ID</th>
                 <td>
-                  <input-component :class="this.type===2 ? 'input_disabled':'input'" :input-class="'class5'" :disabled="disabled" v-model="this.cdId" :value="this.cdId" />
+                  <input-component :class="this.type===2 ? 'input_disabled':'input'" :input-class="'input-type5'" :disabled="disabled" v-model="this.cdId" :value="this.cdId" />
                 </td>
                 <th>상위코드ID</th>
                 <td>
-                  <input-component :class="this.type===2 ? 'input_disabled':'input'" :input-class="'class5'" :disabled="disabled" v-model="this.upCdId" :value="this.upCdId" />
+                  <input-component :class="this.type===2 ? 'input_disabled':'input'" :input-class="'input-type5'" :disabled="disabled" v-model="this.upCdId" :value="this.upCdId" />
                 </td>
               </tr>
               <tr>
                 <th>코드명</th>
                 <td>
-                  <input-component class="input" :input-class="'class5 '" :class5Width="'220px'" v-model="this.cdNm" :value="this.cdNm" />
+                  <input-component class="input" :input-class="'input-type5 '" :width="'220px'" v-model="this.cdNm" :value="this.cdNm" />
                 </td>
                 <th>표준코드ID</th>
                 <td>
-                  <input-component :class="this.type===2 ? 'input_disabled':'input'" :input-class="'class5 '" :disabled="disabled" :class5Width="'220px'" v-model="this.stdCdId" :value="this.stdCdId" />
+                  <input-component :class="this.type===2 ? 'input_disabled':'input'" :input-class="'input-type5 '" :disabled="disabled" :width="'220px'" v-model="this.stdCdId" :value="this.stdCdId" />
                 </td>
               </tr>
               <tr>
                 <th>코드설명</th>
                 <td colspan="3">
-                  <input-component class="input" :input-class="'class5 '" :class5Width="'625px'" v-model="this.cdDesc" :value="this.cdDesc" />
+                  <input-component class="input" :input-class="'input-type5 '" :width="'625px'" v-model="this.cdDesc" :value="this.cdDesc" />
                 </td>
               </tr>
               <tr>
@@ -85,7 +85,7 @@
                 </td>
                 <th>코드출력순서</th>
                 <td>
-                  <input-component class="input" :input-class="'class5'" :value="this.cdOtputOdrg" v-model="this.cdOtputOdrg" />
+                  <input-component class="input" :input-class="'input-type5'" :value="this.cdOtputOdrg" v-model="this.cdOtputOdrg" />
                 </td>
               </tr>
               <tr>

@@ -5,7 +5,7 @@
       <span style="float: right">
         <button-component
           v-show="fileRowData.length>0"
-          :btnClass="'btnClass4'"
+          :btnClass="'btn-type4'"
           :btnName="'파일삭제'"
           :btnHeight="'28px'"
           :btnWidth="'78px'"
@@ -20,7 +20,7 @@
           style="display: none"
         />
         <button-component
-          :btnClass="'btnClass4'"
+          :btnClass="'btn-type4'"
           :btnName="'파일첨부'"
           :btnHeight="'28px'"
           :btnWidth="'78px'"

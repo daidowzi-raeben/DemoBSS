@@ -119,7 +119,7 @@
     </div><div>
     <span> 주소 검색  </span>
     <input-component
-        :inputClass="'class5'"
+        :inputClass="'input-type5'"
         style="width:210px; margin:0 3px;"
         :height="'30px'"
         :placeholder="'주소를 입력해 주세요.'"
@@ -127,7 +127,7 @@
     />
     <button-component
         @click="postCodePopup"
-        :btnClass="'btnClass3'"
+        :btnClass="'btn-type3'"
         :btnName="'주소 검색'"
         :btnHeight="'30px'"
     />

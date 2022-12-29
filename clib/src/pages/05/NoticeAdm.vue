@@ -52,7 +52,7 @@
 
           <td class="btnBox">
             <button-component
-              :btn-class="'btnClass4'"
+              :btn-class="'btn-type4'"
               :btnFontWeight="'bold'"
               :btn-name="'검색'"
               :btnHeight="'28px'"
@@ -94,7 +94,7 @@
 
           <td>
             <button-component
-              :btnClass="'btnClass2'"
+              :btnClass="'btn-type2'"
               :btnHeight="'28px'"
               :btnWidth="'78px'"
               :btnFontWeight="'bold'"
@@ -113,16 +113,16 @@
         </p>
         <span style="float: right">
           <button-component
-            :btnClass="'btnClass3'"
+            :btnClass="'btn-type3'"
             :btnName="btnNames[0]"
             @click="clickUserRegister()"
           />
           <button-component
-            :btnClass="'btnClass3'"
+            :btnClass="'btn-type3'"
             :btnName="btnNames[1]"
             @click="clickUserAmend()"
           />
-          <button-component :btnClass="'btnClass3'" :btnName="btnNames[2]" />
+          <button-component :btnClass="'btn-type3'" :btnName="btnNames[2]" />
         </span>
         </div>
 
@@ -173,7 +173,7 @@
         <sub-info-title :subInfoTitleNm="'공지사항 상세정보'" />
         <span style="float: right">
           <button-component
-            :btnClass="'btnClass2'"
+            :btnClass="'btn-type2'"
             :btnWidth="'60px'"
             :btnName="noticeAdmObject.sttus == 'amend' ? '변경' : '등록'"
             @click="popup"
@@ -187,8 +187,8 @@
               <th><label-component :labelNm="'제목'" /></th>
               <td colspan="3">
                 <input-component
-                  :input-class="'class2'"
-                  :class2Width="'300px'"
+                  :input-class="'input-type2'"
+                  :width="'300px'"
                   :placeholder="'공지사항 제목'"
                   :value="noticeAdmObject.ntfTitle"
                   v-model="noticeAdmObject.ntfTitle"
@@ -200,9 +200,9 @@
               <th><label-component :labelNm="'작성자'" /></th>
               <td>
                 <input-component
-                  :class2Width="'150px'"
-                  :input-class="'class2'"
-                  :class2-background-color="'rgb(251, 253, 255)'"
+                  :width="'150px'"
+                  :input-class="'input-type2'"
+                  :inputType2BackgroundColor="'rgb(251, 253, 255)'"
                   :disabled="true"
                   :placeholder="'System'"
                   :value="noticeAdmObject.ntfRegr"
@@ -211,9 +211,9 @@
               <th><label-component :labelNm="'작성일자'" /></th>
               <td>
                 <input-component
-                  :class2Width="'200px'"
-                  :input-class="'class2'"
-                  :class2-background-color="'rgb(251, 253, 255)'"
+                  :width="'200px'"
+                  :input-class="'input-type2'"
+                  :inputType2BackgroundColor="'rgb(251, 253, 255)'"
                   :disabled="true"
                   :placeholder="'  '"
                   :value="noticeAdmObject.ntfRegrDt.toLocaleString()"
