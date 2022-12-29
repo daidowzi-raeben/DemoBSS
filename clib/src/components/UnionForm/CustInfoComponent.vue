@@ -12,7 +12,7 @@
             :type="'text'"
             :height="'28px'"
             :width="'140px'"
-            :input-class="'class1'"
+            :input-class="'input-type'"
             :placeholder="'CC10001671'"
             :disabled="true"
         />
@@ -25,7 +25,7 @@
             :type="'text'"
             :height="'28px'"
             :width="'140px'"
-            :input-class="'class1'"
+            :input-class="'input-type'"
             :placeholder="'농협협단계합***'"
             :disabled="true"
         />
@@ -38,7 +38,7 @@
             :type="'text'"
             :height="'28px'"
             :width="'140px'"
-            :input-class="'class1'"
+            :input-class="'input-type'"
             :placeholder="'법인사업자'"
             :disabled="true"
         />
@@ -51,7 +51,7 @@
             :type="'text'"
             :height="'28px'"
             :width="'140px'"
-            :input-class="'class1'"
+            :input-class="'input-type'"
             :placeholder="'Major Corporate'"
             :disabled="true"
         />
@@ -64,7 +64,7 @@
             :type="'text'"
             :height="'28px'"
             :width="'140px'"
-            :input-class="'class1'"
+            :input-class="'input-type'"
             :placeholder="'국내'"
             :disabled="true"
         />
@@ -79,7 +79,7 @@
             :type="'text'"
             :height="'28px'"
             :width="'140px'"
-            :input-class="'class1'"
+            :input-class="'input-type'"
             :placeholder="'110136-0027690'"
             :disabled="true"
         />
@@ -92,7 +92,7 @@
             :type="'text'"
             :height="'28px'"
             :width="'140px'"
-            :input-class="'class1'"
+            :input-class="'input-type'"
             :placeholder="'104-82-*****'"
             :disabled="true"
         />
@@ -105,7 +105,7 @@
             :type="'text'"
             :height="'28px'"
             :width="'140px'"
-            :input-class="'class1'"
+            :input-class="'input-type'"
             :placeholder="'협동조합'"
             :disabled="true"
         />
@@ -118,7 +118,7 @@
             :type="'text'"
             :height="'28px'"
             :width="'140px'"
-            :input-class="'class1'"
+            :input-class="'input-type'"
             :placeholder="'공공,개인'"
             :disabled="true"
         />
@@ -133,7 +133,7 @@
             :type="'text'"
             :height="'28px'"
             :width="'140px'"
-            :input-class="'class1'"
+            :input-class="'input-type'"
             :placeholder="'이배*'"
             :disabled="true"
         />
@@ -146,7 +146,7 @@
             :type="'text'"
             :height="'28px'"
             :width="'140px'"
-            :input-class="'class1'"
+            :input-class="'input-type'"
             :placeholder="'이동*'"
             :disabled="true"
         />
@@ -159,7 +159,7 @@
             :type="'text'"
             :height="'28px'"
             :width="'80px'"
-            :input-class="'class1'"
+            :input-class="'input-type'"
             :placeholder="'12345'"
             :disabled="true"
         />
@@ -168,7 +168,7 @@
             :type="'text'"
             :height="'28px'"
             :width="'300px'"
-            :input-class="'class1'"
+            :input-class="'input-type'"
             :placeholder="'서울시 강남구 학동로 1111'"
             :disabled="true"
         />
@@ -181,7 +181,7 @@
             :type="'text'"
             :height="'28px'"
             :width="'140px'"
-            :input-class="'class1'"
+            :input-class="'input-type'"
             :placeholder="'010-11**-****'"
             :disabled="true"
         />

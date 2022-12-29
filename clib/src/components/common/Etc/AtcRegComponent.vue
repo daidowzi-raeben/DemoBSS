@@ -17,7 +17,7 @@
             :type="'text'"
             :height="20"
             :width="250"
-            :input-class="'class1'"
+            :input-class="'input-type'"
             v-model="atcValue"
             :placeholder="'비고 입력'"
             @input="

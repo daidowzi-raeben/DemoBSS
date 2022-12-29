@@ -45,7 +45,7 @@ export default {
     },
     inputClass: {
       type:String,
-      default:"class1",
+      default:"input-type",
     },
     disabled:{
       type:Boolean,
@@ -78,7 +78,7 @@ input {
   font-family: 'noto-sans-kr';
 }
 /*정보 스타일*/
-.class1 {
+.input-type {
   background-color: #f2f2f2;
   border : #e4e4e4 1px solid;
   font-size: 12pt;

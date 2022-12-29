@@ -372,7 +372,7 @@
         :type="'search'"
         :height="20"
         :width="150"
-        :input-class="'class1'"
+        :input-class="'input-type'"
         v-model="searchValue"
         :placeholder="'입력'"
         @input="

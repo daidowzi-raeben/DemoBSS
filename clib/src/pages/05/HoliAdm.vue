@@ -146,7 +146,7 @@
         <td>
           <date-picker-component
               :classWrapper="'calender_input'"
-              :width="'100px'"
+              :width="'200px'"
               :type="'year'"
               :date-format="'yyyy년'"
               :pDate="holiAdmObject.caldrStDt"
@@ -161,7 +161,7 @@
         <td>
           <date-picker-component
               :classWrapper="'calender_input'"
-              :width="'100px'"
+              :width="'200px'"
               :type="'year'"
               :date-format="'yyyy년'"
               :pDate="holiAdmObject.caldrEndDt"
