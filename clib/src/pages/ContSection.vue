@@ -15,14 +15,14 @@ export default {
   components: {TabComponent},
   data() {
     return {
-      comp: "cont_01_01_01",
-      cur_num: 0,
+      comp: "a",
+      // cur_num: 0,
       compm: [
         {
-          "menuId": "cont_01_01_01",
-          "menuNm": "계약상세",
-          "upMenuId": "cont_01_01",
-          "cmpnId": "ContMgt"
+          "menuId": "a",
+          "menuNm": "adfasdf",
+          // "upMenuId": "cont_01_01",
+          // "cmpnId": "ContMgt"
         },
       ],
       compm2: [],
@@ -30,11 +30,7 @@ export default {
           defineAsyncComponent(() => import("../components/Cont/ContMgt.vue")),
       ),
     };
-  },
-  computed: {
-  },
-  methods: {
-  },
+  }
 };
 </script>
 

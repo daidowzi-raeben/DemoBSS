@@ -122,7 +122,7 @@ export default {
             // cmpnId 가공하기 
             this.component = markRaw(                         //추가될 컴포넌트를 import를 통해 불러온다. 고정된 컴포넌트의 경우 이방식을 통해 사전에 불러와야한다.
                 defineAsyncComponent(() =>
-                    import("../" +this.menuType +"/" + this.compm[this.cur_num].cmpnId + ".vue")
+                    import("@/components/" +this.menuType +"/" + this.compm[this.cur_num].cmpnId + ".vue")
                 )
             );
             this.compm2.push(this.component);                  //불러온 컴포넌트를 compm2 배열에 넣는다.
