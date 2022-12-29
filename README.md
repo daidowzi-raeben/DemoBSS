@@ -166,7 +166,7 @@ export default {
 
 ***
 ###  InputComponent
-**props:**
+**props**
 - placeholder : 입력 전 예시 값
 - type : 입력창의 타입 (ex. text, search)
 - width : 입력창 가로 길이 (기본 : 140px)
@@ -175,22 +175,22 @@ export default {
 - disabled : 입력창 입력 불가 여부 (기본 : false)
 - value : 입력창 값
 
-**주요특징:**
+**주요특징**
 - emit가 아닌 v-model을 통해 데이터 송수신
 - 입력창 스타일 (`input-type`, `input-type2`, `input-type3`, `input-type4`, `input-type5`)
 
-**호출소스***
+**호출소스**
 ```
-        <input-component
-            :type="'text'"                  #입력 폼 타입
-            :height="'28px'"                #입력창의 높이
-            :width="'140px'"                #입력창의 가로길이
-            :input-class="'input-type'"         #입력창의 스타일 지정 클래스
-            :value="inputValue"                  # 입력 값 ( input component에 전달하는 입력 값)
-            v-model="inputValue"                 # 입력한 내용을 저장할 변수 (해당 컴포넌트)
-            :placeholder="'010-11**-****'"  #입력 전 예시
-            :disabled="true"                #입력 가능 여부
-        />
+<input-component
+    :type="'text'"                  #입력 폼 타입
+    :height="'28px'"                #입력창의 높이
+    :width="'140px'"                #입력창의 가로길이
+    :input-class="'input-type'"         #입력창의 스타일 지정 클래스
+    :value="inputValue"                  # 입력 값 ( input component에 전달하는 입력 값)
+    v-model="inputValue"                 # 입력한 내용을 저장할 변수 (해당 컴포넌트)
+    :placeholder="'010-11**-****'"  #입력 전 예시
+    :disabled="true"                #입력 가능 여부
+/>
 ```
 
 **예시**
@@ -212,11 +212,11 @@ export default {
 - isDisabled    : 셀렉트박스 선택 사항 클릭 시, 기본 선택 사항(placeholder) 선택 불가 및 hidden 처리에 대한 여부
 - selectType1MarginLeft : 셀렉트박스 스타일 클래스 select-type1에 margin-left 적용  ( default : 10px)
 
-**emit:**
+**emit**
 - emitValue : 선택 값의 code를 부모 컴포넌트에게 반환.
 - width, height 기본 값으로 부모 tag의 100%로 지정되어 있기때문에 별도의 props( :width, :height )로 사이즈 지정 필요.
 
-**주요특징:**
+**주요특징**
 - 예시
 
 <p align="center">
@@ -251,6 +251,10 @@ export default {
 **주요특징:**
 - 버튼 스타일 (`btn-type`, `btn-type2`,`btn-type3`, `btn-type4`)
 
+**예시**
+
+<img width="400" height="400" src="./readMeImg/buttonComponent.png" title="selectBox-first">
+
 ***
 ### AgGridComponent
 **props:**
@@ -263,8 +267,7 @@ export default {
 - isAutoHeight  : 세로 스크롤 표시하는지
 - isAutoSize    : ag-grid 감싸고 있는 박스 크기에 맞출지 여부 및 타입 결정하는 배열 데이터 [Boolean, String]
   - isAutoSize[0] = 감싸고 있는 박스 크기에 자동 fit 하는 함수 사용할 것인지에 대한 boolean 값 ( true: 동의, false: 거부. columnDefs에서 지정한 wiedth에 맞춘 크기 사용)
-  - isAutoSize[1] = 자동 fit 하는 함수 사용하지 않을 경
-  - 우(columnDefs에서 지정한 width에 따라 출력할 경우), 타입 선택 ( type 1, 2,3 )
+  - isAutoSize[1] = 자동 fit 하는 함수 사용하지 않을 경우 (columnDefs에서 지정한 width에 따라 출력할 경우), 타입 선택 ( type 1, 2, 3 )
 - isDeselect    : 여러 row 클릭 가능하게 할 지 여부 (여기서 기능은 같은 row를 2번 클릭하면 해당 row 클릭 해제가 됩니다.)
 - headerColor   : column 헤더의 색 지정
 - headerHeight  : column 헤더의 높이 지정
@@ -377,13 +380,13 @@ export default {
 
 **호출소스**
 ```
-      <ChkBoxComponent
-          :CheckOptions='["체크옵션1","체크옵션2","체크옵션3","체크옵션4","체크옵션5",]'    #체크박스로 보여줄 데이터배열
-          :check-box-size="'20px'"                                  #체크박스의 박스 크기 지정      
-          :check-text-size="'10px'"                                 #체크박스의 글자 크기 지정
-          :showCheckOpt="true"                                      #체크박스 선택한 내역 출력 여부
-          :checkBoxColor="'#eee'"                                   #체크박스 색상 지정
-      />
+<ChkBoxComponent
+   :CheckOptions='["체크옵션1","체크옵션2","체크옵션3","체크옵션4","체크옵션5",]'    #체크박스로 보여줄 데이터배열
+   :check-box-size="'20px'"                                  #체크박스의 박스 크기 지정      
+   :check-text-size="'10px'"                                 #체크박스의 글자 크기 지정
+   :showCheckOpt="true"                                      #체크박스 선택한 내역 출력 여부
+   :checkBoxColor="'#eee'"                                   #체크박스 색상 지정
+/>
 ```
 
 **예시**
@@ -421,7 +424,7 @@ export default {
 **예시**
 
 <p align="left">
-  <img width="80%" height="130" src="./readMeImg/textArea.png" title="textArea"> &nbsp;
+  <img width="80%" height="130" src="./readMeImg/textArea.png" title="textArea">
 </p>
 
 
@@ -437,14 +440,14 @@ export default {
 **호출소스:**
 ```
 <LabelComponent
-          :label-nm="'Label 컴포넌트'"    #라벨에 대한 이름 지정
-          :labelClass="'label-type'"     #라벨에 대한 스타일 지정
-      />
+    :label-nm="'Label 컴포넌트'"    #라벨에 대한 이름 지정
+    :labelClass="'label-type'"     #라벨에 대한 스타일 지정
+/>
 ```
 
 **예시**
 
-<img width="200" height="50" src="./readMeImg/label.png"  title="datePickerDaily">&nbsp;
+<img width="100" height="50" src="./readMeImg/label.png"  title="datePickerDaily">
 
 ***
 ### DatePickerComponent
@@ -681,10 +684,10 @@ export default {
 
 **호출 코드**
 ```
-      <link-component
-          :destination="'/'"                    #link에 대한 url
-          :linkNm="'링크 컴포넌트(mounse over)'"  #link명  
-      />
+<link-component
+    :destination="'/'"                    #link에 대한 url
+    :linkNm="'링크 컴포넌트(mounse over)'"  #link명  
+/>
 ```
 
 **예시**
@@ -710,11 +713,11 @@ export default {
 
 **호출코드**
 ```
-      <PageTitle
-          :current-menu="currentMenu"                   #json파일에 있는 메뉴 정보들
-          :stateOfBookMark="false"                      #즐겨찾기 등록 여부
-          @stateOfBookMark="stateOfBookMark = value"    #제목 클릭에 따른 즐겨찾기 등록 변경 함수
-        />
+<PageTitle
+   :current-menu="currentMenu"                   #json파일에 있는 메뉴 정보들
+   :stateOfBookMark="false"                      #즐겨찾기 등록 여부
+   @stateOfBookMark="stateOfBookMark = value"    #제목 클릭에 따른 즐겨찾기 등록 변경 함수
+/>
 ```
 
 **예시**
@@ -789,11 +792,11 @@ pageableData: {
 **호출코드**
 ```
 <popup-component
-          v-if="isModalShow"                #팝업 출력 여부 true면 출력 false면 출력하지 않음
-          @popup="isModalShow = false"      #팝업 창에서 취소 버튼 클릭시 호출되는 함수
-          @AGREE = "''"                     #팝업 창에서 확인 버튼 클릭시 호출되는 함수
-          :popupmsg="'여기가 팝업 메세지 '"    #팝업 창에서 보여줄 메시지의 내용
-      />
+     v-if="isModalShow"                #팝업 출력 여부 true면 출력 false면 출력하지 않음
+     @popup="isModalShow = false"      #팝업 창에서 취소 버튼 클릭시 호출되는 함수
+     @AGREE = "''"                     #팝업 창에서 확인 버튼 클릭시 호출되는 함수
+     :popupmsg="'여기가 팝업 메세지 '"    #팝업 창에서 보여줄 메시지의 내용
+/>
 ```
 
 
@@ -820,7 +823,7 @@ pageableData: {
   :defaultcdId="isShowYn"                                 # 기본 선택 값(코드 값) 지정
   :selectedRadio="isShowYn"                               # 변경 된 선택 값 컴포넌트에 반영(props)
   @radioEmit="(radioValue) => { isShowYn = radioValue }"  # 반영 된 값의 코드 값 반환
-  />
+/>
 ```
 
 **예시**
@@ -846,12 +849,12 @@ pageableData: {
 
 **호출코드**
 ```
-      <TabComponent
-          :menu-type="'Cont'"      #탭으로 호출될 컴포넌트들을 담은 폴더 명
-          :comp-array="compm"      #menuID, menuNm, upMenuId, cmpnId와 같은 컴포넌트에 대한 정보들을 담고 있는 배열
-          :comp-name="comp"        #컴포넌트의 menuId     
-          :comp-value="component"  #defineAsyncComponent를 통해 불러온 컴포넌트에 대한 주소
-      />
+<TabComponent
+     :menu-type="'Cont'"      #탭으로 호출될 컴포넌트들을 담은 폴더 명
+     :comp-array="compm"      #menuID, menuNm, upMenuId, cmpnId와 같은 컴포넌트에 대한 정보들을 담고 있는 배열
+     :comp-name="comp"        #컴포넌트의 menuId     
+     :comp-value="component"  #defineAsyncComponent를 통해 불러온 컴포넌트에 대한 주소
+/>
 ```
 "menuId": "L01M05S01",
 "menuNm": "청약정보",
@@ -872,26 +875,26 @@ pageableData: {
 
 **호출코드**
 ```
-        <ag-grid-component
-            :rowData="renderRowData"        #출력할 행에 대한 데이터
-            :columnDefs="renderColumns"     #출력한 열에 대한 데이터 및 cellRender에 대한 설정
-            :row-height="40"                #행의 높이
-        />
+<ag-grid-component
+   :rowData="renderRowData"        #출력할 행에 대한 데이터
+   :columnDefs="renderColumns"     #출력한 열에 대한 데이터 및 cellRender에 대한 설정
+   :row-height="40"                #행의 높이
+/>
 ------------------------------------------------------------------
-        renderColumns:[
-        {headerName: "AutCdGpNm" ,field: "model1",
-          cellRenderer :'AutCdGpNm',                # AutCdGpNm 컴포넌트 렌더
-          cellRendererParams: {                     # 컴포넌트 렌더에 대한 반환값
-            clicked: function (field) {             # 반환값을 받기 위한 매칭 함수
-              console.log(field);
-            }
-          },
-          width: 250                                # 해당 열의 가로 길이
-        },
-      ],
+renderColumns:[
+   {headerName: "AutCdGpNm" ,field: "model1",
+    cellRenderer :'AutCdGpNm',                # AutCdGpNm 컴포넌트 렌더
+    cellRendererParams: {                     # 컴포넌트 렌더에 대한 반환값
+       clicked: function (field) {             # 반환값을 받기 위한 매칭 함수
+           console.log(field);
+       }
+    },
+    width: 250                                # 해당 열의 가로 길이
+   },
+],
 ------------------------------------------------------------------      
-      -AutCdGpNm.vue-
-      this.params.clicked(this.cdGpValue);      <- cellRendererParams와 매칭
+-AutCdGpNm.vue-
+this.params.clicked(this.cdGpValue);      <- cellRendererParams와 매칭
 
 ```
 **예시**
@@ -948,22 +951,22 @@ pageableData: {
 **호출코드**
 ```
 --------탭을 생성하는 코드--------------------------------------------------
-        #탭의 정보(menuId, menuNm)들을 담고있는 변수 autComp를 활용해 탭을 생성
-        <div v-for="(item, index) in autComp" v-bind:key="index">   
-          <div
-              :class="{     # 현재 선택하여 활성화된 탭과 비활성된 탭을 구분하기 위해 class를 나눔
-              tabon: this.compId === item.menuId,
-              taboff: this.compId !== item.menuId,
-              menu_tab: true,
-            }"
-              # 다른 탭을 눌렀을 때 호출되는 함수 누른 탭의 menuId와 탭의 Index를 같이 넘긴다.
-              @click="ChageComponent(item.menuId, index)"
-          >
-            <span id="tab_nm">
-              {{ item.menuNm }}   #탭의 정보에 들어있는 탭의 이름을 출력한다.
-            </span>
-          </div>
-        </div>
+#탭의 정보(menuId, menuNm)들을 담고있는 변수 autComp를 활용해 탭을 생성
+<div v-for="(item, index) in autComp" v-bind:key="index">   
+  <div
+      :class="{     # 현재 선택하여 활성화된 탭과 비활성된 탭을 구분하기 위해 class를 나눔
+      tabon: this.compId === item.menuId,
+      taboff: this.compId !== item.menuId,
+      menu_tab: true,
+      }"
+      # 다른 탭을 눌렀을 때 호출되는 함수 누른 탭의 menuId와 탭의 Index를 같이 넘긴다.
+      @click="ChageComponent(item.menuId, index)"
+   >
+     <span id="tab_nm">
+        {{ item.menuNm }}   #탭의 정보에 들어있는 탭의 이름을 출력한다.
+     </span>
+  </div>
+</div>
 --------------------------------------------------------------------------
 --------컴포넌트를 생성하는 코드----------------------------------------------
          # 호출하여 가져온 컴포넌트 오브젝트들을 담고 있는 autCompAddr
@@ -1067,31 +1070,31 @@ pageableData: {
 **호출코드**
 
 ```
-      <msf-tree
-                :source="contentTree"                         #트리에 넣을 데이터
+<msf-tree
+       :source="contentTree"                         #트리에 넣을 데이터
                                                               #해당 데이터에 있는 children 값과 badge값에 따라
                                                               #뱃지 출력및 트리 형태가 정해진다.
-                :label-field="directoryName"                        #트리에서 호출할 필드명
-                :id-field="directoryName"                           #트리의 필드에 고유 id로 쓸 필드 지정
-                :expandDepth="1                                     #트릐의 최대 깊이
-                ref="tree"                                         #부모에서 자식접근을 위한 참조변수
-                @itemClick="(value)=>{treeItemClick = value}"      #행 클릭에 대해 처리하는 함수
-                :filterFunction="함수"                               #필터할 내용에 대한 함수
-                style="width:100%; height:100%;font-size: 12pt;"    
-      ></msf-tree>
+       :label-field="directoryName"                        #트리에서 호출할 필드명
+       :id-field="directoryName"                           #트리의 필드에 고유 id로 쓸 필드 지정
+       :expandDepth="1                                     #트릐의 최대 깊이
+       ref="tree"                                         #부모에서 자식접근을 위한 참조변수
+       @itemClick="(value)=>{treeItemClick = value}"      #행 클릭에 대해 처리하는 함수
+       :filterFunction="함수"                               #필터할 내용에 대한 함수
+       style="width:100%; height:100%;font-size: 12pt;"    
+></msf-tree>
       
 ------------source의 데이터 형식------------------------------------------------------------
-     source = : [{
-        groupId : ,
-        directoryName : ,
-        badge0: ,
-        children : [
-        { groupId : , directoryName : , badge1 : ,badge2 : ,badge3 : ,badge4 : ,}
-        , ...
-        ]
-       },
-       ...
-      ]
+source = : [{
+   groupId : ,
+   directoryName : ,
+   badge0: ,
+   children : [
+    { groupId : , directoryName : , badge1 : ,badge2 : ,badge3 : ,badge4 : ,}
+    , ...
+   ]
+  },
+ ...
+]
 -----------filterFunction 형식------------------------------------------------------------
 참고) CommonView1.vue의 filter 함수 참고
 filterFunction(item){    
@@ -1127,11 +1130,11 @@ filterFunction(item){
 
 **호출코드**
 ```
-      <BtExeInfoPopup
-          v-if="isModelBtExeInfoShow"       #팝업 출력을 위한 조건
-          :value="null"                     #팝업창에서 보여줄 데이터의 값
-          @close="closeBtInfoModal"         #X표시를 눌렀을 때 호출되는 함수
-      />
+<BtExeInfoPopup
+   v-if="isModelBtExeInfoShow"       #팝업 출력을 위한 조건
+   :value="null"                     #팝업창에서 보여줄 데이터의 값
+   @close="closeBtInfoModal"         #X표시를 눌렀을 때 호출되는 함수
+/>
 ```
 
 **예시**
@@ -1148,14 +1151,14 @@ filterFunction(item){
 
 **호출코드**
 ```
-      <CdGpLstPopup
-          v-if="isCdGpModalShow"            #팝업 출력을 위한 조건
-          :type="1"                         #등록/변경 로직 처리를 위한 타입값
-          :value="null"                     #팝업창에 넣을 데이터
-          @close="closeCdGpModal"           #x를 눌렀을 때 호출되는 함수
-          @submit="''"                      #등록 버튼을 눌렀을때 호출되는 함수
-          @update="''"                      #변경 버튼을 눌렀을때 호출되는 함수
-        />
+<CdGpLstPopup
+     v-if="isCdGpModalShow"            #팝업 출력을 위한 조건
+     :type="1"                         #등록/변경 로직 처리를 위한 타입값
+     :value="null"                     #팝업창에 넣을 데이터
+     @close="closeCdGpModal"           #x를 눌렀을 때 호출되는 함수
+     @submit="''"                      #등록 버튼을 눌렀을때 호출되는 함수
+     @update="''"                      #변경 버튼을 눌렀을때 호출되는 함수
+/>
 ```
 
 **예시**
@@ -1169,14 +1172,14 @@ filterFunction(item){
 
 **호출코드**
 ```
-      <CdLstPopup
-          v-if="isCdLstModalShow"             #팝업 출력을 위한 조건   
-          :type="1"                           #등록/변경 로직 처리를 위한 타입값
-          :value="null"                       #팝업창에 넣을 데이터
-          @close="closeCdLstModal"            #x를 눌렀을 때 호출되는 함수
-          @submit="''"                        #등록 버튼을 눌렀을때 호출되는 함수
-          @update="''"                        #변경 버튼을 눌렀을때 호출되는 함수
-      />
+<CdLstPopup
+     v-if="isCdLstModalShow"             #팝업 출력을 위한 조건   
+     :type="1"                           #등록/변경 로직 처리를 위한 타입값
+     :value="null"                       #팝업창에 넣을 데이터
+     @close="closeCdLstModal"            #x를 눌렀을 때 호출되는 함수
+     @submit="''"                        #등록 버튼을 눌렀을때 호출되는 함수
+     @update="''"                        #변경 버튼을 눌렀을때 호출되는 함수
+/>
 ```
 
 **예시**
@@ -1254,20 +1257,20 @@ filterFunction(item){
 - input 컴포넌트 대신 사용 가능, 사용시 위로 플로팅 되는 부분까지 생각하여 폼 구축 해야함.
 
 **호출코드**
-```aidl
-       <FloatingLabelsComponent
-        :placeholder="'입력'"                    #active되지 않은 상태의 글
-        :value="'label'"                        #active된 상태의 글
-        :maxlength="10"                         #입력 가능한 최대 글자 수
-        :type="'text'"                          #입력 타입
-        :text-color="'red'"                     #글자 색상
-        :line-color="'blue'"                    #밑줄 색상
-        :close-btn-color="'black'"              #X버튼 색상
-        :placeholder-color="'blue'"             #active되지 않은 상태의 글 색상
-        :font-size="20"                         #글자 크기
-        :text-offset-bot="18"                   #밑줄과의 간격을 조정하기 위한 margin-top 값
-        @emitValue="(value) =>{data = value}"   #입력받은 값 반환을 위한 함수
-      />
+```
+<FloatingLabelsComponent
+   :placeholder="'입력'"                    #active되지 않은 상태의 글
+   :value="'label'"                        #active된 상태의 글
+   :maxlength="10"                         #입력 가능한 최대 글자 수
+   :type="'text'"                          #입력 타입
+   :text-color="'red'"                     #글자 색상
+   :line-color="'blue'"                    #밑줄 색상
+   :close-btn-color="'black'"              #X버튼 색상
+   :placeholder-color="'blue'"             #active되지 않은 상태의 글 색상
+   :font-size="20"                         #글자 크기
+   :text-offset-bot="18"                   #밑줄과의 간격을 조정하기 위한 margin-top 값
+   @emitValue="(value) =>{data = value}"   #입력받은 값 반환을 위한 함수
+/>
 ```
 
 **예시**
@@ -1316,17 +1319,17 @@ filterFunction(item){
 
 **호출코드**
 ```
-      <ToastComponent
-          v-if="chk"
-          :id="id"                              #Toast 메시지에 대한 고유 ID
-          :message="'hello'"                    #Toast 메시지의 내용
-          :vertical-position="'bottom'"         #세로 위치 지정을 위한 값 (top, bottom)
-          :horizontal-position="'right'"        #가로 위치 지정을 위한 값(left, right)
-          :class-name="'wk-info'"               #배경색을 지정하기 위한 클래스(wk-alert, wk-warn, wk-info)
-          :closeable="true"                     #클릭으로 삭제할지에 대한 true/false
-          :duration="2000"                      #메시지가 자동으로 삭제되는 시간
-          :transition="'slide-right'"           #애니메이션을 위한 transition name 지정을 위한 값('slide-down', 'slide-up', 'slide-left', 'slide-right', 'fade')
-      />
+<ToastComponent
+   v-if="chk"
+   :id="id"                              #Toast 메시지에 대한 고유 ID
+   :message="'hello'"                    #Toast 메시지의 내용
+   :vertical-position="'bottom'"         #세로 위치 지정을 위한 값 (top, bottom)
+   :horizontal-position="'right'"        #가로 위치 지정을 위한 값(left, right)
+   :class-name="'wk-info'"               #배경색을 지정하기 위한 클래스(wk-alert, wk-warn, wk-info)
+   :closeable="true"                     #클릭으로 삭제할지에 대한 true/false
+   :duration="2000"                      #메시지가 자동으로 삭제되는 시간
+   :transition="'slide-right'"           #애니메이션을 위한 transition name 지정을 위한 값('slide-down', 'slide-up', 'slide-left', 'slide-right', 'fade')
+/>
 ```
 
 **예시**
@@ -1422,15 +1425,15 @@ filterFunction(item){
 
 **호출코드**
 ```
-      <aut-retv-component
-          :title="'조회기준'"                       #제목 명
-          :sel-default-value="'조회기준 선택'"       #셀렉트 박스의 기본 값
-          :cd-group="'orgBase'"                    #셀렉트 박스의 코드그룹지정을 위한 값
-          @input="(value)=>{                       #컴포넌트 내의 선택한 값들을 받기 위한 함수
-        this.selectValues.searchValue = value[0];
-        this.selectValues.selValue = value[1];
-      }"
-      />
+<aut-retv-component
+    :title="'조회기준'"                       #제목 명
+    :sel-default-value="'조회기준 선택'"       #셀렉트 박스의 기본 값
+    :cd-group="'orgBase'"                    #셀렉트 박스의 코드그룹지정을 위한 값
+    @input="(value)=>{                       #컴포넌트 내의 선택한 값들을 받기 위한 함수
+    this.selectValues.searchValue = value[0];
+    this.selectValues.selValue = value[1];
+    }"
+/>
 ```
 
 **예시**
@@ -1449,17 +1452,17 @@ filterFunction(item){
 
 **호출코드**
 ```
-        <blc2-component
-            :sub-info-title-nm="'청약리스트'"     #제목명
-            :row-data="rowData"                 #Ag Grid에 들어갈 행 데이터
-            :column-defs="columnDefs"           #Ag Grid에 들어갈 열 데이터 및 헤더 정보
-            :select-box-show="false"            #select box 출력 여부
-            :cdGroup="'optionsSearchDiv'"       #셀렉트 박스의 코드그룹지정을 위한 값
-            :btnName1="'일괄정지 신청'"           #첫번째 버튼 명
-            :btnName2="'숨김해제'"               #두번째 버튼 명
-            :btnName3="'엑셀 다운로드'"           #세번째 버튼 명
-            :agGirdHeight="'500px'"             #Ag Grid 셀의 높이
-          />
+<blc2-component
+   :sub-info-title-nm="'청약리스트'"     #제목명
+   :row-data="rowData"                 #Ag Grid에 들어갈 행 데이터
+   :column-defs="columnDefs"           #Ag Grid에 들어갈 열 데이터 및 헤더 정보
+   :select-box-show="false"            #select box 출력 여부
+   :cdGroup="'optionsSearchDiv'"       #셀렉트 박스의 코드그룹지정을 위한 값
+   :btnName1="'일괄정지 신청'"           #첫번째 버튼 명
+   :btnName2="'숨김해제'"               #두번째 버튼 명
+   :btnName3="'엑셀 다운로드'"           #세번째 버튼 명
+   :agGirdHeight="'500px'"             #Ag Grid 셀의 높이
+/>
 ```
 
 **예시**
@@ -1481,15 +1484,15 @@ filterFunction(item){
 **호출코드**
 
 ```
-        <blc-component
-            :sub-info-title-nm="'요금정보'"      #제목명
-            :row-data="rowData"                 #Ag Grid에 들어갈 행 데이터
-            :column-defs="columnDefs"           #Ag Grid에 들어갈 열 데이터
-            :select-box-show="false"            #셀렉트 박스 출력 여부
-            :cdGroup="'optionsSearchDiv'"       #셀렉트 박스의 코드그룹 지정을 위한 값
-            :btnName="'엑셀다운'"                 #버튼 명
-            style="height: 110%"        
-        />
+<blc-component
+    :sub-info-title-nm="'요금정보'"      #제목명
+    :row-data="rowData"                 #Ag Grid에 들어갈 행 데이터
+    :column-defs="columnDefs"           #Ag Grid에 들어갈 열 데이터
+    :select-box-show="false"            #셀렉트 박스 출력 여부
+    :cdGroup="'optionsSearchDiv'"       #셀렉트 박스의 코드그룹 지정을 위한 값
+    :btnName="'엑셀다운'"                 #버튼 명
+    style="height: 110%"        
+/>
 ```
 
 **예시**
@@ -1541,16 +1544,14 @@ filterFunction(item){
 
 **호출코드**
 ```
-    <post-code-component
-        @FormPopup="isPostCodeModalShow = false"    #취소 버튼을 눌렀을 때 호출되는 함수
-        @selected-juso-data="selectedJuso"          #주소 선택시 호출되는 함수, 선택된 행에 대한 데이터도 같이 반환
-        :formDataPopupFrameWidth="'800px'"          #팝업 창의 가로 길이
-        :PopupTitleMsg="'주소 검색'"                  #팝업 창의 제목명
-        :reqtype="'searchPostCode'"                 #
-        ref="PostCodeComponent"                     #부모에서 자식 접근을 위한 참조
-        v-if="isPostCodeModalShow"                  #팝업 창의 출력 여부
-        :btnClicked ="0"                            #
-    />
+<post-code-component
+    @FormPopup="isPostCodeModalShow = false"    #취소 버튼을 눌렀을 때 호출되는 함수
+    @selected-juso-data="selectedJuso"          #주소 선택시 호출되는 함수, 선택된 행에 대한 데이터도 같이 반환
+    :formDataPopupFrameWidth="'800px'"          #팝업 창의 가로 길이
+    :PopupTitleMsg="'주소 검색'"                  #팝업 창의 제목명
+    ref="PostCodeComponent"                     #부모에서 자식 접근을 위한 참조
+    v-if="isPostCodeModalShow"                  #팝업 창의 출력 여부
+/>
 ```
 
 **예시**
@@ -1581,11 +1582,11 @@ filterFunction(item){
 
 **호출코드**
 ```
-        <retv-cond-component
-            :retvCondNm="'조회기준'"              #셀렉트박스에 대한 제목명
-            :selectCdGroup="'retvCond'"         #셀렉트 박스에 넣을 코드그룹을 지정하는 값
-            :selectDefltValue="'조회기준 선택'"   #셀렉트 박스의 기본 값
-        />
+<retv-cond-component
+   :retvCondNm="'조회기준'"              #셀렉트박스에 대한 제목명
+   :selectCdGroup="'retvCond'"         #셀렉트 박스에 넣을 코드그룹을 지정하는 값
+   :selectDefltValue="'조회기준 선택'"   #셀렉트 박스의 기본 값
+/>
 ```
 
 **예시**
@@ -1599,9 +1600,9 @@ filterFunction(item){
 
 **호출코드**
 ```
-        <subs-retv-component
-            cd-group="'retvCond'"   #셀렉트 박스에 넣을 코드그룹을 지정하는 값
-        />
+<subs-retv-component
+    cd-group="'retvCond'"   #셀렉트 박스에 넣을 코드그룹을 지정하는 값
+/>
 ```
 
 **예시**
@@ -1614,9 +1615,9 @@ filterFunction(item){
 
 **호출코드**
 ```
- <user-adm-retv-component
-    :cdGroup="cdGroup"              #셀렉트 박스에 넣을 코드그룹을 지정하는 값
- />
+<user-adm-retv-component
+  :cdGroup="cdGroup"              #셀렉트 박스에 넣을 코드그룹을 지정하는 값
+/>
 ```
 
 **예시**
