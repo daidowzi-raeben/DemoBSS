@@ -200,7 +200,7 @@ export default {
 
 ### SelectBoxComponent
 **props**
-- selectedValue :
+- selectedValue : 셀렉트박스의 내용 중 선택된 값
 - cdGroup       : 선택 사항(option) 지정하는 변수
 - selectClass   : 셀렉트박스 스타일 지정을 위한 클래스
 - defaultValue  : 기본 선택 사항을 지정하는 변수(placeholder 역할)
@@ -323,6 +323,40 @@ export default {
 <p align="center">
   <img width="100%" height="220" src="./readMeImg/ag-grid1.png" title="ag-grid1"> &nbsp;
 </p>
+
+**AgGridVue 상세설명**
+```
+  <ag-grid-vue
+    class="ag-grid"                             #클래스 지정
+    @grid-ready="onGridReady"                   #그리드 준비이벤트 현단계에서 완전히 렌더링 되지 않았을 수 있음.
+    @rowClicked="rowClicked"                    #행 클릭 이벤트
+    @first-data-rendered="onFirstDataRendered(isAutoSize)" #데이터가 그리드에 처음렌더링될때 발생
+    :grid-options="gridOptions"                 #그리드 옵션을 넣는 부분
+    :rowMultiSelectWithClick="isDeselect"       #클릭한번으로 여러행 선택 가능 기본은 false
+    :rowClassRules="rowClassRules"              #특정 css 클래스를 포함하기 위한 규칙
+    :suppressHorizontalScroll="noWidthScroll"   # 가로 스크롤 미표시
+    :rowHeight="rowHeight"                      #행 높이
+    :headerHeight="headerHeight"                #헤더 높이
+    :columnDefs="columnDefs"                    #열 데이터
+    :rowData="rowData"                          #행 데이터
+    :overlayNoRowsTemplate="overlayNoRowsTemplate"   # 행 없을때 출력하는 오버레읻
+    :overlayLoadingTemplate="overlayLoadingTemplate" # 로딩 중 출력하는 오버레이
+    :suppressMovableColumns="true"          #열 이동 억제, 열을 고정위치로 함
+    :suppressRowTransform="true"            #행 위치 지정을 위해 top 대신 css를 사용
+    :debounceVerticalScrollbar="true"       #세로 스크롤 막대 디바운스, 부드러운 스크롤 제공
+    :suppressColumnVirtualisation="true"    #그리드가 열을 가상화 하지 않게 설정 
+                                            #EX)100개의 열이 있으면 100개 모두가 항상 렌더링됨
+    :suppressRowVirtualisation="true"       #그리드가 행을 가상화 하지 않게 설정
+    :rowSelection="rowSelection"            #행 선택 유형 (다중, 싱글)
+    :suppressCellSelection="true"           #true이면 셀 선택이 수행되지 않음
+    :suppressMaxRenderedRowRestriction="true" #행을 한번에 500개 이상 렌더링하기 위한 설정
+    :enableCellTextSelection="true"         #셀 내의 텍스트를 선택하기 위한 설정 기본 false
+                                            #true시 클립보드 서비스가 비활성화
+    :enableBrowserTooltips="true"           #그리드 도구 설명 구성요소 대신 
+                                            #브라우저 기본도구설명을 사용
+  :suppressRowHoverHighlight="true"         #행을 강조표시 않도록 설정
+  />
+```
 
 
 ***
@@ -538,6 +572,54 @@ export default {
             :overlayNoRowsTemplate="            #데이터가 없을때 출력 내용
           `<span> <br>` + '<br />조회 결과가 없습니다.' + ` </span>`"
         />
+        
+-----------------------------------------------------------------------------------
+--------내부 AgGridVue 코드---------------------------------------------------------
+        <ag-grid-vue
+              class="ag-grid"                 #클래스 지정
+              style="height: 100%;"           #스타일 지정
+              :defaultColDef="defaultColDef"  #공통기본정의
+              @first-data-rendered="onFirstDataRendered"   #데이터가 그리드에 처음렌더링될때 발생
+              rowSelection="multiple"         #행선택유형 현재 다중
+              :rowDragMultiRow="true"         #여러 행을 동시에 드래그할 수 있도록 설정
+              :rowClassRules="rowClassRules"  #특정 css클래스를 포함하기 위해 적용할수 있는 규칙
+              :suppressRowClickSelection="true" #true인 경우 행선택이 수행되지 않는다. 기본은 false
+              :getRowNodeId="getRowNodeId"    #특정 행 노드의 Id 설정
+              headerHeight="30"               #헤더의 높이
+              :rowDragManaged="true"          #행을 드래그 하기 위한 설정 기본은 false  
+              :overlayNoRowsTemplate="overlayNoRowsTemplate" #행이 없을때 보여주는 오버레이
+              :overlayLoadingTemplate="overlayLoadingTemplate" #로딩중에 보여주는 오버레이
+              :suppressMoveWhenRowDragging="true" #드래그 되는 동안 행 이동을 억제하기 위한 설정
+              :animateRows="true"             #행 애니메이션 활성화
+              :rowData="leftRowData"          #행 데이터
+              :columnDefs="Columns"           #열 데이터
+              @grid-ready="onGridReady($event, 0)"  #그리드가 생성되기 전 작동하는 함수
+              :modules="modules"              #드래그를 사용하기 위한 모듈
+              >
+          </ag-grid-vue>
+
+-------------함수 설명 ---------------------------------------------------------------
+    addGridDropZone(side, api) {
+          #이동 된 Grid에 값을 넣고 기존 Grid에서 삭제하기위해 입력된 api와 반대의 api를 받는다.
+          #ex api가 left면 dropApi는 right
+      const dropApi = side === 0 ? this.rightApi : this.leftApi;    
+          #dropZone변수는 처음 드래그를 시작한 Grid의 이동값을 변수에 담는다.
+          #getRowDropZoneParams : 다른 그리드에서 사용할 메서도(이동할 행)을 반환한다.
+      const dropZone = dropApi.getRowDropZoneParams({               
+            onDragStop: params => {
+              var nodes = params.nodes;
+                api.applyTransaction({    #applyTransaction: 행데이터를 업데이트한다.
+                  remove: nodes.map(function(node) { return node.data; })     // 기존의 데이터에서 이동된 데이터 map함수로 돌면서 찾아서 삭제
+                });
+
+            }
+          }
+
+      );
+         #행을 놓을 수 있는 그리드에 놓기 영역을 추가한다.
+         #즉 dropZone에 있는 행 데이터를 새로운 그리드에 추가한다.
+      api.addRowDropZone(dropZone);     
+    },
 ```
 
 **예시**
@@ -549,6 +631,11 @@ export default {
 -이동 후
 
 <img src="./readMeImg/dragGrid-2.png" width="500" height="300">
+
+
+**참고**
+
+[Ag Grid OPtions](https://eblo.tistory.com/32)
 
 ***
 ### FileInputComponent
