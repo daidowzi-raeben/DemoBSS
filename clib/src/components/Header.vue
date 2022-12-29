@@ -23,7 +23,7 @@
                 :width="150"
                 :height="10"
                 :placeholder="'메뉴검색'"
-                :input-class="'class3'"
+                :input-class="'input-type3'"
                 :value="menuSearch"
                 v-model="menuSearch"
                   

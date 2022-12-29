@@ -156,13 +156,13 @@
             <tr>
               <th>권한ID</th>
               <td colspan="3">
-                <input-component :input-class="'class5 '" :class="autChgConf===true ? 'input_disabled':'input'"  :class5Width="'600px'" :disabled="disabled" v-model="this.autAdmObject.autId" :value="this.autAdmObject.autId" />
+                <input-component :input-class="'input-type5 '" :class="autChgConf===true ? 'input_disabled':'input'"  :width="'600px'" :disabled="disabled" v-model="this.autAdmObject.autId" :value="this.autAdmObject.autId" />
               </td>
             </tr>
             <tr>
               <th>권한명</th>
               <td colspan="3">
-                <input-component class="input" :input-class="'class5 '" :class5Width="'600px'" v-model="this.autAdmObject.autNm" :value="this.autAdmObject.autNm" />
+                <input-component class="input" :input-class="'input-type5 '" :width="'600px'" v-model="this.autAdmObject.autNm" :value="this.autAdmObject.autNm" />
               </td>
             </tr>
             <tr>
@@ -190,15 +190,15 @@
             <tr>
               <th>등록자/등록일시</th>
               <td colspan="3">
-                <span><input-component :class="'input_disabled'" :input-class="'class5 '" :class5Width="'150px'" :disabled="true" v-model="this.autAdmObject.regr" :value="this.autAdmObject.regr" /></span>
-                <span ><input-component :class="'input_disabled'" :input-class="'class5 '" :class5Width="'150px'"  :disabled="true" v-model="this.autAdmObject.regDt" :value="this.autAdmObject.regDt" /></span>
+                <span><input-component :class="'input_disabled'" :input-class="'input-type5 '" :width="'150px'" :disabled="true" v-model="this.autAdmObject.regr" :value="this.autAdmObject.regr" /></span>
+                <span ><input-component :class="'input_disabled'" :input-class="'input-type5 '" :width="'150px'"  :disabled="true" v-model="this.autAdmObject.regDt" :value="this.autAdmObject.regDt" /></span>
               </td>
             </tr>
             <tr>
               <th>수정자/수정일시</th>
               <td colspan="3">
-                <span><input-component :class="'input_disabled'" :input-class="'class5 '" :class5Width="'150px'"  :disabled="true" v-model="this.autAdmObject.amdr" :value="this.autAdmObject.amdr" /></span>
-                <span><input-component :class="'input_disabled'" :input-class="'class5 '" :class5Width="'150px'"  :disabled="true" v-model="this.autAdmObject.amdDt" :value="this.autAdmObject.amdDt" /></span>
+                <span><input-component :class="'input_disabled'" :input-class="'input-type5 '" :width="'150px'"  :disabled="true" v-model="this.autAdmObject.amdr" :value="this.autAdmObject.amdr" /></span>
+                <span><input-component :class="'input_disabled'" :input-class="'input-type5 '" :width="'150px'"  :disabled="true" v-model="this.autAdmObject.amdDt" :value="this.autAdmObject.amdDt" /></span>
               </td>
 
             </tr>

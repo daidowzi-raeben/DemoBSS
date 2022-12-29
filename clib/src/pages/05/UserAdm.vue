@@ -89,9 +89,9 @@
               <th><label-component :labelNm="'사번'" /></th>
               <td>
                 <input-component
-                  :class2Width="'180px'"
-                  :input-class="'class2'"
-                  :class2-background-color="userAdmObject.sttus == 'amend'? 'rgb(251, 253, 255)' : 'white'"
+                  :width="'180px'"
+                  :input-class="'input-type2'"
+                  :inputType2BackgroundColor="userAdmObject.sttus == 'amend'? 'rgb(251, 253, 255)' : 'white'"
                   :disabled="userAdmObject.isDisabled"
                   :value="userAdmObject.cmpNo"
                   v-model="userAdmObject.cmpNo"
@@ -125,8 +125,8 @@
               <th><label-component :labelNm="'사용자명'" /></th>
               <td>
                 <input-component
-                  :input-class="'class2'"
-                  :class2Width="'180px'"
+                  :input-class="'input-type2'"
+                  :width="'180px'"
                   v-model="userAdmObject.userNm"
                   :value="userAdmObject.userNm"
                   :placeholder="'이름 입력'"
@@ -183,9 +183,9 @@
               <th><label-component :labelNm="'조직'" /></th>
               <td colspan="2">
                 <input-component
-                  :input-class="'class2'"
-                  :class2-background-color="'rgb(251, 253, 255)'"
-                  :class2Width="'180px'"
+                  :input-class="'input-type2'"
+                  :inputType2BackgroundColor="'rgb(251, 253, 255)'"
+                  :width="'180px'"
                   :disabled="true"
                   :value="userAdmObject.org"
                   :placeholder="' 조직검색 '"
@@ -244,8 +244,8 @@
               <th><label-component :labelNm="'이메일주소'" /></th>
               <td colspan="3">
                 <input-component
-                  :input-class="'class2'"
-                  :class2Width="'180px'"
+                  :input-class="'input-type2'"
+                  :width="'180px'"
                   v-model="userAdmObject.email"
                   :value="userAdmObject.email"
                   :placeholder="'이름 입력'"
@@ -272,8 +272,8 @@
               <th><label-component :labelNm="'휴대전화번호'" /></th>
               <td colspan="3">
                 <input-component
-                  :input-class="'class2 '"
-                  :class2Width="'100px'"
+                  :input-class="'input-type2 '"
+                  :width="'100px'"
                   :value="userAdmObject.mphon[0]"
                   v-model="userAdmObject.mphon[0]"
                   :placeholder="'010'"
@@ -284,8 +284,8 @@
                   -
                 </span>
                 <input-component
-                  :input-class="'class2 '"
-                  :class2Width="'100px'"
+                  :input-class="'input-type2 '"
+                  :width="'100px'"
                   :value="userAdmObject.mphon[1]"
                   v-model="userAdmObject.mphon[1]"
                   :placeholder="' OOO '"
@@ -296,8 +296,8 @@
                   -
                 </span>
                 <input-component
-                  :input-class="'class2 '"
-                  :class2Width="'100px'"
+                  :input-class="'input-type2 '"
+                  :width="'100px'"
                   :value="userAdmObject.mphon[2]"
                   v-model="userAdmObject.mphon[2]"
                   :placeholder="' OOO '"
@@ -309,8 +309,8 @@
               <th><label-component :labelNm="'전화번호'" /></th>
               <td colspan="3">
                 <input-component
-                  :input-class="'class2 '"
-                  :class2Width="'100px'"
+                  :input-class="'input-type2 '"
+                  :width="'100px'"
                   :value="userAdmObject.ppon[0]"
                   v-model="userAdmObject.ppon[0]"
                   :placeholder="'지역번호'"
@@ -321,8 +321,8 @@
                   -
                 </span>
                 <input-component
-                  :input-class="'class2 '"
-                  :class2Width="'100px'"
+                  :input-class="'input-type2 '"
+                  :width="'100px'"
                   :value="userAdmObject.ppon[1]"
                   v-model="userAdmObject.ppon[1]"
                   :placeholder="' OOO '"
@@ -333,8 +333,8 @@
                   -
                 </span>
                 <input-component
-                  :input-class="'class2 '"
-                  :class2Width="'100px'"
+                  :input-class="'input-type2 '"
+                  :width="'100px'"
                   :value="userAdmObject.ppon[2]"
                   v-model="userAdmObject.ppon[2]"
                   :placeholder="' OOO '"
@@ -346,10 +346,10 @@
               <th><label-component :labelNm="'비밀번호'" /></th>
               <td colspan="3">
                 <input-component
-                  :input-class="'class2'"
-                  :class2-background-color="userAdmObject.sttus == 'amend'? 'rgb(251, 253, 255)' : 'white'"
+                  :input-class="'input-type2'"
+                  :inputType2BackgroundColor="userAdmObject.sttus == 'amend'? 'rgb(251, 253, 255)' : 'white'"
                   :disabled="userAdmObject.isDisabled"
-                  :class2Width="'180px'"
+                  :width="'180px'"
                   :value="userAdmObject.pwd"
                   v-model="userAdmObject.pwd"
                   :placeholder="
@@ -374,17 +374,17 @@
               <th><label-component :labelNm="'비밀번호변경일'" /></th>
               <td colspan="3">
                 <input-component
-                  :input-class="'class2'"
-                  :class2-background-color="'rgb(251, 253, 255)'"
-                  :class2Width="'180px'"
+                  :input-class="'input-type2'"
+                  :inputType2BackgroundColor="'rgb(251, 253, 255)'"
+                  :width="'180px'"
                   :disabled="true"
                   :value="' PW'"
                   :placeholder="' - '"
                 />
                 <input-component
-                  :input-class="'class2'"
-                  :class2-background-color="'rgb(251, 253, 255)'"
-                  :class2Width="'180px'"
+                  :input-class="'input-type2'"
+                  :inputType2BackgroundColor="'rgb(251, 253, 255)'"
+                  :width="'180px'"
                   :disabled="true"
                   :value="userAdmObject.pwdChgDt"
                   :placeholder="' - '"
@@ -396,9 +396,9 @@
               <th><label-component :labelNm="'최종로그인일시'" /></th>
               <td colspan="3">
                 <input-component
-                  :input-class="'class2'"
-                  :class2-background-color="'rgb(251, 253, 255)'"
-                  :class2Width="'180px'"
+                  :input-class="'input-type2'"
+                  :inputType2BackgroundColor="'rgb(251, 253, 255)'"
+                  :width="'180px'"
                   :disabled="true"
                   :value="userAdmObject.lastLogIn"
                   :placeholder="' - '"
@@ -410,9 +410,9 @@
               <th><label-component :labelNm="'로그인실패'" /></th>
               <td colspan="3">
                 <input-component
-                  :input-class="'class2'"
-                  :class2-background-color="'rgb(251, 253, 255)'"
-                  :class2Width="'40px'"
+                  :input-class="'input-type2'"
+                  :inputType2BackgroundColor="'rgb(251, 253, 255)'"
+                  :width="'40px'"
                   :disabled="true"
                   style="text-align: center"
                   :value="'-'"
@@ -420,9 +420,9 @@
                 />
 
                 <input-component
-                  :input-class="'class2'"
-                  :class2-background-color="'rgb(251, 253, 255)'"
-                  :class2Width="'180px'"
+                  :input-class="'input-type2'"
+                  :inputType2BackgroundColor="'rgb(251, 253, 255)'"
+                  :width="'180px'"
                   :disabled="true"
                   :value="userAdmObject.failLogIn"
                   :placeholder="' - '"
@@ -434,16 +434,16 @@
               <th><label-component :labelNm="'등록자/등록일시'" /></th>
               <td colspan="3">
                 <input-component
-                  :input-class="'class2'"
-                  :class2-background-color="'rgb(251, 253, 255)'"
-                  :class2Width="'180px'"
+                  :input-class="'input-type2'"
+                  :inputType2BackgroundColor="'rgb(251, 253, 255)'"
+                  :width="'180px'"
                   :disabled="true"
                   :value="'김케이티'"
                 />
                 <input-component
-                  :input-class="'class2'"
-                  :class2-background-color="'rgb(251, 253, 255)'"
-                  :class2Width="'180px'"
+                  :input-class="'input-type2'"
+                  :inputType2BackgroundColor="'rgb(251, 253, 255)'"
+                  :width="'180px'"
                   :disabled="true"
                   :value="userAdmObject.regrDt"
                 />
@@ -454,17 +454,17 @@
               <th><label-component :labelNm="'수정자/수정일시'" /></th>
               <td colspan="3">
                 <input-component
-                  :input-class="'class2'"
-                  :class2-background-color="'rgb(251, 253, 255)'"
-                  :class2Width="'180px'"
+                  :input-class="'input-type2'"
+                  :inputType2BackgroundColor="'rgb(251, 253, 255)'"
+                  :width="'180px'"
                   :disabled="true"
                   :value="' 김클라우드  '"
                 />
 
                 <input-component
-                  :input-class="'class2'"
-                  :class2-background-color="'rgb(251, 253, 255)'"
-                  :class2Width="'180px'"
+                  :input-class="'input-type2'"
+                  :inputType2BackgroundColor="'rgb(251, 253, 255)'"
+                  :width="'180px'"
                   :disabled="true"
                   :value="userAdmObject.amdrDt"
                 />

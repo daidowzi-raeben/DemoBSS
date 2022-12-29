@@ -79,9 +79,9 @@
               <th><label-component :labelNm="'메뉴ID'" /></th>
               <td>
                 <input-component
-                  :class2Width="'180px'"
-                  :input-class="'class2'"
-                  :class2-background-color="'rgb(251, 253, 255)'"
+                  :width="'180px'"
+                  :input-class="'input-type2'"
+                  :inputType2BackgroundColor="'rgb(251, 253, 255)'"
                   :disabled="true"
                   :placeholder="'메뉴ID'"
                   :value="menuAdmObject.menuId"
@@ -90,9 +90,9 @@
               <th><label-component :labelNm="'상위메뉴ID'" /></th>
               <td>
                 <input-component
-                  :class2Width="'180px'"
-                  :input-class="'class2'"
-                  :class2-background-color="'rgb(251, 253, 255)'"
+                  :width="'180px'"
+                  :input-class="'input-type2'"
+                  :inputType2BackgroundColor="'rgb(251, 253, 255)'"
                   :disabled="true"
                   :placeholder="'상위메뉴ID'"
                   :value="menuAdmObject.upperMenuId"
@@ -103,8 +103,8 @@
               <th><label-component :labelNm="'메뉴명'" /></th>
               <td colspan="3">
                 <input-component
-                  :input-class="'class2'"
-                  :class2Width="'300px'"
+                  :input-class="'input-type2'"
+                  :width="'300px'"
                   :placeholder="'계약'"
                   :value="menuAdmObject.menuNm"
                   v-model="menuAdmObject.menuNm"
@@ -115,8 +115,8 @@
               <th><label-component :labelNm="'정렬순서'" /></th>
               <td colspan="3">
                 <input-component
-                  :input-class="'class2'"
-                  :class2Width="'300px'"
+                  :input-class="'input-type2'"
+                  :width="'300px'"
                   :placeholder="'숫자'"
                   :value="menuAdmObject.sortingCond"
                   v-model="menuAdmObject.sortingCond"
@@ -127,8 +127,8 @@
               <th><label-component :labelNm="'URL'" /></th>
               <td colspan="3">
                 <input-component
-                  :input-class="'class2'"
-                  :class2Width="'300px'"
+                  :input-class="'input-type2'"
+                  :width="'300px'"
                   :placeholder="'URL'"
                   :value="menuAdmObject.url"
                   v-model="menuAdmObject.url"
@@ -178,16 +178,16 @@
               <th><label-component :labelNm="'등록자/등록일시'" /></th>
               <td colspan="3">
                 <input-component
-                  :input-class="'class2'"
-                  :class2-background-color="'rgb(251, 253, 255)'"
-                  :class2Width="'180px'"
+                  :input-class="'input-type2'"
+                  :inputType2BackgroundColor="'rgb(251, 253, 255)'"
+                  :width="'180px'"
                   :disabled="true"
                   :value="menuAdmObject.dtlRegrNm"
                 />
                 <input-component
-                  :input-class="'class2'"
-                  :class2-background-color="'rgb(251, 253, 255)'"
-                  :class2Width="'180px'"
+                  :input-class="'input-type2'"
+                  :inputType2BackgroundColor="'rgb(251, 253, 255)'"
+                  :width="'180px'"
                   :disabled="true"
                   :value="menuAdmObject.dtlRegrDt"
                 />
@@ -198,16 +198,16 @@
               <th><label-component :labelNm="'수정자/수정일시'" /></th>
               <td colspan="3">
                 <input-component
-                  :input-class="'class2'"
-                  :class2-background-color="'rgb(251, 253, 255)'"
-                  :class2Width="'180px'"
+                  :input-class="'input-type2'"
+                  :inputType2BackgroundColor="'rgb(251, 253, 255)'"
+                  :width="'180px'"
                   :disabled="true"
                   :value="menuAdmObject.dtlAmdrNm"
                 />
                 <input-component
-                  :input-class="'class2'"
-                  :class2-background-color="'rgb(251, 253, 255)'"
-                  :class2Width="'180px'"
+                  :input-class="'input-type2'"
+                  :inputType2BackgroundColor="'rgb(251, 253, 255)'"
+                  :width="'180px'"
                   :disabled="true"
                   :value="menuAdmObject.dtlAmdrDt"
                 />
@@ -246,9 +246,9 @@
               <th><label-component :labelNm="'업무유형'" /></th>
               <td colspan="3">
                 <input-component
-                  :class2Width="'140px'"
-                  :input-class="'class2'"
-                  :class2-background-color="'rgb(251, 253, 255)'"
+                  :width="'140px'"
+                  :input-class="'input-type2'"
+                  :inputType2BackgroundColor="'rgb(251, 253, 255)'"
                   :disabled="true"
                   :value="menuAdmObject.wjtTypeId"
                   :placeholder="'업무유형'"
@@ -278,8 +278,8 @@
                 />
                 <input-component
                   v-else-if="menuAdmObject.wjtOption1==='comCd'"
-                  :input-class="'class2'"
-                  :class2Width="'140px'"
+                  :input-class="'input-type2'"
+                  :width="'140px'"
                   :placeholder="'공통그룹코드 입력'"
                   :value="menuAdmObject.wjtOption2"
                   v-model="menuAdmObject.wjtOption2"
@@ -335,16 +335,16 @@
               <th><label-component :labelNm="'등록자/등록일시'" /></th>
               <td colspan="3">
                 <input-component
-                  :input-class="'class2'"
-                  :class2-background-color="'rgb(251, 253, 255)'"
-                  :class2Width="'180px'"
+                  :input-class="'input-type2'"
+                  :inputType2BackgroundColor="'rgb(251, 253, 255)'"
+                  :width="'180px'"
                   :disabled="true"
                   :value="menuAdmObject.trtRegrNm"
                 />
                 <input-component
-                  :input-class="'class2'"
-                  :class2-background-color="'rgb(251, 253, 255)'"
-                  :class2Width="'180px'"
+                  :input-class="'input-type2'"
+                  :inputType2BackgroundColor="'rgb(251, 253, 255)'"
+                  :width="'180px'"
                   :disabled="true"
                   :value="menuAdmObject.trtRegrDt"
                 />
@@ -355,17 +355,17 @@
               <th><label-component :labelNm="'수정자/수정일시'" /></th>
               <td colspan="3">
                 <input-component
-                  :input-class="'class2'"
-                  :class2-background-color="'rgb(251, 253, 255)'"
-                  :class2Width="'180px'"
+                  :input-class="'input-type2'"
+                  :inputType2BackgroundColor="'rgb(251, 253, 255)'"
+                  :width="'180px'"
                   :disabled="true"
                   :value="menuAdmObject.trtAmdrNm"
                 />
 
                 <input-component
-                  :input-class="'class2'"
-                  :class2-background-color="'rgb(251, 253, 255)'"
-                  :class2Width="'180px'"
+                  :input-class="'input-type2'"
+                  :inputType2BackgroundColor="'rgb(251, 253, 255)'"
+                  :width="'180px'"
                   :disabled="true"
                   :value="menuAdmObject.trtAmdrDt"
                 />

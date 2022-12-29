@@ -359,7 +359,7 @@
         :type="'search'"
         :height="20"
         :width="150"
-        :input-class="'class2'"
+        :input-class="'input-type2'"
         v-model="searchValue"
         :placeholder="'입력'"
         @input="
@@ -383,8 +383,8 @@
       />
       <br>
       <input-component
-      :input-class="'class3'"
-      :value="'input 컴포넌트 - class3 '"
+      :input-class="'input-type3'"
+      :value="'input 컴포넌트 - input-type3 '"
       />
       <div>
       <input-component
@@ -395,8 +395,8 @@
 
 
       <input-component
-      :input-class="'class5'"
-      :value="'input 컴포넌트 - class5 '"
+      :input-class="'input-type5'"
+      :value="'input 컴포넌트 - input-type5 '"
       />
 
 
@@ -447,7 +447,7 @@
       </div><div>
       <span> 주소 검색  </span>
       <input-component
-      :inputClass="'class5'"
+      :inputClass="'input-type5'"
       style="width:210px; margin:0 3px;"
       :height="'30px'"
       :placeholder="'주소를 입력해 주세요.'"
