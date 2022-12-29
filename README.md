@@ -50,7 +50,6 @@
     - [etc \> RangeComponent](#etc--rangecomponent)
     - [etc \> ToastComponent](#etc--toastcomponent)
     - [etc \> ValdtnComponent](#etc--valdtncomponent)
-  - [](#)
   - [unionForm](#unionform)
     - [AutRetvComponent](#autretvcomponent)
     - [Blc2Component](#blc2component)
@@ -68,9 +67,14 @@
 
 ## 프로젝트 설치 및 실행
 ```
+#
 프로젝트 폴더 이동 :    ....cd clib
+
+# install dependencies
 프로젝트 modules 설치 : npm install
+
 프로젝트 실행 :         npm run serve
+
 json-server  : json-server --watch info.json --port 8080
 ```
 
@@ -348,7 +352,7 @@ export default {
     :suppressMovableColumns="true"          #열 이동 억제, 열을 고정위치로 함
     :suppressRowTransform="true"            #행 위치 지정을 위해 top 대신 css를 사용
     :debounceVerticalScrollbar="true"       #세로 스크롤 막대 디바운스, 부드러운 스크롤 제공
-    :suppressColumnVirtualisation="true"    #그리드가 열을 가상화 하지 않게 설정 
+    :suppressColumnVirtualisation="true"    #그리드가 열을 가상화 하지 않게 설정
                                             #EX)100개의 열이 있으면 100개 모두가 항상 렌더링됨
     :suppressRowVirtualisation="true"       #그리드가 행을 가상화 하지 않게 설정
     :rowSelection="rowSelection"            #행 선택 유형 (다중, 싱글)
@@ -356,7 +360,7 @@ export default {
     :suppressMaxRenderedRowRestriction="true" #행을 한번에 500개 이상 렌더링하기 위한 설정
     :enableCellTextSelection="true"         #셀 내의 텍스트를 선택하기 위한 설정 기본 false
                                             #true시 클립보드 서비스가 비활성화
-    :enableBrowserTooltips="true"           #그리드 도구 설명 구성요소 대신 
+    :enableBrowserTooltips="true"           #그리드 도구 설명 구성요소 대신
                                             #브라우저 기본도구설명을 사용
   :suppressRowHoverHighlight="true"         #행을 강조표시 않도록 설정
   />
@@ -391,7 +395,7 @@ export default {
 
 **예시**
 
-<img width="100" height="150" src="./readMeImg/chkBox-1.png" title="textArea"> 
+<img width="100" height="150" src="./readMeImg/chkBox-1.png" title="textArea">
 <img width="300" height="150" src="./readMeImg/chkBox-2.png" title="textArea">
 
 ***
@@ -402,7 +406,7 @@ export default {
 - maxlength     : 글자 길이 최댓값
 - textAreaHeight: textArea의 높이 지정
 - textAreaWidth : textArea의 너비 지정
-- 
+-
 
 **주요특징**
 - textAreaData 변수에 값이 없을 경우 placeholder props 값 출력
@@ -576,7 +580,7 @@ export default {
             :overlayNoRowsTemplate="            #데이터가 없을때 출력 내용
           `<span> <br>` + '<br />조회 결과가 없습니다.' + ` </span>`"
         />
-        
+
 -----------------------------------------------------------------------------------
 --------내부 AgGridVue 코드---------------------------------------------------------
         <ag-grid-vue
@@ -990,7 +994,7 @@ this.params.clicked(this.cdGpValue);      <- cellRendererParams와 매칭
     this.comp = markRaw(defineAsyncComponent(()=> import("../../components/AutMappg/UserAutComp.vue")));
     this.autCompAddr.push(this.comp);
   },
--------------------------------------------------------------------------- 
+--------------------------------------------------------------------------
 --------탭을 눌렀을 때 컴포넌트를 변경하는 코드---------------------------------
   watch: {  #밑의 함수에서 cur_num이 변경되면 호출되어 compId를 추가로 바꿔 실시간으로 바꾼다.
     cur_num: function (newVal) {  
@@ -998,7 +1002,7 @@ this.params.clicked(this.cdGpValue);      <- cellRendererParams와 매칭
     },
   },
   methods:{   
-    ChageComponent: function (componentName, index) {  #다른탭을 클릭했을때 호출 
+    ChageComponent: function (componentName, index) {  #다른탭을 클릭했을때 호출
       this.compId = componentName;    #클릭한 탭의 컴포넌트Id
       this.cur_num = index;           #클릭한 탭의 index
     },
@@ -1082,7 +1086,7 @@ this.params.clicked(this.cdGpValue);      <- cellRendererParams와 매칭
        :filterFunction="함수"                               #필터할 내용에 대한 함수
        style="width:100%; height:100%;font-size: 12pt;"    
 ></msf-tree>
-      
+
 ------------source의 데이터 형식------------------------------------------------------------
 source = : [{
    groupId : ,
@@ -1406,9 +1410,9 @@ filterFunction(item){
 -정상 입력
 
 <img src="./readMeImg/validation-3.png" width="300px" height="100px">
----
 
 ***
+
 ## unionForm
 ```
 - 하나의 컴포넌트가 아닌 다양한 컴포넌트를 조합하여 검색폼 or 입력폼을 만든 컴포넌트

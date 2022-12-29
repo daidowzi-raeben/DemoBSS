@@ -5,7 +5,7 @@
         <div v-for="(item, index) in compm" v-bind:key="index">
           <div
               :class="{
-              tabon: this.comp === item.menuId,
+              tabon: this.comp  === item.menuId,
               taboff: this.comp !== item.menuId,
               menu_tab: true,
             }"
@@ -23,12 +23,11 @@
       </div>
     </div>
     <div v-for="(item, index) in compm2" :key="item">
-      <div v-show="index === this.cur_num" >
       <component
           v-bind:is="this.compm2[index]"
-          @input="AddComponent"
+          v-show="index === this.cur_num"
+          @emitPageTitle="AddComponent"
       ></component>
-      </div>
     </div>
   </div>
 </template>
@@ -36,7 +35,7 @@
 <script>
 import {defineAsyncComponent, markRaw} from "vue";
 export default {
-  name: "TabComponent",
+  name: "folderTabComponent",
   data() {
     return {
       comp: "",     //컴포넌트 이름
@@ -47,10 +46,9 @@ export default {
     };
   },
   props:{
-    menuType:{        //AddComponent의 defineAsyncComponent에서 컴포넌트를 호출할 위치를 지정하기 위한 변수
-      type:String,
-      default:"Cont",
-    },
+    // menuType:{        //AddComponent의 defineAsyncComponent에서 컴포넌트를 호출할 위치를 지정하기 위한 변수
+    //   type:String,
+    // },
     compArray:{     //컴포넌트배열
       type:Array,
       default:null,
@@ -59,19 +57,24 @@ export default {
     compName:{      //컴포넌트의 menuId
       type:String,
       default:null,
+    },
+    menuPath:{
+      type:String,
+      default:""
     }
   },
   watch: {
-    cur_num: function (newVal, oldVal) {      //탭의 이동을 감지하여 컴포넌트를 변경하는 함수
+    cur_num: function (newVal) {      //탭의 이동을 감지하여 컴포넌트를 변경하는 함수
       this.comp = this.compm[newVal].menuId;
-      this.component = this.compm2[this.cur_num];
+      // this.component = this.compm2[this.cur_num];
     },
   },
   created() {
     this.comp = this.compName;
-    this.component = this.compValue;
-    this.compm = this.compArray;
-    this.compm2.push(this.component);
+    // this.component = this.compValue;     // 
+    this.compm.push(this.compArray);            // 컴포넌트의 메뉴 정보 { a:a1 , b: b1 }를 담고있는 배열
+    this.compm2.push(this.compValue);       // 컴포넌트 담고있는 배열
+    // console.log(this.compm, this.compm2 );
   },
   computed: {
     navOn() {
@@ -104,8 +107,7 @@ export default {
         }
       }
     },
-    AddComponent: function (param) {                          //탭에 컴포넌트를 추가하는 함수
-      console.log(param);
+    AddComponent: function (param) {                  // 탭에 컴포넌트를 추가하는 함수  param : 파일 이름 
       if (param.menuId != "" && param.menuId != null) {
         const st = this.compm.find(                           //동일한 컴포넌트가 탭내에 존재하는지 확인
             (element) => element.menuId === param.menuId
@@ -120,14 +122,12 @@ export default {
           if (this.compm.length < 10) {
             this.compm.push(param);                           //클릭된 컴포넌트의 정보를 compm 변수에 넣는다.
             this.cur_num = this.compm.length - 1;             //현재 추가되는 컴포넌트의 index 번호를 지정
-            let componentAddr = this.compm[this.cur_num].cmpnId;
-            if(componentAddr.search('/')!=-1){                // 05/컴포넌트명 인 경우 05/를 삭제 처리
-              componentAddr = componentAddr.substring(3);
-            }
-            // cmpnId 가공하기 
+
+            // menuId 가공하기 
             this.component = markRaw(                         //추가될 컴포넌트를 import를 통해 불러온다. 고정된 컴포넌트의 경우 이방식을 통해 사전에 불러와야한다.
                 defineAsyncComponent(() =>
-                    import("@/components/" +this.menuType +"/" + componentAddr + ".vue")
+                    // import("@/components/" +this.menuType +"/" + this.compm[this.cur_num].menuId + ".vue")    // 해당 페이지의 경로 잘 지정해야함.
+                    import("@/pages/06/UnFixedMultiTabs/"+this.compm[this.cur_num].menuId+".vue")    // 해당 페이지의 경로 잘 지정해야함.
                 )
             );
             this.compm2.push(this.component);                  //불러온 컴포넌트를 compm2 배열에 넣는다.
@@ -135,6 +135,8 @@ export default {
             console.log("10개를 넘었습니다.");
           }
         }
+      }else{
+        console.log("실패")
       }
     },
   },
@@ -181,7 +183,6 @@ div.taboff:hover {
   height: 25px;
   width: 100%;
 }
-
 .menu_tab {
   float: left;
   width: 130px;

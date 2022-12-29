@@ -2,16 +2,12 @@
   <div>
     <span class="txt02">{{ atcNoti }}</span>
     <div class="attach">
-      <div class="input">
         <input
           type="text"
           class="text_input_bbs02"
-          style="width: 100%"
-          @click="loadFile"
           :placeholder="placeholder"
-        />
-      </div>
-      <div class="btn">
+          :value="files"
+        >
         <input
           v-if="isMultiple"
           type="file"
@@ -32,7 +28,6 @@
         <button type="button" class="button_06" @click="loadFile">
           불러오기
         </button>
-      </div>
     </div>
 
     <div class="attach_txt">
@@ -96,6 +91,10 @@ export default {
       //파일 업로드 가능여부
       type: Boolean,
       default: false,
+    },
+    fileInputWidth: {
+      type:String,
+      default:'250px'
     },
   },
   created() {
@@ -197,14 +196,6 @@ div > span.txt02 {
 div.attach {
   overflow: hidden;
 }
-div.attach > .input {
-  float: left;
-  width: 90%;
-}
-div.attach > .btn {
-  float: right;
-}
-
 div.attach_txt {
   overflow: hidden;
 }
@@ -248,7 +239,7 @@ div.attach_txt ul li > a.delete {
 }
 .text_input_bbs02 {
   border: #b6b6b6 solid 1px;
-  font-size: 13px;
+  width: v-bind('fileInputWidth');
   height: 28px;
   line-height: 29px;
   color: #343434;

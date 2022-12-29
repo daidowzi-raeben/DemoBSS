@@ -18,13 +18,9 @@
             :height="20"
             :width="250"
             :input-class="'input-type'"
+            :value="atcValue"
             v-model="atcValue"
             :placeholder="'비고 입력'"
-            @input="
-          (value) => {
-            atcValue = value;
-          }
-        "
         />
       </td>
     </tr>
@@ -68,7 +64,7 @@ export default {
 
 <style scoped>
 .tablediv{
-  width:1700px;
+  width: 1200px;
   height:230px;
 }
 table{
@@ -96,12 +92,12 @@ table tr td{
   padding: 10px;
 }
 .t2{
-  width: 60%;
+  width: 40%;
   text-align: left;
   padding: 10px;
 }
 .t3{
-  width: 30%;
+  width: 20%;
   text-align: left;
   padding: 10px;
 }

@@ -780,13 +780,19 @@
       "upMenuId": "L06M01",
       "cmpnId": "06/PageTemplate"
     },
+      {
+        "menuId": "L06M01S05",
+        "menuNm": "멀티 탭 예시 화면",
+        "upMenuId": "L06M01",
+        "cmpnId": "06/UnFixedMultiTab"
+      },
     {
-      "menuId": "L06M01S05",
+      "menuId": "L06M01S06",
       "menuNm": "고정된 멀티 탭 예시 화면",
       "upMenuId": "L06M01",
-      "cmpnId": "06/FiexedMultiTab"
+      "cmpnId": "06/FixedMultiTab"
     },
-    {
+      {
       "menuId": "L06M02S01",
       "menuNm": "로그인화면",
       "upMenuId": "L06M01",
