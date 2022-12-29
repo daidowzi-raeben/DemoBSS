@@ -1048,7 +1048,6 @@ pageableData: {
 - source : 트리에 넣을 데이터
 - idFiled : source에 있는 데이터 중 id 필드
 - labelField : source에 있는 데이터 중 출력할 필드명
-- isBadgeShow : 우측에 위치한 배찌를 보여줄건지에 대한 값 true/false
 - filterFunction : 함수를 값으로 받는다. 받은 함수에 각 행의 데이터를 매개변수로 보낸후 필터를 통해 통과하면 true 실패하면  false를 반환 false일 경우 출력내용에서 제외된다.
 - expandDepth : 트리의 최대 깊이
 
@@ -1062,18 +1061,42 @@ pageableData: {
 - labelFiled에 들어간 필드명이 트리의 내용이 된다.
 - @itemClick과 연결된 함수에서 클릭된 트리에 대한 행 데이터와 후처리가 가능하다.
 - filterFunction은 출력된 내용중 필터를 통해 출력할 내용을 정하는 것으로 함수는 트리를 호출하는 곳에서 정의한다. 반환값은 true/ false이고 매개변수로는 각행에대한 데이터를 받는다.
-- 뱃지의 경우 데이터의 필드 중 chk와 chk2의 true/false에 따라 출력된다.
+- 뱃지의 경우 데이터의 필드 중 badge0~badge4의 true/false에 따라 출력된다.
 
 **호출코드**
 
 ```
       <msf-tree
-                :source="contentTree"                              #트리에 넣을 데이터
-                label-field="directoryName"                        #트리에서 호출할 필드명
+                :source="contentTree"                         #트리에 넣을 데이터
+                                                              #해당 데이터에 있는 children 값과 badge값에 따라
+                                                              #뱃지 출력및 트리 형태가 정해진다.
+                :label-field="directoryName"                        #트리에서 호출할 필드명
+                :id-field="directoryName"                           #트리의 필드에 고유 id로 쓸 필드 지정
+                :expandDepth="1                                     #트릐의 최대 깊이
                 ref="tree"                                         #부모에서 자식접근을 위한 참조변수
                 @itemClick="(value)=>{treeItemClick = value}"      #행 클릭에 대해 처리하는 함수
+                :filterFunction="함수"                               #필터할 내용에 대한 함수
                 style="width:100%; height:100%;font-size: 12pt;"    
       ></msf-tree>
+      
+------------source의 데이터 형식------------------------------------------------------------
+     source = : [{
+        groupId : ,
+        directoryName : ,
+        badge0: ,
+        children : [
+        { groupId : , directoryName : , badge1 : ,badge2 : ,badge3 : ,badge4 : ,}
+        , ...
+        ]
+       },
+       ...
+      ]
+-----------filterFunction 형식------------------------------------------------------------
+참고) CommonView1.vue의 filter 함수 참고
+filterFunction(item){    
+  if(item.directoryName ==="조건" )return true;
+  else return false;
+}
 ```
 
 **예시**
@@ -1082,6 +1105,11 @@ pageableData: {
 
 ### treeComponent > msf-tree-item
 - msf-tree에서 가공된 데이터를 기반으로 트리를 만들어 출력하는 컴포넌트
+- 가공된 데이터를 props를 통해 받은 후 그 데이터를 기반으로 뱃지 출력 및 들여쓰기등을 결정한다.
+
+
+
+
 
 ***
 ### popupComponent

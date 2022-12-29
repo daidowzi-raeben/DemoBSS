@@ -1,8 +1,9 @@
 <template>
   <div class="tree-wrap">
     <virtual-list ref="virtualList"  :size="size" :remain="remain" class="tree-list">
-      <msf-tree-item :isBadgeShow="isBadgeShow" v-on:expand="expand" v-on:checkClick="checkclick" v-on:itemClick="itemClick" v-on:itemDblClick="itemDblClick" v-for="item of list" :key="item.key" :data="item" :checked="item.checked"
-                     :expanded="item.expanded" :final="item.final" :depth="item.depth" :label="item.labelValue" :chk1="item.check1" :chk2="item.check2" :half-checked="item.halfChecked" :active="item.active"/>
+      <msf-tree-item v-on:expand="expand"  v-on:itemClick="itemClick" v-on:itemDblClick="itemDblClick" v-for="item of list" :key="item.key" :data="item" :checked="item.checked"
+                     :expanded="item.expanded" :final="item.final" :depth="item.depth" :label="item.labelValue" :badge0="item.badge0" :badge1="item.badge1"
+                     :badge2="item.badge2" :badge3="item.badge3" :badge4="item.badge4" :active="item.active"/>
     </virtual-list>
   </div>
 </template>
@@ -15,68 +16,62 @@ export default {
   components: {MsfTreeItem},
   props: {
     source: Array,            //트리 데이터
-    filterFunction: Function,
+    filterFunction: Function,   //함수를 값으로 받는 변수로 전달된 함수의 return 값에 맞는 값만 트리 형태로 보여준다.
     labelField: String,       //출력 내용필드명
     idField: String,          //id 필드명
-    selectedList: Array,
-    activeItem: Object,
-    expandDepth: {
+    // selectedList: Array,
+    // activeItem: Object,
+    expandDepth: {            //트리의 최대 깊이 설정
       default: 1,
       type: Number
     },
-    isBadgeShow:{
-      type:Boolean,
-      default:true
-    }
   },
 
   data () {
     return {
       items: [], // 전체 데이터
-      filteredItems: [],
+      filteredItems: [], //필터함수에 의해 필터된 데이터
       list: [], // 닫쳐있는것 제외 하고 필터링 된것 제외한 데이터
-      size: 10,
-      remain: 84,
-      keyField: 'id',
-      activeList: [],
-      num:-1,
+      size: 10,   //virtual-list의 size
+      remain: 84, //virtual-list의 높이
+      // keyField: 'id',
     }
   },
   watch: {
     source: function (value) {
       this.setSource(value)
     },
-    selectedList: function (value) {
-      if (!value || value.length < 1) {
-        this.clearCheck('checked')
-        this.refresh()
-        return
-      }
-
-      for (let i = 0; i < this.items.length; i++) {
-        let obj = this.items[i]
-        for (let j = 0; j < value.length; j++) {
-          this.setCheckedData(obj, 'checked')
-        }
-      }
-      this.refresh()
-    },
-    activeItem: function (value) {
-      this.activeList = [value]
-      if (!this.activeList || this.activeList.length < 1) {
-        this.clearCheck('active')
-        this.refresh()
-        return
-      }
-
-      for (let i = 0; i < this.items.length; i++) {
-        let obj = this.items[i]
-        for (let j = 0; j < this.activeList.length; j++) {
-          this.setCheckedData(obj, 'active')
-        }
-      }
-      this.refresh()
-    }
+    // selectedList: function (value) {
+    //   if (!value || value.length < 1) {
+    //     this.clearCheck('checked')
+    //     this.refresh()
+    //     return
+    //   }
+    //
+    //   for (let i = 0; i < this.items.length; i++) {
+    //     let obj = this.items[i]
+    //     for (let j = 0; j < value.length; j++) {
+    //       this.setCheckedData(obj, 'checked')
+    //     }
+    //   }
+    //   this.refresh()
+    // },
+    // activeItem: function (value) {
+    //   this.activeList = [value]
+    //   if (!this.activeList || this.activeList.length < 1) {
+    //     this.clearCheck('active')
+    //     this.refresh()
+    //     return
+    //   }
+    //
+    //   for (let i = 0; i < this.items.length; i++) {
+    //     let obj = this.items[i]
+    //     for (let j = 0; j < this.activeList.length; j++) {
+    //       this.setCheckedData(obj, 'active')
+    //     }
+    //   }
+    //   this.refresh()
+    // }
   },
   methods: {      //obj가 각 트리 데이터
     addItem: function (items, obj, depth, parent, chk) {      //트리데이터를 넣는 부분 자식의 경우 재귀를 통해 넣는다.
@@ -90,16 +85,19 @@ export default {
       obj.key = Math.random()
       obj.visible = true
       // obj.checked = false
-      this.setCheckedData(obj, 'checked')
-      this.setCheckedData(obj, 'active')
+      // this.setCheckedData(obj, 'checked')
+      // this.setCheckedData(obj, 'active')
 
       obj.parent = parent
       obj.labelValue = obj[this.labelField]
-      obj.check1 = obj["chk"]
-      obj.check2 = obj["chk2"]
-      obj.final = chk
+      obj.badge0 = obj["badge0"]    //대표 출력 뱃지
+      obj.badge1 = obj["badge1"]    //해지 출력 뱃지
+      obj.badge2 = obj["badge2"]    //IDC 출력 뱃지
+      obj.badge3 = obj["badge3"]    //사용중 출력 뱃지
+      obj.badge4 = obj["badge4"]    //변경중 출력 뱃지
+      obj.final = chk             //마지막 행의 경우 하위 트리 형태가 ㄴ이 되야하기에 설정한 변수
       obj.childAllCheck = false
-      items.push(obj)
+      items.push(obj)   //hasOwnProperty : 해당 오브젝트에 가로 안의 프로퍼티가 존재하는지 확인
       if (obj.hasOwnProperty('children') && obj.children && obj.children.length > 0) {
         for (var i = 0; i < obj.children.length; i++) {
           if(i==obj.children.length-1)this.addItem(items, obj.children[i], depth + 1, obj, true)
@@ -107,40 +105,40 @@ export default {
         }
       }
     },
-    setCheckedData: function (item, field) {
-      let value = field === 'checked' ? this.selectedList : this.activeList
-      item[field] = false
-      if (!value || value.length < 1) { return }
-      for (let j = 0; j < value.length; j++) {
-        if (value[j] && value[j].id === item.id) {
-          item[field] = true
-          if (field === 'active') {
-            item.expanded = true
-          }
-          this.parentExpand(item)
-        }
-      }
-    },
-    parentExpand (item) {
-      item.expanded = true
-      this.expand(item)
-      if (item.parent) {
-        this.parentExpand(item.parent)
-      }
-    },
-    getItem: function (value) {
-      for (let i = 0; i < this.items.length; i++) {
-        if (this.items[i][this.keyField] + '' === value + '') {
-          return this.items[i]
-        }
-      }
-      return null
-    },
+    // setCheckedData: function (item, field) {
+    //   let value = field === 'checked' ? this.selectedList : this.activeList
+    //   item[field] = false
+    //   if (!value || value.length < 1) { return }
+    //   for (let j = 0; j < value.length; j++) {
+    //     if (value[j] && value[j].id === item.id) {
+    //       item[field] = true
+    //       if (field === 'active') {
+    //         item.expanded = true
+    //       }
+    //       this.parentExpand(item)
+    //     }
+    //   }
+    // },
+    // parentExpand (item) {
+    //   item.expanded = true
+    //   this.expand(item)
+    //   if (item.parent) {
+    //     this.parentExpand(item.parent)
+    //   }
+    // },
+    // getItem: function (value) {
+    //   for (let i = 0; i < this.items.length; i++) {
+    //     if (this.items[i][this.keyField] + '' === value + '') {
+    //       return this.items[i]
+    //     }
+    //   }
+    //   return null
+    // },
     hasChild: function (data) {     // 해당 데이터에 자식 프로퍼티가 있는지 확인
       return data && data.hasOwnProperty('children') && data.children && data.children.length > 0
       // hasOwnProperty를 통해 data내에 children 프로퍼팉를 가지고 있는지 확인.
     },
-    treeFilter: function (item) {
+    treeFilter: function (item) {     //필터함수가 존재할 경우 해당 함수에 의해 트리를 필터한다.
       var returnValue = false
       if (item.parent) {
         returnValue = item.visible && this.isExpanded(item.parent)
@@ -148,11 +146,11 @@ export default {
         returnValue = item.visible
       }
       if (this.filterFunction) {
-        returnValue = returnValue && this.isFilteredData(item)
+        returnValue = returnValue && this.isFilteredData(item)      //전달받은 필터함수를 적용하여 트리를 필터하는 곳
       }
       return returnValue
     },
-    childVisibleChange (item, visible) {
+    childVisibleChange (item, visible) {      //트리의 자식 데이터의 출력여부를 정하는 함수
       if (this.hasChild(item)) {
         let child = item.children
         for (var i = 0; i < child.length; i++) {
@@ -175,7 +173,7 @@ export default {
       }
       return item.isFiltered
     },
-    expand: function (item) {
+    expand: function (item) {     //+ - 누를시 호출되는 함수 트리를 접었다 폈다하는 함수
       this.childVisibleChange(item, item.expanded)
       this.refresh()
     },
@@ -186,32 +184,32 @@ export default {
         return true
       }
     },
-    checkclick: function (item) {
-      let idx = this.filteredItems.indexOf(item)
-      let bool = item.checked
-      for (let i = idx + 1; i < this.filteredItems.length; i++) {
-        let obj = this.filteredItems[i]
-        if (obj.depth <= item.depth) { break }
-        obj.checked = bool
-      }
-      // 절반체크 확인
-      for (let i = this.items.length - 1; i >= 0; i--) {
-        let obj = this.items[i]
-        if (!this.hasChild(obj)) {
-          obj.halfChecked = false
-          continue
-        } else { // 자식이 있다
-          this.setCheckType(obj)
-        }
-      }
-      this.refresh()
-    },
-    clearCheck: function () {     //아이템의 checked값 false로 만들어 초기화
-      for (let i = 0; i < this.items.length; i++) {
-        let item = this.items[i]
-        item.checked = false
-      }
-    },
+    // checkclick: function (item) {
+    //   let idx = this.filteredItems.indexOf(item)
+    //   let bool = item.checked
+    //   for (let i = idx + 1; i < this.filteredItems.length; i++) {
+    //     let obj = this.filteredItems[i]
+    //     if (obj.depth <= item.depth) { break }
+    //     obj.checked = bool
+    //   }
+    //   // 절반체크 확인
+    //   for (let i = this.items.length - 1; i >= 0; i--) {
+    //     let obj = this.items[i]
+    //     if (!this.hasChild(obj)) {
+    //       obj.halfChecked = false
+    //       continue
+    //     } else { // 자식이 있다
+    //       this.setCheckType(obj)
+    //     }
+    //   }
+    //   this.refresh()
+    // },
+    // clearCheck: function () {     //아이템의 checked값 false로 만들어 초기화
+    //   for (let i = 0; i < this.items.length; i++) {
+    //     let item = this.items[i]
+    //     item.checked = false
+    //   }
+    // },
     itemClick: function (item) { // 아이템 클릭 이벤트 버블링
       item.expanded = true
       if (item.children && item.children.length > 0) { this.expand(item) }
@@ -220,35 +218,35 @@ export default {
     itemDblClick: function (item) { // 아이템 클릭 이벤트 버블링
       this.$emit('itemDblClick', item)
     },
-    setCheckType: function (item) {
-      let idx = this.items.indexOf(item)
-      let isAllChecked = true
-      let isAllUnChecked = true
-
-      for (let i = idx + 1; i < this.items.length; i++) {
-        let obj = this.items[i]
-        if (obj.depth <= item.depth) { break }
-
-        if (this.hasChild(obj)) { // 자식이 있는건 그룹이라 패스~
-          continue
-        }
-
-        isAllChecked = isAllChecked && obj.checked
-        isAllUnChecked = isAllUnChecked && !obj.checked
-      }
-
-      if (isAllChecked) {
-        item.halfChecked = false
-        item.checked = true
-      } else if (isAllUnChecked) {
-        item.halfChecked = false
-        item.checked = false
-      } else {
-        item.halfChecked = true
-        item.checked = false
-      }
-    },
-    refresh: function () {
+    // setCheckType: function (item) {
+    //   let idx = this.items.indexOf(item)
+    //   let isAllChecked = true
+    //   let isAllUnChecked = true
+    //
+    //   for (let i = idx + 1; i < this.items.length; i++) {
+    //     let obj = this.items[i]
+    //     if (obj.depth <= item.depth) { break }
+    //
+    //     if (this.hasChild(obj)) { // 자식이 있는건 그룹이라 패스~
+    //       continue
+    //     }
+    //
+    //     isAllChecked = isAllChecked && obj.checked
+    //     isAllUnChecked = isAllUnChecked && !obj.checked
+    //   }
+    //
+    //   if (isAllChecked) {
+    //     item.halfChecked = false
+    //     item.checked = true
+    //   } else if (isAllUnChecked) {
+    //     item.halfChecked = false
+    //     item.checked = false
+    //   } else {
+    //     item.halfChecked = true
+    //     item.checked = false
+    //   }
+    // },
+    refresh: function () {        //화면에서 바뀐 부분이 있을 경우 호출하여 재구성
       if (this.filterFunction) { // 필터 내용이 있으면 확인
         var ar = []
         for (let i = 0; i < this.items.length; i++) {
@@ -276,45 +274,45 @@ export default {
         this.list[0].key = Math.random()
       }
 
-      let self = this
-      if (this.$refs.virtualList) {
-        // console.log(this.$refs.virtualList);
-        setTimeout(function () {
-          if (self.$refs.virtualList) {
-            self.$refs.virtualList.forceRender()
-          }
-        }, 50)
-      }
+      // let self = this
+      // if (this.$refs.virtualList) {
+      //   // console.log(this.$refs.virtualList);
+      //   setTimeout(function () {
+      //     if (self.$refs.virtualList) {
+      //       self.$refs.virtualList.forceRender()
+      //     }
+      //   }, 50)
+      // }
     },
-    getCheckedData: function () {
-      var ar = []
-      for (let i = 0; i < this.items.length; i++) {
-        let obj = this.items[i]
-        if (this.hasChild(obj)) { // 자식이 있는건 그룹이라 패스~
-          continue
-        }
-        if (obj.checked) { ar.push(obj) }
-      }
-      return ar
-    },
-    setCheck: function (ar, key) {
-      for (let i = 0; i < this.items.length; i++) {
-        let obj = this.items[i]
-
-        if (this.hasChild(obj)) { // 자식이 있는건 그룹이라 패스~
-          continue
-        }
-        for (let j = 0; j < ar.length; j++) {
-          if (obj[key] === ar[j]) {
-            obj.checked = true
-            this.checkclick(obj)
-            break
-          }
-        }
-      }
-      this.refresh()
-    },
-    setSource: function (sampleData) {
+    // getCheckedData: function () {
+    //   var ar = []
+    //   for (let i = 0; i < this.items.length; i++) {
+    //     let obj = this.items[i]
+    //     if (this.hasChild(obj)) { // 자식이 있는건 그룹이라 패스~
+    //       continue
+    //     }
+    //     if (obj.checked) { ar.push(obj) }
+    //   }
+    //   return ar
+    // },
+    // setCheck: function (ar, key) {
+    //   for (let i = 0; i < this.items.length; i++) {
+    //     let obj = this.items[i]
+    //
+    //     if (this.hasChild(obj)) { // 자식이 있는건 그룹이라 패스~
+    //       continue
+    //     }
+    //     for (let j = 0; j < ar.length; j++) {
+    //       if (obj[key] === ar[j]) {
+    //         obj.checked = true
+    //         this.checkclick(obj)
+    //         break
+    //       }
+    //     }
+    //   }
+    //   this.refresh()
+    // },
+    setSource: function (sampleData) {    //입력받은 트리데이터를 배열에 저장하고 추가함
       // 계층 구조로 들어온 목록을 2차원으로 변형 하면서 필요한 프로퍼티를 입력  datas 는 하이라키 구조의 데이터
       let ar = []
       if (!sampleData) { sampleData = [] }
@@ -326,7 +324,7 @@ export default {
       this.items = ar
       this.refresh()
     },
-    calculateHeight () {
+    calculateHeight () {        //트리 구조에 따른 virtual-list의 높이 계산
       let parentHeight = this.$el.parentElement.offsetHeight
       if (parentHeight == null || parentHeight === 0) {
         parentHeight = 300

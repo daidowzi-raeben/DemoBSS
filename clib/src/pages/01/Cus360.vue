@@ -81,10 +81,9 @@
       <div class="product_box_tree">
         <msf-tree
           :source="contentTree"
-          :activeItem="activeItemObj"
-          :selectedList="selectedItemList"
-          id-field="directoryName"
-          label-field="directoryName"
+          :id-field="'directoryName'"
+          :label-field="'directoryName'"
+          :expandDepth="1"
           ref="tree"
           @itemClick="treeItemClick"
           style="width: 100%; height: 100%; font-size: 12pt"
@@ -160,11 +159,9 @@ export default {
     // this.gridOptions = {
     //   pinnedBottomRowData: [{ model0: "합계", model1: null, model4: 0 }],
     // };
-    await this.$connect("application/json", "/info.json", "get", "").then(
-      (res) => {
-        this.contentTree = res.data.contentTree;
-      }
-    );
+    await this.$connect('application/json','/info','get','').then((res)=>{
+      this.contentTree = res.data.contentTree;
+    })
   },
   methods: {
     treeItemClick(event) {

@@ -535,7 +535,7 @@
                   :btnClass="'btnClass2'"
                   :btnWidth="'auto'"
                   :btnName="'청구통합'"
-                  @click="addComp('L01M02S02')"
+                  @click="addComp('L01M06S01')"
               /></span>
             </td>
           </tr>

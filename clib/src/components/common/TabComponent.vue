@@ -23,11 +23,12 @@
       </div>
     </div>
     <div v-for="(item, index) in compm2" :key="item">
+      <div v-show="index === this.cur_num" >
       <component
           v-bind:is="this.compm2[index]"
-          v-show="index === this.cur_num"
           @input="AddComponent"
       ></component>
+      </div>
     </div>
   </div>
 </template>
@@ -119,10 +120,14 @@ export default {
           if (this.compm.length < 10) {
             this.compm.push(param);                           //클릭된 컴포넌트의 정보를 compm 변수에 넣는다.
             this.cur_num = this.compm.length - 1;             //현재 추가되는 컴포넌트의 index 번호를 지정
+            let componentAddr = this.compm[this.cur_num].cmpnId;
+            if(componentAddr.search('/')!=-1){                // 05/컴포넌트명 인 경우 05/를 삭제 처리
+              componentAddr = componentAddr.substring(3);
+            }
             // cmpnId 가공하기 
             this.component = markRaw(                         //추가될 컴포넌트를 import를 통해 불러온다. 고정된 컴포넌트의 경우 이방식을 통해 사전에 불러와야한다.
                 defineAsyncComponent(() =>
-                    import("../" +this.menuType +"/" + this.compm[this.cur_num].cmpnId + ".vue")
+                    import("../" +this.menuType +"/" + componentAddr + ".vue")
                 )
             );
             this.compm2.push(this.component);                  //불러온 컴포넌트를 compm2 배열에 넣는다.

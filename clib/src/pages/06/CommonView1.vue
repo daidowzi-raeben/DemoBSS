@@ -264,8 +264,9 @@
     <div class="commondiv2">
 
       <msf-tree :source="contentTree"
-                label-field="directoryName"
+                :label-field="'directoryName'"
                 ref="tree"
+                :filterFunction="filter"
                 @itemClick="(value)=>{treeItemClick = value}"
                 style="width:100%; height:100%;font-size: 12pt;"
       ></msf-tree>
@@ -561,27 +562,58 @@ export default {
       contentTree: [{
         groupId: 0,
         directoryName: '청구계정ID 홍길* 은행계좌자동이체',
-        chk:true,
+        badge0:true,
         children: [
-          {groupId: 1, directoryName: '요금제명(서비스계약ID)2022-10-13~2022-10-15서울시 강남구 학동로 111', chk:true, chk2:false},
+          {groupId: 1, directoryName: '요금제명(서비스계약ID)2022-10-13~2022-10-15서울시 강남구 학동로 111',
+            badge1: true,
+            badge2: true,
+            badge3: true,
+            badge4: true},
         ]
       },
         {groupId: 5, directoryName: '청구계정ID 홍길* 은행계좌자동이체', children: [
-            {groupId: 2, directoryName: '요금제명(서비스계약ID)2022-10-13~2022-10-15서울시 강남구 학동로 111',chk:false, chk2:true},
-            {groupId: 3, directoryName: '요금제명(서비스계약ID)2022-10-13~2022-10-15서울시 강남구 학동로 1123',chk:true, chk2:true},
-            {groupId: 4, directoryName: '요금제명(서비스계약ID)2022-10-13~2022-10-15서울시 강남구 학동로 111',chk:true, chk2:true},
-            {groupId: 2, directoryName: '요금제명(서비스계약ID)2022-10-13~2022-10-15서울시 강남구 학동로 111',chk:false, chk2:true},
-            {groupId: 3, directoryName: '요금제명(서비스계약ID)2022-10-13~2022-10-15서울시 강남구 학동로 111',chk:true, chk2:true},
-            {groupId: 4, directoryName: '요금제명(서비스계약ID)2022-10-13~2022-10-15서울시 강남구 학동로 111',chk:true, chk2:true},
-            {groupId: 2, directoryName: '요금제명(서비스계약ID)2022-10-13~2022-10-15서울시 강남구 학동로 111',chk:false, chk2:true},
-            {groupId: 3, directoryName: '요금제명(서비스계약ID)2022-10-13~2022-10-15서울시 강남구 학동로 111',chk:true, chk2:true},
-            {groupId: 4, directoryName: '요금제명(서비스계약ID)2022-10-13~2022-10-15서울시 강남구 학동로 111',chk:true, chk2:true}
+            {groupId: 2, directoryName: '요금제명(서비스계약ID)2022-10-13~2022-10-15서울시 강남구 학동로 111',
+              badge1: true,
+              badge2: false,
+              badge3: true,
+              badge4: true},
+            {groupId: 3, directoryName: '요금제명(서비스계약ID)2022-10-13~2022-10-15서울시 강남구 학동로 1123',
+              badge1: true,
+              badge2: true,
+              badge3: false,
+              badge4: false},
+            {groupId: 4, directoryName: '요금제명(서비스계약ID)2022-10-13~2022-10-15서울시 강남구 학동로 111',
+              badge1: true,
+              badge2: false,
+              badge3: true,
+              badge4: true},
+            {groupId: 2, directoryName: '요금제명(서비스계약ID)2022-10-13~2022-10-15서울시 강남구 학동로 111',
+              badge1: false,
+              badge2: true,
+              badge3: false,
+              badge4: true},
+            {groupId: 3, directoryName: '요금제명(서비스계약ID)2022-10-13~2022-10-15서울시 강남구 학동로 111',badge1: true,
+              badge2: true,
+              badge3: false,
+              badge4: true},
+            {groupId: 4, directoryName: '요금제명(서비스계약ID)2022-10-13~2022-10-15서울시 강남구 학동로 111',badge1: true,
+              badge2: true,
+              badge3: false,
+              badge4: true},
+            {groupId: 2, directoryName: '요금제명(서비스계약ID)2022-10-13~2022-10-15서울시 강남구 학동로 111',badge1: false,
+              badge2: true,
+              badge3: true,
+              badge4: true},
+            {groupId: 3, directoryName: '요금제명(서비스계약ID)2022-10-13~2022-10-15서울시 강남구 학동로 111',badge1: true,
+              badge2: true,
+              badge3: false,
+              badge4: true},
+            {groupId: 4, directoryName: '요금제명(서비스계약ID)2022-10-13~2022-10-15서울시 강남구 학동로 111',badge1: true,
+              badge2: true,
+              badge3: false,
+              badge4: true}
           ]},
         {groupId: 6, directoryName: '청구계정ID 홍길* 은행계좌자동이체'}
-      ],
-      contentTree2: [{
-
-      }
       ],
       activeItemObj: {}, // 활성화 시킬 객체
       selectedItemList: [], // 선택시킬 객체
@@ -779,8 +811,8 @@ export default {
   methods: {
     filter(param){
       console.log(param);
-      if(param.directoryName === "요금제명(서비스계약ID)2022-10-13~2022-10-15서울시 강남구 학동로 1123")return true;
-      else return false;
+      if(param.directoryName === "요금제명(서비스계약ID)2022-10-13~2022-10-15서울시 강남구 학동로 1123")return false;
+      else return true;
     },
     ToastCall(){
       if(this.chk===true)this.chk=false;
