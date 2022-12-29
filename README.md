@@ -50,7 +50,6 @@
     - [etc \> RangeComponent](#etc--rangecomponent)
     - [etc \> ToastComponent](#etc--toastcomponent)
     - [etc \> ValdtnComponent](#etc--valdtncomponent)
-  - [](#)
   - [unionForm](#unionform)
     - [AutRetvComponent](#autretvcomponent)
     - [Blc2Component](#blc2component)
@@ -68,9 +67,14 @@
 
 ## 프로젝트 설치 및 실행
 ```
+#
 프로젝트 폴더 이동 :    ....cd clib
+
+# install dependencies
 프로젝트 modules 설치 : npm install
+
 프로젝트 실행 :         npm run serve
+
 json-server  : json-server --watch info.json --port 8080
 ```
 
@@ -789,11 +793,11 @@ pageableData: {
 **호출코드**
 ```
 <popup-component
-          v-if="isModalShow"                #팝업 출력 여부 true면 출력 false면 출력하지 않음
-          @popup="isModalShow = false"      #팝업 창에서 취소 버튼 클릭시 호출되는 함수
-          @AGREE = "''"                     #팝업 창에서 확인 버튼 클릭시 호출되는 함수
-          :popupmsg="'여기가 팝업 메세지 '"    #팝업 창에서 보여줄 메시지의 내용
-      />
+  v-if="isModalShow"                #팝업 출력 여부 true면 출력 false면 출력하지 않음
+  @popup="isModalShow = false"      #팝업 창에서 취소 버튼 클릭시 호출되는 함수
+  @AGREE = "''"                     #팝업 창에서 확인 버튼 클릭시 호출되는 함수
+  :popupmsg="'팝업메세지 입력'"      #팝업 창에서 보여줄 메시지의 내용
+  />
 ```
 
 
@@ -1375,9 +1379,9 @@ pageableData: {
 -정상 입력
 
 <img src="./readMeImg/validation-3.png" width="300px" height="100px">
----
 
 ***
+
 ## unionForm
 ```
 - 하나의 컴포넌트가 아닌 다양한 컴포넌트를 조합하여 검색폼 or 입력폼을 만든 컴포넌트

@@ -233,21 +233,17 @@
 </template>
 
 <script>
-import SubInfoTitle from "@/components/common/SubInfoTitle.vue";
 import InputComponent from "@/components/common/InputComponent.vue";
 import SelectBoxComponent from "@/components/common/SelectBoxComponent.vue";
 import ButtonComponent from "@/components/common/ButtonComponent.vue";
-import ChkBoxComponent from "@/components/common/ChkBoxComponent.vue";
 import DatePickerComponent from "../common/DatePickerComponent.vue";
 import LabelComponent from "../common/LabelComponent.vue";
 export default {
-  name: "CustomerSearchComponent",
+  name: "SubsRetvComponent",
   components: {
-    SubInfoTitle,
     SelectBoxComponent,
     InputComponent,
     ButtonComponent,
-    ChkBoxComponent,
     DatePickerComponent,
     LabelComponent,
   },

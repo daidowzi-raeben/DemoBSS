@@ -205,7 +205,7 @@
           v-if="isModalShow"
           @popup="isModalShow = false"
           @AGREE = "''"
-          :popupmsg="'여기가 팝업 메세지 '"
+          :popupmsg="'팝업메세지 입력'"
       />
       <p>- 팝업의 경우 버튼 클릭 이벤트를 통해 팝업 출력 여부를 v-if를 통해 결정한다.</p>
       <P>- 팝업 메세지의 경우에는 popupmsg를 통해 전달할 수 있다.</P>
