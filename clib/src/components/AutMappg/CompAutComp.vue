@@ -38,8 +38,11 @@
         :rowData="downRowData"
         :columnDefs="downColumnDefs"
         :row-height="40"
+      @getGridApi="(value) => { gridApi = value;}" 
     />
+    <button @click="abcdTest"> 클릭 </button>
   </div>
+  
   </div>
   <popupComponent
       v-if="isModalAutShow"
@@ -72,6 +75,7 @@ export default {
   },
   data(){
     return{
+      gridApi:"",
       selectValues: {   //조회 검색 탭
         searchValue: null,
         selValue: null,
@@ -136,6 +140,14 @@ export default {
         console.log(res.data.upRowData);
     })
   },
+  methods:{
+    abcdTest(){
+      let getCompData = [];
+      console.log(this.gridApi);
+      this.gridApi.forEachNodeAfterFilter(node => getCompData.push(node.data)) ;
+      console.log(getCompData)
+    }
+  }
 }
 </script>
 

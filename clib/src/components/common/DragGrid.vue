@@ -111,7 +111,6 @@ export default {
     },
 
     onGridReady(params, side) {     // Grid 준비 단계 각 Grid에 대한 api를 분배 후 데이터 추가
-      console.log("나와ㅛㅇ용",params)
       const api = params.api;
       if(side === 0){
         this.leftApi = api;
