@@ -200,6 +200,8 @@ import labelComponent from "@/components/common/LabelComponent";
 import popupComponent from "@/components/common/PopupComponent";
 import HoliDiv from "@/components/common/AgGridCellRender/HoliDiv";
 import HoliDesc from "@/components/common/AgGridCellRender/HoliDesc";
+import { mapState } from "vuex";
+
 import ApiMixin from "@/service/common";
 
 export default {
@@ -218,6 +220,10 @@ export default {
   },
   data(){
     return{
+      holiValues:{         //cell Render의 반환값을 받기 위한 변수.
+        holiValuesDiv:null,
+        holiValuesDesc:null
+      },
       holiRowData:[],
       holiColumnDefs:[
         {headerName:"일자" , field:"model1",
@@ -238,7 +244,7 @@ export default {
           cellRenderer :'HoliDiv',
           cellRendererParams: {   //휴일 선택에 대한 반환값
             clicked: function (field) {
-              console.log(field);
+              console.log(field);           //변수 지정이 되지 않아 해당 cellRender 컴포넌트에서  vuex에 값을 저장해야 함.
             }
           },
           width: 220
@@ -247,7 +253,7 @@ export default {
           cellRenderer :'HoliDesc',
           cellRendererParams: {   //휴일입력 대한 반환값
             clicked: function (field) {
-              console.log(field);
+              console.log(field);           //변수 지정이 되지 않아 해당 cellRender 컴포넌트에서  vuex에 값을 저장해야 함.
             }
           },
           width: 200
@@ -259,8 +265,6 @@ export default {
         holiStDt: null,   //조회시작년월
         holiEndDt: null,   //조회종료년월
       },
-
-
       isModalChgShow:false, //변경팝업
       isModalCretShow:false, //생성팝업
 
@@ -270,6 +274,7 @@ export default {
       }
     }
   },
+
   methods:{
     reset(){
       this.selectValues.holiYn="";
@@ -283,7 +288,7 @@ export default {
       this.$connect('application/json','/info','get','').then((res)=>{
         this.holiRowData = res.data.holiRowData;
       })
-    }
+    },
   },
   async beforeMount() {
     await this.$connect('application/json','/info','get','').then((res)=>{

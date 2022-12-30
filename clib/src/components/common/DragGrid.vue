@@ -167,10 +167,12 @@ export default {
     button(){                         // Grid 간의 이동이 완료된 후 데이터를 서버에 업데이트 하기 위한 함수
       let leftRows = [];              //첫번째 Grid의 이동된 Row 데이터를 담을 변수
       let rightRows = [];             //두번째 Grid의 이동된 Row 데이터를 담을 변수
-      this.leftApi.forEachNodeAfterFilter((rowNode) => leftRows.push(rowNode)); //첫번째 Grid의 데이터를 가져온다. forEachNodeAfterFilter는 내장함수
-      this.rightApi.forEachNodeAfterFilter((rowNode) => rightRows.push(rowNode)); //두번째 Grid의 데이터를 가져온다.
-      console.log(leftRows);
-      console.log(rightRows);
+      this.leftApi.forEachNodeAfterFilter((rowNode) => leftRows.push(rowNode.data)); //첫번째 Grid의 데이터를 가져온다. forEachNodeAfterFilter는 내장함수
+      this.rightApi.forEachNodeAfterFilter((rowNode) => rightRows.push(rowNode.data)); //두번째 Grid의 데이터를 가져온다.
+      let totalRows = [];             //부모 컴포넌트로 보내기 위해 배열 생성
+      totalRows.push(leftRows);
+      totalRows.push(rightRows);
+      this.$emit("emitValue",totalRows);
     },
     makeNoRows() {
     },

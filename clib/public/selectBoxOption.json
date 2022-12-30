@@ -142,7 +142,7 @@
   "optionsDel": [
     {
       "cdNm": "전체",
-      "cdId": ""
+      "cdId": "whole"
     },
     {
       "cdNm": "삭제",
@@ -220,29 +220,29 @@
   "autType": [
     {
       "cdNm": "전체",
-      "cdId": "전체"
+      "cdId": "aut01"
     },
     {
       "cdNm": "조회",
-      "cdId": "조회"
+      "cdId": "aut02"
     },
     {
       "cdNm": "등록",
-      "cdId": "등록"
+      "cdId": "aut03"
     },
     {
       "cdNm": "변경",
-      "cdId": "변경"
+      "cdId": "aut04"
     },
     {
       "cdNm": "삭제",
-      "cdId": "삭제"
+      "cdId": "aut05"
     }
   ],
   "retvBase": [
     {
       "cdNm": "전체",
-      "cdId": "전체"
+      "cdId": "whole"
     },
     {
       "cdNm": "메뉴ID",
@@ -280,83 +280,83 @@
   "holiYn": [
     {
       "cdNm" : "전체",
-      "cdId" : "전체"
+      "cdId" : "whole"
     },
     {
       "cdNm" : "휴일",
-      "cdId" : "휴일"
+      "cdId" : "01"
     },
     {
       "cdNm" : "평일",
-      "cdId" : "평일"
+      "cdId" : "02"
     }
   ],
-  "securRetv": [
+  "secuRetv": [
     {
       "cdNm" : "전체",
-      "cdId" : "전체"
+      "cdId" : "00"
     },
     {
       "cdNm" : "고객ID",
-      "cdId" : "고객ID"
+      "cdId" : "01"
     },
     {
       "cdNm" : "사업자등록번호",
-      "cdId" : "사업자등록번호"
+      "cdId" : "02"
     },
     {
       "cdNm" : "청구계정ID",
-      "cdId" : "청구계정ID"
+      "cdId" : "03"
     },
     {
       "cdNm" : "서비스계약ID",
-      "cdId" : "서비스계약ID"
+      "cdId" : "04"
     }
   ],
   "batchServer": [
     {
       "cdNm" : "전체",
-      "cdId" : "전체"
+      "cdId" : "00"
     },
     {
       "cdNm" : "배치명1",
-      "cdId" : "배치명1"
+      "cdId" : "01"
     },
     {
       "cdNm" : "배치명2",
-      "cdId" : "배치명2"
+      "cdId" : "02"
     },
     {
       "cdNm" : "등등",
-      "cdId" : "등등"
+      "cdId" : "03"
     }
   ],
   "holiDiv": [
     {
       "cdNm" : "휴일전체",
-      "cdId" : "휴일전체"
+      "cdId" : "holi01"
     },
     {
       "cdNm" : "공휴일",
-      "cdId" : "공휴일"
+      "cdId" : "holi02"
     },
     {
       "cdNm" : "임시공휴일",
-      "cdId" : "임시공휴일"
+      "cdId" : "holi03"
     },
     {
       "cdNm" : "대체휴일",
-      "cdId" : "대체휴일"
+      "cdId" : "holi04"
     },
     {
       "cdNm" : "기타",
-      "cdId" : "기타"
+      "cdId" : "holi05"
     }
   ],
   "orgBase": [
     {
       "cdNm": "전체",
-      "cdId": "전체"
+      "cdId": "whole"
     },
     {
       "cdNm": "조직ID",
@@ -370,25 +370,25 @@
   "jobNmSel" : [
     {
       "cdNm" : "전체",
-      "cdId" : "전체"
+      "cdId" : "whole"
     },
     {
       "cdNm" : "Job Name1",
-      "cdId" : "Job Name1"
+      "cdId" : "JNm1"
     },
     {
       "cdNm" : "Job Name2",
-      "cdId" : "Job Name2"
+      "cdId" : "JNm2"
     },
     {
       "cdNm" : "등등",
-      "cdId" : "등등"
+      "cdId" : "etc"
     }
   ],
   "wrkSttusSel" : [
     {
       "cdNm" : "전체",
-      "cdId" : "전체"
+      "cdId" : "whole"
     },
     {
       "cdNm" : "STARTED",
@@ -396,13 +396,13 @@
     },
     {
       "cdNm" : "등등",
-      "cdId" : "등등"
+      "cdId" : "etc"
     }
   ],
   "wrkResltSel" : [
     {
       "cdNm" : "전체",
-      "cdId" : "전체"
+      "cdId" : "whole"
     },
     {
       "cdNm" : "UNKNOWN",
@@ -410,7 +410,7 @@
     },
     {
       "cdNm" : "등등",
-      "cdId" : "등등"
+      "cdId" : "etc"
     }
   ],
   "inOfficeSttus2": [

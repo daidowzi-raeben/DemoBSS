@@ -79,6 +79,11 @@ export default {
       isModalAutShow:false,   //팝업창 출력 변수
       upRowData:[],
       downRowData:[],
+      autValues02:{           //cell Render의 반환값을 받기 위한 변수.
+        cdNm:null,
+        autYn:null
+      },
+      autYn:null,       //ag GridCell 권한 변수
       upColumnDefs: [
       {
         headerName: "선택",
@@ -101,7 +106,7 @@ export default {
           cellRenderer:'AutCdGpNm',         //컴포넌트처럼 import 하여 Grid 내부에 버튼등의 컴포넌트를 넣기위한 설정
           cellRendererParams: {             //업무유형이 공통코드일때 셀렉트반환값
             clicked: function (field) {     //clicked로 cellRender에서 지정한 컴포넌트와 매칭하여 값을 받아온다.
-              // console.log(field);
+              console.log(field);           //변수 지정이 되지 않아 해당 cellRender 컴포넌트에서  vuex에 값을 저장해야 함.
             }
           },
           cellStyle:{justifyContent: "flex-start"}
@@ -111,7 +116,7 @@ export default {
           cellRenderer :'AutYn',
           cellRendererParams: {   //권한 선택에 대한 반환값
             clicked: function (field) {
-              console.log(field);
+              console.log(field);           //변수 지정이 되지 않아 해당 cellRender 컴포넌트에서  vuex에 값을 저장해야 함.
             }
           }
         }

@@ -14,6 +14,7 @@
 
 <script>
 import SelectBoxComponent from "@/components/common/SelectBoxComponent";
+
 export default {
   name: "HoliDiv",
   components: {SelectBoxComponent},
@@ -24,6 +25,7 @@ export default {
   },
   watch:{
     selValues(){
+      this.$store.commit("setTest", this.selValues);
       this.params.clicked(this.selValues); //cellRendererParams의 clicked와 매핑되어 값을 전달한다.
     }
   }

@@ -16,8 +16,9 @@
       :left-row-data="leftRowData"
       :right-row-data="rightRowData"
       :Columns="GridToGridColumns"
-      
-      
+      @emitValue="(value)=>{
+          updateValue(value);
+      }"
   />
   </div>
 </template>
@@ -86,7 +87,12 @@ export default {
     })
   },
   methods:{
+    updateValue(item){
+      //item은 전달받은 drag에 대한 데이터 item[0]은 leftDatam, item[1]은 rightData
+      this.$connect('application/json','/info','get','').then((res)=>{
 
+      })
+    }
   },
 
 }
