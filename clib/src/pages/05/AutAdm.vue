@@ -1,65 +1,13 @@
 <template>
   <article class="AutAdmView">
     <div class="item"> <!--1번 상단의 권한 유형 검색 -->
-      <div class="AutType">
-      <span>
-        권한유형
-      </span>
-        <span><!--권한 유형 검색 셀렉트 박스 / 매칭변수 : selectValues.autTypeSel -->
-        <select-box-component
-            :selectClass="'select-type1'"
-            :cdGroup="'codeDiv'"
-            :disabled="true"
-            :is-disabled="true"
-            :defaultValue="'권한유형 선택'"
-            :selected-value="selectValues.autTypeSel"
-            @emitValue=" (value) => { selectValues.autTypeSel = value;}"
-        />
-      </span>
-        <span><!--검색어 입력창 / 매칭변수 : selectValues.searchValue -->
-        <input-component
-            :type="'search'"
-            :inputClass="'class4'"
-            :placeholder="'검색어 입력'"
-            :value="selectValues.searchValue"
-            v-model="selectValues.searchValue"
-            style="width:100%; height:100%"
-        />
-      </span>
-        <span>
-          사용여부
-        </span>
-        <span><!--사용여부 입력창 / 매칭변수 : selectValues.useYn -->
-        <select-box-component
-            :selectClass="'select-type1'"
-            :cdGroup="'useYn'"
-            :is-disabled="true"
-            :defaultValue="'사용여부 선택'"
-            @emitValue=" (value) => { selectValues.useYn = value;}"
-            :selected-value="selectValues.useYn"
-        />
-      </span>
-        <span><!--권한 유형 검색창에 대한 초기화 버튼 / 매칭함수 : resetSearch / 클릭시 검색창 내부에 있는 셀렉트박스, 인풋박스 초기화 -->
-        <button-component
-            :btn-class="'btn-type4'"
-            :btnFontWeight="'bold'"
-            :btn-name ="'초기화'"
-            :btnHeight="'28px'"
-            :btnWidth ="'100px'"
-            @click="resetSearch"
-        />
-      </span>
-        <span><!--권한 유형 검색창에 검색버튼 / 매칭함수 : autLstSearch / 클릭시 검색창에서 선택된 값을 기준으로 autLstSearch 실행  -->
-        <button-component
-            :btn-class="'btn-type4'"
-            :btnFontWeight="'bold'"
-            :btn-name ="'검색'"
-            :btnHeight="'28px'"
-            :btnWidth ="'100px'"
-            @click="autLstSearch"
-        />
-      </span>
-      </div>
+      <retv-cond-component
+      :retvCondNm="'권한유형'"
+      :selectDefltValue="'권한유형 선택'"
+      :selectCdGroupType1="'AutType'"
+      :selectCdGroupType2="'useYn'"
+      @emitValue="(value)=>{ retvMenuValues = value  }"
+      />
     </div>
     <div class="item"> <!--2번 권한 리스트-->
       <div style="width: 100%;" >
@@ -231,6 +179,7 @@ import InputComponent from "@/components/common/InputComponent";
 import SubInfoTitle from "@/components/common/SubInfoTitle";
 import PopupComponent from "@/components/common/PopupComponent.vue";
 import ApiMixin from "@/service/common";
+import RetvCondComponent from '@/components/UnionForm/RetvCondComponent.vue';
 export default {
   mixins:[ApiMixin],
   name: "AutAdm",
@@ -241,10 +190,17 @@ export default {
     ButtonComponent,
     AgGridComponent,
     SubInfoTitle,
-    InputComponent
+    InputComponent,
+    RetvCondComponent
   },
   data(){
     return{
+      retvMenuValues:{//권한 관리 검색 탭
+        useYn: null,              //사용여부 셀렉트박스
+        searchValue: null,        //검색어
+        autTypeSel: null,         //권한유형 셀렉트박스
+
+      },
       isModalRegShow:false,    //등록 팝업
       isModalUpdateShow:false, //변경 팝업
       autChgConf:false,        //권한상세정보 변경관련 변수
@@ -252,11 +208,6 @@ export default {
       disabled:false,          //각 상세정보 input disabled 처리 변수
       autData:null,            //권한 리스트 클릭 데이터
 
-      selectValues: {     //권한 관리 검색 탭
-        useYn: null,              //사용여부 셀렉트박스
-        searchValue: null,        //검색어
-        autTypeSel: null,         //권한유형 셀렉트박스
-      },
       SearchNum:null,          //검색 건수
 
       autAdmObject : {   //권한 상세 정보
@@ -337,16 +288,6 @@ export default {
       this.autChgConf=false;
       this.disabled=false
     },
-    autLstSearch(){
-      this.$connect('application/json','/info','get','').then((res)=>{
-        this.RowData = res.data.autRowData;
-      })
-    },
-    resetSearch(){
-      this.selectValues.autTypeSel="";
-      this.selectValues.searchValue="";
-      this.selectValues.useYn="";
-    }
   },
   async beforeMount() {
     await this.$connect('application/json','/info','get','').then((res)=>{
@@ -376,50 +317,6 @@ export default {
   grid-column: 2;
   grid-row: 2;
 }
-.AutType{
-  width: 100%;
-  padding-left: 10px;
-  background-color: rgb(239, 245, 252);
-  display: flex;
-  align-items: center;
-  height: 50px;
-}
-.AutType > span:nth-child(1){
-  min-width: 59px;
-  margin-right: 10px;
-  font-weight: bold;
-  font-size: 12pt;
-}
-.AutType > span:nth-child(2){
-  width: 200px;
-  height: 28px;
-  margin-right: 5px;
-}
-.AutType > span:nth-child(3){
-  width: 200px;
-  height: 28px;
-  margin-left: 10px;
-}
-.AutType > span:nth-child(4){
-  margin-left: 300px;
-  min-width: 59px;
-  margin-right: 10px;
-  font-weight: bold;
-  font-size: 12pt;
-}
-.AutType > span:nth-child(5){
-  width: 200px;
-  height: 28px;
-  margin-right: 300px;
-
-}
-.AutType > span:nth-child(6){
-  margin-left: 10px;
-}
-.AutType > span:nth-child(7){
-  margin-left: 10px;
-}
-
 table, tr {
   border: 1px solid rgb(232, 238,246);
   border-collapse: collapse;

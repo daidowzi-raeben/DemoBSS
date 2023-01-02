@@ -2,9 +2,11 @@
   <article class="menuAdmContainer">
     <div class="item1">
       <retv-cond-component
-        :retvCondNm="'조회기준'"
-        :selectCdGroup="'retvCond'"
-        :selectDefltValue="'조회기준 선택'"
+      :retvCondNm="'조회기준'"
+      :selectCdGroupType1="'retvCond'"
+      :selectCdGroupType2="'useYn'"
+      :selectDefltValue="'조회기준 선택'"
+      @emitValue="(value)=>{ retvMenuValues = value  }"
       />
     </div>
 
@@ -406,10 +408,14 @@ export default {
     PopupComponent,
     MsfTree,
     AgGridComponent,
-},
-
+  },
   data() {
     return {
+      retvMenuValues : {
+        type1:"",
+        type2:null,
+        type3:""
+      },
       menuAdmObject: {
         menuSttus: "amend",
         menuId:"",

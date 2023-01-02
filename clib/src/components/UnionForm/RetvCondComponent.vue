@@ -5,14 +5,13 @@
       <select-box-component
         style="height: 28px"
         :width="'140px'"
-         
-        :cdGroup="selectCdGroup"
+        :cdGroup="selectCdGroupType1"
         :isDisabled="true"
         :defaultValue="selectDefltValue"
-        :selectedValue="selectValues.selectValueOfRetv"
+        :selectedValue="selectValues.selectValueOfType"
         @emitValue="
           (value) => {
-            selectValues.selectValueOfRetv = value;
+            selectValues.selectValueOfType = value;
           }
         "
       />
@@ -32,8 +31,7 @@
       <select-box-component
         style="height: 28px"
         :width="'140px'"
-         
-        :cdGroup="'useYn'"
+        :cdGroup="selectCdGroupType2"
         :isDisabled="true"
         :defaultValue="'사용여부 선택'"
         :selectedValue="selectValues.selectValueOfUseYn"
@@ -76,7 +74,11 @@ export default {
   components: { SelectBoxComponent, InputComponent, ButtonComponent },
   props: {
     retvCondNm: String,
-    selectCdGroup: {
+    selectCdGroupType1: {
+      type: String,
+      required: true,
+    },
+    selectCdGroupType2: {
       type: String,
       required: true,
     },
@@ -88,24 +90,31 @@ export default {
   data() {
     return {
       selectValues: {
-        selectValueOfRetv: "",
-        inputValueOfRetv: null,
+        selectValueOfType: "",
+        inputValueOfSearch: null,
         selectValueOfUseYn:"",
       },
-      totalValue:[]
+      retvMenuValues:{}
     };
   },
   methods:{
     resetRetvCond(){
-        this.selectValues.selectValueOfRetv= "";
-        this.selectValues.inputValueOfRetv= null;
-        this.selectValues.selectValueOfUseYn="";
+      this.selectValues.selectValueOfType= "";
+      this.selectValues.inputValueOfSearch= null;
+      this.selectValues.selectValueOfUseYn="";
+
+      this.retvMenuValues["type1"] =this.selectValues.selectValueOfType; 
+      this.retvMenuValues["type2"] =this.selectValues.inputValueOfSearch; 
+      this.retvMenuValues["type3"] =this.selectValues.selectValueOfUseYn; 
+      this.$emit("emitValue",this.retvMenuValues);
+      console.log("초기화",this.retvMenuValues);
     },
     search(){
-      this.totalValue.push(this.selectValues.selectValueOfRetv);
-      this.totalValue.push(this.selectValues.inputValueOfRetv);
-      this.totalValue.push(this.selectValues.selectValueOfUseYn);
-      this.$emit("emitValue",this.totalValue);
+      this.retvMenuValues["type1"] = this.selectValues.selectValueOfType;
+      this.retvMenuValues["type2"] = this.selectValues.inputValueOfSearch;
+      this.retvMenuValues["type3"] = this.selectValues.selectValueOfUseYn;
+      this.$emit("emitValue",this.retvMenuValues);
+      console.log("검색",this.retvMenuValues);
     }
 
   }

@@ -1,64 +1,13 @@
 <template>
   <article class="ComCdAdmView">
     <div class="item">  <!--1번 영역 -->
-      <div class="codeSearch">
-      <span>
-        코드구분
-      </span>
-        <span>
-        <select-box-component
-            :selectClass="'select-type1'"
-            :cdGroup="'codeDiv'"
-            :defaultValue="'코드구분선택'"
-            :selected-value="selectValues.cdDivSel"
-            @emitValue=" (value) => { selectValues.cdDivSel = value;}"
-        />
-      </span>
-        <span>
-        <input-component
-            :type="'search'"
-            :inputClass="'class4'"
-            :placeholder="'검색어 입력'"
-            :value="selectValues.searchValue"
-            v-model="selectValues.searchValue"
-            style="width:100%; height:100%"
-        />
-      </span>
-        <span>
-          사용여부
-        </span>
-        <span>
-        <select-box-component
-            :selectClass="'select-type1'"
-            :cdGroup="'useYn'"
-            :is-disabled="true"
-            :defaultValue="'사용여부 선택'"
-            @emitValue=" (value) => { selectValues.useYn = value;}"
-            :selected-value="selectValues.useYn"
-        />
-
-      </span>
-        <span>
-        <button-component
-            :btn-class="'btn-type4'"
-            :btnFontWeight="'bold'"
-            :btn-name ="'초기화'"
-            :btnHeight="'28px'"
-            :btnWidth ="'100px'"
-            @click="resetSearch"
-        />
-      </span>
-        <span>
-        <button-component
-            :btn-class="'btn-type4'"
-            :btnFontWeight="'bold'"
-            :btn-name ="'검색'"
-            :btnHeight="'28px'"
-            :btnWidth ="'100px'"
-            @click="cdGpSearch"
-        />
-      </span>
-      </div>
+      <retv-cond-component
+      :retvCondNm="'코드구분'"
+      :selectDefltValue="'코드구분선택'"
+      :selectCdGroupType1="'codeDiv'"
+      :selectCdGroupType2="'useYn'"
+      @emitValue="(value)=>{ retvMenuValues = value  }"
+      />
     </div>
 
     <div class="item">  <!--2번 영역 -->
@@ -213,6 +162,7 @@ import SubInfoTitle from "@/components/common/SubInfoTitle";
 import ApiMixin from "@/service/common";
 import CodeGroupPopup from "@/components/common/PopupComponent/CdGpLstPopup";
 import CdLstPopup from "@/components/common/PopupComponent/CdLstPopup";
+import RetvCondComponent from '@/components/UnionForm/RetvCondComponent.vue';
 export default {
   mixins:[ApiMixin],
   name: "ComCdAdm",
@@ -226,17 +176,17 @@ export default {
     AgGridComponent,
     SubInfoTitle,
     InputComponent,
+    RetvCondComponent,
   },
   data(){
     return{
-      isModalCdShow : false,    //코드서버즉시 팝업
-      isCdGpModalShow : false,  //코드그룹 리스트 등록/변경 팝업
-
-      selectValues: {         //코드구분 검색 탭
+      retvMenuValues: {         //코드구분 검색 탭
         cdDivSel:"",            //코드구분 select box
-        searchValue:"",         //검색 값
+        searchValue:null,         //검색 값
         useYn:"",               //사용여부 select box
       },
+      isModalCdShow : false,    //코드서버즉시 팝업
+      isCdGpModalShow : false,  //코드그룹 리스트 등록/변경 팝업
 
       SearchNum:null,         //검색 건수
       isCdLstModalShow : false, // 코드리스트 등록/변경 팝업
@@ -349,18 +299,7 @@ export default {
     cdLstclickedRow(params){    ////코드리스트 AG GRID 클릭함수
       this.cdLstData = params.data;
     },
-    cdGpSearch(){     //검색 함수
-      this.$connect('application/json','/info','get','').then((res)=>{
-        this.cdGpRowData = res.data.cdGpRowData;
-      })
-    },
-    resetSearch(){    //리셋함수
-      this.selectValues.cdDivSel="";
-      this.selectValues.searchValue=null;
-      this.selectValues.useYn="";
-    }
   },
-
 }
 </script>
 
@@ -387,53 +326,6 @@ export default {
   grid-column: 1;
   grid-row: 3;
 }
-
-
-
-.codeSearch{
-  width: 100%;
-  padding-left: 10px;
-  background-color: rgb(239, 245, 252);
-  display: flex;
-  align-items: center;
-  height: 50px;
-}
-.codeSearch > span:nth-child(1){
-  min-width: 59px;
-  margin-right: 10px;
-  font-weight: bold;
-  font-size: 12pt;
-}
-.codeSearch > span:nth-child(2){
-  width: 200px;
-  height: 28px;
-  margin-right: 5px;
-}
-.codeSearch > span:nth-child(3){
-  width: 200px;
-  height: 28px;
-  margin-left: 10px;
-}
-.codeSearch > span:nth-child(4){
-  margin-left: 300px;
-  min-width: 59px;
-  margin-right: 10px;
-  font-weight: bold;
-  font-size: 12pt;
-}
-.codeSearch > span:nth-child(5){
-  width: 200px;
-  height: 28px;
-  margin-right: 300px;
-
-}
-.codeSearch > span:nth-child(6){
-  margin-left: 10px;
-}
-.codeSearch > span:nth-child(7){
-  margin-left: 10px;
-}
-
 
 .ag-grid_sp{
   /* margin: 10px; */
