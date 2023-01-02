@@ -20,12 +20,12 @@
           <button-component
             :btnClass="'btn-type3'"
             :btnName="'등록'"
-            @click="clickUserRegister()"
+            @click="clickMenuRegister()"
           />
           <button-component
             :btnClass="'btn-type3'"
             :btnName="'변경'"
-            @click="clickUserAmend()"
+            @click="clickMenuAmend()"
           />
           <button-component :btnClass="'btn-type3'" :btnName="'엑셀다운로드'" />
         </span>
@@ -43,22 +43,6 @@
           style="border: 1px solid rgb(239, 245, 252); padding: 0"
           :isBadgeShow="false"
         ></msf-tree>
-<!-- 
-        <AgGridComponent
-          ref="agGridComponent"
-          :rowData="rowData"
-          :columnDefs="columnDefs"
-          :rowHeight="rowHeight"
-          :isDeselect="true"
-          :rowClicked="userLstRowClicked"
-          
-        /> -->
-
-
-
-
-
-
       </div>
     </div>
 
@@ -69,7 +53,7 @@
           <button-component
             :btnClass="'btn-type2'"
             :btnWidth="'60px'"
-            :btnName="menuAdmObject.ntfSttus == 'amend' ? '변경' : '등록'"
+            :btnName="menuAdmObject.menuSttus == 'amend' ? '변경' : '등록'"
             @click="popup"
           />
         </span>
@@ -107,22 +91,40 @@
                 <input-component
                   :input-class="'input-type2'"
                   :width="'300px'"
-                  :placeholder="'계약'"
+                  :placeholder="'메뉴명'"
                   :value="menuAdmObject.menuNm"
                   v-model="menuAdmObject.menuNm"
                 />
               </td>
             </tr>
             <tr>
-              <th><label-component :labelNm="'정렬순서'" /></th>
+              <th><label-component :labelNm="'메뉴설명'" /></th>
               <td colspan="3">
                 <input-component
                   :input-class="'input-type2'"
                   :width="'300px'"
-                  :placeholder="'숫자'"
-                  :value="menuAdmObject.sortingCond"
-                  v-model="menuAdmObject.sortingCond"
+                  :placeholder="'메뉴설명 입력'"
+                  :value="menuAdmObject.menuDesc"
+                  v-model="menuAdmObject.menuDesc"
                 />
+              </td>
+            </tr>
+            <tr>
+              <th><label-component :labelNm="'메뉴 디렉토리'" /></th>
+              <td>
+                <select-box-component
+                  style="height: 28px; margin-right: 6px;"
+                  :width="'180px'"
+                  :cdGroup="'menuDirectory'"
+                  :isDisabled="true"
+                  :defaultValue="'메뉴 디렉토리 선택'"
+                  :defaultcdId="menuAdmObject.menuDir"
+                  :selectedValue="menuAdmObject.menuDir"
+                  @emitValue="(value) => {menuAdmObject.menuDir = value;}"
+                />
+              </td>
+              <th><label-component :labelNm="''" /></th>
+              <td>
               </td>
             </tr>
             <tr>
@@ -134,6 +136,31 @@
                   :placeholder="'URL'"
                   :value="menuAdmObject.url"
                   v-model="menuAdmObject.url"
+                />
+              </td>
+            </tr>
+            <tr>
+              <th><label-component :labelNm="'화면유형'" /></th>
+              <td>
+                <select-box-component
+                  style="height: 28px; margin-right: 6px;"
+                  :width="'180px'"
+                  :cdGroup="'scrnOptions'"
+                  :isDisabled="true"
+                  :defaultValue="'화면유형 선택'"
+                  :defaultcdId="menuAdmObject.scrnType"
+                  :selectedValue="menuAdmObject.scrnType"
+                  @emitValue="(value) => {menuAdmObject.scrnType = value;}"
+                />
+              </td>
+              <th><label-component :labelNm="'정렬순서'" /></th>
+              <td>
+                <input-component
+                  :width="'180px'"
+                  :input-class="'input-type2'"
+                  :inputType2BackgroundColor="'rgb(251, 253, 255)'"
+                  :placeholder="'1'"
+                  :value="menuAdmObject.sortingCond"
                 />
               </td>
             </tr>
@@ -229,7 +256,7 @@
       </div>
     </div>
 
-    <div class="item4">
+    <!-- <div class="item4">
       <div>
         <sub-info-title :subInfoTitleNm="'업무처리 정보'" />
         <span style="float: right">
@@ -258,7 +285,6 @@
                 <select-box-component
                   style="height: 28px; margin-right: 6px;"
                   :width="'140px'"
-                   
                   :cdGroup="'wjtOptions'"
                   :isDisabled="true"
                   :defaultValue="'업무유형 선택'"
@@ -378,7 +404,7 @@
       </div>
     
       {{menuAdmObject}}
-    </div>
+    </div> -->
   </article>
 </template>
 
@@ -419,12 +445,14 @@ export default {
       menuAdmObject: {
         menuSttus: "amend",
         menuId:"",
-        upMenuId:"",
+        upperMenuId:"",
         menuNm:"",
-        sortingCond:"",
+        menuDesc:null,
+        menuDir:null,
         url:"",
+        scrnType: "",
+        sortingCond:"",
         menuDtlStDt : new Date(), 
-        // menuDtlMinDt : this.menuDtlStDt,
         menuDtlEndDt : new Date('9999-12-31'),
         menuShowYn: "01",
         menuUseYn: "01",
@@ -433,11 +461,11 @@ export default {
         dtlRegrDt: new Date().toLocaleString(),
         dtlAmdrDt: new Date().toLocaleString(),
         
+        /*
         wjtTypeId : "BTN00001" , 
         wjtOption1:"",
         wjtOption2:"",
         trtStDt : new Date(), 
-        // trtMinDt : this.trtStDt,
         trtEndDt : new Date('9999-12-31'),
         UseYn: "01",
         aplyExpt:"01",
@@ -445,10 +473,9 @@ export default {
         trtAmdrNm: "김케이티",
         trtRegrDt: new Date().toLocaleString(),
         trtAmdrDt: new Date().toLocaleString(),
+        */
       },
       isModalShow: false,
-      test: "",
-
       // 트리
       activeItemObj: {}, // 활성화 시킬 객체
       selectedItemList: [], // 선택시킬 객체
@@ -511,15 +538,44 @@ export default {
     };
   },
   methods: {
-    popup() {
+    popup(msg) {
       if (this.isModalShow == false) this.isModalShow = true;
       else this.isModalShow = false;
+      if (msg == "menuSttus")
+        this.popupMsg =
+          this.menuAdmObject.menuSttus == "amend"
+            ? "변경하시겠습니까?"
+            : "등록하시겠습니까?";
+      else this.popupMsg = msg;
     },
-    clickUserRegister(){
-
+    clickMenuRegister(){
+      this.menuAdmObject.menuSttus = "register";
+      this.emptyMenuAdmObject(this.menuAdmObject);
+      this.$refs.agGridComponent.deselectAll(1);
+      this.selectedMenuData = "register";
     },
-    clickUserAmend(){
-
+    clickMenuAmend(){
+      if (this.menuAdmObject.menuSttus == "register") {
+        this.menuAdmObject.menuSttus = "amend";
+      }
+    },
+    emptyMenuAdmObject(menuObject) {
+      menuObject.menuId = null;
+      menuObject.upperMenuId = null;
+      menuObject.menuNm = null;
+      menuObject.menuDesc = null;
+      menuObject.menuDir = "";
+      menuObject.url = null;
+      menuObject.scrnType = "";
+      menuObject.sortingCond = null;
+      menuObject.menuDtlStDt = new Date();
+      menuObject.menuDtlEndDt = new Date(9999,11,31);
+      menuObject.menuShowYn = "";
+      menuObject.menuUseYn = " ";
+      menuObject.dtlRegrNm = null;
+      menuObject.dtlAmdrNm = null;
+      menuObject.dtlRegrDt = null;
+      menuObject.dtlAmdrDt = null;
     },
   },
 };

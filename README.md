@@ -102,7 +102,7 @@ clib
 │    │     └── unionForm                      # 2개 이상의 common 컴포넌트가 조합 된 컴포넌트
 │    │            └── ★☆★☆.vue              # multiple union vue form component
 │    │
-│    ├── pages                                # 각 메뉴 폴더명 미정
+│    ├── pages                                # 각 메뉴 폴더 (폴더명 미정)
 │    │     ├── 01                             # 고객/청약
 │    │     ├── 02                             # 요금/수납/미납
 │    │     ├── 03                             # 청구/정산/매출
@@ -169,7 +169,7 @@ export default {
 ```
 
 ***
-###  InputComponent
+### InputComponent
 **props**
 - placeholder : 입력 전 예시 값
 - type : 입력창의 타입 (ex. text, search)
@@ -229,7 +229,7 @@ export default {
 </p>
 
 - 1) disabled : false --> 특정 값 선택에도 기본 값(기본 선택) 선택 가능
-- 2) defaultcdId 지정 시, 처음 기본 값을 해당 코드를 가진 값 (예시에서 **개발관리**) 출력.
+- 2) defaultCdId 지정 시, 처음 기본 값을 해당 코드를 가진 값 (예시에서 **개발관리**) 출력.
 사용자관리(UserAdm.vue) 데이터 클릭부터 출력까지의 로직 참고
 
 
@@ -385,7 +385,7 @@ export default {
 **호출소스**
 ```
 <ChkBoxComponent
-   :CheckOptions='["체크옵션1","체크옵션2","체크옵션3","체크옵션4","체크옵션5",]'    #체크박스로 보여줄 데이터배열
+   :CheckOptions='["체크옵션1","체크옵션2","체크옵션3"]'       #체크박스로 보여줄 데이터배열
    :check-box-size="'20px'"                                  #체크박스의 박스 크기 지정      
    :check-text-size="'10px'"                                 #체크박스의 글자 크기 지정
    :showCheckOpt="true"                                      #체크박스 선택한 내역 출력 여부
@@ -406,7 +406,6 @@ export default {
 - maxlength     : 글자 길이 최댓값
 - textAreaHeight: textArea의 높이 지정
 - textAreaWidth : textArea의 너비 지정
--
 
 **주요특징**
 - textAreaData 변수에 값이 없을 경우 placeholder props 값 출력
@@ -444,14 +443,14 @@ export default {
 **호출소스:**
 ```
 <LabelComponent
-    :label-nm="'Label 컴포넌트'"    #라벨에 대한 이름 지정
-    :labelClass="'label-type'"     #라벨에 대한 스타일 지정
+  :label-nm="'Label 컴포넌트'"    #라벨에 대한 이름 지정
+  :labelClass="'label-type'"     #라벨에 대한 스타일 지정
 />
 ```
 
 **예시**
 
-<img width="100" height="50" src="./readMeImg/label.png"  title="datePickerDaily">
+<img width="120px" height="25px;" src="./readMeImg/label.png"  title="datePickerDaily">
 
 ***
 ### DatePickerComponent
@@ -581,53 +580,51 @@ export default {
           `<span> <br>` + '<br />조회 결과가 없습니다.' + ` </span>`"
         />
 
------------------------------------------------------------------------------------
 --------내부 AgGridVue 코드---------------------------------------------------------
-        <ag-grid-vue
-              class="ag-grid"                 #클래스 지정
-              style="height: 100%;"           #스타일 지정
-              :defaultColDef="defaultColDef"  #공통기본정의
-              @first-data-rendered="onFirstDataRendered"   #데이터가 그리드에 처음렌더링될때 발생
-              rowSelection="multiple"         #행선택유형 현재 다중
-              :rowDragMultiRow="true"         #여러 행을 동시에 드래그할 수 있도록 설정
-              :rowClassRules="rowClassRules"  #특정 css클래스를 포함하기 위해 적용할수 있는 규칙
-              :suppressRowClickSelection="true" #true인 경우 행선택이 수행되지 않는다. 기본은 false
-              :getRowNodeId="getRowNodeId"    #특정 행 노드의 Id 설정
-              headerHeight="30"               #헤더의 높이
-              :rowDragManaged="true"          #행을 드래그 하기 위한 설정 기본은 false  
-              :overlayNoRowsTemplate="overlayNoRowsTemplate" #행이 없을때 보여주는 오버레이
-              :overlayLoadingTemplate="overlayLoadingTemplate" #로딩중에 보여주는 오버레이
-              :suppressMoveWhenRowDragging="true" #드래그 되는 동안 행 이동을 억제하기 위한 설정
-              :animateRows="true"             #행 애니메이션 활성화
-              :rowData="leftRowData"          #행 데이터
-              :columnDefs="Columns"           #열 데이터
-              @grid-ready="onGridReady($event, 0)"  #그리드가 생성되기 전 작동하는 함수
-              :modules="modules"              #드래그를 사용하기 위한 모듈
-              >
-          </ag-grid-vue>
+<
+    class="ag-grid"                                   #클래스 지정
+    style="height: 100%;"                             #스타일 지정
+    :defaultColDef="defaultColDef"                    #공통기본정의
+    @first-data-rendered="onFirstDataRendered"        #데이터가 그리드에 처음렌더링될때 발생
+    rowSelection="multiple"                           #행선택유형 현재 다중
+    :rowDragMultiRow="true"                           #여러 행을 동시에 드래그할 수 있도록 설정
+    :rowClassRules="rowClassRules"                    #특정 css클래스를 포함하기 위해 적용할수 있는 규칙
+    :suppressRowClickSelection="true"                 #true인 경우 행선택이 수행되지 않는다. 기본은 false
+    :getRowNodeId="getRowNodeId"                      #특정 행 노드의 Id 설정
+    headerHeight="30"                                 #헤더의 높이
+    :rowDragManaged="true"                            #행을 드래그 하기 위한 설정 기본은 false  
+    :overlayNoRowsTemplate="overlayNoRowsTemplate"    #행이 없을때 보여주는 오버레이
+    :overlayLoadingTemplate="overlayLoadingTemplate"  #로딩중에 보여주는 오버레이
+    :suppressMoveWhenRowDragging="true"               #드래그 되는 동안 행 이동을 억제하기 위한 설정
+    :animateRows="true"                               #행 애니메이션 활성화
+    :rowData="leftRowData"                            #행 데이터
+    :columnDefs="Columns"                             #열 데이터
+    @grid-ready="onGridReady($event, 0)"              #그리드가 생성되기 전 작동하는 함수
+    :modules="modules"                                #드래그를 사용하기 위한 모듈
+  />
 
 -------------함수 설명 ---------------------------------------------------------------
-    addGridDropZone(side, api) {
-          #이동 된 Grid에 값을 넣고 기존 Grid에서 삭제하기위해 입력된 api와 반대의 api를 받는다.
-          #ex api가 left면 dropApi는 right
-      const dropApi = side === 0 ? this.rightApi : this.leftApi;    
-          #dropZone변수는 처음 드래그를 시작한 Grid의 이동값을 변수에 담는다.
-          #getRowDropZoneParams : 다른 그리드에서 사용할 메서도(이동할 행)을 반환한다.
-      const dropZone = dropApi.getRowDropZoneParams({               
-            onDragStop: params => {
-              var nodes = params.nodes;
-                api.applyTransaction({    #applyTransaction: 행데이터를 업데이트한다.
-                  remove: nodes.map(function(node) { return node.data; })     // 기존의 데이터에서 이동된 데이터 map함수로 돌면서 찾아서 삭제
-                });
+addGridDropZone(side, api) {
+      #이동 된 Grid에 값을 넣고 기존 Grid에서 삭제하기위해 입력된 api와 반대의 api를 받는다.
+      #ex api가 left면 dropApi는 right
+  const dropApi = side === 0 ? this.rightApi : this.leftApi;    
+      #dropZone변수는 처음 드래그를 시작한 Grid의 이동값을 변수에 담는다.
+      #getRowDropZoneParams : 다른 그리드에서 사용할 메서도(이동할 행)을 반환한다.
+  const dropZone = dropApi.getRowDropZoneParams({               
+        onDragStop: params => {
+          var nodes = params.nodes;
+            api.applyTransaction({    #applyTransaction: 행데이터를 업데이트한다.
+              remove: nodes.map(function(node) { return node.data; })     // 기존의 데이터에서 이동된 데이터 map함수로 돌면서 찾아서 삭제
+            });
 
-            }
-          }
+        }
+      }
 
-      );
-         #행을 놓을 수 있는 그리드에 놓기 영역을 추가한다.
-         #즉 dropZone에 있는 행 데이터를 새로운 그리드에 추가한다.
-      api.addRowDropZone(dropZone);     
-    },
+  );
+      #행을 놓을 수 있는 그리드에 놓기 영역을 추가한다.
+      #즉 dropZone에 있는 행 데이터를 새로운 그리드에 추가한다.
+  api.addRowDropZone(dropZone);     
+},
 ```
 
 **예시**

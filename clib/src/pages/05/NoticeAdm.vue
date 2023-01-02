@@ -207,6 +207,7 @@
                   :disabled="true"
                   :placeholder="'System'"
                   :value="noticeAdmObject.ntfRegr"
+                  v-model="noticeAdmObject.ntfRegr"
                 />
               </td>
               <th><label-component :labelNm="'작성일자'" /></th>
@@ -217,7 +218,8 @@
                   :inputType2BackgroundColor="'rgb(251, 253, 255)'"
                   :disabled="true"
                   :placeholder="'  '"
-                  :value="noticeAdmObject.ntfRegrDt.toLocaleString()"
+                  :value="noticeAdmObject.ntfRegrDt"
+                  v-model="noticeAdmObject.ntfRegrDt"
                 />
               </td>
             </tr>

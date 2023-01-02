@@ -8,7 +8,6 @@
           :cd-group="'orgBase'"
           @emitValue="(value)=>{this.selectValues = value}"
     />
-      />
     </div>
     <p>- 권한매핑 관리페이지에서 사용된 조회폼 </p>
     <p>- title : 제목명</p>

@@ -54,8 +54,6 @@
             :columnDefs="columnDefs"
             :row-height="40"
             :rowClicked="cdGpclickedRow"
-            
-            
         />
       </div>
       <div style="width: 100%">
