@@ -15,7 +15,6 @@ export default {
       let pageFileData = {
         menuId: pageFileName,
         menuNm: pageTabName,
-        // "cmpnId": "ContMgt"
       };
       this.$emit("emitPageTitle", pageFileData);
     },
