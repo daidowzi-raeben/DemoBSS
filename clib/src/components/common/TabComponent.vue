@@ -105,12 +105,12 @@ export default {
       }
     },
     AddComponent: function (param) {                          //탭에 컴포넌트를 추가하는 함수
-      console.log(param);
+      // console.log(param);
       if (param.menuId != "" && param.menuId != null) {
         const st = this.compm.find(                           //동일한 컴포넌트가 탭내에 존재하는지 확인
             (element) => element.menuId === param.menuId
         );
-        console.log(st);
+        // console.log(st);
         if (st != null) {                                     //동일한 컴포넌트가 존재할시 해당 컴포넌트의 탭으로 이동.
           var i = this.compm.indexOf(st);
           this.cur_num = i;

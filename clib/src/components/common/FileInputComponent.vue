@@ -116,7 +116,7 @@ export default {
         );
         fileType = "," + fileType + ","; //구분자 추가
 
-        console.log(fileList);
+        // console.log(fileList);
 
         if (
           fileList[i].size > MAXSIZE ||

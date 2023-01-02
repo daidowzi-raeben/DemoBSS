@@ -151,7 +151,7 @@ export default {
   },
   methods:{
      resetRetvCond(){
-      console.log(this.selectValues);
+      //console.log(this.selectValues);
       this.selectValues.selectValueOfDuty = "" ;
       this.selectValues.selectValueOfRspof = "" ;
       this.selectValues.selectValueOfOrg1 = "" ;
@@ -159,7 +159,7 @@ export default {
       this.selectValues.selectValueOfOrg3 = "" ;
       this.selectValues.inputValueOfEmpNm = "" ;
       this.selectValues.selectValueOfinOfficeSttus = "";
-      console.log(this.selectValues);
+      //console.log(this.selectValues);
     },
     search(){
        this.totalValue.push(this.selectValues.selectValueOfDuty);
@@ -175,7 +175,7 @@ export default {
   watch:{
     selectValues(newSelectedValue){
       this.selectValues = newSelectedValue;
-      console.log(this.selectValues)
+      //console.log(this.selectValues)
     }
   }
 };

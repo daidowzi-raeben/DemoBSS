@@ -590,7 +590,6 @@ import FileAgGridComponent from '../../components/UnionForm/FileAgGridComponent.
 
     },
     resetRetvCond(){
-      console.log(this.selectValues);
       this.selectValues.selectValueOfType = "" ;
       this.selectValues.inputValueOfWord = "" ;
       this.selectValues.selectValueOfNtfType = "" ;
@@ -599,7 +598,6 @@ import FileAgGridComponent from '../../components/UnionForm/FileAgGridComponent.
       this.selectValues.MinDt = "";
       // this.selectValues.EndDt= new Date().setDate( new Date().setMonth(new Date('2022-12-01').getMonth()+1 )  );  
       this.selectValues.EndDt = new Date("2022-12-31") ; 
-      console.log(this.selectValues);
     },
     emptyNtfAdmObject(ntfObject) {
       ntfObject.ntfTitle = "";
@@ -622,21 +620,20 @@ import FileAgGridComponent from '../../components/UnionForm/FileAgGridComponent.
   watch:{
     selectValues(newSelectedValue){
       this.selectValues = newSelectedValue;
-      console.log(this.selectValues)
+      //console.log(this.selectValues)
     },
     noticeAdmObject: {
       // 공지사항 상세정보 변경이 감지되면 해당 변경 적용
       deep: true,
       handler(newone2) {
         this.noticeAdmObject = newone2;
-        console.log("@@@noticeAdmObject@@@@: ", newone2);
       },
     },
     selectedNtfData: {
       // 공지사항 리스트(ag-grid) row가 선택 되었을 때, 해당 데이터를 기반으로 사용자 상세정보 변경
       deep: true,
       handler(newSeletedNtfData) {
-        console.log("newSeletedNtfData", newSeletedNtfData);
+        //console.log("newSeletedNtfData", newSeletedNtfData);
         if (newSeletedNtfData == "empty") {
           this.emptyNtfAdmObject(this.noticeAdmObject);
         } 
@@ -673,7 +670,7 @@ import FileAgGridComponent from '../../components/UnionForm/FileAgGridComponent.
         this.rowData = res.data.NoticeRowData;
       })
       .catch((e) => {
-        console.log(e);
+        //console.log(e);
       });
   },
   }

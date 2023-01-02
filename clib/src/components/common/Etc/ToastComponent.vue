@@ -35,7 +35,7 @@ export default defineComponent({
     closeable: Boolean,
   },
   setup(props) {
-    console.log(props.message);
+    //console.log(props.message);
     const options = props;
     let refNode = null;
     const state = reactive({
@@ -68,7 +68,7 @@ export default defineComponent({
       }
       return clazz.join(" ");
     });
-    console.log(classes);
+    //console.log(classes);
     let closed = ref(false);
     onMounted(() => {
       startTimer();
@@ -78,11 +78,11 @@ export default defineComponent({
       clearTimeout(state.timer);
     });
     const startTimer = () => {
-      console.log("start timer");
+      //console.log("start timer");
       if (options.duration > 0) {
         state.timer = setTimeout(() => {
-          console.log("start timer2");
-          console.log(closed);
+          //console.log("start timer2");
+          //console.log(closed);
           if (!closed.value) {
             close();
           }
@@ -102,7 +102,7 @@ export default defineComponent({
       refNode = el;
     };
     watch(closed, (newVal) => {
-      console.log("closed:", newVal);
+      //console.log("closed:", newVal);
       if (newVal) {
         state.showing = false;
         refNode.addEventListener("transitionend", removeHandler, false);

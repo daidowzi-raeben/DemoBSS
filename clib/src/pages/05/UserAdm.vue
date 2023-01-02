@@ -619,7 +619,7 @@ export default {
         this.rowData = res.data.userRowData;
       })
       .catch((e) => {
-        console.log(e);
+        //console.log(e);
       });
   },
   watch: {
@@ -628,14 +628,14 @@ export default {
       deep: true,
       handler(newone2) {
         this.userAdmObject = newone2;
-        console.log("@@@userAdmObject@@@@: ", newone2);
+        //console.log("@@@userAdmObject@@@@: ", newone2);
       },
     },
     selectedUserData: {
       // 사용자리스트(ag-grid) row가 선택 되었을 때, 해당 데이터를 기반으로 사용자 상세정보 변경
       deep: true,
       handler(newSelectedUserData) {
-        console.log("newSelectedUserData", newSelectedUserData);
+        //console.log("newSelectedUserData", newSelectedUserData);
         if (newSelectedUserData == "empty") {
           this.emptyUserAdmObject(this.userAdmObject);
         }
@@ -675,8 +675,8 @@ export default {
       }
     },
     checkTheNum(num) {
-      console.log(num);
-      console.log(formatTel(num));
+      //console.log(num);
+      //console.log(formatTel(num));
     },
     emptyUserAdmObject(userObject) {
       userObject.cmpNo = null;
@@ -717,7 +717,7 @@ export default {
         else console.log("비밀번호 변경 완료");
       } else if (this.userAdmObject.sttus == "register") {
         //  등록 팝업 확인 버튼 함수
-        console.log("등록 완료");
+        //console.log("등록 완료");
       }
     },
     userLstPopup() {
@@ -725,7 +725,7 @@ export default {
       else this.isUserLstModalShow = false;
     },
     userLstpopupAgree() {
-      console.log("유저리스트 팝업동의");
+      //console.log("유저리스트 팝업동의");
     },
     userLstRowClicked(params) {
       let selectedRowData = params.api.getSelectedRows();

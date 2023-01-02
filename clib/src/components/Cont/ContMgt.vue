@@ -338,12 +338,12 @@ export default {
         this.rowData = res.data.rowData;
       })
       .catch((e) => {
-        console.log(e);
+        //console.log(e);
       });
   },
   methods: {
     addComp(param) {
-      console.log(param);
+      //console.log(param);
       this.$emit("input", param);
     },
 

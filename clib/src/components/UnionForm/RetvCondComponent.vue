@@ -107,14 +107,14 @@ export default {
       this.retvMenuValues["type2"] =this.selectValues.inputValueOfSearch; 
       this.retvMenuValues["type3"] =this.selectValues.selectValueOfUseYn; 
       this.$emit("emitValue",this.retvMenuValues);
-      console.log("초기화",this.retvMenuValues);
+      //console.log("초기화",this.retvMenuValues);
     },
     search(){
       this.retvMenuValues["type1"] = this.selectValues.selectValueOfType;
       this.retvMenuValues["type2"] = this.selectValues.inputValueOfSearch;
       this.retvMenuValues["type3"] = this.selectValues.selectValueOfUseYn;
       this.$emit("emitValue",this.retvMenuValues);
-      console.log("검색",this.retvMenuValues);
+      //console.log("검색",this.retvMenuValues);
     }
 
   }

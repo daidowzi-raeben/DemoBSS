@@ -11,14 +11,14 @@ export default {
   name: "FileLst",
   setup(props) {
     const linkNm = props.params.value;
-    console.log(props.params)
+    //console.log(props.params)
     return {
       linkNm,
     };
   },
   methods:{
     fileOutput(){
-      console.log("파일 나갑니다.");
+      //console.log("파일 나갑니다.");
     },
   }
   // data() {

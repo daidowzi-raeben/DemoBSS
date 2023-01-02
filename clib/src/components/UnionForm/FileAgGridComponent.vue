@@ -87,7 +87,7 @@ export default {
           cellRenderer:'FileLst',
           cellRendererParams: { //업무유형이 공통코드일때 셀렉트반환값
             clicked: function (field) {
-              console.log("field입니다.",field)
+              //console.log("field입니다.",field)
             }
           }
         },
@@ -116,7 +116,7 @@ export default {
   methods: {
     fileAgGridRowClicked(params){
       let selectedRowData = params.api.getSelectedRows(); 
-      console.log("클릭 row Data",selectedRowData );
+      //console.log("클릭 row Data",selectedRowData );
       this.selectedData = selectedRowData[0];
       // this.gridApi.applyTransaction({remove: selectedRowData}); 
       return selectedRowData;

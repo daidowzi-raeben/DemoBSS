@@ -687,7 +687,7 @@ export default {
           cellRenderer :'AutCdGpNm',
           cellRendererParams: {
             clicked: function (field) {
-              console.log(field);
+              //console.log(field);
             }
           },
           width: 250
@@ -696,7 +696,7 @@ export default {
           cellRenderer :'AutYn',
           cellRendererParams: {
             clicked: function (field) {
-              console.log(field);
+              //console.log(field);
             }
           },
           width: 150
@@ -705,7 +705,7 @@ export default {
           cellRenderer :'BillChageDiv',
           cellRendererParams: {
             clicked: function (field) {
-              console.log(field);
+              //console.log(field);
             }
           },
           width: 120
@@ -714,7 +714,7 @@ export default {
           cellRenderer :'HoliDesc',
           cellRendererParams: {
             clicked: function (field) {
-              console.log(field);
+              //console.log(field);
             }
           },
           width: 400
@@ -723,7 +723,7 @@ export default {
           cellRenderer :'HoliDiv',
           cellRendererParams: {
             clicked: function (field) {
-              console.log(field);
+              //console.log(field);
             }
           },
           width: 350
@@ -814,7 +814,7 @@ export default {
   },
   methods: {
     filter(param){
-      console.log(param);
+      //console.log(param);
       if(param.directoryName === "요금제명(서비스계약ID)2022-10-13~2022-10-15서울시 강남구 학동로 1123")return false;
       else return true;
     },

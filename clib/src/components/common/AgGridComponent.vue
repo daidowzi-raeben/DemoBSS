@@ -118,8 +118,6 @@ export default {
   },
   methods: {
     loading() {
-      // console.log("loading");
-      // if (this.gridApi != null) this.gridApi.showLoadingOverlay();
     },
     onGridReady(params) {;
       this.gridApi = params.api;
@@ -175,7 +173,6 @@ export default {
         // this.gridApi.gridBodyCtrl.eBodyViewport.style = "border-bottom:0px;"; //안쪽
       } else {
         this.gridApi.sizeColumnsToFit(); //끝까지 맞춤
-        // console.log("끝까지 맞춤 ");
       }
     },
     makeNoRows() {

@@ -165,7 +165,7 @@ export default {
   },
   methods: {
     treeItemClick(event) {
-      console.log(event);
+      //console.log(event);
     },
   },
 };

@@ -137,13 +137,11 @@ export default {
     await this.$connect('application/json','/info','get','').then((res)=>{
         this.upRowData=res.data.upRowData;
         this.downRowData=res.data.downRowData;
-        console.log(res.data.upRowData);
     })
   },
   methods:{
     abcdTest(){
       let getCompData = [];
-      console.log(this.gridApi);
       this.gridApi.forEachNodeAfterFilter(node => getCompData.push(node.data)) ;
       console.log(getCompData)
     }

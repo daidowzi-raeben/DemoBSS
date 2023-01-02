@@ -41,12 +41,12 @@ export default {
     await this.$connect("application/json", "/info.json", "get", "")
     // await this.$connect("application/json", "/columnDefs", "get", "")
     .then((res) => {
-      console.log(res);
+      //console.log(res);
       this.columnDefs = res.data.subsLstColumnDefs;
       this.rowData = res.data.subsLstRowData;
       })
     .catch((e) => {
-      console.log(e);
+      //console.log(e);
     });
   },
 };

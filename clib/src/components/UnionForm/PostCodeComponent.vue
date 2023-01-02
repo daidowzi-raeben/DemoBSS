@@ -253,7 +253,7 @@ export default {
             : (this.searchBtnClicked += 1);
         })
         .catch((error) => {
-          console.log(error);
+          //console.log(error);
           this.searchBtnClicked += 1;
         });
     },

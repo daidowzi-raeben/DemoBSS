@@ -345,7 +345,7 @@ export default {
         { headerName: "대분류", field: "model2",  cellRenderer : 'FunComp',
           cellRendererParams:{
             clicked: function (field){
-              console.log(field);
+              //console.log(field);
             }
           }, width:180,cellStyle:{justifyContent: "flex-start"}
         },
