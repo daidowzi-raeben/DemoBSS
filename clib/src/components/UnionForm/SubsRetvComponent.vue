@@ -23,7 +23,7 @@
           <input-component
             style="width: 100`%; height: 28px"
             :type="'search'"
-            :inputClass="'class4'"
+            :inputClass="'input-type4'"
             :placeholder="'검색어 입력'"
             :value="selectValues.inputValue1"
             v-model="selectValues.inputValue1"
@@ -102,7 +102,7 @@
           <input-component
             style="width: 100`%; height: 28px"
             :type="'search'"
-            :inputClass="'class4'"
+            :inputClass="'input-type4'"
             :placeholder="'검색어 입력'"
             :value="selectValues.inputValue2"
             v-model="selectValues.inputValue2"
@@ -221,7 +221,7 @@
           <input-component
             style="width: 100`%; height: 28px"
             :type="'search'"
-            :inputClass="'class4'"
+            :inputClass="'input-type4'"
             :placeholder="'검색어 입력'"
             :value="selectValues.inputValue3"
             v-model="selectValues.inputValue3"

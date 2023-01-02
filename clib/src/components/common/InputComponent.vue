@@ -104,7 +104,7 @@ input {
 .input-type3:focus{
   outline:none;
 }
-.class4 {
+.input-type4 {
   width:100%;
   height:28px;
   border:1px solid #bdbdbd;

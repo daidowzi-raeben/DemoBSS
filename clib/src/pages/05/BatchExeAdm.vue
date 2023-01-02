@@ -81,7 +81,7 @@
               <input-component
                   style="width: 100%; height: 28px"
                   :type="'search'"
-                  :inputClass="'class4'"
+                  :inputClass="'input-type4'"
                   :width="'200px'"
                   :placeholder="'작업순서 입력'"
                   :value="selectValues.wrkOdrg"
@@ -94,7 +94,7 @@
               <input-component
                   style="width: 100%; height: 28px"
                   :type="'search'"
-                  :inputClass="'class4'"
+                  :inputClass="'input-type4'"
                   :width="'200px'"
                   :placeholder="'Job Instance Id입력'"
                   :value="selectValues.jobInstId"

@@ -33,7 +33,7 @@
     <span>
         <input-component
             :type="'search'"
-            :inputClass="'class4'"
+            :inputClass="'input-type4'"
             :placeholder="'사원명 입력'"
             :value="selectValues.searchValue"
             v-model="selectValues.searchValue"

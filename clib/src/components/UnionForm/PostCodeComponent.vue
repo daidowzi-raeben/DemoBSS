@@ -12,7 +12,7 @@
             <div class="formDataBind">
               <label-component :labelNm="'주소 검색 : '" />
               <input-component
-                :inputClass="'class4'"
+                :inputClass="'input-type4'"
                 :type="'search'"
                 :height="'30px'"
                 :placeholder="'주소를 입력해 주세요.'"

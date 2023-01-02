@@ -16,7 +16,7 @@
     <span>
         <input-component
             :type="'search'"
-            :inputClass="'class4'"
+            :inputClass="'input-type4'"
             :placeholder="'검색어 입력'"
             :value="searchValue"
             v-model="searchValue"

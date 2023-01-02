@@ -69,7 +69,7 @@
         <span>
           <input-component
             :type="'search'"
-            :input-class="'class4'"
+            :input-class="'input-type4'"
             :placeholder="'서비스계약ID 입력'"
             style="width: 100%; height: 100%"
           />

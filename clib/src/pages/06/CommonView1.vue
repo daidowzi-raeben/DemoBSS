@@ -47,17 +47,17 @@
       />
       <p>- input-type3의 경우 가로 세로 길이는 고정 /*상단 메뉴 스타일*/</p>
       <br /><br />
-      <label-component label-nm="'class4'" />
+      <label-component label-nm="'input-type4'" />
       &nbsp;&nbsp;
       <div style="width: 150px; height: 20px; display: inline-block">
         <input-component
-          :input-class="'class4'"
-          :placeholder="'class4 '"
+          :input-class="'input-type4'"
+          :placeholder="'input-type4 '"
           :value="inputValue4"
           v-model="inputValue4"
         />
       </div>
-      <p>- class4의 경우 input 태그를 감싸는 div에 맞춰 크기 지정 width 100% height 100% /*상단 메뉴 스타일*/</p>
+      <p>- input-type4의 경우 input 태그를 감싸는 div에 맞춰 크기 지정 width 100% height 100% /*상단 메뉴 스타일*/</p>
       <br /> <br />
       <label-component label-nm="'input-type5'" />
       &nbsp;&nbsp;

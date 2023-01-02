@@ -21,7 +21,7 @@
               <input-component
                   style="width: 100%; height: 28px"
                   :type="'search'"
-                  :inputClass="'class4'"
+                  :inputClass="'input-type4'"
                   :placeholder="'검색어 입력'"
                   :width="'140px'"
                   :value="selectValues.searchValues"
@@ -115,7 +115,7 @@
               <input-component
                   style="width: 100%; height: 28px"
                   :type="'search'"
-                  :inputClass="'class4'"
+                  :inputClass="'input-type4'"
                   :width="'200px'"
                   :placeholder="'사원명 입력'"
                   :value="selectValues.empNm"

@@ -12,10 +12,10 @@
                 :cdGroup="'msgRetv'"
                 :defaultValue="'조회기준 선택'"
                 :isDisabled="true"
-                :selectedValue="selectValues.selectValueOfRetv"
+                :selectedValue="selectValues.selectValueOfType"
                 @emitValue="
                   (value) => {
-                    selectValues.selectValueOfRetv = value;
+                    selectValues.selectValueOfType = value;
                   }
                 "
               />
@@ -24,7 +24,7 @@
               <input-component
                 style="width: 200px; height: 28px"
                 :type="'search'"
-                :inputClass="'class4'"
+                :inputClass="'input-type4'"
                 :placeholder="'검색어 입력'"
                 :value="selectValues.inputValueOfWord"
                 v-model="selectValues.inputValueOfWord"
@@ -406,7 +406,7 @@ export default {
   data() {
     return {
       selectValues: {
-        selectValueOfRetv: "조회기준 선택",
+        selectValueOfType: "조회기준 선택",
         inputValueOfWord : '',
         selectValueOfMsgType: "공지유형",
         selectValueOfUseYn: "사용여부",
@@ -533,7 +533,7 @@ export default {
     },
     resetRetvCond(){
       console.log(this.selectValues);
-      this.selectValues.selectValueOfRetv = "" ;
+      this.selectValues.selectValueOfType = "" ;
       this.selectValues.inputValueOfWord = "" ;
       this.selectValues.selectValueOfMsgType = "" ;
       this.selectValues.selectValueOfUseYn = "" ;

@@ -12,15 +12,15 @@
               :cdGroup="'ntfRetv'"
               :defaultValue="'조회기준 선택'"
               :isDisabled="true"
-              :selectedValue="selectValues.selectValueOfRetv"
-              @emitValue="(value) => {selectValues.selectValueOfRetv = value;}"
+              :selectedValue="selectValues.selectValueOfType"
+              @emitValue="(value) => {selectValues.selectValueOfType = value;}"
             />
           </td>
           <td>
             <input-component
               style="width: 200px; height: 28px"
               :type="'search'"
-              :inputClass="'class4'"
+              :inputClass="'input-type4'"
               :placeholder="'검색어 입력'"
               :value="selectValues.inputValueOfWord"
               v-model="selectValues.inputValueOfWord"
@@ -424,7 +424,7 @@ import FileAgGridComponent from '../../components/UnionForm/FileAgGridComponent.
     return{
       uploadFiles:[],
       selectValues:{
-        selectValueOfRetv : '조회기준 선택',
+        selectValueOfType : '조회기준 선택',
         inputValueOfWord : '',
         selectValueOfNtfType : '공지유형',
         selectValueOfUseYn : '사용여부',
@@ -591,7 +591,7 @@ import FileAgGridComponent from '../../components/UnionForm/FileAgGridComponent.
     },
     resetRetvCond(){
       console.log(this.selectValues);
-      this.selectValues.selectValueOfRetv = "" ;
+      this.selectValues.selectValueOfType = "" ;
       this.selectValues.inputValueOfWord = "" ;
       this.selectValues.selectValueOfNtfType = "" ;
       this.selectValues.selectValueOfUseYn = "" ;

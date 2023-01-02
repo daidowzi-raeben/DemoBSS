@@ -21,10 +21,10 @@
       <input-component
         style="width: 100%; height: 28px"
         :type="'search'"
-        :inputClass="'class4'"
+        :inputClass="'input-type4'"
         :placeholder="'검색어 입력'"
-        :value="selectValues.inputValueOfRetv"
-        v-model="selectValues.inputValueOfRetv"
+        :value="selectValues.inputValueOfSearch"
+        v-model="selectValues.inputValueOfSearch"
       />
     </span>
     <span> 사용여부 </span>

@@ -2,7 +2,7 @@
 <div>
   <input-component
       :type="'text'"
-      :inputClass="'class4'"
+      :inputClass="'input-type4'"
       :class="{
         colorRed : holiChk ===true,
         colorBlack : holiChk === false

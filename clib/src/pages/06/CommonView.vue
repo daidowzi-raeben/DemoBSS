@@ -388,8 +388,8 @@
       />
       <div>
       <input-component
-      :input-class="'class4'"
-      :value="'input 컴포넌트 - class4 '"
+      :input-class="'input-type4'"
+      :value="'input 컴포넌트 - input-type4 '"
       />
       </div>
 

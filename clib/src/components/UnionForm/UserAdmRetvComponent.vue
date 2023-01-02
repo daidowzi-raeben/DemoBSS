@@ -82,7 +82,7 @@
           <input-component
             style="width: 100%; height: 28px"
             :type="'search'"
-            :inputClass="'class4'"
+            :inputClass="'input-type4'"
             :placeholder="'사원명 입력'"
             :value="selectValues.inputValueOfEmpNm"
             v-model="selectValues.inputValueOfEmpNm"
