@@ -8,8 +8,7 @@
             <td>
               <select-box-component
                   style="height: 28px"
-                   
-                  :width="'200px'"
+                  :width="'160px'"
                   :cdGroup="'jobNmSel'"
                   :defaultValue="'Job Name 선택'"
                   :isDisabled="true"
@@ -22,8 +21,7 @@
             <td>
               <select-box-component
                   style="height: 28px"
-                   
-                  :width="'200px'"
+                  :width="'160px'"
                   :cdGroup="'wrkSttusSel'"
                   :defaultValue="'작업상태 선택'"
                   :isDisabled="true"
@@ -36,7 +34,7 @@
             <td>
               <date-picker-component
                   :classWrapper="'calender_input'"
-                  :width="'200px'"
+                  :width="'160px'"
                   :height="'28px'"
                   :pPlaceholder="'2022.01.01'"
                   :pDate="selectValues.btStDt"
@@ -51,7 +49,7 @@
             <td>
               <date-picker-component
                   :classWrapper="'calender_input'"
-                  :width="'200px'"
+                  :width="'160px'"
                   :height="'28px'"
                   :pPlaceholder="'2022.01.01'"
                   :pDate="selectValues.btEndDt"
@@ -62,7 +60,7 @@
             "
               />
             </td>
-            <td class="emptyBox2"></td>
+            <td class="emptyBox3"></td>
             <td class="btnBox">
               <button-component
                   :btn-class="'btn-type4'"
@@ -70,7 +68,7 @@
                   :btn-name="'검색'"
                   :btnHeight="'28px'"
                   :btnWidth="'78px'"
-                  @click="search"
+                  @click="searchRetvCond"
               />
             </td>
           </tr>
@@ -79,10 +77,9 @@
             <th><label-component :labelNm="'작업순서'" /></th>
             <td>
               <input-component
-                  style="width: 100%; height: 28px"
                   :type="'search'"
                   :inputClass="'input-type4'"
-                  :width="'200px'"
+                  :width="'160px'"
                   :placeholder="'작업순서 입력'"
                   :value="selectValues.wrkOdrg"
                   v-model="selectValues.wrkOdrg"
@@ -92,10 +89,9 @@
             <th><label-component :labelNm="'Job Instance Id'" /></th>
             <td>
               <input-component
-                  style="width: 100%; height: 28px"
                   :type="'search'"
                   :inputClass="'input-type4'"
-                  :width="'200px'"
+                  :width="'160px'"
                   :placeholder="'Job Instance Id입력'"
                   :value="selectValues.jobInstId"
                   v-model="selectValues.jobInstId"
@@ -103,11 +99,10 @@
             </td>
             <td class="emptyBox1"></td>
             <th style="text-align: right"><label-component :labelNm="'작업결과'" /></th>
-            <td colspan="2">
+            <td colspan="3">
               <select-box-component
                   style="height: 28px"
-                   
-                  :width="'210px'"
+                  :width="'160px'"
                   :cdGroup="'wrkResltSel'"
                   :defaultValue="'작업결과 선택'"
                   :isDisabled="true"
@@ -115,7 +110,7 @@
                   @emitValue="(value) => {selectValues.wrkReslt = value;}"
               />
             </td>
-            <td colspan="2"></td>
+            <td class="emptyBox3"></td>
             <td>
               <button-component
                   :btnClass="'btn-type2'"
@@ -123,7 +118,7 @@
                   :btnWidth="'78px'"
                   :btnFontWeight="'bold'"
                   :btnName="'초기화'"
-                  @click="reset"
+                  @click="resetRetvCond"
               />
             </td>
           </tr>
@@ -289,7 +284,7 @@ export default {
     }
   },
   methods:{
-    reset() {
+    resetRetvCond() {
       this.selectValues.jobNm="";
       this.selectValues.wrkSttus="";
       let date = new Date();
@@ -299,12 +294,14 @@ export default {
       this.selectValues.wrkOdrg="";
       this.selectValues.jobInstId="";
       this.selectValues.wrkReslt="";
+      console.log(this.selectValues)
     },
     //배치실행상세정보 팝업 닫기
     closeBtInfoModal(){
       this.isModelBtExeInfoShow = false;
     },
-    search() {
+    searchRetvCond(){
+      console.log(this.selectValues)
       this.$connect('application/json', '/info', 'get', '').then((res) => {
       })
     }

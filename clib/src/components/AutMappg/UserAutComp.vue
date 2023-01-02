@@ -3,31 +3,28 @@
     <span>
         <select-box-component
             :selectClass="'select-type1'"
-            :cdGroup="this.cdGroup"
-            :disabled="true"
+            :cdGroup="cdGroup"
             :is-disabled="true"
             :defaultValue="'조직 선택'"
-            @emitValue=" (value) => { selectValues.selValue = value;}"
+            @emitValue=" (value) => { selectValues.org1 = value;}"
         />
       </span>
     <span>
         <select-box-component
             :selectClass="'select-type1'"
-            :cdGroup="this.cdGroup"
-            :disabled="true"
+            :cdGroup="cdGroup"
             :is-disabled="true"
             :defaultValue="'조직 선택'"
-            @emitValue=" (value) => { selectValues.selValue = value;}"
+            @emitValue=" (value) => { selectValues.org2 = value;}"
         />
       </span>
     <span>
         <select-box-component
             :selectClass="'select-type1'"
-            :cdGroup="this.cdGroup"
-            :disabled="true"
+            :cdGroup="cdGroup"
             :is-disabled="true"
             :defaultValue="'조직 선택'"
-            @emitValue=" (value) => { selectValues.selValue = value;}"
+            @emitValue=" (value) => { selectValues.org3 = value;}"
         />
       </span>
     <span>
@@ -35,8 +32,8 @@
             :type="'search'"
             :inputClass="'input-type4'"
             :placeholder="'사원명 입력'"
-            :value="selectValues.searchValue"
-            v-model="selectValues.searchValue"
+            :value="selectValues.inputValueOfSearch"
+            v-model="selectValues.inputValueOfSearch"
             style="width:100%; height:100%"
         />
       </span>
@@ -47,7 +44,7 @@
             :btn-name ="'검색'"
             :btnHeight="'28px'"
             :btnWidth ="'100px'"
-            @click="Search"
+            @click="searchRetvCond"
         />
       </span>
   </div>
@@ -84,10 +81,14 @@ export default {
   },
   data(){
     return{
+      cdGroup : "orgSelect",
       selectValues: {     //조직 검색 탭
-        searchValue: null,
-        selValue: null,
+        org1: "",
+        org2: "",
+        org3: "",
+        inputValueOfSearch: null,
       },
+      retvMenuValues:[],
       leftRowData: [
         {model1:"81215367", model2:"홍길*", model3:"재직",model4:"기업본부",model5:"팀원",model6:"시스템관리자"},
       ],
@@ -130,6 +131,14 @@ export default {
     }
   },
   methods:{
+    searchRetvCond(){
+      this.retvMenuValues["org1"] = this.selectValues.org1 ;
+      this.retvMenuValues["org2"] = this.selectValues.org2 ;
+      this.retvMenuValues["org3"] = this.selectValues.org3 ;
+      this.retvMenuValues["empNm"] = this.selectValues.inputValueOfSearch;
+      this.$emit("emitValue",this.retvMenuValues);
+      console.log(this.retvMenuValues)
+    },
     updateValue(item){
       //item은 전달받은 drag에 대한 데이터 item[0]은 leftDatam, item[1]은 rightData
       this.$connect('application/json','/info','get','').then((res)=>{

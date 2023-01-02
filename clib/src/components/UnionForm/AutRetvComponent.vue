@@ -7,10 +7,9 @@
         <select-box-component
             :selectClass="'select-type1'"
             :cdGroup="this.cdGroup"
-            :disabled="true"
-            :is-disabled="true"
+            :isDisabled="true"
             :defaultValue="this.selDefaultValue"
-            @emitValue=" (value) => { selValue = value;}"
+            @emitValue=" (value) => { selectValueOfType = value;}"
         />
       </span>
     <span>
@@ -18,8 +17,8 @@
             :type="'search'"
             :inputClass="'input-type4'"
             :placeholder="'검색어 입력'"
-            :value="searchValue"
-            v-model="searchValue"
+            :value="inputValueOfSearch"
+            v-model="inputValueOfSearch"
             style="width:100%; height:100%"
         />
       </span>
@@ -30,7 +29,7 @@
             :btn-name ="'검색'"
             :btnHeight="'28px'"
             :btnWidth ="'100px'"
-            @click="Search"
+            @click="searchRetvCond"
         />
       </span>
   </div>
@@ -49,9 +48,9 @@ export default {
   },
   data(){
     return{
-      searchValue:null,
-      selValue:null,
-      totalValue:[],
+      selectValueOfType:"",
+      inputValueOfSearch:null,
+      retvMenuValues:[],
     }
   },
   props:{
@@ -69,10 +68,11 @@ export default {
     }
   },
   methods:{
-    Search(){
-      this.totalValue.push(this.searchValue);
-      this.totalValue.push(this.selValue);
-      this.$emit("input",this.totalValue);
+    searchRetvCond(){
+      this.retvMenuValues["Type1"] = this.selectValueOfType ;
+      this.retvMenuValues["Type2"] = this.inputValueOfSearch;
+      this.$emit("emitValue",this.retvMenuValues);
+      console.log(this.retvMenuValues)
     }
   }
 }

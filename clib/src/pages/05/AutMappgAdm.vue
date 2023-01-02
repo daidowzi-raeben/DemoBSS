@@ -5,10 +5,7 @@
         :title="'권한유형'"
         :sel-default-value="'권한유형 선택'"
         :cd-group="'autType'"
-        @emitValue="(value)=>{
-        this.selectValues.searchValue = value[0];
-        this.selectValues.selValue = value[1];
-      }"
+        @emitValue="(value)=>{this.selectValues = value}"
     />
     <div style="width: 100%; margin-top:20px;" >
       <SubInfoTitle :subInfoTitleNm="'권한 리스트'"/>

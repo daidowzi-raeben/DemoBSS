@@ -8,8 +8,7 @@
             <td>
               <select-box-component
                   style="height: 28px"
-                   
-                  :width="'200px'"
+                  :width="'140px'"
                   :cdGroup="'securRetv'"
                   :defaultValue="'조회기준 선택'"
                   :isDisabled="true"
@@ -19,7 +18,6 @@
             </td>
             <td>
               <input-component
-                  style="width: 100%; height: 28px"
                   :type="'search'"
                   :inputClass="'input-type4'"
                   :placeholder="'검색어 입력'"
@@ -34,7 +32,7 @@
             <td>
               <date-picker-component
                   :classWrapper="'calender_input'"
-                  :width="'200px'"
+                  :width="'160px'"
                   :height="'28px'"
                   :pPlaceholder="'2022.01.01'"
                   :pDate="selectValues.retvStDt"
@@ -49,7 +47,7 @@
             <td>
               <date-picker-component
                   :classWrapper="'calender_input'"
-                  :width="'200px'"
+                  :width="'160px'"
                   :height="'28px'"
                   :pPlaceholder="'2022.01.01'"
                   :pDate="selectValues.retvEndDt"
@@ -60,7 +58,7 @@
             "
               />
             </td>
-            <td class="emptyBox1"></td>
+            <td class="emptyBox2"></td>
             <td class="btnBox">
               <button-component
                   :btn-class="'btn-type4'"
@@ -68,7 +66,7 @@
                   :btn-name="'검색'"
                   :btnHeight="'28px'"
                   :btnWidth="'78px'"
-                  @click="search"
+                  @click="searchRetvCond"
               />
             </td>
           </tr>
@@ -78,51 +76,48 @@
             <td>
               <select-box-component
                   style="height: 28px"
-                   
-                  :width="'200px'"
+                  :width="'140px'"
                   :cdGroup="'orgSelect'"
                   :defaultValue="'조직 선택'"
                   :isDisabled="true"
-                  :selectedValue="selectValues.orgSel"
-                  @emitValue="(value) => {selectValues.orgSel = value;}"
+                  :selectedValue="selectValues.org1"
+                  @emitValue="(value) => {selectValues.org1 = value;}"
               />
             </td>
             <td>
               <select-box-component
                   style="height: 28px"
-                   
-                  :width="'200px'"
+                  :width="'140px'"
                   :cdGroup="'orgSelect'"
                   :defaultValue="'조직 선택'"
                   :isDisabled="true"
-                  :selectedValue="selectValues.orgSel"
-                  @emitValue="(value) => {selectValues.orgSel = value;}"
+                  :selectedValue="selectValues.org2"
+                  @emitValue="(value) => {selectValues.org2 = value;}"
               />
             </td>
             <td>
               <select-box-component
                   style="height: 28px"
-                   
-                  :width="'200px'"
+                  :width="'140px'"
                   :cdGroup="'orgSelect'"
                   :defaultValue="'조직 선택'"
                   :isDisabled="true"
-                  :selectedValue="selectValues.orgSel"
-                  @emitValue="(value) => {selectValues.orgSel = value;}"
+                  :selectedValue="selectValues.org3"
+                  @emitValue="(value) => {selectValues.org3 = value;}"
               />
             </td>
             <td>
               <input-component
-                  style="width: 100%; height: 28px"
                   :type="'search'"
                   :inputClass="'input-type4'"
-                  :width="'200px'"
+                  :width="'140px'"
                   :placeholder="'사원명 입력'"
                   :value="selectValues.empNm"
                   v-model="selectValues.empNm"
               />
             </td>
-            <td colspan="6"></td>
+            <td class="emptyBox1"></td>
+            <td colspan="5"></td>
 
             <td>
               <button-component
@@ -131,7 +126,7 @@
                   :btnWidth="'78px'"
                   :btnFontWeight="'bold'"
                   :btnName="'초기화'"
-                  @click="reset"
+                  @click="resetRetvCond"
               />
             </td>
           </tr>
@@ -165,8 +160,6 @@
             :rowData="CustRetvRowData"
             :columnDefs="CustRetvColumnDefs"
             :row-height="40"
-            
-            
         />
       </div>
       <div style="width: 100%">
@@ -237,7 +230,9 @@ export default {
         retvStDt: null,       //조회 기간 시작
         retvEndDt: null,       //조회 기간 끝
         empNm: null,            //사원명
-        orgSel: null,     //조직 선택
+        org1: null,     //조직 선택
+        org2: null,     //조직 선택
+        org3: null,     //조직 선택
       },
       isModalHideShow:false, //숨김해제 팝업
       SearchNum:null,        //검색 건수
@@ -268,17 +263,21 @@ export default {
     }
   },
   methods:{
-    reset(){
+    resetRetvCond(){
       this.selectValues.securRetv = "";
       this.selectValues.searchValues = "";
       let date = new Date();
       date.setMonth(date.getMonth() -1);
       this.selectValues.retvStDt = date;       //조회 기간 시작
       this.selectValues.retvEndDt = new Date();       //조회 기간 끝
-      this.selectValues.orgSel = "";
+      this.selectValues.org1 = "";
+      this.selectValues.org2 = "";
+      this.selectValues.org3 = "";
       this.selectValues.empNm ="";
+      console.log(this.selectValues)
     },
-    search(){
+    searchRetvCond(){
+      console.log(this.selectValues)
       this.$connect('application/json','/info','get','').then((res)=>{
         this.CustRetvRowData = res.data.securRowData;
       })
@@ -335,7 +334,7 @@ table > tr > th {
   width: 100px;
 }
 .emptyBox2 {
-  width: 450px;
+  width: 250px;
 }
 .btnBox {
   width: 80px;

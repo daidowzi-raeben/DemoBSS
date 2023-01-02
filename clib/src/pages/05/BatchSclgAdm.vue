@@ -9,7 +9,6 @@
         <select-box-component
             :selectClass="'select-type1'"
             :cdGroup="'batchServer'"
-            :disabled="true"
             :is-disabled="true"
             :defaultValue="'배치서버 선택'"
             :selected-value="selectValues.batchSrvrSel"
@@ -36,7 +35,7 @@
             :btn-name ="'초기화'"
             :btnHeight="'28px'"
             :btnWidth ="'100px'"
-            @click="reset"
+            @click="resetRetvCond"
         />
       </span>
         <span>
@@ -46,7 +45,7 @@
             :btn-name ="'검색'"
             :btnHeight="'28px'"
             :btnWidth ="'100px'"
-            @click="Search"
+            @click="searchRetvCond"
         />
       </span>
       </div>
@@ -350,11 +349,13 @@ export default {
       this.batchSclgAdmObject.desc = "";
       this.disabled = false;
     },
-    reset(){
+    resetRetvCond(){
       this.selectValues.batchSrvrSel="";
       this.selectValues.useYnSel="";
+      console.log(this.selectValues);
     },
-    search(){
+    searchRetvCond(){
+      console.log(this.selectValues);
       this.$connect('application/json','/info','get','').then((res)=>{
 
       })

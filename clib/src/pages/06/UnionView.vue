@@ -6,10 +6,8 @@
           :title="'조회기준'"
           :sel-default-value="'조회기준 선택'"
           :cd-group="'orgBase'"
-          @input="(value)=>{
-        this.selectValues.searchValue = value[0];
-        this.selectValues.selValue = value[1];
-      }"
+          @emitValue="(value)=>{this.selectValues = value}"
+    />
       />
     </div>
     <p>- 권한매핑 관리페이지에서 사용된 조회폼 </p>

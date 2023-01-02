@@ -18,7 +18,8 @@
           </td>
           <td>
             <input-component
-              style="width: 200px; height: 28px"
+            :width="'200px'"
+              :height="'28px'"
               :type="'search'"
               :inputClass="'input-type4'"
               :placeholder="'검색어 입력'"
@@ -57,6 +58,7 @@
               :btn-name="'검색'"
               :btnHeight="'28px'"
               :btnWidth="'78px'"
+              @click="searchRetvCond"
             />
           </td>
         </tr>
@@ -66,7 +68,6 @@
           <td>
             <select-box-component
               style="height: 28px"
-               
               :width="'200px'"
               :cdGroup="'ntfType'"
               :defaultValue="'공지유형 선택'"
@@ -589,6 +590,9 @@ import FileAgGridComponent from '../../components/UnionForm/FileAgGridComponent.
       }
 
     },
+    searchRetvCond(){
+      console.log(this.selectValues);
+    },
     resetRetvCond(){
       this.selectValues.selectValueOfType = "" ;
       this.selectValues.inputValueOfWord = "" ;
@@ -598,6 +602,7 @@ import FileAgGridComponent from '../../components/UnionForm/FileAgGridComponent.
       this.selectValues.MinDt = "";
       // this.selectValues.EndDt= new Date().setDate( new Date().setMonth(new Date('2022-12-01').getMonth()+1 )  );  
       this.selectValues.EndDt = new Date("2022-12-31") ; 
+      console.log(this.selectValues);
     },
     emptyNtfAdmObject(ntfObject) {
       ntfObject.ntfTitle = "";

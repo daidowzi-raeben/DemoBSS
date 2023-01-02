@@ -38,7 +38,7 @@
             :btn-name="'검색'"
             :btnHeight="'28px'"
             :btnWidth="'78px'"
-            @click="search"
+            @click="searchRetvCond"
           />
         </td>
       </tr>
@@ -103,7 +103,6 @@
             />
         </td>
         <td class="emptyBox2"></td>
-
         <td>
           <button-component
             :btnClass="'btn-type2'"
@@ -143,7 +142,7 @@ export default {
       inputValueOfEmpNm : "",
       selectValueOfinOfficeSttus : "",
       },
-      totalValue:[],
+      retvMenuValues:[],
     };
   },
   props: {
@@ -152,6 +151,7 @@ export default {
   methods:{
      resetRetvCond(){
       //console.log(this.selectValues);
+      console.log(this.selectValues.selectValueOfinOfficeSttus);
       this.selectValues.selectValueOfDuty = "" ;
       this.selectValues.selectValueOfRspof = "" ;
       this.selectValues.selectValueOfOrg1 = "" ;
@@ -159,17 +159,18 @@ export default {
       this.selectValues.selectValueOfOrg3 = "" ;
       this.selectValues.inputValueOfEmpNm = "" ;
       this.selectValues.selectValueOfinOfficeSttus = "";
-      //console.log(this.selectValues);
+      console.log(this.selectValues);
     },
-    search(){
-       this.totalValue.push(this.selectValues.selectValueOfDuty);
-       this.totalValue.push(this.selectValues.selectValueOfRspof);
-       this.totalValue.push(this.selectValues.selectValueOfOrg1);
-       this.totalValue.push(this.selectValues.selectValueOfOrg2);
-       this.totalValue.push(this.selectValues.selectValueOfOrg3);
-       this.totalValue.push(this.selectValues.inputValueOfEmpNm);
-       this.totalValue.push(this.selectValues.selectValueOfinOfficeSttus);
-       this.$emit("emitValue",this.totalValue);
+    searchRetvCond(){
+      this.retvMenuValues["Duty"] = this.selectValues.selectValueOfDuty;
+      this.retvMenuValues["Rspof"] = this.selectValues.selectValueOfRspof;
+      this.retvMenuValues["Org1"] = this.selectValues.selectValueOfOrg1;
+      this.retvMenuValues["Org2"] = this.selectValues.selectValueOfOrg2;
+      this.retvMenuValues["Org3"] = this.selectValues.selectValueOfOrg3;
+      this.retvMenuValues["inputValueOfEmpNm"] = this.selectValues.inputValueOfEmpNm;
+      this.retvMenuValues["inOfficeSttus"] = this.selectValues.selectValueOfinOfficeSttus;
+      console.log(this.selectValues);
+      this.$emit("emitValue",this.retvMenuValues);
      }
   },
   watch:{

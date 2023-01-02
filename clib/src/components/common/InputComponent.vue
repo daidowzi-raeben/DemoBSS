@@ -105,7 +105,7 @@ input {
   outline:none;
 }
 .input-type4 {
-  width:100%;
+  width:v-bind('width');
   height:28px;
   border:1px solid #bdbdbd;
 }

@@ -244,7 +244,7 @@ export default {
           cellRenderer :'HoliDiv',
           cellRendererParams: {   //휴일 선택에 대한 반환값
             clicked: function (field) {
-              console.log(field);           //변수 지정이 되지 않아 해당 cellRender 컴포넌트에서  vuex에 값을 저장해야 함.
+              // console.log(field);           //변수 지정이 되지 않아 해당 cellRender 컴포넌트에서  vuex에 값을 저장해야 함.
             }
           },
           width: 220
@@ -253,7 +253,7 @@ export default {
           cellRenderer :'HoliDesc',
           cellRendererParams: {   //휴일입력 대한 반환값
             clicked: function (field) {
-              console.log(field);           //변수 지정이 되지 않아 해당 cellRender 컴포넌트에서  vuex에 값을 저장해야 함.
+              // console.log(field);           //변수 지정이 되지 않아 해당 cellRender 컴포넌트에서  vuex에 값을 저장해야 함.
             }
           },
           width: 200
@@ -283,8 +283,11 @@ export default {
       date.setMonth(date.getMonth() -1);
       this.selectValues.holiStDt=date;
       this.selectValues.holiEndDt=new Date();
+      console.log(this.selectValues);
     },
+      
     search(){
+      console.log(this.selectValues);
       this.$connect('application/json','/info','get','').then((res)=>{
         this.holiRowData = res.data.holiRowData;
       })

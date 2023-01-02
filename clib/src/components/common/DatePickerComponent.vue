@@ -97,7 +97,7 @@ export default {
     pPlaceholder: {
       //부모에서 받아올 placeholder
       type: String,
-      default: new Date(2022,11,31).toLocaleDateString(),
+      default: new Date(2023,0,1).toLocaleDateString(),
     },
   },
   components: {

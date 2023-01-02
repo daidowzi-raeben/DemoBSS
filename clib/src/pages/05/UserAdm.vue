@@ -1,7 +1,9 @@
 <template>
   <article class="userAdmContainer">
     <div class="item1">
-      <user-adm-retv-component />
+      <user-adm-retv-component
+      @emitValue="(value)=>{ retvMenuValues = value  }"
+      />
     </div>
     <div class="item2">
       <div>
@@ -53,7 +55,7 @@
             />
           </div>
           <div>
-            {{ userAdmObject }}
+            <!-- {{ userAdmObject }} -->
             <paging-component
               class="pgPagingComponent"
               ref="PagingComponent"
@@ -472,7 +474,7 @@
             </tr>
           </table>
         </form>
-        {{ selectedUserData }}aaa
+        <!-- {{ selectedUserData }} -->
         <popup-component
           v-if="isModalShow"
           :popupmsg="popupMsg"
@@ -520,6 +522,8 @@ export default {
   },
   data() {
     return {
+      retvMenuValues:{
+      },
       selectedUserData: "",
       subInfoTitleNm_Item2: "사용자 리스트",
       subInfoTitleNm_Item3: "사용자 상세정보",

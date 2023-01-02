@@ -60,7 +60,7 @@
         :btn-name="'검색'"
         :btnHeight="'28px'"
         :btnWidth="'100px'"
-        @click="search"
+        @click="searchRetvCond"
       />
     </span>
   </div>
@@ -109,7 +109,7 @@ export default {
       this.$emit("emitValue",this.retvMenuValues);
       //console.log("초기화",this.retvMenuValues);
     },
-    search(){
+    searchRetvCond(){
       this.retvMenuValues["type1"] = this.selectValues.selectValueOfType;
       this.retvMenuValues["type2"] = this.selectValues.inputValueOfSearch;
       this.retvMenuValues["type3"] = this.selectValues.selectValueOfUseYn;

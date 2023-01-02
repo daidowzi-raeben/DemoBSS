@@ -3,10 +3,8 @@
       :title="'조회기준'"
       :sel-default-value="'조회기준 선택'"
       :cd-group="'retvBase'"
-      @input="(value)=>{
-        this.selectValues.searchValue = value[0];
-        this.selectValues.selValue = value[1];
-      }"
+      @emitValue="(value)=>{this.selectValues = value}"
+    />
   />
   <div class="ag-grid_sp">
     <div style="width: 100%; margin-top: 5px">

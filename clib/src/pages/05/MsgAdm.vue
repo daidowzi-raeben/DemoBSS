@@ -22,7 +22,8 @@
             </td>
             <td>
               <input-component
-                style="width: 200px; height: 28px"
+                :width="'200px'"
+                :height="'28px'"
                 :type="'search'"
                 :inputClass="'input-type4'"
                 :placeholder="'검색어 입력'"
@@ -61,6 +62,7 @@
                 :btn-name="'검색'"
                 :btnHeight="'28px'"
                 :btnWidth="'78px'"
+                @click="searchRetvCond"
               />
             </td>
           </tr>
@@ -530,6 +532,9 @@ export default {
       ntfObject.rcvrRstrtn = new Date("2023-12-31");
       ntfObject.msgCallBack = "";
       ntfObject.msgContent = "";
+    },
+    searchRetvCond(){
+      console.log(this.selectValues);
     },
     resetRetvCond(){
       console.log(this.selectValues);
