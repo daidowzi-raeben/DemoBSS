@@ -1,5 +1,3 @@
-
-
 // Date to String 년월 YYYYMM
 export function calDateStringYM(today) {
   if (today == null || today == '')
@@ -76,7 +74,11 @@ export function formatTel(num) {
     return num.replace(/(\d{4})(\d{4})/, '$1-$2');//8자리 전화번호
   else
     if (num.indexOf('02') == 0)
+      if (num.length == 9){
+        return num.replace(/(\d{2})(\d{3})(\d{4})/, '$1-$2-$3');//02 전화번호
+      }else{
       return num.replace(/(\d{2})(\d{4})(\d{4})/, '$1-$2-$3');//02 전화번호
+      }
     else
       return num.replace(/(\d{3})(\d{3})(\d{4})/, '$1-$2-$3');//휴대전화
   

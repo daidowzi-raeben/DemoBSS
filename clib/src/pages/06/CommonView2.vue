@@ -1,6 +1,5 @@
 <template>
   <div class="container">
-    
     <div class="commondiv0">
     <h1 style="font-size: 30px">FileAgGridComponent</h1>
       <div style="width: 700px;  height: 400px;">
@@ -11,16 +10,23 @@
         />
         <p v-for="uploadFile in uploadFiles" :key="uploadFile"> emit Files 객체 : {{ uploadFile}} &emsp; 파일명 : {{ uploadFile.name }} </p>
       </div>
-
-
       <p>- 파일 ag - grid  </p>
       <p>- cdGroup : 셀렉트 박스에 넣을 데이터에 대한 코드그룹</p>
     </div>
 
+    <div class="commondiv0">
+      <h1 class="commondiv-title">Formatting Tel Number</h1>
+    <p>
+      <label-component label-nm="Tel Number Formatting 1 " />&nbsp;&nbsp;
+      <input type="text" v-model="telNum" maxlength="11" />
+      {{ getFormTel(telNum) }}
+      <p> * 글자 수 11자 제한 </p>
+      <p> * To Do. 숫자만 입력 받기</p>
+      <p> * 사업자번호 , 이메일 등 데이터 validation </p>
+      <br/><br/><br/>
+    </p>
+    </div>
 
-
-    
-    <div class="commondiv0"></div>
     <div class="commondiv0">
       <!--[O] select Box -->
       <h1 class="commondiv-title">select box</h1>
@@ -436,6 +442,7 @@ import { defineAsyncComponent, markRaw } from "vue";
 import ApiMixin from "@/service/common.js";
 import LoadingSpinnerComponent from "@/components/common/LoadingSpinnerComponent";
 import FileAgGridComponent from "@/components/UnionForm/FileAgGridComponent.vue";
+import LabelComponent from "@/components/common/LabelComponent.vue";
 
 export default {
   mixins: [ApiMixin],
@@ -450,10 +457,12 @@ export default {
     TextAreaComponent,
     DepthTitle,
     LoadingSpinnerComponent,
-    FileAgGridComponent
+    FileAgGridComponent,
+    LabelComponent
 },
   data() {
     return {
+      telNum:"",
       uploadFiles:[],
       noRowTemplateMsg: `<span> <strong>  조회 결과가 없습니다. </strong> <br><br><br> </span>`,
       selectBoxCompData: {
@@ -616,6 +625,9 @@ export default {
     },
   },
   methods: {
+    getFormTel(getNum) {
+      return this.validateTelNum(getNum);
+  },
     fileDisable() {
       this.pDisable = !this.pDisable;
     },
