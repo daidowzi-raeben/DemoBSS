@@ -15,12 +15,12 @@ export default {
   components: {TabComponent},
   data() {
     return {
-      comp: "a",
+      comp: "compId",
       // cur_num: 0,
       compm: [
         {
-          "menuId": "a",
-          "menuNm": "adfasdf",
+          "menuId": "compId",
+          "menuNm": "계약상세",
           // "upMenuId": "cont_01_01",
           // "cmpnId": "ContMgt"
         },

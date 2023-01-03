@@ -25,10 +25,7 @@
                 :placeholder="'메뉴검색'"
                 :input-class="'input-type3'"
                 :value="menuSearch"
-                v-model="menuSearch"
-                  
-                
-              />
+                v-model="menuSearch"/>
               &nbsp;
               <img :src="iconSerch"  />
             </div>
@@ -45,7 +42,6 @@
     </div>
   </header>
 </template>
-
 <script>
 import menu from "../../public/menu.json";
 import {mapState} from 'vuex'

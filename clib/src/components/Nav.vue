@@ -133,7 +133,7 @@ export default {
       else this.selectedMenuId = val;
     },
     setCmpn(val) {
-      this.$emit("input", val);
+      this.$emit("emitValue", val);
     },
   },
 };

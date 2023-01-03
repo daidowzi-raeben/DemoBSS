@@ -2,7 +2,7 @@
   <section>
     <Nav 
     v-show="navOn" 
-    @input="AddComponent" />
+    @emitValue="AddComponent" />
     <div class="wrap">
       <div class="menu_tab_line">
         <div
@@ -84,7 +84,6 @@
           v-bind:is="this.compm2[index]"
           v-show="index === this.cur_num"
           :style=" navOn ? '' : 'margin-left:2%;' "
-
         ></component>
           </template>
           <template #fallback>
@@ -119,7 +118,6 @@ export default {
   name: "Section",
   components: {
     LoadingSpinnerComponent,
-    // DepthTitle,
     PageTitle,
     Nav,
     ButtonComponent,

@@ -565,16 +565,15 @@ export default {
     msgAdmObject: {
       // 사용자 상세정보 변경이 감지되면 해당 변경 적용
       deep: true,
-      handler(newone2) {
-        this.msgAdmObject = newone2;
-        console.log("@@@msgAdmObject@@@@: ", newone2);
+      handler(newMsgAdmObject) {
+        this.msgAdmObject = newMsgAdmObject;
       },
     },
     selectedMsgData: {
       // 메시지리스트(ag-grid) row가 선택 되었을 때, 해당 데이터를 기반으로 사용자 상세정보 변경
       deep: true,
       handler(newSeletedMsgData) {
-        console.log("newSeletedMsgData", newSeletedMsgData);
+        // console.log("newSeletedMsgData", newSeletedMsgData);
         if (newSeletedMsgData == "empty") {
           this.emptyMsgAdmObject(this.msgAdmObject);
         } 
@@ -592,8 +591,6 @@ export default {
           tmpMsgAdmObject.rcvrRstrtn = newSeletedMsgData.rcvrRstrtn;
           tmpMsgAdmObject.msgCallBack = newSeletedMsgData.msgCallBack;
           tmpMsgAdmObject.msgContent = newSeletedMsgData.msgContent;
-          // console.log("newSeletedMsgData",this.msgAdmObject.inOfficeSttus2);
-          
           this.msgAdmObject = tmpMsgAdmObject  ;
         }
       },
