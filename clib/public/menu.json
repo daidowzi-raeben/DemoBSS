@@ -269,7 +269,7 @@
       "menuId": "L03M01S01",
       "menuNm": "과금 내역",
       "upMenuId": "L03M01S00",
-      "cmpnId": ""
+      "cmpnId": "03/RatTxn"
     },
     {
       "menuId": "L03M02S00",
@@ -473,7 +473,7 @@
       "menuId": "L04M01S01",
       "menuNm": "고객리스트",
       "upMenuId": "L04M01S00",
-      "cmpnId": ""
+      "cmpnId": "04/CustLst"
     },
     {
       "menuId": "L04M01S02",
