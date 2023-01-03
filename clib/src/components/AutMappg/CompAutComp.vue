@@ -1,11 +1,11 @@
 <template>
+  <div>
   <aut-retv-component
       :title="'조회기준'"
       :sel-default-value="'조회기준 선택'"
       :cd-group="'retvBase'"
       @emitValue="(value)=>{this.selectValues = value}"
     />
-  />
   <div class="ag-grid_sp">
     <div style="width: 100%; margin-top: 5px">
       <subInfoTitle :subInfoTitleNm="'메뉴 리스트'"/>
@@ -48,6 +48,7 @@
       @AGREE = "''"
       :popupmsg="'권한을 변경하시겠습니까?'"
   />
+  </div>
 </template>
 
 <script>

@@ -11,21 +11,21 @@
             menu_tab_line_detail_on: navOn === true,
           }"
         >
-          <div v-for="(item, index) in compm" v-bind:key="index">
+          <div v-for="(item, idx) in compm" v-bind:key="idx">
             <div
               :class="{
                 tabon: this.comp === item.menuId,
                 taboff: this.comp !== item.menuId,
                 menu_tab: true,
               }"
-              @click="ChageComponent(item.menuId, index)"
+              @click="ChageComponent(item.menuId, idx)"
             >
               <span id="tab_nm">
                 {{ item.menuNm }}
               </span>
-              <span v-if="this.comp ===item.menuId" class="tab_x_on" @click.prevent.stop="DeleteComponent(index)"
+              <span v-if="this.comp ===item.menuId" class="tab_x_on" @click.prevent.stop="DeleteComponent(idx)"
               >x</span>
-              <span v-else class="tab_x_off" @click.prevent.stop="DeleteComponent(index)"
+              <span v-else class="tab_x_off" @click.prevent.stop="DeleteComponent(idx)"
               >x</span>
             </div>
           </div>
@@ -129,7 +129,7 @@ export default {
       cur_num: 0,
       compm: [
         {
-          cmpnId: "Cus360",
+          // cmpnId: "Cus360",
           menuId: "L01M01S01",
           menuNm: "고객 360 View",
           upMenuId: "L01M01",
@@ -149,6 +149,8 @@ export default {
     cur_num: function (newVal, oldVal) {
       this.comp = this.compm[newVal].menuId;
       this.component = this.compm2[this.cur_num];
+      console.log("compm",this.compm);
+      console.log("compm2", this.compm2);
     },
   },
   created() {
@@ -216,6 +218,7 @@ export default {
       }else{
         if (param.menuId != "" && param.menuId != null) {
           const st = this.compm.find( (element) => element.menuId === param.menuId);
+          console.log("st입니다.",st);
           if (st != null) {
             let i = this.compm.indexOf(st);
             this.cur_num = i;

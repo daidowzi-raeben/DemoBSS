@@ -37,7 +37,6 @@
 <script>
 import Datepicker from "vue3-datepicker";
 import { ko } from "date-fns/locale";
-// import { calToday } from "@/service/CommonService.js";
 
 export default {
   name: "DatePickerComponent",

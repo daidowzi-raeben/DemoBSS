@@ -1,11 +1,11 @@
 <template>
+  <div>
   <aut-retv-component
       :title="'조회기준'"
       :sel-default-value="'조회기준 선택'"
       :cd-group="'orgBase'"
       @emitValue="(value)=>{this.selectValues = value}"
     />
-  />
   <div class="ag-grid_sp">
     <DragGrid
         :header-color="'rgb(239 245 252)'"
@@ -18,6 +18,7 @@
           updateValue(value);
       }"
     />
+  </div>
   </div>
 </template>
 
