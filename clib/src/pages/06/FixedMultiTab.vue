@@ -79,25 +79,25 @@ export default {
   created() {
     this.comp = markRaw(
       defineAsyncComponent(() =>
-        import("@/components/FiexedMultiTab/test1.vue")
+        import("@/pages/06/FiexedMultiTab/test1.vue")
       )
     );
     this.fixTabCompAddr.push(this.comp);
     this.comp = markRaw(
       defineAsyncComponent(() =>
-        import("@/components/FiexedMultiTab/test2.vue")
+        import("@/pages/06/FiexedMultiTab/test2.vue")
       )
     );
     this.fixTabCompAddr.push(this.comp);
     this.comp = markRaw(
       defineAsyncComponent(() =>
-        import("@/components/FiexedMultiTab/test3.vue")
+        import("@/pages/06/FiexedMultiTab/test3.vue")
       )
     );
     this.fixTabCompAddr.push(this.comp);
     this.comp = markRaw(
       defineAsyncComponent(() =>
-        import("@/components/FiexedMultiTab/test4.vue")
+        import("@/pages/06/FiexedMultiTab/test4.vue")
       )
     );
     this.fixTabCompAddr.push(this.comp);
