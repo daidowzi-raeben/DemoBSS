@@ -160,7 +160,7 @@ export default {
     // this.gridOptions = {
     //   pinnedBottomRowData: [{ model0: "합계", model1: null, model4: 0 }],
     // };
-    await this.$connect('application/json','/info','get','').then((res)=>{
+    await this.$connect('application/json','/info.json','get','').then((res)=>{
       this.contentTree = res.data.contentTree;
     })
   },

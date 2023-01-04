@@ -274,7 +274,7 @@
   "cdLstRowData": [
     {
       "model1": "1",
-      "model2": "100000146",
+      "model2": "9999999999",
       "model5": "V100NX",
       "model6": "V100NX",
       "model7": "1",
@@ -373,6 +373,102 @@
       "EndDate": "9999-12-31"
     }
   ],
+  "securRowData": [
+    {
+      "model1": "1",
+      "model2": "C0000008950",
+      "model3": "B0000008950",
+      "model4": "홍길*",
+      "model5": "S000008950",
+      "model6": "조회",
+      "model7": "L1M1S1",
+      "model8": "고객 360 View",
+      "model9": "/CUS010M.do",
+      "model10": "고객 360 View",
+      "model11": "99334400",
+      "model12": "김길*",
+      "model13": "111.111.111.111",
+      "model14": "-",
+      "model15": "2022-05-30 11:05:00"
+    },
+    {
+      "model1": "2",
+      "model2": "C0000008950",
+      "model3": "B0000008950",
+      "model4": "홍길*",
+      "model5": "S000008950",
+      "model6": "엑셀다운로드",
+      "model7": "L1M1S1",
+      "model8": "고객 360 View",
+      "model9": "/CUS010M.do",
+      "model10": "고객 360 View",
+      "model11": "99334400",
+      "model12": "김길*",
+      "model13": "111.111.111.111",
+      "model14": "-",
+      "model15": "2022-05-30 11:05:00"
+    },
+    {
+      "model1": "3",
+      "model2": "C0000008950",
+      "model3": "B0000008950",
+      "model4": "홍길*",
+      "model5": "S000008950",
+      "model6": "엑셀다운로드",
+      "model7": "L1M1S1",
+      "model8": "고객 360 View",
+      "model9": "/CUS010M.do",
+      "model10": "고객 360 View",
+      "model11": "99334400",
+      "model12": "김길*",
+      "model13": "111.111.111.111",
+      "model14": "엑셀파일명.xlsx/100",
+      "model15": "2022-05-30 11:05:00"
+    }
+  ],
+  "upRowData": [
+    {
+      "model1": "Cont_01_002",
+      "model2": "계약>계약정보>계약관리",
+      "model3": "사용"
+    },
+    {
+      "model1": "Cont_01_002",
+      "model2": "계약>계약정보>계약관리",
+      "model3": "사용"
+    },
+    {
+      "model1": "Cont_01_002",
+      "model2": "계약>계약정보>계약관리",
+      "model3": "미사용"
+    }
+  ],
+  "downRowData": [
+    {
+      "model1": "BTN0000001",
+      "model2": "공통코드",
+      "model3": "코드그룹명",
+      "model4": "사용"
+    },
+    {
+      "model1": "BTN0000001",
+      "model2": "버튼",
+      "model3": "등록 버튼",
+      "model4": "사용"
+    },
+    {
+      "model1": "BTN0000001",
+      "model2": "버튼",
+      "model3": "삭제 버튼",
+      "model4": "사용"
+    },
+    {
+      "model1": "BTN0000001",
+      "model2": "공통코드",
+      "model3": "코드그룹명",
+      "model4": "사용"
+    }
+  ],
   "autRowData": [
     {
       "model1": "AUT_ARCM_01_001-01",
@@ -456,6 +552,11 @@
       "menuId": "",
       "menuNm": "사용자권한"
     }
+  ],
+  "holiRowData": [
+    { "model1": "2022-05-01", "model2": "일요일" },
+    { "model1": "2022-05-02", "model2": "월요일" },
+    { "model1": "2022-05-03", "model2": "화요일" }
   ],
   "contentTree": [
     {

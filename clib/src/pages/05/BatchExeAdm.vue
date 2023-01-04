@@ -307,7 +307,7 @@ export default {
     }
   },
   async beforeMount() {
-    await this.$connect('application/json','/info','get','').then((res)=>{
+    await this.$connect('application/json','/info.json','get','').then((res)=>{
 
     })
     let date = new Date();

@@ -356,13 +356,13 @@ export default {
     },
     searchRetvCond(){
       console.log(this.selectValues);
-      this.$connect('application/json','/info','get','').then((res)=>{
+      this.$connect('application/json','/info.json','get','').then((res)=>{
 
       })
     }
   },
   async beforeMount() {
-    await this.$connect('application/json','/info','get','').then((res)=>{
+    await this.$connect('application/json','/info.json','get','').then((res)=>{
 
     })
   },

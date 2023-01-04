@@ -81,13 +81,13 @@ export default {
   methods:{
     updateValue(item){
       //item은 전달받은 drag에 대한 데이터 item[0]은 leftDatam, item[1]은 rightData
-      this.$connect('application/json','/info','get','').then((res)=>{
+      this.$connect('application/json','/info.json','get','').then((res)=>{
 
       })
     }
   },
   async beforeMount() {
-    await this.$connect('application/json','/info','get','').then((res)=>{
+    await this.$connect('application/json','/info.json','get','').then((res)=>{
 
     })
   },

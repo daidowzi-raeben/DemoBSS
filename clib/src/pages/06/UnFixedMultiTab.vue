@@ -5,7 +5,7 @@
       :comp-array="thisMenuPage"
       :comp-value="firstMultiTabComponent"
     />
-  <div>
+  <div class="describe">
       <p>06 폴더내 멀티 탭 예시</p>
       <p> UnFixedMultiTab.vud 에서 시작.  </p>
       <p> - folder Tab Component 호출   </p>
@@ -46,4 +46,9 @@ export default {
 };
 </script>
 
-<style></style>
+<style sccoped>
+.describe{
+  clear: both;
+}
+</style>
+

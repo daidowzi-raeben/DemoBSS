@@ -288,13 +288,13 @@ export default {
       
     search(){
       console.log(this.selectValues);
-      this.$connect('application/json','/info','get','').then((res)=>{
+      this.$connect('application/json','/info.json','get','').then((res)=>{
         this.holiRowData = res.data.holiRowData;
       })
     },
   },
   async beforeMount() {
-    await this.$connect('application/json','/info','get','').then((res)=>{
+    await this.$connect('application/json','/info.json','get','').then((res)=>{
         this.holiRowData = res.data.holiRowData;
     })
     let date = new Date();
