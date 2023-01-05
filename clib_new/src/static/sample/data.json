@@ -1,0 +1,2485 @@
+{
+    "menu": [
+        {
+            "menuId": "L01",
+            "menuNm": "고객/청약",
+            "upMenuId": null,
+            "cmpnId": ""
+        },
+        {
+            "menuId": "L01M01S00",
+            "menuNm": "고객 360 View",
+            "upMenuId": "L01",
+            "cmpnId": "Cus360"
+        },
+        {
+            "menuId": "L01M02S00",
+            "menuNm": "고객정보",
+            "upMenuId": "L01",
+            "cmpnId": ""
+        },
+        {
+            "menuId": "L01M02S01",
+            "menuNm": "고객정보 등록",
+            "upMenuId": "L01M02S00",
+            "cmpnId": "ContSection"
+        },
+        {
+            "menuId": "L01M02S02",
+            "menuNm": "고객정보 수정",
+            "upMenuId": "L01M02S00",
+            "cmpnId": "ChageInfoRetv"
+        },
+        {
+            "menuId": "L01M03S00",
+            "menuNm": "납부정보",
+            "upMenuId": "L01",
+            "cmpnId": ""
+        },
+        {
+            "menuId": "L01M03S01",
+            "menuNm": "납부정보 등록",
+            "upMenuId": "L01M03S00",
+            "cmpnId": ""
+        },
+        {
+            "menuId": "L01M03S02",
+            "menuNm": "납부정보 수정",
+            "upMenuId": "L01M03S00",
+            "cmpnId": ""
+        },
+        {
+            "menuId": "L01M05S00",
+            "menuNm": "청약정보 등록/변경",
+            "upMenuId": "L01",
+            "cmpnId": ""
+        },
+        {
+            "menuId": "L01M05S01",
+            "menuNm": "청약 등록",
+            "upMenuId": "L01M05S00",
+            "cmpnId": ""
+        },
+        {
+            "menuId": "L01M05S02",
+            "menuNm": "청약 변경",
+            "upMenuId": "L01M05S00",
+            "cmpnId": ""
+        },
+        {
+            "menuId": "L01M06S00",
+            "menuNm": "청약관리",
+            "upMenuId": "L01",
+            "cmpnId": ""
+        },
+        {
+            "menuId": "L01M06S01",
+            "menuNm": "청약 리스트",
+            "upMenuId": "L01M06S00",
+            "cmpnId": "01/SubsLst"
+        },
+        {
+            "menuId": "L01M06S02",
+            "menuNm": "청약 승인/반려",
+            "upMenuId": "L01M06S00",
+            "cmpnId": ""
+        },
+        {
+            "menuId": "L01M07S00",
+            "menuNm": "명의변경",
+            "upMenuId": "L01",
+            "cmpnId": ""
+        },
+        {
+            "menuId": "L02",
+            "menuNm": "요금/수납/미납",
+            "upMenuId": null,
+            "cmpnId": ""
+        },
+        {
+            "menuId": "L02M01S00",
+            "menuNm": "청구통합/분리",
+            "upMenuId": "L02",
+            "cmpnId": ""
+        },
+        {
+            "menuId": "L02M01S01",
+            "menuNm": "분리청구",
+            "upMenuId": "L02M01S00",
+            "cmpnId": ""
+        },
+        {
+            "menuId": "L02M02S00",
+            "menuNm": "청구요금",
+            "upMenuId": "L02",
+            "cmpnId": ""
+        },
+        {
+            "menuId": "L02M02S01",
+            "menuNm": "청구요금",
+            "upMenuId": "L02M02S00",
+            "cmpnId": "02/BillChage"
+        },
+        {
+            "menuId": "L02M03S00",
+            "menuNm": "즉시수납",
+            "upMenuId": "L02",
+            "cmpnId": ""
+        },
+        {
+            "menuId": "L02M03S01",
+            "menuNm": "즉시수납",
+            "upMenuId": "L02M03S00",
+            "cmpnId": ""
+        },
+        {
+            "menuId": "L02M03S02",
+            "menuNm": "신용카드 승인 내역",
+            "upMenuId": "L02M03S00",
+            "cmpnId": ""
+        },
+        {
+            "menuId": "L02M03S04",
+            "menuNm": "CMS즉시 출금 내역",
+            "upMenuId": "L02M03S00",
+            "cmpnId": ""
+        },
+        {
+            "menuId": "L02M04S00",
+            "menuNm": "선수납관리",
+            "upMenuId": "L02",
+            "cmpnId": ""
+        },
+        {
+            "menuId": "L02M04S01",
+            "menuNm": "선납금 수납",
+            "upMenuId": "L02M04S00",
+            "cmpnId": ""
+        },
+        {
+            "menuId": "L02M04S02",
+            "menuNm": "선수납 대체 내역",
+            "upMenuId": "L02M04S00",
+            "cmpnId": ""
+        },
+        {
+            "menuId": "L02M05S00",
+            "menuNm": "수납관리",
+            "upMenuId": "L02",
+            "cmpnId": ""
+        },
+        {
+            "menuId": "L02M05S01",
+            "menuNm": "수납내역",
+            "upMenuId": "L02M05S00",
+            "cmpnId": ""
+        },
+        {
+            "menuId": "L02M06S00",
+            "menuNm": "과납관리",
+            "upMenuId": "L02",
+            "cmpnId": ""
+        },
+        {
+            "menuId": "L02M07S00",
+            "menuNm": "환불관리",
+            "upMenuId": "L02",
+            "cmpnId": ""
+        },
+        {
+            "menuId": "L02M07S01",
+            "menuNm": "환불 내역",
+            "upMenuId": "L02M07S00",
+            "cmpnId": ""
+        },
+        {
+            "menuId": "L02M07S02",
+            "menuNm": "환불접수 내역",
+            "upMenuId": "L02M07S00",
+            "cmpnId": ""
+        },
+        {
+            "menuId": "L02M08S00",
+            "menuNm": "미납관리",
+            "upMenuId": "L02",
+            "cmpnId": ""
+        },
+        {
+            "menuId": "L02M08S01",
+            "menuNm": "미납내역",
+            "upMenuId": "L02M08S00",
+            "cmpnId": ""
+        },
+        {
+            "menuId": "L02M11S00",
+            "menuNm": "입출금관리",
+            "upMenuId": "L02",
+            "cmpnId": ""
+        },
+        {
+            "menuId": "L02M011S01",
+            "menuNm": "자동이체 대상 입출금 리스트",
+            "upMenuId": "L02M11S00",
+            "cmpnId": ""
+        },
+        {
+            "menuId": "L02M11S02",
+            "menuNm": "실시간계좌이체 리스트",
+            "upMenuId": "L02M11S00",
+            "cmpnId": ""
+        },
+        {
+            "menuId": "L02M11S03",
+            "menuNm": "CMS출금결과 입금 리스트",
+            "upMenuId": "L02M11S00",
+            "cmpnId": ""
+        },
+        {
+            "menuId": "L02M11S04",
+            "menuNm": "신용카드 입금 리스트",
+            "upMenuId": "L02M11S00",
+            "cmpnId": ""
+        },
+        {
+            "menuId": "L02M11S05",
+            "menuNm": "가상계좌 입금 리스트",
+            "upMenuId": "L02M11S00",
+            "cmpnId": ""
+        },
+        {
+            "menuId": "L02M11S06",
+            "menuNm": "가상계좌 내역",
+            "upMenuId": "L02M11S00",
+            "cmpnId": ""
+        },
+        {
+            "menuId": "L03",
+            "menuNm": "청구/정산/매출",
+            "upMenuId": null,
+            "cmpnId": ""
+        },
+        {
+            "menuId": "L03M01S00",
+            "menuNm": "과금관리",
+            "upMenuId": "L03",
+            "cmpnId": ""
+        },
+        {
+            "menuId": "L03M01S01",
+            "menuNm": "과금 내역",
+            "upMenuId": "L03M01S00",
+            "cmpnId": "03/RatTxn"
+        },
+        {
+            "menuId": "L03M02S00",
+            "menuNm": "빌링관리",
+            "upMenuId": "L03",
+            "cmpnId": ""
+        },
+        {
+            "menuId": "L03M02S01",
+            "menuNm": "요금 리스트",
+            "upMenuId": "L03M02S00",
+            "cmpnId": ""
+        },
+        {
+            "menuId": "L03M02S02",
+            "menuNm": "청구작업 진행 리스트",
+            "upMenuId": "L03M02S00",
+            "cmpnId": ""
+        },
+        {
+            "menuId": "L03M03S00",
+            "menuNm": "요금조정",
+            "upMenuId": "L03",
+            "cmpnId": ""
+        },
+        {
+            "menuId": "L03M03S01",
+            "menuNm": "요금조정",
+            "upMenuId": "L03M03S00",
+            "cmpnId": ""
+        },
+        {
+            "menuId": "L03M03S02",
+            "menuNm": "차월요금조정",
+            "upMenuId": "L03M03S00",
+            "cmpnId": ""
+        },
+        {
+            "menuId": "L03M03S03",
+            "menuNm": "차월 가산금 감면",
+            "upMenuId": "L03M03S00",
+            "cmpnId": ""
+        },
+        {
+            "menuId": "L03M03S04",
+            "menuNm": "요금조정 리스트",
+            "upMenuId": "L03M03S00",
+            "cmpnId": ""
+        },
+        {
+            "menuId": "L03M04S00",
+            "menuNm": "수시청구",
+            "upMenuId": "L03",
+            "cmpnId": ""
+        },
+        {
+            "menuId": "L03M04S01",
+            "menuNm": "수시청구 리스트",
+            "upMenuId": "L03M04S00",
+            "cmpnId": ""
+        },
+        {
+            "menuId": "L03M04S02",
+            "menuNm": "수시청구 등록",
+            "upMenuId": "L03M04S00",
+            "cmpnId": ""
+        },
+        {
+            "menuId": "L03M05S00",
+            "menuNm": "청구서 발행/재발행",
+            "upMenuId": "L03",
+            "cmpnId": ""
+        },
+        {
+            "menuId": "L03M05S01",
+            "menuNm": "청구서 발행/재발행",
+            "upMenuId": "L03M05S00",
+            "cmpnId": ""
+        },
+        {
+            "menuId": "L03M05S02",
+            "menuNm": "청구서 발행/재발행 처리결과",
+            "upMenuId": "L03M05S00",
+            "cmpnId": ""
+        },
+        {
+            "menuId": "L03M06S00",
+            "menuNm": "청구서발행 이력관리",
+            "upMenuId": "L03",
+            "cmpnId": ""
+        },
+        {
+            "menuId": "L03M07S00",
+            "menuNm": "청구자료관리",
+            "upMenuId": "L03",
+            "cmpnId": ""
+        },
+        {
+            "menuId": "L03M07S01",
+            "menuNm": "CMS출금 내역",
+            "upMenuId": "L03M07S00",
+            "cmpnId": ""
+        },
+        {
+            "menuId": "L03M07S02",
+            "menuNm": "신용카드 청구 내역",
+            "upMenuId": "L03M07S00",
+            "cmpnId": ""
+        },
+        {
+            "menuId": "L03M07S03",
+            "menuNm": "신용카드 매입의뢰 내역",
+            "upMenuId": "L03M07S00",
+            "cmpnId": ""
+        },
+        {
+            "menuId": "L03M09S00",
+            "menuNm": "채널관리",
+            "upMenuId": "L03",
+            "cmpnId": ""
+        },
+        {
+            "menuId": "L03M10S00",
+            "menuNm": "실적관리",
+            "upMenuId": "L03",
+            "cmpnId": ""
+        },
+        {
+            "menuId": "L03M10S01",
+            "menuNm": "실적 리스트",
+            "upMenuId": "L03M10S00",
+            "cmpnId": ""
+        },
+        {
+            "menuId": "L03M10S02",
+            "menuNm": "실적 집계",
+            "upMenuId": "L03M10S00",
+            "cmpnId": ""
+        },
+        {
+            "menuId": "L03M10S03",
+            "menuNm": "납부 RS 집계",
+            "upMenuId": "L03M10S00",
+            "cmpnId": ""
+        },
+        {
+            "menuId": "L03M11S00",
+            "menuNm": "매출관리",
+            "upMenuId": "L03",
+            "cmpnId": ""
+        },
+        {
+            "menuId": "L03M11S01",
+            "menuNm": "월별 매출 리스트",
+            "upMenuId": "L03M11S00",
+            "cmpnId": ""
+        },
+        {
+            "menuId": "L03M11S02",
+            "menuNm": "세금계산서 발행 관리",
+            "upMenuId": "L03M11S00",
+            "cmpnId": ""
+        },
+        {
+            "menuId": "L03M12S00",
+            "menuNm": "정산관리",
+            "upMenuId": "L03",
+            "cmpnId": ""
+        },
+        {
+            "menuId": "L03M12S01",
+            "menuNm": "수수료정산 기준관리",
+            "upMenuId": "L03M12S00",
+            "cmpnId": ""
+        },
+        {
+            "menuId": "L03M12S02",
+            "menuNm": "내부원가 기준관리",
+            "upMenuId": "L03M12S00",
+            "cmpnId": ""
+        },
+        {
+            "menuId": "L03M12S03",
+            "menuNm": "수수료 정산 결과 리스트",
+            "upMenuId": "L03M12S00",
+            "cmpnId": ""
+        },
+        {
+            "menuId": "L04",
+            "menuNm": "업무현황",
+            "upMenuId": null,
+            "cmpnId": ""
+        },
+        {
+            "menuId": "L04M01S00",
+            "menuNm": "고객현황",
+            "upMenuId": "L04",
+            "cmpnId": ""
+        },
+        {
+            "menuId": "L04M01S01",
+            "menuNm": "고객리스트",
+            "upMenuId": "L04M01S00",
+            "cmpnId": "04/CustLst"
+        },
+        {
+            "menuId": "L04M01S02",
+            "menuNm": "AM별 고객 리스트",
+            "upMenuId": "L04M01S00",
+            "cmpnId": ""
+        },
+        {
+            "menuId": "L04M01S03",
+            "menuNm": "AM 변경요청 리스트",
+            "upMenuId": "L04M01S00",
+            "cmpnId": ""
+        },
+        {
+            "menuId": "L04M02S00",
+            "menuNm": "해지고객현황",
+            "upMenuId": "L04",
+            "cmpnId": ""
+        },
+        {
+            "menuId": "L04M02S01",
+            "menuNm": "해지DB 분리고객 리스트",
+            "upMenuId": "L04M02S00",
+            "cmpnId": ""
+        },
+        {
+            "menuId": "L04M02S02",
+            "menuNm": "해지고객 조회 승인요청 리스트",
+            "upMenuId": "L04M2S00",
+            "cmpnId": ""
+        },
+        {
+            "menuId": "L04M03S00",
+            "menuNm": "청구고객현황",
+            "upMenuId": "L04",
+            "cmpnId": ""
+        },
+        {
+            "menuId": "L04M04S00",
+            "menuNm": "청약현황",
+            "upMenuId": "L04",
+            "cmpnId": ""
+        },
+        {
+            "menuId": "L04M05S00",
+            "menuNm": "수납현황",
+            "upMenuId": "L04",
+            "cmpnId": ""
+        },
+        {
+            "menuId": "L04M06S00",
+            "menuNm": "미납현황",
+            "upMenuId": "L04",
+            "cmpnId": ""
+        },
+        {
+            "menuId": "L04M07S00",
+            "menuNm": "비정형 통계추출",
+            "upMenuId": "L04",
+            "cmpnId": ""
+        },
+        {
+            "menuId": "L04M08S00",
+            "menuNm": "과거데이터현황",
+            "upMenuId": "L04",
+            "cmpnId": ""
+        },
+        {
+            "menuId": "L04M08S01",
+            "menuNm": "과거 청구요금 리스트",
+            "upMenuId": "L04M08S00",
+            "cmpnId": ""
+        },
+        {
+            "menuId": "L04M08S02",
+            "menuNm": "과거 수납 리스트",
+            "upMenuId": "L04M08S00",
+            "cmpnId": ""
+        },
+        {
+            "menuId": "L04M08S03",
+            "menuNm": "과거 미납 리스트",
+            "upMenuId": "L04M08S00",
+            "cmpnId": ""
+        },
+        {
+            "menuId": "L05",
+            "menuNm": "업무지원",
+            "upMenuId": null,
+            "cmpnId": ""
+        },
+        {
+            "menuId": "L05M01S00",
+            "menuNm": "입출금관리",
+            "upMenuId": "L05",
+            "cmpnId": ""
+        },
+        {
+            "menuId": "L05M01S01",
+            "menuNm": "납부방법별 출금일관리",
+            "upMenuId": "L05M01S00",
+            "cmpnId": ""
+        },
+        {
+            "menuId": "L05M01S02",
+            "menuNm": "가상계좌관리",
+            "upMenuId": "L05M01S00",
+            "cmpnId": ""
+        },
+        {
+            "menuId": "L05M02S00",
+            "menuNm": "휴일관리",
+            "upMenuId": "L05",
+            "cmpnId": ""
+        },
+        {
+            "menuId": "L05M02S01",
+            "menuNm": "휴일관리",
+            "upMenuId": "L05M02S00",
+            "cmpnId": "05/HoliAdm"
+        },
+        {
+            "menuId": "L05M03S00",
+            "menuNm": "공통코드관리",
+            "upMenuId": "L05",
+            "cmpnId": ""
+        },
+        {
+            "menuId": "L05M03S01",
+            "menuNm": "공통코드관리",
+            "upMenuId": "L05M03S00",
+            "cmpnId": "05/ComCdAdm"
+        },
+        {
+            "menuId": "L05M04S00",
+            "menuNm": "공지사항관리",
+            "upMenuId": "L05",
+            "cmpnId": ""
+        },
+        {
+            "menuId": "L05M04S01",
+            "menuNm": "공지사항관리",
+            "upMenuId": "L05M04S00",
+            "cmpnId": "05/NoticeAdm"
+        },
+        {
+            "menuId": "L05M05S00",
+            "menuNm": "메시지관리",
+            "upMenuId": "L05",
+            "cmpnId": ""
+        },
+        {
+            "menuId": "L05M05S01",
+            "menuNm": "메시지관리",
+            "upMenuId": "L05M05S00",
+            "cmpnId": "05/MsgAdm"
+        },
+        {
+            "menuId": "L05M06S00",
+            "menuNm": "메뉴관리",
+            "upMenuId": "L05",
+            "cmpnId": ""
+        },
+        {
+            "menuId": "L05M06S01",
+            "menuNm": "메뉴관리",
+            "upMenuId": "L05M06S00",
+            "cmpnId": "05/MenuAdm"
+        },
+        {
+            "menuId": "L05M07S00",
+            "menuNm": "조직관리",
+            "upMenuId": "L05",
+            "cmpnId": ""
+        },
+        {
+            "menuId": "L05M08S00",
+            "menuNm": "사용자관리",
+            "upMenuId": "L05",
+            "cmpnId": ""
+        },
+        {
+            "menuId": "L05M08S01",
+            "menuNm": "사용자관리",
+            "upMenuId": "L05M08S00",
+            "cmpnId": "05/UserAdm"
+        },
+        {
+            "menuId": "L05M09S00",
+            "menuNm": "권한관리",
+            "upMenuId": "L05",
+            "cmpnId": ""
+        },
+        {
+            "menuId": "L05M09S01",
+            "menuNm": "권한관리",
+            "upMenuId": "L05M09S00",
+            "cmpnId": "05/AutAdm"
+        },
+        {
+            "menuId": "L05M09S02",
+            "menuNm": "권한매핑관리",
+            "upMenuId": "L05M09S00",
+            "cmpnId": "05/AutMappgAdm"
+        },
+        {
+            "menuId": "L05M012S00",
+            "menuNm": "승인관리",
+            "upMenuId": "L05",
+            "cmpnId": ""
+        },
+        {
+            "menuId": "L05M11S00",
+            "menuNm": "보안관리",
+            "upMenuId": "L05",
+            "cmpnId": ""
+        },
+        {
+            "menuId": "L05M11S01",
+            "menuNm": "고객정보 조회 이력관리",
+            "upMenuId": "L05M11S00",
+            "cmpnId": "05/CustInfoRetvAdm"
+        },
+        {
+            "menuId": "L05M11S02",
+            "menuNm": "마스킹 해제이력관리",
+            "upMenuId": "L05M11S00",
+            "cmpnId": "05/MaskRelesAdm"
+        },
+        {
+            "menuId": "L05M13S00",
+            "menuNm": "배치관리",
+            "upMenuId": "L05",
+            "cmpnId": ""
+        },
+        {
+            "menuId": "L05M13S01",
+            "menuNm": "배치스케줄링 관리",
+            "upMenuId": "L05M13S00",
+            "cmpnId": "05/BatchSclgAdm"
+        },
+        {
+            "menuId": "L05M13S02",
+            "menuNm": "배치실행 이력관리",
+            "upMenuId": "L05M13S00",
+            "cmpnId": "05/BatchExeAdm"
+        },
+        {
+            "menuId": "L05M14S00",
+            "menuNm": "연동관리",
+            "upMenuId": "L05",
+            "cmpnId": ""
+        },
+        {
+            "menuId": "L05M14S01",
+            "menuNm": "연동데몬관리",
+            "upMenuId": "L05M14S00",
+            "cmpnId": ""
+        },
+        {
+            "menuId": "L05M14S02",
+            "menuNm": "연동이력관리",
+            "upMenuId": "L05M14S00",
+            "cmpnId": ""
+        },
+        {
+            "menuId": "L05M15S00",
+            "menuNm": "고객응대/승인요청관리",
+            "upMenuId": "L05",
+            "cmpnId": ""
+        },
+        {
+            "menuId": "L06",
+            "menuNm": "공통",
+            "upMenuId": null
+        },
+        {
+            "menuId": "L06M01",
+            "menuNm": "공통화면",
+            "upMenuId": "L06",
+            "cmpnId": ""
+        },
+        {
+            "menuId": "L06M01S01",
+            "menuNm": "공통화면참고1",
+            "upMenuId": "L06M01",
+            "cmpnId": "06/CommonView1"
+        },
+        {
+            "menuId": "L06M01S02",
+            "menuNm": "공통화면참고2",
+            "upMenuId": "L06M01",
+            "cmpnId": "06/CommonView2"
+        },
+        {
+            "menuId": "L06M01S03",
+            "menuNm": "조합화면참고",
+            "upMenuId": "L06M01",
+            "cmpnId": "06/UnionView"
+        },
+        {
+            "menuId": "L06M01S04",
+            "menuNm": "Grid 적용 예시 화면 ",
+            "upMenuId": "L06M01",
+            "cmpnId": "06/PageTemplate"
+        },
+        {
+            "menuId": "L06M01S05",
+            "menuNm": "멀티 탭 예시 화면",
+            "upMenuId": "L06M01",
+            "cmpnId": "06/UnFixedMultiTab"
+        },
+        {
+            "menuId": "L06M01S06",
+            "menuNm": "고정된 멀티 탭 예시 화면",
+            "upMenuId": "L06M01",
+            "cmpnId": "06/FixedMultiTab"
+        },
+        {
+            "menuId": "L06M02S01",
+            "menuNm": "로그인화면",
+            "upMenuId": "L06M01",
+            "cmpnId": "Login"
+        }
+    ],
+    "info": {
+        "info": [
+            {
+                "customerId": "CC10001042",
+                "customerName": "주식회사 시너샛코리아",
+                "customerType": "일반공통",
+                "country": "공통함수",
+                "businessNumber": "6268700321",
+                "customerClass": "영리법인",
+                "phoneNumber": "01012345678"
+            }
+        ],
+        "columnDefs": [
+            {
+                "headerName": "결제통화",
+                "field": "model0"
+            },
+            {
+                "headerName": "요금항목명",
+                "field": "model1"
+            },
+            {
+                "headerName": "요금항목구분",
+                "field": "model2"
+            },
+            {
+                "headerName": "협정금액",
+                "field": "model3"
+            },
+            {
+                "headerName": "협정할인금액",
+                "field": "model4"
+            },
+            {
+                "headerName": "협정청구금액",
+                "field": "model5"
+            },
+            {
+                "headerName": "유효시작일",
+                "field": "StartDate"
+            },
+            {
+                "headerName": "유효종료일",
+                "field": "EndDate"
+            }
+        ],
+        "rowData": [
+            {
+                "model0": "KRW",
+                "model1": "기본료",
+                "model2": "정액요금",
+                "model3": "133,500,000",
+                "model4": "1,500,000",
+                "model5": "132,000,000",
+                "StartDate": "2021-10-19",
+                "EndDate": "2023-12-31"
+            },
+            {
+                "model0": "KRW",
+                "model1": "프리미엄요금",
+                "model2": "정액요금",
+                "model3": "220,225,000",
+                "model4": "225,000",
+                "model5": "220,000,000",
+                "StartDate": "2022-05-31",
+                "EndDate": "2024-07-31"
+            },
+            {
+                "model0": "KRW",
+                "model1": "설치비",
+                "model2": "정액요금",
+                "model3": "9200000000",
+                "model4": "3000000",
+                "model5": "66665222",
+                "StartDate": "2022-10-19",
+                "EndDate": "2025-09-31"
+            },
+            {
+                "model0": "KRW",
+                "model1": "기본료",
+                "model2": "정액요금",
+                "model3": "133,500,000",
+                "model4": "1,500,000",
+                "model5": "132,000,000",
+                "StartDate": "2021-10-19",
+                "EndDate": "2023-12-31"
+            },
+            {
+                "model0": "KRW",
+                "model1": "프리미엄요금",
+                "model2": "정액요금",
+                "model3": "220,225,000",
+                "model4": "225,000",
+                "model5": "220,000,000",
+                "StartDate": "2022-05-31",
+                "EndDate": "2024-07-31"
+            },
+            {
+                "model0": "KRW",
+                "model1": "설치비",
+                "model2": "정액요금",
+                "model3": "9200000000",
+                "model4": "3000000",
+                "model5": "66665222",
+                "StartDate": "2022-10-19",
+                "EndDate": "2025-09-31"
+            },
+            {
+                "model0": "KRW",
+                "model1": "기본료",
+                "model2": "정액요금",
+                "model3": "133,500,000",
+                "model4": "1,500,000",
+                "model5": "132,000,000",
+                "StartDate": "2021-10-19",
+                "EndDate": "2023-12-31"
+            },
+            {
+                "model0": "KRW",
+                "model1": "프리미엄요금",
+                "model2": "정액요금",
+                "model3": "220,225,000",
+                "model4": "225,000",
+                "model5": "220,000,000",
+                "StartDate": "2022-05-31",
+                "EndDate": "2024-07-31"
+            },
+            {
+                "model0": "KRW",
+                "model1": "설치비",
+                "model2": "정액요금",
+                "model3": "9200000000",
+                "model4": "3000000",
+                "model5": "66665222",
+                "StartDate": "2022-10-19",
+                "EndDate": "2025-09-31"
+            }
+        ],
+        "columnDefs2": [
+            {
+                "headerName": "결제통화",
+                "field": "model0"
+            },
+            {
+                "headerName": "청구금액",
+                "field": "model5"
+            },
+            {
+                "headerName": "유효시작일",
+                "field": "StartDate"
+            },
+            {
+                "headerName": "유효종료일",
+                "field": "EndDate"
+            }
+        ],
+        "rowData2": [
+            {
+                "model0": "USD",
+                "model5": "132,000,000",
+                "StartDate": "2021-10-19",
+                "EndDate": "2023-12-31"
+            },
+            {
+                "model0": "KRW",
+                "model5": "220,000,000",
+                "StartDate": "2022-05-31",
+                "EndDate": "2024-07-31"
+            },
+            {
+                "model0": "USD",
+                "model5": "66665222",
+                "StartDate": "2022-10-19",
+                "EndDate": "2025-09-31"
+            },
+            {
+                "model0": "KRW",
+                "model5": "132,000,000",
+                "StartDate": "2021-10-19",
+                "EndDate": "2023-12-31"
+            },
+            {
+                "model0": "USD",
+                "model5": "220,000,000",
+                "StartDate": "2022-05-31",
+                "EndDate": "2024-07-31"
+            }
+        ],
+        "rowDataBill1": [
+            {
+                "model0": "코로케이션",
+                "model3": "100,000원",
+                "model4": "10,000원",
+                "model5": "90,000원",
+                "model6": "Y"
+            },
+            {
+                "model0": null,
+                "model1": null,
+                "model2": "추가설치비",
+                "model3": "100,000원",
+                "model4": "10,000원",
+                "model5": "90,000원",
+                "model6": "Y"
+            },
+            {
+                "model0": "소계",
+                "model3": "200,000원",
+                "model4": "20,000원",
+                "model5": "180,000원",
+                "model6": null
+            },
+            {
+                "model0": "부가가치세",
+                "model3": "10,000원",
+                "model4": "10,000원",
+                "model5": "10,000원",
+                "model6": null
+            },
+            {
+                "model0": "당월요금계",
+                "model3": "110,000원",
+                "model4": "0원",
+                "model5": "110,000원",
+                "model6": null
+            },
+            {
+                "model0": "과납요금",
+                "model3": "-50,000원",
+                "model4": "0원",
+                "model5": "-50,000원",
+                "model6": null
+            },
+            {
+                "model0": "요금계",
+                "model3": "60,000원",
+                "model4": "10,000원",
+                "model5": "60,000원",
+                "model6": null
+            }
+        ],
+        "rowDataBill2": [
+            {
+                "model0": "코로케이션",
+                "model1": "P7-00****",
+                "model4": "100,000원",
+                "model5": "10,000원",
+                "model6": "90,000원",
+                "model7": "Y"
+            },
+            {
+                "model0": "코로케이션",
+                "model1": "P7-00****",
+                "model4": "100,000원",
+                "model5": "10,000원",
+                "model6": "90,000원",
+                "model7": "Y"
+            }
+        ],
+        "cdGpRowData": [
+            {
+                "model1": "1",
+                "model2": "0087EQPMODELCD",
+                "model4": "선박위성시설 SET 장치모델",
+                "model6": "선박위성시설 SET 장치 모델코드",
+                "model7": "10",
+                "model8": "사용",
+                "StartDate": "2022-05-01",
+                "EndDate": "9999-12-31"
+            },
+            {
+                "model1": "2",
+                "model2": "ACRND_TYPE_CD",
+                "model4": "청구서유형",
+                "model7": "1",
+                "model8": "사용"
+            },
+            {
+                "model1": "3",
+                "model2": "ACTN_CD",
+                "model4": "조치코드",
+                "model5": "ACTN_CD",
+                "model6": "조치 코드 (CDR Drop, Error 등)",
+                "model7": "6",
+                "model8": "미사용"
+            },
+            {
+                "model1": "4",
+                "model2": "ACTN_CD",
+                "model4": "조치코드",
+                "model5": "ACTN_CD",
+                "model6": "조치 코드 (CDR Drop, Error 등)",
+                "model7": "6",
+                "model8": "미사용"
+            },
+            {
+                "model1": "5",
+                "model2": "ACTN_CD",
+                "model4": "조치코드",
+                "model5": "ACTN_CD",
+                "model6": "조치 코드 (CDR Drop, Error 등)",
+                "model7": "6",
+                "model8": "미사용"
+            }
+        ],
+        "cdLstRowData": [
+            {
+                "model1": "1",
+                "model2": "100000146",
+                "model5": "V100NX",
+                "model6": "V100NX",
+                "model7": "1",
+                "model8": "사용",
+                "StartDate": "2022-05-01",
+                "EndDate": "9999-12-31"
+            },
+            {
+                "model1": "2",
+                "model2": "100000146",
+                "model5": "V100NX",
+                "model6": "V100NX",
+                "model7": "1",
+                "model8": "사용",
+                "StartDate": "2022-05-01",
+                "EndDate": "9999-12-31"
+            },
+            {
+                "model1": "3",
+                "model2": "100000146",
+                "model5": "V100NX",
+                "model6": "V100NX",
+                "model7": "1",
+                "model8": "사용",
+                "StartDate": "2022-05-01",
+                "EndDate": "9999-12-31"
+            },
+            {
+                "model1": "4",
+                "model2": "100000146",
+                "model5": "V100NX",
+                "model6": "V100NX",
+                "model7": "1",
+                "model8": "사용",
+                "StartDate": "2022-05-01",
+                "EndDate": "9999-12-31"
+            },
+            {
+                "model1": "5",
+                "model2": "100000146",
+                "model5": "V100NX",
+                "model6": "V100NX",
+                "model7": "1",
+                "model8": "사용",
+                "StartDate": "2022-05-01",
+                "EndDate": "9999-12-31"
+            },
+            {
+                "model1": "6",
+                "model2": "100000146",
+                "model5": "V100NX",
+                "model6": "V100NX",
+                "model7": "1",
+                "model8": "사용",
+                "StartDate": "2022-05-01",
+                "EndDate": "9999-12-31"
+            },
+            {
+                "model1": "7",
+                "model2": "100000146",
+                "model5": "V100NX",
+                "model6": "V100NX",
+                "model7": "1",
+                "model8": "사용",
+                "StartDate": "2022-05-01",
+                "EndDate": "9999-12-31"
+            },
+            {
+                "model1": "8",
+                "model2": "100000146",
+                "model5": "V100NX",
+                "model6": "V100NX",
+                "model7": "1",
+                "model8": "사용",
+                "StartDate": "2022-05-01",
+                "EndDate": "9999-12-31"
+            },
+            {
+                "model1": "9",
+                "model2": "100000146",
+                "model5": "V100NX",
+                "model6": "V100NX",
+                "model7": "1",
+                "model8": "사용",
+                "StartDate": "2022-05-01",
+                "EndDate": "9999-12-31"
+            },
+            {
+                "model1": "10",
+                "model2": "100000146",
+                "model5": "V100NX",
+                "model6": "V100NX",
+                "model7": "1",
+                "model8": "사용",
+                "StartDate": "2022-05-01",
+                "EndDate": "9999-12-31"
+            }
+        ],
+        "autTabData": [
+            {
+                "menuId": "01",
+                "menuNm": "메뉴권한"
+            },
+            {
+                "menuId": "02",
+                "menuNm": "컴포넌트권한"
+            },
+            {
+                "menuId": "03",
+                "menuNm": "조직권한"
+            },
+            {
+                "menuId": "04",
+                "menuNm": "사용자권한"
+            }
+        ],
+        "autRowData": [
+            {
+                "model1": "AUT_ARCM_01_001-01",
+                "model2": "입금조회-조회",
+                "model3": "조회",
+                "model4": "사용",
+                "model5": "3",
+                "model6": "8"
+            },
+            {
+                "model1": "AUT_ARCM_01_001-01",
+                "model2": "입금조회-조회",
+                "model3": "조회",
+                "model4": "사용",
+                "model5": "3",
+                "model6": "8"
+            },
+            {
+                "model1": "AUT_ARCM_01_001-01",
+                "model2": "입금조회-조회",
+                "model3": "조회",
+                "model4": "사용",
+                "model5": "3",
+                "model6": "8"
+            },
+            {
+                "model1": "AUT_ARCM_01_001-01",
+                "model2": "입금조회-조회",
+                "model3": "조회",
+                "model4": "사용",
+                "model5": "3",
+                "model6": "8"
+            },
+            {
+                "model1": "AUT_ARCM_01_001-01",
+                "model2": "입금조회-조회",
+                "model3": "조회",
+                "model4": "사용",
+                "model5": "3",
+                "model6": "8"
+            },
+            {
+                "model1": "AUT_ARCM_01_001-01",
+                "model2": "입금조회-조회",
+                "model3": "조회",
+                "model4": "사용",
+                "model5": "3",
+                "model6": "8"
+            },
+            {
+                "model1": "AUT_ARCM_01_001-01",
+                "model2": "입금조회-조회",
+                "model3": "조회",
+                "model4": "사용",
+                "model5": "3",
+                "model6": "8"
+            },
+            {
+                "model1": "AUT_ARCM_01_001-01",
+                "model2": "입금조회-조회",
+                "model3": "조회",
+                "model4": "사용",
+                "model5": "3",
+                "model6": "8"
+            }
+        ],
+        "upRowData": [
+            {
+                "model1": "Cont_01_002",
+                "model2": "계약>계약정보>계약관리",
+                "model3": "사용"
+            },
+            {
+                "model1": "Cont_01_002",
+                "model2": "계약>계약정보>계약관리",
+                "model3": "사용"
+            },
+            {
+                "model1": "Cont_01_002",
+                "model2": "계약>계약정보>계약관리",
+                "model3": "미사용"
+            }
+        ],
+        "downRowData": [
+            {
+                "model1": "BTN0000001",
+                "model2": "공통코드",
+                "model3": "코드그룹명",
+                "model4": "사용"
+            },
+            {
+                "model1": "BTN0000001",
+                "model2": "버튼",
+                "model3": "등록 버튼",
+                "model4": "사용"
+            },
+            {
+                "model1": "BTN0000001",
+                "model2": "버튼",
+                "model3": "삭제 버튼",
+                "model4": "사용"
+            },
+            {
+                "model1": "BTN0000001",
+                "model2": "공통코드",
+                "model3": "코드그룹명",
+                "model4": "사용"
+            }
+        ],
+        "autRowData": [
+            {
+                "model1": "AUT_ARCM_01_001-01",
+                "model2": "입금조회-조회",
+                "model3": "조회",
+                "model4": "사용",
+                "model5": "3",
+                "model6": "8"
+            },
+            {
+                "model1": "AUT_ARCM_01_001-01",
+                "model2": "입금조회-조회",
+                "model3": "조회",
+                "model4": "사용",
+                "model5": "3",
+                "model6": "8"
+            },
+            {
+                "model1": "AUT_ARCM_01_001-01",
+                "model2": "입금조회-조회",
+                "model3": "조회",
+                "model4": "사용",
+                "model5": "3",
+                "model6": "8"
+            },
+            {
+                "model1": "AUT_ARCM_01_001-01",
+                "model2": "입금조회-조회",
+                "model3": "조회",
+                "model4": "사용",
+                "model5": "3",
+                "model6": "8"
+            },
+            {
+                "model1": "AUT_ARCM_01_001-01",
+                "model2": "입금조회-조회",
+                "model3": "조회",
+                "model4": "사용",
+                "model5": "3",
+                "model6": "8"
+            },
+            {
+                "model1": "AUT_ARCM_01_001-01",
+                "model2": "입금조회-조회",
+                "model3": "조회",
+                "model4": "사용",
+                "model5": "3",
+                "model6": "8"
+            },
+            {
+                "model1": "AUT_ARCM_01_001-01",
+                "model2": "입금조회-조회",
+                "model3": "조회",
+                "model4": "사용",
+                "model5": "3",
+                "model6": "8"
+            },
+            {
+                "model1": "AUT_ARCM_01_001-01",
+                "model2": "입금조회-조회",
+                "model3": "조회",
+                "model4": "사용",
+                "model5": "3",
+                "model6": "8"
+            }
+        ],
+        "securRowData": [
+            {
+                "model1": "1",
+                "model2": "C0000008950",
+                "model3": "B0000008950",
+                "model4": "홍길*",
+                "model5": "S000008950",
+                "model6": "조회",
+                "model7": "L1M1S1",
+                "model8": "고객 360 View",
+                "model9": "/CUS010M.do",
+                "model10": "고객 360 View",
+                "model11": "99334400",
+                "model12": "김길*",
+                "model13": "111.111.111.111",
+                "model14": "-",
+                "model15": "2022-05-30 11:05:00"
+            },
+            {
+                "model1": "2",
+                "model2": "C0000008950",
+                "model3": "B0000008950",
+                "model4": "홍길*",
+                "model5": "S000008950",
+                "model6": "엑셀다운로드",
+                "model7": "L1M1S1",
+                "model8": "고객 360 View",
+                "model9": "/CUS010M.do",
+                "model10": "고객 360 View",
+                "model11": "99334400",
+                "model12": "김길*",
+                "model13": "111.111.111.111",
+                "model14": "-",
+                "model15": "2022-05-30 11:05:00"
+            },
+            {
+                "model1": "3",
+                "model2": "C0000008950",
+                "model3": "B0000008950",
+                "model4": "홍길*",
+                "model5": "S000008950",
+                "model6": "엑셀다운로드",
+                "model7": "L1M1S1",
+                "model8": "고객 360 View",
+                "model9": "/CUS010M.do",
+                "model10": "고객 360 View",
+                "model11": "99334400",
+                "model12": "김길*",
+                "model13": "111.111.111.111",
+                "model14": "엑셀파일명.xlsx/100",
+                "model15": "2022-05-30 11:05:00"
+            }
+        ],
+        "holiRowData": [
+            {
+                "model1": "2022-05-01",
+                "model2": "일요일"
+            },
+            {
+                "model1": "2022-05-02",
+                "model2": "월요일"
+            },
+            {
+                "model1": "2022-05-03",
+                "model2": "화요일"
+            }
+        ],
+        "contentTree": [
+            {
+                "groupId": 0,
+                "directoryName": "청구계정ID 홍길* 은행계좌자동이체",
+                "badge0": true,
+                "children": [
+                    {
+                        "groupId": 1,
+                        "directoryName": "요금제명(서비스계약ID)2022-10-13~2022-10-15서울시 강남구 학동로 111",
+                        "badge1": false,
+                        "badge2": true,
+                        "badge3": true,
+                        "badge4": false
+                    }
+                ]
+            },
+            {
+                "groupId": 5,
+                "directoryName": "청구계정ID 홍길* 은행계좌자동이체",
+                "children": [
+                    {
+                        "groupId": 2,
+                        "directoryName": "요금제명(서비스계약ID)2022-10-13~2022-10-15서울시 강남구 학동로 111",
+                        "badge1": true,
+                        "badge2": false,
+                        "badge3": true,
+                        "badge4": false
+                    },
+                    {
+                        "groupId": 3,
+                        "directoryName": "요금제명(서비스계약ID)2022-10-13~2022-10-15서울시 강남구 학동로 1123",
+                        "badge1": false,
+                        "badge2": false,
+                        "badge3": true,
+                        "badge4": false
+                    },
+                    {
+                        "groupId": 4,
+                        "directoryName": "요금제명(서비스계약ID)2022-10-13~2022-10-15서울시 강남구 학동로 111",
+                        "badge1": true,
+                        "badge2": false,
+                        "badge3": true,
+                        "badge4": true
+                    },
+                    {
+                        "groupId": 2,
+                        "directoryName": "요금제명(서비스계약ID)2022-10-13~2022-10-15서울시 강남구 학동로 111",
+                        "badge1": false,
+                        "badge2": false,
+                        "badge3": true,
+                        "badge4": false
+                    },
+                    {
+                        "groupId": 3,
+                        "directoryName": "요금제명(서비스계약ID)2022-10-13~2022-10-15서울시 강남구 학동로 111",
+                        "badge1": true,
+                        "badge2": false,
+                        "badge3": true,
+                        "badge4": true
+                    },
+                    {
+                        "groupId": 4,
+                        "directoryName": "요금제명(서비스계약ID)2022-10-13~2022-10-15서울시 강남구 학동로 111",
+                        "badge1": true,
+                        "badge2": true,
+                        "badge3": true,
+                        "badge4": true
+                    },
+                    {
+                        "groupId": 2,
+                        "directoryName": "요금제명(서비스계약ID)2022-10-13~2022-10-15서울시 강남구 학동로 111",
+                        "badge1": false,
+                        "badge2": false,
+                        "badge3": true,
+                        "badge4": false
+                    },
+                    {
+                        "groupId": 3,
+                        "directoryName": "요금제명(서비스계약ID)2022-10-13~2022-10-15서울시 강남구 학동로 111",
+                        "badge1": true,
+                        "badge2": false,
+                        "badge3": true,
+                        "badge4": true
+                    },
+                    {
+                        "groupId": 4,
+                        "directoryName": "요금제명(서비스계약ID)2022-10-13~2022-10-15서울시 강남구 학동로 111",
+                        "badge1": true,
+                        "badge2": true,
+                        "badge3": true,
+                        "badge4": false
+                    }
+                ]
+            },
+            {
+                "groupId": 6,
+                "directoryName": "청구계정ID 홍길* 은행계좌자동이체"
+            }
+        ],
+        "userRowData": [
+            {
+                "cmpno": "82679315",
+                "userNm": "홍길동",
+                "inofficeSttus": "inOffice",
+                "org": "DX사업본부",
+                "rspof": "rspof1",
+                "duty": "BSS 개발",
+                "dutySelect": "role2",
+                "orgSelect": "role1",
+                "ntcMeth": "ntcMeth1",
+                "useYn": "02",
+                "otpYn": "01",
+                "email": "abe56e",
+                "emailDomain": "daum"
+            },
+            {
+                "cmpno": "82672436",
+                "userNm": "홍길은",
+                "inofficeSttus": "loab",
+                "org": "DX사업본부",
+                "rspof": "rspof2",
+                "duty": "BSS 개발2",
+                "dutySelect": "role4",
+                "orgSelect": "role2",
+                "ntcMeth": "ntcMeth1",
+                "useYn": "01",
+                "otpYn": "02",
+                "email": "ab24cd",
+                "emailDomain": "naver"
+            },
+            {
+                "cmpno": "82679415",
+                "userNm": "홍길금",
+                "inofficeSttus": "inOffice",
+                "org": "DX사업본부",
+                "rspof": "rspof3",
+                "duty": "BSS 개발3",
+                "dutySelect": "role2",
+                "orgSelect": "role1",
+                "ntcMeth": "ntcMeth2",
+                "useYn": "02",
+                "otpYn": "02",
+                "email": "2ee12",
+                "emailDomain": "kt"
+            },
+            {
+                "cmpno": "82619315",
+                "userNm": "홍길형",
+                "inofficeSttus": "loab",
+                "org": "DX사업본부",
+                "rspof": "rspof1",
+                "duty": "BSS 개발4",
+                "dutySelect": "role4",
+                "orgSelect": "role2",
+                "ntcMeth": "ntcMeth3",
+                "useYn": "01",
+                "otpYn": "01",
+                "email": "t435",
+                "emailDomain": "gmail"
+            },
+            {
+                "cmpno": "82675315",
+                "userNm": "홍길진",
+                "inofficeSttus": "loab",
+                "org": "DX사업본부",
+                "rspof": "rspof2",
+                "duty": "BSS 개발5",
+                "dutySelect": "role3",
+                "orgSelect": "role2",
+                "ntcMeth": "ntcMeth3",
+                "useYn": "02",
+                "otpYn": "02",
+                "email": "123ewr",
+                "emailDomain": "daum"
+            },
+            {
+                "cmpno": "89679315",
+                "userNm": "홍길명",
+                "inofficeSttus": "inOffice",
+                "org": "DX사업본부",
+                "rspof": "rspof2",
+                "duty": "BSS 개발6"
+            },
+            {
+                "cmpno": "82672436",
+                "userNm": "홍길은",
+                "inofficeSttus": "inOffice",
+                "org": "DX사업본부",
+                "rspof": "rspof2",
+                "duty": "BSS 개발2"
+            },
+            {
+                "cmpno": "82679415",
+                "userNm": "홍길금",
+                "inofficeSttus": "inOffice",
+                "org": "DX사업본부",
+                "rspof": "rspof2",
+                "duty": "BSS 개발3"
+            },
+            {
+                "cmpno": "82679415",
+                "userNm": "홍길금",
+                "inofficeSttus": "inOffice",
+                "org": "DX사업본부",
+                "rspof": "rspof2",
+                "duty": "BSS 개발3"
+            },
+            {
+                "cmpno": "82619315",
+                "userNm": "홍길형",
+                "inofficeSttus": "inOffice",
+                "org": "DX사업본부",
+                "rspof": "인턴",
+                "duty": "BSS 개발4"
+            },
+            {
+                "cmpno": "82675315",
+                "userNm": "홍길진",
+                "inofficeSttus": "loab",
+                "org": "DX사업본부",
+                "rspof": "사원",
+                "duty": "BSS 개발5"
+            },
+            {
+                "cmpno": "89679315",
+                "userNm": "홍길명",
+                "inofficeSttus": "loab",
+                "org": "DX사업본부",
+                "rspof": "사원",
+                "duty": "BSS 개발6"
+            },
+            {
+                "cmpno": "82672436",
+                "userNm": "홍길은",
+                "inofficeSttus": "loab",
+                "org": "DX사업본부",
+                "rspof": "사원",
+                "duty": "BSS 개발2"
+            },
+            {
+                "cmpno": "82679415",
+                "userNm": "홍길금",
+                "inofficeSttus": "loab",
+                "org": "DX사업본부",
+                "rspof": "사원",
+                "duty": "BSS 개발3"
+            },
+            {
+                "cmpno": "82619315",
+                "userNm": "홍길형",
+                "inofficeSttus": "loab",
+                "org": "DX사업본부",
+                "rspof": "사원",
+                "duty": "BSS 개발4"
+            },
+            {
+                "cmpno": "82675315",
+                "userNm": "홍길진",
+                "inofficeSttus": "loab",
+                "org": "DX사업본부",
+                "rspof": "사원",
+                "duty": "BSS 개발5"
+            },
+            {
+                "cmpno": "89679315",
+                "userNm": "홍길명",
+                "inofficeSttus": "loab",
+                "org": "DX사업본부",
+                "rspof": "사원",
+                "duty": "BSS 개발6"
+            },
+            {
+                "cmpno": "82672436",
+                "userNm": "홍길은",
+                "inofficeSttus": "loab",
+                "org": "DX사업본부",
+                "rspof": "사원",
+                "duty": "BSS 개발2"
+            },
+            {
+                "cmpno": "82679415",
+                "userNm": "홍길금",
+                "inofficeSttus": "loab",
+                "org": "DX사업본부",
+                "rspof": "사원",
+                "duty": "BSS 개발3"
+            },
+            {
+                "cmpno": "82619315",
+                "userNm": "홍길형",
+                "inofficeSttus": "loab",
+                "org": "DX사업본부",
+                "rspof": "사원",
+                "duty": "BSS 개발4"
+            },
+            {
+                "cmpno": "82675315",
+                "userNm": "홍길진",
+                "inofficeSttus": "재직",
+                "org": "DX사업본부",
+                "rspof": "사원",
+                "duty": "BSS 개발5"
+            },
+            {
+                "cmpno": "89679315",
+                "userNm": "홍길명",
+                "inofficeSttus": "재직",
+                "org": "DX사업본부",
+                "rspof": "사원",
+                "duty": "BSS 개발6"
+            }
+        ],
+        "subsLstColumnDefs": [
+            {
+                "headerName": "순서",
+                "field": "index",
+                "width": 100
+            },
+            {
+                "headerName": "서비스계약ID",
+                "field": "ServID",
+                "width": 130
+            },
+            {
+                "headerName": "고객ID",
+                "field": "CustID",
+                "width": 130
+            },
+            {
+                "headerName": "청구계정ID",
+                "field": "SubsID",
+                "width": 130
+            },
+            {
+                "headerName": "고객명",
+                "field": "CustName",
+                "width": 80
+            },
+            {
+                "headerName": "상품명",
+                "field": "ProductName",
+                "width": 428
+            },
+            {
+                "headerName": "서비스계약 상태",
+                "field": "ServState",
+                "width": 140
+            },
+            {
+                "headerName": "청약상태",
+                "field": "SubsState",
+                "width": 90
+            },
+            {
+                "headerName": "개통일시",
+                "field": "StartDate",
+                "width": 165
+            },
+            {
+                "headerName": "정지/해지일시",
+                "field": "EndDate",
+                "width": 165
+            }
+        ],
+        "subsLstRowData": [
+            {
+                "index": 1,
+                "ServID": "S000008950",
+                "CustID": "C000053216",
+                "SubsID": "P000021352",
+                "CustName": "홍길동",
+                "ServState": "사용중",
+                "SubsState": "청약완료",
+                "ProductName": "[IDC]kt cloud SSD 컴퓨팅 스토리지 서버리스 애플리케이션",
+                "StartDate": "2022-12-12 10:30:30",
+                "EndDate": "2023-12-31 00:00:00"
+            },
+            {
+                "index": 2,
+                "ServID": "S000008950",
+                "CustID": "C000053216",
+                "SubsID": "P000021352",
+                "CustName": "홍길동",
+                "ServState": "사용중",
+                "SubsState": "청약완료",
+                "ProductName": "[IDC]kt cloud SSD 컴퓨팅 스토리지 서버리스 애플리케이션",
+                "StartDate": "2022-12-12 10:30:30",
+                "EndDate": "2023-12-31 00:00:00"
+            },
+            {
+                "index": 3,
+                "ServID": "S000008950",
+                "CustID": "C000053216",
+                "SubsID": "P000021352",
+                "CustName": "홍길동",
+                "ServState": "사용중",
+                "SubsState": "청약완료",
+                "ProductName": "[IDC]kt cloud SSD 컴퓨팅 스토리지 서버리스 애플리케이션",
+                "StartDate": "2022-12-13 10:26:30",
+                "EndDate": "2023-12-31 00:00:00"
+            },
+            {
+                "index": 4,
+                "ServID": "S000008950",
+                "CustID": "C000053216",
+                "SubsID": "P000021352",
+                "CustName": "홍길동",
+                "ServState": "예약(기설중)",
+                "SubsState": "청약완료",
+                "ProductName": "[IDC]kt cloud SSD 컴퓨팅 스토리지 서버리스 애플리케이션",
+                "StartDate": "2022-12-15 10:26:30",
+                "EndDate": "2023-12-31 00:00:00"
+            },
+            {
+                "index": 5,
+                "ServID": "S000008950",
+                "CustID": "C000053216",
+                "SubsID": "P000021352",
+                "CustName": "홍길동",
+                "ServState": "예약(기설중)",
+                "SubsState": "청약완료",
+                "ProductName": "[IDC]kt cloud SSD 컴퓨팅 스토리지 서버리스 애플리케이션",
+                "StartDate": "2022-12-17 10:26:30",
+                "EndDate": "2023-12-31 00:00:00"
+            },
+            {
+                "index": 6,
+                "ServID": "S000008950",
+                "CustID": "C000053216",
+                "SubsID": "P000021352",
+                "CustName": "홍길동",
+                "ServState": "예약(기설중)",
+                "SubsState": "청약완료",
+                "ProductName": "[IDC]kt cloud SSD 컴퓨팅 스토리지 서버리스 애플리케이션",
+                "StartDate": "2022-12-18 10:26:30",
+                "EndDate": "2023-12-31 00:00:00"
+            },
+            {
+                "index": 7,
+                "ServID": "S000008950",
+                "CustID": "C000053216",
+                "SubsID": "P000021352",
+                "CustName": "홍길동",
+                "ServState": "사용중",
+                "SubsState": "청약완료",
+                "ProductName": "[IDC]kt cloud SSD 컴퓨팅 스토리지 서버리스 애플리케이션",
+                "StartDate": "2022-12-19 10:26:30",
+                "EndDate": "2023-12-31 00:00:00"
+            },
+            {
+                "index": 8,
+                "ServID": "S000008950",
+                "CustID": "C000053216",
+                "SubsID": "P000021352",
+                "CustName": "홍길동",
+                "ServState": "사용중",
+                "SubsState": "청약완료",
+                "ProductName": "[IDC]kt cloud SSD 컴퓨팅 스토리지 서버리스 애플리케이션",
+                "StartDate": "2022-12-20 10:26:30",
+                "EndDate": "2023-12-31 00:00:00"
+            },
+            {
+                "index": 9,
+                "ServID": "S000008950",
+                "CustID": "C000053216",
+                "SubsID": "P000021352",
+                "CustName": "홍길동",
+                "ServState": "사용중",
+                "SubsState": "청약완료",
+                "ProductName": "[IDC]kt cloud SSD 컴퓨팅 스토리지 서버리스 애플리케이션",
+                "StartDate": "2022-12-01 10:26:30",
+                "EndDate": "2023-12-31 00:00:00"
+            },
+            {
+                "index": 10,
+                "ServID": "S000008950",
+                "CustID": "C000053216",
+                "SubsID": "P000021352",
+                "CustName": "홍길동",
+                "ServState": "사용중",
+                "SubsState": "청약완료",
+                "ProductName": "[IDC]kt cloud SSD 컴퓨팅 스토리지 서버리스 애플리케이션",
+                "StartDate": "2022-12-01 10:26:30",
+                "EndDate": "2023-12-31 00:00:00"
+            },
+            {
+                "index": 30,
+                "ServID": "S000008950",
+                "CustID": "C000053216",
+                "SubsID": "P000021352",
+                "CustName": "홍길동",
+                "ServState": "사용중",
+                "SubsState": "청약완료",
+                "ProductName": "[IDC]kt cloud SSD 컴퓨팅 스토리지 서버리스 애플리케이션",
+                "StartDate": "2022-12-01 10:26:30",
+                "EndDate": "2023-12-31 00:00:00"
+            },
+            {
+                "index": 31,
+                "ServID": "S000008950",
+                "CustID": "C000053216",
+                "SubsID": "P000021352",
+                "CustName": "홍길동",
+                "ServState": "사용중",
+                "SubsState": "청약완료",
+                "ProductName": "[IDC]kt cloud SSD 컴퓨팅 스토리지 서버리스 애플리케이션",
+                "StartDate": "2022-12-01 10:26:30",
+                "EndDate": "2023-12-31 00:00:00"
+            },
+            {
+                "index": 32,
+                "ServID": "S000008950",
+                "CustID": "C000053216",
+                "SubsID": "P000021352",
+                "CustName": "홍길동",
+                "ServState": "사용중",
+                "SubsState": "청약완료",
+                "ProductName": "[IDC]kt cloud SSD 컴퓨팅 스토리지 서버리스 애플리케이션",
+                "StartDate": "2022-12-01 10:26:30",
+                "EndDate": "2023-12-31 00:00:00"
+            },
+            {
+                "index": 33,
+                "ServID": "S000008950",
+                "CustID": "C000053216",
+                "SubsID": "P000021352",
+                "CustName": "홍길동",
+                "ServState": "사용중",
+                "SubsState": "청약완료",
+                "ProductName": "[IDC]kt cloud SSD 컴퓨팅 스토리지 서버리스 애플리케이션",
+                "StartDate": "2022-12-01 10:26:30",
+                "EndDate": "2023-12-31 00:00:00"
+            },
+            {
+                "index": 34,
+                "ServID": "S000008950",
+                "CustID": "C000053216",
+                "SubsID": "P000021352",
+                "CustName": "홍길동",
+                "ServState": "사용중",
+                "SubsState": "청약완료",
+                "ProductName": "[IDC]kt cloud SSD 컴퓨팅 스토리지 서버리스 애플리케이션",
+                "StartDate": "2022-12-01 10:26:30",
+                "EndDate": "2023-12-31 00:00:00"
+            },
+            {
+                "index": 49,
+                "ServID": "S000008950",
+                "CustID": "C000053216",
+                "SubsID": "P000021352",
+                "CustName": "홍길동",
+                "ServState": "사용중",
+                "SubsState": "청약완료",
+                "ProductName": "[IDC]kt cloud SSD 컴퓨팅 스토리지 서버리스 애플리케이션",
+                "StartDate": "2022-12-01 10:26:30",
+                "EndDate": "2023-12-31 00:00:00"
+            },
+            {
+                "index": 59,
+                "ServID": "S000008950",
+                "CustID": "C000053216",
+                "SubsID": "P000021352",
+                "CustName": "홍길동",
+                "ServState": "사용중",
+                "SubsState": "청약완료",
+                "ProductName": "[IDC]kt cloud SSD 컴퓨팅 스토리지 서버리스 애플리케이션",
+                "StartDate": "2022-12-01 10:26:30",
+                "EndDate": "2023-12-31 00:00:00"
+            },
+            {
+                "index": 69,
+                "ServID": "S000008950",
+                "CustID": "C000053216",
+                "SubsID": "P000021352",
+                "CustName": "홍길동",
+                "ServState": "사용중",
+                "SubsState": "청약완료",
+                "ProductName": "[IDC]kt cloud SSD 컴퓨팅 스토리지 서버리스 애플리케이션",
+                "StartDate": "2022-12-01 10:26:30",
+                "EndDate": "2023-12-31 00:00:00"
+            },
+            {
+                "index": 79,
+                "ServID": "S000008950",
+                "CustID": "C000053216",
+                "SubsID": "P000021352",
+                "CustName": "홍길동",
+                "ServState": "사용중",
+                "SubsState": "청약완료",
+                "ProductName": "[IDC]kt cloud SSD 컴퓨팅 스토리지 서버리스 애플리케이션",
+                "StartDate": "2022-12-01 10:26:30",
+                "EndDate": "2023-12-31 00:00:00"
+            },
+            {
+                "index": 89,
+                "ServID": "S000008950",
+                "CustID": "C000053216",
+                "SubsID": "P000021352",
+                "CustName": "홍길동",
+                "ServState": "해지",
+                "SubsState": "청약완료",
+                "ProductName": "[IDC]kt cloud SSD 컴퓨팅 스토리지 서버리스 애플리케이션",
+                "StartDate": "2022-10-01 10:26:30",
+                "EndDate": "2023-12-31 00:00:00"
+            },
+            {
+                "index": 11,
+                "ServID": "S000008950",
+                "CustID": "C000053216",
+                "SubsID": "P000021352",
+                "CustName": "홍길동",
+                "ServState": "해지",
+                "SubsState": "청약완료",
+                "ProductName": "[IDC]kt cloud SSD 컴퓨팅 스토리지 서버리스 애플리케이션",
+                "StartDate": "2022-10-01 10:26:30",
+                "EndDate": "2023-12-31 00:00:00"
+            },
+            {
+                "index": 12,
+                "ServID": "S000008950",
+                "CustID": "C000053216",
+                "SubsID": "P000021352",
+                "CustName": "홍길동",
+                "ServState": "사용중",
+                "SubsState": "청약완료",
+                "ProductName": "[IDC]kt cloud SSD 컴퓨팅 스토리지 서버리스 애플리케이션",
+                "StartDate": "2022-08-11 10:26:30",
+                "EndDate": "2023-12-31 00:00:00"
+            },
+            {
+                "index": 13,
+                "ServID": "S000008950",
+                "CustID": "C000053216",
+                "SubsID": "P000021352",
+                "CustName": "홍길동",
+                "ServState": "사용중",
+                "SubsState": "청약완료",
+                "ProductName": "[IDC]kt cloud SSD 컴퓨팅 스토리지 서버리스 애플리케이션",
+                "StartDate": "2022-06-21 10:26:30",
+                "EndDate": "2023-12-31 00:00:00"
+            },
+            {
+                "index": 14,
+                "ServID": "S000008950",
+                "CustID": "C000053216",
+                "SubsID": "P000021352",
+                "CustName": "홍길동",
+                "ServState": "정지",
+                "SubsState": "청약완료",
+                "ProductName": "[IDC]kt cloud SSD 컴퓨팅 스토리지 서버리스 애플리케이션",
+                "StartDate": "2022-08-21 10:26:30",
+                "EndDate": "2023-12-31 00:00:00"
+            },
+            {
+                "index": 15,
+                "ServID": "S000008950",
+                "CustID": "C000053216",
+                "SubsID": "P000021352",
+                "CustName": "홍길동",
+                "ServState": "정지",
+                "SubsState": "청약완료",
+                "ProductName": "[IDC]kt cloud SSD 컴퓨팅 스토리지 서버리스 애플리케이션",
+                "StartDate": "2022-11-31 10:26:30",
+                "EndDate": "2023-12-31 00:00:00"
+            },
+            {
+                "index": 16,
+                "ServID": "S000008950",
+                "CustID": "C000053216",
+                "SubsID": "P000021352",
+                "CustName": "홍길동",
+                "ServState": "사용중",
+                "SubsState": "청약완료",
+                "ProductName": "[IDC]kt cloud SSD 컴퓨팅 스토리지 서버리스 애플리케이션",
+                "StartDate": "2022-10-01 10:26:30",
+                "EndDate": "2023-12-31 00:00:00"
+            },
+            {
+                "index": 17,
+                "ServID": "S000008950",
+                "CustID": "C000053216",
+                "SubsID": "P000021352",
+                "CustName": "홍길동",
+                "ServState": "사용중",
+                "SubsState": "청약완료",
+                "ProductName": "[IDC]kt cloud SSD 컴퓨팅 스토리지 서버리스 애플리케이션",
+                "StartDate": "2022-12-03 10:26:30",
+                "EndDate": "2023-12-31 00:00:00"
+            },
+            {
+                "index": 18,
+                "ServID": "S000008950",
+                "CustID": "C000053216",
+                "SubsID": "P000021352",
+                "CustName": "홍길동",
+                "ServState": "해지",
+                "SubsState": "청약완료",
+                "ProductName": "[IDC]kt cloud SSD 컴퓨팅 스토리지 서버리스 애플리케이션",
+                "StartDate": "2022-12-04 10:26:30",
+                "EndDate": "2023-12-31 00:00:00"
+            },
+            {
+                "index": 19,
+                "ServID": "S000008950",
+                "CustID": "C000053216",
+                "SubsID": "P000021352",
+                "CustName": "홍길동",
+                "ServState": "사용중",
+                "SubsState": "청약완료",
+                "ProductName": "[IDC]kt cloud SSD 컴퓨팅 스토리지 서버리스 애플리케이션",
+                "StartDate": "2022-11-06 10:26:30",
+                "EndDate": "2023-12-31 00:00:00"
+            },
+            {
+                "index": 20,
+                "ServID": "S000008950",
+                "CustID": "C000053216",
+                "SubsID": "P000021352",
+                "CustName": "홍길동",
+                "ServState": "사용중",
+                "SubsState": "청약완료",
+                "ProductName": "[IDC]kt cloud SSD 컴퓨팅 스토리지 서버리스 애플리케이션",
+                "StartDate": "2022-12-05 10:26:30",
+                "EndDate": "2023-12-31 00:00:00"
+            },
+            {
+                "index": 21,
+                "ServID": "S000008950",
+                "CustID": "C000053216",
+                "SubsID": "P000021352",
+                "CustName": "홍길동",
+                "ServState": "해지",
+                "SubsState": "청약완료",
+                "ProductName": "[IDC]kt cloud SSD 컴퓨팅 스토리지 서버리스 애플리케이션",
+                "StartDate": "2022-12-09 10:26:30",
+                "EndDate": "2023-12-31 00:00:00"
+            },
+            {
+                "index": 22,
+                "ServID": "S000008950",
+                "CustID": "C000053216",
+                "SubsID": "P000021352",
+                "CustName": "홍길동",
+                "ServState": "해지",
+                "SubsState": "청약완료",
+                "ProductName": "[IDC]kt cloud SSD 컴퓨팅 스토리지 서버리스 애플리케이션",
+                "StartDate": "2022-11-21 10:26:30",
+                "EndDate": "2023-12-31 00:00:00"
+            },
+            {
+                "index": 23,
+                "ServID": "S000008950",
+                "CustID": "C000053216",
+                "SubsID": "P000021352",
+                "CustName": "홍길동",
+                "ServState": "사용중",
+                "SubsState": "청약완료",
+                "ProductName": "[IDC]kt cloud SSD 컴퓨팅 스토리지 서버리스 애플리케이션",
+                "StartDate": "2022-01-21 10:26:30",
+                "EndDate": "2023-12-31 00:00:00"
+            },
+            {
+                "index": 24,
+                "ServID": "S000008950",
+                "CustID": "C000053216",
+                "SubsID": "P000021352",
+                "CustName": "홍길동",
+                "ServState": "사용중",
+                "SubsState": "청약완료",
+                "ProductName": "[IDC]kt cloud SSD 컴퓨팅 스토리지 서버리스 애플리케이션",
+                "StartDate": "2022-02-11 10:26:30",
+                "EndDate": "2023-12-31 00:00:00"
+            },
+            {
+                "index": 25,
+                "ServID": "S000008950",
+                "CustID": "C000053216",
+                "SubsID": "P000021352",
+                "CustName": "홍길동",
+                "ServState": "예약(기설중)",
+                "SubsState": "청약완료",
+                "ProductName": "[IDC]kt cloud SSD 컴퓨팅 스토리지 서버리스 애플리케이션",
+                "StartDate": "2022-05-11 10:26:30",
+                "EndDate": "2023-12-31 00:00:00"
+            },
+            {
+                "index": 26,
+                "ServID": "S000008950",
+                "CustID": "C000053216",
+                "SubsID": "P000021352",
+                "CustName": "홍길동",
+                "ServState": "예약(기설중)",
+                "SubsState": "청약완료",
+                "ProductName": "[IDC]kt cloud SSD 컴퓨팅 스토리지 서버리스 애플리케이션",
+                "StartDate": "2022-10-31 10:26:30",
+                "EndDate": "2023-12-31 00:00:00"
+            },
+            {
+                "index": 27,
+                "ServID": "S000008950",
+                "CustID": "C000053216",
+                "SubsID": "P000021352",
+                "CustName": "홍길동",
+                "ServState": "예약(기설중)",
+                "SubsState": "청약완료",
+                "ProductName": "[IDC]kt cloud SSD 컴퓨팅 스토리지 서버리스 애플리케이션",
+                "StartDate": "2022-08-21 10:26:30",
+                "EndDate": "2023-12-31 00:00:00"
+            },
+            {
+                "index": 28,
+                "ServID": "S000008950",
+                "CustID": "C000053216",
+                "SubsID": "P000021352",
+                "CustName": "홍길동",
+                "ServState": "사용중",
+                "SubsState": "청약완료",
+                "ProductName": "[IDC]kt cloud SSD 컴퓨팅 스토리지 서버리스 애플리케이션",
+                "StartDate": "2022-07-11 10:26:30",
+                "EndDate": "2023-12-31 00:00:00"
+            },
+            {
+                "index": 29,
+                "ServID": "S000008950",
+                "CustID": "C000053216",
+                "SubsID": "P000021352",
+                "CustName": "홍길동",
+                "ServState": "사용중",
+                "SubsState": "청약완료",
+                "ProductName": "[IDC]kt cloud SSD 컴퓨팅 스토리지 서버리스 애플리케이션",
+                "StartDate": "2022-06-11 10:26:30",
+                "EndDate": "2023-12-31 00:00:00"
+            }
+        ],
+        "rcvrRowData": [
+            {
+                "rcvrGrNm": "경영기획본부",
+                "rcvrGrId": "1001"
+            },
+            {
+                "rcvrGrNm": "Cloud본부",
+                "rcvrGrId": "1002"
+            },
+            {
+                "rcvrGrNm": "IDC본부",
+                "rcvrGrId": "1003"
+            },
+            {
+                "rcvrGrNm": "정보보안담당",
+                "rcvrGrId": "1004"
+            },
+            {
+                "rcvrGrNm": "IT개발P-TF",
+                "rcvrGrId": "1005"
+            }
+        ],
+        "NoticeRowData": [
+            {
+                "ntfIndex": "0620",
+                "ntfType": "02",
+                "ntfTitle": "일반 공지 안내 드립니다.",
+                "ntfStYn": "02",
+                "ntfStDt": "2022-12-19",
+                "ntfEndDt": "2022-12-24",
+                "attachment": "02",
+                "popupYn": "01",
+                "popupStDt": "2022-12-19",
+                "popupEndDt": "2022-12-24",
+                "ntfRegr": "김클라우드",
+                "ntfRegrDt": "2022-12-05",
+                "ntfContent": "일반공지 게시글 내용입니다. ",
+                "ansSbst": "일반공지 게시글 답변 내용입니다. ",
+                "scrt": "02",
+                "rcvrRstrtn": "01"
+            },
+            {
+                "ntfIndex": "0621",
+                "ntfType": "03",
+                "ntfTitle": "시스템공지 안내 드립니다.",
+                "ntfStYn": "01",
+                "ntfStDt": "2022-12-26",
+                "ntfEndDt": "2022-12-31",
+                "attachment": "01",
+                "popupYn": "02",
+                "popupStDt": "-",
+                "popupEndDt": "-",
+                "ntfRegr": "김케이티",
+                "ntfRegrDt": "2022-12-05",
+                "ntfContent": "@@@@ 시스템공지 게시글 내용입니다. ",
+                "ansSbst": "   @@@@ 시스템공지 게시글 답변 내용입니다. ",
+                "scrt": "01",
+                "rcvrRstrtn": "02"
+            },
+            {
+                "ntfIndex": "0622",
+                "ntfType": "02",
+                "ntfTitle": "전사 공지 안내 드립니다.",
+                "ntfStYn": "02",
+                "ntfStDt": "2023-01-26",
+                "ntfEndDt": "2023-01-31",
+                "attachment": "02",
+                "popupYn": "01",
+                "popupStDt": "2023-01-31",
+                "popupEndDt": "2023-12-31",
+                "ntfRegr": "김땡땡",
+                "ntfRegrDt": "2022-12-24",
+                "ntfContent": "@@@@ 전사 공지 안내 게시글 내용입니다. ",
+                "ansSbst": "   @@@@ 전사 공지 안내 게시글 답변 내용입니다. ",
+                "scrt": "02",
+                "rcvrRstrtn": "01"
+            }
+        ],
+        "msgRowData": [
+            {
+                "msgId": "0001",
+                "msgType": "03",
+                "msgTitle": "IDC 점검",
+                "msgCallBack": "1577-1111",
+                "msgUseYn": "02",
+                "msgStDt": "2022-12-05",
+                "msgEndDt": null,
+                "msgRegr": "김클라우드1",
+                "msgRegrDt": "2022-11-16",
+                "msgContent": "메시지 내용입니다."
+            },
+            {
+                "msgId": "0002",
+                "msgType": "01",
+                "msgTitle": "BSS 사용 문의 안내",
+                "msgCallBack": "1577-2222",
+                "msgUseYn": "02",
+                "msgStDt": "",
+                "msgEndDt": "9999-12-31",
+                "msgRegr": "김클라우드2",
+                "msgRegrDt": "2022-12-23",
+                "msgContent": "메시지2 내용입니다."
+            },
+            {
+                "msgId": "0003",
+                "msgType": "01",
+                "msgTitle": "안내 사항",
+                "msgCallBack": "1577-3333",
+                "msgUseYn": "01",
+                "msgStDt": "2022-12-21",
+                "msgEndDt": "9999-12-31",
+                "msgRegr": "김클라우드3",
+                "msgRegrDt": "2022-12-29",
+                "msgContent": "메시지3 내용입니다."
+            },
+            {
+                "msgId": "0004",
+                "msgType": "02",
+                "msgTitle": "점검 안내 ",
+                "msgCallBack": "1577-5555",
+                "msgUseYn": "01",
+                "msgStDt": "2023-01-02",
+                "msgEndDt": "2023-01-05",
+                "msgRegr": "김클라우드4",
+                "msgRegrDt": "2022-12-31",
+                "msgContent": "메시지4 내용입니다."
+            },
+            {
+                "msgId": "0005",
+                "msgType": "02",
+                "msgTitle": "BSS 사용 문의 안내",
+                "msgCallBack": "1577-6666",
+                "msgUseYn": "01",
+                "msgStDt": "2022-12-19",
+                "msgEndDt": "2024-12-31",
+                "msgRegr": "김클라우드5",
+                "msgRegrDt": "2022-12-23",
+                "msgContent": "메시지 5 내용입니다."
+            },
+            {
+                "msgId": "0006",
+                "msgType": "04",
+                "msgTitle": "안내 사항",
+                "msgCallBack": "1577-7777",
+                "msgUseYn": "02",
+                "msgStDt": "2022-12-21",
+                "msgEndDt": "2024-12-31",
+                "msgRegr": "김클라우드6",
+                "msgRegrDt": "2022-12-29",
+                "msgContent": "메시지6 내용입니다."
+            },
+            {
+                "msgId": "0007",
+                "msgType": "02",
+                "msgTitle": "점검 안내 ",
+                "msgCallBack": "1577-8888",
+                "msgUseYn": "02",
+                "msgStDt": "2023-01-02",
+                "msgEndDt": "2023-01-05",
+                "msgRegr": "김클라우드7",
+                "msgRegrDt": "2024-12-31",
+                "msgContent": "메시지 내용 7 입니다."
+            }
+        ],
+        "fileRowData": [
+            {
+                "name": "가나다라.pdf",
+                "size": 56
+            },
+            {
+                "name": "가나다라1.pdf",
+                "size": 652
+            },
+            {
+                "name": "abcd.pdf",
+                "size": 825
+            },
+            {
+                "name": "wow.pdf",
+                "size": 765
+            }
+        ]
+    }
+}
